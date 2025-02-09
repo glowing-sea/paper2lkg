@@ -1,6 +1,3 @@
-
-
-
 # Changes Regarding the Feedback
 
 - **(Comment 1)**: The introduction to KG needs improvement.
@@ -51,10 +48,15 @@
 
   The high-level prompts are written as well as the algorithm. It should be much clearer now.
 
-- **(Comment 11)** In the Evaluation via Application section, which LLM is used as the generator in the Q&A Chatbot for 'RAG Answer,' or is it just a query answer from the KG?
+- **(Comment 12)** In the Evaluation via Application section, which LLM is used as the generator in the Q&A Chatbot for 'RAG Answer,' or is it just a query answer from the KG?
 
   In general, the task of RAG is about combining IR and LLMs. Yes, LLMs are used in this evaluation task. If the original KG is created by LLaMA(Meta-Llama-3-8B-Instruct.Q4_0 ), then LLaMA is also use for the RAG test. The same applies for GPT(gpt-4o-mini).
 
-- **(Comment 12)** The Conclusion needs further discussion, particularly in relation to the Expected Contribution.
+- **(Comment 13)** The Conclusion needs further discussion, particularly in relation to the Expected Contribution.
 
   A paragraph about the whether the research goals set in Section 3: Related Work and Research Goals are achieved is added. Now the conclusion section is structured as follow: research summary, conclusion, and future work.
+
+- **(Additional Changes)**
+
+  The result of GPT is added to the Experiment Results section.
+
