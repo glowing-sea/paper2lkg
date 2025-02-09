@@ -12,7 +12,7 @@ This repository is related to the research "Open Local Knowledge Graph Construct
 
 ## Notes to the NLP4KGC Reviewers
 
-Thank you for reviewing our research paper and providing valuable feedback. Please refer to [this page](./documentation/paper-update-notes/) for the changes between the first submission and the second submission based on the feedback.
+Thank you for reviewing our research paper and providing valuable feedback. Please refer to [this page](./documentation/paper-update-notes/) for the changes between the first submission (by 1 Jan) and the second submission (by 7 Feb) based on the feedback.
 
 ## Other Materials
 
