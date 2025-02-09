@@ -58,5 +58,5 @@
 
 - **(Additional Changes)**
 
-  The result of GPT is added to the Experiment Results section.
+  The results of GPT is added to the Experiment Results section.
 
