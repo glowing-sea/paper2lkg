@@ -8,7 +8,7 @@ This repository is related to the research "Open Local Knowledge Graph Construct
 - ([link](./documentation/pipeline-overview/)) A comprehensive discussion about the pipeline.
 - ([link](./documentation/evaluation/)) A comprehensive discussion about the evaluation approaches.
 - ([link](./paper2lkg-v0-testers/data/raw_results/)) Raw experiment results.
-- (link) Visualised experiment results.
+- ([link](./documentation/visualised-results/)) Visualised experiment results.
 
 ## Notes to the NLP4KGC Reviewers
 
