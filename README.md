@@ -3,8 +3,8 @@ A Local Knowledge Graph Construction (KGC) pipeline designed to transform indivi
 
 This repository is related to the research "Open Local Knowledge Graph Construction from Academic Documents Using Generative Large Language Models". It contains the following components:
 - ([link](./paper2lkg-v0/)) The research artifact, the paper2lkg pipeline. 
-(The setup guide is also included here.)
-- ([link](./paper2lkg-v0-testers/)) The research artifacts for evaluating paper2lkg. (The guide for reproducing the experiment results is also included here.)
+(The setup guide is included)
+- ([link](./paper2lkg-v0-testers/)) The research artifacts for evaluating paper2lkg. (The guide for reproducing the experiment results is included)
 - ([link](./documentation/pipeline-overview/)) A comprehensive discussion about the pipeline.
 - ([link](./documentation/evaluation/)) A comprehensive discussion about the evaluation approaches.
 - ([link](./paper2lkg-v0-testers/data/raw_results/)) Raw experiment results.
