@@ -2,18 +2,19 @@
 A Local Knowledge Graph Construction (KGC) pipeline designed to transform individual academic papers into their structured local Knowledge Graph (KG) representations. The pipeline leverages Large Language Models (LLMs), particularly generative LLMs, to automate key Natural Language Processing (NLP) tasks in KGC.
 
 This repository is related to the research "Open Local Knowledge Graph Construction from Academic Documents Using Generative Large Language Models". It contains the following components:
-- ([link](./paper2lkg-v0/)) The research artifact, the paper2lkg pipeline
-- ([link](./paper2lkg-v0-testers/)) The research artifacts for evaluating paper2lkg
-- ([link](./documentation/pipeline-overview/)) A comprehensive discussion about the pipeline
-- ([link](./documentation/evaluation/)) A comprehensive discussion about the evaluation approaches
+- ([link](./paper2lkg-v0/)) The research artifact, the paper2lkg pipeline. 
+(The setup guide is included)
+- ([link](./paper2lkg-v0-testers/)) The research artifacts for evaluating paper2lkg. (The guide for reproducing the experiment results is included.)
+- ([link](./documentation/pipeline-overview/)) A comprehensive discussion about the pipeline.
+- ([link](./documentation/evaluation/)) A comprehensive discussion about the evaluation approaches.
 - ([link](./paper2lkg-v0-testers/data/raw_results/)) Raw experiment results.
 - (link) Visualised experiment results.
 
 ## Notes to the NLP4KGC Reviewers
 
-Thank you for reviewing our research paper and provide valuable feedback. Please refer to [this page](./documentation/paper-update-notes/) for the change between the first submission and the second submission based on the feedback.
+Thank you for reviewing our research paper and providing valuable feedback. Please refer to [this page](./documentation/paper-update-notes/) for the changes between the first submission and the second submission based on the feedback.
 
-## Other materials
+## Other Materials
 
 ([link](./documentation/articles/(Paper)%20(ver.2025.2.7)%20Open%20Local%20Knowledge%20Graph%20Construction%20from%20Academic%20Documents%20Using%20Generative%20Large%20Language%20Models.pdf)) Paper submitted to 3rd NLP4KGC workshop (currently under review)
   
