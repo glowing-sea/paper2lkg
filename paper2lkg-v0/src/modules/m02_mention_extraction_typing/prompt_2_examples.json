@@ -1,0 +1,59 @@
+{
+    "format_examples": [
+        {
+            "entity": "...",
+            "types": ["..."]
+        },
+        {
+            "entity": "...",
+            "types": ["..."]
+        }
+    ],
+    "input_output_pairs": [
+        {
+            "input": "This study is about the impact of ChatGPT on education.",
+            "output": [
+                {
+                    "entity": "study",
+                    "types": ["research program", "project"]
+                },
+                {
+                    "entity": "ChatGPT",
+                    "types": ["chatbot", "tool", "artificial intelligence"]
+                },
+                {
+                    "entity": "education",
+                    "types": ["knowledge sharing", "sharing process"]
+                }
+            ]
+        },
+        {
+            "input": "The company recently released its new laptop",
+            "output": [
+                {
+                    "entity": "company",
+                    "types": ["organisation"]
+                },
+                {
+                    "entity": "laptop",
+                    "types": ["product", "electronic device"]
+                }
+            ]
+        },
+        {
+            "input": "Large language models are revolutionising the field of AI.",
+            "output": [
+                {
+                    "entity": "Large language models",
+                    "types": ["language model", "artificial intelligence"]
+                },
+                {
+                    "entity": "AI",
+                    "types": ["computer science"]
+                }
+            ]
+        }
+    ],
+    "trivial_sentence": "",
+    "trivial_responses": []
+}

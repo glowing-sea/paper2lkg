@@ -1,0 +1,1126 @@
+{
+  "iri": "Paper-A_Pipeline_For_Analysing_Grant_Applications",
+  "title": "A Pipeline For Analysing Grant Applications",
+  "authors": [
+    "Shuaiqun Pan",
+    "Sergio J. Rodr\u00edguez M\u00e9ndez",
+    "Kerry Taylor"
+  ],
+  "keywords": [
+    "Grant applications",
+    "Random Forest classifier",
+    "TF-IDF algorithm"
+  ],
+  "sections": [
+    {
+      "iri": "Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-1",
+              "text": "Data mining techniques can transform massive amounts of unstructured data into quantitative data that quickly reveal insights, trends, and patterns behind the original data."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-2",
+              "text": "In this paper, a data mining model is applied to analyse the 2019 grant applications submitted to an Australian Government research funding agency to investigate whether grant schemes successfully identifies innovative project proposals, as intended."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-3",
+              "text": "The grant applications are peer-reviewed research proposals that include specific 'innovation and creativity' (IC) scores assigned by reviewers."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-4",
+              "text": "In addition to predicting the IC score for each research proposal, we are particularly interested in understanding the vocabulary of innovative proposals."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-5",
+              "text": "In order to solve this problem, various data mining models and feature encoding algorithms are studied and explored."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-6",
+              "text": "As a result, we propose a model with the best performance, a Random Forest (RF) classifier over documents encoded with features denoting the presence or absence of unigrams."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-7",
+              "text": "In specific, the unigram terms are encoded by a modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which only implements the IDF part of TF-IDF."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-8",
+              "text": "Besides the proposed model, this paper also presents a rigorous experimental pipeline for analysing grant applications, and the experimental results prove its feasibility."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-2",
+      "subtitle": "Introduction",
+      "paragraphs": [
+        {
+          "iri": "Section-2-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-1",
+              "text": "In the 21st century, the importance of developing cutting-edge scientific research is self-evident for every country."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-2",
+              "text": "Therefore, each country's government research funding agencies are willing to provide much scientific research funding to support essential and cutting-edge scientific research each year."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-3",
+              "text": "Determining whether a scientific research project is worthy of funding is a significant and rigorous step for funding agencies."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-4",
+              "text": "To obtain financial support, scientists and researchers always write research proposals to present their research plans and explain the significance of the project to the funding agencies."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-5",
+              "text": "Usually, the government research funding agencies receive thousands of research proposals each year, which are reviewed only by expert panels."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-6",
+              "text": "However, with the increase in the number of research proposals and the development of data mining techniques, funding agencies are increasingly using data mining models to assist in the manual review of research proposals."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-7",
+              "text": "At the same time, it must be made clear that relying solely on data mining models to replace manual checks is not reliable."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-1",
+              "text": "Applying data mining models to a research proposal has several benefits."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-2",
+              "text": "First, data mining models can briefly introduce the essential features of the research proposals to help human evaluators better screen the excellent research proposals, such as the influential features of the data mining models across all the research proposals."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-3",
+              "text": "Second, an effective data mining model can help human evaluators understand the research proposals\u2019 strengths and weaknesses during the manual review process."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-4",
+              "text": "Next, a high-quality data mining model can be applied to develop procedures and guidelines for human assessors to evaluate future research proposals to improve the quality of assessments."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-5",
+              "text": "Fourth, for government or funding agencies, different funding projects should be established to improve the quality of various types of research."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-6",
+              "text": "Data mining models can better understand how to ensure that human evaluators respond to these necessary qualities."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-1",
+              "text": "Based on the benefits and motivations mentioned above, we hope to apply a data mining model with an appropriate feature extraction technique to predict high IC-score research proposals based on the IC scores assigned by the expert reviewers."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-2",
+              "text": "Meanwhile, the other primary goal of the project is to develop a predictive vocabulary for contemporaneous proposals and to understand how the model inferred research proposals with high IC scores from the data features."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-3",
+              "text": "In addition, we focus on proposing an efficient feature extraction technique rather than the choice of classifiers, so we choose the very common Decision Tree (DT) and RF classifiers for experimental comparison."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-1",
+              "text": "The contributions of this paper are listed as follows:"
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-2",
+              "text": "A strict experimental pipeline for analysing grant applications is given, and the experimental results prove its feasibility."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-3",
+              "text": "A model is proposed with a Random Forest classifier over documents encoded with features denoting the presence or absence of unigram terms."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-4",
+              "text": "The unigram terms are encoded by a modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which only implements the IDF part of TF-IDF."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-5",
+              "text": "The proposed model for predicting high IC-score research proposals can achieve an accuracy of 84.17% across all types of grant applications."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-6",
+              "text": "This paper is divided into six sections."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-7",
+              "text": "In the first section, the project's motivation and problem statement are briefly introduced."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-8",
+              "text": "In section 2, the background and related work of this project are introduced."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-9",
+              "text": "The methodology section mainly describes the pipeline we apply for this research project."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-10",
+              "text": "Section 4 brings the overall design of the project."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-11",
+              "text": "Then, the experimental settings and implementations with the hardware platforms are introduced in this section."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-12",
+              "text": "The fifth section gives the experimental results of this project and carries on the further analysis."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-13",
+              "text": "Conclusions and future work are described in section 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-3",
+      "subtitle": "Related Work",
+      "paragraphs": [
+        {
+          "iri": "Section-3-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-1",
+              "text": "2.1 Computer science in evaluating grant applications."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-2",
+              "text": "Oztaysi et al. [2] proposed a multi-criteria approach to evaluate research proposals based on interval-valued intuitionistic fuzzy sets."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-3",
+              "text": "In this method, a fuzzy preference relation matrix was used to determine the relative importance of criteria."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-4",
+              "text": "The Preference Selection Index (PSI) was another interesting method to evaluate research grant applications [3]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-5",
+              "text": "One advantage of applying the PSI method was that the researcher did not need to determine the weight criteria."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-6",
+              "text": "Another similar and recently related work was the research paper classification system built based on the TF-IDF and LDA schemes [4]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-7",
+              "text": "This system used a Latent Dirichlet allocation (LDA) scheme to extract representative keywords from the abstract of each paper [5]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-8",
+              "text": "The K-means clustering algorithm [6] was applied to group papers with similar topics based on the TF-IDF vector encoding of each paper."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-9",
+              "text": "The results showed that the LDA with 30 keywords using TF-IDF obtained the best F-score compared with the LDA with fewer keywords."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-1",
+              "text": "2.2 Term vectors and statistical measures in text representation."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-2",
+              "text": "TF-IDF is commonly used in data mining and information retrieval."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-3",
+              "text": "TF indicates the frequency of a word in a document or a collection of documents."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-4",
+              "text": "When calculating TF, all the words from documents are treated as equally important."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-5",
+              "text": "However, in practice, people only pay attention to a certain of words."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-6",
+              "text": "For example, \u201cthis\", \u201care\", and \u201cit\" usually do not represent important in most cases."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-7",
+              "text": "Then, the IDF is implemented to adjust the term weights in documents which can increase the weights of those rare but important words and weigh down those frequent words but less important."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-8",
+              "text": "In 2016, Guo and Yang [7] analysed the shortcomings of the TF-IDF algorithm."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-9",
+              "text": "Then, an intra-class dispersion algorithm based on TF-IDF was proposed."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-10",
+              "text": "Chen et al. [8] proposed a new term weighting technique called Term Frequency & Inverse Gravity Moment (TF-IGM), which was mainly used to measure the class discrimination of a term."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-11",
+              "text": "The experimental results showed that the TF-IGM performed better than the traditional TF-IDF in three standard corpora."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-12",
+              "text": "Das and Chakraborty [9] proposed a text sentiment classification technique based on the TF-IDF algorithm and Next Word Negation (NWN)."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-13",
+              "text": "In addition, this study also compared the binary bag of words, TF-IDF, and TF-IDF with NWN algorithms."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-14",
+              "text": "Fan and Qin [10] proposed another improved TF-IDF algorithm, TF-IDCRF, which focused on the relationship between classes in the classification model."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-15",
+              "text": "In 2019, an improved TF-IDF algorithm based on classification discrimination strength was proposed for text classification [11]."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-1",
+              "text": "2.3 Data mining models in text classification."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-2",
+              "text": "In the field of data mining, the DT classifier is widely welcome for its advantage of showing how models make decisions according to the data features [12]."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-3",
+              "text": "RF classifier is another popular data mining model."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-4",
+              "text": "The term forest can be interpreted to mean that each classifier in the ensemble is a DT classifier, while all combinations of classifiers are a forest [13]."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-5",
+              "text": "In the RF classifier, each decision tree also selects the optimal attribute based on the Attribute Selection Measures (ASM)."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-6",
+              "text": "At the same time, each decision tree depends independently on a random sample."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-7",
+              "text": "The RF classifier votes on each tree in specific classification problems and selects the most popular category as the final result."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-1",
+              "text": "In 2016, a news classification method was proposed based on the TF-IDF algorithm and Support Vector Machine (SVM) [14]."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-2",
+              "text": "Based on a different number of n-grams and various data sets, five data mining classifiers were built and compared [15]."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-3",
+              "text": "The results can guide researchers to select an appropriate data mining model according to the size of the data set."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-4",
+              "text": "Four different data mining models were implemented with five different ensemble methods, and the experimental results showed that the RF classifier with the Bagging ensemble method achieved the best performance [16]."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-5",
+              "text": "Wongso et al. [17] applied TF-IDF and SVD algorithms [18] to the feature selection step and compare the two algorithms."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-6",
+              "text": "At the same time, the Multivariate Bernoulli Naive Bayes [19], and SVM were compared in this study."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-7",
+              "text": "Finally, with the combination of TF-IDF and Multivariate Bernoulli Naive Bayes, news articles in the Indonesian Language corpus were classified, and the best result was obtained [17]."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-4",
+      "subtitle": "Methodology",
+      "paragraphs": [
+        {
+          "iri": "Section-4-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-1",
+              "text": "This section details the workflow of our proposed pipeline and the data mining model."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-2",
+              "text": "Fig. 1 shows the pipeline of analysing grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-3",
+              "text": "3.1 Data set."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-4",
+              "text": "The data set used to analyse the grant applications is the 2019 grant applications submitted to an Australian Government research funding agency."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-5",
+              "text": "3,805 research proposals are given in this data set with peer-reviewed IC scores (1 - 7)."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-6",
+              "text": "In addition, the entire data set contains different types of grant applications, such as Synergy Grants, Standard Project Grants, and Ideas Grants."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-7",
+              "text": "Besides the IC score, reviewers also score several other assessment scores, such as \u201cFeasibility Score\u201d or \u201cSignificance Score.\u201d"
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-8",
+              "text": "Since all research proposals are saved in PDF format, extracting the text from PDF files is necessary."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-9",
+              "text": "A Metadata Extractor & Loader (MEL) [20] tool is applied to extract text from PDF research proposals and save it in a JSON file with metadata sets and content."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-10",
+              "text": "By default, all JSON files are stored in CouchDB database [21] based on the proposal index."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-11",
+              "text": "Before designing the whole pipeline, a statistical analysis is required based on the IC scores of research proposals."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-12",
+              "text": "At the same time, some fundamental values are also the basis of designing the entire pipeline, such as the median IC score and mode IC score."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-13",
+              "text": "Table 1 shows a statistic of IC scores, showing that 3,693 research proposals have valid IC scores."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-14",
+              "text": "In addition, 99 research proposals do not contain an IC score, 13 of which have an IC score below 1.0, and these research proposals therefore not be used in this project."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-15",
+              "text": "Table 1 also shows the median IC score, 5.0, the most frequent IC score."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-1",
+              "text": "3.2 Text pre-processing for grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-2",
+              "text": "HaCohen-Kerner et al. [22] proved that text pre-processing techniques could make the model achieve better performance than without the text pre-processing step."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-3",
+              "text": "After all the text is extracted, all characters, whether uppercase or lowercase, are converted to lowercase."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-4",
+              "text": "Then, the numbers are also removed because the numbers in the research proposals are not relevant for future analysis."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-5",
+              "text": "Thirdly, removing punctuations and tokenizing by whitespace are also adopted, which make the text into small pieces called tokens."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-6",
+              "text": "In addition, the deletion of stop words is one of the most crucial text pre-processing techniques."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-7",
+              "text": "Fani et al. [23] have shown that deleting stop words can improve the performance of data mining tasks."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-8",
+              "text": "Therefore, we create a list of custom stop words according to the IDF formula and delete the IDF value of the term from the text lower than 1.0."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-9",
+              "text": "The reason for choosing 1.0 is that after implementation some preliminary experiments, we confirm that the feature words considered as important by DT and RF classifiers will less than 1000 words."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-10",
+              "text": "Meanwhile, the words whose IDF value are less than 1.0 only account for 0.2% of the total words, and they are all common words such as \u201cnext\u201d, \u201cshift\u201d and \u201cother\u201d."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-11",
+              "text": "We believe that these words appear too frequently and have no influence on the experimental results."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-12",
+              "text": "Finally, text stemming is the last technique we apply in the text pre-processing step."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-13",
+              "text": "Text stemming is a technique for reducing each word to its root format [24]."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-14",
+              "text": "It helps to reduce the vocabulary and surface syntax to get closer to the meaning of each term, and the Porter Stemming algorithm [25] is implemented in this step."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-1",
+              "text": "This section details the workflow of our proposed pipeline and the data mining model."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-2",
+              "text": "Fig. 1 shows the pipeline of analysing grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-3",
+              "text": "3.1 Data set."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-4",
+              "text": "The data set used to analyse the grant applications is the 2019 grant applications submitted to an Australian Government research funding agency."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-5",
+              "text": "3,805 research proposals are given in this data set with peer-reviewed IC scores (1 - 7)."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-6",
+              "text": "In addition, the entire data set contains different types of grant applications, such as Synergy Grants, Standard Project Grants, and Ideas Grants."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-7",
+              "text": "Besides the IC score, reviewers also score several other assessment scores, such as \u201cFeasibility Score\u201d or \u201cSignificance Score.\u201d"
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-8",
+              "text": "Since all research proposals are saved in PDF format, extracting the text from PDF files is necessary."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-9",
+              "text": "A Metadata Extractor & Loader (MEL) [20] tool is applied to extract text from PDF research proposals and save it in a JSON file with metadata sets and content."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-10",
+              "text": "By default, all JSON files are stored in CouchDB database [21] based on the proposal index."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-11",
+              "text": "Before designing the whole pipeline, a statistical analysis is required based on the IC scores of research proposals."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-12",
+              "text": "At the same time, some fundamental values are also the basis of designing the entire pipeline, such as the median IC score and mode IC score."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-13",
+              "text": "Table 1 shows a statistic of IC scores, showing that 3,693 research proposals have valid IC scores."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-14",
+              "text": "In addition, 99 research proposals do not contain an IC score, 13 of which have an IC score below 1.0, and these research proposals therefore not be used in this project."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-15",
+              "text": "Table 1 also shows the median IC score, 5.0, the most frequent IC score."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-1",
+              "text": "3.4 Design and apply the feature extraction technique."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-2",
+              "text": "We propose a modified TF-IDF algorithm, which only implements the IDF part of TF-IDF as the feature extraction technique."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-3",
+              "text": "In specific, if the term exists at least once in the documents, specify the IDF value for this term directly."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-4",
+              "text": "In addition, if a term does not exist in the documents, then the term is assigned a value of 0."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-5",
+              "text": "The design of this modified feature extraction algorithm follows the idea that rare terms can define innovativeness."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-6",
+              "text": "The experiment also considers the n-grams [26]."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-7",
+              "text": "Unigram is the most common choice for text classification tasks, but bigram and trigram may better represent scientific terms, where bigram is two consecutive words in a sentence, and trigram is three consecutive words in a sentence."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-8",
+              "text": "At the same time, when collecting proposals, we also consider deleting the words that only exist once or twice, because very rare terms tend not to be predictive."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-9",
+              "text": "In addition, the bigram mentioned in this paper denotes a combination of the unigrams and bigrams."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-10",
+              "text": "The trigram denotes a combination of the unigrams, bigrams, and trigrams."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-1",
+              "text": "3.5 Apply data mining models with grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-2",
+              "text": "This paper uses DT and RF classifiers for text classification because we would like to find out the most influential terms and understood how the data mining model predicts high and low IC-score research proposals."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-3",
+              "text": "The DT and RF classifiers are convenient to present this valuable information."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-4",
+              "text": "Based on the experimental result of the high and low IC-score research proposals selection, all experiments are conducted with the low IC-score research proposals (IC score 0~15%) and the high IC-score research proposals (IC score 85%~100%)."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-5",
+              "text": "In the comparison study of feature extraction techniques, 400 research proposals for each low and high IC score are randomly selected for model training, and the training data is 85%, and the test data is 15%."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-6",
+              "text": "In order to analyse the proposed model in the end, the 100 most influential terms from the collections of research proposals are extracted by the function from scikit-learn library [27], which bring us an intuitive understanding of how much each term contributes to reducing the weighted impurities."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-1",
+              "text": "3.6 Analyse moderate IC-score grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-2",
+              "text": "We also conduct several experiments to analyse moderate IC-score research proposals based on the proposed model."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-3",
+              "text": "The purpose of this series of experiments is to determine whether there is a relation between proposals with moderate IC scores and that of high and low IC scores."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-4",
+              "text": "Since the proposed model is trained based on the low IC-score proposals of 0~15% and high IC-score proposals of 85~100%, the range of research proposals with moderate IC score is 15%~85%."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-5",
+              "text": "Based on the median IC score, the selection range of testing moderate IC score by testing several cut-off options, such as 20, 25, 30, 35, 40, 45, and 50."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-6",
+              "text": "Table 4 shows a list of experiments used to analyse the research proposals of moderate IC score."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-7",
+              "text": "Considering the symmetric distribution of the IC scores, new research proposals with low and high IC scores are selected in each experiment, and performance analysis is conducted based on the proposed training model."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-8",
+              "text": "In addition to the experiments in Table 4, another experiment is designed to check the median IC-score research proposals (IC score = 5.0) to predict the proportion of high or low IC-score research proposals rather than calculate the test accuracy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-5",
+      "subtitle": "Experimental Settings",
+      "paragraphs": [
+        {
+          "iri": "Section-5-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-1",
+              "text": "This section describes all experimental settings for this paper."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-2",
+              "text": "Initially, MEL [20] is implemented through a set of Python-based methods to extract metadata for all supported file types."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-3",
+              "text": "To extract metadata from the PDF version of a file, the Tesseract-OCR method [28] and pdftotext tool [29] are applied."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-4",
+              "text": "In the statistical analysis of grant applications, the Python language and Numpy library [30] are used to calculate the median, mode, and other statistical measurements of IC score."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-5",
+              "text": "In the experiments of selecting high, low, and moderate IC-score research proposals and implementing the data mining models, the scikit-learn library [27] is applied to implement the DT and RF classifiers."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-6",
+              "text": "The python library gensim [31] is used to implement the TF-IDF algorithm and the newly proposed modified TF-IDF algorithm."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-1",
+              "text": "Hyper-parameter tuning is a significant step in applying data mining models, and the Bayesian Optimization tool [32] is applied."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-2",
+              "text": "The first step to implement Bayesian Optimization is to define the data mining model, such as the RF classifier and its parameters and corresponding bounds."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-3",
+              "text": "In addition, we also need to implement the scoring method and the cross-validation setup."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-4",
+              "text": "Secondly, the maximize method is used to run the technique with n_iter and init_points parameters."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-5",
+              "text": "The n_iter is defined for the number of steps to run the optimization function."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-6",
+              "text": "The more steps, the easier it is to find the best accuracy value."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-7",
+              "text": "The init_points is defined for random exploration on the parameter space, which helps to explore the diversity of the space."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-8",
+              "text": "Finally, the parameter values for each accuracy are listed, highlighting the best combination of the parameter and the target value."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-1",
+              "text": "To find the hyper-parameters of the RF classifier, the range of each parameter is set as follows: max_depth = (5, 60), min_samples_split = (10, 100), max_features = (0.1, 0.999), max_samples_leaf = (10, 50) and n_estimation = (100, 400)."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-2",
+              "text": "For the DT classifier, the range settings for finding hyper-parameters are as follows: max_depth = (3, 10), min_samples_split = (3, 10), max_features = (0.1, 0.999),and max_samples_leaf = (3, 10)."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-3",
+              "text": "The max_depth parameter indicates the maximum depth of the tree, and the max_features denotes the number of features to consider when finding the best split [27]."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-4",
+              "text": "The parameters min_samples_leaf, min_samples_split, and n_estimators are defined as the minimum number of samples needed on a leaf node, the minimum number of samples needed to split an internal node, and the number of trees in the forest, respectively."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-5",
+              "text": "All experiments related to RF classifier and DT classifier adopt the same setting of the hyper-parameter range."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-6",
+              "text": "Meanwhile, the 10-fold cross-validation method is also applied in finding the hyper-parameters."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-1",
+              "text": "To evaluate the performance of the newly proposed modified TF-IDF algorithm and the TF-IDF algorithm with different data mining classifiers, the classification accuracy (Acc), F1 score are selected as the evaluation metrics."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-2",
+              "text": "The hardware platform is MacBook Pro with Intel Core i7 2.9 GHz Quard-Core processor."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-3",
+              "text": "The memory configuration is 16GB 2133 MHz LPDDR3."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-6",
+      "subtitle": "Experimental Result",
+      "paragraphs": [
+        {
+          "iri": "Section-6-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-1",
+              "text": "Table 5 shows the performance of the TF-IDF algorithm with DT and RF classifiers."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-2",
+              "text": "It can be found that the RF classifier can consistently achieve better performance than the DT classifier under the different settings of the n-grams and deletion of rare terms."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-1",
+              "text": "Table 6 shows the performance of the newly proposed modified TF-IDF algorithm with DT and RF classifiers."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-2",
+              "text": "Based on the comparison of Table 5 and Table 6, the best performance is achieved with 84.17% accuracy by the RF classifier with the newly proposed modified TF-IDF algorithm except the No.14 model combination in Table 6."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-3",
+              "text": "The hyper-parameters are max_depth = 22, max_features = 0.9931, min_samples_leaf = 11, min_samples_split = 67 and n_estimation = 102."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-4",
+              "text": "To include all the terms from the corpus, we choose the RF classifier based on unigram and the modified TF-IDF algorithm as the final proposed model."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-5",
+              "text": "Another reason why we do not choose the bigram and trigram combinations as the proposed model is the bigram and trigram terms are in fact not regarded as essential features by DT and RF classifiers."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-6",
+              "text": "Features extracted from the proposed model shows that only 618 features are considered significant, based on tens of thousands of features in the research proposals."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-1",
+              "text": "Based on the comparison of the two tables, it can be found that the proposed modified TF-IDF algorithm is practical and effective despite two or three exceptions exist."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-2",
+              "text": "At the same time, the experimental results prove that the core idea of defining the modified TF-IDF algorithm is meaningful and show the rare terms associated with innovativeness."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-3",
+              "text": "It should also be noted that the newly proposed modified TF-IDF algorithm can be understood as a simple encoding technique, such as taking the value 0 or the IDF value of the term depending on whether the term exists in the research proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-4",
+              "text": "Based on the decision tree plots generated by the best performance model, it can be found that the modified TF-IDF algorithm does not affect the shape of the tree as seen in the tree graph, helping to understand whether the chosen split term is rare or common."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-1",
+              "text": "From the result of finding hyper-parameters, it can be found that the best performing model does not use all the features to apply with the data mining algorithms, such as the RF classifier only uses 99.31% features."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-2",
+              "text": "In addition, although we consider different n-grams, especially bigram and trigram, with removing scarce words, Table 5 and Table 6 could prove that it might help but not always."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-3",
+              "text": "Moreover, based on the same feature extraction algorithm, the classification accuracy of the RF classifier is always better than that of the DT classifier."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-4",
+              "text": "Nevertheless, the results of the DT classifier are still crucial because the plot of DT classifier contains all the decisions."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-1",
+              "text": "Fig. 2 shows the confusion matrix of the proposed model for the \u201cunseen\u201d test data."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-2",
+              "text": "It shows 13 high IC-score research proposals are incorrectly predicted as low IC-score proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-3",
+              "text": "In addition, 6 research proposals with low IC scores are guessed wrongly which they are predicted as high IC-score proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-4",
+              "text": "The number 59 denotes that the proposed model correctly predicts 59 research proposals with low IC scores and 42 with high IC scores."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-1",
+              "text": "In addition to analysing the confusion matrix, we also extract the 100 most influential features from the proposed model, which gives an intuitive understanding of how much each feature contributes to reducing the weighted impurities."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-2",
+              "text": "The top 100 features give us a better understanding of what is going on inside the black box."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-3",
+              "text": "A measure of the feature importance is valuable for internal model development purposes by showing to what extent features contribute to test data."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-4",
+              "text": "Although the classifier is only established for the 2019 grant applications and may not predict the high research proposals for future applications, these unique terms are still valuable and meaningful as a reference for evaluators."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-1",
+              "text": "Table 7 brings the performance of checking research proposals of moderate IC scores based on the proposed model."
+            },
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-2",
+              "text": "Based on the test accuracy, it can be concluded that there is a correlation between the moderate IC-score research proposals and high/low IC-score research proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-3",
+              "text": "Moreover, it is easy to find that the proposed model can better predict the research proposals close to the original training set settings (0~15% for low IC score and 85%~100% for high IC score)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-1",
+              "text": "Based on the confusion matrix above and the experimental results of checking moderate IC-score research proposals, it can be found that the model is always more accurate in predicting research proposals with low IC scores than with high IC scores."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-2",
+              "text": "Meanwhile, the research proposals with the median IC score of 5.0 are predicted to be about 37.2% with high-IC score research proposals and about 62.8% with low-IC score research proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-3",
+              "text": "Therefore, it can be concluded that research proposals with high IC scores use more diverse language than those with low IC-score."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-4",
+              "text": "In addition to the experiments analysing all grant applications, we follow the same pipeline and establish a new model to evaluate Ideas Grant applications only, the one with innovation criteria."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-5",
+              "text": "Applying the same method but with different hyper-parameters, the best performing model for analysing the Ideas Grants can reach an accuracy of 82.5%."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-6",
+              "text": "In every Ideas Grant application, there is a section called \u201cInnovation and Creativity statement.\u201d"
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-7",
+              "text": "We also extract this part from each Ideas grant and analyse using the proposed pipeline."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-8",
+              "text": "The experimental result shows that the proposed method can achieve 68.33% accuracy on analysing \u201cInnovation and Creativity statement\u201d sections only from Ideas Grants."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-9",
+              "text": "Although we guess the IC score is more relevant to the \u201cInnovation and Creativity statement\u201d compared with other sections, as evaluators may describe their innovation in this section, the experimental result does not support our guess."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-7",
+      "subtitle": "Conclusion",
+      "paragraphs": [
+        {
+          "iri": "Section-7-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-1",
+              "text": "In summary, a pipeline for analysing grant applications has been proposed with several crucial steps."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-2",
+              "text": "The proposed data mining model is an RF classifier over documents encoded with features denoting the presence or absence of unigrams."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-3",
+              "text": "Specifically, the unigram terms are encoded by a modified Term Frequency - Inverse Document Frequency(TF-IDF) algorithm, which only implements the IDF part of TF-IDF."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-4",
+              "text": "As a result, the proposed model achieves an accuracy of 84.17% based on all types of grant applications."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-5",
+              "text": "In addition, we also build experiments for Ideas Grants only and \u201cInnovation and Creativity statement\u201d single section."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-1",
+              "text": "The future work can be carried out from different perspectives."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-2",
+              "text": "Firstly, innovation should not be the only evaluation criterion."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-3",
+              "text": "In order to better evaluate the entire grant application, we should consider other evaluation scores and establish a more comprehensive system that can predict a grant application based on multiple criteria."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-4",
+              "text": "Secondly, in the future, this project can also apply some other effective data mining models, such as SVM, AdaBoost, and Xgboost."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-5",
+              "text": "In addition, the pre-trained language models in the Natural Language Processing (NLP) field perform well in understanding text semantics, which can also be our next research focus."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-6",
+              "text": "Thirdly, our proposed method cannot predict future grant applications because the current data set contains only key terms for 2019 and does not represent future grant applications."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-7",
+              "text": "Therefore, it is an important research topic to consider building a long-term data mining model to predict future grant applications."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "A data mining model was applied to analyze Australian Government research funding agency grant applications from 2019, identifying innovative project proposals using a Random Forest classifier with unigram features and modified Term Frequency-Inverse Document Frequency algorithm.\n\nGovernments use data mining models to review research proposals, ensuring quality evaluations. A model with feature extraction technique achieved an accuracy of 84.17% across all grant applications.\n\nComputer science methods for evaluating grant applications include multi-criteria approaches using interval-valued intuitionistic fuzzy sets and Preference Selection Index (PSI), as well as text representation techniques like TF-IDF to adjust term weights.\n\nThis section details the workflow of our proposed pipeline and the data mining model. Fig. 1 shows the pipeline of analysing grant applications. 3.1 Data set. The data set used to analyse the grant applications is the 2019 grant applications submitted to an Australian Government research funding agency. 3,805 research proposals are given in this data set with peer-reviewed IC scores (1 - 7). In addition, the entire data set contains different types of grant applications, such as Synergy Grants, Standard Project Grants, and Ideas Grants. Besides the IC score, reviewers also score several other assessment scores, such as \u201cFeasibility Score\u201d or \u201cSignificance Score.\u201d Since all research proposals are saved in PDF format, extracting the text from PDF files is necessary. A Metadata Extractor & Loader (MEL) [20] tool is applied to extract text from PDF research proposals and save it in a JSON file with metadata sets and content. By default, all JSON files are stored in CouchDB database [21] based on the proposal index. Before designing the whole pipeline, a statistical analysis is required based on the IC scores of research proposals. At the same time, some fundamental values are also the basis of designing the entire pipeline, such as the median IC score and mode IC score. Table 1 shows a statistic of IC scores, showing that 3,693 research proposals have valid IC scores. In addition, 99 research proposals do not contain an IC score, 13 of which have an IC score below 1.0, and these research proposals therefore not be used in this project. Table 1 also shows the median IC score, 5.0, the most frequent IC score.\n\n3.2 Text pre-processing for grant applications. HaCohen-Kerner et al. [22] proved that text pre-processing techniques could make the model achieve better performance than without the text pre-processing step. After all the text is extracted, all characters, whether uppercase or lowercase, are converted to lowercase. Then, the numbers are also removed because the numbers in the research proposals are not relevant for future analysis. Thirdly, removing punctuations and tokenizing by whitespace are also adopted, which make the text into small pieces called tokens. In addition, the deletion of stop words is one of the most crucial text pre-processing techniques. Fani et al. [23] have shown that deleting stop words can improve the performance of data mining tasks. Therefore, we create a list of custom stop words according to the IDF formula and delete the IDF value of the term from the text lower than 1.0. The reason for choosing 1.0 is that after implementation some preliminary experiments, we confirm that the feature words considered as important by DT and RF classifiers will less than 1000 words. Meanwhile, the words whose IDF value are less than 1.0 only account for 0.2% of the total words, and they are all common words such as \u201cnext\u201d, \u201cshift\u201d and \u201cother\u201d. We believe that these words appear too frequently and have no influence on the experimental results. Finally, text stemming is the last technique we apply in the text pre-processing step. Text stemming is a technique for reducing each word to its root format [24]. It helps to reduce the vocabulary and surface syntax to get closer to the meaning of each term, and the Porter Stemming algorithm [25] is implemented in this step.\n\nThis section details the workflow of our proposed pipeline and the data mining model. Fig. 1 shows the pipeline of analysing grant applications. 3.1 Data set. The data set used to analyse the grant applications is the 2019 grant applications submitted to an Australian Government research funding agency. 3,805 research proposals are given in this data set with peer-reviewed IC scores (1 - 7). In addition, the entire data set contains different types of grant applications, such as Synergy Grants, Standard Project Grants, and Ideas Grants. Besides the IC score, reviewers also score several other assessment scores, such as \u201cFeasibility Score\u201d or \u201cSignificance Score.\u201d Since all research proposals are saved in PDF format, extracting the text from PDF files is necessary. A Metadata Extractor & Loader (MEL) [20] tool is applied to extract text from PDF research proposals and save it in a JSON file with metadata sets and content. By default, all JSON files are stored in CouchDB database [21] based on the proposal index. Before designing the whole pipeline, a statistical analysis is required based on the IC scores of research proposals. At the same time, some fundamental values are also the basis of designing the entire pipeline, such as the median IC score and mode IC score. Table 1 shows a statistic of IC scores, showing that 3,693 research proposals have valid IC scores. In addition, 99 research proposals do not contain an IC score, 13 of which have an IC score below 1.0, and these research proposals therefore not be used in this project. Table 1 also shows the median IC score, 5.0, the most frequent IC score.\n\n3.4 Design and apply the feature extraction technique. We propose a modified TF-IDF algorithm, which only implements the IDF part of TF-IDF as the feature extraction technique. In specific, if the term exists at least once in the documents, specify the IDF value for this term directly. In addition, if a term does not exist in the documents, then the term is assigned a value of 0. The design of this modified feature extraction algorithm follows the idea that rare terms can define innovativeness. The experiment also considers the n-grams [26]. Unigram is the most common choice for text classification tasks, but bigram and trigram may better represent scientific terms, where bigram is two consecutive words in a sentence, and trigram is three consecutive words in a sentence. At the same time, when collecting proposals, we also consider deleting the words that only exist once or twice, because very rare terms tend not to be predictive. In addition, the bigram mentioned in this paper denotes a combination of the unigrams and bigrams. The trigram denotes a combination of the unigrams, bigrams, and trigrams.\n\n3.5 Apply data mining models with grant applications. This paper uses DT and RF classifiers for text classification because we would like to find out the most influential terms and understood how the data mining model predicts high and low IC-score research proposals. The DT and RF classifiers are convenient to present this valuable information. Based on the experimental result of the high and low IC-score research proposals selection, all experiments are conducted with the low IC-score research proposals (IC score 0~15%) and the high IC-score research proposals (IC score 85%~100%). In the comparison study of feature extraction techniques, 400 research proposals for each low and high IC score are randomly selected for model training, and the training data is 85%, and the test data is 15%. In order to analyse the proposed model in the end, the 100 most influential terms from the collections of research proposals are extracted by the function from scikit-learn library [27], which bring us an intuitive understanding of how much each term contributes to reducing the weighted impurities.\n\n3.6 Analyse moderate IC-score grant applications. We also conduct several experiments to analyse moderate IC-score research proposals based on the proposed model. The purpose of this series of experiments is to determine whether there is a relation between proposals with moderate IC scores and that of high and low IC scores. Since the proposed model is trained based on the low IC-score proposals of 0~15% and high IC-score proposals of 85~100%, the range of research proposals with moderate IC score is 15%~85%. Based on the median IC score, the selection range of testing moderate IC score by testing several cut-off options, such as 20, 25, 30, 35, 40, 45, and 50. Table 4 shows a list of experiments used to analyse the research proposals of moderate IC score. Considering the symmetric distribution of the IC scores, new research proposals with low and high IC scores are selected in each experiment, and performance analysis is conducted based on the proposed training model. In addition to the experiments in Table 4, another experiment is designed to check the median IC-score research proposals (IC score = 5.0) to predict the proportion of high or low IC-score research proposals rather than calculate the test accuracy.\n\nThis paper uses Python-based methods to extract metadata from various file types using MEL, with statistical analysis involving Numpy and scikit-learn.\n\nThe TF-IDF algorithm with RF classifier outperforms DT classifier under different settings, achieving accurate predictions of research proposals with low IC scores and an overall accuracy rate of 68.33% for 'Innovation and Creativity statement' sections from Ideas Grants.\n\nIn summary, a pipeline for analysing grant applications has been proposed with several crucial steps. The proposed data mining model is an RF classifier over documents encoded with features denoting the presence or absence of unigrams. Specifically, the unigram terms are encoded by a modified Term Frequency - Inverse Document Frequency(TF-IDF) algorithm, which only implements the IDF part of TF-IDF. As a result, the proposed model achieves an accuracy of 84.17% based on all types of grant applications. In addition, we also build experiments for Ideas Grants only and \u201cInnovation and Creativity statement\u201d single section.\n\nThe future work can be carried out from different perspectives. Firstly, innovation should not be the only evaluation criterion. In order to better evaluate the entire grant application, we should consider other evaluation scores and establish a more comprehensive system that can predict a grant application based on multiple criteria. Secondly, in the future, this project can also apply some other effective data mining models, such as SVM, AdaBoost, and Xgboost. In addition, the pre-trained language models in the Natural Language Processing (NLP) field perform well in understanding text semantics, which can also be our next research focus. Thirdly, our proposed method cannot predict future grant applications because the current data set contains only key terms for 2019 and does not represent future grant applications. Therefore, it is an important research topic to consider building a long-term data mining model to predict future grant applications.",
+  "kg2text": [
+    "A strict experimental pipeline for analysing grant applications uses the data set consisting of the 2019 grant applications submitted to an Australian Government research funding agency. This data set, which includes 3,805 peer-reviewed research proposals with IC scores, is also utilized by our proposed pipeline and the data mining model. Additionally, data mining models to assist in the manual review of research proposals leverage this same data set. The project's motivation and problem statement are briefly introduced, emphasizing the development of a pipeline for analyzing grant applications using these data mining models. New research proposals are analyzed using the same data set, which is foundational for the experiments conducted in this paper. The proposed model for predicting high IC-score research proposals can achieve an accuracy of 84.17% across all types of grant applications, demonstrating the effectiveness of the data mining models applied to the data set. Furthermore, before designing the entire pipeline, a statistical analysis is required based on the IC scores of the research proposals. The experimental results indicate that the data mining models not only assist in the manual review of research proposals but also enhance the overall analysis process.",
+    "The experiment utilizes the data set comprising the 2019 grant applications submitted to an Australian Government research funding agency. This data set is identified as the current data set, which contains 3,805 peer-reviewed research proposals. The project's motivation and problem statement are briefly introduced, leading to the development of a strict experimental pipeline for analysing grant applications. This pipeline is designed to analyse new research proposals and IC-score research proposals, employing various data mining models. This paper employs the data set to conduct its analyses, extracting tens of thousands of features from the research proposals. The strict experimental pipeline not only presents the methodology but also uses the experiments to evaluate the effectiveness of the proposed model. Furthermore, the proposed pipeline and the data mining model are applied to analyze IC-score research proposals, achieving an impressive accuracy of 84.17% across all types of grant applications. Additionally, the pipeline includes the extraction and analysis of specific sections from each Ideas grant, demonstrating its comprehensive approach to grant application analysis.",
+    "This paper proposed a strict experimental pipeline for analysing grant applications, which is designed to achieve an accuracy of 84.17% across all types of grant applications using our proposed pipeline and the data mining model. Before designing the whole pipeline, a statistical analysis is required based on the IC scores of research proposals, which is essential for the successful implementation of the pipeline. The experimental results demonstrate the feasibility of this pipeline, as it utilizes a model and the current data set, along with tens of thousands of features in the research proposals. Furthermore, our proposed pipeline and the data mining model effectively assist in reviewing IC-score proposals, which are critical for evaluating new research proposals. Additionally, data mining models to assist in the manual review of research proposals were proposed in this paper, showcasing their role in enhancing the review process.",
+    "The research involves tens of thousands of features in the research proposals, which are utilized by our proposed pipeline and the data mining model. The experiments conducted assist in the manual review of research proposals through data mining models designed for this purpose. The project's motivation and problem statement are briefly introduced, highlighting the extraction and analysis of specific sections from each Ideas grant using the proposed pipeline. New research proposals are analyzed using the data mining models, which also play a crucial role in the analysis of IC-score research proposals. The proposed model for predicting high IC-score research proposals can achieve an accuracy of 84.17% across all types of grant applications, demonstrating its effectiveness in assisting human evaluators. This paper presents a strict experimental pipeline for analyzing grant applications, which is detailed in the methodology section. Overall, the relationship between the various components of the research emphasizes the integration of data mining models to enhance the evaluation process of new research proposals.",
+    "New research proposals are analyzed using the experiments, which involve data mining models to assist in the manual review of research proposals. These models not only assist in evaluating IC-score proposals but also help in predicting the experimental results. Before designing the whole pipeline, a statistical analysis is required based on the IC scores of research proposals, which necessitates the use of these data mining models. IC-score research proposals are assigned to and utilize the experiments, while a model employs the data mining models to assist in the manual review of research proposals. The experiments apply these data mining models, which also assist in the overall experiment. Furthermore, these models are used with the current data set to extract tens of thousands of features from the research proposals. This paper proposed the experiments and the data mining models to assist in the manual review of research proposals. The methodology section details our proposed pipeline and the data mining model, which achieves an accuracy of 84.17% across all types of grant applications. Additionally, we extract specific parts from each Ideas grant and analyze them using the proposed pipeline, contributing to the project's motivation and problem statement.",
+    "The process of extracting a specific section from each Ideas grant and analyzing it using the proposed pipeline is crucial for understanding IC-score proposals. This extraction is required for conducting a statistical analysis based on the IC scores of research proposals, which in turn is essential for introducing the project's motivation and problem statement. New research proposals are analyzed and predicted by IC-score proposals, which also predict the experimental results. The proposed model for predicting high IC-score research proposals achieves an accuracy of 84.17% across all types of grant applications, as demonstrated through a series of experiments. Before designing the entire pipeline, a statistical analysis based on new research proposals is necessary. The model utilizes the project's motivation and problem statement to guide its predictions. Additionally, the current data set serves as input for the extraction process, which is integral to the analysis of the experiment. Overall, the relationship between IC-score proposals and IC-score research proposals highlights the interconnectedness of these elements in the research process, as outlined in this paper.",
+    "The IC-score research proposals are utilized to predict the experimental results, showcasing the effectiveness of the data mining models applied to the IC-score proposals. Before designing the whole pipeline, a statistical analysis is required based on the IC scores of these research proposals, which is essential for the data mining models that achieve and apply the experimental results. This paper introduces the project's motivation and problem statement, proposing new research proposals that are analyzed using the data mining models. A model is also proposed in this paper to predict IC-score research proposals. Furthermore, we extract tens of thousands of features in the research proposals from each Ideas grant and analyze them using the proposed pipeline. The experimental results are presented in this paper, which also indicates that the IC-score research proposals are used as input for the current data set. The tens of thousands of features in the research proposals are crucial for introducing the project's motivation and problem statement, while the new research proposals are analyzed using these significant features. The experiment applied the data mining models, demonstrating their utility in predicting IC scores.",
+    "The data mining models are used as input for the current data set, which consists of key terms related to 2019 grant applications. This paper proposes an experiment that utilizes these data mining models to analyze grant applications. Specifically, the experiments apply to IC-score proposals, which are peer-reviewed research proposals assigned IC scores by reviewers. The experimental results were used to obtain insights from the experiments, which also require a statistical analysis based on the IC scores of research proposals before designing the entire pipeline. Furthermore, the data mining models are applied to tens of thousands of features in the research proposals, which are significant for predicting IC scores. This paper also proposed the use of these features in the context of the experiments. Notably, the proposed model for predicting high IC-score research proposals can achieve an accuracy of 84.17% across all types of grant applications.",
+    "The proposed model for predicting high IC-score research proposals can achieve an accuracy of 84.17% across all types of grant applications, and it achieves the experimental results, which include the accuracy and effectiveness of IC-score proposals. This model, which is a data mining model using a Random Forest classifier, is required before designing the whole pipeline, as a statistical analysis based on the IC scores of research proposals is necessary. The current data set, which consists of key terms related to 2019 grant applications, was used as input for the experimental results. This paper utilizes the proposed model to analyze IC-score proposals, which are peer-reviewed research proposals submitted to an Australian Government research funding agency. The model can achieve predictions based on tens of thousands of features in the research proposals, and it is essential for understanding the vocabulary of these proposals. Overall, the experiment achieves the experimental results, demonstrating the model's effectiveness in predicting IC scores.",
+    "A model utilizes the experiment and the current data set to analyze grant applications. This paper is based on the necessity of conducting a statistical analysis before designing the entire pipeline, which is required based on the IC scores of research proposals. The experimental results proposed in this paper are derived from the application of the experiment, which also uses the current data set. Tens of thousands of features in the research proposals are employed to predict IC-score proposals, and these features are integral to achieving accuracy in the experimental results. The experiment proposed this paper and utilizes the features from the research proposals, which are also used as input for the current data set. Furthermore, the data set used to analyze the grant applications consists of the 2019 grant applications submitted to an Australian Government research funding agency, encompassing a broader term of grant applications. This paper also proposed the use of these features, while our proposed pipeline and the data mining model represent a broader term for the proposed model. Lastly, the data mining models encompass a broader term of an effective data mining model.",
+    "The data mining models encompass a broader category known as Data mining models, which are essential for extracting insights from large datasets. Specifically, the data set used to analyze the grant applications consists of the 2019 grant applications submitted to an Australian Government research funding agency, which includes various research proposals and is evaluated using IC scores. Within this context, data mining models are applied to these 2019 grant applications to assist in the manual review of research proposals, forming a proposed model that enhances the evaluation process. Furthermore, the data mining models are also linked to various data mining models and feature encoding algorithms, indicating their versatility in data analysis. We conduct several experiments to analyze moderate IC-score grant applications, utilizing a strict experimental pipeline for analyzing grant applications, which is a systematic approach to ensure rigorous evaluation. The proposed model for predicting high IC-score research proposals demonstrates an impressive accuracy of 84.17% across all types of grant applications, showcasing the effectiveness of the data mining techniques employed. This section details our proposed pipeline and the data mining model, which is based on the RF classifier utilizing unigrams and the modified TF-IDF algorithm, specifically designed for the 2019 grant applications.",
+    "A model has a broader term known as the proposed model, which encompasses various methodologies for solving specific problems. Among these, a Random Forest (RF) classifier over documents encoded with features denoting the presence or absence of unigrams is proposed as a model. The project aims to develop a predictive vocabulary for contemporaneous proposals, which is essential for understanding innovative project proposals that fall under the broader category of new research proposals. The RF classifier based on unigram and the modified TF-IDF algorithm is established specifically for analyzing 2019 grant applications. This classifier is part of a high-quality data mining model, which also has a broader term as the proposed model. The data set used to analyze the grant applications consists of the 2019 grant applications submitted to an Australian Government research funding agency, which is categorized under various data sets. Additionally, moderate IC-score grant applications correlate with research proposals that have high IC scores derived from the data features. The long-term data mining model is built to enhance the predictive capabilities of the project, and it has a broader term that includes various data mining models and feature encoding algorithms. These models are implemented using the scikit-learn library, which provides the necessary tools for applying data mining techniques. Furthermore, the RF classifier is part of a broader initiative that proposes an efficient feature extraction technique, allowing for experimental comparisons with Decision Tree (DT) classifiers. Overall, the RF classifier based on unigram and the modified TF-IDF algorithm predicts close to the original training set settings, showcasing its effectiveness in analyzing grant applications.",
+    "The core idea of defining the modified TF-IDF algorithm is meaningful and shows the rare terms associated with innovativeness, which has a broader term of new research proposals. This paper aims to find out the most influential terms related to these proposals. The RF classifier based on unigram and the modified TF-IDF algorithm serves as the final proposed model, although it does not utilize all the features. A model is proposed with the Random Forest algorithm, which is part of the broader category of data mining models. These data mining models, including the Random Forest classifier, are effective in analyzing moderate IC-score grant applications, which fall within the range of the proposed model. Additionally, IC-score research proposals have valid IC scores, and the 2019 grant applications submitted to an Australian Government research funding agency represent a broader term of grant applications. The decision tree plots generated by the data mining models visually represent the relationships and structures involved in this analysis.",
+    "The research proposals with high IC scores from the data features are closely related to the 'innovation and creativity' (IC) scores, which serve as a broader term for evaluating these proposals. A strict experimental pipeline for analysing grant applications is part of a scientific research project aimed at improving the evaluation process. The modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which can be understood as a refined version of the traditional TF-IDF, plays a crucial role in this analysis. Data mining models are utilized to introduce features extracted from the proposed model, which indicates that only 618 features are significant out of tens of thousands in the research proposals. We aim to find out the most influential terms that contribute to predicting high IC-score research proposals. The RF classifier, which employs the newly proposed modified TF-IDF algorithm, is designed to predict these high IC-score research proposals accurately. This classifier achieves an impressive accuracy of 84.17%, demonstrating its effectiveness in distinguishing between high and low IC-score research proposals. Additionally, various data mining models and feature encoding algorithms are also employed to predict high IC-score research proposals, further enhancing the robustness of the analysis. The 2019 grant applications submitted to an Australian Government research funding agency serve as the dataset for this study, encompassing a range of research proposals. However, it is noted that low IC-score research proposals are sometimes incorrectly classified as high IC-score proposals, highlighting the challenges in the evaluation process. Other effective data mining models, such as SVM, AdaBoost, and Xgboost, are also recognized as broader terms within the realm of data mining models, contributing to the overall methodology.",
+    "The RF classifier with the newly proposed modified TF-IDF algorithm is designed to achieve the best performance, reaching an accuracy of 84.17%. This classifier is a specific instance of RF classifiers, which are a broader category that includes effective data mining models and data mining models in general. These data mining models are applied to grant applications, including those specifically categorized as Ideas Grant applications only, which can achieve an accuracy of 82.5% when analyzed using the RF classifier based on unigram and the modified TF-IDF algorithm as the final proposed model. However, it is noted that high IC-score research proposals are incorrectly predicted as low IC-score research proposals by this model. Additionally, the modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which serves as a feature extraction technique, can be understood as a simple encoding method that assigns values based on the presence of terms in research proposals. Overall, various data mining models and feature encoding algorithms contribute to the broader proposed model framework, which encompasses four different data mining models, including Decision Tree (DT) and RF classifiers.",
+    "The proposal to develop an efficient feature extraction technique emphasizes the use of RF classifiers, which are a type of machine learning algorithm, alongside Decision Trees (DT) for experimental comparison. This modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm is designed to evaluate the performance of the TF-IDF algorithm with different data mining classifiers. The DT classifier presents valuable information that aids in the analysis of moderate IC-score grant applications, which are a subset of grant applications. These moderate IC-score grant applications are related to both low and high IC scores, indicating a spectrum of innovation and creativity in research proposals. The 2019 grant applications, which were submitted to an Australian Government research funding agency, encompass a broader category of research proposals that scientists and researchers write to outline their research plans. When collecting proposals, the process is linked to the broader concept of research proposals. Additionally, classifiers, which are integral to data mining models, include the RF classifier, a specific type of classifier used for categorizing data. A statistical analysis is based on research proposals with high IC scores derived from the data features, while median IC-score research proposals represent those with scores equal to the median value. High research proposals for future applications also fall under the broader category of research proposals. The TF-IDF algorithm implements the IDF part of the TF-IDF framework, contributing to the overall understanding of term importance in documents. Various data mining models and feature encoding algorithms are encompassed within the long-term data mining model, which is designed to extract insights over extended periods. The proposed model is trained based on low IC-score research proposals, further refining the approach to grant applications, which are systematically analyzed through a pipeline dedicated to this purpose.",
+    "A strict experimental pipeline for analysing grant applications is a methodology that encompasses various data mining models and feature encoding algorithms. This pipeline is designed to process all research proposals, which are saved in PDF format, and aims to predict high IC-score research proposals. The RF classifier based on unigram and the modified TF-IDF algorithm as the final proposed model is classified as an RF classifier, demonstrating its effectiveness in analyzing grant applications. The 2019 grant applications, which are submitted by the Australian Government research funding agency, represent a broader category of research proposals that scientists and researchers write to present their plans and significance to funding agencies. Additionally, the modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm is a specific instance of the broader Term Frequency - Inverse Document Frequency (TF-IDF) methodology. The experimental results from applying these models are crucial, particularly in relation to the plot of the DT classifier, which visualizes the decision-making process. Overall, the proposed model, which includes a long-term data mining model, aims to enhance the accuracy of predicting innovative research proposals, achieving an accuracy of 82.5%.",
+    "The modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm has a broader term relationship with the traditional TF-IDF algorithm, indicating its foundational role in text analysis. Similarly, the 2019 grant applications submitted to an Australian Government research funding agency are encompassed within the broader category of the Australian Government research funding agency. The RF classifier that utilizes the newly proposed modified TF-IDF algorithm also relates back to the TF-IDF algorithm, showcasing its advanced application in classification tasks. Furthermore, the concept of establishing a more comprehensive system that can predict grant applications based on multiple criteria is linked to the broader category of grant applications. In the realm of machine learning, RF classifiers serve as classifiers for documents encoded with features denoting the presence or absence of unigrams, demonstrating their utility in processing textual data. The IC-score research proposals are categorized under scientific research projects, while median IC-score research proposals fall under the broader umbrella of research proposals written by scientists and researchers to convey their research plans to funding agencies. The experiments conducted in this context are part of a larger set of experiments aimed at testing hypotheses and gathering data. Contributions from this research are explicitly listed in this paper, which also discusses high research proposals for future applications as part of the broader category of research proposals. Ideas Grant applications only represent a specific subset of grant applications, while moderate IC-score grant applications are classified under research proposals. The predictive vocabulary for contemporaneous proposals is another aspect that correlates with research proposals, particularly those with high IC scores derived from data features. Lastly, the RF classifiers are linked to the proposed model, and the RF classifier based on unigram and the modified TF-IDF algorithm is identified as a classifier, emphasizing its role in the proposed data mining model. The intra-class dispersion algorithm was proposed based on the traditional TF-IDF, highlighting its innovative approach to enhancing term weighting in documents. Overall, data mining models are proposed within the framework of an experimental pipeline, showcasing the systematic methodology employed in this research.",
+    "The newly proposed modified TF-IDF algorithm with DT and RF classifiers utilizes the Decision Tree (DT) algorithm, which is a broader term for the DT classifier. This paper, which encompasses IC-score research proposals, is categorized under the broader term of paper. The DT classifier is compared to the classification accuracy, highlighting its performance. Data mining models, which include various techniques, fall under the broader category of Data mining. The TF-IDF technique is recognized as a modified feature extraction algorithm. In the context of proposing an efficient feature extraction technique, the RF classifier with the Bagging ensemble method is also considered. The RF classifier achieves the best performance with an accuracy of 84.17%, which is classified under the broader term of classifier. The range of research proposals with moderate IC scores is a subset of research proposals. The RF classifier based on unigram and the modified TF-IDF algorithm is validated for its feasibility. Another popular data mining model is included in the broader category of Data mining models, which apply to the context where scientists and researchers write research proposals to present their plans to funding agencies. The DT classifier is also classified under the broader term of proposed model. Furthermore, RF classifiers are categorized under long-term data mining models, while IC-score research proposals contribute to the broader field of scientific research. Lastly, IC-score proposals are associated with various data sets.",
+    "The classifier has a broader term known as the proposed model, which encompasses various methodologies for categorizing data. Specifically, the RF classifier based on unigram and the modified TF-IDF algorithm as the final proposed model can better predict research proposals and also has a broader term that includes research proposals. High IC-score research proposals fall under the broader category of research proposals as well. The current data set, which is essential for the analysis, has a broader term that includes various data sets. The proposed model is trained based on high IC scores, which are crucial for predicting high IC-score research proposals, a task that is fundamentally linked to the broader concept of research proposals written by scientists and researchers to present their plans to funding agencies. IC-score proposals are evaluated using specific evaluation metrics, indicating their broader relevance in the context of thousands of research proposals submitted each year. Unigrams, which are encoded by the modified Term Frequency-Inverse Document Frequency (TF-IDF) algorithm, play a significant role in this process, as TF-IDF is widely used in data mining. The Australian Government research funding agency is utilizing data mining models to enhance their evaluation processes. The experiment, which is a broader term for various experiments, aims to assess feature importance in new research proposals. The modified Term Frequency-Inverse Document Frequency (TF-IDF) algorithm is a specific instance of a modified feature extraction algorithm, and tens of thousands of features in the research proposals are categorized under various data sets. Ultimately, a Random Forest (RF) classifier over documents encoded with features denoting the presence or absence of unigrams is a type of classifier that falls under the broader category of classifiers. Additionally, the other primary goal of the project is to develop a predictive vocabulary for contemporaneous proposals and to understand how the model infers research proposals with high IC scores from the data features.",
+    "The pipeline of analysing grant applications proposed an experimental pipeline, which serves as a systematic procedure for evaluating grant applications. This pipeline is closely related to the broader concept of feature extraction techniques, such as TF-IDF, which is a method used to weight terms in documents based on their importance. The Random Forest algorithm, a type of proposed model, also plays a significant role in this context. Moderate IC-score grant applications, which are a subset of research proposals written by scientists and researchers to present their plans to funding agencies, are evaluated using IC scores. These applications fall within a range that is analyzed for their innovation and creativity. Additionally, the decision tree plots generated by the best performance model provide insights into the decision-making processes involved. The TF-IGM technique has been shown to perform better than the traditional TF-IDF algorithm, highlighting advancements in feature extraction. The scikit-learn library is utilized to implement decision tree classifiers, while various cut-off options are tested to refine the selection of moderate IC-score grant applications. Furthermore, the modified TF-IDF algorithm, which focuses on the IDF component, contributes to the development of improved models like TF-IDCRF. Overall, the study of data mining models is essential for understanding feature encoding algorithms and enhancing the evaluation of research proposals.",
+    "Research proposals often use more diverse language, particularly in the context of low IC-score research proposals, which are a subset of research proposals characterized by their low innovation and creativity scores. The Preference Selection Index is a method that evaluates grant applications, and it was specifically used to assess these applications. In the realm of scientific research projects, a long-term data mining model is employed to analyze grant applications, as illustrated in Fig. 1, which shows the experimental pipeline for this analysis. Within this framework, RF classifiers are chosen over Decision Tree (DT) classifiers, as they consistently achieve better performance. This paper presents a proposed model that includes various data mining models and feature encoding algorithms, which are essential for extracting insights from the data. The experimental results focus on moderate IC-score research proposals to determine the relationship between low and high IC scores. Additionally, the modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm serves as a feature extraction technique within this proposed model. The RF classifier with the Bagging ensemble method and the bigram and trigram combinations are also part of the broader proposed model. Ultimately, the RF classifier based on unigram and the modified TF-IDF algorithm is highlighted as the final proposed model, demonstrating the significance of research proposals in presenting scientific plans to funding agencies.",
+    "High IC-score research proposals are a subset of the broader category of research proposals that scientists and researchers write to present their research plans and explain the significance of their projects to funding agencies. Within the realm of data mining, the Decision Tree (DT) classifier, which is a specific type of Decision Tree algorithm, is utilized for classification tasks. In the context of research proposals, features extracted from the proposed model indicate that only 618 features are deemed significant out of tens of thousands present in the research proposals. Furthermore, a Random Forest (RF) classifier, which operates on documents encoded with features indicating the presence or absence of unigrams, effectively classifies these unigrams. The experiment conducted falls under the broader field of scientific research, and its findings are detailed in the fifth section of the paper, which presents the experimental results. The modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which only implements the IDF part of TF-IDF, is also discussed. This paper contributes to the understanding of various data sets, including the 2019 grant applications submitted to an Australian Government research funding agency. Additionally, RF classifiers, which are a type of Random Forest algorithm, and DT classifiers are both integral to the data mining models employed in this research. The original training set settings define the range of IC scores used to evaluate grant applications, while the other primary goal of the project is to develop a predictive vocabulary for contemporaneous proposals, aiming to understand how the model infers high IC-score research proposals from the data features. The results of this study showed that the LDA with 30 keywords using TF-IDF was effective in extracting representative keywords from the analyzed text data.",
+    "The Decision Tree (DT) classifier utilizes Attribute Selection Measures (ASM) to select the optimal attributes for classification tasks. This classifier is a specific type of classifier, which is a broader category that includes various machine learning algorithms. AdaBoost, another machine learning algorithm, is also categorized under proposed models, indicating its role in enhancing predictive performance. In the context of research, 99 research proposals fall under the broader category of research proposals, which are formal outlines submitted for funding. The TF-IDCRF algorithm is related to a simple encoding technique that determines term values based on their presence in research proposals. Additionally, the modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm is linked to the IDF part of TF-IDF, which is crucial for weighting terms in information retrieval tasks. The RF classifier, which employs the newly proposed modified TF-IDF algorithm, is analyzed using functions from the scikit-learn library, showcasing its application in data mining. Low IC-score research proposals are also part of the broader category of research proposals, emphasizing the significance of these documents in the funding process. Overall, the TF-IDF technique is widely used in information retrieval, highlighting its importance in extracting relevant information from large datasets. Features extracted from the proposed model are part of the feature extraction technique, which is essential for identifying key attributes in data. The experimental results obtained from applying data mining models are significant, and hyper-parameter tuning plays a crucial role in optimizing these models. Furthermore, 13 research proposals with low IC scores are categorized under research proposals, while innovativeness is a key aspect of new research proposals, reflecting the ongoing efforts in research and development.",
+    "The project, which is a scientific research project, focuses on grant applications, including Ideas Grants, and employs various data mining models. Each experiment, which is a broader term for experiments, involves selecting new research proposals with low and high IC scores, and performance analysis is conducted based on the proposed training model. The RF classifier with the Bagging ensemble method is a specific type of RF classifier, which is a broader term for RF classifiers. The RF classifier based on unigram and the modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm serves as the final proposed model, achieving an accuracy of 84.17%, a significant accuracy value in the context of grant applications. The deletion of stop words can improve the performance of data mining tasks, which are essential for analyzing the features extracted from the proposed model. The median IC score is based on the selection range, indicating the range of research proposals with moderate IC scores. Additionally, the modified TF-IDF algorithm is a broader term for information retrieval, enhancing the overall effectiveness of the project.",
+    "The concept of a high IC score has a broader term, which is research proposal, indicating its relevance in evaluating the innovativeness of various proposals. A study by Fani et al. [23] has shown that deleting stop words can improve the performance of data mining tasks, which is a crucial aspect of the overall performance of data mining tasks. CouchDB serves as a storage solution for JSON files based on the proposal index, encompassing all research proposals submitted. RF classifiers, recognized as another popular data mining model, have a broader term of Data mining, highlighting their significance in this field. The Decision Tree (DT) algorithm has different settings that influence the performance of n-grams and deletion of rare terms, which are essential for effective data analysis. The best performance achieved by the RF classifier is noted to be 84.17% accuracy, which falls under the broader category of accuracy value. Future work in this domain is categorized under the broader term of The future work, which encompasses various planned research directions. The collection of 99 research proposals represents a broader term where scientists and researchers always write research proposals to present their research plans and explain the significance of the project to funding agencies. This system utilizes Latent Dirichlet allocation, a probabilistic model for topic modeling, to enhance the classification of research papers. In addition, the focus on proposing an efficient feature extraction technique rather than the choice of classifiers falls under the broader term of classifier. The RF classifier with the newly proposed modified TF-IDF algorithm is associated with standard corpora, which are essential for evaluating the performance of the model. The classification accuracy, which measures the effectiveness of predicting innovation and creativity scores, is another aspect that falls under the broader accuracy value. The TF-IDF technique is categorized under the broader term of scheme, representing a systematic approach to text analysis. The RF classifier with the Bagging ensemble method is another classifier that enhances predictive performance. A pipeline, which is a sequence of processes for analyzing grant applications, is part of the broader experimental pipeline. The four different data mining models implemented with the Bagging ensemble method demonstrate the versatility of machine learning techniques. The hyper-parameters of the RF classifier, specifically max_depth = 22, are crucial for optimizing its performance. Lastly, several experiments conducted to analyze grant applications with moderate IC scores are categorized under the broader term of experiments, emphasizing the importance of empirical investigation in this research area.",
+    "The process of specifying the IDF value for a term directly is related to the broader concept of IDF, which is a method used to adjust term frequencies in documents. In the context of research proposals, the most influential terms contribute to reducing weighted impurities, which are critical for the accuracy of data mining models. The experimental results obtained are based on the selection of high and low IC-score research proposals, which are essential for evaluating innovative project proposals. Furthermore, high research proposals for future applications fall under the broader category of scientific research. Among the proposals, 13 of which have an IC score below 1.0, are encompassed within the broader term of research proposals written by scientists and researchers to present their plans to funding agencies. All the text extracted from these proposals has a broader term of text, indicating the collection of unstructured data. The proposed model can better predict research proposals that align closely with the original training set settings, which is reflected in the experimental results. The low and high IC scores assigned to these proposals are part of the broader category of IC scores. Innovative project proposals are also classified under research proposals, highlighting their significance. A high-quality data mining model is developed as part of the methodology to enhance the prediction of these proposals. The experiments conducted involve proposing an efficient feature extraction technique, utilizing common classifiers like Decision Trees and Random Forests for comparison. Additionally, all JSON files related to these proposals are stored in a CouchDB database based on the proposal index, which organizes the data effectively. The Support Vector Machine (SVM) is another broader term associated with the proposed model, which also includes peer-reviewed research proposals and pre-trained language models. Ultimately, research proposals with high IC scores from the data features are conducted with experiments to ensure the best performance model is achieved, which is a critical aspect of the proposed model's effectiveness.",
+    "This paper is divided into six sections, providing a structured approach to its content. It discusses various classifiers, which are a broader term under data mining, and highlights the importance of accuracy values, with each accuracy having a broader term. The scientific research project aims to develop and understand how the model infers research proposals with high IC scores from the data features, utilizing a predictive vocabulary for contemporaneous proposals. Additionally, the project can apply advanced algorithms such as SVM, AdaBoost, and Xgboost. A total of 99 research proposals are randomly selected for model training, which is essential for evaluating the proposed model, including Xgboost and Multivariate Bernoulli Naive Bayes. The paper also emphasizes the significance of DT and RF classifiers for text classification, as they present valuable information regarding the most influential terms. All experimental settings for this paper are encompassed within the broader term of the paper itself. The choice of classifiers is discussed in relation to the broader category of classifiers, while the modified TF-IDF algorithm, which only implements the IDF part of TF-IDF, follows the concept that rare terms can define innovativeness. Furthermore, our proposed pipeline integrates various data mining models and feature encoding algorithms, addressing specific classification problems.",
+    "The process of predicting high IC-score research proposals is a subset of scientific research, which encompasses various methodologies and analyses. The modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm has been proposed for text classification, enhancing the evaluation of research proposals. Several experiments conducted within the realm of scientific research aim to analyze grant applications, particularly focusing on those with moderate IC scores. These experiments utilize the TF-IGM technique, which is a broader term related to information retrieval. Additionally, 'innovation and creativity' (IC) scores serve as evaluation metrics that assess the quality of research proposals. High IC-score research proposals are predicted based on the IC scores assigned by expert reviewers, indicating their potential for innovation. The 10-fold cross-validation method is applied in finding the hyper-parameters necessary for optimizing models, including the proposed model that evaluates moderate IC scores. Furthermore, a high-quality data mining model can be applied to develop standardized procedures and guidelines for assessing research proposals, while classifiers like RF and Decision Tree (DT) utilize n-grams and deletion of rare terms to enhance their predictive capabilities.",
+    "RF classifiers are utilized to find the best combination of the parameter and the target value, which is crucial for optimizing their performance. In the context of research proposals, these documents are evaluated based on their IC scores, which serve as a numerical assessment of their quality. A significant aspect of the project is to develop a predictive vocabulary for contemporaneous proposals, aiming to understand how the model infers research proposals with high IC scores from various data features. This initiative falls under the broader category of scientific research projects, which also includes the experimental results of checking moderate IC-score research proposals. Data mining models play a vital role in this process, serving as a method for extracting insights from data. Additionally, Decision Trees depend independently on random samples to enhance their predictive capabilities. The evaluation of research proposals is a significant and rigorous step for funding agencies, particularly the Australian Government research funding agency, which increasingly employs data mining models to assist in the manual review of these proposals. The Preference Selection Index (PSI) is another method that has a broader term in evaluating research grant applications. Low IC-score research proposals are analyzed through experiments, and they are categorized within various data sets. The pipeline of analyzing grant applications is part of the scientific research framework, ensuring a systematic approach to evaluation. The accuracy achieved by the proposed method, which is an accuracy of 82.5%, reflects the effectiveness of the techniques employed. Furthermore, TF-IDF, a feature extraction technique, is grounded in the Natural Language Processing field, and it is implemented using tools like gensim. The design of this approach follows the concept that rare terms can define innovativeness, which is essential for identifying groundbreaking research proposals. Lastly, Decision Trees utilize text classification techniques to categorize and analyze the proposals effectively.",
+    "The features extracted from the proposed model show that only 618 features are relevant. Additionally, the Term Frequency - Inverse Document Frequency (TF-IDF) has a broader term that encompasses information retrieval, while the features extracted also relate to various data sets. The hyper-parameters include min_samples_leaf, and max_features is a broader term that includes the hyper-parameters. Furthermore, the IC scores have a broader term represented by the set of grant applications of moderate IC scores. Papers with similar topics are based on a simple encoding technique, which involves taking the value 0 or the IDF value of the term depending on its existence in the research proposals. The TF-IDF and SVD algorithms were used for the feature selection step, and to find the hyper-parameters of the RF classifier, max_features is set as follows: (0.1, 0.999). Table 4 shows a list of experiments used to analyze the research proposals of moderate IC scores, which has a broader term of tables. The TF-IDCRF has a broader term that highlights the core idea of defining the modified TF-IDF algorithm as meaningful, showcasing rare terms associated with innovativeness. Fani et al. [23] have shown that deleting stop words can improve the performance of data mining tasks, which falls under the broader term of Data mining. Data mining models, which are part of the methodology, can transform massive amounts of unstructured data. All research proposals are saved in PDF files, and the modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm is a broader term related to scientific research. The 100 most influential features extracted are considered essential features. RF classifiers adopt the same setting of the hyper-parameter range, while the Decision Tree (DT) is used to find the best combination of the parameter and the target value.",
+    "The Decision Tree (DT) has a broader term known as the plot of DT classifier, which visually represents its decision-making process. In the realm of text analysis, Unigram serves as a foundational concept that falls under the broader category of n-grams. When discussing research proposals, low IC-score research proposals are classified under the umbrella of scientific research projects, while high IC-score research proposals also belong to the same broader category of scientific research. The TF-IDF algorithm, a key method in information retrieval, is another significant tool in this context. Furthermore, the RF classifier based on unigram and the modified TF-IDF algorithm is positioned within the broader scope of scientific research. The proposal to develop an efficient feature extraction technique, which includes the use of Decision Tree (DT) and RF classifiers, is categorized under method. In the field of text classification, the section titled '2.3 Data mining models in text classification' specifically concerns text classification tasks. To optimize the RF classifier, the hyper-parameters are set, including the min_samples_split parameter. The TF-IDF technique is also classified under method, highlighting its importance in data mining. Each year, thousands of research proposals contribute to the broader field of scientific research. The Support Vector Machine (SVM) is another classifier that fits within the broader category of classifiers. The evaluation of moderate IC scores involves testing several cut-off options, such as 20, 25, 30, 35, 40, 45, and 50. Additionally, another popular data mining model is recognized as part of the broader data mining field. Research proposals with high IC scores derived from data features are essential for generating experimental results. The project's motivation and problem statement are introduced within the broader context of background. The Decision Tree (DT) is also relevant to specific classification problems, while this project is classified as a scientific research project. The experimental results of checking moderate IC-score research proposals contribute to the broader scientific research domain. Lastly, the modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm is categorized under Natural Language Processing, emphasizing its role in this computational field.",
+    "The experimental results show that rare terms can define innovativeness, highlighting the potential of specific linguistic features in assessing research proposals. In the context of classification, RF classifiers vote on the outcomes of each tree in specific classification problems, contributing to the overall decision-making process. Furthermore, research proposals with high IC scores from the data features have a broader term encompassing various features that aid in their evaluation. Determining whether a scientific research project is worthy of funding is recognized as a significant and rigorous step for funding agencies, emphasizing the importance of thorough assessment. The TF-IDF technique, which has a broader term of methodology, is employed to analyze textual data effectively. A collection of 99 research proposals is categorized under various data sets, illustrating the diversity of submissions. The current data set contains only key terms for 2019, which are crucial for the analysis. Additionally, Fig. 1 shows the pipeline of analysing grant applications, providing a visual representation of the process. The DT and RF classifiers for text classification, aimed at identifying the most influential terms, fall under the broader category of classifiers. The methodology section of this study has a broader term that includes Section 4, which details the experimental approach. This study itself is part of a larger paper, contributing to the academic discourse. The same method used in this research has a broader term of method, indicating its systematic approach. Table 1 shows a statistic of IC scores, revealing that 3,693 research proposals have valid IC scores, which is categorized under tables. The hyper-parameters of the analysis are defined as max_features = (0.1, 0.999), guiding the classifier's behavior. The modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which has a broader term of method, serves as a key feature extraction technique. Various data sets are utilized to analyse grant applications, reinforcing the connection between data and evaluation. Grant applications themselves are categorized under various data sets, indicating their role in the research landscape. The overall design of the project encompasses the broader term of Design, which outlines the project's framework. Lastly, Text pre-processing is specifically for grant applications, ensuring that the data is prepared adequately for analysis.",
+    "Low IC-score research proposals are categorized under the broader term of scientific research, indicating their role within the larger context of systematic investigations. Similarly, the vocabulary of innovative proposals is a subset of research proposals, highlighting the specific language used to describe innovative projects. The RF classifier based on unigram and the modified TF-IDF algorithm serves as a method, which is also linked to the broader category of experimental results, showcasing its application in evaluating research outcomes. The pipeline of analysing grant applications is classified under methodology, emphasizing its systematic approach to processing grant data. Various data mining models and feature encoding algorithms are also considered methods, contributing to the overall framework of data analysis. The performance of data mining tasks falls under evaluation metrics, which are essential for assessing the effectiveness of these methods. Additionally, the relationship between classes in the classification model is encompassed within the proposed model, illustrating the connections between different classification outcomes. Hyper-parameters, such as min_samples_split and n_estimators, are critical components that influence the behavior of classifiers like the Decision Tree (DT), which ultimately contains all the decisions made during classification. The methodology section of this study is organized into six sections, providing a structured overview of the research. Furthermore, the modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm is part of the broader methodology, serving as a key technique in data analysis. Each tree in specific classification problems is categorized under classifiers, demonstrating the ensemble approach used in machine learning. Lastly, the experimental results of checking moderate IC-score research proposals are classified as experiments, reflecting the scientific investigations conducted to validate the findings.",
+    "Various data mining models and feature encoding algorithms are encompassed within the broader term of methodology, which provides a systematic approach to research. Custom stop words are utilized according to the Term Frequency - Inverse Document Frequency (TF-IDF) method, which is essential for processing textual data. The concept of max_depth is categorized under the broader term of hyper-parameters, which are crucial for tuning machine learning models. Decision Trees (DT) also fall under the broader category of methods used for classification tasks. Interestingly, the modified TF-IDF algorithm, which only implements the IDF part of TF-IDF, does not affect the shape of the tree as seen in the tree graph, indicating a separation of concerns in model design. In the realm of Computer Science, evaluating grant applications is a significant task, highlighting the intersection of technology and funding. Latent Dirichlet Allocation (LDA) and its schemes are classified under the broader term of schemes, which are methodologies for organizing data. The experimental results of checking moderate IC-score research proposals also relate back to the broader methodology, showcasing the systematic investigation of research proposals. The RF classifier with the Bagging ensemble method is categorized under the Bagging ensemble method, emphasizing its role in improving predictive accuracy. Furthermore, RF classifiers are associated with specific classification problems, demonstrating their application in categorizing data. Grant applications, which are formal requests for funding, are classified under documents, indicating their nature as written works. Different funding projects are part of the broader category of scientific research projects, which aim to advance knowledge. Attribute Selection Measures, essential for evaluating features, fall under the broader term of evaluation metrics. Documents encoded with features denoting the presence or absence of unigrams are categorized under features, showcasing their role in data representation. The hyper-parameters, specifically defined as min_samples_split = 67, are critical for decision tree algorithms. Synergy Grants, a type of funding, are associated with the Australian Government research funding agency, highlighting the support for scientific endeavors. A simple encoding technique, which takes the value 0 or the IDF value of a term based on its presence in research proposals, is classified under methods, indicating its systematic approach. The number of research proposals accurately predicted, which includes 59 for low IC scores and 42 for high IC scores, falls under the broader category of numbers, representing quantifiable outcomes. Lastly, LDA schemes are linked to information retrieval, emphasizing their role in obtaining relevant data from large datasets.",
+    "The Design process encompasses various features that enhance its effectiveness. Within the realm of information retrieval, the deletion of rare terms plays a crucial role, as it helps streamline the data by removing infrequently occurring words. Another similar and recently related work contributes to the field of paper classification, particularly focusing on grant applications, which are essential for scientific research. Insights, trends, and patterns derived from research proposals indicate that those with high IC scores tend to utilize more diverse language compared to those with low IC scores. The proposed model is grounded in a robust methodology that includes techniques such as the RF classifier based on unigram and the modified TF-IDF algorithm. To optimize this model, hyper-parameters like max_samples_leaf are set to enhance performance. An effective data mining model serves as a technique that aids human evaluators in assessing research proposals. The TF-IDF algorithm, when combined with different data mining classifiers, provides a comprehensive method for analyzing textual data. IDF is also a significant method that adjusts term frequencies to prioritize informative terms. All experimental settings for this paper are meticulously designed to ensure rigorous scientific research projects. The results obtained from these experiments are summarized using a confusion matrix, which is a vital tool in statistical analysis. Data mining models not only assist in extracting valuable insights but also help human evaluators better understand the evaluation criteria, particularly when distinguishing between low and high IC scores. Applying the same method but with different hyper-parameters allows for the refinement of the proposed model, ultimately enhancing its effectiveness in analyzing research proposals.",
+    "The research paper classification system, referred to as 'Another similar and recently related work', is a part of the broader field of scientific research. It utilizes various techniques, including the TF-IDF method, which is a common approach for feature extraction. The features extracted from the proposed model indicate that only 618 out of tens of thousands of features in the research proposals are considered significant. Additionally, the mode IC score, which is a key evaluation metric, is related to the broader category of evaluation metrics. The Decision Tree (DT) classifier, which is also categorized under scientific research, is employed alongside other classifiers for experimental comparisons. The experimental results of checking moderate IC-score research proposals contribute to the understanding of scientific research methodologies. Furthermore, scientists and researchers write research proposals based on interval-valued intuitionistic fuzzy sets to present their plans to funding agencies. The top 100 features extracted from the model provide insight into the internal workings of the classifier, shedding light on what is going on inside the black box. The goal of developing a predictive vocabulary for contemporaneous proposals is linked to the broader concept of vocabulary in research. Overall, high IC-score research proposals fall under the topics of scientific inquiry, while the confusion matrix serves as a statistical measure to evaluate the performance of classifiers.",
+    "The parameter values for each accuracy are crucial in determining the optimal hyperparameter settings for data mining models. The future work can be carried out from different perspectives, exploring various avenues for enhancing the proposed methodologies. The TF-IDF algorithm, which is integral to Natural Language Processing, has a broader term that encompasses various methods used in the field. To find the hyper-parameters of the RF classifier, specific settings such as n_estimation = (100, 400) are established. Our proposed pipeline, which is a systematic approach, has a broader term known as the experimental pipeline. Additionally, the research proposal serves as a foundational document that has a broader term, which is simply referred to as a paper. The max_samples_leaf parameter is part of the broader category of hyper-parameters that govern the behavior of classifiers. The term 'The term' itself has a broader term, which is the mathematical concept of term. The Term Frequency - Inverse Document Frequency (TF-IDF) method is a statistical approach that also falls under the broader category of methods. Similarly, the newly proposed modified TF-IDF algorithm with DT and RF classifiers is classified as a method. In linguistic analysis, bigrams and trigrams are specific types of n-grams that help in understanding language patterns. This section describes all experimental settings for this paper, which include various methodologies and tools. Rare terms, which are significant in information retrieval, highlight the importance of identifying unique phrases in research proposals. The Preference Selection Index is another method that evaluates research grant applications without needing to assign weights to criteria. In addition to the experiments analysing all grant applications, a multi-criteria approach proposed by Oztaysi et al. enhances the evaluation process. Lastly, the Decision Tree (DT) classifier is a method that utilizes decision rules to classify data effectively.",
+    "The moderate IC score is a specific type of IC scores, which serve as numerical values for evaluation. The TF-IDF algorithm is a broader method that encompasses various techniques for measuring term importance in texts. Performance, as a general concept, includes specific instances such as the best performance achieved with 84.17% accuracy by the RF classifier. The experimental pipeline is a systematic approach that falls under the category of scientific research projects. In every Ideas Grant application, there is a section called 'Innovation and Creativity statement,' which is part of the broader category of experiments. The experimental results of checking moderate IC-score research proposals contribute to the overall body of experimental results. The PSI method is a specific methodology that is part of a broader category of methods. Similarly, the LDA with 30 keywords using TF-IDF is categorized under methodology. The same method used for analyzing grant applications is a technique that can be applied in various contexts. In addition to the experiments analyzing all grant applications, which also fall under scientific research projects, the modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm is recognized as a technique. Research proposals are formal outlines that belong to the broader field of scientific research. The Term Frequency - Inverse Document Frequency (TF-IDF) is a methodology that aids in understanding term significance. Other evaluation scores are alternative metrics that fall under the broader category of evaluation scores. The text pre-processing step is implemented using the Porter Stemming algorithm, which refines the data for analysis. The results of experiments are often influenced by the size of the data set used. The experimental results of this project and further analysis contribute to the broader category of experimental results. Classifiers are a type of method used in data analysis. Finally, developing cutting-edge scientific research is a significant endeavor within the realm of scientific research projects, and the RF classifier based on unigram and the modified TF-IDF algorithm represents a specific technique in this field.",
+    "Attribute Selection Measures are a subset of methods used to evaluate and select features in datasets, indicating their broader relationship to methodology. Similarly, various data mining models and feature encoding algorithms fall under the broader category of techniques. Another similar and recently related work, which is a research paper classification system, is classified as a methodology. The concept of max_features is categorized under hyper-parameters, which are adjustable parameters that influence model performance. MEL is recognized as a broader term within scientific research, while IC scores serve as evaluation metrics, providing a numerical assessment of various models. The section titled '2.3 Data mining models in text classification' encompasses topics related to data mining techniques for text classification. Additionally, the predictive vocabulary for contemporaneous proposals is classified under vocabulary, highlighting its role in predicting research proposals. The confusion matrix, a tool for visualizing model performance, is categorized under tables. The most influential terms are recognized as a subset of key phrases that significantly impact text classification. Implementations with the hardware platforms are a broader category that includes various implementations of data mining models. The TF-IDF algorithm is also classified under methodology, emphasizing its systematic approach to text analysis. The reference [20] is a broader term that includes citation [25]. The hyper-parameters are defined as equal to n_estimation = (100, 400), indicating the number of trees in a Random Forest classifier. Both Latent Dirichlet allocation and LDA are categorized under methods, showcasing their roles in topic modeling. Table 1 is associated with the performance of checking research proposals, providing statistical insights. Furthermore, pre-trained language models excel in understanding text semantics, demonstrating their effectiveness in natural language processing. Lastly, the process to find the hyper-parameters of the RF classifier is recognized as part of scientific research.",
+    "Pre-trained language models in the Natural Language Processing (NLP) field perform well in understanding text semantics, which is a broader term encompassing the process of analyzing and interpreting the meaning of written language. The TF-IDF as the feature extraction technique and the 10-fold cross-validation method are both categorized under the broader term method. In the realm of machine learning, Multivariate Bernoulli Naive Bayes was compared with SVM, highlighting the competitive nature of these algorithms. Additionally, the Decision Tree (DT) classifier is recognized as a technique that can be interpreted to mean a forest of decision trees. The results of various experiments, which adopt the same setting of the hyper-parameter range, contribute to the broader category of experimental results and methodology. The project's motivation is rooted in the broader concept of motivation, driving the development of cutting-edge scientific research, which is a subset of scientific research. Furthermore, scientists and researchers actively write research proposals, utilizing n-grams and various data sets, which are also classified under various data sets. The top 100 features are significant characteristics within these datasets, while bigram and trigram combinations are not regarded as essential features by the DT classifier. Lastly, a fuzzy preference relation matrix was used to determine the relative importance of criteria, showcasing the systematic approaches employed in this field.",
+    "IC scores are a specific type of evaluation scores, which serve as a broader term for assessing various metrics. In the realm of linguistic analysis, Unigram is categorized under the broader term method, while the 10-fold cross-validation method is part of the methodology used for model evaluation. Additionally, the focus on proposing an efficient feature extraction technique rather than the choice of classifiers also falls under the method category. The concept of max_features is a broader term that encompasses features used in machine learning. To find the hyper-parameters of the RF classifier, the max_depth is set as follows: max_depth = (5, 60). The modified feature extraction algorithm and the Term Frequency & Inverse Gravity Moment are both classified under method as well. Table 1 shows a statistic of IC scores, providing insights into their evaluation. Furthermore, the process of writing research proposals by scientists and researchers is a broader term related to scientific research. Test data is a broader term that includes various data sets used for evaluation purposes. The maximize method is another example of a broader term under method, as is the RF classifier with the Bagging ensemble method. The IDF value is categorized under statistical measures, while grant applications are a broader term that relates to topics of research funding. Scientific research funding to support essential and cutting-edge scientific research each year is also a broader term associated with scientific research. The proposed model achieves an accuracy of 84.17%, which is classified under experimental results. Research proposals are a broader term that falls under methodology, and the deletion of stop words is another method used to enhance data relevance. Lastly, Attribute Selection Measures are categorized under measure, indicating their role in evaluating and selecting features.",
+    "The project aims to develop a predictive vocabulary for contemporaneous proposals, which is a broader term encompassing vocabulary. It employs the TF-IDF algorithm with different data mining classifiers, a technique that also includes IDF as a broader term. The methodology incorporates the 10-fold cross-validation method and the K-means clustering algorithm, both classified under methods. Additionally, MEL is recognized as a broader term for methodology. Evaluation metrics are represented by PSI and accuracy value, while IC scores serve as criteria for assessment. The project also utilizes various implementations, including a modified TF-IDF algorithm that only implements the IDF part. It analyzes 30 keywords, which fall under various data sets. Hyper-parameters are defined by min_samples_split and n_estimators, while features include the bigram and trigram combinations as the proposed model. The experimental pipeline is another method employed in the research, and the unigram terms are categorized under words. Lastly, Term vectors are linked with statistical measures, and the Term Frequency & Inverse Gravity Moment is classified under methodology, while quantitative data is associated with statistical analysis.",
+    "The TF-IDCRF and TF-IDF and SVD algorithms are both categorized under the broader term 'method', indicating their systematic approaches to problem-solving. In the realm of data, 'training data' is a subset of 'various data sets', highlighting its role in machine learning. 'All experiments' fall under the umbrella of 'experiments', showcasing the systematic investigations conducted. Similarly, 'a multi-criteria approach' is a specific type of 'technique', while 'the experimental settings' provide a detailed account of 'experimental settings'. Parameters such as 'max_features' and 'min_samples_leaf' are both classified as 'parameter', essential for tuning machine learning models. The 'TF-IGM' is another technique that fits within the broader category of 'technique'. The 'news classification method' was proposed using the SVM algorithm, demonstrating a practical application of machine learning. 'LDA schemes' also belong to the broader category of 'method'. The confusion matrix, referred to as 'It', is part of 'scientific research', which encompasses systematic investigations. 'Grant schemes' are classified under 'scientific research project', indicating their role in funding research initiatives. The 'deletion of rare terms' is recognized as a method, while 'Data mining' is categorized as a method as well. The vocabulary used in innovative proposals is part of 'scientific research project', emphasizing its importance in research contexts. Furthermore, it is confirmed that the feature words deemed important by decision tree and random forest classifiers will be less than 1000, which relates to 'specific classification problems'. 'Max_depth' is a type of 'hyper-parameters', essential for controlling model complexity. 'Text classification' is a broader term that encompasses 'information retrieval', indicating its relevance in obtaining relevant data. Lastly, the phrase 'we do not choose' is associated with the proposed model of 'bigram and trigram combinations', illustrating a linguistic approach to data analysis.",
+    "Statistical measures have a broader term known as quantitative data, which encompasses various numerical indicators used to summarize or describe data. Within the realm of Natural Language Processing, n-grams serve as a broader term that aids in analyzing linguistic patterns. The feature extraction technique is categorized under the broader term method, indicating its systematic approach to identifying relevant characteristics from data. In the context of research, the paper is represented through term vectors and statistical measures in text representation, which is also a broader term. The experimental pipeline describes the methodology used in experiments, and it too falls under the broader term methodology. Oztaysi et al. proposed the Term Frequency & Inverse Gravity Moment, which is a significant contribution to the field. The Feasibility Score is a broader term that relates to criteria used for evaluating project success. Additionally, the TF-IDCRF algorithm is classified under methodology, highlighting its improved approach to term frequency analysis. Visual representations, such as Fig. 1, show the confusion matrix, which summarizes the performance of classification models. Implementations with the hardware platforms are categorized under hardware platforms, indicating the experimental configurations used. Interval-valued intuitionistic fuzzy sets and F-score are both broader terms under evaluation metrics, which are essential for assessing model performance. Furthermore, scientists and researchers present their research plans, outlining their strategies for securing funding. LDA schemes are also classified under methodology, contributing to the systematic categorization of research approaches. Lastly, the research paper classification system is a broader term that encompasses the paper, illustrating the systematic categorization of research documents, while data mining is recognized as a broader term under methodology, emphasizing its role in discovering patterns in large datasets.",
+    "Das and Chakraborty based their work on a modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which is a statistical method used to assess the importance of terms in documents. This algorithm is part of a broader category of techniques that includes the traditional TF-IDF and various feature extraction methods. The most influential terms identified through this algorithm can be classified under the broader term 'term', which also encompasses concepts like Unigram and n-grams. Additionally, the research paper classification system is designed to address specific classification problems, which can also be approached using methods like SVM and Bayesian Optimization. Oztaysi et al. applied TF-IDF and SVD algorithms to enhance their methodologies, while the scoring method they developed is crucial for determining whether a scientific research project is worthy of funding. Overall, these methodologies and techniques contribute significantly to the field of scientific research.",
+    "The concept of standard corpora encompasses a broader term known as documents, which refers to a collection of written works. Similarly, the parameter values, which include various hyper-parameters used in machine learning, fall under the broader category of parameters. The Porter Stemming algorithm is a specific instance of text stemming, which is a broader technique aimed at reducing words to their root forms. In the realm of linguistic analysis, n-grams represent a broader category of features, while classifiers are a type of technique used for categorizing data. The RF algorithm is classified as a method within machine learning, and n-grams also relate to broader methodologies. The only evaluation criterion is a specific instance of criteria used for assessment, and Attribute Selection Measures are techniques employed to evaluate features. The numbers mentioned in various contexts are a broader term for numerical values. Additionally, the phrase 'Based on the confusion matrix above' refers to a broader scientific research project. Unigrams, which are sequences of single words, are a specific type of term. Feature encoding algorithms are methods that convert raw features into suitable representations, and the statement regarding evaluators and experimental results is a broader methodology. The parameter min_samples_split is a specific type of parameter, while the best performance achieved in a study is a broader term for performance outcomes. Ideas Grants represent a broader category of topics related to innovative funding opportunities. The Porter Stemming algorithm and the process of calculating TF are both classified as methods, and n_estimators is another specific parameter used in machine learning.",
+    "The scoring method is a systematic approach that falls under the broader category of evaluation metrics, which are quantifiable standards used to assess quality. Within the realm of methods, the fuzzy preference relation matrix serves as a mathematical representation of preferences, while techniques like LDA and Latent Dirichlet allocation are essential for topic modeling. The core idea of defining the modified TF-IDF algorithm highlights the significance of rare terms associated with innovativeness, a quality that is crucial for progress. The government receives thousands of research proposals each year, which are evaluated using IC scores, a broader measure of assessment. Next Word Negation (NWN) is a linguistic technique that is part of the Natural Language Processing (NLP) field, which also encompasses experiments that are systematic investigations within scientific research projects. The Preference Selection Index (PSI) is another method used for evaluation, while TF-IDF serves as a feature extraction technique. Parameters such as max_depth and max_samples_leaf are critical hyper-parameters that influence model performance. Additionally, classification accuracy (Acc) and IC scores assigned by expert reviewers are both evaluation metrics that help gauge effectiveness. The 10-fold cross-validation method is a technique for model evaluation, and standard corpora are utilized in the Natural Language Processing field for testing. A comparison study is a type of scientific research project that assesses different methods, and pre-trained language models in the NLP field excel in understanding text semantics, which can also be a focus for future research.",
+    "The TF-IDF and Multivariate Bernoulli Naive Bayes is a method that falls under the broader category of systematic approaches. In the context of specific classification problems, each tree in these problems represents a decision-making process that contributes to the overall classification task. Additionally, random exploration on the parameter space is another method used to optimize model performance. The performance of checking research proposals is evaluated using various performance metrics, including the F1 score, which is a key evaluation metric that combines precision and recall. Documents, which are collections of written works, are part of various data sets used in scientific research. The analysis of these documents can be enhanced by methodologies such as MEL, a technique that aids in research. Furthermore, Next Word Negation (NWN) is a method that analyzes linguistic patterns, while TF serves as a statistical measure of word frequency. Unigram terms are also techniques used to represent text features. In addition, there is a focus on proposing an efficient feature extraction technique rather than solely on the choice of classifiers. The Term Frequency & Inverse Gravity Moment is a technique that adjusts term weights to improve classification. The modified feature extraction algorithm is another technique aimed at enhancing performance. The Bagging ensemble method is a method that combines multiple models to improve predictive accuracy, and the RF classifier with the Bagging ensemble method is a specific technique that utilizes this approach. The maximize method is a technique used for hyper-parameter tuning, which involves exploring initial points in the parameter space. Lastly, This section refers to Section 4 of the document, detailing the workflow of the proposed pipeline.",
+    "The reason for choosing 1.0 is based on preliminary experiments that confirmed the importance of feature words in text classification tasks. The deletion of stop words is a technique that enhances the performance of specific classification problems by removing insignificant terms. In this context, init_points parameters are a type of parameter used in Bayesian Optimization, which is crucial for tuning classifiers like Random Forest. Unigram terms are part of bigram and trigram combinations, which are essential for analyzing linguistic patterns. Additionally, moderate IC scores serve as criteria within a multi-criteria approach, which is a method for evaluating various aspects of scientific research. Experiments conducted using the K-means clustering algorithm and the 10-fold cross-validation method demonstrate the application of these techniques in statistical analysis. Furthermore, n-grams are a broader term that encompasses various linguistic units, while Tesseract-OCR represents a method for extracting text from images. Researchers often write research proposals to outline their plans, which are fundamental to the work of scientists and researchers. The experimental pipeline is a technique that streamlines the research process, and the more steps taken in hyper-parameter tuning can lead to improved model performance. Lastly, when calculating term frequency (TF), words are treated as equally important, ensuring a balanced representation in text analysis.",
+    "The TF-IDCRF and TF-IDF and SVD algorithms are both techniques that fall under the broader category of systematic approaches. After implementation of some preliminary experiments, which are considered a type of implementation, it was observed that Table 1 serves as a specific example of tables that organize data. This section of the paper is part of a larger structure, as the paper itself is divided into six sections. The researcher, who is a type of scientist, engages in scientific research projects that contribute to the field of scientific research. Additionally, LDA schemes and deletion of rare terms are both techniques that enhance data mining, which is also classified as a technique. The maximum depth of the tree is a characteristic of tree structures, while human evaluators play a crucial role in better screening excellent research proposals and evaluating future research proposals. The overall design of the project encompasses the scientific research project, and rare terms can define the concept of innovativeness. Unigram, which refers to these words, is another technique that is part of the broader methodology. Lastly, the multi-criteria approach is a systematic evaluation framework that falls under the category of methodology, while ASM is a method that is also classified as a broader method. The Innovation and Creativity statement highlights the criteria used for evaluating innovative ideas.",
+    "The feature extraction technique is a specific type of technique used in data analysis. In the context of research, the paper has a broader term of scientific research, indicating its role in contributing to the field. Within this framework, the variable n_iter is defined for the number of steps to run the optimization function, which is crucial for iterative processes. Additionally, Table 6 serves as a specific instance of tables, providing structured data relevant to the study. The numbers presented in the research are categorized under quantitative data, emphasizing their numerical nature. Text pre-processing is recognized as a method that prepares data for analysis, while the concept of innovativeness should not be the only evaluation criterion when assessing research proposals. The cross-validation setup is a methodology that ensures the reliability of experimental results, which are derived from various data sets. Parameters such as max_samples_leaf are essential for defining the limits of models, and insights, trends, and patterns are derived from these experimental results. Furthermore, the scoring method is a systematic approach used to evaluate the effectiveness of the methodologies employed. The research also involves 618 features, which fall under the broader category of numbers. The scheme used in the study is part of the methodology, and n-grams are a technique that aids in analyzing linguistic patterns. Lastly, the term vectors and statistical measures in text representation relate to the broader topics of the research, while the news classification method exemplifies a systematic approach to categorizing information.",
+    "The number of steps to run the optimization function is a specific type of parameter, which is essential in various optimization processes. In the realm of Computer science, Natural Language Processing is recognized as a subfield that employs techniques such as Bayesian Optimization, a method that falls under the broader category of techniques. Additionally, removing punctuations and tokenizing by whitespace are also adopted, which make the text into small pieces called tokens, representing a method used in text processing. Contributions from research often lead to experimental results, which are a part of scientific research projects. Statistical measures serve as a broader term for measures that quantify data, while massive amounts of unstructured data can reveal insights, trends, and patterns, contributing to the understanding of various data sets. Documents, which are a collection of text, are often analyzed through experiments that follow a specific methodology. In comparative analyses, Table 1 is compared to Table 6, showcasing different data presentations. The RF algorithm is another technique used in classification tasks. A comparison study is a type of methodology that evaluates different approaches. The number of steps to run the optimization function is also categorized as a measure. The maximize function is a method aimed at finding optimal values. Furthermore, a significant and rigorous step for funding agencies is a crucial part of the evaluation process, which is a step in the funding cycle. The news classification method is a systematic approach that falls under the broader category of methodology. The Australian Government research funding agency is reviewed by expert panels, which also receive thousands of research proposals each year for evaluation.",
+    "Feature encoding algorithms are a subset of techniques that facilitate the conversion of raw features into more suitable representations for various applications. Within the realm of scientific research, a scientific research project can be viewed as a specific methodology aimed at advancing knowledge. Text stemming, a method that reduces words to their root forms, utilizes references such as [2] to enhance its effectiveness. The Porter Stemming algorithm is another technique that falls under the broader category of techniques used in natural language processing. When calculating TF, it is essential to recognize that this process is also categorized as a technique. Human evaluators play a crucial role as they respond to these necessary qualities that define innovative research proposals. The parameter max_depth = (5, 60) indicates the maximum depth of the tree in decision tree algorithms. We, the authors, need to implement the scoring method to evaluate research proposals effectively. The fuzzy preference relation matrix is a mathematical representation that also belongs to the broader category of techniques. Qin proposed the TF-IDCRF, an improved algorithm that enhances the relationship between classes in classification models. The n_iter and init_points parameters are essential specifications that fall under the broader term of parameters used in optimization processes. Feature importance is a critical measure that is categorized under criteria for evaluating research. Python-based methods represent a systematic approach that is classified as a method in software development. Bigrams and trigrams are both terms that represent sequences of adjacent words, and they are essential for analyzing language patterns. The Preference Selection Index (PSI) is another technique used for evaluating and ranking options. The importance of developing cutting-edge scientific research is a concept that underscores the value of scientific research as a whole. Term weights are parameters that signify the relative importance of terms in a given context, while random exploration on the parameter space is a technique that aids in discovering diverse regions within the parameter space.",
+    "The Significance Score has a broader term known as criteria, which serves as a set of standards for evaluation. In the realm of numerical references, the citation [2] is categorized under the broader term numbers, indicating its role in quantifying data. Furthermore, the best combination of the parameter and the target value is encompassed within the broader category of experimental results, highlighting its importance in scientific findings. JSON files are stored in CouchDB, a NoSQL database, showcasing the relationship between data storage and management systems. The process of applying the same method but with different hyper-parameters falls under the broader term of experiments, emphasizing the iterative nature of scientific inquiry. Next Word Negation (NWN) is classified as a technique, which also includes the Bagging ensemble method, another broader term for various techniques in machine learning. The concept that rare terms can define innovativeness is linked to the broader term innovativeness itself, suggesting a connection between language and creativity. Additionally, the size of the data set is a broader term for features, indicating the importance of data characteristics in analysis. Tables, such as Table 5 and Table 6, are categorized under the broader term tables, which organize data effectively. The predictive vocabulary is a broader term for vocabulary, essential for understanding language patterns. Scientists and researchers explain the significance of the project, emphasizing its impact on the field. The performance of moderate IC score reflects a specific evaluation metric, while the multi-criteria approach is a broader term for various techniques used in systematic evaluations. Lastly, JSON files are classified under file types, illustrating the diversity of digital data formats, and the idea that rare terms can define innovativeness is further categorized under the term itself.",
+    "Tesseract-OCR is a technique that falls under the broader category of techniques used for optical character recognition. Similarly, the n_iter is a parameter that is part of the larger concept of parameters. Human evaluators, who are essentially scientists, assess various aspects of research and proposals. The more steps taken in a process also represent a technique, just like Hyper-parameter tuning, which is another systematic approach to optimizing model performance. Custom stop words are a specific type of stop words that are excluded from text analysis, while the first step in any data mining model is categorized as a step. The vocabulary of innovative proposals is a subset of vocabulary that focuses on the language used in project proposals. In linguistic analysis, a bigram is part of the broader category of bigram and trigram combinations, which also includes trigrams. Performance is evaluated using metrics that quantify the effectiveness of a system. Hyper-parameters are adjustable parameters that fall under the broader category of parameters. The technique known as TF-IDF and Multivariate Bernoulli Naive Bayes has been shown to obtain the best results when applied to news articles in the Indonesian Language corpus. Additionally, trigram denotes a specific type of bigram and trigram combinations. Memory configuration is defined by specifications such as 16GB 2133 MHz LPDDR3, which is a type of memory configuration. Lastly, both scheme and ASM are techniques that provide systematic approaches to organizing and analyzing data.",
+    "The version 1.0 has a broader term known as numbers, which encompasses a set of numerical values. In the realm of research, experimental settings and implementations with the hardware platforms fall under the broader term methodology, which also includes methods and experimental results. Specifically, the text sentiment classification technique is categorized as a method. The MacBook Pro with Intel Core i7 2.9 GHz Quad-Core processor is equipped with the Intel Core i7 2.9 GHz Quad-Core processor. Additionally, the Innovation and Creativity statement is part of Section 4. The parameter max_depth = (5, 60) is a specific instance of a broader category of parameters. The researchers Guo and Yang are classified under the term scientists, while news articles were classified by the citation [2]. Text pre-processing techniques are a subset of techniques used to prepare data. Furthermore, news articles in the Indonesian Language corpus are categorized as standard corpora. The RF algorithm selects the most popular category as the final result in its classification process. Deletion is a method that also falls under the broader term method, and the scoring method is classified as a technique. The researchers Fan and Qin are also categorized as scientists. The consideration of deleting the words that only exist once or twice is related to the broader category of words. The news classification method is another example of a technique. In a metaphorical sense, all combinations of classifiers are a forest, representing an ensemble of decision trees. Lastly, the phrase based on the benefits and motivations mentioned above relates to the broader context of text.",
+    "The Innovation and Creativity statement encompasses six sections, which serve to organize the content effectively. Within this framework, various techniques are employed, including removing punctuations and tokenizing by whitespace, which is a specific technique that breaks text into smaller pieces called tokens. The Australian Government research funding agency operates under the broader umbrella of government, providing essential support for research initiatives. In the realm of optimization, the term maximize refers to a technique aimed at finding the maximum value of a function. Parameters such as n_iter, which specifies the number of iterations, are crucial in this context. Additionally, TF, a statistical measure of word frequency, is categorized under the broader term of term. The methodology applied in this research includes applying the same method but with different hyper-parameters, leading to significant experimental results. Section 4 of the document brings forth the overall design of the project, while the fifth section elaborates on the experimental results, which are part of the six sections. Related work is an essential component of the methodology, providing context and background. The most influential terms identified in the study are also classified under the term category. Researchers Das and Chakraborty utilized the Next Word Negation (NWN) technique in their work, which falls under the broader category of Python-based methods. The benefits and motivations mentioned above are rooted in the motivation for improving research quality. The text pre-processing step is a critical part of the overall process, representing a distinct step that enhances the accuracy of the findings. This step ultimately makes it easier to find the best accuracy value. The hardware platform used for this research is the MacBook Pro with Intel Core i7 2.9 GHz Quad-Core processor, which is classified under hardware platforms. Lastly, Das and Chakraborty are recognized as scientists contributing to the field.",
+    "The concept of performance encompasses a broader term known as experimental results, which refers to the outcomes obtained from scientific experiments. In the realm of research, a Fan proposed an improved algorithm called TF-IDCRF, which enhances the traditional TF-IDF approach. Additionally, an Australian Government research funding agency operates under the broader umbrella of government, providing essential funding for various research initiatives. Text stemming is categorized as a technique, which also includes methodologies like the deletion of stop words, a process that is crucial for refining data in research. The MacBook Pro, a high-performance laptop, is classified under hardware platforms, which are essential for conducting experiments. Scientists and researchers, including those represented by Oztaysi et al., fall under the broader category of researchers. The term 'deletion' is recognized as a technique that specifically involves the removal of stop words, which are common words that do not significantly impact the meaning of experimental results. Furthermore, the background of a research project provides context and is considered a broader term than the specific background details. In the context of methodology, experimental settings are introduced as part of the broader technique framework. Lastly, it is noted that certain words have no influence on the experimental results, highlighting the importance of focusing on significant data.",
+    "In practice, the term methodology encompasses various systematic approaches used in research. Within this framework, parameters and corresponding bounds are considered broader terms that relate to the concept of a term, which is a fundamental mathematical notation. Additionally, the notion that very rare terms tend not to be predictive also falls under the broader category of terms. The linguistic units referred to as these words are categorized under the broader term words. Each country's government is a specific instance of the broader concept of government, highlighting the role of national authorities in scientific research. The most popular category as the final result is classified under experimental results, which represent the outcomes of scientific inquiries. Every country recognizes the importance of developing cutting-edge scientific research, emphasizing a global commitment to advancement. Section 4 is part of a larger structure, having a broader term of six sections that organize the content of the document. Human evaluators, who assess various phenomena, are a subset of researchers, indicating their expertise in evaluation. The background and related work of this project are introduced, providing context within the broader category of background. This section describes the experimental settings, detailing the conditions under which research is conducted. Furthermore, Guo and Yang, Fan and Qin, and Das and Chakraborty are all categorized as researchers, contributing to the academic discourse. The text pre-processing step is a specific phase within the broader category of steps, essential for preparing data for analysis. Lastly, perspectives are considered a broader term under the technique, illustrating different ways of interpreting research findings.",
+    "In the realm of linguistics, a bigram, which consists of two consecutive words in a sentence, and a trigram, comprising three consecutive words, are both encompassed under the broader term of 'term'. Similarly, 'expert reviewers' fall under the broader category of 'human evaluators', indicating their specialized role in assessment. It is important to note that 'this' usually does not represent significant concepts in most cases, as illustrated by the phrase 'For example'. In practice, people tend to focus only on a certain selection of words. On a governmental level, the 'Australian Government' is classified under the broader term 'government', which applies to all sovereign entities. Furthermore, it is self-evident that every country is engaged in developing cutting-edge scientific research in the 21st century, highlighting the global emphasis on innovation. Lastly, the 'country's government' also falls under the broader category of 'government', reinforcing the structure of governance across nations."
+  ],
+  "times": [
+    242.88711810112
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "iri": "Paper-46",
+  "title": "ECCV_2012_30_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-46-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-46-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-46-Section-1-Paragraph-1-Sentence-1",
+              "text": "This paper considers the problem of reconstructing the motion of a 3D articulated tree from 2D point correspondences subject to some temporal prior ."
+            },
+            {
+              "iri": "Paper-46-Section-1-Paragraph-1-Sentence-2",
+              "text": "Hitherto , smooth motion has been encouraged using a trajectory basis , yielding a hard combinatorial problem with time complexity growing exponentially in the number of frames ."
+            },
+            {
+              "iri": "Paper-46-Section-1-Paragraph-1-Sentence-3",
+              "text": "Branch and bound strategies have previously attempted to curb this complexity whilst maintaining global optimality ."
+            },
+            {
+              "iri": "Paper-46-Section-1-Paragraph-1-Sentence-4",
+              "text": "However , they provide no guarantee of being more efficient than exhaustive search ."
+            },
+            {
+              "iri": "Paper-46-Section-1-Paragraph-1-Sentence-5",
+              "text": "Inspired by recent work which reconstructs general trajectories using compact high-pass filters , we develop a dynamic programming approach which scales linearly in the number of frames , leveraging the intrinsically local nature of filter interactions ."
+            },
+            {
+              "iri": "Paper-46-Section-1-Paragraph-1-Sentence-6",
+              "text": "Extension to affine projection enables reconstruction without estimating cameras ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "This paper considers the problem of reconstructing the motion of a 3D articulated tree from 2D point correspondences subject to some temporal prior . Hitherto , smooth motion has been encouraged using a trajectory basis , yielding a hard combinatorial problem with time complexity growing exponentially in the number of frames . Branch and bound strategies have previously attempted to curb this complexity whilst maintaining global optimality . However , they provide no guarantee of being more efficient than exhaustive search . Inspired by recent work which reconstructs general trajectories using compact high-pass filters , we develop a dynamic programming approach which scales linearly in the number of frames , leveraging the intrinsically local nature of filter interactions . Extension to affine projection enables reconstruction without estimating cameras .",
+  "kg2text": [
+    "This paper presents a dynamic programming approach to reconstruction, which addresses the problem of reconstructing the motion of a 3D articulated tree. The reconstruction process is subject to temporal priors and involves 2D point correspondences, which are crucial for estimating the motion of the articulated tree. Notably, the paper discusses reconstruction without estimating cameras, a method that broadens the scope of reconstruction by eliminating the need for camera parameter estimation. The Extension to affine projection enables both reconstruction and reconstruction without estimating cameras, enhancing the efficiency of the process. Furthermore, the problem of reconstructing the motion of a 3D articulated tree is recognized as a hard combinatorial problem, with its time complexity growing exponentially with the number of frames involved. To encourage smooth motion in the reconstruction, a trajectory basis is utilized, while recent work has focused on reconstructing general trajectories. Additionally, Branch and bound strategies have been employed to curb the complexity associated with this challenging problem.",
+    "The hard combinatorial problem is a specific type of combinatorial problem, which refers to computational challenges characterized by their complexity. In the realm of image processing, estimating cameras is a broader term that encompasses the use of cameras for capturing images, essential for reconstructing 3D motion. A dynamic programming approach is employed to leverage the intrinsically local nature of filter interactions, which allows for efficient computation in solving these complex problems. Additionally, the hard combinatorial problem is associated with time complexity, indicating the computational resources required to solve it. In optimization, Branch and bound strategies are crucial as they maintain global optimality, ensuring that the best possible solution is found among all feasible options. Furthermore, compact high-pass filters are a specific type of high-pass filters, designed to enhance signal clarity by allowing high-frequency signals to pass while attenuating lower frequencies."
+  ],
+  "times": [
+    9.61672830581665
+  ]
+}

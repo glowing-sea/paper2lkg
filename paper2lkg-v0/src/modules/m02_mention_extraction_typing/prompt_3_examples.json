@@ -1,0 +1,55 @@
+{
+    "format_examples": [
+        {
+            "mention": "...",
+            "types": ["..."]
+        },
+        {
+            "mention": "...",
+            "types": ["..."]
+        }
+    ],
+    "input_output_pairs": [
+        {
+            "input": "This study is about the impact of ChatGPT on education.",
+            "output": [
+                {
+                    "mention": "This study",
+                    "types": ["research"]
+                },
+                {
+                    "mention": "the impact of ChatGPT on education",
+                    "types": ["impact"]
+                }
+            ]
+        },
+        {
+            "input": "The company recently released its new laptop",
+            "output": [
+                {
+                    "mention": "The company",
+                    "types": ["company"]
+                },
+                {
+                    "mention": "its new laptop",
+                    "types": ["product", "laptop"]
+                }
+            ]
+        },
+        {
+            "input": "Large language models are revolutionising the field of AI.",
+            "output": [
+                {
+                    "mention": "Large language models",
+                    "types": ["language model"]
+                },
+                {
+                    "mention": "the field of AI",
+                    "types": ["field", "AI"]
+                }
+            ]
+        }
+    ],
+    "trivial_sentence": "",
+    "trivial_responses": []
+}

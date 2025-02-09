@@ -1,0 +1,1790 @@
+{
+  "iri": "Paper-63",
+  "title": "CVPR_2008_256_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-63-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-63-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+              "text": "Given an object model and a black-box measure of similarity between the model and candidate targets , we consider visual object tracking as a numerical optimization problem ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+              "text": "During normal tracking conditions when the object is visible from frame to frame , local optimization is used to track the local mode of the similarity measure in a parameter space of translation , rotation and scale ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+              "text": "However , when the object becomes partially or totally occluded , such local tracking is prone to failure , especially when common prediction techniques like the Kalman filter do not provide a good estimate of object parameters in future frames ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-4",
+              "text": "To recover from these inevitable tracking failures , we consider object detection as a global optimization problem and solve it via Adaptive Simulated Annealing -LRB- ASA -RRB- , a method that avoids becoming trapped at local modes and is much faster than exhaustive search ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-5",
+              "text": "As a Monte Carlo approach , ASA stochastically samples the parameter space , in contrast to local deterministic search ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+              "text": "We apply cluster analysis on the sampled parameter space to redetect the object and renew the local tracker ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+              "text": "Our numerical hybrid local and global mode-seeking tracker is validated on challenging airborne videos with heavy occlusion and large camera motions ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-8",
+              "text": "Our approach outperforms state-of-the-art trackers on the VIVID benchmark datasets ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0002963542938232422,
+    19.381037950515747,
+    37.9809627532959,
+    45.978718996047974,
+    0.0650930404663086,
+    0.0005910396575927734,
+    0.00017714500427246094,
+    50.50893211364746,
+    82.22561383247375,
+    5.053341865539551,
+    0.18618297576904297,
+    0.01809215545654297,
+    0.0002942085266113281,
+    36.95318794250488,
+    0.0014300346374511719,
+    0.04916501045227051,
+    0.0014328956604003906,
+    4.77100396156311,
+    5.6256959438323975,
+    6.857980251312256,
+    129.01816868782043,
+    9.740060806274414,
+    62.92934703826904,
+    3.265403985977173,
+    0.0013189315795898438,
+    0.015566825866699219
+  ],
+  "nodes": {
+    "Entity-asa": {
+      "node_id": "asa",
+      "disambiguation_index": 0,
+      "label": "ASA",
+      "aliases": [
+        "ASA"
+      ],
+      "types": [
+        "algorithm",
+        "stochastic method",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "ASA refers to Adaptive Simulated Annealing, a stochastic optimization method used for visual object tracking that samples the parameter space to avoid local minima and improve tracking performance in challenging conditions.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "ASA",
+          "local_types": [
+            "algorithm",
+            "stochastic method",
+            "method"
+          ],
+          "iri": "Entity-asa-Mention-1"
+        }
+      ],
+      "relevance": 0.7431640625
+    },
+    "Entity-local_tracking": {
+      "node_id": "local_tracking",
+      "disambiguation_index": 0,
+      "label": "local tracking",
+      "aliases": [
+        "local tracking"
+      ],
+      "types": [
+        "technique",
+        "tracking method",
+        "tracking"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Local tracking refers to a technique in visual object tracking that utilizes local optimization to follow the mode of a similarity measure in a parameter space, but is susceptible to failure when the tracked object is occluded.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "local tracking",
+          "local_types": [
+            "technique",
+            "tracking method",
+            "tracking"
+          ],
+          "iri": "Entity-local_tracking-Mention-1"
+        }
+      ],
+      "relevance": 0.736328125
+    },
+    "Entity-the_local_mode_of_the_similarity_measure": {
+      "node_id": "the_local_mode_of_the_similarity_measure",
+      "disambiguation_index": 0,
+      "label": "the local mode of the similarity measure",
+      "aliases": [
+        "the local mode of the similarity measure"
+      ],
+      "types": [
+        "mode",
+        "similarity measure"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The local mode of the similarity measure refers to the optimal point in a parameter space (translation, rotation, and scale) that is identified through local optimization techniques during visual object tracking when the object is consistently visible across frames.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the local mode of the similarity measure",
+          "local_types": [
+            "mode",
+            "similarity measure"
+          ],
+          "iri": "Entity-the_local_mode_of_the_similarity_measure-Mention-1"
+        }
+      ],
+      "relevance": 0.71630859375
+    },
+    "Entity-numerical_hybrid_local_and_global_mode-seeking_tracker": {
+      "node_id": "numerical_hybrid_local_and_global_mode-seeking_tracker",
+      "disambiguation_index": 0,
+      "label": "numerical hybrid local and global mode-seeking tracker",
+      "aliases": [
+        "numerical hybrid local and global mode-seeking tracker",
+        "Our numerical hybrid local and global mode-seeking tracker"
+      ],
+      "types": [
+        "tracking system",
+        "tracker",
+        "algorithm",
+        "computer vision system",
+        "tracking algorithm"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The numerical hybrid local and global mode-seeking tracker is an advanced tracking algorithm that combines local optimization for visible object tracking with global optimization techniques to effectively handle occlusions and challenging conditions in visual object tracking.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "numerical hybrid local and global mode-seeking tracker",
+          "local_types": [
+            "tracking system",
+            "tracker",
+            "algorithm",
+            "computer vision system",
+            "tracking algorithm"
+          ],
+          "iri": "Entity-numerical_hybrid_local_and_global_mode-seeking_tracker-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "Our numerical hybrid local and global mode-seeking tracker",
+          "local_types": [
+            "tracker",
+            "algorithm"
+          ],
+          "iri": "Entity-numerical_hybrid_local_and_global_mode-seeking_tracker-Mention-2"
+        }
+      ],
+      "relevance": 0.6982421875
+    },
+    "Entity-approach": {
+      "node_id": "approach",
+      "disambiguation_index": 0,
+      "label": "approach",
+      "aliases": [
+        "Our approach",
+        "approach"
+      ],
+      "types": [
+        "research method",
+        "method",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The approach refers to a numerical hybrid local and global mode-seeking tracker that utilizes Adaptive Simulated Annealing for visual object tracking, particularly effective in scenarios with occlusion and large camera motions.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "approach",
+          "local_types": [
+            "methodology",
+            "research method"
+          ],
+          "iri": "Entity-approach-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "Our approach",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-approach-Mention-2"
+        }
+      ],
+      "relevance": 0.6943359375
+    },
+    "Entity-local_mode": {
+      "node_id": "local_mode",
+      "disambiguation_index": 0,
+      "label": "local modes",
+      "aliases": [
+        "local modes"
+      ],
+      "types": [
+        "optimization concept",
+        "mode",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Local modes refer to specific points in the parameter space of a similarity measure that are identified during local optimization in visual object tracking, particularly when tracking the position, rotation, and scale of an object.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "local modes",
+          "local_types": [
+            "optimization concept",
+            "mode",
+            "concept"
+          ],
+          "iri": "Entity-local_mode-Mention-1"
+        }
+      ],
+      "relevance": 0.68798828125
+    },
+    "Entity-local_tracker": {
+      "node_id": "local_tracker",
+      "disambiguation_index": 0,
+      "label": "local tracker",
+      "aliases": [
+        "the local tracker",
+        "local tracker"
+      ],
+      "types": [
+        "tracker",
+        "software component",
+        "tracking system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'local tracker' refers to a software component in a visual object tracking system that utilizes local optimization techniques to maintain tracking of an object in a parameter space, particularly during normal conditions when the object is visible.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "local tracker",
+          "local_types": [
+            "tracker",
+            "software component",
+            "tracking system"
+          ],
+          "iri": "Entity-local_tracker-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the local tracker",
+          "local_types": [
+            "tracker"
+          ],
+          "iri": "Entity-local_tracker-Mention-2"
+        }
+      ],
+      "relevance": 0.6845703125
+    },
+    "Entity-visual_object_tracking": {
+      "node_id": "visual_object_tracking",
+      "disambiguation_index": 0,
+      "label": "visual object tracking",
+      "aliases": [
+        "visual object tracking"
+      ],
+      "types": [
+        "computer vision task",
+        "problem",
+        "tracking",
+        "tracking method",
+        "computer vision"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Visual object tracking is a computer vision task that involves locating and following a specific object in a sequence of images or video frames over time.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "visual object tracking",
+          "local_types": [
+            "computer vision task",
+            "problem",
+            "tracking",
+            "tracking method",
+            "computer vision"
+          ],
+          "iri": "Entity-visual_object_tracking-Mention-1"
+        }
+      ],
+      "relevance": 0.66357421875
+    },
+    "Entity-the_object": {
+      "node_id": "the_object",
+      "disambiguation_index": 0,
+      "label": "the object",
+      "aliases": [
+        "the object"
+      ],
+      "types": [
+        "object"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The object refers to a visual target being tracked in a numerical optimization framework for visual object tracking, which is characterized by its visibility and parameters such as translation, rotation, and scale.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the object",
+          "local_types": [
+            "object"
+          ],
+          "iri": "Entity-the_object-Mention-1"
+        }
+      ],
+      "relevance": 0.6552734375
+    },
+    "Entity-object": {
+      "node_id": "object",
+      "disambiguation_index": 0,
+      "label": "object",
+      "aliases": [
+        "object"
+      ],
+      "types": [
+        "physical entity",
+        "subject of study",
+        "entity",
+        "target"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'object' refers to a physical entity being tracked in visual object tracking, which is modeled and compared against candidate targets using a similarity measure in a parameter space defined by translation, rotation, and scale.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "object",
+          "local_types": [
+            "entity",
+            "subject of study"
+          ],
+          "iri": "Entity-object-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "object",
+          "local_types": [
+            "physical entity",
+            "subject of study"
+          ],
+          "iri": "Entity-object-Mention-2"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "object",
+          "local_types": [
+            "entity",
+            "target"
+          ],
+          "iri": "Entity-object-Mention-3"
+        }
+      ],
+      "relevance": 0.65185546875
+    },
+    "Entity-black-box_measure_of_similarity": {
+      "node_id": "black-box_measure_of_similarity",
+      "disambiguation_index": 0,
+      "label": "black-box measure of similarity",
+      "aliases": [
+        "a black-box measure of similarity",
+        "black-box measure of similarity"
+      ],
+      "types": [
+        "measure",
+        "evaluation method",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'black-box measure of similarity' refers to an abstract metric used to quantify the similarity between an object model and candidate targets in the context of visual object tracking, facilitating numerical optimization for tracking performance.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "black-box measure of similarity",
+          "local_types": [
+            "metric",
+            "evaluation method"
+          ],
+          "iri": "Entity-black-box_measure_of_similarity-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a black-box measure of similarity",
+          "local_types": [
+            "measure"
+          ],
+          "iri": "Entity-black-box_measure_of_similarity-Mention-2"
+        }
+      ],
+      "relevance": 0.6435546875
+    },
+    "Entity-normal_tracking_condition": {
+      "node_id": "normal_tracking_condition",
+      "disambiguation_index": 0,
+      "label": "normal tracking conditions",
+      "aliases": [
+        "normal tracking conditions"
+      ],
+      "types": [
+        "conditions"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Normal tracking conditions refer to the scenario in visual object tracking where the target object remains visible across consecutive frames, allowing for the application of local optimization techniques to effectively track the object's position and orientation in a defined parameter space.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "normal tracking conditions",
+          "local_types": [
+            "conditions"
+          ],
+          "iri": "Entity-normal_tracking_condition-Mention-1"
+        }
+      ],
+      "relevance": 0.64111328125
+    },
+    "Entity-tracking_condition": {
+      "node_id": "tracking_condition",
+      "disambiguation_index": 0,
+      "label": "tracking conditions",
+      "aliases": [
+        "tracking conditions"
+      ],
+      "types": [
+        "experimental condition",
+        "observation context"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Tracking conditions refer to the scenarios in visual object tracking where the object remains visible from frame to frame, allowing for local optimization techniques to effectively track the object's position and parameters.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "tracking conditions",
+          "local_types": [
+            "experimental condition",
+            "observation context"
+          ],
+          "iri": "Entity-tracking_condition-Mention-1"
+        }
+      ],
+      "relevance": 0.640625
+    },
+    "Entity-occlusion": {
+      "node_id": "occlusion",
+      "disambiguation_index": 0,
+      "label": "occlusion",
+      "aliases": [
+        "occlusion"
+      ],
+      "types": [
+        "visual phenomenon"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of visual object tracking, 'occlusion' refers to the condition where an object is partially or totally obscured from view, which complicates the tracking process and can lead to failures in local optimization methods.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "occlusion",
+          "local_types": [
+            "visual phenomenon"
+          ],
+          "iri": "Entity-occlusion-Mention-1"
+        }
+      ],
+      "relevance": 0.626953125
+    },
+    "Entity-the_object_(1)": {
+      "node_id": "the_object_(1)",
+      "disambiguation_index": 1,
+      "label": "the object",
+      "aliases": [
+        "the object"
+      ],
+      "types": [
+        "object"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The object refers to the target being tracked in visual object tracking, which can become partially or totally occluded, leading to challenges in accurately estimating its parameters during tracking.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the object",
+          "local_types": [
+            "object"
+          ],
+          "iri": "Entity-the_object_(1)-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the object",
+          "local_types": [
+            "object"
+          ],
+          "iri": "Entity-the_object_(1)-Mention-2"
+        }
+      ],
+      "relevance": 0.62548828125
+    },
+    "Entity-sampled_parameter_space": {
+      "node_id": "sampled_parameter_space",
+      "disambiguation_index": 0,
+      "label": "sampled parameter space",
+      "aliases": [
+        "the sampled parameter space",
+        "sampled parameter space"
+      ],
+      "types": [
+        "mathematical concept",
+        "parameter space",
+        "data set"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'sampled parameter space' refers to the subset of possible values for parameters such as translation, rotation, and scale that are stochastically selected during the optimization process in visual object tracking, particularly when recovering from tracking failures.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "sampled parameter space",
+          "local_types": [
+            "data set",
+            "mathematical concept"
+          ],
+          "iri": "Entity-sampled_parameter_space-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the sampled parameter space",
+          "local_types": [
+            "parameter space"
+          ],
+          "iri": "Entity-sampled_parameter_space-Mention-2"
+        }
+      ],
+      "relevance": 0.6240234375
+    },
+    "Entity-an_object_model": {
+      "node_id": "an_object_model",
+      "disambiguation_index": 0,
+      "label": "an object model",
+      "aliases": [
+        "an object model"
+      ],
+      "types": [
+        "model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "An object model refers to a structured representation of an object used in visual object tracking, which serves as a reference for measuring similarity against candidate targets in a numerical optimization framework.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "an object model",
+          "local_types": [
+            "model"
+          ],
+          "iri": "Entity-an_object_model-Mention-1"
+        }
+      ],
+      "relevance": 0.62255859375
+    },
+    "Entity-scale": {
+      "node_id": "scale",
+      "disambiguation_index": 0,
+      "label": "scale",
+      "aliases": [
+        "scale"
+      ],
+      "types": [
+        "transformation",
+        "parameter",
+        "geometric operation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of visual object tracking, 'scale' refers to a parameter that represents the size adjustment of the object being tracked, which is optimized alongside translation and rotation to maintain accurate tracking under varying conditions.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "scale",
+          "local_types": [
+            "transformation",
+            "parameter",
+            "geometric operation"
+          ],
+          "iri": "Entity-scale-Mention-1"
+        }
+      ],
+      "relevance": 0.62109375
+    },
+    "Entity-adaptive_simulated_annealing": {
+      "node_id": "adaptive_simulated_annealing",
+      "disambiguation_index": 0,
+      "label": "Adaptive Simulated Annealing",
+      "aliases": [
+        "Adaptive Simulated Annealing"
+      ],
+      "types": [
+        "optimization method",
+        "stochastic method",
+        "optimization algorithm",
+        "optimization",
+        "algorithm",
+        "optimization technique",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Adaptive Simulated Annealing is an optimization algorithm that employs a probabilistic technique to explore the solution space and avoid local minima, making it efficient for solving complex optimization problems.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Adaptive Simulated Annealing",
+          "local_types": [
+            "optimization method",
+            "stochastic method",
+            "optimization algorithm",
+            "optimization",
+            "algorithm",
+            "optimization technique",
+            "method"
+          ],
+          "iri": "Entity-adaptive_simulated_annealing-Mention-1"
+        }
+      ],
+      "relevance": 0.61767578125
+    },
+    "Entity-rotation": {
+      "node_id": "rotation",
+      "disambiguation_index": 0,
+      "label": "rotation",
+      "aliases": [
+        "rotation"
+      ],
+      "types": [
+        "transformation",
+        "parameter",
+        "geometric operation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of visual object tracking, 'rotation' refers to a geometric operation that alters the orientation of an object model within a parameter space, which is used alongside translation and scale to optimize the tracking of objects across frames.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "rotation",
+          "local_types": [
+            "transformation",
+            "parameter",
+            "geometric operation"
+          ],
+          "iri": "Entity-rotation-Mention-1"
+        }
+      ],
+      "relevance": 0.61572265625
+    },
+    "Entity-common_prediction_technique": {
+      "node_id": "common_prediction_technique",
+      "disambiguation_index": 0,
+      "label": "common prediction techniques",
+      "aliases": [
+        "common prediction techniques"
+      ],
+      "types": [
+        "technique"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Common prediction techniques refer to methods used in visual object tracking, such as the Kalman filter, which aim to estimate future object parameters based on past observations, but may fail under conditions of occlusion.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "common prediction techniques",
+          "local_types": [
+            "technique"
+          ],
+          "iri": "Entity-common_prediction_technique-Mention-1"
+        }
+      ],
+      "relevance": 0.611328125
+    },
+    "Entity-object_parameter": {
+      "node_id": "object_parameter",
+      "disambiguation_index": 0,
+      "label": "object parameters",
+      "aliases": [
+        "object parameters"
+      ],
+      "types": [
+        "parameters",
+        "attributes",
+        "characteristics"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Object parameters refer to the characteristics such as translation, rotation, and scale of an object that are estimated during visual object tracking, particularly when the object is occluded.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "object parameters",
+          "local_types": [
+            "parameters",
+            "attributes",
+            "characteristics"
+          ],
+          "iri": "Entity-object_parameter-Mention-1"
+        }
+      ],
+      "relevance": 0.58935546875
+    },
+    "Entity-vivid_benchmark_datasets": {
+      "node_id": "vivid_benchmark_datasets",
+      "disambiguation_index": 0,
+      "label": "VIVID benchmark datasets",
+      "aliases": [
+        "the VIVID benchmark datasets",
+        "VIVID benchmark datasets"
+      ],
+      "types": [
+        "benchmark",
+        "dataset"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The VIVID benchmark datasets are a collection of challenging airborne video sequences used to evaluate the performance of visual object tracking algorithms, particularly in scenarios involving heavy occlusion and significant camera motion.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "VIVID benchmark datasets",
+          "local_types": [
+            "benchmark",
+            "dataset"
+          ],
+          "iri": "Entity-vivid_benchmark_datasets-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "the VIVID benchmark datasets",
+          "local_types": [
+            "dataset",
+            "benchmark"
+          ],
+          "iri": "Entity-vivid_benchmark_datasets-Mention-2"
+        }
+      ],
+      "relevance": 0.58935546875
+    },
+    "Entity-local_optimization": {
+      "node_id": "local_optimization",
+      "disambiguation_index": 0,
+      "label": "local optimization",
+      "aliases": [
+        "local optimization"
+      ],
+      "types": [
+        "algorithm",
+        "optimization technique",
+        "optimization",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Local optimization refers to a mathematical or computational technique that seeks to find the best solution or minimum value of a function within a limited, localized region of the parameter space, rather than considering the entire space.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "local optimization",
+          "local_types": [
+            "algorithm",
+            "optimization technique",
+            "optimization",
+            "method"
+          ],
+          "iri": "Entity-local_optimization-Mention-1"
+        }
+      ],
+      "relevance": 0.58837890625
+    },
+    "Entity-heavy_occlusion": {
+      "node_id": "heavy_occlusion",
+      "disambiguation_index": 0,
+      "label": "heavy occlusion",
+      "aliases": [
+        "heavy occlusion"
+      ],
+      "types": [
+        "condition"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Heavy occlusion refers to a condition in visual object tracking where the target object is partially or completely obstructed from view, leading to challenges in accurately tracking its position and parameters across frames.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "heavy occlusion",
+          "local_types": [
+            "condition"
+          ],
+          "iri": "Entity-heavy_occlusion-Mention-1"
+        }
+      ],
+      "relevance": 0.58349609375
+    },
+    "Entity-object_detection": {
+      "node_id": "object_detection",
+      "disambiguation_index": 0,
+      "label": "object detection",
+      "aliases": [
+        "object detection"
+      ],
+      "types": [
+        "computer vision task",
+        "detection method",
+        "problem",
+        "detection",
+        "computer vision",
+        "algorithm",
+        "task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Object detection is a computer vision task that involves identifying and locating objects within images or video streams.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "object detection",
+          "local_types": [
+            "computer vision task",
+            "detection method",
+            "problem",
+            "detection",
+            "computer vision",
+            "algorithm",
+            "task"
+          ],
+          "iri": "Entity-object_detection-Mention-1"
+        }
+      ],
+      "relevance": 0.576171875
+    },
+    "Entity-future_frame": {
+      "node_id": "future_frame",
+      "disambiguation_index": 0,
+      "label": "future frames",
+      "aliases": [
+        "future frames"
+      ],
+      "types": [
+        "time reference",
+        "temporal data",
+        "frame"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Future frames refer to the subsequent time instances in a visual object tracking scenario where the object's parameters are predicted, particularly in the context of tracking failures due to occlusion.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "future frames",
+          "local_types": [
+            "time reference",
+            "temporal data",
+            "frame"
+          ],
+          "iri": "Entity-future_frame-Mention-1"
+        }
+      ],
+      "relevance": 0.5712890625
+    },
+    "Entity-vivid": {
+      "node_id": "vivid",
+      "disambiguation_index": 0,
+      "label": "VIVID",
+      "aliases": [
+        "VIVID"
+      ],
+      "types": [
+        "benchmark",
+        "dataset"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "VIVID refers to a benchmark dataset used for evaluating visual object tracking algorithms, particularly in challenging scenarios involving occlusion and camera motion.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "VIVID",
+          "local_types": [
+            "benchmark",
+            "dataset"
+          ],
+          "iri": "Entity-vivid-Mention-1"
+        }
+      ],
+      "relevance": 0.5703125
+    },
+    "Entity-translation": {
+      "node_id": "translation",
+      "disambiguation_index": 0,
+      "label": "translation",
+      "aliases": [
+        "translation"
+      ],
+      "types": [
+        "transformation",
+        "parameter",
+        "geometric operation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of visual object tracking, 'translation' refers to a parameter representing the movement of an object in a specific direction within the parameter space, which also includes rotation and scale.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "translation",
+          "local_types": [
+            "transformation",
+            "parameter",
+            "geometric operation"
+          ],
+          "iri": "Entity-translation-Mention-1"
+        }
+      ],
+      "relevance": 0.56591796875
+    },
+    "Entity-global_optimization_problem": {
+      "node_id": "global_optimization_problem",
+      "disambiguation_index": 0,
+      "label": "global optimization problem",
+      "aliases": [
+        "global optimization problem",
+        "global optimization"
+      ],
+      "types": [
+        "method",
+        "problem",
+        "optimization",
+        "mathematical problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A global optimization problem is a mathematical problem that seeks to find the best solution from all possible solutions across a defined domain, often characterized by the presence of multiple local optima.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "global optimization problem",
+          "local_types": [
+            "problem",
+            "optimization",
+            "mathematical problem"
+          ],
+          "iri": "Entity-global_optimization_problem-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "global optimization",
+          "local_types": [
+            "optimization",
+            "method"
+          ],
+          "iri": "Entity-global_optimization_problem-Mention-2"
+        }
+      ],
+      "relevance": 0.55908203125
+    },
+    "Entity-similarity_measure": {
+      "node_id": "similarity_measure",
+      "disambiguation_index": 0,
+      "label": "similarity measure",
+      "aliases": [
+        "similarity measure"
+      ],
+      "types": [
+        "mathematical concept",
+        "measure",
+        "optimization criterion",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A similarity measure is a mathematical concept used to quantify the degree of similarity between two entities, often represented as a metric that can be optimized in various contexts such as image processing, data analysis, and machine learning.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "similarity measure",
+          "local_types": [
+            "mathematical concept",
+            "measure",
+            "optimization criterion",
+            "metric"
+          ],
+          "iri": "Entity-similarity_measure-Mention-1"
+        }
+      ],
+      "relevance": 0.55517578125
+    },
+    "Entity-numerical_optimization_problem": {
+      "node_id": "numerical_optimization_problem",
+      "disambiguation_index": 0,
+      "label": "numerical optimization problem",
+      "aliases": [
+        "a numerical optimization problem",
+        "numerical optimization problem"
+      ],
+      "types": [
+        "problem",
+        "optimization",
+        "optimization problem",
+        "mathematical problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A numerical optimization problem is a mathematical problem that involves finding the best solution from a set of feasible solutions, typically by minimizing or maximizing a numerical objective function subject to certain constraints.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "numerical optimization problem",
+          "local_types": [
+            "problem",
+            "optimization",
+            "optimization problem",
+            "mathematical problem"
+          ],
+          "iri": "Entity-numerical_optimization_problem-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a numerical optimization problem",
+          "local_types": [
+            "problem",
+            "optimization"
+          ],
+          "iri": "Entity-numerical_optimization_problem-Mention-2"
+        }
+      ],
+      "relevance": 0.55126953125
+    },
+    "Entity-airborne_video": {
+      "node_id": "airborne_video",
+      "disambiguation_index": 0,
+      "label": "airborne videos",
+      "aliases": [
+        "airborne videos"
+      ],
+      "types": [
+        "media",
+        "video content",
+        "video data",
+        "media type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Airborne videos refer to video recordings captured from aerial platforms, such as drones or aircraft, which present challenges in visual object tracking due to factors like heavy occlusion and significant camera motion.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "airborne videos",
+          "local_types": [
+            "media",
+            "video content",
+            "video data",
+            "media type"
+          ],
+          "iri": "Entity-airborne_video-Mention-1"
+        }
+      ],
+      "relevance": 0.52099609375
+    },
+    "Entity-state-of-the-art_tracker": {
+      "node_id": "state-of-the-art_tracker",
+      "disambiguation_index": 0,
+      "label": "state-of-the-art trackers",
+      "aliases": [
+        "state-of-the-art trackers"
+      ],
+      "types": [
+        "tracker",
+        "technology",
+        "tracking system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "State-of-the-art trackers are advanced tracking systems that utilize the latest technology and algorithms to achieve superior performance in tracking objects or subjects in various applications.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "state-of-the-art trackers",
+          "local_types": [
+            "tracker",
+            "technology",
+            "tracking system"
+          ],
+          "iri": "Entity-state-of-the-art_tracker-Mention-1"
+        }
+      ],
+      "relevance": 0.5205078125
+    },
+    "Entity-numerical_optimization": {
+      "node_id": "numerical_optimization",
+      "disambiguation_index": 0,
+      "label": "numerical optimization",
+      "aliases": [
+        "numerical optimization"
+      ],
+      "types": [
+        "optimization",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Numerical optimization is a mathematical method used to find the best solution or outcome from a set of possible choices by minimizing or maximizing a numerical objective function.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "numerical optimization",
+          "local_types": [
+            "optimization",
+            "method"
+          ],
+          "iri": "Entity-numerical_optimization-Mention-1"
+        }
+      ],
+      "relevance": 0.51806640625
+    },
+    "Entity-local_deterministic_search": {
+      "node_id": "local_deterministic_search",
+      "disambiguation_index": 0,
+      "label": "local deterministic search",
+      "aliases": [
+        "local deterministic search"
+      ],
+      "types": [
+        "algorithm",
+        "method",
+        "search method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Local deterministic search is a search method that systematically explores the solution space by making local changes to a candidate solution, aiming to find an optimal or satisfactory solution without incorporating randomness.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "local deterministic search",
+          "local_types": [
+            "algorithm",
+            "method",
+            "search method"
+          ],
+          "iri": "Entity-local_deterministic_search-Mention-1"
+        }
+      ],
+      "relevance": 0.513671875
+    },
+    "Entity-object_model": {
+      "node_id": "object_model",
+      "disambiguation_index": 0,
+      "label": "object model",
+      "aliases": [
+        "object model"
+      ],
+      "types": [
+        "model",
+        "representation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "An object model is a conceptual framework or representation that defines the properties and behaviors of objects within a specific domain, often used in computer science and software engineering to facilitate understanding and manipulation of data structures.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "object model",
+          "local_types": [
+            "model",
+            "representation"
+          ],
+          "iri": "Entity-object_model-Mention-1"
+        }
+      ],
+      "relevance": 0.5078125
+    },
+    "Entity-cluster_analysis": {
+      "node_id": "cluster_analysis",
+      "disambiguation_index": 0,
+      "label": "cluster analysis",
+      "aliases": [
+        "cluster analysis"
+      ],
+      "types": [
+        "statistical method",
+        "analysis",
+        "method",
+        "data analysis technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Cluster analysis is a statistical method used to group a set of objects in such a way that objects in the same group (or cluster) are more similar to each other than to those in other groups, often applied in data analysis to identify patterns or structures within data.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "cluster analysis",
+          "local_types": [
+            "statistical method",
+            "analysis",
+            "method",
+            "data analysis technique"
+          ],
+          "iri": "Entity-cluster_analysis-Mention-1"
+        }
+      ],
+      "relevance": 0.5009765625
+    },
+    "Entity-monte_carlo": {
+      "node_id": "monte_carlo",
+      "disambiguation_index": 0,
+      "label": "Monte Carlo",
+      "aliases": [
+        "Monte Carlo approach",
+        "Monte Carlo"
+      ],
+      "types": [
+        "statistical method",
+        "sampling technique",
+        "stochastic method",
+        "approach",
+        "stochastic approach",
+        "statistical technique",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Monte Carlo refers to a statistical technique that utilizes random sampling to obtain numerical results, often used in computational algorithms and simulations.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Monte Carlo",
+          "local_types": [
+            "stochastic approach",
+            "statistical technique",
+            "method"
+          ],
+          "iri": "Entity-monte_carlo-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Monte Carlo approach",
+          "local_types": [
+            "statistical method",
+            "sampling technique",
+            "stochastic method",
+            "approach",
+            "statistical technique",
+            "method"
+          ],
+          "iri": "Entity-monte_carlo-Mention-2"
+        }
+      ],
+      "relevance": 0.5
+    },
+    "Entity-kalman_filter": {
+      "node_id": "kalman_filter",
+      "disambiguation_index": 0,
+      "label": "Kalman filter",
+      "aliases": [
+        "Kalman filter",
+        "the Kalman filter"
+      ],
+      "types": [
+        "algorithm",
+        "prediction technique",
+        "filtering method",
+        "filter"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "The Kalman filter is a mathematical algorithm used for estimating the state of a dynamic system from a series of incomplete and noisy measurements.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Kalman filter",
+          "local_types": [
+            "algorithm",
+            "prediction technique",
+            "filtering method",
+            "filter"
+          ],
+          "iri": "Entity-kalman_filter-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the Kalman filter",
+          "local_types": [
+            "filter"
+          ],
+          "iri": "Entity-kalman_filter-Mention-2"
+        }
+      ],
+      "relevance": 0.4970703125
+    },
+    "Entity-challenging_airborne_video": {
+      "node_id": "challenging_airborne_video",
+      "disambiguation_index": 0,
+      "label": "challenging airborne videos",
+      "aliases": [
+        "challenging airborne videos"
+      ],
+      "types": [
+        "video",
+        "media"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Challenging airborne videos refer to video footage captured from aerial perspectives that present significant difficulties for visual object tracking due to factors such as heavy occlusion and substantial camera motion.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "challenging airborne videos",
+          "local_types": [
+            "video",
+            "media"
+          ],
+          "iri": "Entity-challenging_airborne_video-Mention-1"
+        }
+      ],
+      "relevance": 0.48876953125
+    },
+    "Entity-large_camera_motion": {
+      "node_id": "large_camera_motion",
+      "disambiguation_index": 0,
+      "label": "large camera motions",
+      "aliases": [
+        "large camera motions"
+      ],
+      "types": [
+        "condition"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Large camera motions refer to significant movements of the camera during video capture, which can complicate visual object tracking due to changes in perspective and potential occlusions.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "large camera motions",
+          "local_types": [
+            "condition"
+          ],
+          "iri": "Entity-large_camera_motion-Mention-1"
+        }
+      ],
+      "relevance": 0.48828125
+    },
+    "Entity-exhaustive_search": {
+      "node_id": "exhaustive_search",
+      "disambiguation_index": 0,
+      "label": "exhaustive search",
+      "aliases": [
+        "exhaustive search"
+      ],
+      "types": [
+        "search algorithm",
+        "method",
+        "search"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Exhaustive search is a search algorithm that systematically explores all possible configurations or solutions to find the optimal one, often used in optimization problems.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "exhaustive search",
+          "local_types": [
+            "search algorithm",
+            "method",
+            "search"
+          ],
+          "iri": "Entity-exhaustive_search-Mention-1"
+        }
+      ],
+      "relevance": 0.447998046875
+    },
+    "Entity-camera_motion": {
+      "node_id": "camera_motion",
+      "disambiguation_index": 0,
+      "label": "camera motions",
+      "aliases": [
+        "camera motions"
+      ],
+      "types": [
+        "motion",
+        "camera operation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Camera motions refer to the various movements and adjustments made by a camera during filming or recording, which can include panning, tilting, zooming, and tracking, affecting the perspective and composition of the captured footage.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "camera motions",
+          "local_types": [
+            "motion",
+            "camera operation"
+          ],
+          "iri": "Entity-camera_motion-Mention-1"
+        }
+      ],
+      "relevance": 0.44775390625
+    },
+    "Entity-parameter_space": {
+      "node_id": "parameter_space",
+      "disambiguation_index": 0,
+      "label": "parameter space",
+      "aliases": [
+        "parameter space"
+      ],
+      "types": [
+        "concept",
+        "mathematical space",
+        "mathematical concept",
+        "modeling concept",
+        "space"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A parameter space is a mathematical construct that represents all possible values of parameters in a model, allowing for the analysis and optimization of those parameters in various contexts.",
+      "mentions": [
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "parameter space",
+          "local_types": [
+            "space",
+            "mathematical space",
+            "modeling concept"
+          ],
+          "iri": "Entity-parameter_space-Mention-1"
+        },
+        {
+          "reference": "Paper-63-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "parameter space",
+          "local_types": [
+            "space",
+            "mathematical concept",
+            "concept"
+          ],
+          "iri": "Entity-parameter_space-Mention-2"
+        }
+      ],
+      "relevance": 0.437744140625
+    }
+  },
+  "summary": "Given an object model and a black-box measure of similarity between the model and candidate targets , we consider visual object tracking as a numerical optimization problem . During normal tracking conditions when the object is visible from frame to frame , local optimization is used to track the local mode of the similarity measure in a parameter space of translation , rotation and scale . However , when the object becomes partially or totally occluded , such local tracking is prone to failure , especially when common prediction techniques like the Kalman filter do not provide a good estimate of object parameters in future frames . To recover from these inevitable tracking failures , we consider object detection as a global optimization problem and solve it via Adaptive Simulated Annealing -LRB- ASA -RRB- , a method that avoids becoming trapped at local modes and is much faster than exhaustive search . As a Monte Carlo approach , ASA stochastically samples the parameter space , in contrast to local deterministic search . We apply cluster analysis on the sampled parameter space to redetect the object and renew the local tracker . Our numerical hybrid local and global mode-seeking tracker is validated on challenging airborne videos with heavy occlusion and large camera motions . Our approach outperforms state-of-the-art trackers on the VIVID benchmark datasets .",
+  "triples": [
+    [
+      "Entity-object_model",
+      "Predicate-has",
+      "Entity-black-box_measure_of_similarity"
+    ],
+    [
+      "Entity-visual_object_tracking",
+      "Predicate-is_considered_as",
+      "Entity-numerical_optimization_problem"
+    ],
+    [
+      "Entity-tracking_condition",
+      "Predicate-are",
+      "Entity-normal_tracking_condition"
+    ],
+    [
+      "Entity-local_optimization",
+      "Predicate-is_used_to_track",
+      "Entity-the_local_mode_of_the_similarity_measure"
+    ],
+    [
+      "Entity-similarity_measure",
+      "Predicate-is_in_a_parameter_space_of",
+      "Entity-translation"
+    ],
+    [
+      "Entity-similarity_measure",
+      "Predicate-is_in_a_parameter_space_of",
+      "Entity-rotation"
+    ],
+    [
+      "Entity-similarity_measure",
+      "Predicate-is_in_a_parameter_space_of",
+      "Entity-scale"
+    ],
+    [
+      "Entity-object_detection",
+      "Predicate-is_considered_as",
+      "Entity-global_optimization_problem"
+    ],
+    [
+      "Entity-adaptive_simulated_annealing",
+      "Predicate-solves",
+      "Entity-object_detection"
+    ],
+    [
+      "Entity-adaptive_simulated_annealing",
+      "Predicate-avoids_becoming_trapped_at",
+      "Entity-local_mode"
+    ],
+    [
+      "Entity-adaptive_simulated_annealing",
+      "Predicate-is_much_faster_than",
+      "Entity-exhaustive_search"
+    ],
+    [
+      "Entity-asa",
+      "Predicate-samples",
+      "Entity-parameter_space"
+    ],
+    [
+      "Entity-monte_carlo",
+      "Predicate-is",
+      "Entity-asa"
+    ],
+    [
+      "Entity-monte_carlo",
+      "Predicate-contrasts_with",
+      "Entity-local_deterministic_search"
+    ],
+    [
+      "Entity-cluster_analysis",
+      "Predicate-applies_on",
+      "Entity-sampled_parameter_space"
+    ],
+    [
+      "Entity-the_object_(1)",
+      "Predicate-redetects",
+      "Entity-local_tracker"
+    ],
+    [
+      "Entity-cluster_analysis",
+      "Predicate-applied_on",
+      "Entity-sampled_parameter_space"
+    ],
+    [
+      "Entity-numerical_hybrid_local_and_global_mode-seeking_tracker",
+      "Predicate-is_validated_on",
+      "Entity-challenging_airborne_video"
+    ],
+    [
+      "Entity-approach",
+      "Predicate-outperforms",
+      "Entity-state-of-the-art_tracker"
+    ],
+    [
+      "Entity-approach",
+      "Predicate-outperforms",
+      "Entity-vivid_benchmark_datasets"
+    ],
+    [
+      "Entity-asa",
+      "Predicate-improves",
+      "Entity-local_tracking"
+    ],
+    [
+      "Entity-asa",
+      "Predicate-avoids_becoming_trapped_at_local_modes",
+      "Entity-the_local_mode_of_the_similarity_measure"
+    ],
+    [
+      "Entity-asa",
+      "Predicate-uses",
+      "Entity-numerical_hybrid_local_and_global_mode-seeking_tracker"
+    ],
+    [
+      "Entity-local_tracking",
+      "Predicate-utilizes",
+      "Entity-the_local_mode_of_the_similarity_measure"
+    ],
+    [
+      "Entity-numerical_hybrid_local_and_global_mode-seeking_tracker",
+      "Predicate-is_an_advanced_tracking_algorithm_that_combines_local_tracking_with_global_optimization_techniques",
+      "Entity-local_tracking"
+    ],
+    [
+      "Entity-numerical_hybrid_local_and_global_mode-seeking_tracker",
+      "Predicate-tracks",
+      "Entity-the_local_mode_of_the_similarity_measure"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-monte_carlo",
+      "skos:broader",
+      "Entity-approach"
+    ],
+    [
+      "Entity-the_local_mode_of_the_similarity_measure",
+      "skos:broader",
+      "Entity-similarity_measure"
+    ],
+    [
+      "Entity-sampled_parameter_space",
+      "skos:broader",
+      "Entity-parameter_space"
+    ],
+    [
+      "Entity-the_object",
+      "skos:broader",
+      "Entity-object"
+    ],
+    [
+      "Entity-the_object_(1)",
+      "skos:broader",
+      "Entity-object"
+    ]
+  ],
+  "predicates": {
+    "Predicate-has": {
+      "label": "has",
+      "description": "The predicate 'has' indicates a relationship of possession or ownership between the subject and the object, where the subject possesses, contains, or is associated with the object in some meaningful way. In this context, it signifies that the subject is characterized by or includes the object as a defining feature or component.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_considered_as": {
+      "label": "is considered as",
+      "description": "The predicate 'is considered as' establishes a relationship where the subject is viewed or interpreted in a specific way that aligns it with the characteristics or nature of the object. It implies a perspective or classification that suggests the subject shares essential qualities or functions similar to those of the object, thereby providing a framework for understanding or analyzing the subject in a particular context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are": {
+      "label": "are",
+      "description": "The predicate 'are' serves as a linking verb that connects the subject to its complement, indicating that the subject is being identified or classified as the object. It establishes a state of being or existence, suggesting that the subject possesses the qualities or characteristics described by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_used_to_track": {
+      "label": "is used to track",
+      "description": "The predicate 'is used to track' indicates a functional relationship where the subject serves as a mechanism, method, or process that facilitates the monitoring, observation, or measurement of the object. This implies that the subject plays a crucial role in enabling the identification or analysis of the characteristics, changes, or states represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_in_a_parameter_space_of": {
+      "label": "is in a parameter space of",
+      "description": "The predicate 'is in a parameter space of' establishes a relationship where the subject represents a specific entity or model that operates within a defined set of parameters related to the object. This indicates that the subject's behavior, performance, or characteristics can be influenced or determined by the parameters associated with the object, which typically denotes a broader concept or framework within which the subject functions.",
+      "disambiguation_index": 0
+    },
+    "Predicate-solves": {
+      "label": "solves",
+      "description": "The predicate 'solves' indicates a relationship where the subject is capable of addressing, resolving, or providing a solution to the challenge or problem represented by the object. It implies that the subject employs methods, techniques, or processes to effectively tackle the issues associated with the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-avoids_becoming_trapped_at": {
+      "label": "avoids becoming trapped at",
+      "description": "The predicate 'avoids becoming trapped at' indicates a proactive strategy or behavior of the subject to prevent reaching a state or condition represented by the object, which is often undesirable or limiting. In this context, the subject employs methods or techniques to circumvent stagnation or suboptimal outcomes associated with the object, thereby enhancing its effectiveness or performance in a given process.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_much_faster_than": {
+      "label": "is much faster than",
+      "description": "The predicate 'is much faster than' establishes a comparative relationship between two entities, indicating that the subject performs a certain task or process at a significantly higher speed than the object. This implies a notable efficiency advantage of the subject over the object in the context of the specified activity.",
+      "disambiguation_index": 0
+    },
+    "Predicate-samples": {
+      "label": "samples",
+      "description": "The predicate 'samples' indicates an action where the subject selects or extracts a subset of elements or instances from the object, which represents a broader set or space. This process typically involves drawing representative or random selections to analyze, evaluate, or understand the characteristics of the object in a more manageable form.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is": {
+      "label": "is",
+      "description": "The predicate 'is' serves as a linking verb that establishes an identity or equivalence between the subject and the object. It indicates that the subject can be classified, defined, or described by the object, suggesting a relationship of sameness or belonging. In this context, the subject is being identified or characterized by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-contrasts_with": {
+      "label": "contrasts with",
+      "description": "The predicate 'contrasts with' indicates a relationship between two entities where they exhibit significant differences or opposing characteristics. It highlights the distinctions in their properties, methods, or outcomes, suggesting that the subject and object represent alternative approaches or concepts that can be compared to one another.",
+      "disambiguation_index": 0
+    },
+    "Predicate-applies_on": {
+      "label": "applies on",
+      "description": "The predicate 'applies on' indicates a relationship where the subject is utilized or implemented in relation to the object, suggesting that the subject has relevance or is effective within the context or framework defined by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-redetects": {
+      "label": "redetects",
+      "description": "The predicate 'redetects' indicates an action where the subject identifies or recognizes the object again after a previous detection. This implies a process of re-evaluation or confirmation of the object's presence or status, often in the context of tracking or monitoring systems.",
+      "disambiguation_index": 0
+    },
+    "Predicate-applied_on": {
+      "label": "applied on",
+      "description": "The predicate 'applied on' indicates a relationship where the subject represents a method, technique, or process that is utilized or executed in relation to the object, which typically denotes a specific context, dataset, or domain. This connection implies that the subject is being used to analyze, manipulate, or derive insights from the object, thereby establishing a functional application of the subject within the framework defined by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_validated_on": {
+      "label": "is validated on",
+      "description": "The predicate 'is validated on' establishes a relationship where the subject has undergone a process of verification or assessment in relation to the object. This indicates that the subject has been tested or evaluated using the criteria, conditions, or data represented by the object, thereby confirming its effectiveness, reliability, or performance in that specific context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-outperforms": {
+      "label": "outperforms",
+      "description": "The predicate 'outperforms' indicates that the subject demonstrates superior performance or effectiveness compared to the object in a specific context or set of criteria. It implies a comparative evaluation where the subject achieves better results, efficiency, or quality than the object, which is often considered a benchmark or standard.",
+      "disambiguation_index": 0
+    },
+    "Predicate-improves": {
+      "label": "improves",
+      "description": "The predicate 'improves' indicates a positive enhancement or advancement in the quality, performance, or effectiveness of the object as a result of the influence or action of the subject. It suggests that the subject contributes to making the object better in some measurable or observable way.",
+      "disambiguation_index": 0
+    },
+    "Predicate-avoids_becoming_trapped_at_local_modes": {
+      "label": "avoids becoming trapped at local modes",
+      "description": "The predicate 'avoids becoming trapped at local modes' indicates that the subject actively seeks to prevent itself from being confined or limited by local optima in a given context, represented by the object. This suggests a proactive approach to navigating complex landscapes, ensuring that the subject maintains the ability to explore broader possibilities rather than settling for suboptimal solutions.",
+      "disambiguation_index": 0
+    },
+    "Predicate-uses": {
+      "label": "uses",
+      "description": "The predicate 'uses' establishes a functional relationship between the subject and the object, indicating that the subject employs or utilizes the object as a tool, method, or resource to achieve a specific purpose or outcome.",
+      "disambiguation_index": 0
+    },
+    "Predicate-utilizes": {
+      "label": "utilizes",
+      "description": "The predicate 'utilizes' indicates that the subject employs or makes use of the object in a functional or practical manner. It suggests that the subject actively incorporates the object into its processes or operations to achieve a specific purpose or outcome.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_an_advanced_tracking_algorithm_that_combines_local_tracking_with_global_optimization_techniques": {
+      "label": "is an advanced tracking algorithm that combines local tracking with global optimization techniques",
+      "description": "The predicate describes a type of tracking algorithm that integrates two distinct methodologies: local tracking, which focuses on immediate, localized data to follow objects or phenomena, and global optimization techniques, which enhance the tracking process by considering broader, overall patterns and data. This combination aims to improve the accuracy and efficiency of tracking in various applications.",
+      "disambiguation_index": 0
+    },
+    "Predicate-tracks": {
+      "label": "tracks",
+      "description": "The predicate 'tracks' indicates a relationship where the subject actively monitors, follows, or observes the state or progress of the object. In this context, it suggests that the subject is engaged in a process of identifying and maintaining awareness of specific characteristics or changes related to the object.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or concept that falls under a more general category represented by the object. This relationship suggests that the object encompasses a wider scope or range of ideas, of which the subject is a part.",
+      "disambiguation_index": 0
+    }
+  }
+}

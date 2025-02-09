@@ -1,0 +1,1059 @@
+{
+  "iri": "Paper-A_Pipeline_For_Analysing_Grant_Applications",
+  "title": "A Pipeline For Analysing Grant Applications",
+  "authors": [
+    "Shuaiqun Pan",
+    "Sergio J. Rodr\u00edguez M\u00e9ndez",
+    "Kerry Taylor"
+  ],
+  "keywords": [
+    "Grant applications",
+    "Random Forest classifier",
+    "TF-IDF algorithm"
+  ],
+  "sections": [
+    {
+      "iri": "Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-1",
+              "text": "Data mining techniques can transform massive amounts of unstructured data into quantitative data that quickly reveal insights, trends, and patterns behind the original data."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-2",
+              "text": "In this paper, a data mining model is applied to analyse the 2019 grant applications submitted to an Australian Government research funding agency to investigate whether grant schemes successfully identifies innovative project proposals, as intended."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-3",
+              "text": "The grant applications are peer-reviewed research proposals that include specific 'innovation and creativity' (IC) scores assigned by reviewers."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-4",
+              "text": "In addition to predicting the IC score for each research proposal, we are particularly interested in understanding the vocabulary of innovative proposals."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-5",
+              "text": "In order to solve this problem, various data mining models and feature encoding algorithms are studied and explored."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-6",
+              "text": "As a result, we propose a model with the best performance, a Random Forest (RF) classifier over documents encoded with features denoting the presence or absence of unigrams."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-7",
+              "text": "In specific, the unigram terms are encoded by a modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which only implements the IDF part of TF-IDF."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-8",
+              "text": "Besides the proposed model, this paper also presents a rigorous experimental pipeline for analysing grant applications, and the experimental results prove its feasibility."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-2",
+      "subtitle": "Introduction",
+      "paragraphs": [
+        {
+          "iri": "Section-2-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-1",
+              "text": "In the 21st century, the importance of developing cutting-edge scientific research is self-evident for every country."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-2",
+              "text": "Therefore, each country's government research funding agencies are willing to provide much scientific research funding to support essential and cutting-edge scientific research each year."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-3",
+              "text": "Determining whether a scientific research project is worthy of funding is a significant and rigorous step for funding agencies."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-4",
+              "text": "To obtain financial support, scientists and researchers always write research proposals to present their research plans and explain the significance of the project to the funding agencies."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-5",
+              "text": "Usually, the government research funding agencies receive thousands of research proposals each year, which are reviewed only by expert panels."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-6",
+              "text": "However, with the increase in the number of research proposals and the development of data mining techniques, funding agencies are increasingly using data mining models to assist in the manual review of research proposals."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-7",
+              "text": "At the same time, it must be made clear that relying solely on data mining models to replace manual checks is not reliable."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-1",
+              "text": "Applying data mining models to a research proposal has several benefits."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-2",
+              "text": "First, data mining models can briefly introduce the essential features of the research proposals to help human evaluators better screen the excellent research proposals, such as the influential features of the data mining models across all the research proposals."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-3",
+              "text": "Second, an effective data mining model can help human evaluators understand the research proposals\u2019 strengths and weaknesses during the manual review process."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-4",
+              "text": "Next, a high-quality data mining model can be applied to develop procedures and guidelines for human assessors to evaluate future research proposals to improve the quality of assessments."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-5",
+              "text": "Fourth, for government or funding agencies, different funding projects should be established to improve the quality of various types of research."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-6",
+              "text": "Data mining models can better understand how to ensure that human evaluators respond to these necessary qualities."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-1",
+              "text": "Based on the benefits and motivations mentioned above, we hope to apply a data mining model with an appropriate feature extraction technique to predict high IC-score research proposals based on the IC scores assigned by the expert reviewers."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-2",
+              "text": "Meanwhile, the other primary goal of the project is to develop a predictive vocabulary for contemporaneous proposals and to understand how the model inferred research proposals with high IC scores from the data features."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-3",
+              "text": "In addition, we focus on proposing an efficient feature extraction technique rather than the choice of classifiers, so we choose the very common Decision Tree (DT) and RF classifiers for experimental comparison."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-1",
+              "text": "The contributions of this paper are listed as follows:"
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-2",
+              "text": "A strict experimental pipeline for analysing grant applications is given, and the experimental results prove its feasibility."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-3",
+              "text": "A model is proposed with a Random Forest classifier over documents encoded with features denoting the presence or absence of unigram terms."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-4",
+              "text": "The unigram terms are encoded by a modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which only implements the IDF part of TF-IDF."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-5",
+              "text": "The proposed model for predicting high IC-score research proposals can achieve an accuracy of 84.17% across all types of grant applications."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-6",
+              "text": "This paper is divided into six sections."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-7",
+              "text": "In the first section, the project's motivation and problem statement are briefly introduced."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-8",
+              "text": "In section 2, the background and related work of this project are introduced."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-9",
+              "text": "The methodology section mainly describes the pipeline we apply for this research project."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-10",
+              "text": "Section 4 brings the overall design of the project."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-11",
+              "text": "Then, the experimental settings and implementations with the hardware platforms are introduced in this section."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-12",
+              "text": "The fifth section gives the experimental results of this project and carries on the further analysis."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-13",
+              "text": "Conclusions and future work are described in section 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-3",
+      "subtitle": "Related Work",
+      "paragraphs": [
+        {
+          "iri": "Section-3-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-1",
+              "text": "2.1 Computer science in evaluating grant applications."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-2",
+              "text": "Oztaysi et al. [2] proposed a multi-criteria approach to evaluate research proposals based on interval-valued intuitionistic fuzzy sets."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-3",
+              "text": "In this method, a fuzzy preference relation matrix was used to determine the relative importance of criteria."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-4",
+              "text": "The Preference Selection Index (PSI) was another interesting method to evaluate research grant applications [3]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-5",
+              "text": "One advantage of applying the PSI method was that the researcher did not need to determine the weight criteria."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-6",
+              "text": "Another similar and recently related work was the research paper classification system built based on the TF-IDF and LDA schemes [4]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-7",
+              "text": "This system used a Latent Dirichlet allocation (LDA) scheme to extract representative keywords from the abstract of each paper [5]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-8",
+              "text": "The K-means clustering algorithm [6] was applied to group papers with similar topics based on the TF-IDF vector encoding of each paper."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-9",
+              "text": "The results showed that the LDA with 30 keywords using TF-IDF obtained the best F-score compared with the LDA with fewer keywords."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-1",
+              "text": "2.2 Term vectors and statistical measures in text representation."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-2",
+              "text": "TF-IDF is commonly used in data mining and information retrieval."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-3",
+              "text": "TF indicates the frequency of a word in a document or a collection of documents."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-4",
+              "text": "When calculating TF, all the words from documents are treated as equally important."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-5",
+              "text": "However, in practice, people only pay attention to a certain of words."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-6",
+              "text": "For example, \u201cthis\", \u201care\", and \u201cit\" usually do not represent important in most cases."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-7",
+              "text": "Then, the IDF is implemented to adjust the term weights in documents which can increase the weights of those rare but important words and weigh down those frequent words but less important."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-8",
+              "text": "In 2016, Guo and Yang [7] analysed the shortcomings of the TF-IDF algorithm."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-9",
+              "text": "Then, an intra-class dispersion algorithm based on TF-IDF was proposed."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-10",
+              "text": "Chen et al. [8] proposed a new term weighting technique called Term Frequency & Inverse Gravity Moment (TF-IGM), which was mainly used to measure the class discrimination of a term."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-11",
+              "text": "The experimental results showed that the TF-IGM performed better than the traditional TF-IDF in three standard corpora."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-12",
+              "text": "Das and Chakraborty [9] proposed a text sentiment classification technique based on the TF-IDF algorithm and Next Word Negation (NWN)."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-13",
+              "text": "In addition, this study also compared the binary bag of words, TF-IDF, and TF-IDF with NWN algorithms."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-14",
+              "text": "Fan and Qin [10] proposed another improved TF-IDF algorithm, TF-IDCRF, which focused on the relationship between classes in the classification model."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-15",
+              "text": "In 2019, an improved TF-IDF algorithm based on classification discrimination strength was proposed for text classification [11]."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-1",
+              "text": "2.3 Data mining models in text classification."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-2",
+              "text": "In the field of data mining, the DT classifier is widely welcome for its advantage of showing how models make decisions according to the data features [12]."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-3",
+              "text": "RF classifier is another popular data mining model."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-4",
+              "text": "The term forest can be interpreted to mean that each classifier in the ensemble is a DT classifier, while all combinations of classifiers are a forest [13]."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-5",
+              "text": "In the RF classifier, each decision tree also selects the optimal attribute based on the Attribute Selection Measures (ASM)."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-6",
+              "text": "At the same time, each decision tree depends independently on a random sample."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-7",
+              "text": "The RF classifier votes on each tree in specific classification problems and selects the most popular category as the final result."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-1",
+              "text": "In 2016, a news classification method was proposed based on the TF-IDF algorithm and Support Vector Machine (SVM) [14]."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-2",
+              "text": "Based on a different number of n-grams and various data sets, five data mining classifiers were built and compared [15]."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-3",
+              "text": "The results can guide researchers to select an appropriate data mining model according to the size of the data set."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-4",
+              "text": "Four different data mining models were implemented with five different ensemble methods, and the experimental results showed that the RF classifier with the Bagging ensemble method achieved the best performance [16]."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-5",
+              "text": "Wongso et al. [17] applied TF-IDF and SVD algorithms [18] to the feature selection step and compare the two algorithms."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-6",
+              "text": "At the same time, the Multivariate Bernoulli Naive Bayes [19], and SVM were compared in this study."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-7",
+              "text": "Finally, with the combination of TF-IDF and Multivariate Bernoulli Naive Bayes, news articles in the Indonesian Language corpus were classified, and the best result was obtained [17]."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-4",
+      "subtitle": "Methodology",
+      "paragraphs": [
+        {
+          "iri": "Section-4-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-1",
+              "text": "This section details the workflow of our proposed pipeline and the data mining model."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-2",
+              "text": "Fig. 1 shows the pipeline of analysing grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-3",
+              "text": "3.1 Data set."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-4",
+              "text": "The data set used to analyse the grant applications is the 2019 grant applications submitted to an Australian Government research funding agency."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-5",
+              "text": "3,805 research proposals are given in this data set with peer-reviewed IC scores (1 - 7)."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-6",
+              "text": "In addition, the entire data set contains different types of grant applications, such as Synergy Grants, Standard Project Grants, and Ideas Grants."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-7",
+              "text": "Besides the IC score, reviewers also score several other assessment scores, such as \u201cFeasibility Score\u201d or \u201cSignificance Score.\u201d"
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-8",
+              "text": "Since all research proposals are saved in PDF format, extracting the text from PDF files is necessary."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-9",
+              "text": "A Metadata Extractor & Loader (MEL) [20] tool is applied to extract text from PDF research proposals and save it in a JSON file with metadata sets and content."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-10",
+              "text": "By default, all JSON files are stored in CouchDB database [21] based on the proposal index."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-11",
+              "text": "Before designing the whole pipeline, a statistical analysis is required based on the IC scores of research proposals."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-12",
+              "text": "At the same time, some fundamental values are also the basis of designing the entire pipeline, such as the median IC score and mode IC score."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-13",
+              "text": "Table 1 shows a statistic of IC scores, showing that 3,693 research proposals have valid IC scores."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-14",
+              "text": "In addition, 99 research proposals do not contain an IC score, 13 of which have an IC score below 1.0, and these research proposals therefore not be used in this project."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-15",
+              "text": "Table 1 also shows the median IC score, 5.0, the most frequent IC score."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-1",
+              "text": "3.2 Text pre-processing for grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-2",
+              "text": "HaCohen-Kerner et al. [22] proved that text pre-processing techniques could make the model achieve better performance than without the text pre-processing step."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-3",
+              "text": "After all the text is extracted, all characters, whether uppercase or lowercase, are converted to lowercase."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-4",
+              "text": "Then, the numbers are also removed because the numbers in the research proposals are not relevant for future analysis."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-5",
+              "text": "Thirdly, removing punctuations and tokenizing by whitespace are also adopted, which make the text into small pieces called tokens."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-6",
+              "text": "In addition, the deletion of stop words is one of the most crucial text pre-processing techniques."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-7",
+              "text": "Fani et al. [23] have shown that deleting stop words can improve the performance of data mining tasks."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-8",
+              "text": "Therefore, we create a list of custom stop words according to the IDF formula and delete the IDF value of the term from the text lower than 1.0."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-9",
+              "text": "The reason for choosing 1.0 is that after implementation some preliminary experiments, we confirm that the feature words considered as important by DT and RF classifiers will less than 1000 words."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-10",
+              "text": "Meanwhile, the words whose IDF value are less than 1.0 only account for 0.2% of the total words, and they are all common words such as \u201cnext\u201d, \u201cshift\u201d and \u201cother\u201d."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-11",
+              "text": "We believe that these words appear too frequently and have no influence on the experimental results."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-12",
+              "text": "Finally, text stemming is the last technique we apply in the text pre-processing step."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-13",
+              "text": "Text stemming is a technique for reducing each word to its root format [24]."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-14",
+              "text": "It helps to reduce the vocabulary and surface syntax to get closer to the meaning of each term, and the Porter Stemming algorithm [25] is implemented in this step."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-1",
+              "text": "This section details the workflow of our proposed pipeline and the data mining model."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-2",
+              "text": "Fig. 1 shows the pipeline of analysing grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-3",
+              "text": "3.1 Data set."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-4",
+              "text": "The data set used to analyse the grant applications is the 2019 grant applications submitted to an Australian Government research funding agency."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-5",
+              "text": "3,805 research proposals are given in this data set with peer-reviewed IC scores (1 - 7)."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-6",
+              "text": "In addition, the entire data set contains different types of grant applications, such as Synergy Grants, Standard Project Grants, and Ideas Grants."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-7",
+              "text": "Besides the IC score, reviewers also score several other assessment scores, such as \u201cFeasibility Score\u201d or \u201cSignificance Score.\u201d"
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-8",
+              "text": "Since all research proposals are saved in PDF format, extracting the text from PDF files is necessary."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-9",
+              "text": "A Metadata Extractor & Loader (MEL) [20] tool is applied to extract text from PDF research proposals and save it in a JSON file with metadata sets and content."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-10",
+              "text": "By default, all JSON files are stored in CouchDB database [21] based on the proposal index."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-11",
+              "text": "Before designing the whole pipeline, a statistical analysis is required based on the IC scores of research proposals."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-12",
+              "text": "At the same time, some fundamental values are also the basis of designing the entire pipeline, such as the median IC score and mode IC score."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-13",
+              "text": "Table 1 shows a statistic of IC scores, showing that 3,693 research proposals have valid IC scores."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-14",
+              "text": "In addition, 99 research proposals do not contain an IC score, 13 of which have an IC score below 1.0, and these research proposals therefore not be used in this project."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-15",
+              "text": "Table 1 also shows the median IC score, 5.0, the most frequent IC score."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-1",
+              "text": "3.4 Design and apply the feature extraction technique."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-2",
+              "text": "We propose a modified TF-IDF algorithm, which only implements the IDF part of TF-IDF as the feature extraction technique."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-3",
+              "text": "In specific, if the term exists at least once in the documents, specify the IDF value for this term directly."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-4",
+              "text": "In addition, if a term does not exist in the documents, then the term is assigned a value of 0."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-5",
+              "text": "The design of this modified feature extraction algorithm follows the idea that rare terms can define innovativeness."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-6",
+              "text": "The experiment also considers the n-grams [26]."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-7",
+              "text": "Unigram is the most common choice for text classification tasks, but bigram and trigram may better represent scientific terms, where bigram is two consecutive words in a sentence, and trigram is three consecutive words in a sentence."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-8",
+              "text": "At the same time, when collecting proposals, we also consider deleting the words that only exist once or twice, because very rare terms tend not to be predictive."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-9",
+              "text": "In addition, the bigram mentioned in this paper denotes a combination of the unigrams and bigrams."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-10",
+              "text": "The trigram denotes a combination of the unigrams, bigrams, and trigrams."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-1",
+              "text": "3.5 Apply data mining models with grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-2",
+              "text": "This paper uses DT and RF classifiers for text classification because we would like to find out the most influential terms and understood how the data mining model predicts high and low IC-score research proposals."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-3",
+              "text": "The DT and RF classifiers are convenient to present this valuable information."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-4",
+              "text": "Based on the experimental result of the high and low IC-score research proposals selection, all experiments are conducted with the low IC-score research proposals (IC score 0~15%) and the high IC-score research proposals (IC score 85%~100%)."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-5",
+              "text": "In the comparison study of feature extraction techniques, 400 research proposals for each low and high IC score are randomly selected for model training, and the training data is 85%, and the test data is 15%."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-6",
+              "text": "In order to analyse the proposed model in the end, the 100 most influential terms from the collections of research proposals are extracted by the function from scikit-learn library [27], which bring us an intuitive understanding of how much each term contributes to reducing the weighted impurities."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-1",
+              "text": "3.6 Analyse moderate IC-score grant applications."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-2",
+              "text": "We also conduct several experiments to analyse moderate IC-score research proposals based on the proposed model."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-3",
+              "text": "The purpose of this series of experiments is to determine whether there is a relation between proposals with moderate IC scores and that of high and low IC scores."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-4",
+              "text": "Since the proposed model is trained based on the low IC-score proposals of 0~15% and high IC-score proposals of 85~100%, the range of research proposals with moderate IC score is 15%~85%."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-5",
+              "text": "Based on the median IC score, the selection range of testing moderate IC score by testing several cut-off options, such as 20, 25, 30, 35, 40, 45, and 50."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-6",
+              "text": "Table 4 shows a list of experiments used to analyse the research proposals of moderate IC score."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-7",
+              "text": "Considering the symmetric distribution of the IC scores, new research proposals with low and high IC scores are selected in each experiment, and performance analysis is conducted based on the proposed training model."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-8",
+              "text": "In addition to the experiments in Table 4, another experiment is designed to check the median IC-score research proposals (IC score = 5.0) to predict the proportion of high or low IC-score research proposals rather than calculate the test accuracy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-5",
+      "subtitle": "Experimental Settings",
+      "paragraphs": [
+        {
+          "iri": "Section-5-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-1",
+              "text": "This section describes all experimental settings for this paper."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-2",
+              "text": "Initially, MEL [20] is implemented through a set of Python-based methods to extract metadata for all supported file types."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-3",
+              "text": "To extract metadata from the PDF version of a file, the Tesseract-OCR method [28] and pdftotext tool [29] are applied."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-4",
+              "text": "In the statistical analysis of grant applications, the Python language and Numpy library [30] are used to calculate the median, mode, and other statistical measurements of IC score."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-5",
+              "text": "In the experiments of selecting high, low, and moderate IC-score research proposals and implementing the data mining models, the scikit-learn library [27] is applied to implement the DT and RF classifiers."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-6",
+              "text": "The python library gensim [31] is used to implement the TF-IDF algorithm and the newly proposed modified TF-IDF algorithm."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-1",
+              "text": "Hyper-parameter tuning is a significant step in applying data mining models, and the Bayesian Optimization tool [32] is applied."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-2",
+              "text": "The first step to implement Bayesian Optimization is to define the data mining model, such as the RF classifier and its parameters and corresponding bounds."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-3",
+              "text": "In addition, we also need to implement the scoring method and the cross-validation setup."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-4",
+              "text": "Secondly, the maximize method is used to run the technique with n_iter and init_points parameters."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-5",
+              "text": "The n_iter is defined for the number of steps to run the optimization function."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-6",
+              "text": "The more steps, the easier it is to find the best accuracy value."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-7",
+              "text": "The init_points is defined for random exploration on the parameter space, which helps to explore the diversity of the space."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-8",
+              "text": "Finally, the parameter values for each accuracy are listed, highlighting the best combination of the parameter and the target value."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-1",
+              "text": "To find the hyper-parameters of the RF classifier, the range of each parameter is set as follows: max_depth = (5, 60), min_samples_split = (10, 100), max_features = (0.1, 0.999), max_samples_leaf = (10, 50) and n_estimation = (100, 400)."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-2",
+              "text": "For the DT classifier, the range settings for finding hyper-parameters are as follows: max_depth = (3, 10), min_samples_split = (3, 10), max_features = (0.1, 0.999),and max_samples_leaf = (3, 10)."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-3",
+              "text": "The max_depth parameter indicates the maximum depth of the tree, and the max_features denotes the number of features to consider when finding the best split [27]."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-4",
+              "text": "The parameters min_samples_leaf, min_samples_split, and n_estimators are defined as the minimum number of samples needed on a leaf node, the minimum number of samples needed to split an internal node, and the number of trees in the forest, respectively."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-5",
+              "text": "All experiments related to RF classifier and DT classifier adopt the same setting of the hyper-parameter range."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-6",
+              "text": "Meanwhile, the 10-fold cross-validation method is also applied in finding the hyper-parameters."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-1",
+              "text": "To evaluate the performance of the newly proposed modified TF-IDF algorithm and the TF-IDF algorithm with different data mining classifiers, the classification accuracy (Acc), F1 score are selected as the evaluation metrics."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-2",
+              "text": "The hardware platform is MacBook Pro with Intel Core i7 2.9 GHz Quard-Core processor."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-3",
+              "text": "The memory configuration is 16GB 2133 MHz LPDDR3."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-6",
+      "subtitle": "Experimental Result",
+      "paragraphs": [
+        {
+          "iri": "Section-6-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-1",
+              "text": "Table 5 shows the performance of the TF-IDF algorithm with DT and RF classifiers."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-2",
+              "text": "It can be found that the RF classifier can consistently achieve better performance than the DT classifier under the different settings of the n-grams and deletion of rare terms."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-1",
+              "text": "Table 6 shows the performance of the newly proposed modified TF-IDF algorithm with DT and RF classifiers."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-2",
+              "text": "Based on the comparison of Table 5 and Table 6, the best performance is achieved with 84.17% accuracy by the RF classifier with the newly proposed modified TF-IDF algorithm except the No.14 model combination in Table 6."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-3",
+              "text": "The hyper-parameters are max_depth = 22, max_features = 0.9931, min_samples_leaf = 11, min_samples_split = 67 and n_estimation = 102."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-4",
+              "text": "To include all the terms from the corpus, we choose the RF classifier based on unigram and the modified TF-IDF algorithm as the final proposed model."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-5",
+              "text": "Another reason why we do not choose the bigram and trigram combinations as the proposed model is the bigram and trigram terms are in fact not regarded as essential features by DT and RF classifiers."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-6",
+              "text": "Features extracted from the proposed model shows that only 618 features are considered significant, based on tens of thousands of features in the research proposals."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-1",
+              "text": "Based on the comparison of the two tables, it can be found that the proposed modified TF-IDF algorithm is practical and effective despite two or three exceptions exist."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-2",
+              "text": "At the same time, the experimental results prove that the core idea of defining the modified TF-IDF algorithm is meaningful and show the rare terms associated with innovativeness."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-3",
+              "text": "It should also be noted that the newly proposed modified TF-IDF algorithm can be understood as a simple encoding technique, such as taking the value 0 or the IDF value of the term depending on whether the term exists in the research proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-4",
+              "text": "Based on the decision tree plots generated by the best performance model, it can be found that the modified TF-IDF algorithm does not affect the shape of the tree as seen in the tree graph, helping to understand whether the chosen split term is rare or common."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-1",
+              "text": "From the result of finding hyper-parameters, it can be found that the best performing model does not use all the features to apply with the data mining algorithms, such as the RF classifier only uses 99.31% features."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-2",
+              "text": "In addition, although we consider different n-grams, especially bigram and trigram, with removing scarce words, Table 5 and Table 6 could prove that it might help but not always."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-3",
+              "text": "Moreover, based on the same feature extraction algorithm, the classification accuracy of the RF classifier is always better than that of the DT classifier."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-4",
+              "text": "Nevertheless, the results of the DT classifier are still crucial because the plot of DT classifier contains all the decisions."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-1",
+              "text": "Fig. 2 shows the confusion matrix of the proposed model for the \u201cunseen\u201d test data."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-2",
+              "text": "It shows 13 high IC-score research proposals are incorrectly predicted as low IC-score proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-3",
+              "text": "In addition, 6 research proposals with low IC scores are guessed wrongly which they are predicted as high IC-score proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-4",
+              "text": "The number 59 denotes that the proposed model correctly predicts 59 research proposals with low IC scores and 42 with high IC scores."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-1",
+              "text": "In addition to analysing the confusion matrix, we also extract the 100 most influential features from the proposed model, which gives an intuitive understanding of how much each feature contributes to reducing the weighted impurities."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-2",
+              "text": "The top 100 features give us a better understanding of what is going on inside the black box."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-3",
+              "text": "A measure of the feature importance is valuable for internal model development purposes by showing to what extent features contribute to test data."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-4",
+              "text": "Although the classifier is only established for the 2019 grant applications and may not predict the high research proposals for future applications, these unique terms are still valuable and meaningful as a reference for evaluators."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-1",
+              "text": "Table 7 brings the performance of checking research proposals of moderate IC scores based on the proposed model."
+            },
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-2",
+              "text": "Based on the test accuracy, it can be concluded that there is a correlation between the moderate IC-score research proposals and high/low IC-score research proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-3",
+              "text": "Moreover, it is easy to find that the proposed model can better predict the research proposals close to the original training set settings (0~15% for low IC score and 85%~100% for high IC score)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-1",
+              "text": "Based on the confusion matrix above and the experimental results of checking moderate IC-score research proposals, it can be found that the model is always more accurate in predicting research proposals with low IC scores than with high IC scores."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-2",
+              "text": "Meanwhile, the research proposals with the median IC score of 5.0 are predicted to be about 37.2% with high-IC score research proposals and about 62.8% with low-IC score research proposals."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-3",
+              "text": "Therefore, it can be concluded that research proposals with high IC scores use more diverse language than those with low IC-score."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-4",
+              "text": "In addition to the experiments analysing all grant applications, we follow the same pipeline and establish a new model to evaluate Ideas Grant applications only, the one with innovation criteria."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-5",
+              "text": "Applying the same method but with different hyper-parameters, the best performing model for analysing the Ideas Grants can reach an accuracy of 82.5%."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-6",
+              "text": "In every Ideas Grant application, there is a section called \u201cInnovation and Creativity statement.\u201d"
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-7",
+              "text": "We also extract this part from each Ideas grant and analyse using the proposed pipeline."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-8",
+              "text": "The experimental result shows that the proposed method can achieve 68.33% accuracy on analysing \u201cInnovation and Creativity statement\u201d sections only from Ideas Grants."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-9",
+              "text": "Although we guess the IC score is more relevant to the \u201cInnovation and Creativity statement\u201d compared with other sections, as evaluators may describe their innovation in this section, the experimental result does not support our guess."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-7",
+      "subtitle": "Conclusion",
+      "paragraphs": [
+        {
+          "iri": "Section-7-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-1",
+              "text": "In summary, a pipeline for analysing grant applications has been proposed with several crucial steps."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-2",
+              "text": "The proposed data mining model is an RF classifier over documents encoded with features denoting the presence or absence of unigrams."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-3",
+              "text": "Specifically, the unigram terms are encoded by a modified Term Frequency - Inverse Document Frequency(TF-IDF) algorithm, which only implements the IDF part of TF-IDF."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-4",
+              "text": "As a result, the proposed model achieves an accuracy of 84.17% based on all types of grant applications."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-5",
+              "text": "In addition, we also build experiments for Ideas Grants only and \u201cInnovation and Creativity statement\u201d single section."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-1",
+              "text": "The future work can be carried out from different perspectives."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-2",
+              "text": "Firstly, innovation should not be the only evaluation criterion."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-3",
+              "text": "In order to better evaluate the entire grant application, we should consider other evaluation scores and establish a more comprehensive system that can predict a grant application based on multiple criteria."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-4",
+              "text": "Secondly, in the future, this project can also apply some other effective data mining models, such as SVM, AdaBoost, and Xgboost."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-5",
+              "text": "In addition, the pre-trained language models in the Natural Language Processing (NLP) field perform well in understanding text semantics, which can also be our next research focus."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-6",
+              "text": "Thirdly, our proposed method cannot predict future grant applications because the current data set contains only key terms for 2019 and does not represent future grant applications."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-7",
+              "text": "Therefore, it is an important research topic to consider building a long-term data mining model to predict future grant applications."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1212 @@
+{
+  "iri": "Paper-1",
+  "title": "X96-1059",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-1-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-1-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-1-Section-1-Paragraph-1-Sentence-1",
+              "text": "Recognition of proper nouns in Japanese text has been studied as a part of the more general problem of morphological analysis in Japanese text processing -LRB- -LSB- 1 -RSB- -LSB- 2 -RSB- -RRB- ."
+            },
+            {
+              "iri": "Paper-1-Section-1-Paragraph-1-Sentence-2",
+              "text": "It has also been studied in the framework of Japanese information extraction -LRB- -LSB- 3 -RSB- -RRB- in recent years ."
+            },
+            {
+              "iri": "Paper-1-Section-1-Paragraph-1-Sentence-3",
+              "text": "Our approach to the Multi-lingual Evaluation Task -LRB- MET -RRB- for Japanese text is to consider the given task as a morphological analysis problem in Japanese ."
+            },
+            {
+              "iri": "Paper-1-Section-1-Paragraph-1-Sentence-4",
+              "text": "Our morphological analyzer has done all the necessary work for the recognition and classification of proper names , numerical and temporal expressions , i.e. Named Entity -LRB- NE -RRB- items in the Japanese text ."
+            },
+            {
+              "iri": "Paper-1-Section-1-Paragraph-1-Sentence-5",
+              "text": "The analyzer is called `` Amorph '' ."
+            },
+            {
+              "iri": "Paper-1-Section-1-Paragraph-1-Sentence-6",
+              "text": "Amorph recognizes NE items in two stages : dictionary lookup and rule application ."
+            },
+            {
+              "iri": "Paper-1-Section-1-Paragraph-1-Sentence-7",
+              "text": "First , it uses several kinds of dictionaries to segment and tag Japanese character strings ."
+            },
+            {
+              "iri": "Paper-1-Section-1-Paragraph-1-Sentence-8",
+              "text": "Second , based on the information resulting from the dictionary lookup stage , a set of rules is applied to the segmented strings in order to identify NE items ."
+            },
+            {
+              "iri": "Paper-1-Section-1-Paragraph-1-Sentence-9",
+              "text": "When a segment is found to be an NE item , this information is added to the segment and it is used to generate the final output ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00012993812561035156,
+    23.2091646194458,
+    26.484302282333374,
+    25.36908793449402,
+    1.3996703624725342,
+    0.00011301040649414062,
+    0.0001552104949951172,
+    39.123255491256714,
+    54.742284297943115,
+    3.3501806259155273,
+    1.204493522644043,
+    0.10927796363830566,
+    0.0003116130828857422,
+    38.04653525352478,
+    8.260390043258667,
+    0.024216651916503906,
+    1.0977773666381836,
+    6.054410457611084,
+    9.777300834655762,
+    8.867318868637085,
+    41.42578887939453,
+    3.369466543197632,
+    14.212285041809082,
+    0.9580955505371094,
+    0.0006384849548339844,
+    0.04080700874328613
+  ],
+  "nodes": {
+    "Entity-the_multi-lingual_evaluation_task_-lrb-_met_-rrb-_for_japanese_text": {
+      "node_id": "the_multi-lingual_evaluation_task_-lrb-_met_-rrb-_for_japanese_text",
+      "disambiguation_index": 0,
+      "label": "the Multi-lingual Evaluation Task -LRB- MET -RRB- for Japanese text",
+      "aliases": [
+        "the Multi-lingual Evaluation Task -LRB- MET -RRB- for Japanese text"
+      ],
+      "types": [
+        "task",
+        "evaluation task"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A evaluation task specifically designed for recognizing and classifying proper nouns, numerical and temporal expressions (Named Entities) in Japanese text.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the Multi-lingual Evaluation Task -LRB- MET -RRB- for Japanese text",
+          "local_types": [
+            "task",
+            "evaluation task"
+          ],
+          "iri": "Entity-the_multi-lingual_evaluation_task_-lrb-_met_-rrb-_for_japanese_text-Mention-1"
+        }
+      ],
+      "relevance": 0.7900390625
+    },
+    "Entity-the_analyzer": {
+      "node_id": "the_analyzer",
+      "disambiguation_index": 0,
+      "label": "The analyzer",
+      "aliases": [
+        "The analyzer"
+      ],
+      "types": [
+        "analyzer"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A morphological analyzer, specifically 'Amorph', that recognizes and classifies named entities (NE) in Japanese text through dictionary lookup and rule application.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "The analyzer",
+          "local_types": [
+            "analyzer"
+          ],
+          "iri": "Entity-the_analyzer-Mention-1"
+        }
+      ],
+      "relevance": 0.76513671875
+    },
+    "Entity-first": {
+      "node_id": "first",
+      "disambiguation_index": 0,
+      "label": "First",
+      "aliases": [
+        "First"
+      ],
+      "types": [
+        "term",
+        "beginning"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The initial stage in Amorph's process for recognizing Named Entity items (NE) in Japanese text.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "First",
+          "local_types": [
+            "term",
+            "beginning"
+          ],
+          "iri": "Entity-first-Mention-1"
+        }
+      ],
+      "relevance": 0.72998046875
+    },
+    "Entity--lsb-": {
+      "node_id": "-lsb-",
+      "disambiguation_index": 0,
+      "label": "-LSB-",
+      "aliases": [
+        "-LSB-"
+      ],
+      "types": [
+        "punctuation"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Amorph, a morphological analyzer for Japanese text",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "-LSB-",
+          "local_types": [
+            "punctuation"
+          ],
+          "iri": "Entity--lsb--Mention-1"
+        }
+      ],
+      "relevance": 0.71826171875
+    },
+    "Entity-recognition_of_proper_noun_in_japanese_text": {
+      "node_id": "recognition_of_proper_noun_in_japanese_text",
+      "disambiguation_index": 0,
+      "label": "Recognition of proper nouns in Japanese text",
+      "aliases": [
+        "Recognition of proper nouns in Japanese text"
+      ],
+      "types": [
+        "research topic",
+        "study",
+        "research"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process of identifying and distinguishing proper nouns in Japanese text.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Recognition of proper nouns in Japanese text",
+          "local_types": [
+            "research topic",
+            "study",
+            "research"
+          ],
+          "iri": "Entity-recognition_of_proper_noun_in_japanese_text-Mention-1"
+        }
+      ],
+      "relevance": 0.7138671875
+    },
+    "Entity-a_set_of_rule_is_applied_to_the_segmented_string_in_order_to_identify_ne_item": {
+      "node_id": "a_set_of_rule_is_applied_to_the_segmented_string_in_order_to_identify_ne_item",
+      "disambiguation_index": 0,
+      "label": "a set of rules is applied to the segmented strings in order to identify NE items",
+      "aliases": [
+        "a set of rules is applied to the segmented strings in order to identify NE items"
+      ],
+      "types": [
+        "rule",
+        "identification process"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The process of identifying Named Entity (NE) items, such as proper nouns, numerical and temporal expressions, in Japanese text.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "a set of rules is applied to the segmented strings in order to identify NE items",
+          "local_types": [
+            "rule",
+            "identification process"
+          ],
+          "iri": "Entity-a_set_of_rule_is_applied_to_the_segmented_string_in_order_to_identify_ne_item-Mention-1"
+        }
+      ],
+      "relevance": 0.7060546875
+    },
+    "Entity-our_morphological_analyzer": {
+      "node_id": "our_morphological_analyzer",
+      "disambiguation_index": 0,
+      "label": "Our morphological analyzer",
+      "aliases": [
+        "Our morphological analyzer"
+      ],
+      "types": [
+        "software"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A software tool that recognizes and classifies proper names, numerical expressions, temporal expressions (Named Entity items) in Japanese text.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Our morphological analyzer",
+          "local_types": [
+            "software"
+          ],
+          "iri": "Entity-our_morphological_analyzer-Mention-1"
+        }
+      ],
+      "relevance": 0.70068359375
+    },
+    "Entity-when_a_segment": {
+      "node_id": "when_a_segment",
+      "disambiguation_index": 0,
+      "label": "When a segment",
+      "aliases": [
+        "When a segment"
+      ],
+      "types": [
+        "condition"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A stage in Amorph's morphological analyzer where a Japanese character string is identified as a Named Entity (NE) item.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "When a segment",
+          "local_types": [
+            "condition"
+          ],
+          "iri": "Entity-when_a_segment-Mention-1"
+        }
+      ],
+      "relevance": 0.69775390625
+    },
+    "Entity-ne_item": {
+      "node_id": "ne_item",
+      "disambiguation_index": 0,
+      "label": "NE items",
+      "aliases": [
+        "NE items",
+        "NE item"
+      ],
+      "types": [
+        "natural language processing concept",
+        "named entity recognition item",
+        "notation",
+        "concept",
+        "entity",
+        "named entity",
+        "terminology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Named entities, including proper nouns, numerical expressions, and temporal expressions in Japanese text.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "NE items",
+          "local_types": [
+            "natural language processing concept",
+            "named entity recognition item",
+            "entity"
+          ],
+          "iri": "Entity-ne_item-Mention-1"
+        },
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "NE items",
+          "local_types": [
+            "named entity",
+            "concept"
+          ],
+          "iri": "Entity-ne_item-Mention-2"
+        },
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "NE item",
+          "local_types": [
+            "notation",
+            "terminology"
+          ],
+          "iri": "Entity-ne_item-Mention-3"
+        }
+      ],
+      "relevance": 0.69677734375
+    },
+    "Entity-the_recognition_and_classification_of_proper_name__numerical_and_temporal_expression": {
+      "node_id": "the_recognition_and_classification_of_proper_name__numerical_and_temporal_expression",
+      "disambiguation_index": 0,
+      "label": "the recognition and classification of proper names, numerical and temporal expressions",
+      "aliases": [
+        "the recognition and classification of proper names, numerical and temporal expressions"
+      ],
+      "types": [
+        "task"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The process of identifying and categorizing proper nouns, numbers, and time expressions (Named Entities) within a Japanese text.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the recognition and classification of proper names, numerical and temporal expressions",
+          "local_types": [
+            "task"
+          ],
+          "iri": "Entity-the_recognition_and_classification_of_proper_name__numerical_and_temporal_expression-Mention-1"
+        }
+      ],
+      "relevance": 0.6884765625
+    },
+    "Entity-our_approach": {
+      "node_id": "our_approach",
+      "disambiguation_index": 0,
+      "label": "Our approach",
+      "aliases": [
+        "Our approach"
+      ],
+      "types": [
+        "approach"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The approach taken by the authors to recognize and classify proper nouns, numerical and temporal expressions (Named Entities) in Japanese text.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Our approach",
+          "local_types": [
+            "approach"
+          ],
+          "iri": "Entity-our_approach-Mention-1"
+        }
+      ],
+      "relevance": 0.67529296875
+    },
+    "Entity-morphological_analysis_in_japanese_text_processing": {
+      "node_id": "morphological_analysis_in_japanese_text_processing",
+      "disambiguation_index": 0,
+      "label": "morphological analysis in Japanese text processing",
+      "aliases": [
+        "morphological analysis in Japanese text processing"
+      ],
+      "types": [
+        "field of study",
+        "computer science"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process of analyzing and identifying morphological structures in Japanese text.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "morphological analysis in Japanese text processing",
+          "local_types": [
+            "field of study",
+            "computer science"
+          ],
+          "iri": "Entity-morphological_analysis_in_japanese_text_processing-Mention-1"
+        }
+      ],
+      "relevance": 0.65625
+    },
+    "Entity-morphological_analysis_problem_in_japanese": {
+      "node_id": "morphological_analysis_problem_in_japanese",
+      "disambiguation_index": 0,
+      "label": "morphological analysis problem in Japanese",
+      "aliases": [
+        "the more general problem of morphological analysis in Japanese text processing",
+        "morphological analysis problem in Japanese"
+      ],
+      "types": [
+        "problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A challenge or difficulty in analyzing and understanding the morphology of Japanese language",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "morphological analysis problem in Japanese",
+          "local_types": [
+            "problem"
+          ],
+          "iri": "Entity-morphological_analysis_problem_in_japanese-Mention-1"
+        },
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "the more general problem of morphological analysis in Japanese text processing",
+          "local_types": [
+            "problem"
+          ],
+          "iri": "Entity-morphological_analysis_problem_in_japanese-Mention-2"
+        }
+      ],
+      "relevance": 0.63720703125
+    },
+    "Entity-recognition_of_proper_noun": {
+      "node_id": "recognition_of_proper_noun",
+      "disambiguation_index": 0,
+      "label": "Recognition of proper nouns",
+      "aliases": [
+        "Recognition of proper nouns"
+      ],
+      "types": [
+        "problem",
+        "research topic",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The identification or classification of proper nouns, such as names and titles.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Recognition of proper nouns",
+          "local_types": [
+            "problem",
+            "research topic",
+            "concept"
+          ],
+          "iri": "Entity-recognition_of_proper_noun-Mention-1"
+        }
+      ],
+      "relevance": 0.62060546875
+    },
+    "Entity-amorph": {
+      "node_id": "amorph",
+      "disambiguation_index": 0,
+      "label": "Amorph",
+      "aliases": [
+        "Amorph"
+      ],
+      "types": [
+        "analyzer",
+        "organization",
+        "morphological analyzer",
+        "software tool",
+        "software",
+        "name",
+        "tool"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A morphological analyzer, typically a software tool or organization that breaks down words into their constituent parts.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Amorph",
+          "local_types": [
+            "analyzer",
+            "morphological analyzer",
+            "software tool",
+            "software",
+            "name"
+          ],
+          "iri": "Entity-amorph-Mention-1"
+        },
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "Amorph",
+          "local_types": [
+            "tool",
+            "software",
+            "organization"
+          ],
+          "iri": "Entity-amorph-Mention-2"
+        }
+      ],
+      "relevance": 0.6162109375
+    },
+    "Entity-japanese_text_processing": {
+      "node_id": "japanese_text_processing",
+      "disambiguation_index": 0,
+      "label": "Japanese text processing",
+      "aliases": [
+        "Japanese text processing"
+      ],
+      "types": [
+        "field",
+        "domain"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The processing and analysis of Japanese written language",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Japanese text processing",
+          "local_types": [
+            "field",
+            "domain"
+          ],
+          "iri": "Entity-japanese_text_processing-Mention-1"
+        }
+      ],
+      "relevance": 0.615234375
+    },
+    "Entity-morphological_analyzer": {
+      "node_id": "morphological_analyzer",
+      "disambiguation_index": 0,
+      "label": "morphological analyzer",
+      "aliases": [
+        "morphological analyzer"
+      ],
+      "types": [
+        "software",
+        "tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A software or tool that breaks down words into their constituent parts to identify and categorize linguistic features such as proper nouns, numbers, and temporal expressions.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "morphological analyzer",
+          "local_types": [
+            "software",
+            "tool"
+          ],
+          "iri": "Entity-morphological_analyzer-Mention-1"
+        }
+      ],
+      "relevance": 0.61279296875
+    },
+    "Entity-japanese_information_extraction": {
+      "node_id": "japanese_information_extraction",
+      "disambiguation_index": 0,
+      "label": "Japanese information extraction",
+      "aliases": [
+        "Japanese information extraction"
+      ],
+      "types": [
+        "research area",
+        "field",
+        "field of study",
+        "computer science"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process or technique of extracting relevant and useful information from Japanese language sources, such as texts or databases.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Japanese information extraction",
+          "local_types": [
+            "research area",
+            "field",
+            "field of study",
+            "computer science"
+          ],
+          "iri": "Entity-japanese_information_extraction-Mention-1"
+        }
+      ],
+      "relevance": 0.59619140625
+    },
+    "Entity-met": {
+      "node_id": "met",
+      "disambiguation_index": 0,
+      "label": "MET",
+      "aliases": [
+        "MET"
+      ],
+      "types": [
+        "task",
+        "abbreviation",
+        "evaluation_task",
+        "metric"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A metric or evaluation task for assessing linguistic models, particularly those focused on morphological analysis.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "MET",
+          "local_types": [
+            "task",
+            "abbreviation",
+            "evaluation_task",
+            "metric"
+          ],
+          "iri": "Entity-met-Mention-1"
+        }
+      ],
+      "relevance": 0.58447265625
+    },
+    "Entity-japanese_text": {
+      "node_id": "japanese_text",
+      "disambiguation_index": 0,
+      "label": "Japanese text",
+      "aliases": [
+        "Japanese text"
+      ],
+      "types": [
+        "text data",
+        "language resource"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A written work or document composed of characters and symbols used by speakers of Japanese.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Japanese text",
+          "local_types": [
+            "text data",
+            "language resource"
+          ],
+          "iri": "Entity-japanese_text-Mention-1"
+        }
+      ],
+      "relevance": 0.58203125
+    },
+    "Entity-it_is_used_to_generate_the_final_output": {
+      "node_id": "it_is_used_to_generate_the_final_output",
+      "disambiguation_index": 0,
+      "label": "it is used to generate the final output",
+      "aliases": [
+        "it is used to generate the final output"
+      ],
+      "types": [
+        "usage",
+        "output generation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The morphological analyzer's process of combining recognized Named Entity items with other relevant information to produce a final result.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "it is used to generate the final output",
+          "local_types": [
+            "usage",
+            "output generation"
+          ],
+          "iri": "Entity-it_is_used_to_generate_the_final_output-Mention-1"
+        }
+      ],
+      "relevance": 0.5673828125
+    },
+    "Entity-multi-lingual_evaluation_task": {
+      "node_id": "multi-lingual_evaluation_task",
+      "disambiguation_index": 0,
+      "label": "Multi-lingual Evaluation Task",
+      "aliases": [
+        "Multi-lingual Evaluation Task"
+      ],
+      "types": [
+        "evaluation metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A standardized evaluation metric for assessing language processing models across multiple languages.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Multi-lingual Evaluation Task",
+          "local_types": [
+            "evaluation metric"
+          ],
+          "iri": "Entity-multi-lingual_evaluation_task-Mention-1"
+        }
+      ],
+      "relevance": 0.53857421875
+    },
+    "Entity-japanese_character_string": {
+      "node_id": "japanese_character_string",
+      "disambiguation_index": 0,
+      "label": "Japanese character strings",
+      "aliases": [
+        "Japanese character strings"
+      ],
+      "types": [
+        "text data",
+        "language material"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Japanese written characters or symbols used for writing and communication",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "Japanese character strings",
+          "local_types": [
+            "text data",
+            "language material"
+          ],
+          "iri": "Entity-japanese_character_string-Mention-1"
+        }
+      ],
+      "relevance": 0.53076171875
+    },
+    "Entity-japanese": {
+      "node_id": "japanese",
+      "disambiguation_index": 0,
+      "label": "Japanese",
+      "aliases": [
+        "Japanese"
+      ],
+      "types": [
+        "language"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A language spoken in Japan",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Japanese",
+          "local_types": [
+            "language"
+          ],
+          "iri": "Entity-japanese-Mention-1"
+        }
+      ],
+      "relevance": 0.521484375
+    },
+    "Entity-this_information_is_added_to_the_segment": {
+      "node_id": "this_information_is_added_to_the_segment",
+      "disambiguation_index": 0,
+      "label": "this information is added to the segment",
+      "aliases": [
+        "this information is added to the segment"
+      ],
+      "types": [
+        "process",
+        "information addition"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The process of adding specific information about named entities (NE items) to a segmented text string.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "this information is added to the segment",
+          "local_types": [
+            "process",
+            "information addition"
+          ],
+          "iri": "Entity-this_information_is_added_to_the_segment-Mention-1"
+        }
+      ],
+      "relevance": 0.52099609375
+    },
+    "Entity-dictionary_lookup_stage": {
+      "node_id": "dictionary_lookup_stage",
+      "disambiguation_index": 0,
+      "label": "dictionary lookup stage",
+      "aliases": [
+        "dictionary lookup stage"
+      ],
+      "types": [
+        "process",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A process or methodology that involves searching and retrieving information from dictionaries, lexicons, or other reference sources.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "dictionary lookup stage",
+          "local_types": [
+            "process",
+            "methodology"
+          ],
+          "iri": "Entity-dictionary_lookup_stage-Mention-1"
+        }
+      ],
+      "relevance": 0.51220703125
+    },
+    "Entity-second": {
+      "node_id": "second",
+      "disambiguation_index": 0,
+      "label": "Second",
+      "aliases": [
+        "Second"
+      ],
+      "types": [
+        "ordinal",
+        "number"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A numerical value indicating position or ranking, typically used to describe an item that is next in sequence after the first.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "Second",
+          "local_types": [
+            "ordinal",
+            "number"
+          ],
+          "iri": "Entity-second-Mention-1"
+        }
+      ],
+      "relevance": 0.4853515625
+    },
+    "Entity--rrb-": {
+      "node_id": "-rrb-",
+      "disambiguation_index": 0,
+      "label": "-RRB-",
+      "aliases": [
+        "-RRB-"
+      ],
+      "types": [
+        "punctuation"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Closing parenthesis",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "-RRB-",
+          "local_types": [
+            "punctuation"
+          ],
+          "iri": "Entity--rrb--Mention-1"
+        }
+      ],
+      "relevance": 0.483154296875
+    },
+    "Entity-3": {
+      "node_id": "3",
+      "disambiguation_index": 0,
+      "label": "3",
+      "aliases": [
+        "3"
+      ],
+      "types": [
+        "number"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A numerical value or digit.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "3",
+          "local_types": [
+            "number"
+          ],
+          "iri": "Entity-3-Mention-1"
+        }
+      ],
+      "relevance": 0.481201171875
+    },
+    "Entity-dictionary": {
+      "node_id": "dictionary",
+      "disambiguation_index": 0,
+      "label": "dictionaries",
+      "aliases": [
+        "dictionaries"
+      ],
+      "types": [
+        "reference work",
+        "lexicon"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of words or phrases with their meanings, usage, and other linguistic information.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "dictionaries",
+          "local_types": [
+            "reference work",
+            "lexicon"
+          ],
+          "iri": "Entity-dictionary-Mention-1"
+        }
+      ],
+      "relevance": 0.47265625
+    },
+    "Entity-numerical_and_temporal_expression": {
+      "node_id": "numerical_and_temporal_expression",
+      "disambiguation_index": 0,
+      "label": "numerical and temporal expressions",
+      "aliases": [
+        "numerical and temporal expressions"
+      ],
+      "types": [
+        "data type",
+        "expression category"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of linguistic expression that represents numbers or time-related information.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "numerical and temporal expressions",
+          "local_types": [
+            "data type",
+            "expression category"
+          ],
+          "iri": "Entity-numerical_and_temporal_expression-Mention-1"
+        }
+      ],
+      "relevance": 0.47216796875
+    },
+    "Entity--lrb-": {
+      "node_id": "-lrb-",
+      "disambiguation_index": 0,
+      "label": "-LRB-",
+      "aliases": [
+        "-LRB-"
+      ],
+      "types": [
+        "punctuation"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A left parenthesis",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "-LRB-",
+          "local_types": [
+            "punctuation"
+          ],
+          "iri": "Entity--lrb--Mention-1"
+        }
+      ],
+      "relevance": 0.466796875
+    },
+    "Entity-proper_name": {
+      "node_id": "proper_name",
+      "disambiguation_index": 0,
+      "label": "proper names",
+      "aliases": [
+        "proper names"
+      ],
+      "types": [
+        "category",
+        "type of data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of named entity",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "proper names",
+          "local_types": [
+            "category",
+            "type of data"
+          ],
+          "iri": "Entity-proper_name-Mention-1"
+        }
+      ],
+      "relevance": 0.466064453125
+    },
+    "Entity-segment": {
+      "node_id": "segment",
+      "disambiguation_index": 0,
+      "label": "segment",
+      "aliases": [
+        "segment"
+      ],
+      "types": [
+        "concept",
+        "unit"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A discrete portion or part of something, often characterized by distinct boundaries or divisions.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "segment",
+          "local_types": [
+            "concept",
+            "unit"
+          ],
+          "iri": "Entity-segment-Mention-1"
+        }
+      ],
+      "relevance": 0.4521484375
+    },
+    "Entity-set_of_rule": {
+      "node_id": "set_of_rule",
+      "disambiguation_index": 0,
+      "label": "set of rules",
+      "aliases": [
+        "set of rules"
+      ],
+      "types": [
+        "algorithm",
+        "guideline"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of guidelines or instructions that govern specific behavior, decision-making, or processing.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "set of rules",
+          "local_types": [
+            "algorithm",
+            "guideline"
+          ],
+          "iri": "Entity-set_of_rule-Mention-1"
+        }
+      ],
+      "relevance": 0.445556640625
+    },
+    "Entity-year": {
+      "node_id": "year",
+      "disambiguation_index": 0,
+      "label": "years",
+      "aliases": [
+        "years"
+      ],
+      "types": [
+        "time period"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A period of time measured from the beginning to the end.",
+      "mentions": [
+        {
+          "reference": "Paper-1-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "years",
+          "local_types": [
+            "time period"
+          ],
+          "iri": "Entity-year-Mention-1"
+        }
+      ],
+      "relevance": 0.407470703125
+    }
+  },
+  "summary": "Recognition of proper nouns in Japanese text has been studied as a part of the more general problem of morphological analysis in Japanese text processing -LRB- -LSB- 1 -RSB- -LSB- 2 -RSB- -RRB- . It has also been studied in the framework of Japanese information extraction -LRB- -LSB- 3 -RSB- -RRB- in recent years . Our approach to the Multi-lingual Evaluation Task -LRB- MET -RRB- for Japanese text is to consider the given task as a morphological analysis problem in Japanese . Our morphological analyzer has done all the necessary work for the recognition and classification of proper names , numerical and temporal expressions , i.e. Named Entity -LRB- NE -RRB- items in the Japanese text . The analyzer is called `` Amorph '' . Amorph recognizes NE items in two stages : dictionary lookup and rule application . First , it uses several kinds of dictionaries to segment and tag Japanese character strings . Second , based on the information resulting from the dictionary lookup stage , a set of rules is applied to the segmented strings in order to identify NE items . When a segment is found to be an NE item , this information is added to the segment and it is used to generate the final output .",
+  "triples": [
+    [
+      "Entity-recognition_of_proper_noun",
+      "Predicate-has_been_studied_as_a_part_of",
+      "Entity-morphological_analysis_problem_in_japanese"
+    ],
+    [
+      "Entity-japanese_text_processing",
+      "Predicate-is_involved_with",
+      "Entity-morphological_analysis_in_japanese_text_processing"
+    ],
+    [
+      "Entity-our_approach",
+      "Predicate-considers",
+      "Entity-the_multi-lingual_evaluation_task_-lrb-_met_-rrb-_for_japanese_text"
+    ],
+    [
+      "Entity-our_morphological_analyzer",
+      "Predicate-has_done_all_the_necessary_work_for",
+      "Entity-the_recognition_and_classification_of_proper_name__numerical_and_temporal_expression"
+    ],
+    [
+      "Entity-the_analyzer",
+      "Predicate-is_called",
+      "Entity-amorph"
+    ],
+    [
+      "Entity-amorph",
+      "Predicate-recognizes",
+      "Entity-ne_item"
+    ],
+    [
+      "Entity-first",
+      "Predicate-uses",
+      "Entity-dictionary"
+    ],
+    [
+      "Entity-when_a_segment",
+      "Predicate-is_found_to_be",
+      "Entity-ne_item"
+    ],
+    [
+      "Entity-the_analyzer",
+      "Predicate-uses",
+      "Entity-the_multi-lingual_evaluation_task_-lrb-_met_-rrb-_for_japanese_text"
+    ],
+    [
+      "Entity-the_multi-lingual_evaluation_task_-lrb-_met_-rrb-_for_japanese_text",
+      "Predicate-uses",
+      "Entity-first"
+    ],
+    [
+      "Entity-the_analyzer",
+      "Predicate-uses",
+      "Entity-first"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-a_set_of_rule_is_applied_to_the_segmented_string_in_order_to_identify_ne_item",
+      "skos:broader",
+      "Entity-set_of_rule"
+    ],
+    [
+      "Entity-amorph",
+      "skos:broader",
+      "Entity-morphological_analyzer"
+    ]
+  ],
+  "predicates": {
+    "Predicate-has_been_studied_as_a_part_of": {
+      "label": "has been studied as a part of",
+      "description": "This predicate indicates that research or investigation on the subject has explored and examined aspects related to the object. The connection between the subject and object suggests a relationship of inclusion, where the subject's study encompasses or involves consideration of the object as part of its scope.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_involved_with": {
+      "label": "is involved with",
+      "description": "Indicates a relationship of participation or association between two entities. The subject is engaged in an activity, process, or field that has some connection to the object, which can be another entity, concept, or task.",
+      "disambiguation_index": 0
+    },
+    "Predicate-considers": {
+      "label": "considers",
+      "description": "The predicate 'considers' indicates that the subject has a thought process or opinion about the object, suggesting evaluation, assessment, or contemplation. It implies that the subject gives attention and mental effort to understand or weigh the significance of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has_done_all_the_necessary_work_for": {
+      "label": "has done all the necessary work for",
+      "description": "The predicate 'has done all the necessary work for' indicates that the subject has completed a specific task or set of tasks to achieve a particular goal or outcome, which is described by the object. The subject is portrayed as having taken care of everything required to accomplish this objective, and the object represents the result or consequence of their efforts.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_called": {
+      "label": "is called",
+      "description": "Indicates a naming or labeling relationship between the subject and object. The predicate 'is called' establishes an equivalence between the subject (a person, thing, or concept) and the object (its name, label, or designation).",
+      "disambiguation_index": 0
+    },
+    "Predicate-recognizes": {
+      "label": "recognizes",
+      "description": "The predicate 'recognizes' indicates that the subject has a conscious awareness or understanding of the object. It implies a level of familiarity, knowledge, or comprehension about the object's characteristics, properties, or significance.",
+      "disambiguation_index": 0
+    },
+    "Predicate-uses": {
+      "label": "uses",
+      "description": "The predicate 'uses' indicates a relationship of utilization or application between the subject and object. It suggests that the subject has some kind of practical connection to the object, whether it be for obtaining information, achieving a goal, or performing an action.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_found_to_be": {
+      "label": "is found to be",
+      "description": "Indicates that an investigation or examination reveals a specific characteristic, property, or classification about the subject. The predicate connects the subject with its corresponding attribute or category.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' indicates that the subject conceptually encompasses or includes the object as a more general category. It suggests a hierarchical relationship between the two, where the subject represents a higher-level abstraction and the object represents a specific instance or subclass within that hierarchy.",
+      "disambiguation_index": 0
+    }
+  }
+}

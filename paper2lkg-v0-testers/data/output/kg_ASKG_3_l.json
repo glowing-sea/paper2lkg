@@ -1,0 +1,865 @@
+{
+  "iri": "Paper-Building_An_Open_Source_Linux_Computing_System_On_RISC-V",
+  "title": "Building An Open Source Linux Computing System On RISC-V",
+  "authors": [
+    "M. Numan Ince",
+    "Joseph Ledet",
+    "Melih Gunay"
+  ],
+  "keywords": [
+    "Open Instruction Set Architecture",
+    "RISC-V",
+    "Linux from Scratch",
+    "Hardware",
+    "QEMU"
+  ],
+  "sections": [
+    {
+      "iri": "Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-1",
+              "text": "Abstract\u2014As is commonly known, hardware in a computer system requires a processor to run the operating system."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-2",
+              "text": "The primary architectures that form the basis of most processors are CISC and RISC."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-3",
+              "text": "CISC includes long sub-level commands for effective memory management and simple compiler implementations to be developed."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-4",
+              "text": "Thus CISC has a complex set of commands; hence the name Complex Instruction Set Computer."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-5",
+              "text": "On the other hand, CISC has had backward compatibility since the 1970s."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-6",
+              "text": "Reduced Instruction Set Computer (RISC), the other popular architecture, simplifies command sets and handles access to memory with load-store commands."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-7",
+              "text": "Since the instruction set is simplified, the hardware runs faster."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-8",
+              "text": "In addition, RISC-based processors contain less chip-sets and may be designed faster."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-9",
+              "text": "Currently, with the prevalence of the Internet of Things (IoT), the demand for RISC architectures has increased and its usage in embedded devices has become widespread."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-10",
+              "text": "The ARM processor is a successful example of the RISC architecture adaptation."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-11",
+              "text": "However, ARM processor production has certain license term limitations and contains a few design flaws in its architecture [1]."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-12",
+              "text": "In 2010, the RISC-V processor architecture, which was developed as an open source instruction set at Berkeley University, paves the way for open source hardware in terms of its BSD license and design professionalism."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-13",
+              "text": "As a result, it will be possible to produce their own processors for communities and organizations without license restrictions."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-14",
+              "text": "In this paper, we discuss the building blocks of the development life-cycle of an open source operating system on the RISC-V architecture."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-15",
+              "text": "As an operating system base, we implement MILIS Linux, an open source operating system development project."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-16",
+              "text": "It has an independent user space and its own package manager."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-17",
+              "text": "For a completely independent open source computing system, open source RISC-V hardware architecture provides the freedom that is needed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-2",
+      "subtitle": "Introduction",
+      "paragraphs": [
+        {
+          "iri": "Section-2-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-1",
+              "text": "A. RISC-V"
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-2",
+              "text": "In order to understand the RISC-V architectures that are used by current processor families, first it is essential to understand RISC."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-3",
+              "text": "These processors have a general set of instructions that are more homogeneous in length and execution time than CISC, which corresponds to more basic computational operations."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-4",
+              "text": "The implementation of the instructions is optimized and cluster command processing is used to increase the operating speed."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-5",
+              "text": "More register areas to minimize memory usage is included."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-6",
+              "text": "In order to achieve less memory and processing power, methods such as compression of the instruction set are utilized [2]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-7",
+              "text": "The disclosure of the Meltdown and Spectre vulnerabilities [1] shows that if we apply high security at software level, still weakness of computing resumes if we don't ensure at hardware level."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-8",
+              "text": "Processors are executing instructions in the computer with high-level access rights."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-9",
+              "text": "Some of the runtime conditions of the system are not visible, such as the Intel management engine [3]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-10",
+              "text": "In order to overcome this vulnerability, we have to make use of the open source synergy that Linux creates in the kernel on the hardware side."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-11",
+              "text": "Because the opening of ISA (Instruction Set Architecture), it can be discovered and improved by industry experts, commercial innovators and top academics."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-12",
+              "text": "The ability to add extensions to basic ISA makes it suitable for applications that require special configuration."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-13",
+              "text": "Although the processor market has been running for a long time, it has not been able to make great improvements, due to closed and license problems [4]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-14",
+              "text": "Although open source hardware studies have historically been conducted on Sparc [5] architectures or Power ISA [6] as open concepts, these projects have been insufficient and will not be able to create a large enough open source ecosystem."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-15",
+              "text": "Similarly, OpenRISC [7] is based on the open-source processor architecture OpenRISC1000."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-16",
+              "text": "Although Linux kernel 3.1 is supported, kernel-based improvements have slowed down over time."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-17",
+              "text": "Currently, though there is insufficient attention paid to these types of advances, Debian produced a port in 2014."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-18",
+              "text": "However, it closed the project due to copyright reasons in 2016."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-19",
+              "text": "But since UC-Berkeley started designing the RISC-V command set architecture, there has been new mobilization in academia and industry [8]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-20",
+              "text": "First of all, RISC-V is free and open source."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-21",
+              "text": "The usage license is licensed under the BSD license."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-22",
+              "text": "RISC-V primarily focuses on defining the command set architecture rather than specific implementations."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-23",
+              "text": "Still, there are also free open source core hardware designs [9]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-24",
+              "text": "RISC-V which is a nice leap for the processor sector has started to support many companies."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-25",
+              "text": "Technology relevant companies from many countries participated to RISC-V foundation."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-26",
+              "text": "Some major companies and institutes that contribute this foundation include; IIT Madras(India) [10], ETH Zurich(Swiss) [11], ASTC(Australia) [12], Barcelona Supercomputing Center(Spain) [13], ASELSAN(Turkey) [14]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-27",
+              "text": "By the way Western Digital also started to develop and use RISC-V architecture based processors in storage devices [15]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-28",
+              "text": "Unlike OpenRISC, RISC-V is aimed at a wider range of applications."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-29",
+              "text": "The Linux kernel's support for RISC-V is fairly new, starting with version 4.15 and 5.0 provides more extensive support, as well as RISC-V / Linux support for the kernel porting."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-30",
+              "text": "One of the outputs of RISC-V for hardware is to offer a more secure architecture and processor capabilities [12]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-31",
+              "text": "Due to the lack of speculative memory access in the RISC-V processor, there is no hardware weakness such as the Meltdown-Spectre vulnerability."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-32",
+              "text": "The most important advantage of RISC-V is that it is easy to apply qualified security ideas because the work is carried out as open source."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-1",
+              "text": "B. MILIS Linux"
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-2",
+              "text": "MILIS (Milli Isletim Sistemi in Turkish) [16] project is a Linux distribution project that started voluntarily in 2016 and implemented using LFS (Linux from Scratch) [17] techniques."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-3",
+              "text": "Since 2019, the project is supported by Akdeniz University BAP unit [18]."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-4",
+              "text": "MILIS Linux differs from other GNU/Linux projects with its independent base and own package manager."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-5",
+              "text": "For the time being, a desktop-targeted operating system is being developed for x86-64 systems."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-6",
+              "text": "Target users of MILIS are, primarily government agencies, commercial organizations and private users."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-7",
+              "text": "It has the goal of being a free and easy to use operating system for individual and organizational use."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-8",
+              "text": "Unlike the other distributions, which is commonly forked from Debian, MILIS is not based on any existing Linux distribution."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-9",
+              "text": "It has its own package production collection and independent root file-system production."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-10",
+              "text": "It has open development platform for developers by providing pure Linux usage and development experience."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-11",
+              "text": "Secure network structure may easily be configured via a web browser."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-12",
+              "text": "Although the project has been initiated voluntarily, it has the ultimate goal of being an open source software ecosystem for the academic environment."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-13",
+              "text": "MILIS Linux project now aims to completely work on open source hardware and be one of the first in among Linux distributions."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-14",
+              "text": "Such open source hardware and operating system will have the benefit of being immune to world trade disputes such as the recent developments of Huawei product bans."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-1",
+              "text": "C. MILIS Linux and RISC-V"
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-2",
+              "text": "In order to achieve a completely open and secure system, related studies were followed and concluded that the RISC-V ISA study seem to be the most promising."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-3",
+              "text": "The members of the RISC-V foundation include some reputable companies including ASELSAN as a silver member."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-4",
+              "text": "ASELSAN and Bilkent University are collaborating to produce chips using RISC-V architecture [19]."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-5",
+              "text": "Although R&D for chip production is ongoing, to our knowledge, we are not aware of any operating system work locally to support such architecture."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-6",
+              "text": "Globally, such work is also limited to few distributions."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-7",
+              "text": "To remedy this gap, we are developing a fork of the MILIS project to support RISC-V architecture."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-8",
+              "text": "In addition, it is desired to work as a separate branch for embedded devices."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-9",
+              "text": "It is expected that with an increasing interest in IoT and Industry 4.0, such software will likely have high interest."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-10",
+              "text": "Currently, Genpro from Israel [20] and Shakti [21] from India are working on new generation processors based on RISC-V architecture."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-11",
+              "text": "Recent interest in open processor architecture are likely to promote the open source operating systems."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-12",
+              "text": "The MILIS project is now planned to be one of the first open source Linux based OS targeting RISC-V."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-3",
+      "subtitle": "Related Work",
+      "paragraphs": [
+        {
+          "iri": "Section-3-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-1",
+              "text": "With the RISC-V processor productions, Si-five has produced a number of development motherboards for developers [22]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-2",
+              "text": "Linux distributions on motherboards with these processors started to gain momentum."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-3",
+              "text": "Legacy distributions such as Debian have created a project group on the RISC-V and started porting as infrastructure transfer work [23]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-4",
+              "text": "Fedora develops a native OS by compiling packages targeting RISC-V."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-5",
+              "text": "It has also established a web-based compilation tracking system [24]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-6",
+              "text": "Apart from these, it can also produce minimal custom Linux images with Yocto [25] and Buildroot [26] Linux Kit."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-7",
+              "text": "Buildroot currently ported for 64-bit RISC-V architecture."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-8",
+              "text": "Buildroot supports RISC-V with native and original implementation."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-9",
+              "text": "In this paper, we will focus on increasing kernel support and reducing porting times by a proposed reference implementation based on MILIS."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-10",
+              "text": "We endeavored to build a Linux from Scratch from the root file system."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-11",
+              "text": "Also with the rapid integration of Linux distro developers, we can improve our user-space application level."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-4",
+      "subtitle": "Implementation",
+      "paragraphs": [
+        {
+          "iri": "Section-4-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-1",
+              "text": "Currently, MILIS Linux is running smoothly with 64-bit systems."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-2",
+              "text": "Our RISC-V architecture-oriented work can be called a port in the Linux community."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-3",
+              "text": "Port aims to produce kernel and userspace packages available in MILIS and a hardware based 64-bit little-endian RISC-V compatible base system."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-4",
+              "text": "RISC-V also allows 32-bit and 128-bit ISA configurations, however the development of other variants will be considered as future work."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-5",
+              "text": "\u2022 32-bit architectures, except for specific purposes;"
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-6",
+              "text": "\u2022 32-bit ports in MILIS have never been done, it is not necessary."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-7",
+              "text": "\u2022 128-bit operation is not realistic at this time."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-8",
+              "text": "Since MILIS is a Linux system that applies the Linux from Scratch directives, similar methods can be used to build the basis of the RISC-V architecture."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-9",
+              "text": "In this section, we detail the work packages that are typically included in porting."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-1",
+              "text": "A. System Emulation"
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-2",
+              "text": "RISC-V system emulator may be used during the development and testing of the OS without real hardware."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-3",
+              "text": "Low cost easy setup QEMU virtual machine [27] supports RISC-V since 2.12."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-4",
+              "text": "This is opposite of QEMU's full system emulation mode, which ensures emulation devices and requires you to boot an operating system natively."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-5",
+              "text": "We use QEMU 4.0.0 version."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-1",
+              "text": "B. Toolchain"
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-2",
+              "text": "Toolchain is a cross-compiler for GNU."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-3",
+              "text": "RISC-V requires Binutils 2.30 or above versions to build a kernel with GCC 7.1 or above."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-4",
+              "text": "Currently, we choose GCC 9.1 and Binutils 2.32 versions."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-5",
+              "text": "There are 3 common C libraries; Glibc, Uclibc and Musl."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-6",
+              "text": "Only Glibc has upstream RISC-V support for 64-bit only architecture."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-7",
+              "text": "We choose Glibc version 2.29 to build packages [28]."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-1",
+              "text": "C. Bootloader"
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-2",
+              "text": "A bootloader is a piece of code that executes before an operating system runs."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-3",
+              "text": "Bootloaders usually provide several options to boot the OS kernel and also contain commands for debugging and/or modifying the kernel environment before booting."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-4",
+              "text": "RISC-V specific Berkley Bootloader(BBL) may be used in this project [29]."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-5",
+              "text": "U-boot may be another alternative, but requires more work for porting to RISC-V."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-6",
+              "text": "BBL will support;"
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-7",
+              "text": "\u2022 Starting and response tasks to timer interrupts,"
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-8",
+              "text": "\u2022 Boot chain loading for Linux and default boot loading process,"
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-9",
+              "text": "\u2022 RISC-V processor is not equipped to handle some instructions directly in hardware so BBL handles them as well."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-1",
+              "text": "BBL is somewhat special in that it cannot chainload a Linux kernel like GRUB or U-Boot, but instead the BBL compile scripts links the kernel binary directly into the BBL ELF file."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-2",
+              "text": "Therefore BBL must always be rebuilt within kernel."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-3",
+              "text": "Creating a proper separation between BBL and the kernel is planned but not yet implemented."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-1",
+              "text": "RISC-V Linux port has been accepted into Linux tree and is slated to release as part of 4.15 since 2017."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-2",
+              "text": "While this is a major milestone, still much work remains related to the Linux kernel and the userspace."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-3",
+              "text": "Additionally, much research and many tasks remain in the following areas:"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-4",
+              "text": "\u2022 Init and Halt Code"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-5",
+              "text": "\u2022 Atomic and Locking Code"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-6",
+              "text": "\u2022 Generic library routines and assembly"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-7",
+              "text": "\u2022 ELF and module implementation"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-8",
+              "text": "\u2022 Task implementation"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-9",
+              "text": "\u2022 Device, timer, IRQs, and the SBI"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-10",
+              "text": "\u2022 Paging and MMU"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-11",
+              "text": "\u2022 User-facing API"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-12",
+              "text": "\u2022 Build Infrastructure"
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-7-Sentence-1",
+              "text": "For building the kernel, we used the 5.0 stable version from the kernel git repository [30] using the following compilation parameters; CROSSCOMPILE=riscv64-linuxgnu- ARCH=riscv."
+            },
+            {
+              "iri": "Section-4-Paragraph-7-Sentence-2",
+              "text": "And BBL will compile with -withpayload config parameter to reference compiled kernel."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-1",
+              "text": "E. Pre-Root File System and Package Production"
+            },
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-2",
+              "text": "We cross-compile packages from x86-64 host to riscv64 target file system."
+            },
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-3",
+              "text": "At the conclusion of this process, we were able to achieve a bootable operating system for RISC-V hardware or an emulator."
+            },
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-4",
+              "text": "This root filesystem, named prerootfs, will be used at package production."
+            },
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-5",
+              "text": "After producing the necessary packages, we will re-construct the base file system of RISC-V using these packages."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-1",
+              "text": "F. Bootable Image"
+            },
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-2",
+              "text": "Recreation of Rootfs using MILIS enables us to distribute an initial bootable binary disk image that is completely built from MILIS packages for kernel and user space software."
+            },
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-3",
+              "text": "With adding live system packages, we will get a live image to run a virtual board."
+            },
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-4",
+              "text": "Fig. 1 shows the general workflow that is applied during the building of the RISC-V computing environment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-5",
+      "subtitle": "Conclusion",
+      "paragraphs": [
+        {
+          "iri": "Section-5-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-1",
+              "text": "In this paper, the RISC-V processor has been compared to other architectures and its bright future was implied."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-2",
+              "text": "Being opensource and its community driven design through open source hardware initiative, it may be used in mission critical projects."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-3",
+              "text": "Especially with the advances in the Internet of Things, the use of RISC-V processor boards may likely become popular in the market with the exciting features it provides."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-4",
+              "text": "Because many companies have started R&D studies for RISC-V and become members of the RISC-V foundation."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-5",
+              "text": "In addition to hardware information, this open source hardware that we have emphasized in this paper is the necessity of developing an open source and reliable operating system."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-6",
+              "text": "In this case, Linux is the best candidate on the basis of this work as the kernel."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-7",
+              "text": "Even though port migration of different Linux distributions has already begun, we are stressing the need to create an open source and reliable user ecosystem directly on the Linux kernel by enabling the MILIS Linux project to be ported to a different architecture."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-8",
+              "text": "Any development and optimization in this process will add experience to our IT process."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-9",
+              "text": "This study will gain momentum with the open computing proposal and will gain more."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-6",
+      "subtitle": "Future Work",
+      "paragraphs": [
+        {
+          "iri": "Section-6-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-1",
+              "text": "A. Physical Implementation and Optimizations"
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-2",
+              "text": "The work outline performed on the QEMU virtual machine discussed in this study will be applied on a real board based on RISC-V processor."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-3",
+              "text": "Compilation and testing will give more accurate results using physical hardware."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-4",
+              "text": "Thus, we will have a better understanding of the components that will need to be optimized."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-5",
+              "text": "The compilation tools that we use in the bootstrap process will offer more RISC-V support over time and will be optimized."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-6",
+              "text": "In addition, alternative libraries instead of Glibc, which we currently use as C libraries, will be evaluated."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-7",
+              "text": "Also, with the RISC-V support in the LLVM Compiler Infrastructure [31], native compile support will be increased at the level of programming languages which use LLVM as back-end compiler."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-8",
+              "text": "RISC-V porting will be further explored for the kernel level difficulties encountered while providing the necessary solutions."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-9",
+              "text": "The necessary sponsors and research project funding supports will be provided for the R&D studies and RISC-V processors with different features will be obtained and the studies will be performed on real equipment."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-1",
+              "text": "B. The Future: Open Hardware and Open Source Operating System"
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-2",
+              "text": "Open hardware means license-free; namely with RISC-V virtually anyone can produce potentially better evaluations and much more accurate comparisons with existing works."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-3",
+              "text": "There is a range of high quality, open-source RISC-V implementations to modify, rather than just based on estimating or simulations."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-4",
+              "text": "Also opening standard will bring about a more active development community so that when sharing patches or ideas, projects will get contributions more quickly."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-5",
+              "text": "As of now one aspect of the RISC-V Foundation is responding to proposals and discussing them."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-6",
+              "text": "The other aspect is producing proposed changes either in a future specification revision or in hardware."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-7",
+              "text": "On the other hand, opening the standards and having a commercially open license would certainly make the processor design and production race more fair."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-8",
+              "text": "Also RISC-V will bring a new synergy of open source computer architecture research areas, such as universities started to establish research groups on RISC-V, such as OpenCelerity [32] and SCARV [33]."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-9",
+              "text": "Research is expected to be carried out on real hardware with the increase of RISC-V processor manufacturers."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-10",
+              "text": "As a result, Linux kernel and userspace seems the best candidate software stack for RISC-V."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Abstract\u2014As is commonly known, hardware in a computer system requires a processor to run the operating system. The primary architectures that form the basis of most processors are CISC and RISC. CISC includes long sub-level commands for effective memory management and simple compiler implementations to be developed. Thus CISC has a complex set of commands; hence the name Complex Instruction Set Computer. On the other hand, CISC has had backward compatibility since the 1970s. Reduced Instruction Set Computer (RISC), the other popular architecture, simplifies command sets and handles access to memory with load-store commands. Since the instruction set is simplified, the hardware runs faster. In addition, RISC-based processors contain less chip-sets and may be designed faster. Currently, with the prevalence of the Internet of Things (IoT), the demand for RISC architectures has increased and its usage in embedded devices has become widespread. The ARM processor is a successful example of the RISC architecture adaptation. However, ARM processor production has certain license term limitations and contains a few design flaws in its architecture [1]. In 2010, the RISC-V processor architecture, which was developed as an open source instruction set at Berkeley University, paves the way for open source hardware in terms of its BSD license and design professionalism. As a result, it will be possible to produce their own processors for communities and organizations without license restrictions. In this paper, we discuss the building blocks of the development life-cycle of an open source operating system on the RISC-V architecture. As an operating system base, we implement MILIS Linux, an open source operating system development project. It has an independent user space and its own package manager. For a completely independent open source computing system, open source RISC-V hardware architecture provides the freedom that is needed.\n\nRISC-V is an open-source instruction set architecture (ISA) designed to be more secure and efficient than traditional ISAs like CISC. It was developed as a response to vulnerabilities like Meltdown and Spectre, which showed that even high-level security measures can't protect against hardware weaknesses. RISC-V has gained popularity among companies and institutions, including Western Digital, IIT Madras, ETH Zurich, and ASELSAN. The MILIS Linux project is also working on supporting the RISC-V architecture to create a completely open-source system.\n\nSi-five has produced development motherboards for RISC-V processors, leading to momentum with Linux distributions like Debian and Fedora. These distros have ported their infrastructure to RISC-V, while Buildroot supports both native and original implementations on this architecture.\n\nThe MILIS Linux project aims to port a 64-bit little-endian RISC-V compatible base system, with support for 32- and 128-bit ISA configurations. The process involves emulation using QEMU, toolchain development (GCC 9.1 and Binutils 2.32), bootloader creation (Berkley Bootloader), and package production. The project has been accepted into the Linux tree and is slated to release as part of version 4.15 since 2017.\n\nThe RISC-V processor has been compared to other architectures, highlighting its potential for use in mission-critical projects due to its open-source and community-driven design. The paper emphasizes the need for an open-source operating system, with Linux being a suitable candidate as the kernel.\n\nA. Physical Implementation and Optimizations The work outline performed on the QEMU virtual machine discussed in this study will be applied on a real board based on RISC-V processor. Compilation and testing will give more accurate results using physical hardware. Thus, we will have a better understanding of the components that will need to be optimized. The compilation tools that we use in the bootstrap process will offer more RISC-V support over time and will be optimized. In addition, alternative libraries instead of Glibc, which we currently use as C libraries, will be evaluated. Also, with the RISC-V support in the LLVM Compiler Infrastructure [31], native compile support will be increased at the level of programming languages which use LLVM as back-end compiler. RISC-V porting will be further explored for the kernel level difficulties encountered while providing the necessary solutions. The necessary sponsors and research project funding supports will be provided for the R&D studies and RISC-V processors with different features will be obtained and the studies will be performed on real equipment.\n\nB. The Future: Open Hardware and Open Source Operating System Open hardware means license-free; namely with RISC-V virtually anyone can produce potentially better evaluations and much more accurate comparisons with existing works. There is a range of high quality, open-source RISC-V implementations to modify, rather than just based on estimating or simulations. Also opening standard will bring about a more active development community so that when sharing patches or ideas, projects will get contributions more quickly. As of now one aspect of the RISC-V Foundation is responding to proposals and discussing them. The other aspect is producing proposed changes either in a future specification revision or in hardware. On the other hand, opening the standards and having a commercially open license would certainly make the processor design and production race more fair. Also RISC-V will bring a new synergy of open source computer architecture research areas, such as universities started to establish research groups on RISC-V, such as OpenCelerity [32] and SCARV [33]. Research is expected to be carried out on real hardware with the increase of RISC-V processor manufacturers. As a result, Linux kernel and userspace seems the best candidate software stack for RISC-V.",
+  "kg2text": [
+    "The RISC-V processor architecture is designed specifically for RISC-V for hardware, which serves as a broader term encompassing various implementations. This architecture is based on RISC and is characterized by its customizability and extensibility, making it a significant alternative to the other popular architecture, RISC. RISC-V processor manufacturers actively design processors based on this architecture, supporting the development of RISC-V for hardware. Furthermore, new generation processors utilize the RISC-V processor architecture, which employs the 64-bit RISC-V architecture for enhanced performance. The RISC-V processor architecture also paves the way for the RISC-V ISA study, highlighting its potential in creating secure and independent systems. Additionally, the RISC architecture adaptation is recognized as a successful implementation of the RISC-V processor architecture, showcasing its efficiency and simplified command sets.",
+    "RISC-V for hardware supports the 64-bit RISC-V architecture, which is a significant advancement in processor design. The other popular architecture, which is based on RISC, forms the basis of the primary architectures, including both CISC and RISC. RISC-V processor architecture utilizes the ARM processor, showcasing its versatility. Additionally, RISC-V processor manufacturers are integral to the development of this architecture, as they design and manufacture RISC-V processors. New generation processors leverage RISC-V for hardware and also utilize the other popular architecture, indicating a trend towards more open-source solutions. RISC-V hardware architecture is specifically designed for RISC-V for hardware, and it is often compared with the other popular architecture. Furthermore, RISC-V processor architecture follows open-source RISC-V implementations and is implemented on various hardware platforms. The RISC architecture is characterized by RISC-V and has a broader term that encompasses it. The RISC-V command set architecture defines the RISC-V processor architecture, while the open-source processor architecture OpenRISC1000 serves as an alternative to RISC-V processor architecture. Overall, the primary architectures are fundamentally based on RISC, highlighting the importance of RISC in modern computing.",
+    "RISC-V utilizes the 64-bit RISC-V architecture, which is a key component in the design and manufacturing processes of RISC-V processor manufacturers. These manufacturers not only design and manufacture RISC-based processors but also support the 64-bit RISC-V architecture. The RISC architecture adaptation offers an alternative for RISC-V for hardware, which is specifically designed for hardware applications. This adaptation is recognized as a successful implementation of the Reduced Instruction Set Computer (RISC) architecture. Furthermore, the RISC-V ISA study has a broader term that encompasses RISC-V for hardware, highlighting its significance in the field. The primary architectures, which include both CISC and RISC, are foundational to the operations of RISC-V processor manufacturers. New generation processors leverage RISC-V and the RISC architecture, utilizing these architectures to enhance their capabilities. The RISC-V processor architecture is particularly notable as it allows communities and organizations to produce their own processors without license restrictions, thereby fostering innovation. Additionally, RISC-V hardware architecture is designed based on RISC principles, further emphasizing its open-source nature. Lastly, motherboards with these processors are integral to the development and operation of systems utilizing RISC-V technology.",
+    "RISC-V for hardware supports open-source RISC-V implementations, which in turn has a broader term encompassing RISC-V for hardware. The hardware is specifically designed for RISC-V for hardware, while new generation processors are designed and manufactured by RISC-V processor manufacturers. The RISC-V hardware architecture is based on the primary architectures and is supported by RISC-V processor manufacturers. New generation processors utilize the 64-bit RISC-V architecture, and the RISC-V command set architecture defines the specifications for RISC-V for hardware. Additionally, the RISC-V hardware architecture also employs the 64-bit RISC-V architecture. The open-source processor architecture OpenRISC1000 serves as an open-source alternative to RISC-V for hardware, and the other popular architecture is an alternative to open-source RISC-V implementations. The RISC architecture adaptation is recognized as an adaptation of RISC-V, while the hardware simplifies the other popular architecture. RISC-V is the subject of the RISC-V ISA study, which has a broader term that includes RISC-V. Furthermore, RISC-V utilizes the ARM processor and the RISC-V command set architecture is compared with the other popular architecture. RISC serves as an example of the RISC architecture adaptation, which is itself an adaptation of RISC. Lastly, the RISC-V ISA study is connected to RISC.",
+    "The other popular architecture, known as RISC, is developed as an alternative to the open-source processor architecture OpenRISC1000. The primary architectures, which include both CISC and RISC, form the basis of the RISC architecture adaptation. This adaptation is supported by RISC-V processor manufacturers, who design and manufacture ARM processors that utilize these primary architectures. The RISC-V ISA study forms the basis for understanding these primary architectures and focuses on the development life-cycle of an open-source operating system on the 64-bit RISC-V architecture. RISC-V for hardware offers a more secure architecture and processor capabilities, allowing communities and organizations to produce their own processors without license restrictions. Additionally, RISC-V implementations follow the RISC-V command set architecture, which defines the specifications for these processors. The hardware designed for RISC-V supports motherboards with these processors, further enhancing the ecosystem of open-source RISC-V implementations.",
+    "The hardware runs on RISC, which is designed as an open-source processor architecture, including the open-source processor architecture OpenRISC1000. ARM processors utilize the 64-bit RISC-V architecture, while new generation processors leverage both the RISC architecture adaptation and the RISC-V ISA study. Open-source RISC-V implementations follow the primary architectures, which form the basis of the hardware. The RISC architecture adaptation is an adaptation of the RISC-V hardware architecture, and it simplifies the other popular architecture, which supports motherboards with these processors. RISC defines the RISC-V command set architecture, and the RISC-V ISA study paves the way for the RISC-V hardware architecture. RISC-V processor manufacturers design and manufacture the hardware and support open-source RISC-V implementations, which in turn support the 64-bit RISC-V architecture. Notably, the RISC-V hardware architecture also uses ARM processors.",
+    "RISC-V processor manufacturers support the RISC-V command set architecture, which is designed to offer a more secure architecture and processor capabilities. The primary architectures, which include both CISC and RISC, are based on the open-source processor architecture OpenRISC1000. This architecture, in turn, supports RISC-V processor manufacturers and uses the 64-bit RISC-V architecture. New generation processors utilize the hardware and are implemented in open-source RISC-V implementations. The RISC-V hardware architecture follows these implementations and is based on the hardware itself, defining the RISC-V command set architecture. Additionally, the RISC-V ISA study paves the way for the RISC architecture adaptation, while the primary architectures provide enhanced security features. RISC-V allows communities and organizations to produce their own processors without license restrictions, which is also true for RISC. Furthermore, motherboards with these processors contain RISC, showcasing the integration of RISC-V technology in modern computing.",
+    "RISC-V processor manufacturers will offer a more secure architecture and processor capabilities, which is exemplified by the 64-bit RISC-V architecture. This architecture is designed as an open-source processor architecture, specifically the open-source processor architecture OpenRISC1000. The ARM processor serves as a successful example of the RISC architecture adaptation, which simplifies the hardware and has a broader term encompassing this adaptation. The RISC-V ISA study utilizes the ARM processor and paves the way for open-source RISC-V implementations, which in turn support the RISC architecture adaptation. Furthermore, RISC-V processor manufacturers produce motherboards with these processors, allowing communities and organizations to create their own processors without license restrictions. The RISC-V architecture also allows for the development of new generation processors that are designed to be more secure and efficient. Overall, the hardware supports the RISC-V ISA study, which is integral to the advancement of open-source RISC-V implementations.",
+    "New generation processors utilize the open-source RISC-V architecture, enabling the development of motherboards specifically designed for these processors. The ARM processor also employs this hardware, which is characterized by its efficient command sets and memory access methods. The RISC architecture adaptation defines the RISC-V command set architecture, which is further supported by the RISC-V ISA study. This study is based on the open-source processor architecture OpenRISC1000, which serves as an example of the ARM processor. Additionally, RISC-V hardware architecture allows communities and organizations to produce their own processors without license restrictions, supporting the development of motherboards with these processors. The hardware runs on open-source RISC-V implementations, which follow the RISC-V command set architecture. Efforts to offer a more secure architecture and processor capabilities pave the way for both the RISC architecture adaptation and the RISC-V ISA study, highlighting the broader implications of the RISC-V architecture.",
+    "The RISC architecture adaptation features motherboards with these processors, which are specifically designed to support open-source RISC-V implementations. These motherboards contain the hardware that allows it to offer a more secure architecture and processor capabilities. The ARM processor, which uses the open-source RISC-V architecture, is also found within these motherboards. Furthermore, the RISC-V ISA study, which it paves the way for, supports the development of these motherboards. The open-source processor architecture OpenRISC1000 is designed as an open-source processor architecture based on the RISC-V command set architecture, which provides enhanced security features. The hardware not only provides to offer a more secure architecture and processor capabilities but also allows it to function effectively. Additionally, the RISC-V processor architecture has a broader term associated with the RISC-V foundation, which promotes the development of open-source instruction set architectures. The primary architectures, including CISC, form the basis of these systems, while the ARM processor is categorized under RISC architectures.",
+    "The RISC-V command set architecture supports motherboards with these processors, enabling a wide range of applications. MILIS Linux plans to be one of the first open-source Linux-based operating systems targeting RISC-V, while also providing support for RISC. The open-source processor architecture OpenRISC1000 allows it to facilitate the development of processors without license restrictions and supports motherboards with these processors. Additionally, the base file system of RISC-V has a broader term that encompasses RISC-V for hardware, which is designed to offer a more secure architecture and processor capabilities. This secure architecture is supported by the RISC-V foundation, which also has a broader term that includes RISC-V. The RISC-V processor architecture, which is a significant advancement for the processor sector, has broader terms that include instruction set and A. RISC-V. Furthermore, the RISC-V ISA study is related to the RISC-V foundation, highlighting the ongoing research and development in this open-source architecture.",
+    "RISC-V shows Fig. 1, which illustrates the steps involved in building an open-source Linux computing system on RISC-V. The MILIS project is targeting RISC-V to develop an open-source operating system. RISC has a broader term known as Reduced Instruction Set Computer, while the RISC-V foundation encompasses open-source RISC-V implementations. These implementations can be modified by a collection of high-quality, open-source RISC-V processor architectures. OpenRISC is based on the open-source processor architecture OpenRISC1000, and CISC includes long sub-level commands. RISC also has broader terms such as A. RISC-V and instruction set. The RISC-V processor architecture is categorized under Processors, and RISC-V / Linux support for the kernel porting falls under the broader term of porting. RISC-V allows for 32-bit and 128-bit ISA configurations and has been compared to other architectures. The Linux kernel supports both RISC-V and RISC, further enhancing their capabilities. Recent interest in RISC-V is likely to promote the development of open-source operating systems. The RISC-V processor architecture is also linked to open source hardware studies and is part of the broader concept of Open Hardware and Open Source Operating System. Lastly, RISC-V for hardware is categorized under Processors.",
+    "The RISC-V ISA study has a broader term known as A. RISC-V, which encompasses various research initiatives focused on the RISC-V architecture. This architecture is supported by the RISC-V foundation, which also has a broader term that includes the development of open-source RISC-V implementations. The RISC-V processor architecture is categorized under open source hardware and is part of a larger group of processors. Additionally, the RISC-V command set architecture is a specific type of instruction set that falls under the broader category of instruction sets. RISC-V itself is a type of processor that is also classified under open source operating systems. The RISC architecture, which includes chip-sets, is another category of processors. New generation processors, which utilize the RISC-V architecture, are also classified as processors. CISC, on the other hand, includes long sub-level commands for effective memory management and is recognized as the Reduced Instruction Set Computer, which has its own broader category. The RISC-V hardware architecture is another term that falls under the category of processors. Furthermore, we are actively developing a fork of MILIS Linux, an open-source operating system, to support the RISC-V architecture. The base file system of RISC-V is also associated with the RISC-V foundation, highlighting the interconnectedness of these entities.",
+    "We will have a better understanding of the components that will need to be optimized for building an open source Linux computing system on RISC-V. Genpro is actively working on new generation processors that utilize the RISC-V architecture. The process of RISC-V porting will be further explored to address kernel level difficulties, which falls under the broader term of porting. The RISC architecture has a broader term that encompasses the hardware side, while the ARM processor is categorized under the broader term of Processors. Our work on the RISC-V architecture is part of a larger initiative known as A. RISC-V. Additionally, long sub-level commands are a broader term for the instruction set, which also includes CISC as a broader category. RISC-V is a significant part of the computing environment and is being ported by Debian as part of infrastructure transfer work for the RISC-V processor architecture. The RISC-V hardware architecture is classified as open source hardware and has a broader term of hardware side. Since RISC is not equipped to handle some instructions directly in hardware, it relies on BBL for those operations. RISC-V also encompasses an open source operating system development project and is integral to hardware in a computer system. The open processor architecture promotes the development of the open source operating systems, which include various platforms designed for RISC-V architecture-based processors. Furthermore, motherboards with these processors are categorized under the broader term of Processors, and the RISC-V processor architecture is part of the larger category of architectures. Lastly, C. MILIS is related to RISC-V, indicating its relevance in the ongoing development efforts.",
+    "RISC-V has been accepted into the Linux tree, marking a significant integration into the open-source ecosystem. Notably, the RISC-V processor architecture has no hardware weakness against the Meltdown-Spectre vulnerabilities, making it a robust choice for secure computing. To function effectively, RISC-V requires GCC 7.1 or above, ensuring compatibility with modern development tools. The term 'hardware' encompasses a broader category that includes the hardware side, while RISC-V hardware architecture is a specific instance within the broader context of hardware in a computer system. Furthermore, RISC-V processor productions fall under the general category of Processors, highlighting its role in the computing landscape. Since the 1970s, CISC architectures have been prevalent, but RISC-V offers a modern alternative. The base file system of RISC-V is part of the A. RISC-V initiative, which aims to advance the architecture. Additionally, live system packages are essential for creating functional RISC-V operating systems. RISC-V is seen as the best candidate for kernel and userspace packages, providing a solid software stack for development. The 32-bit and 128-bit ISA configurations are part of the broader ISA category, showcasing the flexibility of RISC-V. The most important advantage of RISC-V lies in its qualified security ideas, which promote secure and transparent development. The RISC-V foundation supports these initiatives under the A. RISC-V umbrella. Shakti is actively working on new generation processors that leverage RISC-V technology. The work packages that are typically included in porting are crucial for adapting software to RISC-V architecture, encompassing various components necessary for successful implementation. Additionally, RISC-V requires Binutils for building and debugging, further emphasizing its reliance on modern toolchains. The other popular architecture, RISC, is part of the broader category of architectures, illustrating the diverse landscape of processor designs. Finally, motherboards with these processors represent a specific segment of the hardware side, facilitating the development and deployment of RISC-V systems.",
+    "MILIS is planned to be one of the open source operating systems, contributing to the broader category of operating systems. A real board based on RISC-V processors falls under the broader term of Processors, which also includes CISC architectures. RISC-V itself is categorized as a Device and has been compared to various architectures, highlighting its significance in the field. Buildroot supports RISC-V and has been ported for RISC, facilitating the development of software for this architecture. Many companies have started R&D studies for RISC-V and have become members of the RISC-V foundation, which promotes open-source instruction set architectures. Furthermore, motherboards with these processors support Linux distributions, enhancing the ecosystem of open-source operating systems. RISC-V builds with a kernel that requires GCC 7.1 or above, ensuring compatibility with modern software development standards. Additionally, the 32-bit and 128-bit ISA configurations are part of the broader category of Instruction Set Architectures (ISA). The ARM processor, while popular, is constrained by certain license term limitations, contrasting with the more open approach of RISC-V, which is supported by the Also opening standard that aims to foster a more active development community.",
+    "The RISC-V hardware architecture is a type of device that falls under the broader category of devices, showcasing its significance in the realm of computing. This architecture is part of the open source movement, which aims to provide customizable and extensible processor designs. Within this context, open source operating systems rely on the fundamental building blocks that define their development life-cycle. The 64-bit RISC-V architecture is categorized under various architectures, emphasizing its role in modern computing. QEMU, a powerful emulator, supports RISC-V, facilitating the development and testing of software on this architecture. Additionally, motherboards equipped with RISC-V processors are classified as hardware in a computer system, highlighting their essential function. OpenRISC, another open processor architecture, also contributes to the diversity of processor designs. The RISC-V architecture faces kernel level difficulties, which are challenges that arise during the porting process of operating systems. The MILIS Linux project has been initiated voluntarily to create an open source software ecosystem tailored for academic environments, aiming to be one of the first Linux distributions to fully operate on open source hardware. A real board based on RISC-V processors represents the hardware side of this initiative, allowing for practical experimentation. The Linux port for RISC-V, specifically version 4.15 since 2017, is part of ongoing efforts to enhance compatibility. Furthermore, RISC-V processors with different features are designed to execute instructions that require high-level access rights, showcasing their advanced capabilities. The U-boot bootloader may serve as an alternative for porting to RISC-V, although it requires additional work. Overall, the MILIS Linux project exemplifies the commitment to open source hardware studies, which have been conducted on various instruction set architectures (ISA), further enriching the landscape of processor technology.",
+    "The RISC architecture adaptation is a specific instance within the broader category of architectures. MILIS Linux, which is an operating system, is a broader term that encompasses Linux. Western Digital has started to develop and use the RISC-V processor architecture, which it continues to utilize. Open-source RISC-V implementations fall under the broader term of module implementation. The development of other variants is anticipated to be considered as future work. The RISC-V foundation includes ASELSAN, a contributor to the open-source hardware movement. A real board based on RISC-V processor is classified as hardware in a computer system. The RISC-V command set architecture is another example of a broader architectural category. A native OS is also categorized under operating systems. B. MILIS utilizes MILIS Linux as part of its framework. The open-source processor architecture OpenRISC1000 is yet another member of the architectures category. A hardware based 64-bit little-endian RISC-V compatible base system is classified as hardware in a computer system. Instructions in the computer with high-level access rights are part of the instruction set. A. RISC-V has prompted many companies to start R&D studies for RISC-V and join the RISC-V foundation. Motherboards with these processors are categorized as Devices. The initiative to offer a more secure architecture and processor capabilities is also classified under architectures. Finally, this root filesystem will be used as prerootfs in the RISC-V environment.",
+    "RISC-V processors with different features will be obtained and the studies will be performed on real equipment, which falls under the broader category of Processors. The MILIS Linux project is an open source operating system development project that is related to the development of operating system work. This project is running smoothly on 64-bit systems, showcasing its compatibility with modern hardware. Additionally, open-source RISC-V implementations are part of the Task implementation domain, emphasizing the collaborative nature of software development. The RISC-V architecture adheres to established standards, further enhancing its usability. The Linux system, which is a type of operating system, is also categorized under operating systems. The C. MILIS project is developing MILIS Linux, indicating a direct relationship between these two entities. Furthermore, the Linux port is recognized as an operating system that can be utilized within the Linux community, demonstrating its relevance in the open-source ecosystem. Lastly, the Device, timer, IRQs, and the SBI collectively include the SBI, which plays a crucial role in managing hardware interactions.",
+    "The kernel, which is a broader term for the Linux kernel, plays a crucial role in the operating system's functionality. In hardware, which encompasses the hardware side, various developments are being made to support the RISC-V architecture, a specific type of architecture that is part of a larger category of architectures. The open source synergy that Linux creates in the kernel on the hardware side enhances the Linux operating system itself. We have endeavored to build a Linux from Scratch, which is a self-constructed operating system. CISC, another broader term for architectures, includes memory management as a key component. Development motherboards for developers, which fall under the broader category of motherboards, are essential for testing and deploying applications. RISC architectures are particularly useful in embedded devices, showcasing their versatility. MILIS Linux differs from other GNU/Linux projects, highlighting its unique approach within the open-source community. Glibc provides RISC-V support for 64-bit only architecture, ensuring compatibility with modern systems. Real equipment, a broader term for hardware in a computer system, is being utilized to test these developments. Physical Implementation and Optimizations will be applied on a real board based on RISC-V processor, facilitating practical applications. Processors execute instructions in the computer with high-level access rights, ensuring efficient operation. The x86-64 architecture cross-compiles to riscv64, bridging different systems. We were able to achieve a bootable operating system for RISC-V hardware or an emulator, which is a significant milestone in our project. Additionally, It has established a web-based compilation tracking system to monitor progress. The Linux port has been accepted into the Linux tree, integrating our work into the broader Linux ecosystem. This study discussed QEMU, a vital tool for simulating and testing our developments.",
+    "Fedora develops a native OS specifically designed for the RISC-V architecture. The MILIS project has kernel and userspace packages available in MILIS, which are essential for its operation. Our IT process is a broader term that encompasses the systematic activities involved in developing and maintaining open-source operating systems, which is part of the broader IT process. RISC-V processor manufacturers are categorized under companies, indicating their role in the industry. The RISC-V command set architecture is classified under standards, highlighting its importance in defining acceptable levels of performance. There are few distributions that support the RISC-V architecture, which fall under the broader category of distributions. The ISA, or Instruction Set Architecture, is a subset of architectures that defines the commands a processor can execute. In hardware refers to the physical components of a computer system, which is a broader term for hardware in a computer system. The implementation of software features is a specific type of module implementation. The MILIS Linux project is recognized as a Linux distribution project aimed at creating an open-source operating system. BBL, a software component, must always be rebuilt within the kernel, although it is planned to be separated from it in future developments. The RISC-V ISA study is part of a broader category of studies and research focused on the RISC-V architecture. Open processor architecture is a broader term that includes processors, emphasizing the collaborative nature of processor design. At the conclusion of this process, the team was able to achieve a bootable operating system for RISC-V hardware. The Linux kernel, a core component of the MILIS Linux operating system, is a broader term that encompasses the Linux kernel itself. RISC-V is associated with organizations that contribute to its development. Device, timer, IRQs, and the SBI are components that fall under the broader category of hardware in a computer system. Finally, live system packages are a broader term for packages that include pre-built software necessary for creating a functional RISC-V operating system.",
+    "Compilation tools are set to offer more RISC-V support over time and will be optimized to enhance their capabilities. OpenRISC serves as a broader term for various architectures, while QEMU supports the RISC-V since version 2.12, enabling effective emulation of RISC-V systems. The RISC-V system emulator is a specific type of system emulator, and prerootfs is categorized under operating systems. The Linux kernel, which is a core component of the Linux operating system, has a broader term that encompasses Linux itself. Additionally, Linux kernel 3.1 is a specific version of the Linux kernel. The processor to run the operating system falls under the broader category of processors, which will enable the production of customizable processors for communities and organizations without license restrictions. These processors are defined by a general set of instructions. Real equipment, which includes various devices, is also classified under the term Device. The implementation of tasks is a broader concept that includes task implementation. The ISA (Instruction Set Architecture) is another broader term for architectures. Furthermore, Linux is recognized as the best candidate for the kernel based on its capabilities. Physical Implementation will be applied on a real board based on RISC-V processor, showcasing practical applications of these technologies. Lastly, ARM is another broader term that falls under the category of processors.",
+    "After producing the necessary packages, the process involves the production of a package that is essential for the functioning of the MILIS Linux project, which is a broader term for a project aimed at developing an open-source operating system. The RISC-V support for 64-bit only architecture is categorized under architectures, indicating its relevance to computer design principles. In hardware, which encompasses devices, is also a broader term that includes various physical components. ASELSAN, a silver member of the RISC-V foundation, contributes to these projects. The RISC-V architecture-oriented work is another project that aims to enhance the capabilities of the RISC-V instruction set. The Port project aims to produce kernel and userspace packages available in MILIS, which are crucial for the operating system's functionality. CISC, a type of processor architecture, falls under the broader category of standards, while MILIS applies the Linux from Scratch directives to build its system. Methods utilized in this context include the compression of the instruction set, which is a technique that falls under broader methods. Linux is recognized as the best candidate for the kernel based on this work, and it is classified as an operating system. The concept of 128-bit operation is a broader term for operations that are yet to be realized. Processors, which execute instructions, are part of the hardware side of computing. The work outline for these projects is performed on QEMU, a virtual machine environment. The Reduced Instruction Set Computer architecture is also categorized under architectures, while open source operating systems are a broader term for various operating systems that allow for modification and distribution of their underlying code. ISA, or Instruction Set Architecture, is another standard that defines the commands a processor can execute, and x86-64 systems are included in the hardware side of computing. Finally, Linux, as an open-source operating system, is fundamentally linked to the Linux kernel, which manages hardware resources.",
+    "The research on the RISC-V architecture encompasses various components, including the need to optimize specific hardware and software elements. This study, which is part of the broader field of research, focuses on the development of MILIS Linux, an open-source operating system that operates on RISC-V architecture. The RISC-V foundation supports this initiative, with ASELSAN and other reputable companies contributing to the project. Current processor families are categorized under hardware in a computer system, while the Linux kernel serves as a fundamental part of the operating system. The Linux port for RISC-V is a significant project that aims to enhance the usability of this architecture. Additionally, the work outline for this project will be applied to a real board based on the RISC-V processor, facilitating further development. The live image to run a virtual board is a crucial tool that allows users to interact with a virtual representation of the RISC-V environment, bridging the gap between theoretical research and practical application.",
+    "The concept of less chip-sets is categorized under the broader term components, indicating that it is a specific type of component within a larger system. Similarly, open source hardware falls under the broader category of hardware side, emphasizing its role in the physical infrastructure of computing. The BBL, a software component, cannot chainload a Linux kernel and must always be rebuilt within it, highlighting its dependency on the kernel for functionality. The kernel git repository [30] serves as a reference for the compiled kernel, which is an optimized version of the Linux kernel. RISC-V architecture-oriented work is a subset of studies, focusing on research efforts related to the RISC-V instruction set architecture. The Also opening standard is another example of a broader term, encompassing various standards that facilitate open hardware development. ELF and module implementation is a specific type of module implementation, showcasing the process of creating executable files in the RISC-V architecture. Open source hardware studies have been conducted on Sparc, indicating a research interest in this particular computer architecture. MILIS is classified under Linux distributions, representing a specific Linux distribution project. Other architectures are a broader category that includes various computing architectures beyond RISC-V. The x86-64 architecture is a broader term for hardware in a computer system, illustrating its foundational role in computing. The versions 4.15 and 5.0 of the Linux kernel are broader terms that include the earlier 4.0.0 version, showing the evolution of kernel support. The components that will need to be optimized are part of the broader optimization process, which aims to enhance performance. Projects will get contributions more quickly, indicating a trend in collaborative project development. Related studies represent a broader category of research that investigates the feasibility of using RISC-V for open source Linux systems. The C. Bootloader is responsible for booting the Linux kernel and provides several options for booting the OS kernel, along with commands for debugging and modifying the kernel environment. Lastly, the ISA (Instruction Set Architecture) is a broader term that encompasses various standards defining how processors execute instructions.",
+    "The 32-bit and 128-bit ISA configurations are a subset of broader architectures, which encompass various computer design principles. Within the MILIS project, MILIS packages are utilized to build kernel and user space software, contributing to the development of a Linux distribution tailored for RISC-V architecture. Additionally, such software is related to the Internet of Things, indicating its potential applications in interconnected devices. The prerootfs serves as a foundational component, having a broader term relationship with the root filesystem, which contains essential operating system files. Legacy distributions, such as those adapted for RISC-V, fall under the broader category of distributions. Chip-sets are integral to hardware in a computer system, a category that also includes the Intel management engine and open source hardware. GRUB or U-Boot, which are types of bootloaders, have a broader term relationship with C. Bootloader. Furthermore, desktop-targeted operating systems are a specific type of operating system, while simple compiler implementations to be developed are part of various projects aimed at enhancing software capabilities. The native compile support will be increased at the level of programming languages that utilize LLVM as a back-end compiler, which is part of the broader process of Compilation. The MILIS project itself is categorized as a project, and it is noteworthy that generic library routines are often used in conjunction with assembly. The open processor architecture is another example of a broader architectural design, while technology relevant companies have participated in the RISC-V foundation, promoting open-source instruction set architectures. Lastly, ELF and module implementation are essential for task implementation in software development, and MILIS is recognized as a package within this ecosystem.",
+    "Motherboards are a fundamental part of hardware in a computer system, serving as the main circuit board that connects various components. Within the realm of operating systems, the compiled kernel and kernel binary are both broader terms under the Linux kernel, which is essential for managing hardware resources. Bootloaders like GRUB or U-Boot are critical for initializing the operating system before it runs. While 64-bit systems are designed for general use, they have exceptions for specific purposes. Devices require processors to function, and processors themselves are a broader category that includes various types of devices. The A. RISC-V initiative is a project aimed at advancing the RISC-V architecture, while the open computing proposal falls under the broader category of proposals aimed at promoting open-source hardware development. The Debian operating system was forked from MILIS, which is distinct due to its independent base and package manager. The E. Pre-Root and Package Production work together to create a bootable operating system for RISC-V hardware. The Recreation of Rootfs process produces an initial bootable binary disk image, which is essential for deploying the operating system. Additionally, the Linux tree serves as a repository for the operating system's source code, and the work outline provides a framework for implementing Linux on RISC-V architecture. Finally, the components of a system include devices, timers, IRQs, and the Supervisor Binary Interface (SBI), which are crucial for managing system operations.",
+    "The term 'operating system' encompasses a broader category known as 'OS'. In the realm of research, 'such work' is a subset that focuses on the development of open source Linux-based operating systems targeting the RISC-V architecture. The 'RISC-V foundation' actively engages in responding to various 'proposals' aimed at advancing this field. Within the context of device architecture, 'x86-64' is classified under the broader term 'Device', while it also falls under 'architectures'. The 'BBL' software component is utilized to compile with the '-withpayload config parameter', which is essential for referencing the compiled kernel in RISC-V environments. Furthermore, 'live system packages' are categorized under 'methods', indicating systematic approaches to software development. The MILIS project, which has its own production collection, has never had '32-bit ports', highlighting its unique focus. Additionally, 'full system emulation mode' and 'kernel and userspace packages' are both broader terms under the umbrella of 'operating system'. The concept of 'open source operating systems' is part of the larger movement of 'open source', promoting free access to software. In terms of functionality, 'Processors' are designed to execute 'instructions', which are essential for computing tasks. Looking ahead, the open source instruction set architecture (RISC-V) is seen as having 'its bright future', a notion that is part of the broader concept of 'Future'. The 'the R&D studies' conducted in this domain are categorized under 'studies', reflecting ongoing research efforts. Lastly, 'Debian' is recognized as a type of 'operating system', further illustrating the diversity within this field.",
+    "MILIS is a Linux distribution that falls under the broader category of distributions. It features its own package management system, allowing it to manage software packages effectively. The MMU, which is a crucial component of hardware in a computer system, also has a broader classification within this domain. The Berkley Bootloader (BBL) serves as a specific type of C. Bootloader, linking to the kernel binary that is essential for operating systems. Future work in this area is categorized under studies, indicating ongoing research and development efforts. The live image represents a broader concept of operating systems, showcasing the functionality of various Linux distributions. Open source hardware is classified under Devices, emphasizing its role in the hardware side of computing. The R&D studies contribute to the broader field of research, focusing on optimizing open-source RISC-V processors. Userspace is a critical component of the computing environment, providing necessary interfaces for applications. Instructions are governed by a general set of instructions, which are fundamental to computing processes. The GNU project is a significant part of the operating system landscape, while a kernel with GCC 7.1 or above is a specific implementation of the Linux kernel. The RISC-V foundation is an organization that promotes open-source architectures, and both Fedora and Debian are recognized as broader categories of operating systems and Linux distributions, respectively. Si-five produces development tools specifically for developers, facilitating the creation and porting of Linux distributions.",
+    "The process of Boot chain loading is essential as it loads the Linux operating system into memory, enabling its functionality. Linux, in turn, provides a pure Linux usage and development experience, which is a platform that allows developers to work on projects without licensing restrictions. This experience is encompassed within the broader term of Linux. Additionally, Buildroot is recognized as a broader term under the category of operating systems, highlighting its role in creating custom Linux distributions. The R&D studies, which focus on the development of open-source RISC-V processors, fall under the broader term of R&D. The Berkley Bootloader (BBL) is categorized as a type of bootloader, which is crucial for initializing the operating system. MILIS, a project that implements task management, also has a broader term associated with it, indicating its significance in the Linux ecosystem. Yocto is another tool that falls under Linux distributions, emphasizing its role in building customized versions of Linux. The MILIS Linux project is distinguished by its independent base and unique package manager, classifying it as a significant project in the Linux landscape. Furthermore, the virtual board is a broader term for hardware in a computer system, showcasing its importance in digital interfaces. BBL is recognized as a C. Bootloader, which is vital for system initialization. The research initiative A. RISC-V is part of the broader research category, contributing to advancements in computer architecture. Fedora is also categorized under Linux distributions, further enriching the variety of available operating systems. ASELSAN collaborates to produce chips, contributing to the hardware landscape. The Boot chain loading process is classified under operating systems, as is the Linux distribution project, which aims to create new operating systems. The organizations involved in these projects are collectively referred to as 'we,' indicating a collaborative effort. Open source hardware is a broader term that encompasses the principles of open source, promoting free access to hardware designs. Sparc is another architecture that falls under the broader category of architectures. Lastly, it is expected that with an increasing interest in the Internet of Things, there will be further developments in related technologies.",
+    "The Port project is responsible for producing kernel and userspace packages, which are essential components in the software ecosystem. Buildroot is recognized as a broader term encompassing Linux distributions, which themselves are a type of distribution that organizes various software components. Devices, which include physical hardware, have a broader classification under hardware in a computer system, and 32-bit ports also fall under this category. The MILIS Linux project operates separately for embedded devices, contributing to their functionality. Additionally, Linux distributions are categorized under distributions, highlighting their role in software organization. Devices are equipped with IRQs, which are crucial for managing interrupt signals. MILIS packages represent a broader category of packages, while Si-five is a company that produces development motherboards, fitting into the broader category of companies. The Berkeley Bootloader (BBL) serves as a bootloader and is also classified under compiler implementations. Future specification revisions are proposals aimed at enhancing the RISC-V architecture. Embedded devices are part of the hardware side, which includes all physical components necessary for system operation. Binutils, a toolset for building executable files, is categorized under the broader term Toolchain. The work packages typically included in porting are part of a larger set of work packages. The MILIS project is classified as a project and also falls under the category of package managers, indicating its role in managing software packages. Toolchain is recognized as a cross-compiler for the GNU project, while Fedora is a broader term for operating systems (OS). Lastly, achieving a proper separation between BBL and the kernel is an ongoing goal within the Linux kernel framework.",
+    "The process of enabling the MILIS Linux project to be ported to a different architecture falls under the broader category of architectures. U-boot, a bootloader, is classified as an operating system, while cluster command processing is a technique used to increase operating speed. GCC, a widely-used software framework, is part of compiler implementations. This vulnerability is a specific instance of a broader vulnerability category, and 64-bit systems are also categorized under architectures. The development of other variants is a part of the broader development process. Linux, as an open-source operating system, is considered a project, and many companies have started R&D studies for RISC-V, thus becoming members of the RISC-V foundation, which relates to the broader category of companies. Buildroot is a tool that falls under the broader term Toolchain. The hardware side of computing is encompassed within Infrastructure. Open source hardware is another project that promotes collaborative development. A bootloader is defined as a piece of code that executes before an operating system runs, and the Software Bring-Up Interface (SBI) is categorized under standards. An open source software ecosystem for the academic environment supports the broader academic environment. Paging and MMU are related technologies in memory management. SCARV represents a project focused on open source computer architecture, while Si-five is an organization that supports RISC-V development. Embedded devices are a broader category that includes hardware in a computer system, and Meltdown is a critical vulnerability that falls under the general category of vulnerabilities.",
+    "GCC 7.1 or above is a specific version of compiler implementations, indicating its role within the broader category of compilers. The RISC-V foundation, which promotes open-source instruction set architectures, is a type of foundation, highlighting its organizational structure. A secure network structure can be configured via a web browser, showcasing the interaction between network design and user interfaces. The computing environment is part of the larger infrastructure, emphasizing its foundational role in technology. Debian serves as a distribution within the broader category of software distributions. Many tasks remain in the following areas, which are encompassed by the general term tasks, indicating ongoing development efforts. A proper separation between BBL and the kernel is a specific aspect of BBL, pointing to the need for clear boundaries in system architecture. The disclosure of vulnerabilities, particularly Meltdown-Spectre, underscores the importance of security in computing systems. Fedora is categorized as an open development platform, reflecting its collaborative nature. An open source operating system development project is a type of project, illustrating the organized efforts in software development. Compilation and testing processes yield more accurate results when utilizing physical hardware, emphasizing the importance of devices in software verification. GRUB is a well-known bootloader that falls under the broader category of C. Bootloader. The concept of Atomic is synonymous with Locking Code, indicating its role in ensuring system integrity. Init is a component of Init and Halt Code, which is essential for process management. C. Bootloader is a specific type of bootloader, highlighting its function in system initialization. Enabling the MILIS Linux project to be ported to a different architecture is a project aimed at expanding the software's compatibility. C. MILIS, along with operating system work and the Linux tree, all represent various projects within the realm of software development.",
+    "The RISC-V Foundation encompasses various organizations, one aspect of which is the support provided by the Akdeniz University BAP unit to the MILIS Linux project, which is distinguished by its independent base and unique package manager. In the realm of research, open source hardware studies are recognized as a broader category, while the open source hardware initiative is classified under projects. The Toolchain, which includes the Build infrastructure, is also categorized as a project. Additionally, BBL is a component that falls under the broader term of components, and Port is another project that facilitates compatibility across systems. ASELSAN and Genpro are both companies contributing to the development of open-source hardware, with ASELSAN being a silver member of the RISC-V Foundation. The concept of cluster command processing is classified under methods, and Shakti is recognized as a project focused on processor architecture. The Linux operating system, referred to as this work as the kernel, is part of the broader research category. GRUB, a widely used bootloader, is a specific type of A bootloader, while U-boot is another bootloader that falls under the category of C. Bootloader. Furthermore, embedded devices are classified as a type of Device, and the MILIS Linux project aspires to operate as a separate branch within the broader organizational structure.",
+    "Linux from Scratch and Debian are both considered projects, which encompass various organized efforts aimed at achieving specific goals. Similarly, other GNU/Linux projects and Fedora also fall under the broader category of projects. Within the realm of software development, QEMU serves as a system emulator, while BBL represents a set of methods for handling specific operations. The Meltdown-Spectre vulnerabilities highlight significant security issues, classified under the broader term of vulnerabilities. In the context of optimization, RISC-V support over time and will be optimized is an effort aimed at enhancing performance, which is a key aspect of optimization. Additionally, MILIS packages function as a package manager, which is essential for managing software installations. Akdeniz University collaborates with ASELSAN, a notable organization that is a silver member of the RISC-V foundation. The module implementation is specifically optimized for operating speed, showcasing the importance of performance in software design. The ELF framework is an implementation of module implementation, further illustrating the interconnectedness of these concepts. U-boot is categorized as a bootloader, which is crucial for initializing operating systems. Lastly, some reputable companies contribute to the broader category of companies, emphasizing the collaborative nature of the tech industry.",
+    "Communities are known to produce their own processors, showcasing their innovative capabilities. Buildroot, a significant software project, has a broader term that encompasses various projects aimed at creating custom Linux distributions. In the realm of development, any development efforts are categorized under the broader term of development, indicating a systematic approach to improvement. Organizations like Genpro and MILIS also fall under the broader category of organizations, contributing to advancements in technology. The necessary sponsors play a crucial role as they are a broader term for sponsors, providing essential financial support for various initiatives. Target users, which include government agencies, commercial organizations, and private users, are also classified under organizations, highlighting their importance in the ecosystem. Physical implementation is a specific aspect of module implementation, representing practical methods for realizing concepts. Many companies have started R&D studies for RISC-V and have become members of the RISC-V foundation, which is a broader term for such collaborative efforts. Devices are categorized under components, emphasizing their role as integral parts of larger systems. Ongoing R&D activities are focused on chip production, reflecting the industry's commitment to innovation. LFS, or Linux from Scratch, is a broader term for methods used in building custom Linux systems. Response tasks are specifically designed to interact with timer interrupts, showcasing the dynamic nature of computing. The Linux from Scratch methodology also falls under the broader category of methods, reinforcing its significance in the Linux community. SCARV represents a broader term for organizations dedicated to open-source computer architecture research. Linux itself is a broader term for communities that contribute to the open-source operating system. Work packages are organized under the broader term of packages, indicating a structured approach to project management. Shakti is categorized under companies, reflecting its role in advancing computer processing technologies. BBL, a software component, is also classified under organizations, emphasizing its collaborative nature. Lastly, the BAP unit, which supports the MILIS Linux project, is recognized as a broader term for universities, highlighting the academic involvement in technological advancements.",
+    "The Device is related to the timer, indicating a connection between physical hardware and time measurement technology. In the realm of software development, Physical Implementation encompasses a broader term known as Task implementation, which involves executing plans through coding and testing. We actively compile packages from an x86-64 host to a riscv64 target file system, showcasing our commitment to cross-platform development. The C. Bootloader serves as a broader term for studies, highlighting its significance in the research landscape. Additionally, module implementation falls under the broader category of methods, emphasizing systematic approaches in software practices. The Build process is crucial as it builds Infrastructure, which itself is a broader term for the foundational systems supporting various technologies. Spectre, a notable computer vulnerability, is classified under the broader term of vulnerability, reflecting its impact on system security. The open development platform for developers is part of the broader development ecosystem, while the opening standard is a subset of standards that guide processes. Kernel level difficulties are categorized as problems, indicating the challenges faced in low-level programming. Currently, the operation regarding 128-bit is deemed not realistic at this time. Physical Implementation and Optimizations are integral to studies and research, contributing to advancements in technology. We also build packages [28], which are essential for our development efforts. Shakti is recognized as a broader term for organizations focused on processor architecture advancements. The Debian port of MILIS Linux, referred to as it, can be discovered and improved by top academics, emphasizing the role of experts in enhancing technology. Furthermore, the BBL will compile with the -withpayload config parameter to reference the compiled kernel, which is a part of the broader category of compiler implementations. Lastly, GNU and Intel are both classified under organizations and companies, respectively, highlighting their roles in the tech industry.",
+    "The concept of Compilation and testing encompasses the broader term of testing, which is essential for evaluating software quality. OpenCelerity, a university research group, is categorized under organizations, similar to the BAP unit, which supports research projects at Akdeniz University. System Emulation is a method that falls under the broader category of methods, while studies are part of a larger project framework. The Linux community represents a collective of communities dedicated to the open-source operating system. Much research remains to be done in the field of research, highlighting ongoing efforts. Physical Implementation is closely linked with optimization, indicating a relationship between practical application and enhancement. R&D activities are also classified under projects, emphasizing their role in innovation. A timer, as a component, serves as a broader element within various systems. Response tasks are a subset of tasks designed for user engagement. The Debian port of MILIS Linux, referred to as it, can be discovered and improved by both commercial innovators and industry experts. IIT Madras and Berkeley University are both recognized as universities, contributing to the academic landscape. The Barcelona Supercomputing Center is another organization focused on advanced computing research. Finally, Western Digital is categorized under companies, reflecting its role in the technology sector, while research project funding supports are essential for the success of various projects.",
+    "We choose Glibc as our preferred library for development. The Australian Space Technology Centre (ASTC) has a broader term that encompasses various companies, highlighting its extensive reach in the industry. Starting to implement timer interrupts is a crucial step in our project. Research and Development (R&D) is a significant area that includes broader terms such as studies and development, indicating its comprehensive nature. Technology relevant companies also fall under the broader category of companies, showcasing their importance in the tech landscape. Furthermore, R&D is supported by research, emphasizing the systematic investigation involved. Akdeniz University is categorized under universities, reflecting its role in higher education. Western Digital, IIT Madras, Berkeley University, and ETH Zurich are all organizations that contribute to the broader category of organizations, with each having its unique focus. Additionally, organizational use is a term that encompasses commercial organizations, indicating the business-oriented nature of these entities. ASELSAN (Turkey) is another example of a company that fits within this broader classification. R&D will be provided with necessary research project funding supports, ensuring that these initiatives are financially backed. Lastly, the Akdeniz University BAP unit plays a vital role as an organization that manages research funding and support.",
+    "We utilize QEMU, a powerful virtual machine emulator, and currently have the 4.0.0 version of this software. Akdeniz University is categorized under organizations, which also includes ASELSAN (Turkey) and ETH Zurich, both of which are recognized as organizations as well. Huawei, a prominent technology company, falls under the broader category of companies. Additionally, the concept of Starting encompasses various tasks, while communities are also classified as organizations. Lastly, private users are considered a subset of individuals."
+  ],
+  "times": [
+    170.90353751182556
+  ]
+}

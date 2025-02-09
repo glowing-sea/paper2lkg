@@ -1,0 +1,47 @@
+{
+  "iri": "Paper-77",
+  "title": "NIPS_2015_18_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-77-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-77-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-1",
+              "text": "Many practical modeling problems involve discrete data that are best represented as draws from multinomial or categorical distributions ."
+            },
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+              "text": "For example , nucleotides in a DNA sequence , children 's names in a given state and year , and text documents are all commonly modeled with multinomial distributions ."
+            },
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+              "text": "In all of these cases , we expect some form of dependency between the draws : the nucleotide at one position in the DNA strand may depend on the preceding nucleotides , children 's names are highly correlated from year to year , and topics in text may be correlated and dynamic ."
+            },
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-4",
+              "text": "These dependencies are not naturally captured by the typical Dirichlet-multinomial formulation ."
+            },
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-5",
+              "text": "Here , we leverage a logistic stick-breaking representation and recent innovations in P\u00f3lya-gamma augmentation to reformu-late the multinomial distribution in terms of latent variables with jointly Gaussian likelihoods , enabling us to take advantage of a host of Bayesian inference techniques for Gaussian models with minimal overhead ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Many practical modeling problems involve discrete data that are best represented as draws from multinomial or categorical distributions . For example , nucleotides in a DNA sequence , children 's names in a given state and year , and text documents are all commonly modeled with multinomial distributions . In all of these cases , we expect some form of dependency between the draws : the nucleotide at one position in the DNA strand may depend on the preceding nucleotides , children 's names are highly correlated from year to year , and topics in text may be correlated and dynamic . These dependencies are not naturally captured by the typical Dirichlet-multinomial formulation . Here , we leverage a logistic stick-breaking representation and recent innovations in P\u00f3lya-gamma augmentation to reformu-late the multinomial distribution in terms of latent variables with jointly Gaussian likelihoods , enabling us to take advantage of a host of Bayesian inference techniques for Gaussian models with minimal overhead .",
+  "kg2text": [
+    "In the realm of statistical modeling, dependencies are inadequately modeled by these dependencies, which refer to the correlations between discrete draws from multinomial or categorical distributions. These dependencies are not captured by the typical Dirichlet-multinomial formulation or the Dirichlet-multinomial itself, highlighting a significant gap in traditional approaches. Modeling problems, which involve these dependencies, account for various practical scenarios where discrete data is represented. Many practical modeling problems have a broader term of modeling problems, emphasizing the complexity of the data involved. The logistic stick-breaking representation leverages P\u00f3lya-gamma augmentation, a technique that reformulates multinomial distributions, which are essential for modeling children's names in a given state and year, as well as nucleotides in a DNA sequence. Both children's names and nucleotides are modeled with multinomial distributions, which in turn are represented in terms of latent variables. Furthermore, Gaussian models can be utilized with minimal overhead when applying Bayesian inference techniques, which are crucial for analyzing these complex statistical relationships.",
+    "In the analysis of various entities, states are modeled with multinomial distributions, which are also used to model DNA sequences, nucleotides, and years. Latent variables are associated with jointly Gaussian likelihoods, indicating a statistical relationship where these hidden variables can be inferred from observed data. Specifically, the nucleotide at one position in the DNA strand depends on the preceding nucleotides, highlighting the influence of prior bases on its identity. Furthermore, topics in text documents are characterized as correlated and dynamic, reflecting the evolving relationships among different subjects over time. Additionally, children's names exhibit a correlation with the year, suggesting that naming trends may change in relation to temporal factors."
+  ],
+  "times": [
+    6.30323338508606
+  ]
+}

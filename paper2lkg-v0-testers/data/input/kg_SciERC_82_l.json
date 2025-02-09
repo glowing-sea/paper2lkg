@@ -1,0 +1,1498 @@
+{
+  "iri": "Paper-82",
+  "title": "ICML_2016_18_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-82-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-82-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+              "text": "In the Object Recognition task , there exists a di-chotomy between the categorization of objects and estimating object pose , where the former necessitates a view-invariant representation , while the latter requires a representation capable of capturing pose information over different categories of objects ."
+            },
+            {
+              "iri": "Paper-82-Section-1-Paragraph-1-Sentence-2",
+              "text": "With the rise of deep archi-tectures , the prime focus has been on object category recognition ."
+            },
+            {
+              "iri": "Paper-82-Section-1-Paragraph-1-Sentence-3",
+              "text": "Deep learning methods have achieved wide success in this task ."
+            },
+            {
+              "iri": "Paper-82-Section-1-Paragraph-1-Sentence-4",
+              "text": "In contrast , object pose estimation using these approaches has received relatively less attention ."
+            },
+            {
+              "iri": "Paper-82-Section-1-Paragraph-1-Sentence-5",
+              "text": "In this work , we study how Convolutional Neural Networks -LRB- CNN -RRB- architectures can be adapted to the task of simultaneous object recognition and pose estimation ."
+            },
+            {
+              "iri": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+              "text": "We investigate and analyze the layers of various CNN models and extensively compare between them with the goal of discovering how the layers of distributed representations within CNNs represent object pose information and how this contradicts with object category representations ."
+            },
+            {
+              "iri": "Paper-82-Section-1-Paragraph-1-Sentence-7",
+              "text": "We extensively experiment on two recent large and challenging multi-view datasets and we achieve better than the state-of-the-art ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0002162456512451172,
+    18.946518898010254,
+    29.75747323036194,
+    27.793352842330933,
+    0.03937029838562012,
+    9.989738464355469e-05,
+    0.00012445449829101562,
+    53.11840748786926,
+    66.57383251190186,
+    1.948204755783081,
+    1.2489945888519287,
+    0.013079643249511719,
+    0.0002372264862060547,
+    34.48092484474182,
+    6.974292516708374,
+    0.02012181282043457,
+    1.1041028499603271,
+    4.018963813781738,
+    18.104943990707397,
+    20.363049745559692,
+    46.22361350059509,
+    3.698112964630127,
+    28.20908761024475,
+    1.3589458465576172,
+    0.0008225440979003906,
+    0.015099048614501953
+  ],
+  "nodes": {
+    "Entity-in_this_work": {
+      "node_id": "in_this_work",
+      "disambiguation_index": 0,
+      "label": "In this work",
+      "aliases": [
+        "In this work"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The study on adapting Convolutional Neural Networks (CNN) architectures for simultaneous object recognition and pose estimation.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "In this work",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-in_this_work-Mention-1"
+        }
+      ],
+      "relevance": 0.748046875
+    },
+    "Entity-distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation": {
+      "node_id": "distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation",
+      "disambiguation_index": 0,
+      "label": "distributed representations within CNNs represent object pose information and how this contradicts with object category representations",
+      "aliases": [
+        "distributed representations within CNNs represent object pose information and how this contradicts with object category representations"
+      ],
+      "types": [
+        "representation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The layers of distributed representations in Convolutional Neural Networks (CNNs) that capture object pose information, which contrasts with their role in representing object categories.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "distributed representations within CNNs represent object pose information and how this contradicts with object category representations",
+          "local_types": [
+            "representation"
+          ],
+          "iri": "Entity-distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation-Mention-1"
+        }
+      ],
+      "relevance": 0.74462890625
+    },
+    "Entity-the_layer_of_various_cnn_model": {
+      "node_id": "the_layer_of_various_cnn_model",
+      "disambiguation_index": 0,
+      "label": "the layers of various CNN models",
+      "aliases": [
+        "the layers of various CNN models"
+      ],
+      "types": [
+        "layers",
+        "model",
+        "CNN model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The various Convolutional Neural Network (CNN) models' internal layers, which are analyzed to understand their distributed representations of object pose information and how they contrast with category recognition.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the layers of various CNN models",
+          "local_types": [
+            "layers",
+            "model",
+            "CNN model"
+          ],
+          "iri": "Entity-the_layer_of_various_cnn_model-Mention-1"
+        }
+      ],
+      "relevance": 0.71923828125
+    },
+    "Entity-them_with_the_goal_of_discovering_how_the_layer_of_distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation": {
+      "node_id": "them_with_the_goal_of_discovering_how_the_layer_of_distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation",
+      "disambiguation_index": 0,
+      "label": "them with the goal of discovering how the layers of distributed representations within CNNs represent object pose information and how this contradicts with object category representations",
+      "aliases": [
+        "them with the goal of discovering how the layers of distributed representations within CNNs represent object pose information and how this contradicts with object category representations"
+      ],
+      "types": [
+        "goal",
+        "research question",
+        "information representation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The research question or goal of investigating the layers of Convolutional Neural Networks (CNNs) to understand how they represent object pose information and how this representation contrasts with that for object categories.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "them with the goal of discovering how the layers of distributed representations within CNNs represent object pose information and how this contradicts with object category representations",
+          "local_types": [
+            "goal",
+            "research question",
+            "information representation"
+          ],
+          "iri": "Entity-them_with_the_goal_of_discovering_how_the_layer_of_distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation-Mention-1"
+        }
+      ],
+      "relevance": 0.71630859375
+    },
+    "Entity-we": {
+      "node_id": "we",
+      "disambiguation_index": 0,
+      "label": "We",
+      "aliases": [
+        "We"
+      ],
+      "types": [
+        "author"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The authors of this paper, who are studying how Convolutional Neural Networks can be adapted to simultaneous object recognition and pose estimation.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "We",
+          "local_types": [
+            "author"
+          ],
+          "iri": "Entity-we-Mention-1"
+        }
+      ],
+      "relevance": 0.7109375
+    },
+    "Entity-we_investigate": {
+      "node_id": "we_investigate",
+      "disambiguation_index": 0,
+      "label": "We investigate",
+      "aliases": [
+        "We investigate"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The investigation into Convolutional Neural Networks (CNN) models to analyze the layers of distributed representations within CNNs, focusing on how they represent object pose information and contrast with object category representations.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "We investigate",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-we_investigate-Mention-1"
+        }
+      ],
+      "relevance": 0.70849609375
+    },
+    "Entity-a_representation_capable_of_capturing_pose_information_over_different_category_of_object": {
+      "node_id": "a_representation_capable_of_capturing_pose_information_over_different_category_of_object",
+      "disambiguation_index": 0,
+      "label": "a representation capable of capturing pose information over different categories of objects",
+      "aliases": [
+        "a representation capable of capturing pose information over different categories of objects"
+      ],
+      "types": [
+        "representation",
+        "pose-capturing"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A neural network architecture that can simultaneously recognize and estimate the pose (orientation) of various types of objects.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a representation capable of capturing pose information over different categories of objects",
+          "local_types": [
+            "representation",
+            "pose-capturing"
+          ],
+          "iri": "Entity-a_representation_capable_of_capturing_pose_information_over_different_category_of_object-Mention-1"
+        }
+      ],
+      "relevance": 0.66552734375
+    },
+    "Entity-cnn_model": {
+      "node_id": "cnn_model",
+      "disambiguation_index": 0,
+      "label": "CNN models",
+      "aliases": [
+        "CNN models"
+      ],
+      "types": [
+        "computer vision model",
+        "technology",
+        "model",
+        "machine learning algorithm"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Convolutional Neural Network models used for image classification, object detection, or other computer vision tasks",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "CNN models",
+          "local_types": [
+            "computer vision model",
+            "technology",
+            "model",
+            "machine learning algorithm"
+          ],
+          "iri": "Entity-cnn_model-Mention-1"
+        }
+      ],
+      "relevance": 0.65380859375
+    },
+    "Entity-simultaneous_object_recognition_and_pose_estimation": {
+      "node_id": "simultaneous_object_recognition_and_pose_estimation",
+      "disambiguation_index": 0,
+      "label": "simultaneous object recognition and pose estimation",
+      "aliases": [
+        "simultaneous object recognition and pose estimation",
+        "the task of simultaneous object recognition and pose estimation"
+      ],
+      "types": [
+        "task",
+        "problem domain",
+        "research area"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process of identifying multiple objects in an image or scene while also determining their orientations, postures, or poses.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "simultaneous object recognition and pose estimation",
+          "local_types": [
+            "task",
+            "problem domain",
+            "research area"
+          ],
+          "iri": "Entity-simultaneous_object_recognition_and_pose_estimation-Mention-1"
+        },
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "the task of simultaneous object recognition and pose estimation",
+          "local_types": [
+            "task",
+            "research area"
+          ],
+          "iri": "Entity-simultaneous_object_recognition_and_pose_estimation-Mention-2"
+        }
+      ],
+      "relevance": 0.6435546875
+    },
+    "Entity-the_object_recognition_task": {
+      "node_id": "the_object_recognition_task",
+      "disambiguation_index": 0,
+      "label": "the Object Recognition task",
+      "aliases": [
+        "the Object Recognition task"
+      ],
+      "types": [
+        "task"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The process of recognizing and identifying objects in an image or scene, requiring both categorization (view-invariant) and estimation of object pose.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "the Object Recognition task",
+          "local_types": [
+            "task"
+          ],
+          "iri": "Entity-the_object_recognition_task-Mention-1"
+        }
+      ],
+      "relevance": 0.6435546875
+    },
+    "Entity-various_cnn_model": {
+      "node_id": "various_cnn_model",
+      "disambiguation_index": 0,
+      "label": "various CNN models",
+      "aliases": [
+        "various CNN models"
+      ],
+      "types": [
+        "collection of computer vision models",
+        "set of machine learning algorithms"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of Convolutional Neural Network (CNN) models used for computer vision tasks",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "various CNN models",
+          "local_types": [
+            "collection of computer vision models",
+            "set of machine learning algorithms"
+          ],
+          "iri": "Entity-various_cnn_model-Mention-1"
+        }
+      ],
+      "relevance": 0.63134765625
+    },
+    "Entity-distributed_representation_within_cnns": {
+      "node_id": "distributed_representation_within_cnns",
+      "disambiguation_index": 0,
+      "label": "distributed representations within CNNs",
+      "aliases": [
+        "distributed representations within CNNs"
+      ],
+      "types": [
+        "representation",
+        "concept",
+        "idea"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of neural network representation that captures complex patterns in data through a set of interconnected nodes, where each node represents an abstract concept or feature.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "distributed representations within CNNs",
+          "local_types": [
+            "representation",
+            "concept",
+            "idea"
+          ],
+          "iri": "Entity-distributed_representation_within_cnns-Mention-1"
+        }
+      ],
+      "relevance": 0.62939453125
+    },
+    "Entity-layer_of_various_cnn_model": {
+      "node_id": "layer_of_various_cnn_model",
+      "disambiguation_index": 0,
+      "label": "layers of various CNN models",
+      "aliases": [
+        "layers of various CNN models"
+      ],
+      "types": [
+        "concept",
+        "idea",
+        "structure",
+        "component",
+        "layer"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of different neural network layer architectures from various Convolutional Neural Network (CNN) models.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "layers of various CNN models",
+          "local_types": [
+            "concept",
+            "idea",
+            "structure",
+            "component",
+            "layer"
+          ],
+          "iri": "Entity-layer_of_various_cnn_model-Mention-1"
+        }
+      ],
+      "relevance": 0.619140625
+    },
+    "Entity-these_approach": {
+      "node_id": "these_approach",
+      "disambiguation_index": 0,
+      "label": "these approaches",
+      "aliases": [
+        "these approaches"
+      ],
+      "types": [
+        "approach"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Deep learning methods used for estimating object pose",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "these approaches",
+          "local_types": [
+            "approach"
+          ],
+          "iri": "Entity-these_approach-Mention-1"
+        }
+      ],
+      "relevance": 0.61669921875
+    },
+    "Entity-object_recognition_task": {
+      "node_id": "object_recognition_task",
+      "disambiguation_index": 0,
+      "label": "Object Recognition task",
+      "aliases": [
+        "Object Recognition task"
+      ],
+      "types": [
+        "research area",
+        "field",
+        "task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A task that involves recognizing and identifying objects from various perspectives or poses.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Object Recognition task",
+          "local_types": [
+            "research area",
+            "field",
+            "task"
+          ],
+          "iri": "Entity-object_recognition_task-Mention-1"
+        }
+      ],
+      "relevance": 0.611328125
+    },
+    "Entity-object_pose_estimation": {
+      "node_id": "object_pose_estimation",
+      "disambiguation_index": 0,
+      "label": "object pose estimation",
+      "aliases": [
+        "object pose estimation"
+      ],
+      "types": [
+        "computer vision task",
+        "technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process of determining the position and orientation of an object in a given scene or image.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "object pose estimation",
+          "local_types": [
+            "computer vision task",
+            "technique"
+          ],
+          "iri": "Entity-object_pose_estimation-Mention-1"
+        }
+      ],
+      "relevance": 0.59326171875
+    },
+    "Entity-object_category_recognition": {
+      "node_id": "object_category_recognition",
+      "disambiguation_index": 0,
+      "label": "object category recognition",
+      "aliases": [
+        "object category recognition"
+      ],
+      "types": [
+        "task",
+        "computer vision application",
+        "research area"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process or task of identifying and categorizing objects into specific groups based on their visual characteristics.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "object category recognition",
+          "local_types": [
+            "task",
+            "computer vision application",
+            "research area"
+          ],
+          "iri": "Entity-object_category_recognition-Mention-1"
+        }
+      ],
+      "relevance": 0.58984375
+    },
+    "Entity-convolutional_neural_network": {
+      "node_id": "convolutional_neural_network",
+      "disambiguation_index": 0,
+      "label": "Convolutional Neural Networks",
+      "aliases": [
+        "Convolutional Neural Networks"
+      ],
+      "types": [
+        "machine learning model",
+        "technology",
+        "architecture",
+        "artificial intelligence"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A type of neural network architecture that uses convolutional layers to extract features from input data.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Convolutional Neural Networks",
+          "local_types": [
+            "machine learning model",
+            "technology",
+            "architecture",
+            "artificial intelligence"
+          ],
+          "iri": "Entity-convolutional_neural_network-Mention-1"
+        }
+      ],
+      "relevance": 0.587890625
+    },
+    "Entity-estimating_object_pose": {
+      "node_id": "estimating_object_pose",
+      "disambiguation_index": 0,
+      "label": "estimating object pose",
+      "aliases": [
+        "estimating object pose"
+      ],
+      "types": [
+        "pose estimation",
+        "3D reconstruction",
+        "process",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process or methodology used to determine the position and orientation of an object in three-dimensional space.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "estimating object pose",
+          "local_types": [
+            "pose estimation",
+            "3D reconstruction",
+            "process",
+            "methodology"
+          ],
+          "iri": "Entity-estimating_object_pose-Mention-1"
+        }
+      ],
+      "relevance": 0.5771484375
+    },
+    "Entity-cnn": {
+      "node_id": "cnn",
+      "disambiguation_index": 0,
+      "label": "CNN",
+      "aliases": [
+        "CNN"
+      ],
+      "types": [
+        "model type",
+        "architecture",
+        "abbreviation"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A type of neural network architecture",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "CNN",
+          "local_types": [
+            "model type",
+            "architecture",
+            "abbreviation"
+          ],
+          "iri": "Entity-cnn-Mention-1"
+        }
+      ],
+      "relevance": 0.56591796875
+    },
+    "Entity-deep_learning_method": {
+      "node_id": "deep_learning_method",
+      "disambiguation_index": 0,
+      "label": "Deep learning methods",
+      "aliases": [
+        "Deep learning methods"
+      ],
+      "types": [
+        "algorithm",
+        "machine learning",
+        "technique",
+        "methodology",
+        "method",
+        "approach"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A set of algorithms and techniques used to analyze and interpret data, typically involving multiple layers of artificial neural networks.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Deep learning methods",
+          "local_types": [
+            "algorithm",
+            "machine learning",
+            "technique",
+            "methodology",
+            "method",
+            "approach"
+          ],
+          "iri": "Entity-deep_learning_method-Mention-1"
+        }
+      ],
+      "relevance": 0.5625
+    },
+    "Entity-the_state-of-the-art": {
+      "node_id": "the_state-of-the-art",
+      "disambiguation_index": 0,
+      "label": "the state-of-the-art",
+      "aliases": [
+        "the state-of-the-art"
+      ],
+      "types": [
+        "state of the art"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The current best-performing methods or techniques used for object pose estimation on recent large-scale multi-view datasets.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "the state-of-the-art",
+          "local_types": [
+            "state of the art"
+          ],
+          "iri": "Entity-the_state-of-the-art-Mention-1"
+        }
+      ],
+      "relevance": 0.5615234375
+    },
+    "Entity-representation_capable_of_capturing_pose_information_over_different_category_of_object": {
+      "node_id": "representation_capable_of_capturing_pose_information_over_different_category_of_object",
+      "disambiguation_index": 0,
+      "label": "representation capable of capturing pose information over different categories of objects",
+      "aliases": [
+        "representation capable of capturing pose information over different categories of objects"
+      ],
+      "types": [
+        "concept",
+        "idea"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of representation that captures object poses across various categories.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "representation capable of capturing pose information over different categories of objects",
+          "local_types": [
+            "concept",
+            "idea"
+          ],
+          "iri": "Entity-representation_capable_of_capturing_pose_information_over_different_category_of_object-Mention-1"
+        }
+      ],
+      "relevance": 0.54931640625
+    },
+    "Entity-object_recognition": {
+      "node_id": "object_recognition",
+      "disambiguation_index": 0,
+      "label": "Object Recognition",
+      "aliases": [
+        "Object Recognition"
+      ],
+      "types": [
+        "task",
+        "field"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process or field of identifying and categorizing visual objects.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Object Recognition",
+          "local_types": [
+            "task",
+            "field"
+          ],
+          "iri": "Entity-object_recognition-Mention-1"
+        }
+      ],
+      "relevance": 0.54248046875
+    },
+    "Entity-the_prime_focus_ha_been_on_object_category_recognition": {
+      "node_id": "the_prime_focus_ha_been_on_object_category_recognition",
+      "disambiguation_index": 0,
+      "label": "the prime focus has been on object category recognition",
+      "aliases": [
+        "the prime focus has been on object category recognition"
+      ],
+      "types": [
+        "research area"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The primary research area or topic that this paper focuses on is recognizing and categorizing objects.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the prime focus has been on object category recognition",
+          "local_types": [
+            "research area"
+          ],
+          "iri": "Entity-the_prime_focus_ha_been_on_object_category_recognition-Mention-1"
+        }
+      ],
+      "relevance": 0.533203125
+    },
+    "Entity-deep_archi-tectures": {
+      "node_id": "deep_archi-tectures",
+      "disambiguation_index": 0,
+      "label": "deep archi-tectures",
+      "aliases": [
+        "deep archi-tectures"
+      ],
+      "types": [
+        "technique",
+        "methodology",
+        "technology",
+        "approach",
+        "architecture"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A complex or hierarchical architectural design approach in computer vision",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "deep archi-tectures",
+          "local_types": [
+            "technique",
+            "methodology",
+            "technology",
+            "approach",
+            "architecture"
+          ],
+          "iri": "Entity-deep_archi-tectures-Mention-1"
+        }
+      ],
+      "relevance": 0.5322265625
+    },
+    "Entity-different_category_of_object": {
+      "node_id": "different_category_of_object",
+      "disambiguation_index": 0,
+      "label": "different categories of objects",
+      "aliases": [
+        "different categories of objects"
+      ],
+      "types": [
+        "object classification",
+        "category recognition"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of distinct groups or classes that can be used to classify and categorize various types of physical entities.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "different categories of objects",
+          "local_types": [
+            "object classification",
+            "category recognition"
+          ],
+          "iri": "Entity-different_category_of_object-Mention-1"
+        }
+      ],
+      "relevance": 0.5263671875
+    },
+    "Entity-distributed_representation": {
+      "node_id": "distributed_representation",
+      "disambiguation_index": 0,
+      "label": "distributed representations",
+      "aliases": [
+        "distributed representations"
+      ],
+      "types": [
+        "concept",
+        "idea"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Mathematical or computational models that represent complex concepts as a combination of multiple features, where each feature contributes to the overall representation.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "distributed representations",
+          "local_types": [
+            "concept",
+            "idea"
+          ],
+          "iri": "Entity-distributed_representation-Mention-1"
+        }
+      ],
+      "relevance": 0.51171875
+    },
+    "Entity-view-invariant_representation": {
+      "node_id": "view-invariant_representation",
+      "disambiguation_index": 0,
+      "label": "view-invariant representation",
+      "aliases": [
+        "a view-invariant representation",
+        "view-invariant representation"
+      ],
+      "types": [
+        "representation",
+        "concept",
+        "idea",
+        "representation model",
+        "computer vision concept",
+        "view-invariant"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical concept or model that represents an object in a way that remains consistent regardless of its viewpoint or orientation.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "view-invariant representation",
+          "local_types": [
+            "representation",
+            "concept",
+            "representation model",
+            "idea",
+            "computer vision concept"
+          ],
+          "iri": "Entity-view-invariant_representation-Mention-1"
+        },
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a view-invariant representation",
+          "local_types": [
+            "representation",
+            "view-invariant"
+          ],
+          "iri": "Entity-view-invariant_representation-Mention-2"
+        }
+      ],
+      "relevance": 0.5107421875
+    },
+    "Entity-categorization_of_object": {
+      "node_id": "categorization_of_object",
+      "disambiguation_index": 0,
+      "label": "categorization of objects",
+      "aliases": [
+        "the categorization of objects",
+        "categorization of objects"
+      ],
+      "types": [
+        "object categorization",
+        "categorization",
+        "methodology",
+        "process",
+        "classification process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process or methodology used to group and classify objects into distinct categories",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "categorization of objects",
+          "local_types": [
+            "object categorization",
+            "categorization",
+            "methodology",
+            "process",
+            "classification process"
+          ],
+          "iri": "Entity-categorization_of_object-Mention-1"
+        },
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "the categorization of objects",
+          "local_types": [
+            "categorization"
+          ],
+          "iri": "Entity-categorization_of_object-Mention-2"
+        }
+      ],
+      "relevance": 0.50048828125
+    },
+    "Entity-object_category_representation": {
+      "node_id": "object_category_representation",
+      "disambiguation_index": 0,
+      "label": "object category representations",
+      "aliases": [
+        "object category representations"
+      ],
+      "types": [
+        "data type",
+        "information category"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of abstract concepts or classes that categorize objects based on their characteristics, properties, or features.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "object category representations",
+          "local_types": [
+            "data type",
+            "information category"
+          ],
+          "iri": "Entity-object_category_representation-Mention-1"
+        }
+      ],
+      "relevance": 0.494140625
+    },
+    "Entity-multi-view_datasets": {
+      "node_id": "multi-view_datasets",
+      "disambiguation_index": 0,
+      "label": "multi-view datasets",
+      "aliases": [
+        "multi-view datasets"
+      ],
+      "types": [
+        "dataset",
+        "resource",
+        "data set"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of data views or perspectives that can be used for machine learning, statistical analysis, or other computational tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "multi-view datasets",
+          "local_types": [
+            "dataset",
+            "resource",
+            "data set"
+          ],
+          "iri": "Entity-multi-view_datasets-Mention-1"
+        }
+      ],
+      "relevance": 0.48486328125
+    },
+    "Entity-two_recent_large_and_challenging_multi-view_datasets": {
+      "node_id": "two_recent_large_and_challenging_multi-view_datasets",
+      "disambiguation_index": 0,
+      "label": "two recent large and challenging multi-view datasets",
+      "aliases": [
+        "two recent large and challenging multi-view datasets"
+      ],
+      "types": [
+        "multi-view dataset",
+        "dataset"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Two recently created, extensive, and difficult-to-analyze collections of data that contain multiple views or perspectives.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "two recent large and challenging multi-view datasets",
+          "local_types": [
+            "multi-view dataset",
+            "dataset"
+          ],
+          "iri": "Entity-two_recent_large_and_challenging_multi-view_datasets-Mention-1"
+        }
+      ],
+      "relevance": 0.47705078125
+    },
+    "Entity-pose_information": {
+      "node_id": "pose_information",
+      "disambiguation_index": 0,
+      "label": "pose information",
+      "aliases": [
+        "pose information",
+        "object pose information"
+      ],
+      "types": [
+        "information",
+        "data type",
+        "information category"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Information about an object's position or orientation",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "pose information",
+          "local_types": [
+            "data type",
+            "information"
+          ],
+          "iri": "Entity-pose_information-Mention-1"
+        },
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "object pose information",
+          "local_types": [
+            "data type",
+            "information category"
+          ],
+          "iri": "Entity-pose_information-Mention-2"
+        }
+      ],
+      "relevance": 0.473388671875
+    },
+    "Entity-datasets": {
+      "node_id": "datasets",
+      "disambiguation_index": 0,
+      "label": "datasets",
+      "aliases": [
+        "datasets"
+      ],
+      "types": [
+        "data",
+        "resource"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of data used for training, testing, or validating machine learning models.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "datasets",
+          "local_types": [
+            "data",
+            "resource"
+          ],
+          "iri": "Entity-datasets-Mention-1"
+        }
+      ],
+      "relevance": 0.453369140625
+    },
+    "Entity-layer": {
+      "node_id": "layer",
+      "disambiguation_index": 0,
+      "label": "layers",
+      "aliases": [
+        "layers"
+      ],
+      "types": [
+        "component",
+        "structure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of organized components or structures that make up a larger system.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "layers",
+          "local_types": [
+            "component",
+            "structure"
+          ],
+          "iri": "Entity-layer-Mention-1"
+        }
+      ],
+      "relevance": 0.4443359375
+    },
+    "Entity-this_task": {
+      "node_id": "this_task",
+      "disambiguation_index": 0,
+      "label": "this task",
+      "aliases": [
+        "this task"
+      ],
+      "types": [
+        "research area",
+        "problem domain",
+        "task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A specific objective or activity that requires effort and achievement",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "this task",
+          "local_types": [
+            "research area",
+            "problem domain",
+            "task"
+          ],
+          "iri": "Entity-this_task-Mention-1"
+        }
+      ],
+      "relevance": 0.43310546875
+    },
+    "Entity-approach": {
+      "node_id": "approach",
+      "disambiguation_index": 0,
+      "label": "approaches",
+      "aliases": [
+        "approaches"
+      ],
+      "types": [
+        "method",
+        "technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Methods or techniques used to achieve a goal",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "approaches",
+          "local_types": [
+            "method",
+            "technique"
+          ],
+          "iri": "Entity-approach-Mention-1"
+        }
+      ],
+      "relevance": 0.403564453125
+    },
+    "Entity-work": {
+      "node_id": "work",
+      "disambiguation_index": 0,
+      "label": "work",
+      "aliases": [
+        "work"
+      ],
+      "types": [
+        "research program",
+        "project"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A research program or project that involves a systematic investigation, experimentation, or exploration",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "work",
+          "local_types": [
+            "research program",
+            "project"
+          ],
+          "iri": "Entity-work-Mention-1"
+        }
+      ],
+      "relevance": 0.398681640625
+    },
+    "Entity-state-of-the-art": {
+      "node_id": "state-of-the-art",
+      "disambiguation_index": 0,
+      "label": "state-of-the-art",
+      "aliases": [
+        "state-of-the-art"
+      ],
+      "types": [
+        "standard",
+        "concept",
+        "metric"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "The current most advanced or highest level of achievement in a particular field, technology, or methodology.",
+      "mentions": [
+        {
+          "reference": "Paper-82-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "state-of-the-art",
+          "local_types": [
+            "standard",
+            "concept",
+            "metric"
+          ],
+          "iri": "Entity-state-of-the-art-Mention-1"
+        }
+      ],
+      "relevance": 0.38916015625
+    }
+  },
+  "summary": "In the Object Recognition task , there exists a di-chotomy between the categorization of objects and estimating object pose , where the former necessitates a view-invariant representation , while the latter requires a representation capable of capturing pose information over different categories of objects . With the rise of deep archi-tectures , the prime focus has been on object category recognition . Deep learning methods have achieved wide success in this task . In contrast , object pose estimation using these approaches has received relatively less attention . In this work , we study how Convolutional Neural Networks -LRB- CNN -RRB- architectures can be adapted to the task of simultaneous object recognition and pose estimation . We investigate and analyze the layers of various CNN models and extensively compare between them with the goal of discovering how the layers of distributed representations within CNNs represent object pose information and how this contradicts with object category representations . We extensively experiment on two recent large and challenging multi-view datasets and we achieve better than the state-of-the-art .",
+  "triples": [
+    [
+      "Entity-object_recognition",
+      "Predicate-necessitates",
+      "Entity-view-invariant_representation"
+    ],
+    [
+      "Entity-estimating_object_pose",
+      "Predicate-requires",
+      "Entity-a_representation_capable_of_capturing_pose_information_over_different_category_of_object"
+    ],
+    [
+      "Entity-categorization_of_object",
+      "Predicate-necessitates",
+      "Entity-view-invariant_representation"
+    ],
+    [
+      "Entity-deep_learning_method",
+      "Predicate-have_achieved_wide_success_in",
+      "Entity-this_task"
+    ],
+    [
+      "Entity-cnn",
+      "Predicate-can_be_adapted_to",
+      "Entity-simultaneous_object_recognition_and_pose_estimation"
+    ],
+    [
+      "Entity-we_investigate",
+      "Predicate-analyze",
+      "Entity-the_layer_of_various_cnn_model"
+    ],
+    [
+      "Entity-various_cnn_model",
+      "Predicate-have",
+      "Entity-layer"
+    ],
+    [
+      "Entity-we",
+      "Predicate-experiment_on",
+      "Entity-two_recent_large_and_challenging_multi-view_datasets"
+    ],
+    [
+      "Entity-the_layer_of_various_cnn_model",
+      "Predicate-investigate",
+      "Entity-in_this_work"
+    ],
+    [
+      "Entity-in_this_work",
+      "Predicate-study",
+      "Entity-them_with_the_goal_of_discovering_how_the_layer_of_distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation"
+    ],
+    [
+      "Entity-in_this_work",
+      "Predicate-study",
+      "Entity-distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation"
+    ],
+    [
+      "Entity-distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation",
+      "Predicate-represent",
+      "Entity-the_layer_of_various_cnn_model"
+    ],
+    [
+      "Entity-distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation",
+      "Predicate-investigate",
+      "Entity-them_with_the_goal_of_discovering_how_the_layer_of_distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation"
+    ],
+    [
+      "Entity-them_with_the_goal_of_discovering_how_the_layer_of_distributed_representation_within_cnns_represent_object_pose_information_and_how_this_contradicts_with_object_category_representation",
+      "Predicate-investigate",
+      "Entity-the_layer_of_various_cnn_model"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-two_recent_large_and_challenging_multi-view_datasets",
+      "skos:broader",
+      "Entity-multi-view_datasets"
+    ],
+    [
+      "Entity-the_layer_of_various_cnn_model",
+      "skos:broader",
+      "Entity-layer"
+    ],
+    [
+      "Entity-view-invariant_representation",
+      "skos:broader",
+      "Entity-object_category_representation"
+    ],
+    [
+      "Entity-these_approach",
+      "skos:broader",
+      "Entity-approach"
+    ],
+    [
+      "Entity-layer_of_various_cnn_model",
+      "skos:broader",
+      "Entity-object_category_representation"
+    ],
+    [
+      "Entity-estimating_object_pose",
+      "skos:broader",
+      "Entity-object_pose_estimation"
+    ],
+    [
+      "Entity-different_category_of_object",
+      "skos:broader",
+      "Entity-object_recognition"
+    ],
+    [
+      "Entity-distributed_representation_within_cnns",
+      "skos:broader",
+      "Entity-object_category_representation"
+    ],
+    [
+      "Entity-state-of-the-art",
+      "skos:broader",
+      "Entity-object_category_representation"
+    ],
+    [
+      "Entity-different_category_of_object",
+      "skos:broader",
+      "Entity-object_category_representation"
+    ],
+    [
+      "Entity-categorization_of_object",
+      "skos:broader",
+      "Entity-object_category_representation"
+    ],
+    [
+      "Entity-different_category_of_object",
+      "skos:broader",
+      "Entity-categorization_of_object"
+    ],
+    [
+      "Entity-distributed_representation",
+      "skos:broader",
+      "Entity-object_category_representation"
+    ],
+    [
+      "Entity-deep_archi-tectures",
+      "skos:broader",
+      "Entity-approach"
+    ],
+    [
+      "Entity-the_layer_of_various_cnn_model",
+      "skos:broader",
+      "Entity-cnn_model"
+    ],
+    [
+      "Entity-representation_capable_of_capturing_pose_information_over_different_category_of_object",
+      "skos:broader",
+      "Entity-object_category_representation"
+    ],
+    [
+      "Entity-deep_learning_method",
+      "skos:broader",
+      "Entity-approach"
+    ],
+    [
+      "Entity-the_layer_of_various_cnn_model",
+      "skos:broader",
+      "Entity-convolutional_neural_network"
+    ],
+    [
+      "Entity-different_category_of_object",
+      "skos:broader",
+      "Entity-object_category_recognition"
+    ],
+    [
+      "Entity-categorization_of_object",
+      "skos:broader",
+      "Entity-object_category_recognition"
+    ],
+    [
+      "Entity-multi-view_datasets",
+      "skos:broader",
+      "Entity-datasets"
+    ],
+    [
+      "Entity-two_recent_large_and_challenging_multi-view_datasets",
+      "skos:broader",
+      "Entity-datasets"
+    ],
+    [
+      "Entity-layer_of_various_cnn_model",
+      "skos:broader",
+      "Entity-layer"
+    ],
+    [
+      "Entity-the_state-of-the-art",
+      "skos:broader",
+      "Entity-state-of-the-art"
+    ]
+  ],
+  "predicates": {
+    "Predicate-necessitates": {
+      "label": "necessitates",
+      "description": "The predicate 'necessitates' indicates that the subject requires or demands a specific object to exist, operate, or be applicable. In general, it implies a logical or functional dependence between the two entities.",
+      "disambiguation_index": 0
+    },
+    "Predicate-requires": {
+      "label": "requires",
+      "description": "The predicate 'requires' indicates that the subject needs or necessitates the existence or properties of the object to function, operate, or achieve a specific goal. In general, it implies a dependency relationship between the subject and the object, where the presence or characteristics of the object are essential for the subject's purpose.",
+      "disambiguation_index": 0
+    },
+    "Predicate-have_achieved_wide_success_in": {
+      "label": "have achieved wide success in",
+      "description": "The predicate 'have achieved wide success in' indicates that a subject has attained significant and far-reaching accomplishments or outcomes within a specific domain or context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-can_be_adapted_to": {
+      "label": "can be adapted to",
+      "description": "The predicate 'can be adapted to' indicates that a subject (in this case, CNN) has the potential or capability of being modified or transformed into something new, which enables it to perform a specific function or task described by the object (simultaneous object recognition and pose estimation). This relationship suggests an ability for flexibility, modification, or re-purposing.",
+      "disambiguation_index": 0
+    },
+    "Predicate-analyze": {
+      "label": "analyze",
+      "description": "To analyze means to examine or scrutinize something in order to understand its structure, composition, or underlying principles. The subject performs this examination on the object, breaking it down into smaller components and identifying key features, patterns, or relationships that reveal new insights or meanings.",
+      "disambiguation_index": 0
+    },
+    "Predicate-have": {
+      "label": "have",
+      "description": "The predicate 'have' indicates a relationship of possession or ownership between the subject and object. It suggests that the subject has control over, responsibility for, or contains the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-experiment_on": {
+      "label": "experiment on",
+      "description": "To conduct a systematic investigation or test on something, typically to gather data, validate hypotheses, or evaluate performance. The subject of 'experiment on' initiates an action that involves manipulating, analyzing, and drawing conclusions from the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-investigate": {
+      "label": "investigate",
+      "description": "To investigate means to conduct a systematic and thorough examination or inquiry into something, typically with the goal of gaining new knowledge, understanding, or insight. This predicate connects the subject (the entity being examined) to the object (the context or scope within which the investigation takes place), implying that the investigation is conducted in order to shed light on or explore the subject further.",
+      "disambiguation_index": 0
+    },
+    "Predicate-study": {
+      "label": "study",
+      "description": "To engage in a systematic investigation or examination, typically to gain knowledge, understanding, or insight into the properties, characteristics, or relationships of something.",
+      "disambiguation_index": 0
+    },
+    "Predicate-represent": {
+      "label": "represent",
+      "description": "To 'represent' means to convey or symbolize a concept, idea, or piece of information through some medium or form. In this sense, it connects the subject (the entity doing the representing) with the object (what is being represented), indicating that the subject embodies, expresses, or conveys the meaning or essence of the object.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "Indicates that the subject concept is more specific than or subsumed by the object concept. The predicate 'has a broader term' establishes a hierarchical relationship between two concepts, where the subject is a narrower category within the scope of the object.",
+      "disambiguation_index": 0
+    }
+  }
+}

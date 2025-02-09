@@ -1,0 +1,60 @@
+{
+  "iri": "Paper-75",
+  "title": "ECCV_2016_204_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-75-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-75-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-1",
+              "text": "Our goal is to learn a Mahalanobis distance by minimizing a loss defined on the weighted sum of the precision at different ranks ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-2",
+              "text": "Our core motivation is that minimizing a weighted rank loss is a natural criterion for many problems in computer vision such as person re-identification ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-3",
+              "text": "We propose a novel metric learning formulation called Weighted Approximate Rank Component Analysis -LRB- WARCA -RRB- ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-4",
+              "text": "We then derive a scalable stochastic gradient descent algorithm for the resulting learning problem ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-5",
+              "text": "We also derive an efficient non-linear extension of WARCA by using the kernel trick ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-6",
+              "text": "Kernel space embedding decouples the training and prediction costs from the data dimension and enables us to plug inarbitrary distance measures which are more natural for the features ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-7",
+              "text": "We also address a more general problem of matrix rank degeneration & non-isolated minima in the low-rank matrix optimization by using new type of regularizer which approximately enforces the or-thonormality of the learned matrix very efficiently ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+              "text": "We validate this new method on nine standard person re-identification datasets including two large scale Market-1501 and CUHK03 datasets and show that we improve upon the current state-of-the-art methods on all of them ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Our goal is to learn a Mahalanobis distance by minimizing a loss defined on the weighted sum of the precision at different ranks . Our core motivation is that minimizing a weighted rank loss is a natural criterion for many problems in computer vision such as person re-identification . We propose a novel metric learning formulation called Weighted Approximate Rank Component Analysis -LRB- WARCA -RRB- . We then derive a scalable stochastic gradient descent algorithm for the resulting learning problem . We also derive an efficient non-linear extension of WARCA by using the kernel trick . Kernel space embedding decouples the training and prediction costs from the data dimension and enables us to plug inarbitrary distance measures which are more natural for the features . We also address a more general problem of matrix rank degeneration & non-isolated minima in the low-rank matrix optimization by using new type of regularizer which approximately enforces the or-thonormality of the learned matrix very efficiently . We validate this new method on nine standard person re-identification datasets including two large scale Market-1501 and CUHK03 datasets and show that we improve upon the current state-of-the-art methods on all of them .",
+  "kg2text": [
+    "Weighted Approximate Rank Component Analysis (WARCA) is a novel metric learning formulation that refers to this new method, which aims to improve upon the current state-of-the-art methods in person re-identification. This method is validated on nine standard person re-identification datasets, including the Market-1501 dataset. WARCA has a broader term known as 'method' and also has an efficient non-linear extension that utilizes the kernel trick to enhance its performance. The learning problem associated with this new method is optimized through a scalable stochastic gradient descent algorithm, which derives for the resulting learning problem. Overall, this new method represents a significant advancement in the field of metric learning.",
+    "The new method, known as Weighted Approximate Rank Component Analysis (WARCA), validates its effectiveness on the CUHK03 dataset, which is a significant resource in person re-identification research. This method learns the Mahalanobis distance by minimizing a specific loss function, which is defined on the weighted sum of the precision at different ranks. Minimizing a weighted rank loss serves as a crucial criterion for both person re-identification and broader applications in computer vision. The loss function emphasizes the importance of precision at various ranks, which is intrinsically related to the concept of precision at different ranks. Furthermore, the method incorporates a new type of regularizer within the framework of low-rank matrix optimization, addressing challenges such as matrix rank degeneration and non-isolated minima. The nine standard person re-identification datasets, including Market-1501 and CUHK03, provide a comprehensive benchmark for evaluating state-of-the-art methods in this domain, all of which fall under the broader category of person re-identification datasets.",
+    "Kernel space embedding is a transformative technique that decouples training and prediction costs, allowing for more efficient model training and evaluation. This method also enables the application of various distance measures, which are more natural for the features used in metric learning. In the realm of person re-identification, which is a significant problem in computer vision, the current state-of-the-art methods encompass a broader category known as state-of-the-art methods. The CUHK03 dataset serves as a large-scale resource within the broader category of person re-identification datasets, providing essential data for research. Additionally, the new type of regularizer, which aims to enforce orthonormality in learned matrices, falls under the broader term of regularizer, highlighting its role in improving model performance."
+  ],
+  "times": [
+    8.357903003692627
+  ]
+}

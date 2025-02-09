@@ -1,0 +1,1454 @@
+{
+  "iri": "Paper-89",
+  "title": "ICASSP_1997_706_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-89-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-89-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+              "text": "Utterance Verification -LRB- UV -RRB- is a critical function of an Automatic Speech Recognition -LRB- ASR -RRB- System working on real applications where spontaneous speech , out-of-vocabulary -LRB- OOV -RRB- words and acoustic noises are present ."
+            },
+            {
+              "iri": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+              "text": "In this paper we present a new UV procedure with two major features : a -RRB- Confidence tests are applied to decoded string hypotheses obtained from using word and garbage models that represent OOV words and noises ."
+            },
+            {
+              "iri": "Paper-89-Section-1-Paragraph-1-Sentence-3",
+              "text": "Thus the ASR system is designed to deal with what we refer to as Word Spotting and Noise Spotting capabilities ."
+            },
+            {
+              "iri": "Paper-89-Section-1-Paragraph-1-Sentence-4",
+              "text": "b -RRB- The UV procedure is based on three different confidence tests , two based on acoustic measures and one founded on linguistic information , applied in a hierarchical structure ."
+            },
+            {
+              "iri": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+              "text": "Experimental results from a real telephone application on a natural number recognition task show an 50 % reduction in recognition errors with a moderate 12 % rejection rate of correct utterances and a low 1.5 % rate of false acceptance ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0001900196075439453,
+    19.761740922927856,
+    36.64283728599548,
+    35.41132378578186,
+    0.053253889083862305,
+    0.00010752677917480469,
+    0.000133514404296875,
+    29.59947896003723,
+    60.42778992652893,
+    1.933765172958374,
+    0.13422870635986328,
+    0.012225866317749023,
+    0.00022101402282714844,
+    27.494383811950684,
+    0.00033092498779296875,
+    0.03092670440673828,
+    0.0009474754333496094,
+    2.4698610305786133,
+    2.0104784965515137,
+    3.6110992431640625,
+    84.27557730674744,
+    3.685960292816162,
+    57.145004749298096,
+    1.785118818283081,
+    0.001026153564453125,
+    0.014260530471801758
+  ],
+  "nodes": {
+    "Entity-utterance_verification": {
+      "node_id": "utterance_verification",
+      "disambiguation_index": 0,
+      "label": "Utterance Verification",
+      "aliases": [
+        "Utterance Verification -LRB- UV -RRB-",
+        "Utterance Verification"
+      ],
+      "types": [
+        "procedure",
+        "process",
+        "function",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Utterance Verification (UV) is a crucial process in Automatic Speech Recognition (ASR) systems that enhances performance by validating decoded speech against spontaneous speech, out-of-vocabulary words, and acoustic noise.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Utterance Verification",
+          "local_types": [
+            "process",
+            "function"
+          ],
+          "iri": "Entity-utterance_verification-Mention-1"
+        },
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Utterance Verification -LRB- UV -RRB-",
+          "local_types": [
+            "procedure",
+            "function",
+            "method"
+          ],
+          "iri": "Entity-utterance_verification-Mention-2"
+        }
+      ],
+      "relevance": 0.8330078125
+    },
+    "Entity-uv_procedure": {
+      "node_id": "uv_procedure",
+      "disambiguation_index": 0,
+      "label": "UV procedure",
+      "aliases": [
+        "a new UV procedure",
+        "new UV procedure",
+        "UV procedure",
+        "The UV procedure"
+      ],
+      "types": [
+        "procedure",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The UV procedure refers to a novel method for Utterance Verification in Automatic Speech Recognition systems, which employs confidence tests on decoded string hypotheses to enhance recognition accuracy in the presence of out-of-vocabulary words and acoustic noise.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "UV procedure",
+          "local_types": [
+            "method",
+            "procedure"
+          ],
+          "iri": "Entity-uv_procedure-Mention-1"
+        },
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "UV procedure",
+          "local_types": [
+            "method",
+            "procedure"
+          ],
+          "iri": "Entity-uv_procedure-Mention-2"
+        },
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "new UV procedure",
+          "local_types": [
+            "procedure",
+            "method"
+          ],
+          "iri": "Entity-uv_procedure-Mention-3"
+        },
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "a new UV procedure",
+          "local_types": [
+            "procedure"
+          ],
+          "iri": "Entity-uv_procedure-Mention-4"
+        },
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "The UV procedure",
+          "local_types": [
+            "procedure"
+          ],
+          "iri": "Entity-uv_procedure-Mention-5"
+        }
+      ],
+      "relevance": 0.81005859375
+    },
+    "Entity-uv": {
+      "node_id": "uv",
+      "disambiguation_index": 0,
+      "label": "UV",
+      "aliases": [
+        "UV"
+      ],
+      "types": [
+        "abbreviation",
+        "function"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "UV refers to Utterance Verification, a critical function in Automatic Speech Recognition systems that enhances performance in handling spontaneous speech, out-of-vocabulary words, and acoustic noise.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "UV",
+          "local_types": [
+            "abbreviation",
+            "function"
+          ],
+          "iri": "Entity-uv-Mention-1"
+        }
+      ],
+      "relevance": 0.7919921875
+    },
+    "Entity-the_asr_system": {
+      "node_id": "the_asr_system",
+      "disambiguation_index": 0,
+      "label": "the ASR system",
+      "aliases": [
+        "the ASR system"
+      ],
+      "types": [
+        "system",
+        "ASR"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The ASR system refers to an Automatic Speech Recognition system that incorporates Utterance Verification to effectively handle spontaneous speech, out-of-vocabulary words, and acoustic noise, enabling it to perform Word Spotting and Noise Spotting tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the ASR system",
+          "local_types": [
+            "system",
+            "ASR"
+          ],
+          "iri": "Entity-the_asr_system-Mention-1"
+        }
+      ],
+      "relevance": 0.7392578125
+    },
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "this paper",
+      "aliases": [
+        "this paper"
+      ],
+      "types": [
+        "document",
+        "paper"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "This paper presents a new utterance verification procedure for automatic speech recognition systems, featuring confidence tests applied to decoded string hypotheses to enhance performance in recognizing spontaneous speech, out-of-vocabulary words, and acoustic noises.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "this paper",
+          "local_types": [
+            "document",
+            "paper"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.71826171875
+    },
+    "Entity-experimental_result": {
+      "node_id": "experimental_result",
+      "disambiguation_index": 0,
+      "label": "Experimental results",
+      "aliases": [
+        "Experimental results"
+      ],
+      "types": [
+        "results"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The term 'Experimental results' refers to the quantitative outcomes obtained from testing a new utterance verification procedure in an Automatic Speech Recognition system, specifically demonstrating a 50% reduction in recognition errors, a 12% rejection rate of correct utterances, and a 1.5% false acceptance rate in a natural number recognition task.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Experimental results",
+          "local_types": [
+            "results"
+          ],
+          "iri": "Entity-experimental_result-Mention-1"
+        }
+      ],
+      "relevance": 0.6708984375
+    },
+    "Entity-out-of-vocabulary_-lrb-_oov_-rrb-_word": {
+      "node_id": "out-of-vocabulary_-lrb-_oov_-rrb-_word",
+      "disambiguation_index": 0,
+      "label": "out-of-vocabulary -LRB- OOV -RRB- words",
+      "aliases": [
+        "out-of-vocabulary -LRB- OOV -RRB- words"
+      ],
+      "types": [
+        "words",
+        "OOV",
+        "linguistic phenomenon"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Out-of-vocabulary (OOV) words refer to terms or expressions that are not included in the predefined vocabulary of an Automatic Speech Recognition (ASR) system, posing challenges in accurately recognizing and processing spontaneous speech.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "out-of-vocabulary -LRB- OOV -RRB- words",
+          "local_types": [
+            "words",
+            "OOV",
+            "linguistic phenomenon"
+          ],
+          "iri": "Entity-out-of-vocabulary_-lrb-_oov_-rrb-_word-Mention-1"
+        }
+      ],
+      "relevance": 0.6650390625
+    },
+    "Entity-correct_utterance": {
+      "node_id": "correct_utterance",
+      "disambiguation_index": 0,
+      "label": "correct utterances",
+      "aliases": [
+        "correct utterances"
+      ],
+      "types": [
+        "speech",
+        "linguistic unit",
+        "utterance"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Correct utterances refer to the accurately recognized spoken inputs in an Automatic Speech Recognition system that are accepted by the system after applying utterance verification procedures.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "correct utterances",
+          "local_types": [
+            "speech",
+            "linguistic unit",
+            "utterance"
+          ],
+          "iri": "Entity-correct_utterance-Mention-1"
+        }
+      ],
+      "relevance": 0.65771484375
+    },
+    "Entity-asr": {
+      "node_id": "asr",
+      "disambiguation_index": 0,
+      "label": "ASR",
+      "aliases": [
+        "ASR"
+      ],
+      "types": [
+        "abbreviation",
+        "acronym",
+        "technology",
+        "system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "ASR refers to Automatic Speech Recognition, a technology system that processes and interprets human speech in real-time applications, particularly in the presence of spontaneous speech, out-of-vocabulary words, and acoustic noise.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "ASR",
+          "local_types": [
+            "abbreviation",
+            "acronym",
+            "technology",
+            "system"
+          ],
+          "iri": "Entity-asr-Mention-1"
+        }
+      ],
+      "relevance": 0.65625
+    },
+    "Entity-three_different_confidence_test": {
+      "node_id": "three_different_confidence_test",
+      "disambiguation_index": 0,
+      "label": "three different confidence tests",
+      "aliases": [
+        "three different confidence tests"
+      ],
+      "types": [
+        "test"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'three different confidence tests' refers to a set of evaluations used in an Automatic Speech Recognition system's Utterance Verification procedure, consisting of two tests based on acoustic measures and one based on linguistic information, organized in a hierarchical structure to enhance recognition accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "three different confidence tests",
+          "local_types": [
+            "test"
+          ],
+          "iri": "Entity-three_different_confidence_test-Mention-1"
+        }
+      ],
+      "relevance": 0.6552734375
+    },
+    "Entity-noise_spotting": {
+      "node_id": "noise_spotting",
+      "disambiguation_index": 0,
+      "label": "Noise Spotting",
+      "aliases": [
+        "Noise Spotting"
+      ],
+      "types": [
+        "process",
+        "capability",
+        "function",
+        "feature"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Noise Spotting refers to the capability of an Automatic Speech Recognition (ASR) system to identify and manage acoustic noises in speech recognition tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Noise Spotting",
+          "local_types": [
+            "process",
+            "capability",
+            "function",
+            "feature"
+          ],
+          "iri": "Entity-noise_spotting-Mention-1"
+        }
+      ],
+      "relevance": 0.6513671875
+    },
+    "Entity-rejection_rate_of_correct_utterance": {
+      "node_id": "rejection_rate_of_correct_utterance",
+      "disambiguation_index": 0,
+      "label": "rejection rate of correct utterances",
+      "aliases": [
+        "rejection rate of correct utterances"
+      ],
+      "types": [
+        "rate"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The rejection rate of correct utterances refers to the percentage of correctly recognized spoken inputs that the Automatic Speech Recognition system decides to reject during the utterance verification process, indicating the system's performance in distinguishing between valid and invalid inputs.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "rejection rate of correct utterances",
+          "local_types": [
+            "rate"
+          ],
+          "iri": "Entity-rejection_rate_of_correct_utterance-Mention-1"
+        }
+      ],
+      "relevance": 0.650390625
+    },
+    "Entity-real_application": {
+      "node_id": "real_application",
+      "disambiguation_index": 0,
+      "label": "real applications",
+      "aliases": [
+        "real applications"
+      ],
+      "types": [
+        "context",
+        "application"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'real applications' refers to practical scenarios in which Automatic Speech Recognition (ASR) systems are utilized, particularly those involving spontaneous speech, out-of-vocabulary words, and acoustic noise.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "real applications",
+          "local_types": [
+            "context",
+            "application"
+          ],
+          "iri": "Entity-real_application-Mention-1"
+        }
+      ],
+      "relevance": 0.646484375
+    },
+    "Entity-asr_system": {
+      "node_id": "asr_system",
+      "disambiguation_index": 0,
+      "label": "ASR system",
+      "aliases": [
+        "ASR system",
+        "Automatic Speech Recognition -LRB- ASR -RRB- System"
+      ],
+      "types": [
+        "ASR",
+        "technology",
+        "system"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "An ASR system, or Automatic Speech Recognition system, is a technology that enables the conversion of spoken language into text by processing audio input and recognizing speech patterns.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "ASR system",
+          "local_types": [
+            "technology",
+            "system"
+          ],
+          "iri": "Entity-asr_system-Mention-1"
+        },
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Automatic Speech Recognition -LRB- ASR -RRB- System",
+          "local_types": [
+            "ASR",
+            "technology",
+            "system"
+          ],
+          "iri": "Entity-asr_system-Mention-2"
+        }
+      ],
+      "relevance": 0.6396484375
+    },
+    "Entity-recognition_error": {
+      "node_id": "recognition_error",
+      "disambiguation_index": 0,
+      "label": "recognition errors",
+      "aliases": [
+        "recognition errors"
+      ],
+      "types": [
+        "error",
+        "error type",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Recognition errors refer to the inaccuracies or mistakes made by an Automatic Speech Recognition (ASR) system when interpreting spoken input, specifically in the context of a natural number recognition task.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "recognition errors",
+          "local_types": [
+            "error",
+            "error type",
+            "performance metric"
+          ],
+          "iri": "Entity-recognition_error-Mention-1"
+        }
+      ],
+      "relevance": 0.6376953125
+    },
+    "Entity-word_and_garbage_model": {
+      "node_id": "word_and_garbage_model",
+      "disambiguation_index": 0,
+      "label": "word and garbage models",
+      "aliases": [
+        "word and garbage models"
+      ],
+      "types": [
+        "representation",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'word and garbage models' refer to representation models used in Automatic Speech Recognition systems to handle out-of-vocabulary words and acoustic noises during the process of utterance verification.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "word and garbage models",
+          "local_types": [
+            "representation",
+            "model"
+          ],
+          "iri": "Entity-word_and_garbage_model-Mention-1"
+        }
+      ],
+      "relevance": 0.634765625
+    },
+    "Entity-oov": {
+      "node_id": "oov",
+      "disambiguation_index": 0,
+      "label": "OOV",
+      "aliases": [
+        "OOV"
+      ],
+      "types": [
+        "acronym",
+        "speech recognition challenge",
+        "term",
+        "abbreviation",
+        "linguistic term"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "OOV refers to 'out-of-vocabulary', which denotes words that are not included in the vocabulary of an Automatic Speech Recognition (ASR) system, particularly in the context of handling spontaneous speech and acoustic noises.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "OOV",
+          "local_types": [
+            "acronym",
+            "speech recognition challenge",
+            "term",
+            "abbreviation",
+            "linguistic term"
+          ],
+          "iri": "Entity-oov-Mention-1"
+        }
+      ],
+      "relevance": 0.6337890625
+    },
+    "Entity-word_spotting_and_noise_spotting_capability": {
+      "node_id": "word_spotting_and_noise_spotting_capability",
+      "disambiguation_index": 0,
+      "label": "Word Spotting and Noise Spotting capabilities",
+      "aliases": [
+        "Noise Spotting capabilities",
+        "Word Spotting and Noise Spotting capabilities"
+      ],
+      "types": [
+        "capability",
+        "Noise Spotting"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Word Spotting and Noise Spotting capabilities refer to the features of an Automatic Speech Recognition system that enable it to identify out-of-vocabulary words and distinguish between speech and acoustic noise during utterance verification.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Word Spotting and Noise Spotting capabilities",
+          "local_types": [
+            "capability"
+          ],
+          "iri": "Entity-word_spotting_and_noise_spotting_capability-Mention-1"
+        },
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Noise Spotting capabilities",
+          "local_types": [
+            "capability",
+            "Noise Spotting"
+          ],
+          "iri": "Entity-word_spotting_and_noise_spotting_capability-Mention-2"
+        }
+      ],
+      "relevance": 0.630859375
+    },
+    "Entity-word_spotting": {
+      "node_id": "word_spotting",
+      "disambiguation_index": 0,
+      "label": "Word Spotting",
+      "aliases": [
+        "Word Spotting"
+      ],
+      "types": [
+        "process",
+        "capability",
+        "function",
+        "feature",
+        "Word Spotting"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Word Spotting is a process or capability in automatic speech recognition systems that involves identifying specific words within spoken language, often in the presence of background noise.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Word Spotting",
+          "local_types": [
+            "process",
+            "capability",
+            "function",
+            "feature",
+            "Word Spotting"
+          ],
+          "iri": "Entity-word_spotting-Mention-1"
+        }
+      ],
+      "relevance": 0.61474609375
+    },
+    "Entity-confidence_test": {
+      "node_id": "confidence_test",
+      "disambiguation_index": 0,
+      "label": "Confidence tests",
+      "aliases": [
+        "confidence tests",
+        "Confidence tests"
+      ],
+      "types": [
+        "test",
+        "evaluation",
+        "method",
+        "testing procedure",
+        "statistical test",
+        "evaluation method",
+        "procedure",
+        "assessment"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Confidence tests refer to statistical evaluations used in the context of Automatic Speech Recognition systems to assess the reliability of decoded string hypotheses, particularly in handling out-of-vocabulary words and acoustic noise.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Confidence tests",
+          "local_types": [
+            "test",
+            "evaluation",
+            "method",
+            "testing procedure",
+            "statistical test",
+            "evaluation method",
+            "procedure"
+          ],
+          "iri": "Entity-confidence_test-Mention-1"
+        },
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "confidence tests",
+          "local_types": [
+            "assessment",
+            "evaluation"
+          ],
+          "iri": "Entity-confidence_test-Mention-2"
+        }
+      ],
+      "relevance": 0.60498046875
+    },
+    "Entity-automatic_speech_recognition": {
+      "node_id": "automatic_speech_recognition",
+      "disambiguation_index": 0,
+      "label": "Automatic Speech Recognition",
+      "aliases": [
+        "Automatic Speech Recognition"
+      ],
+      "types": [
+        "technology",
+        "system"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Automatic Speech Recognition refers to a technology and system that enables the conversion of spoken language into text by processing audio input and recognizing speech patterns.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Automatic Speech Recognition",
+          "local_types": [
+            "technology",
+            "system"
+          ],
+          "iri": "Entity-automatic_speech_recognition-Mention-1"
+        }
+      ],
+      "relevance": 0.6044921875
+    },
+    "Entity-real_telephone_application": {
+      "node_id": "real_telephone_application",
+      "disambiguation_index": 0,
+      "label": "real telephone application",
+      "aliases": [
+        "real telephone application"
+      ],
+      "types": [
+        "application",
+        "telephone"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A real telephone application refers to a practical implementation of an Automatic Speech Recognition system that processes natural language input over telephone lines, specifically designed to handle spontaneous speech and recognize natural numbers while minimizing recognition errors.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "real telephone application",
+          "local_types": [
+            "application",
+            "telephone"
+          ],
+          "iri": "Entity-real_telephone_application-Mention-1"
+        }
+      ],
+      "relevance": 0.59716796875
+    },
+    "Entity-noise": {
+      "node_id": "noise",
+      "disambiguation_index": 0,
+      "label": "noises",
+      "aliases": [
+        "noises"
+      ],
+      "types": [
+        "noise",
+        "data corruption",
+        "signal interference"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of Automatic Speech Recognition systems, 'noises' refers to acoustic disturbances that can interfere with speech recognition, including out-of-vocabulary words and other unwanted sound signals.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "noises",
+          "local_types": [
+            "noise",
+            "data corruption",
+            "signal interference"
+          ],
+          "iri": "Entity-noise-Mention-1"
+        }
+      ],
+      "relevance": 0.5830078125
+    },
+    "Entity-acoustic_noise": {
+      "node_id": "acoustic_noise",
+      "disambiguation_index": 0,
+      "label": "acoustic noises",
+      "aliases": [
+        "acoustic noises"
+      ],
+      "types": [
+        "sound",
+        "noise",
+        "environmental factor"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Acoustic noises refer to unwanted or extraneous sounds that can interfere with the performance of an Automatic Speech Recognition (ASR) system, particularly in environments where spontaneous speech and out-of-vocabulary words are present.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "acoustic noises",
+          "local_types": [
+            "sound",
+            "noise",
+            "environmental factor"
+          ],
+          "iri": "Entity-acoustic_noise-Mention-1"
+        }
+      ],
+      "relevance": 0.580078125
+    },
+    "Entity-telephone_application": {
+      "node_id": "telephone_application",
+      "disambiguation_index": 0,
+      "label": "telephone application",
+      "aliases": [
+        "telephone application"
+      ],
+      "types": [
+        "use case",
+        "software",
+        "application"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'telephone application' refers to a practical implementation of an Automatic Speech Recognition system used for recognizing natural numbers in spoken language over telephone communications.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "telephone application",
+          "local_types": [
+            "use case",
+            "software",
+            "application"
+          ],
+          "iri": "Entity-telephone_application-Mention-1"
+        }
+      ],
+      "relevance": 0.57421875
+    },
+    "Entity-garbage_model": {
+      "node_id": "garbage_model",
+      "disambiguation_index": 0,
+      "label": "garbage models",
+      "aliases": [
+        "garbage models"
+      ],
+      "types": [
+        "model",
+        "noise model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Garbage models are representations used in Automatic Speech Recognition systems to account for out-of-vocabulary words and acoustic noises during the decoding process.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "garbage models",
+          "local_types": [
+            "model",
+            "noise model"
+          ],
+          "iri": "Entity-garbage_model-Mention-1"
+        }
+      ],
+      "relevance": 0.56982421875
+    },
+    "Entity-natural_number_recognition_task": {
+      "node_id": "natural_number_recognition_task",
+      "disambiguation_index": 0,
+      "label": "natural number recognition task",
+      "aliases": [
+        "natural number recognition task"
+      ],
+      "types": [
+        "task",
+        "recognition task",
+        "application"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The natural number recognition task is a cognitive or computational task focused on identifying and interpreting spoken or written natural numbers.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "natural number recognition task",
+          "local_types": [
+            "task",
+            "recognition task",
+            "application"
+          ],
+          "iri": "Entity-natural_number_recognition_task-Mention-1"
+        }
+      ],
+      "relevance": 0.5556640625
+    },
+    "Entity-decoded_string_hypothesis": {
+      "node_id": "decoded_string_hypothesis",
+      "disambiguation_index": 0,
+      "label": "decoded string hypotheses",
+      "aliases": [
+        "decoded string hypotheses"
+      ],
+      "types": [
+        "output",
+        "hypothesis",
+        "data representation",
+        "data type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Decoded string hypotheses refer to the outputs generated by an Automatic Speech Recognition system that represent the interpreted text from spoken language, particularly in the context of handling out-of-vocabulary words and acoustic noise.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "decoded string hypotheses",
+          "local_types": [
+            "output",
+            "hypothesis",
+            "data representation",
+            "data type"
+          ],
+          "iri": "Entity-decoded_string_hypothesis-Mention-1"
+        }
+      ],
+      "relevance": 0.5546875
+    },
+    "Entity-out-of-vocabulary": {
+      "node_id": "out-of-vocabulary",
+      "disambiguation_index": 0,
+      "label": "out-of-vocabulary",
+      "aliases": [
+        "out-of-vocabulary"
+      ],
+      "types": [
+        "speech recognition challenge",
+        "linguistic concept",
+        "linguistic term",
+        "term"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Out-of-vocabulary refers to words or terms that are not included in a given vocabulary set, often posing challenges in natural language processing and speech recognition systems.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "out-of-vocabulary",
+          "local_types": [
+            "speech recognition challenge",
+            "linguistic concept",
+            "linguistic term",
+            "term"
+          ],
+          "iri": "Entity-out-of-vocabulary-Mention-1"
+        }
+      ],
+      "relevance": 0.5419921875
+    },
+    "Entity-oov_word": {
+      "node_id": "oov_word",
+      "disambiguation_index": 0,
+      "label": "OOV words",
+      "aliases": [
+        "OOV words"
+      ],
+      "types": [
+        "word",
+        "out-of-vocabulary term",
+        "linguistic term"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "OOV words refer to terms that are not included in a predefined vocabulary list, often encountered in natural language processing and linguistic analysis.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "OOV words",
+          "local_types": [
+            "word",
+            "out-of-vocabulary term",
+            "linguistic term"
+          ],
+          "iri": "Entity-oov_word-Mention-1"
+        }
+      ],
+      "relevance": 0.53564453125
+    },
+    "Entity-rejection_rate": {
+      "node_id": "rejection_rate",
+      "disambiguation_index": 0,
+      "label": "rejection rate",
+      "aliases": [
+        "rejection rate"
+      ],
+      "types": [
+        "error rate",
+        "statistical measure",
+        "rate",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The rejection rate is a statistical measure that quantifies the proportion of instances or cases that are not accepted or are discarded in a given process, often used to evaluate the performance of systems in distinguishing between acceptable and unacceptable outcomes.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "rejection rate",
+          "local_types": [
+            "error rate",
+            "statistical measure",
+            "rate",
+            "performance metric"
+          ],
+          "iri": "Entity-rejection_rate-Mention-1"
+        }
+      ],
+      "relevance": 0.5029296875
+    },
+    "Entity-false_acceptance": {
+      "node_id": "false_acceptance",
+      "disambiguation_index": 0,
+      "label": "false acceptance",
+      "aliases": [
+        "false acceptance"
+      ],
+      "types": [
+        "error",
+        "acceptance",
+        "error type",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "False acceptance refers to an error type in which a system incorrectly identifies an unauthorized entity as authorized, often measured in performance metrics related to security and recognition tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "false acceptance",
+          "local_types": [
+            "error",
+            "acceptance",
+            "error type",
+            "performance metric"
+          ],
+          "iri": "Entity-false_acceptance-Mention-1"
+        }
+      ],
+      "relevance": 0.5
+    },
+    "Entity-acoustic_measure": {
+      "node_id": "acoustic_measure",
+      "disambiguation_index": 0,
+      "label": "acoustic measures",
+      "aliases": [
+        "acoustic measures"
+      ],
+      "types": [
+        "evaluation method",
+        "measure",
+        "measurement"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Acoustic measures refer to quantitative assessments of sound properties, often used to analyze speech or environmental sounds in various research and evaluation contexts.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "acoustic measures",
+          "local_types": [
+            "evaluation method",
+            "measure",
+            "measurement"
+          ],
+          "iri": "Entity-acoustic_measure-Mention-1"
+        }
+      ],
+      "relevance": 0.493896484375
+    },
+    "Entity-spontaneous_speech": {
+      "node_id": "spontaneous_speech",
+      "disambiguation_index": 0,
+      "label": "spontaneous speech",
+      "aliases": [
+        "spontaneous speech"
+      ],
+      "types": [
+        "speech",
+        "speech type",
+        "linguistic phenomenon"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Spontaneous speech refers to natural, unplanned verbal communication that occurs in real-time, often characterized by informal language and the presence of hesitations or interruptions.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "spontaneous speech",
+          "local_types": [
+            "speech",
+            "speech type",
+            "linguistic phenomenon"
+          ],
+          "iri": "Entity-spontaneous_speech-Mention-1"
+        }
+      ],
+      "relevance": 0.47216796875
+    },
+    "Entity-linguistic_information": {
+      "node_id": "linguistic_information",
+      "disambiguation_index": 0,
+      "label": "linguistic information",
+      "aliases": [
+        "linguistic information"
+      ],
+      "types": [
+        "data type",
+        "information type",
+        "information"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Linguistic information refers to data or knowledge that pertains to language, including its structure, meaning, and usage.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "linguistic information",
+          "local_types": [
+            "data type",
+            "information type",
+            "information"
+          ],
+          "iri": "Entity-linguistic_information-Mention-1"
+        }
+      ],
+      "relevance": 0.439208984375
+    },
+    "Entity-hierarchical_structure": {
+      "node_id": "hierarchical_structure",
+      "disambiguation_index": 0,
+      "label": "hierarchical structure",
+      "aliases": [
+        "hierarchical structure"
+      ],
+      "types": [
+        "organizational structure",
+        "structure",
+        "framework"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A hierarchical structure is an arrangement of elements in a ranked or graded order, where each level is subordinate to the one above it, commonly used to organize information, roles, or processes.",
+      "mentions": [
+        {
+          "reference": "Paper-89-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "hierarchical structure",
+          "local_types": [
+            "organizational structure",
+            "structure",
+            "framework"
+          ],
+          "iri": "Entity-hierarchical_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.388671875
+    }
+  },
+  "summary": "Utterance Verification -LRB- UV -RRB- is a critical function of an Automatic Speech Recognition -LRB- ASR -RRB- System working on real applications where spontaneous speech , out-of-vocabulary -LRB- OOV -RRB- words and acoustic noises are present . In this paper we present a new UV procedure with two major features : a -RRB- Confidence tests are applied to decoded string hypotheses obtained from using word and garbage models that represent OOV words and noises . Thus the ASR system is designed to deal with what we refer to as Word Spotting and Noise Spotting capabilities . b -RRB- The UV procedure is based on three different confidence tests , two based on acoustic measures and one founded on linguistic information , applied in a hierarchical structure . Experimental results from a real telephone application on a natural number recognition task show an 50 % reduction in recognition errors with a moderate 12 % rejection rate of correct utterances and a low 1.5 % rate of false acceptance .",
+  "triples": [
+    [
+      "Entity-utterance_verification",
+      "Predicate-is_a_critical_function_of",
+      "Entity-asr_system"
+    ],
+    [
+      "Entity-asr_system",
+      "Predicate-works_on",
+      "Entity-real_application"
+    ],
+    [
+      "Entity-asr_system",
+      "Predicate-works_on",
+      "Entity-spontaneous_speech"
+    ],
+    [
+      "Entity-asr_system",
+      "Predicate-works_on",
+      "Entity-out-of-vocabulary_-lrb-_oov_-rrb-_word"
+    ],
+    [
+      "Entity-asr_system",
+      "Predicate-works_on",
+      "Entity-acoustic_noise"
+    ],
+    [
+      "Entity-utterance_verification",
+      "Predicate-is_a_critical_function_of",
+      "Entity-automatic_speech_recognition"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents",
+      "Entity-uv_procedure"
+    ],
+    [
+      "Entity-uv_procedure",
+      "Predicate-has_features",
+      "Entity-confidence_test"
+    ],
+    [
+      "Entity-uv_procedure",
+      "Predicate-has_features",
+      "Entity-decoded_string_hypothesis"
+    ],
+    [
+      "Entity-decoded_string_hypothesis",
+      "Predicate-are_obtained_from",
+      "Entity-word_and_garbage_model"
+    ],
+    [
+      "Entity-word_and_garbage_model",
+      "Predicate-represent",
+      "Entity-oov_word"
+    ],
+    [
+      "Entity-word_and_garbage_model",
+      "Predicate-represent",
+      "Entity-noise"
+    ],
+    [
+      "Entity-confidence_test",
+      "Predicate-are_applied_to",
+      "Entity-decoded_string_hypothesis"
+    ],
+    [
+      "Entity-decoded_string_hypothesis",
+      "Predicate-are_obtained_from_using",
+      "Entity-word_and_garbage_model"
+    ],
+    [
+      "Entity-asr_system",
+      "Predicate-is_designed_to_deal_with",
+      "Entity-word_spotting_and_noise_spotting_capability"
+    ],
+    [
+      "Entity-uv_procedure",
+      "Predicate-is_based_on",
+      "Entity-three_different_confidence_test"
+    ],
+    [
+      "Entity-three_different_confidence_test",
+      "Predicate-is_based_on",
+      "Entity-acoustic_measure"
+    ],
+    [
+      "Entity-three_different_confidence_test",
+      "Predicate-founded_on",
+      "Entity-linguistic_information"
+    ],
+    [
+      "Entity-experimental_result",
+      "Predicate-show",
+      "Entity-recognition_error"
+    ],
+    [
+      "Entity-experimental_result",
+      "Predicate-show",
+      "Entity-rejection_rate_of_correct_utterance"
+    ],
+    [
+      "Entity-experimental_result",
+      "Predicate-show",
+      "Entity-false_acceptance"
+    ],
+    [
+      "Entity-telephone_application",
+      "Predicate-is_used_in",
+      "Entity-natural_number_recognition_task"
+    ],
+    [
+      "Entity-automatic_speech_recognition",
+      "Predicate-is_designed_to_deal_with",
+      "Entity-word_spotting_and_noise_spotting_capability"
+    ],
+    [
+      "Entity-utterance_verification",
+      "Predicate-is_a_method_for",
+      "Entity-uv_procedure"
+    ],
+    [
+      "Entity-utterance_verification",
+      "Predicate-is_referred_to_as",
+      "Entity-uv"
+    ],
+    [
+      "Entity-uv_procedure",
+      "Predicate-is_a_method_for",
+      "Entity-uv"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-word_spotting_and_noise_spotting_capability",
+      "skos:broader",
+      "Entity-noise_spotting"
+    ],
+    [
+      "Entity-acoustic_noise",
+      "skos:broader",
+      "Entity-noise"
+    ],
+    [
+      "Entity-oov_word",
+      "skos:broader",
+      "Entity-out-of-vocabulary"
+    ],
+    [
+      "Entity-asr_system",
+      "skos:broader",
+      "Entity-asr"
+    ],
+    [
+      "Entity-out-of-vocabulary_-lrb-_oov_-rrb-_word",
+      "skos:broader",
+      "Entity-oov"
+    ],
+    [
+      "Entity-asr_system",
+      "skos:broader",
+      "Entity-automatic_speech_recognition"
+    ],
+    [
+      "Entity-the_asr_system",
+      "skos:broader",
+      "Entity-asr"
+    ],
+    [
+      "Entity-out-of-vocabulary_-lrb-_oov_-rrb-_word",
+      "skos:broader",
+      "Entity-oov_word"
+    ],
+    [
+      "Entity-the_asr_system",
+      "skos:broader",
+      "Entity-asr_system"
+    ],
+    [
+      "Entity-the_asr_system",
+      "skos:broader",
+      "Entity-automatic_speech_recognition"
+    ]
+  ],
+  "predicates": {
+    "Predicate-is_a_critical_function_of": {
+      "label": "is a critical function of",
+      "description": "The predicate 'is a critical function of' establishes a relationship where the subject represents a specific activity, process, or capability that is essential for the effective operation or performance of the object. It indicates that the subject plays a vital role in enabling, supporting, or enhancing the functionality of the object, which is typically a system, framework, or entity.",
+      "disambiguation_index": 0
+    },
+    "Predicate-works_on": {
+      "label": "works on",
+      "description": "The predicate 'works on' indicates that the subject is actively engaged in a process, task, or project that is related to the object. It implies a relationship where the subject contributes effort, resources, or expertise towards the development, implementation, or improvement of the object, which represents a specific area of focus, application, or problem domain.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents": {
+      "label": "presents",
+      "description": "The predicate 'presents' indicates that the subject is introducing, showcasing, or displaying the object to an audience. It implies a formal or structured communication of information, findings, or concepts related to the object, often with the intent to inform, educate, or persuade the audience about the significance or relevance of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has_features": {
+      "label": "has features",
+      "description": "The predicate 'has features' establishes a relationship between a subject and an object by indicating that the subject possesses certain characteristics, attributes, or components represented by the object. This connection implies that the object describes specific qualities or functionalities that are inherent to the subject, thereby providing insight into its nature or capabilities.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_obtained_from": {
+      "label": "are obtained from",
+      "description": "The predicate 'are obtained from' indicates a relationship where the subject is derived or produced as a result of the processes, components, or sources represented by the object. It implies a directional flow of information or material, suggesting that the subject cannot exist independently without the influence or contribution of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-represent": {
+      "label": "represent",
+      "description": "The predicate 'represent' indicates a relationship where the subject embodies, symbolizes, or stands in for the object, conveying its meaning, characteristics, or significance in a particular context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_applied_to": {
+      "label": "are applied to",
+      "description": "The predicate 'are applied to' indicates a relationship where the subject is utilized or implemented in relation to the object, suggesting that the subject serves a functional role or purpose in the context of the object. This implies that the subject is actively used to assess, evaluate, or interact with the object in a meaningful way.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_obtained_from_using": {
+      "label": "are obtained from using",
+      "description": "The predicate 'are obtained from using' indicates a relationship where the subject is the result or outcome that is derived through the application or utilization of the object. It implies a process of extraction or generation, where the subject emerges as a consequence of employing the methods, tools, or systems represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_designed_to_deal_with": {
+      "label": "is designed to deal with",
+      "description": "The predicate 'is designed to deal with' establishes a functional relationship between the subject and the object, indicating that the subject has been specifically created or configured to address, manage, or handle the challenges or requirements represented by the object. This implies a purposeful intent in the design of the subject to effectively engage with the characteristics or tasks associated with the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_based_on": {
+      "label": "is based on",
+      "description": "The predicate 'is based on' establishes a foundational relationship between the subject and the object, indicating that the subject derives its principles, methods, or validity from the object. It suggests that the subject's existence, functionality, or theoretical framework is supported or informed by the object, which serves as a reference point or source of authority.",
+      "disambiguation_index": 0
+    },
+    "Predicate-founded_on": {
+      "label": "founded on",
+      "description": "The predicate 'founded on' indicates that the subject is based upon or derives its principles, structure, or validity from the object. It establishes a foundational relationship where the object provides the essential support or justification for the subject's existence or function.",
+      "disambiguation_index": 0
+    },
+    "Predicate-show": {
+      "label": "show",
+      "description": "The predicate 'show' indicates a relationship where the subject provides evidence, demonstration, or illustration of the object. It implies that the subject reveals or makes apparent certain characteristics, findings, or phenomena represented by the object, often through data, examples, or visual representation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_used_in": {
+      "label": "is used in",
+      "description": "The predicate 'is used in' establishes a functional relationship between the subject and the object, indicating that the subject serves a purpose or is applied within the context of the object. It implies that the subject is a tool, method, or resource that contributes to or facilitates the activities, processes, or tasks represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_method_for": {
+      "label": "is a method for",
+      "description": "The predicate 'is a method for' establishes a relationship where the subject represents a specific approach, technique, or process that is utilized to achieve, implement, or facilitate the object, which denotes a particular task, goal, or procedure. This connection implies that the subject serves as a means or strategy to accomplish the objectives outlined by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_referred_to_as": {
+      "label": "is referred to as",
+      "description": "The predicate 'is referred to as' establishes a relationship where the subject is identified or named by the object. It indicates that the object serves as an alternative label, term, or designation for the subject, thereby providing a way to express the same concept or entity using different terminology.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or subset of the broader concept represented by the object. This relationship implies that the object encompasses a wider category or classification that includes the subject, thereby situating the subject within a larger framework of related terms or concepts.",
+      "disambiguation_index": 0
+    }
+  }
+}

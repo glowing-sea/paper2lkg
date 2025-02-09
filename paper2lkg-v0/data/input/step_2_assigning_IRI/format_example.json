@@ -1,0 +1,132 @@
+{
+    "title": "J2RM: an Ontology-based JSON-to-RDF Mapping Tool",
+    "authors": [
+        "Sergio J. Rodr\u00edguez M\u00e9ndez",
+        "Armin Haller",
+        "Pouya G. Omran",
+        "Jesse Wright",
+        "Kerry Taylor"
+    ],
+    "keywords": [
+        "Mapping",
+        "Ontology",
+        "RDF",
+        "JSON",
+        "Information Architect Tool",
+        "Automated Graph Creation"
+    ],
+    "sections": [
+        {
+            "subtitle": "Abstract",
+            "paragraphs": [
+                {
+                    "sentences": [
+                        "This manuscript introduces J2RM: a tool to process mappings from JSON data to RDF triples guided by an OWL2 ontology structure.",
+                        "The mappings are defined as annotation properties associated with each ontology entity of interest.",
+                        "They are embedded in an ontology file so that they can be readily deployed and shared to automate RDF-graph creation.",
+                        "In this paper, we motivate the need for such mappings, describe some of their definitions on a use case example, present the formal grammar of the mapping language, and explain how these mappings work.",
+                        "We conclude with a discussion of the key aspects, main contributions, and future improvements."
+                    ]
+                }
+            ]
+        },
+        {
+            "subtitle": "Introduction",
+            "paragraphs": [
+                {
+                    "sentences": [
+                        "Quite often data transformation tasks consume a lot of engineering effort when dealing with heterogeneous data models and formats.",
+                        "Specifically, creating an RDF-graph based on data extracted from a closed and proprietary information system can be a daunting task.",
+                        "A simple approach to extract the required and curated data from these systems is to expose the data in an \u201ceasy-to-process\u201d format, usually, JSON, as an intermediary representation.",
+                        "JSON has been used extensively in a variety of processing tasks as a serialization format becoming the universal format for data interchange on the Web [2].",
+                        "Frequently, software engineering teams do not have a deep understanding of Semantic Web technologies.",
+                        "In such cases, a tool that could abstract all the time-consuming complexities of creating and storing RDF triples -on-the-fly- from any JSON data set could help these Web developers.",
+                        "Moreover, by embedding the mappings in the ontology file itself they become shareable.",
+                        "This paper introduces J2RM, a tool that gives a versatile solution for these use cases.",
+                        "Its main goal is to automate RDF-graph creations from JSON data following an OWL2 ontology structure.",
+                        "The mappings are declared as annotation properties associated with each ontology entity of interest.",
+                        "The mappings are embedded in an ontology file so they can be readily deployed to automate the graph creation from a \u201cstandardized\u201d JSON structure, tailored from any information systems\u2019 data (see Figure 1).",
+                        "With J2RM, one could work with different JSON structures where all mappings are embedded in a specific ontology file.",
+                        "Some transformation and mapping languages have been proposed to generate RDF from non-RDF data, including SPARQL-Generate [9], XSPARQL [4], SAURON [6], Elda [8], [5], R2RML [7], and RML [3].",
+                        "While most of these methods consider a given mapping, in this paper we consider the use of an OWL2 ontology for extracting the schema of the target RDF data.",
+                        "To the best of our knowledge, while there are many tools that follow different approaches to map JSON data to RDF, none of them embed the mappings in ontology definition files: J2RM mappings are not defined in a separate input file."
+                    ]
+                }
+            ]
+        },
+        {
+            "subtitle": "Mapping Definitions",
+            "paragraphs": [
+                {
+                    "sentences": [
+                        "Figure 2 presents an excerpt of a modified JSON document about medical research grants, while table 1 presents an excerpt of a grants ontology definition along with the J2RM mappings.",
+                        "J2RM mappings follow the path-based syntax presented in figure 3.",
+                        "The mappings are designed as JSON-Pointer [1] extensions with their own primitives that define basic transformations and operations applied to the JSON data.",
+                        "Below, we describe how these mappings work."
+                    ]
+                },
+                {
+                    "sentences": [
+                        "Class mappings: create an instance for each mapped value with the structure <data#ID> a <class>.",
+                        "In table 1, #1 maps to the value \"A19453\"; its generated triple is d:Eval#A19453 a m:Eval.",
+                        "#2 maps to an array of values ([\"\",\"https://orcid.org/0X30-01X1-68X0-083X\"]), however, only one triple is generated.",
+                        "In this case, the meta-character \u201c#\u201d indicates that the mapped value is used \u201cas is\u201d in the IRI.",
+                        "The meta-character \u201c!\u201d in #3 indicates that the string value (with blank spaces) is used to generate an IRI (with replacements): d:Area#Clinical-Medicine a m:Area.",
+                        "#4 maps to an array formed of composite values based on the tree structure: [\"A19453-401636\", \"A19453-401443\"], which are used to generate two instances of m:ChiefAnalyst."
+                    ]
+                },
+                {
+                    "sentences": [
+                        "Datatype (dp) and annotation (ap) prop. mappings: create a triple for each mapped value with the structure <data#ID> <dp|ap> \"value\"^^<xsd:type>.",
+                        "J2RM analyzes the ontology; for each class (and sub-classes) that has <dp|ap> as a class restriction, it will create a triple for each mapped instance.",
+                        "One example of #5 is d:Analyst#401636 m:fullName \"Dr Susan Storm\"^^xsd:string considering that m:Analyst has m:fullName in its class restrictions.",
+                        "In this case, the meta-character \u201c~\u201d indicates that the mapped value is used to automatically create an rdfs:label triple as well (#13 presents similar examples).",
+                        "#6 creates a triple for each value found when splitting the mapped values using the delimiter \u201c | \u201d and, thus, it will generate three keywords.",
+                        "#7 defines a \u201cconditional path\u201d: in this case, it will create a triple with the mapped value of \u201c4.91\u201d because the restriction (expression after meta-character \u201c%\u201d) evaluates to true: the scheme and year values are mapped and evaluated correctly.",
+                        "In #8, the meta-character \u201c<\u201d defines a mapping to a common JSONObject ancestor: for the m:Grant class with instances mapped as doc/publicData/id, the ancestor is publicData."
+                    ]
+                },
+                {
+                    "sentences": [
+                        "Object prop. mappings: create triples between sets of mapped values for each identified class that is applicable in the analyzed context (class hierarchies, sub-properties, etc).",
+                        "The structure generated is <domainData#ID> <op> <rangeData#ID>, where <domainData#ID> correspond to the mapped instances of each <op> domain class, and <rangeData#ID> correspond to the mapped instances of each <op> range class.",
+                        "The mappings are paths that define the connection between <domainData#ID> and <rangeData#ID>.",
+                        "Simple cases, such as #9 and #10, find the connection between the instances in a single path: in #9, /doc connects the domain instances /doc/id=\"A19453\" with the range instances /doc/FoR code=\"12908\", creating the triple d:GrantApp#A19453 m:hasFoR d:FoR#12908.",
+                        "The meta-character \u201c@\u201d is used (#9, #12, #13) to indicate the entity (domain class) attached to the path (useful for entity disambiguation).",
+                        "In #10, when applying to the domain class m:Analyst, the mapping results in an array of values for both, the domain ([\"401636\", \"401443\"]) and the range (same as #2).",
+                        "Internally, the tool keeps track of the context for each mapped JSONObject that could result in a valid connection.",
+                        "#11 illustrates a mapping based on two different paths: for domain (D=, indicates the usage of the already known instances from the domain classes) and range (R=..., indicates the mapping to the values that are equal to \"CIA\").",
+                        "#12 illustrates two mappings: one where explicitly disambiguate the domain and range classes to use (CV->FoR), and other, <path 1>|=|<path 2>, where it will map to values of <path 1> only if those values are equal to values of <path 2>."
+                    ]
+                },
+                {
+                    "sentences": [
+                        "Along with each mapping, one can specify the target endpoint and graph.",
+                        "Target endpoint is a label that identifies a SPARQL endpoint access13 where the triples will be created.",
+                        "Examples: test, prod.",
+                        "Target graph is the named graph where the triples will be created.",
+                        "It is defined as a namespace prefix in the ontology file.",
+                        "Examples: g0-testing, g0-prod.",
+                        "The namespace prefix IRI will be used as the named graph for the triple creation for that specific mapping."
+                    ]
+                }
+            ]
+        },
+        {
+            "subtitle": "Conclusions and Ongoing Work",
+            "paragraphs": [
+                {
+                    "sentences": [
+                        "J2RM gives information architects a simple mechanism to define the necessary mapping rules for an automated RDF-graph creation task guided by an OWL2 ontology structure from any JSON data.",
+                        "The key aspect is that the mappings are embedded in an ontology file: this does not imply that the JSON structure is intrinsically tied to the OWL2 model.",
+                        "For different JSON structures, one could define each type of mappings in different ontology files.",
+                        "J2RM is in its early development stages.",
+                        "It has been tested on three different domain ontologies.",
+                        "We will increase the support for more complex JSON mappings and more OWL2 axioms.",
+                        "The major contributions of this tool are: the ability to selectively extract data and perform basic operations on the source JSON structure, the \u201cportability\u201d of the mappings embedded in the OWL2 ontology file as annotation properties attached to classes and properties, and its ease of use while hiding the complexity of creating RDF triples following OWL2 axioms."
+                    ]
+                }
+            ]
+        }
+    ]
+}

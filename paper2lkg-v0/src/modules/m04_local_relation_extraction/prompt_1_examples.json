@@ -1,0 +1,62 @@
+{
+    "format_examples": [
+        {
+            "subject": "<term from the given term list>",
+            "predicate": "<predicate derived from the text>",
+            "object": "<term from the given term list>"
+        },
+        {
+            "subject": "<term from the given term list>",
+            "predicate": "<predicate derived from the text>",
+            "object": "<term from the given term list>"
+        }
+    ],
+    "input_output_pairs": [
+        {
+            "input": {
+                "text": "The company was founded by Elon Musk.",
+                "terms": ["The company", "company", "Elon Musk"]
+            },
+            "output": [
+                {
+                    "subject": "The company",
+                    "predicate": "founded by",
+                    "object": "Elon Musk"
+                }
+            ]
+        },
+        {
+            "input": {
+                "text": "Apple recently released its new MacBook Pro.",
+                "terms": ["Apple", "MacBook Pro", "its new MacBook Pro"]
+            },
+            "output": [
+                {
+                    "subject": "Apple",
+                    "predicate": "releases",
+                    "object": "its new MacBook Pro"
+                },
+                {
+                    "subject": "Apple",
+                    "predicate": "releases",
+                    "object": "MacBook Pro"
+                }
+                
+            ]
+        },
+        {
+            "input": 
+            {
+                "text": "Large language models are revolutionising the field of AI.",
+                "terms": ["Large language models", "AI", "field of AI"]
+            },
+            "output": [
+                {
+                    "subject": "Large language models",
+                    "predicate": "revolutionises",
+                    "object": "the field of AI"
+                }
+            ]
+        }
+    ]
+}

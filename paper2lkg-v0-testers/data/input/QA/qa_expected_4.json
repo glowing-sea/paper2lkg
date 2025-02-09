@@ -1,0 +1,42 @@
+[
+    {
+      "question": "What is TNNT, and what is its main goal?",
+      "answer": "TNNT is a toolkit that automates the extraction of categorized named entities from unstructured information encoded in source documents using a wide range of recent state-of-the-art (SOTA) NLP-NER tools and models. Its main goal is to provide a uniform processing pipeline for different document formats, allowing easy selection and application of multiple NER models to enhance data analysis and support knowledge graph construction."
+    },
+    {
+      "question": "How many NER models does TNNT integrate, and from how many SOTA NLP tools?",
+      "answer": "TNNT integrates 21 different NER models from 9 state-of-the-art (SOTA) NLP tools."
+    },
+    {
+      "question": "What are the motivations behind developing TNNT as described in the paper?",
+      "answer": "The motivations for developing TNNT include: (1) the ability to easily pre-process documents for NER analysis, (2) the ability to process documents with different formats, (3) hiding usage variations across NER models and NLP tools by bringing them under one uniform pipeline, and (4) providing a framework for analyzing results from different NER models and NLP tools."
+    },
+    {
+      "question": "How does TNNT handle different document formats?",
+      "answer": "TNNT handles different document formats by integrating with the 'Metadata Extractor & Loader' (MEL), which enables extraction of metadata and content-based information from various file formats such as .pdf, .docx, .xlsx, .msg, .csv, .txt, and .zip. TNNT then processes the extracted text for NER analysis."
+    },
+    {
+      "question": "What are some of the features provided by TNNT's RESTful API?",
+      "answer": "TNNT's RESTful API provides features to access, expand, complement, and correlate the NER results by performing additional NLP tasks such as Part-Of-Speech (POS) tagging, dependency parsing, coreference resolution, aggregations, descriptive statistics, and browsing capabilities."
+    },
+    {
+      "question": "How is TNNT integrated with MEL, and what role does MEL play in TNNT's processing pipeline?",
+      "answer": "TNNT is fully integrated with MEL, which orchestrates the first two blocks of the processing pipeline. MEL establishes how TNNT will process a block sequence of NER models over the input dataset, handling data extraction operations and providing the text data for TNNT to analyze."
+    },
+    {
+      "question": "According to the paper, what gap in existing tools does TNNT aim to fill?",
+      "answer": "TNNT aims to fill the gap of the absence of a toolkit or system that unifies several state-of-the-art (SOTA) NLP tools and NER models under one uniform pipeline. While there are many libraries providing NER models, none provide a unified system for applying multiple SOTA NER tools in a consistent manner."
+    },
+    {
+      "question": "What are the major contributions of TNNT as highlighted in the paper?",
+      "answer": "The major contributions of TNNT are: (1) the ability to process different source document formats for NER; (2) the availability of 21 different SOTA NER models integrated into one system, enabling easy selection of models for NER; (3) the provision of an integrated summary of the results from different models; and (4) a RESTful API that enables easy access to NLP tasks that enrich the NER results from the models."
+    },
+    {
+      "question": "What is the architecture of TNNT, and how does it process input data?",
+      "answer": "TNNT's architecture includes a pre-processing module and distinct modules for each implemented NLP-NER tool and model. The pre-processing module takes the extracted text data from MEL and prepares it for NER analysis. TNNT sequentially processes the input data using the selected NER models, retrieves context information and statistics for each recognized entity, and generates JSON files with the results."
+    },
+    {
+      "question": "What are the future plans for TNNT as discussed in the conclusion?",
+      "answer": "The future plans for TNNT include integrating more NLP-NER tools and models into its architecture, continuing to evolve the RESTful API with complementary NLP tasks to enrich the NER results, and supporting knowledge graph construction pipeline tasks."
+    }
+]

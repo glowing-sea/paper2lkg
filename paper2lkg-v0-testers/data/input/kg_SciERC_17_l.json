@@ -1,0 +1,1769 @@
+{
+  "iri": "Paper-17",
+  "title": "ICML_2016_11_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-17-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-17-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+              "text": "The robust principal component analysis -LRB- robust PCA -RRB- problem has been considered in many machine learning applications , where the goal is to decompose the data matrix to a low rank part plus a sparse residual ."
+            },
+            {
+              "iri": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+              "text": "While current approaches are developed by only considering the low rank plus sparse structure , in many applications , side information of row and/or column entities may also be given , and it is still unclear to what extent could such information help robust PCA ."
+            },
+            {
+              "iri": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+              "text": "Thus , in this paper , we study the problem of robust PCA with side information , where both prior structure and features of entities are exploited for recovery ."
+            },
+            {
+              "iri": "Paper-17-Section-1-Paragraph-1-Sentence-4",
+              "text": "We propose a convex problem to incorporate side information in robust PCA and show that the low rank matrix can be exactly recovered via the proposed method under certain conditions ."
+            },
+            {
+              "iri": "Paper-17-Section-1-Paragraph-1-Sentence-5",
+              "text": "In particular , our guarantee suggests that a substantial amount of low rank matrices , which can not be recovered by standard robust PCA , become re-coverable by our proposed method ."
+            },
+            {
+              "iri": "Paper-17-Section-1-Paragraph-1-Sentence-6",
+              "text": "The result theoretically justifies the effectiveness of features in robust PCA ."
+            },
+            {
+              "iri": "Paper-17-Section-1-Paragraph-1-Sentence-7",
+              "text": "In addition , we conduct synthetic experiments as well as a real application on noisy image classification to show that our method also improves the performance in practice by exploiting side information ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00021147727966308594,
+    19.936744689941406,
+    30.01918315887451,
+    30.241634130477905,
+    0.041382551193237305,
+    0.00011301040649414062,
+    0.00016117095947265625,
+    62.17446422576904,
+    94.81537675857544,
+    2.207329034805298,
+    1.3177011013031006,
+    0.016174793243408203,
+    0.0002796649932861328,
+    39.57429838180542,
+    3.0917398929595947,
+    0.033385276794433594,
+    1.0957918167114258,
+    3.874716281890869,
+    27.276881217956543,
+    31.99729895591736,
+    50.66642475128174,
+    4.45810866355896,
+    38.746050119400024,
+    1.708277940750122,
+    0.0009915828704833984,
+    0.01766037940979004
+  ],
+  "nodes": {
+    "Entity-our_method": {
+      "node_id": "our_method",
+      "disambiguation_index": 0,
+      "label": "our method",
+      "aliases": [
+        "our method"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A proposed convex problem and method for incorporating side information into robust principal component analysis (PCA) to improve recovery of low-rank matrices.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "our method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-our_method-Mention-1"
+        }
+      ],
+      "relevance": 0.82421875
+    },
+    "Entity-we_propose": {
+      "node_id": "we_propose",
+      "disambiguation_index": 0,
+      "label": "We propose",
+      "aliases": [
+        "We propose"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A novel, convex approach for incorporating side information into robust principal component analysis (PCA) to improve recovery of low-rank matrices.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "We propose",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-we_propose-Mention-1"
+        }
+      ],
+      "relevance": 0.822265625
+    },
+    "Entity-we_study_the_problem_of_robust_pca_with_side_information__where_both_prior_structure_and_feature_of_entity_are_exploited_for_recovery": {
+      "node_id": "we_study_the_problem_of_robust_pca_with_side_information__where_both_prior_structure_and_feature_of_entity_are_exploited_for_recovery",
+      "disambiguation_index": 0,
+      "label": "we study the problem of robust PCA with side information, where both prior structure and features of entities are exploited for recovery",
+      "aliases": [
+        "we study the problem of robust PCA with side information, where both prior structure and features of entities are exploited for recovery"
+      ],
+      "types": [
+        "study"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The problem of robust Principal Component Analysis (PCA) with side information that exploits both prior structure and features of entities for recovery.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "we study the problem of robust PCA with side information, where both prior structure and features of entities are exploited for recovery",
+          "local_types": [
+            "study"
+          ],
+          "iri": "Entity-we_study_the_problem_of_robust_pca_with_side_information__where_both_prior_structure_and_feature_of_entity_are_exploited_for_recovery-Mention-1"
+        }
+      ],
+      "relevance": 0.7958984375
+    },
+    "Entity-the_robust_principal_component_analysis_-lrb-_robust_pca_-rrb-_problem": {
+      "node_id": "the_robust_principal_component_analysis_-lrb-_robust_pca_-rrb-_problem",
+      "disambiguation_index": 0,
+      "label": "The robust principal component analysis -LRB- robust PCA -RRB- problem",
+      "aliases": [
+        "The robust principal component analysis -LRB- robust PCA -RRB- problem"
+      ],
+      "types": [
+        "problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A machine learning problem where data is decomposed into low-rank and sparse components, considering side information of row and/or column entities.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "The robust principal component analysis -LRB- robust PCA -RRB- problem",
+          "local_types": [
+            "problem"
+          ],
+          "iri": "Entity-the_robust_principal_component_analysis_-lrb-_robust_pca_-rrb-_problem-Mention-1"
+        }
+      ],
+      "relevance": 0.78662109375
+    },
+    "Entity-we_propose_a_convex_problem_to_incorporate_side_information_in_robust_pca_and_show_that_the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition": {
+      "node_id": "we_propose_a_convex_problem_to_incorporate_side_information_in_robust_pca_and_show_that_the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition",
+      "disambiguation_index": 0,
+      "label": "We propose a convex problem to incorporate side information in robust PCA and show that the low rank matrix can be exactly recovered via the proposed method under certain conditions",
+      "aliases": [
+        "We propose a convex problem to incorporate side information in robust PCA and show that the low rank matrix can be exactly recovered via the proposed method under certain conditions"
+      ],
+      "types": [
+        "proposition"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical proposition or theorem",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "We propose a convex problem to incorporate side information in robust PCA and show that the low rank matrix can be exactly recovered via the proposed method under certain conditions",
+          "local_types": [
+            "proposition"
+          ],
+          "iri": "Entity-we_propose_a_convex_problem_to_incorporate_side_information_in_robust_pca_and_show_that_the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition-Mention-1"
+        }
+      ],
+      "relevance": 0.779296875
+    },
+    "Entity-a_convex_problem_to_incorporate_side_information_in_robust_pca": {
+      "node_id": "a_convex_problem_to_incorporate_side_information_in_robust_pca",
+      "disambiguation_index": 0,
+      "label": "a convex problem to incorporate side information in robust PCA",
+      "aliases": [
+        "a convex problem to incorporate side information in robust PCA"
+      ],
+      "types": [
+        "methodology",
+        "algorithm"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A mathematical optimization problem designed to incorporate additional information (side information) into a robust principal component analysis algorithm, aiming to improve its performance and accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "a convex problem to incorporate side information in robust PCA",
+          "local_types": [
+            "methodology",
+            "algorithm"
+          ],
+          "iri": "Entity-a_convex_problem_to_incorporate_side_information_in_robust_pca-Mention-1"
+        }
+      ],
+      "relevance": 0.77197265625
+    },
+    "Entity-robust_pca": {
+      "node_id": "robust_pca",
+      "disambiguation_index": 0,
+      "label": "robust PCA",
+      "aliases": [
+        "robust PCA"
+      ],
+      "types": [
+        "technique"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A technique for robustly decomposing a data matrix into a low-rank component and a sparse residual, incorporating side information of row and/or column entities.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "robust PCA",
+          "local_types": [
+            "technique"
+          ],
+          "iri": "Entity-robust_pca-Mention-1"
+        }
+      ],
+      "relevance": 0.7392578125
+    },
+    "Entity-problem_of_robust_pca_with_side_information": {
+      "node_id": "problem_of_robust_pca_with_side_information",
+      "disambiguation_index": 0,
+      "label": "problem of robust PCA with side information",
+      "aliases": [
+        "the problem of robust PCA with side information",
+        "problem of robust PCA with side information"
+      ],
+      "types": [
+        "problem",
+        "research topic",
+        "research question",
+        "mathematical problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The challenge of applying Principal Component Analysis (PCA) in a way that is resistant to noise or outliers while incorporating additional information.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "problem of robust PCA with side information",
+          "local_types": [
+            "research topic",
+            "mathematical problem"
+          ],
+          "iri": "Entity-problem_of_robust_pca_with_side_information-Mention-1"
+        },
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the problem of robust PCA with side information",
+          "local_types": [
+            "problem",
+            "research question"
+          ],
+          "iri": "Entity-problem_of_robust_pca_with_side_information-Mention-2"
+        }
+      ],
+      "relevance": 0.7373046875
+    },
+    "Entity-current_approach_are_developed_by_only_considering_the_low_rank_plus_sparse_structure": {
+      "node_id": "current_approach_are_developed_by_only_considering_the_low_rank_plus_sparse_structure",
+      "disambiguation_index": 0,
+      "label": "current approaches are developed by only considering the low rank plus sparse structure",
+      "aliases": [
+        "current approaches are developed by only considering the low rank plus sparse structure"
+      ],
+      "types": [
+        "approach"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Current methods for Robust Principal Component Analysis (RPCA) that solely focus on decomposing data into low-rank and sparse components.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "current approaches are developed by only considering the low rank plus sparse structure",
+          "local_types": [
+            "approach"
+          ],
+          "iri": "Entity-current_approach_are_developed_by_only_considering_the_low_rank_plus_sparse_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.71044921875
+    },
+    "Entity-it_is_still_unclear_to_what_extent_could_such_information_help_robust_pca": {
+      "node_id": "it_is_still_unclear_to_what_extent_could_such_information_help_robust_pca",
+      "disambiguation_index": 0,
+      "label": "it is still unclear to what extent could such information help robust PCA",
+      "aliases": [
+        "it is still unclear to what extent could such information help robust PCA"
+      ],
+      "types": [
+        "uncertainty"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The uncertainty regarding the effectiveness of incorporating side information in robust Principal Component Analysis (PCA)",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "it is still unclear to what extent could such information help robust PCA",
+          "local_types": [
+            "uncertainty"
+          ],
+          "iri": "Entity-it_is_still_unclear_to_what_extent_could_such_information_help_robust_pca-Mention-1"
+        }
+      ],
+      "relevance": 0.7021484375
+    },
+    "Entity-the_goal_is_to_decompose_the_data_matrix_to_a_low_rank_part_plus_a_sparse_residual": {
+      "node_id": "the_goal_is_to_decompose_the_data_matrix_to_a_low_rank_part_plus_a_sparse_residual",
+      "disambiguation_index": 0,
+      "label": "the goal is to decompose the data matrix to a low rank part plus a sparse residual",
+      "aliases": [
+        "the goal is to decompose the data matrix to a low rank part plus a sparse residual"
+      ],
+      "types": [
+        "goal"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The objective of robust principal component analysis (PCA) decomposition.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "the goal is to decompose the data matrix to a low rank part plus a sparse residual",
+          "local_types": [
+            "goal"
+          ],
+          "iri": "Entity-the_goal_is_to_decompose_the_data_matrix_to_a_low_rank_part_plus_a_sparse_residual-Mention-1"
+        }
+      ],
+      "relevance": 0.70166015625
+    },
+    "Entity-robust_principal_component_analysis": {
+      "node_id": "robust_principal_component_analysis",
+      "disambiguation_index": 0,
+      "label": "robust principal component analysis",
+      "aliases": [
+        "The robust principal component analysis",
+        "robust principal component analysis"
+      ],
+      "types": [
+        "algorithm",
+        "mathematical concept",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A statistical method for decomposing data into a low-rank part and a sparse residual, designed to be robust against outliers.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "robust principal component analysis",
+          "local_types": [
+            "algorithm",
+            "mathematical concept",
+            "method"
+          ],
+          "iri": "Entity-robust_principal_component_analysis-Mention-1"
+        },
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "The robust principal component analysis",
+          "local_types": [
+            "algorithm"
+          ],
+          "iri": "Entity-robust_principal_component_analysis-Mention-2"
+        }
+      ],
+      "relevance": 0.6865234375
+    },
+    "Entity-feature_in_robust_pca": {
+      "node_id": "feature_in_robust_pca",
+      "disambiguation_index": 0,
+      "label": "features in robust PCA",
+      "aliases": [
+        "features in robust PCA"
+      ],
+      "types": [
+        "algorithm",
+        "technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of characteristics extracted using Robust Principal Component Analysis (PCA) technique.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "features in robust PCA",
+          "local_types": [
+            "algorithm",
+            "technique"
+          ],
+          "iri": "Entity-feature_in_robust_pca-Mention-1"
+        }
+      ],
+      "relevance": 0.6865234375
+    },
+    "Entity-the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition": {
+      "node_id": "the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition",
+      "disambiguation_index": 0,
+      "label": "the low rank matrix can be exactly recovered via the proposed method under certain conditions",
+      "aliases": [
+        "the low rank matrix can be exactly recovered via the proposed method under certain conditions"
+      ],
+      "types": [
+        "result"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The exact recovery of a low-rank matrix using a proposed convex problem, subject to specific conditions.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the low rank matrix can be exactly recovered via the proposed method under certain conditions",
+          "local_types": [
+            "result"
+          ],
+          "iri": "Entity-the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition-Mention-1"
+        }
+      ],
+      "relevance": 0.6845703125
+    },
+    "Entity-a_substantial_amount_of_low_rank_matrix": {
+      "node_id": "a_substantial_amount_of_low_rank_matrix",
+      "disambiguation_index": 0,
+      "label": "a substantial amount of low rank matrices",
+      "aliases": [
+        "a substantial amount of low rank matrices"
+      ],
+      "types": [
+        "matrices"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A set of matrices that cannot be decomposed into a low rank part plus a sparse residual using standard robust principal component analysis (PCA) methods, but can be recovered by incorporating side information.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "a substantial amount of low rank matrices",
+          "local_types": [
+            "matrices"
+          ],
+          "iri": "Entity-a_substantial_amount_of_low_rank_matrix-Mention-1"
+        }
+      ],
+      "relevance": 0.68408203125
+    },
+    "Entity-in_addition__we_conduct_synthetic_experiment_a_well_a_a_real_application_on_noisy_image_classification_to_show_that_our_method_also_improves_the_performance_in_practice_by_exploiting_side_information": {
+      "node_id": "in_addition__we_conduct_synthetic_experiment_a_well_a_a_real_application_on_noisy_image_classification_to_show_that_our_method_also_improves_the_performance_in_practice_by_exploiting_side_information",
+      "disambiguation_index": 0,
+      "label": "In addition, we conduct synthetic experiments as well as a real application on noisy image classification to show that our method also improves the performance in practice by exploiting side information",
+      "aliases": [
+        "In addition, we conduct synthetic experiments as well as a real application on noisy image classification to show that our method also improves the performance in practice by exploiting side information"
+      ],
+      "types": [
+        "experiment"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Synthetic and real-world experiment on noisy image classification demonstrating the effectiveness of the proposed robust PCA method with side information.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "In addition, we conduct synthetic experiments as well as a real application on noisy image classification to show that our method also improves the performance in practice by exploiting side information",
+          "local_types": [
+            "experiment"
+          ],
+          "iri": "Entity-in_addition__we_conduct_synthetic_experiment_a_well_a_a_real_application_on_noisy_image_classification_to_show_that_our_method_also_improves_the_performance_in_practice_by_exploiting_side_information-Mention-1"
+        }
+      ],
+      "relevance": 0.6787109375
+    },
+    "Entity-the_result_theoretically_justifies_the_effectiveness_of_feature_in_robust_pca": {
+      "node_id": "the_result_theoretically_justifies_the_effectiveness_of_feature_in_robust_pca",
+      "disambiguation_index": 0,
+      "label": "the result theoretically justifies the effectiveness of features in robust PCA",
+      "aliases": [
+        "the result theoretically justifies the effectiveness of features in robust PCA"
+      ],
+      "types": [
+        "result"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A theoretical guarantee that demonstrates the usefulness of incorporating side information and features in Robust Principal Component Analysis (PCA) methods.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the result theoretically justifies the effectiveness of features in robust PCA",
+          "local_types": [
+            "result"
+          ],
+          "iri": "Entity-the_result_theoretically_justifies_the_effectiveness_of_feature_in_robust_pca-Mention-1"
+        }
+      ],
+      "relevance": 0.673828125
+    },
+    "Entity-many_machine_learning_application": {
+      "node_id": "many_machine_learning_application",
+      "disambiguation_index": 0,
+      "label": "many machine learning applications",
+      "aliases": [
+        "many machine learning applications"
+      ],
+      "types": [
+        "field",
+        "applications"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A variety of problems and scenarios in which robust principal component analysis (PCA) is applied.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "many machine learning applications",
+          "local_types": [
+            "field",
+            "applications"
+          ],
+          "iri": "Entity-many_machine_learning_application-Mention-1"
+        }
+      ],
+      "relevance": 0.6728515625
+    },
+    "Entity-our_guarantee_suggests_that_a_substantial_amount_of_low_rank_matrix__which_can_not_be_recovered_by_standard_robust_pca__become_re-coverable_by_our_proposed_method": {
+      "node_id": "our_guarantee_suggests_that_a_substantial_amount_of_low_rank_matrix__which_can_not_be_recovered_by_standard_robust_pca__become_re-coverable_by_our_proposed_method",
+      "disambiguation_index": 0,
+      "label": "our guarantee suggests that a substantial amount of low rank matrices, which can not be recovered by standard robust PCA, become re-coverable by our proposed method",
+      "aliases": [
+        "our guarantee suggests that a substantial amount of low rank matrices, which can not be recovered by standard robust PCA, become re-coverable by our proposed method",
+        "our guarantee"
+      ],
+      "types": [
+        "guarantee"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The guarantee made about a substantial amount of low rank matrices that cannot be recovered using standard robust principal component analysis (PCA), but can be re-covered by the proposed method.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "our guarantee suggests that a substantial amount of low rank matrices, which can not be recovered by standard robust PCA, become re-coverable by our proposed method",
+          "local_types": [
+            "guarantee"
+          ],
+          "iri": "Entity-our_guarantee_suggests_that_a_substantial_amount_of_low_rank_matrix__which_can_not_be_recovered_by_standard_robust_pca__become_re-coverable_by_our_proposed_method-Mention-1"
+        },
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "our guarantee",
+          "local_types": [
+            "guarantee"
+          ],
+          "iri": "Entity-our_guarantee_suggests_that_a_substantial_amount_of_low_rank_matrix__which_can_not_be_recovered_by_standard_robust_pca__become_re-coverable_by_our_proposed_method-Mention-2"
+        }
+      ],
+      "relevance": 0.6669921875
+    },
+    "Entity-side_information_of_row_andor_column_entity": {
+      "node_id": "side_information_of_row_andor_column_entity",
+      "disambiguation_index": 0,
+      "label": "side information of row and/or column entities",
+      "aliases": [
+        "side information of row and/or column entities"
+      ],
+      "types": [
+        "information"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Additional data or features about rows and columns in a matrix, which can be used to improve robust principal component analysis (PCA) recovery.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "side information of row and/or column entities",
+          "local_types": [
+            "information"
+          ],
+          "iri": "Entity-side_information_of_row_andor_column_entity-Mention-1"
+        }
+      ],
+      "relevance": 0.66650390625
+    },
+    "Entity-standard_robust_pca": {
+      "node_id": "standard_robust_pca",
+      "disambiguation_index": 0,
+      "label": "standard robust PCA",
+      "aliases": [
+        "robust PCA",
+        "standard robust PCA"
+      ],
+      "types": [
+        "statistical technique",
+        "mathematical method",
+        "algorithm",
+        "technique",
+        "computational method",
+        "machine learning method",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A statistical technique used to identify and remove noise from data while preserving its underlying structure.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "standard robust PCA",
+          "local_types": [
+            "method",
+            "algorithm",
+            "computational method"
+          ],
+          "iri": "Entity-standard_robust_pca-Mention-1"
+        },
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "robust PCA",
+          "local_types": [
+            "technique",
+            "algorithm"
+          ],
+          "iri": "Entity-standard_robust_pca-Mention-2"
+        },
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "robust PCA",
+          "local_types": [
+            "method",
+            "statistical technique",
+            "mathematical method"
+          ],
+          "iri": "Entity-standard_robust_pca-Mention-3"
+        },
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "robust PCA",
+          "local_types": [
+            "algorithm",
+            "machine learning method"
+          ],
+          "iri": "Entity-standard_robust_pca-Mention-4"
+        }
+      ],
+      "relevance": 0.646484375
+    },
+    "Entity-many_application": {
+      "node_id": "many_application",
+      "disambiguation_index": 0,
+      "label": "many applications",
+      "aliases": [
+        "many applications"
+      ],
+      "types": [
+        "application"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Machine learning problems where side information of row and/or column entities is given, in addition to low rank plus sparse structure.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "many applications",
+          "local_types": [
+            "application"
+          ],
+          "iri": "Entity-many_application-Mention-1"
+        }
+      ],
+      "relevance": 0.63134765625
+    },
+    "Entity-the_effectiveness_of_feature_in_robust_pca": {
+      "node_id": "the_effectiveness_of_feature_in_robust_pca",
+      "disambiguation_index": 0,
+      "label": "the effectiveness of features in robust PCA",
+      "aliases": [
+        "the effectiveness of features in robust PCA"
+      ],
+      "types": [
+        "effectiveness",
+        "feature",
+        "PCA"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A measure that evaluates how well features contribute to improving the performance of Robust Principal Component Analysis (PCA) methods.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the effectiveness of features in robust PCA",
+          "local_types": [
+            "effectiveness",
+            "feature",
+            "PCA"
+          ],
+          "iri": "Entity-the_effectiveness_of_feature_in_robust_pca-Mention-1"
+        }
+      ],
+      "relevance": 0.6279296875
+    },
+    "Entity-prior_structure_and_feature_of_entity_are_exploited_for_recovery": {
+      "node_id": "prior_structure_and_feature_of_entity_are_exploited_for_recovery",
+      "disambiguation_index": 0,
+      "label": "prior structure and features of entities are exploited for recovery",
+      "aliases": [
+        "prior structure and features of entities are exploited for recovery"
+      ],
+      "types": [
+        "methodology",
+        "approach"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The use of pre-existing structural knowledge and entity characteristics to improve the recovery process in robust principal component analysis with side information.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "prior structure and features of entities are exploited for recovery",
+          "local_types": [
+            "methodology",
+            "approach"
+          ],
+          "iri": "Entity-prior_structure_and_feature_of_entity_are_exploited_for_recovery-Mention-1"
+        }
+      ],
+      "relevance": 0.6240234375
+    },
+    "Entity-a_real_application_on_noisy_image_classification": {
+      "node_id": "a_real_application_on_noisy_image_classification",
+      "disambiguation_index": 0,
+      "label": "a real application on noisy image classification",
+      "aliases": [
+        "a real application on noisy image classification"
+      ],
+      "types": [
+        "application",
+        "image classification"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A demonstration of the effectiveness of the proposed robust PCA method using a practical example from noisy image classification.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "a real application on noisy image classification",
+          "local_types": [
+            "application",
+            "image classification"
+          ],
+          "iri": "Entity-a_real_application_on_noisy_image_classification-Mention-1"
+        }
+      ],
+      "relevance": 0.61865234375
+    },
+    "Entity-low_rank_plus_sparse_structure": {
+      "node_id": "low_rank_plus_sparse_structure",
+      "disambiguation_index": 0,
+      "label": "low rank plus sparse structure",
+      "aliases": [
+        "low rank plus sparse structure"
+      ],
+      "types": [
+        "mathematical concept",
+        "statistical model",
+        "structure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical concept that combines low-rank matrix approximation and sparsity, used to model structured data with both low-dimensional subspace and sparse components.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "low rank plus sparse structure",
+          "local_types": [
+            "mathematical concept",
+            "statistical model",
+            "structure"
+          ],
+          "iri": "Entity-low_rank_plus_sparse_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.60693359375
+    },
+    "Entity-thus": {
+      "node_id": "thus",
+      "disambiguation_index": 0,
+      "label": "Thus",
+      "aliases": [
+        "Thus"
+      ],
+      "types": [
+        "paper"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The introduction or beginning point of a research paper that studies the problem of robust principal component analysis with side information.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Thus",
+          "local_types": [
+            "paper"
+          ],
+          "iri": "Entity-thus-Mention-1"
+        }
+      ],
+      "relevance": 0.58251953125
+    },
+    "Entity-pca": {
+      "node_id": "pca",
+      "disambiguation_index": 0,
+      "label": "PCA",
+      "aliases": [
+        "PCA"
+      ],
+      "types": [
+        "technique",
+        "algorithm"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A statistical technique or algorithm used to reduce dimensionality by retaining only the most important principal components.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "PCA",
+          "local_types": [
+            "technique",
+            "algorithm"
+          ],
+          "iri": "Entity-pca-Mention-1"
+        }
+      ],
+      "relevance": 0.58056640625
+    },
+    "Entity-the_result": {
+      "node_id": "the_result",
+      "disambiguation_index": 0,
+      "label": "The result",
+      "aliases": [
+        "The result"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A theoretical justification for the effectiveness of incorporating features into robust principal component analysis.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "The result",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-the_result-Mention-1"
+        }
+      ],
+      "relevance": 0.568359375
+    },
+    "Entity-prior_structure": {
+      "node_id": "prior_structure",
+      "disambiguation_index": 0,
+      "label": "prior structure",
+      "aliases": [
+        "prior structure"
+      ],
+      "types": [
+        "mathematical concept",
+        "statistical term",
+        "concept",
+        "data characteristic",
+        "property"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The underlying organization or pattern that exists before applying principal component analysis (PCA) to the data.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "prior structure",
+          "local_types": [
+            "mathematical concept",
+            "statistical term",
+            "concept",
+            "data characteristic",
+            "property"
+          ],
+          "iri": "Entity-prior_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.56689453125
+    },
+    "Entity-convex_problem": {
+      "node_id": "convex_problem",
+      "disambiguation_index": 0,
+      "label": "convex problem",
+      "aliases": [
+        "convex problem"
+      ],
+      "types": [
+        "mathematical concept",
+        "optimization technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical optimization technique aimed at finding a solution within a set of constraints, where the objective function has convex properties.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "convex problem",
+          "local_types": [
+            "mathematical concept",
+            "optimization technique"
+          ],
+          "iri": "Entity-convex_problem-Mention-1"
+        }
+      ],
+      "relevance": 0.54541015625
+    },
+    "Entity-the_goal_is_to_decompose_the_data_matrix": {
+      "node_id": "the_goal_is_to_decompose_the_data_matrix",
+      "disambiguation_index": 0,
+      "label": "the goal is to decompose the data matrix",
+      "aliases": [
+        "the goal is to decompose the data matrix"
+      ],
+      "types": [
+        "objective"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The process of breaking down a given dataset into its underlying low-rank and sparse components.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "the goal is to decompose the data matrix",
+          "local_types": [
+            "objective"
+          ],
+          "iri": "Entity-the_goal_is_to_decompose_the_data_matrix-Mention-1"
+        }
+      ],
+      "relevance": 0.5400390625
+    },
+    "Entity-side_information_of_row_andor_column_entity_may_also_be_given": {
+      "node_id": "side_information_of_row_andor_column_entity_may_also_be_given",
+      "disambiguation_index": 0,
+      "label": "side information of row and/or column entities may also be given",
+      "aliases": [
+        "side information of row and/or column entities may also be given"
+      ],
+      "types": [
+        "information"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Information about rows or columns in data matrices, which can include additional features or prior knowledge.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "side information of row and/or column entities may also be given",
+          "local_types": [
+            "information"
+          ],
+          "iri": "Entity-side_information_of_row_andor_column_entity_may_also_be_given-Mention-1"
+        }
+      ],
+      "relevance": 0.51953125
+    },
+    "Entity-noisy_image_classification": {
+      "node_id": "noisy_image_classification",
+      "disambiguation_index": 0,
+      "label": "noisy image classification",
+      "aliases": [
+        "noisy image classification"
+      ],
+      "types": [
+        "image processing task",
+        "machine learning problem",
+        "machine learning application"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The process of classifying images while accounting for noise or uncertainty in the data.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "noisy image classification",
+          "local_types": [
+            "image processing task",
+            "machine learning problem",
+            "machine learning application"
+          ],
+          "iri": "Entity-noisy_image_classification-Mention-1"
+        }
+      ],
+      "relevance": 0.517578125
+    },
+    "Entity-proposed_method": {
+      "node_id": "proposed_method",
+      "disambiguation_index": 0,
+      "label": "proposed method",
+      "aliases": [
+        "proposed method"
+      ],
+      "types": [
+        "approach",
+        "technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A technique or approach for recovering data that cannot be retrieved using traditional methods.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "proposed method",
+          "local_types": [
+            "approach",
+            "technique"
+          ],
+          "iri": "Entity-proposed_method-Mention-1"
+        }
+      ],
+      "relevance": 0.5126953125
+    },
+    "Entity-side_information": {
+      "node_id": "side_information",
+      "disambiguation_index": 0,
+      "label": "side information",
+      "aliases": [
+        "side information"
+      ],
+      "types": [
+        "data",
+        "feature",
+        "supplementary knowledge",
+        "input",
+        "data set",
+        "auxiliary data",
+        "data type",
+        "knowledge base"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Information provided in addition to primary data, used for supplementary purposes or analysis.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "side information",
+          "local_types": [
+            "feature",
+            "supplementary knowledge",
+            "data set",
+            "auxiliary data",
+            "data type",
+            "knowledge base"
+          ],
+          "iri": "Entity-side_information-Mention-1"
+        },
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "side information",
+          "local_types": [
+            "data",
+            "input"
+          ],
+          "iri": "Entity-side_information-Mention-2"
+        }
+      ],
+      "relevance": 0.50830078125
+    },
+    "Entity-machine_learning_application": {
+      "node_id": "machine_learning_application",
+      "disambiguation_index": 0,
+      "label": "machine learning applications",
+      "aliases": [
+        "machine learning applications"
+      ],
+      "types": [
+        "research area",
+        "field",
+        "field of study",
+        "domain"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A field of study that focuses on developing and applying algorithms and statistical models to analyze, understand, and make decisions from complex data.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "machine learning applications",
+          "local_types": [
+            "research area",
+            "field",
+            "field of study",
+            "domain"
+          ],
+          "iri": "Entity-machine_learning_application-Mention-1"
+        }
+      ],
+      "relevance": 0.498046875
+    },
+    "Entity-low_rank_matrix": {
+      "node_id": "low_rank_matrix",
+      "disambiguation_index": 0,
+      "label": "low rank matrix",
+      "aliases": [
+        "low rank matrices",
+        "low rank matrix"
+      ],
+      "types": [
+        "mathematical concept",
+        "matrix theory",
+        "statistical term"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical object with a small number of dimensions, where most of its entries are zero or negligible.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "low rank matrix",
+          "local_types": [
+            "mathematical concept",
+            "matrix theory"
+          ],
+          "iri": "Entity-low_rank_matrix-Mention-1"
+        },
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "low rank matrices",
+          "local_types": [
+            "mathematical concept",
+            "statistical term"
+          ],
+          "iri": "Entity-low_rank_matrix-Mention-2"
+        }
+      ],
+      "relevance": 0.494384765625
+    },
+    "Entity-our_proposed_method": {
+      "node_id": "our_proposed_method",
+      "disambiguation_index": 0,
+      "label": "our proposed method",
+      "aliases": [
+        "our proposed method"
+      ],
+      "types": [
+        "method",
+        "algorithm"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A computational approach or technique developed and suggested by us for solving a specific problem or achieving a particular goal.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "our proposed method",
+          "local_types": [
+            "method",
+            "algorithm"
+          ],
+          "iri": "Entity-our_proposed_method-Mention-1"
+        }
+      ],
+      "relevance": 0.44970703125
+    },
+    "Entity-data_matrix": {
+      "node_id": "data_matrix",
+      "disambiguation_index": 0,
+      "label": "data matrix",
+      "aliases": [
+        "data matrix"
+      ],
+      "types": [
+        "mathematical concept",
+        "statistical term"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A two-dimensional array of numerical values representing relationships between variables or observations.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "data matrix",
+          "local_types": [
+            "mathematical concept",
+            "statistical term"
+          ],
+          "iri": "Entity-data_matrix-Mention-1"
+        }
+      ],
+      "relevance": 0.440185546875
+    },
+    "Entity-row_andor_column_entity": {
+      "node_id": "row_andor_column_entity",
+      "disambiguation_index": 0,
+      "label": "row and/or column entities",
+      "aliases": [
+        "row and/or column entities"
+      ],
+      "types": [
+        "matrix elements",
+        "data points"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Entities that are part of a matrix or table, representing individual rows or columns.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "row and/or column entities",
+          "local_types": [
+            "matrix elements",
+            "data points"
+          ],
+          "iri": "Entity-row_andor_column_entity-Mention-1"
+        }
+      ],
+      "relevance": 0.439697265625
+    },
+    "Entity-real_application": {
+      "node_id": "real_application",
+      "disambiguation_index": 0,
+      "label": "real application",
+      "aliases": [
+        "real application"
+      ],
+      "types": [
+        "case study",
+        "practical example"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A practical demonstration or illustration of how a concept, technique, or methodology can be applied in real-world situations.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "real application",
+          "local_types": [
+            "case study",
+            "practical example"
+          ],
+          "iri": "Entity-real_application-Mention-1"
+        }
+      ],
+      "relevance": 0.4267578125
+    },
+    "Entity-current_approach": {
+      "node_id": "current_approach",
+      "disambiguation_index": 0,
+      "label": "current approaches",
+      "aliases": [
+        "current approaches"
+      ],
+      "types": [
+        "algorithm",
+        "approach",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Methods or techniques currently used in a particular field or domain.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "current approaches",
+          "local_types": [
+            "algorithm",
+            "approach",
+            "methodology"
+          ],
+          "iri": "Entity-current_approach-Mention-1"
+        }
+      ],
+      "relevance": 0.42626953125
+    },
+    "Entity-synthetic_experiment": {
+      "node_id": "synthetic_experiment",
+      "disambiguation_index": 0,
+      "label": "synthetic experiments",
+      "aliases": [
+        "synthetic experiments"
+      ],
+      "types": [
+        "experimental design",
+        "experiments",
+        "research",
+        "research methodology",
+        "research method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Artificially designed and controlled tests or trials conducted to investigate hypotheses, test theories, or evaluate research methods.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "synthetic experiments",
+          "local_types": [
+            "experimental design",
+            "experiments",
+            "research",
+            "research methodology",
+            "research method"
+          ],
+          "iri": "Entity-synthetic_experiment-Mention-1"
+        }
+      ],
+      "relevance": 0.41650390625
+    },
+    "Entity-result": {
+      "node_id": "result",
+      "disambiguation_index": 0,
+      "label": "result",
+      "aliases": [
+        "result"
+      ],
+      "types": [
+        "finding"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A finding or outcome that provides evidence to support a theory, conclusion, or explanation.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "result",
+          "local_types": [
+            "finding"
+          ],
+          "iri": "Entity-result-Mention-1"
+        }
+      ],
+      "relevance": 0.40380859375
+    },
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "this paper",
+      "aliases": [
+        "this paper"
+      ],
+      "types": [
+        "document",
+        "paper"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The current research paper being discussed",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "this paper",
+          "local_types": [
+            "document",
+            "paper"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.400634765625
+    },
+    "Entity-feature_of_entity": {
+      "node_id": "feature_of_entity",
+      "disambiguation_index": 0,
+      "label": "features of entities",
+      "aliases": [
+        "features of entities"
+      ],
+      "types": [
+        "attribute",
+        "characteristics",
+        "property",
+        "attributes"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The inherent qualities or properties that define an entity",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "features of entities",
+          "local_types": [
+            "attribute",
+            "characteristics",
+            "property",
+            "attributes"
+          ],
+          "iri": "Entity-feature_of_entity-Mention-1"
+        }
+      ],
+      "relevance": 0.392333984375
+    },
+    "Entity-entity": {
+      "node_id": "entity",
+      "disambiguation_index": 0,
+      "label": "entities",
+      "aliases": [
+        "entities"
+      ],
+      "types": [
+        "variables",
+        "things",
+        "objects"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of distinct objects or variables that can be characterized by their properties and relationships.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "entities",
+          "local_types": [
+            "variables",
+            "things",
+            "objects"
+          ],
+          "iri": "Entity-entity-Mention-1"
+        }
+      ],
+      "relevance": 0.39208984375
+    },
+    "Entity-paper": {
+      "node_id": "paper",
+      "disambiguation_index": 0,
+      "label": "paper",
+      "aliases": [
+        "paper"
+      ],
+      "types": [
+        "document",
+        "publication"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A written or printed work that presents research findings, ideas, or information on a particular topic.",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "paper",
+          "local_types": [
+            "document",
+            "publication"
+          ],
+          "iri": "Entity-paper-Mention-1"
+        }
+      ],
+      "relevance": 0.388671875
+    },
+    "Entity-guarantee": {
+      "node_id": "guarantee",
+      "disambiguation_index": 0,
+      "label": "guarantee",
+      "aliases": [
+        "guarantee"
+      ],
+      "types": [
+        "promise",
+        "assurance"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A promise or assurance that something will happen or meet certain standards",
+      "mentions": [
+        {
+          "reference": "Paper-17-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "guarantee",
+          "local_types": [
+            "promise",
+            "assurance"
+          ],
+          "iri": "Entity-guarantee-Mention-1"
+        }
+      ],
+      "relevance": 0.320556640625
+    }
+  },
+  "summary": "The robust principal component analysis -LRB- robust PCA -RRB- problem has been considered in many machine learning applications , where the goal is to decompose the data matrix to a low rank part plus a sparse residual . While current approaches are developed by only considering the low rank plus sparse structure , in many applications , side information of row and/or column entities may also be given , and it is still unclear to what extent could such information help robust PCA . Thus , in this paper , we study the problem of robust PCA with side information , where both prior structure and features of entities are exploited for recovery . We propose a convex problem to incorporate side information in robust PCA and show that the low rank matrix can be exactly recovered via the proposed method under certain conditions . In particular , our guarantee suggests that a substantial amount of low rank matrices , which can not be recovered by standard robust PCA , become re-coverable by our proposed method . The result theoretically justifies the effectiveness of features in robust PCA . In addition , we conduct synthetic experiments as well as a real application on noisy image classification to show that our method also improves the performance in practice by exploiting side information .",
+  "triples": [
+    [
+      "Entity-robust_principal_component_analysis",
+      "Predicate-has_been_considered_in_many_machine_learning_applications",
+      "Entity-machine_learning_application"
+    ],
+    [
+      "Entity-robust_principal_component_analysis",
+      "Predicate-has_been_considered_in_many_machine_learning_applications",
+      "Entity-many_machine_learning_application"
+    ],
+    [
+      "Entity-current_approach",
+      "Predicate-are_developed_by_only_considering",
+      "Entity-low_rank_plus_sparse_structure"
+    ],
+    [
+      "Entity-many_application",
+      "Predicate-may_also_be_given",
+      "Entity-side_information_of_row_andor_column_entity"
+    ],
+    [
+      "Entity-current_approach_are_developed_by_only_considering_the_low_rank_plus_sparse_structure",
+      "Predicate-are_developed_by",
+      "Entity-low_rank_plus_sparse_structure"
+    ],
+    [
+      "Entity-side_information_of_row_andor_column_entity_may_also_be_given",
+      "Predicate-may_also_be_given",
+      "Entity-row_andor_column_entity"
+    ],
+    [
+      "Entity-we_study_the_problem_of_robust_pca_with_side_information__where_both_prior_structure_and_feature_of_entity_are_exploited_for_recovery",
+      "Predicate-study",
+      "Entity-problem_of_robust_pca_with_side_information"
+    ],
+    [
+      "Entity-we_propose",
+      "Predicate-propose",
+      "Entity-a_convex_problem_to_incorporate_side_information_in_robust_pca"
+    ],
+    [
+      "Entity-we_propose_a_convex_problem_to_incorporate_side_information_in_robust_pca_and_show_that_the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition",
+      "Predicate-propose",
+      "Entity-a_convex_problem_to_incorporate_side_information_in_robust_pca"
+    ],
+    [
+      "Entity-our_guarantee_suggests_that_a_substantial_amount_of_low_rank_matrix__which_can_not_be_recovered_by_standard_robust_pca__become_re-coverable_by_our_proposed_method",
+      "Predicate-suggests_that_a_substantial_amount_of",
+      "Entity-low_rank_matrix"
+    ],
+    [
+      "Entity-standard_robust_pca",
+      "Predicate-cannot_recover_by",
+      "Entity-a_substantial_amount_of_low_rank_matrix"
+    ],
+    [
+      "Entity-our_proposed_method",
+      "Predicate-become_re-coverable_by",
+      "Entity-low_rank_matrix"
+    ],
+    [
+      "Entity-the_result",
+      "Predicate-justifies",
+      "Entity-the_effectiveness_of_feature_in_robust_pca"
+    ],
+    [
+      "Entity-the_result_theoretically_justifies_the_effectiveness_of_feature_in_robust_pca",
+      "Predicate-justifies",
+      "Entity-the_effectiveness_of_feature_in_robust_pca"
+    ],
+    [
+      "Entity-our_method",
+      "Predicate-show_that",
+      "Entity-we_propose"
+    ],
+    [
+      "Entity-our_method",
+      "Predicate-propose",
+      "Entity-we_study_the_problem_of_robust_pca_with_side_information__where_both_prior_structure_and_feature_of_entity_are_exploited_for_recovery"
+    ],
+    [
+      "Entity-the_robust_principal_component_analysis_-lrb-_robust_pca_-rrb-_problem",
+      "Predicate-study",
+      "Entity-our_method"
+    ],
+    [
+      "Entity-our_method",
+      "Predicate-propose",
+      "Entity-the_robust_principal_component_analysis_-lrb-_robust_pca_-rrb-_problem"
+    ],
+    [
+      "Entity-we_propose_a_convex_problem_to_incorporate_side_information_in_robust_pca_and_show_that_the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition",
+      "Predicate-propose",
+      "Entity-our_method"
+    ],
+    [
+      "Entity-we_propose",
+      "Predicate-in_this_paper_we_propose",
+      "Entity-we_study_the_problem_of_robust_pca_with_side_information__where_both_prior_structure_and_feature_of_entity_are_exploited_for_recovery"
+    ],
+    [
+      "Entity-we_propose",
+      "Predicate-show_that",
+      "Entity-we_propose_a_convex_problem_to_incorporate_side_information_in_robust_pca_and_show_that_the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition"
+    ],
+    [
+      "Entity-we_propose",
+      "Predicate-study",
+      "Entity-the_robust_principal_component_analysis_-lrb-_robust_pca_-rrb-_problem"
+    ],
+    [
+      "Entity-we_study_the_problem_of_robust_pca_with_side_information__where_both_prior_structure_and_feature_of_entity_are_exploited_for_recovery",
+      "Predicate-study",
+      "Entity-the_robust_principal_component_analysis_-lrb-_robust_pca_-rrb-_problem"
+    ],
+    [
+      "Entity-the_robust_principal_component_analysis_-lrb-_robust_pca_-rrb-_problem",
+      "Predicate-propose",
+      "Entity-we_propose_a_convex_problem_to_incorporate_side_information_in_robust_pca_and_show_that_the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition"
+    ],
+    [
+      "Entity-we_study_the_problem_of_robust_pca_with_side_information__where_both_prior_structure_and_feature_of_entity_are_exploited_for_recovery",
+      "Predicate-propose",
+      "Entity-we_propose_a_convex_problem_to_incorporate_side_information_in_robust_pca_and_show_that_the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-our_guarantee_suggests_that_a_substantial_amount_of_low_rank_matrix__which_can_not_be_recovered_by_standard_robust_pca__become_re-coverable_by_our_proposed_method",
+      "skos:broader",
+      "Entity-guarantee"
+    ],
+    [
+      "Entity-standard_robust_pca",
+      "skos:broader",
+      "Entity-our_proposed_method"
+    ],
+    [
+      "Entity-feature_of_entity",
+      "skos:broader",
+      "Entity-entity"
+    ],
+    [
+      "Entity-robust_principal_component_analysis",
+      "skos:broader",
+      "Entity-our_proposed_method"
+    ],
+    [
+      "Entity-noisy_image_classification",
+      "skos:broader",
+      "Entity-machine_learning_application"
+    ],
+    [
+      "Entity-this_paper",
+      "skos:broader",
+      "Entity-paper"
+    ],
+    [
+      "Entity-the_result_theoretically_justifies_the_effectiveness_of_feature_in_robust_pca",
+      "skos:broader",
+      "Entity-result"
+    ],
+    [
+      "Entity-the_low_rank_matrix_can_be_exactly_recovered_via_the_proposed_method_under_certain_condition",
+      "skos:broader",
+      "Entity-result"
+    ],
+    [
+      "Entity-the_effectiveness_of_feature_in_robust_pca",
+      "skos:broader",
+      "Entity-pca"
+    ],
+    [
+      "Entity-our_method",
+      "skos:broader",
+      "Entity-our_proposed_method"
+    ],
+    [
+      "Entity-prior_structure",
+      "skos:broader",
+      "Entity-entity"
+    ],
+    [
+      "Entity-thus",
+      "skos:broader",
+      "Entity-paper"
+    ]
+  ],
+  "predicates": {
+    "Predicate-has_been_considered_in_many_machine_learning_applications": {
+      "label": "has been considered in many machine learning applications",
+      "description": "This predicate indicates that a concept or technique (subject) has been explored and utilized as part of various approaches or methods within the field of machine learning (object), suggesting its relevance, importance, and potential applicability in different contexts.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_developed_by_only_considering": {
+      "label": "are developed by only considering",
+      "description": "This predicate indicates that a concept or approach (subject) has been created or formed solely based on consideration of specific factors or aspects (object), without taking into account other variables, influences, or perspectives. The subject's development is directly attributed to the object, implying a deliberate and intentional focus.",
+      "disambiguation_index": 0
+    },
+    "Predicate-may_also_be_given": {
+      "label": "may also be given",
+      "description": "Indicates that an additional piece of information or context can be provided to supplement or clarify the subject. This predicate suggests a relationship where the object provides supplementary details, insights, or perspectives that enhance our understanding of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_developed_by": {
+      "label": "are developed by",
+      "description": "Indicates that a concept or method (subject) has been created or produced through a specific process or approach (object), highlighting the agency and responsibility behind its development.",
+      "disambiguation_index": 0
+    },
+    "Predicate-study": {
+      "label": "study",
+      "description": "To engage in a systematic investigation or examination of the object, often involving critical analysis, interpretation, and/or experimentation to gain understanding, insight, or knowledge.",
+      "disambiguation_index": 0
+    },
+    "Predicate-propose": {
+      "label": "propose",
+      "description": "To suggest or put forward an idea, plan, or proposal for consideration and potential implementation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-suggests_that_a_substantial_amount_of": {
+      "label": "suggests that a substantial amount of",
+      "description": "The predicate 'suggests that a substantial amount of' indicates a relationship between the subject and object where the subject implies or proposes that there exists a significant quantity of something described by the object. This suggests a connection between the subject's guarantee or promise and the existence or potential for a large number of instances matching the description in the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-cannot_recover_by": {
+      "label": "cannot recover by",
+      "description": "The predicate 'cannot recover by' indicates that there exists an obstacle or limitation that prevents the subject from achieving a certain level of recovery, restoration, or improvement with respect to the object. In general, it suggests that the subject's ability to recover or improve is hindered or blocked in some way due to the presence of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-become_re-coverable_by": {
+      "label": "become re-coverable by",
+      "description": "The predicate 'become re-coverable by' indicates a transformation or improvement process where something (the subject) gains the ability to be recovered or restored through some means or mechanism (the object). This relationship suggests that the subject's recoverability was previously compromised, but is now enhanced or restored due to the influence of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-justifies": {
+      "label": "justifies",
+      "description": "To justify means to provide a logical or rational explanation for something's existence, validity, or correctness. In this sense, it connects the subject (the result) with the object (the effectiveness of features in robust PCA), indicating that the outcome or consequence of some process is logically sound and supports the value or importance of those features.",
+      "disambiguation_index": 0
+    },
+    "Predicate-show_that": {
+      "label": "show that",
+      "description": "To demonstrate or prove something through evidence, argumentation, or demonstration. The predicate 'show that' indicates a connection between the subject (the method or approach used to demonstrate) and the object (what is being demonstrated), implying a sense of validation, confirmation, or justification.",
+      "disambiguation_index": 0
+    },
+    "Predicate-in_this_paper_we_propose": {
+      "label": "in this paper, we propose",
+      "description": "This predicate indicates that a new idea or approach will be presented in this paper. It serves as an introduction to the main contribution, connecting the subject (the authors) with their proposed solution or methodology.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' indicates that the subject concept or idea encompasses or includes the object as a more general category. It suggests a hierarchical relationship between the two, where the subject represents a higher-level abstraction and the object represents a specific instance or subcategory within it.",
+      "disambiguation_index": 0
+    }
+  }
+}

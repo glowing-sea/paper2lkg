@@ -1,0 +1,1135 @@
+{
+  "iri": "Paper-77",
+  "title": "NIPS_2015_18_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-77-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-77-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-1",
+              "text": "Many practical modeling problems involve discrete data that are best represented as draws from multinomial or categorical distributions ."
+            },
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+              "text": "For example , nucleotides in a DNA sequence , children 's names in a given state and year , and text documents are all commonly modeled with multinomial distributions ."
+            },
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+              "text": "In all of these cases , we expect some form of dependency between the draws : the nucleotide at one position in the DNA strand may depend on the preceding nucleotides , children 's names are highly correlated from year to year , and topics in text may be correlated and dynamic ."
+            },
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-4",
+              "text": "These dependencies are not naturally captured by the typical Dirichlet-multinomial formulation ."
+            },
+            {
+              "iri": "Paper-77-Section-1-Paragraph-1-Sentence-5",
+              "text": "Here , we leverage a logistic stick-breaking representation and recent innovations in P\u00f3lya-gamma augmentation to reformu-late the multinomial distribution in terms of latent variables with jointly Gaussian likelihoods , enabling us to take advantage of a host of Bayesian inference techniques for Gaussian models with minimal overhead ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00023365020751953125,
+    15.527717351913452,
+    25.410383462905884,
+    25.21833300590515,
+    0.03167223930358887,
+    9.369850158691406e-05,
+    0.00012040138244628906,
+    38.47535991668701,
+    59.37630319595337,
+    1.6291980743408203,
+    1.1960172653198242,
+    0.010339498519897461,
+    0.00022411346435546875,
+    32.029897928237915,
+    4.107489824295044,
+    0.02592921257019043,
+    1.1070599555969238,
+    3.5035483837127686,
+    8.617731809616089,
+    11.311850547790527,
+    45.37518620491028,
+    3.441284656524658,
+    16.075244426727295,
+    0.972987174987793,
+    0.0006132125854492188,
+    0.012143850326538086
+  ],
+  "nodes": {
+    "Entity-nucleotide_at_one_position_in_the_dna_strand_may_depend_on_the_preceding_nucleotide__child_s_name_are_highly_correlated_from_year_to_year__and_topic_in_text_may_be_correlated_and_dynamic": {
+      "node_id": "nucleotide_at_one_position_in_the_dna_strand_may_depend_on_the_preceding_nucleotide__child_s_name_are_highly_correlated_from_year_to_year__and_topic_in_text_may_be_correlated_and_dynamic",
+      "disambiguation_index": 0,
+      "label": "nucleotide at one position in the DNA strand may depend on the preceding nucleotides, children's names are highly correlated from year to year, and topics in text may be correlated and dynamic",
+      "aliases": [
+        "nucleotide at one position in the DNA strand may depend on the preceding nucleotides, children's names are highly correlated from year to year, and topics in text may be correlated and dynamic"
+      ],
+      "types": [
+        "correlation",
+        "dependence"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The concept of correlation or dependence between discrete data draws, including nucleotides in DNA sequences, children's names over time, and topics in text.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "nucleotide at one position in the DNA strand may depend on the preceding nucleotides, children's names are highly correlated from year to year, and topics in text may be correlated and dynamic",
+          "local_types": [
+            "correlation",
+            "dependence"
+          ],
+          "iri": "Entity-nucleotide_at_one_position_in_the_dna_strand_may_depend_on_the_preceding_nucleotide__child_s_name_are_highly_correlated_from_year_to_year__and_topic_in_text_may_be_correlated_and_dynamic-Mention-1"
+        }
+      ],
+      "relevance": 0.7177734375
+    },
+    "Entity-logistic_stick-breaking_representation": {
+      "node_id": "logistic_stick-breaking_representation",
+      "disambiguation_index": 0,
+      "label": "logistic stick-breaking representation",
+      "aliases": [
+        "logistic stick-breaking representation"
+      ],
+      "types": [
+        "mathematical concept",
+        "representation",
+        "mathematical technique",
+        "statistical model",
+        "algorithmic innovation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A mathematical technique used to reformulate the multinomial distribution in terms of latent variables with jointly Gaussian likelihoods, enabling Bayesian inference techniques for Gaussian models.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "logistic stick-breaking representation",
+          "local_types": [
+            "mathematical concept",
+            "representation",
+            "mathematical technique",
+            "statistical model",
+            "algorithmic innovation"
+          ],
+          "iri": "Entity-logistic_stick-breaking_representation-Mention-1"
+        }
+      ],
+      "relevance": 0.6953125
+    },
+    "Entity-these_dependency": {
+      "node_id": "these_dependency",
+      "disambiguation_index": 0,
+      "label": "These dependencies",
+      "aliases": [
+        "These dependencies"
+      ],
+      "types": [
+        "dependencies"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The relationships or correlations between draws from multinomial or categorical distributions, such as nucleotides in a DNA sequence or topics in text documents.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "These dependencies",
+          "local_types": [
+            "dependencies"
+          ],
+          "iri": "Entity-these_dependency-Mention-1"
+        }
+      ],
+      "relevance": 0.68701171875
+    },
+    "Entity-plya-gamma_augmentation": {
+      "node_id": "plya-gamma_augmentation",
+      "disambiguation_index": 0,
+      "label": "P\u00f3lya-gamma augmentation",
+      "aliases": [
+        "P\u00f3lya-gamma augmentation"
+      ],
+      "types": [
+        "augmentation",
+        "augmentation method",
+        "mathematical technique",
+        "algorithmic technique",
+        "data processing method",
+        "algorithmic innovation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A mathematical technique or algorithmic innovation used to reformulate the multinomial distribution in terms of latent variables with jointly Gaussian likelihoods, enabling Bayesian inference techniques for Gaussian models.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "P\u00f3lya-gamma augmentation",
+          "local_types": [
+            "augmentation",
+            "augmentation method",
+            "mathematical technique",
+            "algorithmic technique",
+            "data processing method",
+            "algorithmic innovation"
+          ],
+          "iri": "Entity-plya-gamma_augmentation-Mention-1"
+        }
+      ],
+      "relevance": 0.677734375
+    },
+    "Entity-discrete_data_that_are_best_represented_a_draw_from_multinomial_or_categorical_distribution": {
+      "node_id": "discrete_data_that_are_best_represented_a_draw_from_multinomial_or_categorical_distribution",
+      "disambiguation_index": 0,
+      "label": "discrete data that are best represented as draws from multinomial or categorical distributions",
+      "aliases": [
+        "discrete data that are best represented as draws from multinomial or categorical distributions"
+      ],
+      "types": [
+        "data",
+        "distribution"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Discrete data that can be modeled using multinomial or categorical distributions, where each observation is a draw from one of these distributions.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "discrete data that are best represented as draws from multinomial or categorical distributions",
+          "local_types": [
+            "data",
+            "distribution"
+          ],
+          "iri": "Entity-discrete_data_that_are_best_represented_a_draw_from_multinomial_or_categorical_distribution-Mention-1"
+        }
+      ],
+      "relevance": 0.673828125
+    },
+    "Entity-these_dependency_are_not_naturally_captured_by_the_typical_dirichlet-multinomial_formulation": {
+      "node_id": "these_dependency_are_not_naturally_captured_by_the_typical_dirichlet-multinomial_formulation",
+      "disambiguation_index": 0,
+      "label": "these dependencies are not naturally captured by the typical Dirichlet-multinomial formulation",
+      "aliases": [
+        "these dependencies are not naturally captured by the typical Dirichlet-multinomial formulation"
+      ],
+      "types": [
+        "formulation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The traditional way of modeling multinomial distributions using the Dirichlet-Dirichlet multivariate distribution.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "these dependencies are not naturally captured by the typical Dirichlet-multinomial formulation",
+          "local_types": [
+            "formulation"
+          ],
+          "iri": "Entity-these_dependency_are_not_naturally_captured_by_the_typical_dirichlet-multinomial_formulation-Mention-1"
+        }
+      ],
+      "relevance": 0.65771484375
+    },
+    "Entity-we_expect_some_form_of_dependency_between_the_draw": {
+      "node_id": "we_expect_some_form_of_dependency_between_the_draw",
+      "disambiguation_index": 0,
+      "label": "we expect some form of dependency between the draws",
+      "aliases": [
+        "we expect some form of dependency between the draws"
+      ],
+      "types": [
+        "expectation",
+        "dependency"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The concept of dependency between draws refers to the idea that discrete data points (e.g., nucleotides, children's names, or topics in text) are not independent but rather exhibit correlations and dependencies with each other.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "we expect some form of dependency between the draws",
+          "local_types": [
+            "expectation",
+            "dependency"
+          ],
+          "iri": "Entity-we_expect_some_form_of_dependency_between_the_draw-Mention-1"
+        }
+      ],
+      "relevance": 0.6572265625
+    },
+    "Entity-practical_modeling_problem": {
+      "node_id": "practical_modeling_problem",
+      "disambiguation_index": 0,
+      "label": "practical modeling problems",
+      "aliases": [
+        "practical modeling problems",
+        "Many practical modeling problems"
+      ],
+      "types": [
+        "modeling",
+        "problem",
+        "research topic",
+        "academic discipline",
+        "problem statement"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Practical issues arising when attempting to model real-world phenomena using multinomial or categorical distributions, often involving dependencies between discrete data.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "practical modeling problems",
+          "local_types": [
+            "academic discipline",
+            "research topic",
+            "problem statement"
+          ],
+          "iri": "Entity-practical_modeling_problem-Mention-1"
+        },
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Many practical modeling problems",
+          "local_types": [
+            "problem",
+            "modeling"
+          ],
+          "iri": "Entity-practical_modeling_problem-Mention-2"
+        }
+      ],
+      "relevance": 0.65234375
+    },
+    "Entity-the_typical_dirichlet-multinomial_formulation": {
+      "node_id": "the_typical_dirichlet-multinomial_formulation",
+      "disambiguation_index": 0,
+      "label": "the typical Dirichlet-multinomial formulation",
+      "aliases": [
+        "the typical Dirichlet-multinomial formulation"
+      ],
+      "types": [
+        "formulation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A statistical model that represents discrete data as draws from a multinomial distribution, but does not capture dependencies between these draws.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the typical Dirichlet-multinomial formulation",
+          "local_types": [
+            "formulation"
+          ],
+          "iri": "Entity-the_typical_dirichlet-multinomial_formulation-Mention-1"
+        }
+      ],
+      "relevance": 0.6494140625
+    },
+    "Entity-in_all_of_these_case": {
+      "node_id": "in_all_of_these_case",
+      "disambiguation_index": 0,
+      "label": "In all of these cases",
+      "aliases": [
+        "In all of these cases"
+      ],
+      "types": [
+        "statement"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Practical modeling problems involving discrete data that can be represented as draws from multinomial or categorical distributions.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "In all of these cases",
+          "local_types": [
+            "statement"
+          ],
+          "iri": "Entity-in_all_of_these_case-Mention-1"
+        }
+      ],
+      "relevance": 0.64892578125
+    },
+    "Entity-dirichlet-multinomial_formulation": {
+      "node_id": "dirichlet-multinomial_formulation",
+      "disambiguation_index": 0,
+      "label": "Dirichlet-multinomial formulation",
+      "aliases": [
+        "Dirichlet-multinomial formulation"
+      ],
+      "types": [
+        "mathematical concept",
+        "statistical model",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A statistical model that combines elements of the Dirichlet distribution and the multinomial distribution to analyze categorical data.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Dirichlet-multinomial formulation",
+          "local_types": [
+            "mathematical concept",
+            "statistical model",
+            "model"
+          ],
+          "iri": "Entity-dirichlet-multinomial_formulation-Mention-1"
+        }
+      ],
+      "relevance": 0.62939453125
+    },
+    "Entity-nucleotide_in_a_dna_sequence__child_s_name_in_a_given_state_and_year__and_text_document": {
+      "node_id": "nucleotide_in_a_dna_sequence__child_s_name_in_a_given_state_and_year__and_text_document",
+      "disambiguation_index": 0,
+      "label": "nucleotides in a DNA sequence, children's names in a given state and year, and text documents",
+      "aliases": [
+        "nucleotides in a DNA sequence, children's names in a given state and year, and text documents"
+      ],
+      "types": [
+        "sequence",
+        "name",
+        "document"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A collection of discrete data types including DNA sequence nucleotides, children's names in a specific state and year, and text documents.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "nucleotides in a DNA sequence, children's names in a given state and year, and text documents",
+          "local_types": [
+            "sequence",
+            "name",
+            "document"
+          ],
+          "iri": "Entity-nucleotide_in_a_dna_sequence__child_s_name_in_a_given_state_and_year__and_text_document-Mention-1"
+        }
+      ],
+      "relevance": 0.62646484375
+    },
+    "Entity-multinomial_or_categorical_distribution": {
+      "node_id": "multinomial_or_categorical_distribution",
+      "disambiguation_index": 0,
+      "label": "multinomial or categorical distributions",
+      "aliases": [
+        "multinomial or categorical distributions",
+        "multinomial distribution",
+        "multinomial distributions"
+      ],
+      "types": [
+        "mathematical concept",
+        "statistical distribution",
+        "distribution",
+        "statistical model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of statistical distribution used to model count data with a fixed number of categories.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "multinomial or categorical distributions",
+          "local_types": [
+            "mathematical concept",
+            "statistical distribution",
+            "statistical model"
+          ],
+          "iri": "Entity-multinomial_or_categorical_distribution-Mention-1"
+        },
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "multinomial distributions",
+          "local_types": [
+            "distribution"
+          ],
+          "iri": "Entity-multinomial_or_categorical_distribution-Mention-2"
+        },
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "multinomial distribution",
+          "local_types": [
+            "mathematical concept",
+            "statistical model",
+            "distribution"
+          ],
+          "iri": "Entity-multinomial_or_categorical_distribution-Mention-3"
+        }
+      ],
+      "relevance": 0.60791015625
+    },
+    "Entity-the_draw": {
+      "node_id": "the_draw",
+      "disambiguation_index": 0,
+      "label": "the draws",
+      "aliases": [
+        "the draws"
+      ],
+      "types": [
+        "draws"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Discrete data samples drawn from multinomial or categorical distributions",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the draws",
+          "local_types": [
+            "draws"
+          ],
+          "iri": "Entity-the_draw-Mention-1"
+        }
+      ],
+      "relevance": 0.603515625
+    },
+    "Entity-latent_variable_with_jointly_gaussian_likelihood": {
+      "node_id": "latent_variable_with_jointly_gaussian_likelihood",
+      "disambiguation_index": 0,
+      "label": "latent variables with jointly Gaussian likelihoods",
+      "aliases": [
+        "latent variables with jointly Gaussian likelihoods"
+      ],
+      "types": [
+        "mathematical model",
+        "statistical concept",
+        "variables",
+        "likelihoods"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of statistical variables whose values are modeled as draws from jointly distributed multivariate normal distributions.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "latent variables with jointly Gaussian likelihoods",
+          "local_types": [
+            "mathematical model",
+            "statistical concept",
+            "variables",
+            "likelihoods"
+          ],
+          "iri": "Entity-latent_variable_with_jointly_gaussian_likelihood-Mention-1"
+        }
+      ],
+      "relevance": 0.595703125
+    },
+    "Entity-gaussian_likelihood": {
+      "node_id": "gaussian_likelihood",
+      "disambiguation_index": 0,
+      "label": "Gaussian likelihoods",
+      "aliases": [
+        "Gaussian likelihoods"
+      ],
+      "types": [
+        "mathematical concept",
+        "statistical model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A statistical model that uses probability distributions based on the normal distribution (Gaussian) to describe uncertainty or variability.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Gaussian likelihoods",
+          "local_types": [
+            "mathematical concept",
+            "statistical model"
+          ],
+          "iri": "Entity-gaussian_likelihood-Mention-1"
+        }
+      ],
+      "relevance": 0.59228515625
+    },
+    "Entity-bayesian_inference_technique_for_gaussian_model": {
+      "node_id": "bayesian_inference_technique_for_gaussian_model",
+      "disambiguation_index": 0,
+      "label": "Bayesian inference techniques for Gaussian models",
+      "aliases": [
+        "Bayesian inference techniques for Gaussian models"
+      ],
+      "types": [
+        "techniques",
+        "models"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A set of statistical methods used to make inferences about parameters or latent variables in probabilistic models that assume jointly Gaussian distributions.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Bayesian inference techniques for Gaussian models",
+          "local_types": [
+            "techniques",
+            "models"
+          ],
+          "iri": "Entity-bayesian_inference_technique_for_gaussian_model-Mention-1"
+        }
+      ],
+      "relevance": 0.57861328125
+    },
+    "Entity-the_nucleotide_at_one_position_in_the_dna_strand_may_depend_on_the_preceding_nucleotide": {
+      "node_id": "the_nucleotide_at_one_position_in_the_dna_strand_may_depend_on_the_preceding_nucleotide",
+      "disambiguation_index": 0,
+      "label": "the nucleotide at one position in the DNA strand may depend on the preceding nucleotides",
+      "aliases": [
+        "the nucleotide at one position in the DNA strand may depend on the preceding nucleotides"
+      ],
+      "types": [
+        "biological process",
+        "dependence"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The concept of dependence between adjacent nucleotides in a DNA strand.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the nucleotide at one position in the DNA strand may depend on the preceding nucleotides",
+          "local_types": [
+            "biological process",
+            "dependence"
+          ],
+          "iri": "Entity-the_nucleotide_at_one_position_in_the_dna_strand_may_depend_on_the_preceding_nucleotide-Mention-1"
+        }
+      ],
+      "relevance": 0.57177734375
+    },
+    "Entity-child_s_name_are_highly_correlated_from_year_to_year": {
+      "node_id": "child_s_name_are_highly_correlated_from_year_to_year",
+      "disambiguation_index": 0,
+      "label": "children's names are highly correlated from year to year",
+      "aliases": [
+        "children's names are highly correlated from year to year"
+      ],
+      "types": [
+        "statistical concept",
+        "correlation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The phenomenon of children's given names showing a strong statistical correlation between consecutive years.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "children's names are highly correlated from year to year",
+          "local_types": [
+            "statistical concept",
+            "correlation"
+          ],
+          "iri": "Entity-child_s_name_are_highly_correlated_from_year_to_year-Mention-1"
+        }
+      ],
+      "relevance": 0.5673828125
+    },
+    "Entity-child_s_name": {
+      "node_id": "child_s_name",
+      "disambiguation_index": 0,
+      "label": "children's names",
+      "aliases": [
+        "children's names"
+      ],
+      "types": [
+        "personal identifier",
+        "data",
+        "demographic variable",
+        "concept",
+        "name",
+        "demographic data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of unique identifiers assigned to individuals under the age of majority",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "children's names",
+          "local_types": [
+            "personal identifier",
+            "data",
+            "demographic variable",
+            "concept",
+            "name"
+          ],
+          "iri": "Entity-child_s_name-Mention-1"
+        },
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "children's names",
+          "local_types": [
+            "personal identifier",
+            "demographic data"
+          ],
+          "iri": "Entity-child_s_name-Mention-2"
+        }
+      ],
+      "relevance": 0.541015625
+    },
+    "Entity-child_s_name_in_a_given_state_and_year": {
+      "node_id": "child_s_name_in_a_given_state_and_year",
+      "disambiguation_index": 0,
+      "label": "children's names in a given state and year",
+      "aliases": [
+        "children's names in a given state and year"
+      ],
+      "types": [
+        "demographic data",
+        "social phenomenon"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of given names assigned to minors within a specific geographic region during a particular time period.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "children's names in a given state and year",
+          "local_types": [
+            "demographic data",
+            "social phenomenon"
+          ],
+          "iri": "Entity-child_s_name_in_a_given_state_and_year-Mention-1"
+        }
+      ],
+      "relevance": 0.5302734375
+    },
+    "Entity-dna_sequence": {
+      "node_id": "dna_sequence",
+      "disambiguation_index": 0,
+      "label": "DNA sequence",
+      "aliases": [
+        "DNA sequence"
+      ],
+      "types": [
+        "data",
+        "biological concept",
+        "sequence",
+        "sequence data",
+        "genetic information"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A series of nucleotides that make up an organism's genetic material.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "DNA sequence",
+          "local_types": [
+            "data",
+            "biological concept",
+            "sequence",
+            "sequence data",
+            "genetic information"
+          ],
+          "iri": "Entity-dna_sequence-Mention-1"
+        }
+      ],
+      "relevance": 0.513671875
+    },
+    "Entity-nucleotide_in_a_dna_sequence": {
+      "node_id": "nucleotide_in_a_dna_sequence",
+      "disambiguation_index": 0,
+      "label": "nucleotides in a DNA sequence",
+      "aliases": [
+        "nucleotides in a DNA sequence"
+      ],
+      "types": [
+        "genetic information",
+        "biological entity"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The building blocks of genetic information that make up a DNA sequence.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "nucleotides in a DNA sequence",
+          "local_types": [
+            "genetic information",
+            "biological entity"
+          ],
+          "iri": "Entity-nucleotide_in_a_dna_sequence-Mention-1"
+        }
+      ],
+      "relevance": 0.509765625
+    },
+    "Entity-dna_strand": {
+      "node_id": "dna_strand",
+      "disambiguation_index": 0,
+      "label": "DNA strand",
+      "aliases": [
+        "DNA strand"
+      ],
+      "types": [
+        "molecular structure",
+        "genetic material"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A linear sequence of nucleotide bases that make up the fundamental unit of genetic information.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "DNA strand",
+          "local_types": [
+            "molecular structure",
+            "genetic material"
+          ],
+          "iri": "Entity-dna_strand-Mention-1"
+        }
+      ],
+      "relevance": 0.50146484375
+    },
+    "Entity-and_topic_in_text_may_be_correlated_and_dynamic": {
+      "node_id": "and_topic_in_text_may_be_correlated_and_dynamic",
+      "disambiguation_index": 0,
+      "label": "and topics in text may be correlated and dynamic",
+      "aliases": [
+        "and topics in text may be correlated and dynamic"
+      ],
+      "types": [
+        "text analysis",
+        "correlation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The concept of correlation between topics in a text corpus, where the relationships between topics can change over time.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "and topics in text may be correlated and dynamic",
+          "local_types": [
+            "text analysis",
+            "correlation"
+          ],
+          "iri": "Entity-and_topic_in_text_may_be_correlated_and_dynamic-Mention-1"
+        }
+      ],
+      "relevance": 0.499267578125
+    },
+    "Entity-latent_variable": {
+      "node_id": "latent_variable",
+      "disambiguation_index": 0,
+      "label": "latent variables",
+      "aliases": [
+        "latent variables"
+      ],
+      "types": [
+        "mathematical construct",
+        "computational entity"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Unobserved statistical factors that influence the behavior or outcomes of a system.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "latent variables",
+          "local_types": [
+            "mathematical construct",
+            "computational entity"
+          ],
+          "iri": "Entity-latent_variable-Mention-1"
+        }
+      ],
+      "relevance": 0.49267578125
+    },
+    "Entity-nucleotide": {
+      "node_id": "nucleotide",
+      "disambiguation_index": 0,
+      "label": "nucleotides",
+      "aliases": [
+        "nucleotide",
+        "nucleotides"
+      ],
+      "types": [
+        "biological molecule",
+        "biological entity"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of biological molecule that forms the building blocks of DNA or RNA.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "nucleotides",
+          "local_types": [
+            "biological molecule",
+            "biological entity"
+          ],
+          "iri": "Entity-nucleotide-Mention-1"
+        },
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "nucleotide",
+          "local_types": [
+            "biological molecule"
+          ],
+          "iri": "Entity-nucleotide-Mention-2"
+        }
+      ],
+      "relevance": 0.475830078125
+    },
+    "Entity-dependency": {
+      "node_id": "dependency",
+      "disambiguation_index": 0,
+      "label": "dependencies",
+      "aliases": [
+        "dependencies"
+      ],
+      "types": [
+        "concept",
+        "relationship"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of relationships or connections between entities",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "dependencies",
+          "local_types": [
+            "concept",
+            "relationship"
+          ],
+          "iri": "Entity-dependency-Mention-1"
+        }
+      ],
+      "relevance": 0.455810546875
+    },
+    "Entity-text_document": {
+      "node_id": "text_document",
+      "disambiguation_index": 0,
+      "label": "text documents",
+      "aliases": [
+        "text documents"
+      ],
+      "types": [
+        "written work",
+        "data",
+        "information storage",
+        "written communication",
+        "concept",
+        "document",
+        "information content"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Written or printed materials containing information",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "text documents",
+          "local_types": [
+            "written work",
+            "data",
+            "information storage",
+            "written communication",
+            "concept",
+            "document",
+            "information content"
+          ],
+          "iri": "Entity-text_document-Mention-1"
+        }
+      ],
+      "relevance": 0.4365234375
+    },
+    "Entity-topic_in_text": {
+      "node_id": "topic_in_text",
+      "disambiguation_index": 0,
+      "label": "topics in text",
+      "aliases": [
+        "topics in text"
+      ],
+      "types": [
+        "information concept",
+        "textual content"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of themes or subjects discussed within a written work",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "topics in text",
+          "local_types": [
+            "information concept",
+            "textual content"
+          ],
+          "iri": "Entity-topic_in_text-Mention-1"
+        }
+      ],
+      "relevance": 0.42724609375
+    },
+    "Entity-a_given_state_and_year": {
+      "node_id": "a_given_state_and_year",
+      "disambiguation_index": 0,
+      "label": "a given state and year",
+      "aliases": [
+        "a given state and year"
+      ],
+      "types": [
+        "location",
+        "time period"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A specific geographic location (state) along with its corresponding year.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "a given state and year",
+          "local_types": [
+            "location",
+            "time period"
+          ],
+          "iri": "Entity-a_given_state_and_year-Mention-1"
+        }
+      ],
+      "relevance": 0.421630859375
+    },
+    "Entity-state_and_year": {
+      "node_id": "state_and_year",
+      "disambiguation_index": 0,
+      "label": "state and year",
+      "aliases": [
+        "state and year"
+      ],
+      "types": [
+        "geopolitical entity",
+        "time period"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A specific geographic area at a particular point in time.",
+      "mentions": [
+        {
+          "reference": "Paper-77-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "state and year",
+          "local_types": [
+            "geopolitical entity",
+            "time period"
+          ],
+          "iri": "Entity-state_and_year-Mention-1"
+        }
+      ],
+      "relevance": 0.416015625
+    }
+  },
+  "summary": "Many practical modeling problems involve discrete data that are best represented as draws from multinomial or categorical distributions . For example , nucleotides in a DNA sequence , children 's names in a given state and year , and text documents are all commonly modeled with multinomial distributions . In all of these cases , we expect some form of dependency between the draws : the nucleotide at one position in the DNA strand may depend on the preceding nucleotides , children 's names are highly correlated from year to year , and topics in text may be correlated and dynamic . These dependencies are not naturally captured by the typical Dirichlet-multinomial formulation . Here , we leverage a logistic stick-breaking representation and recent innovations in P\u00f3lya-gamma augmentation to reformu-late the multinomial distribution in terms of latent variables with jointly Gaussian likelihoods , enabling us to take advantage of a host of Bayesian inference techniques for Gaussian models with minimal overhead .",
+  "triples": [
+    [
+      "Entity-practical_modeling_problem",
+      "Predicate-involve",
+      "Entity-discrete_data_that_are_best_represented_a_draw_from_multinomial_or_categorical_distribution"
+    ],
+    [
+      "Entity-multinomial_or_categorical_distribution",
+      "Predicate-represent",
+      "Entity-discrete_data_that_are_best_represented_a_draw_from_multinomial_or_categorical_distribution"
+    ],
+    [
+      "Entity-nucleotide",
+      "Predicate-modeled_with",
+      "Entity-multinomial_or_categorical_distribution"
+    ],
+    [
+      "Entity-child_s_name",
+      "Predicate-modeled_with",
+      "Entity-multinomial_or_categorical_distribution"
+    ],
+    [
+      "Entity-text_document",
+      "Predicate-modeled_with",
+      "Entity-multinomial_or_categorical_distribution"
+    ],
+    [
+      "Entity-logistic_stick-breaking_representation",
+      "Predicate-leverage",
+      "Entity-plya-gamma_augmentation"
+    ],
+    [
+      "Entity-multinomial_or_categorical_distribution",
+      "Predicate-reformulate",
+      "Entity-latent_variable_with_jointly_gaussian_likelihood"
+    ],
+    [
+      "Entity-these_dependency",
+      "Predicate-are",
+      "Entity-nucleotide_at_one_position_in_the_dna_strand_may_depend_on_the_preceding_nucleotide__child_s_name_are_highly_correlated_from_year_to_year__and_topic_in_text_may_be_correlated_and_dynamic"
+    ],
+    [
+      "Entity-logistic_stick-breaking_representation",
+      "Predicate-enable",
+      "Entity-nucleotide_at_one_position_in_the_dna_strand_may_depend_on_the_preceding_nucleotide__child_s_name_are_highly_correlated_from_year_to_year__and_topic_in_text_may_be_correlated_and_dynamic"
+    ],
+    [
+      "Entity-these_dependency",
+      "Predicate-enable",
+      "Entity-logistic_stick-breaking_representation"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-these_dependency",
+      "skos:broader",
+      "Entity-dependency"
+    ],
+    [
+      "Entity-nucleotide_in_a_dna_sequence__child_s_name_in_a_given_state_and_year__and_text_document",
+      "skos:broader",
+      "Entity-text_document"
+    ],
+    [
+      "Entity-we_expect_some_form_of_dependency_between_the_draw",
+      "skos:broader",
+      "Entity-dependency"
+    ]
+  ],
+  "predicates": {
+    "Predicate-involve": {
+      "label": "involve",
+      "description": "To involve means to necessitate the presence of a particular characteristic, property, or aspect within something. It implies that the subject has an inherent connection with the object, which cannot be fully understood without considering its relationship to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-represent": {
+      "label": "represent",
+      "description": "To represent means to convey a likeness or correspondence between two entities, where one entity (the subject) serves as an abstraction or model for another entity (the object). This predicate implies that there exists a meaningful connection or mapping between the subject and the object, allowing us to understand, describe, or analyze the object in terms of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-modeled_with": {
+      "label": "modeled with",
+      "description": "The predicate 'modeled with' indicates a relationship between the subject and object where the subject's characteristics are represented using the concept or framework described by the object. This implies that the subject has been conceptualized, simulated, or approximated according to the principles or patterns embodied in the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-leverage": {
+      "label": "leverage",
+      "description": "To utilize or capitalize on a resource, technique, or concept to achieve an advantage, improve performance, or enhance understanding. The predicate 'leverage' indicates that the subject exploits or makes use of the object to gain some benefit.",
+      "disambiguation_index": 0
+    },
+    "Predicate-reformulate": {
+      "label": "reformulate",
+      "description": "To reorganize and express a concept, idea, or representation in a new form that captures its essential characteristics while potentially simplifying or clarifying it.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are": {
+      "label": "are",
+      "description": "The predicate 'are' indicates a state of being or existence between the subject and object. It suggests that there is an inherent connection, relationship, or correspondence between them.",
+      "disambiguation_index": 0
+    },
+    "Predicate-enable": {
+      "label": "enable",
+      "description": "The predicate 'enable' indicates a relationship where the subject has the capacity or authority to make something possible or effective. In this context, it suggests that the subject's presence, properties, or characteristics allow the object to exist, function, or have an impact in some way.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' indicates that the subject is related to or encompasses the object as a more general concept. It suggests a hierarchical relationship between the two, where the subject represents a higher-level category and the object represents a lower-level instance or subcategory.",
+      "disambiguation_index": 0
+    }
+  }
+}

@@ -1,0 +1,1702 @@
+{
+  "iri": "Paper-48",
+  "title": "ICML_2006_119_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-48-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-48-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-48-Section-1-Paragraph-1-Sentence-1",
+              "text": "We investigate the problem of learning to predict moves in the board game of Go from game records of expert players ."
+            },
+            {
+              "iri": "Paper-48-Section-1-Paragraph-1-Sentence-2",
+              "text": "In particular , we obtain a probability distribution over legal moves for professional play in a given position ."
+            },
+            {
+              "iri": "Paper-48-Section-1-Paragraph-1-Sentence-3",
+              "text": "This distribution has numerous applications in computer Go , including serving as an efficient stand-alone Go player ."
+            },
+            {
+              "iri": "Paper-48-Section-1-Paragraph-1-Sentence-4",
+              "text": "It would also be effective as a move selector and move sorter for game tree search and as a training tool for Go players ."
+            },
+            {
+              "iri": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+              "text": "Our method has two major components : a -RRB- a pattern extraction scheme for efficiently harvesting patterns of given size and shape from expert game records and b -RRB- a Bayesian learning algorithm -LRB- in two variants -RRB- that learns a distribution over the values of a move given a board position based on the local pattern context ."
+            },
+            {
+              "iri": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+              "text": "The system is trained on 181,000 expert games and shows excellent prediction performance as indicated by its ability to perfectly predict the moves made by professional Go players in 34 % of test positions ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0003108978271484375,
+    16.404551029205322,
+    25.498531103134155,
+    41.164910078048706,
+    0.06301712989807129,
+    0.00045609474182128906,
+    0.00016427040100097656,
+    38.93673586845398,
+    68.70547986030579,
+    3.991041898727417,
+    0.11614108085632324,
+    0.014360904693603516,
+    0.0014190673828125,
+    34.73751497268677,
+    0.0015361309051513672,
+    0.05438804626464844,
+    0.0013790130615234375,
+    4.468313932418823,
+    4.8116371631622314,
+    8.08231806755066,
+    153.41414594650269,
+    10.58281397819519,
+    61.1500358581543,
+    3.2208919525146484,
+    0.0008549690246582031,
+    0.014063119888305664
+  ],
+  "nodes": {
+    "Entity-the_problem_of_learning_to_predict_move_in_the_board_game_of_go": {
+      "node_id": "the_problem_of_learning_to_predict_move_in_the_board_game_of_go",
+      "disambiguation_index": 0,
+      "label": "the problem of learning to predict moves in the board game of Go",
+      "aliases": [
+        "the problem of learning to predict moves in the board game of Go"
+      ],
+      "types": [
+        "problem",
+        "Go",
+        "game"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The problem of learning to predict moves in the board game of Go refers to the challenge of developing algorithms that can analyze game records of expert players to generate a probability distribution over legal moves for a given board position, thereby enhancing the performance of computer Go systems.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "the problem of learning to predict moves in the board game of Go",
+          "local_types": [
+            "problem",
+            "Go",
+            "game"
+          ],
+          "iri": "Entity-the_problem_of_learning_to_predict_move_in_the_board_game_of_go-Mention-1"
+        }
+      ],
+      "relevance": 0.8076171875
+    },
+    "Entity-learning_to_predict_move": {
+      "node_id": "learning_to_predict_move",
+      "disambiguation_index": 0,
+      "label": "learning to predict moves",
+      "aliases": [
+        "learning to predict moves"
+      ],
+      "types": [
+        "machine learning task",
+        "predictive modeling"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Learning to predict moves refers to a machine learning task aimed at developing a predictive model that estimates the probability distribution of legal moves in the board game of Go, based on patterns extracted from expert game records.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "learning to predict moves",
+          "local_types": [
+            "machine learning task",
+            "predictive modeling"
+          ],
+          "iri": "Entity-learning_to_predict_move-Mention-1"
+        }
+      ],
+      "relevance": 0.794921875
+    },
+    "Entity-our_method": {
+      "node_id": "our_method",
+      "disambiguation_index": 0,
+      "label": "Our method",
+      "aliases": [
+        "Our method"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Our method refers to a two-component approach for predicting moves in the game of Go, which includes a pattern extraction scheme for harvesting patterns from expert game records and a Bayesian learning algorithm that learns the distribution of move values based on the local context of the board position.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Our method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-our_method-Mention-1"
+        }
+      ],
+      "relevance": 0.76220703125
+    },
+    "Entity-system": {
+      "node_id": "system",
+      "disambiguation_index": 0,
+      "label": "system",
+      "aliases": [
+        "system"
+      ],
+      "types": [
+        "software",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The system refers to a Bayesian learning model designed to predict moves in the board game of Go, trained on expert game records to generate a probability distribution over legal moves.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "system",
+          "local_types": [
+            "software",
+            "model"
+          ],
+          "iri": "Entity-system-Mention-1"
+        }
+      ],
+      "relevance": 0.7587890625
+    },
+    "Entity-move": {
+      "node_id": "move",
+      "disambiguation_index": 0,
+      "label": "move",
+      "aliases": [
+        "move"
+      ],
+      "types": [
+        "game action"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of the board game Go, 'move' refers to a legal action taken by a player in response to the current board position, which is predicted using a Bayesian learning algorithm based on patterns extracted from expert game records.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "move",
+          "local_types": [
+            "game action"
+          ],
+          "iri": "Entity-move-Mention-1"
+        }
+      ],
+      "relevance": 0.7392578125
+    },
+    "Entity-the_system": {
+      "node_id": "the_system",
+      "disambiguation_index": 0,
+      "label": "the system",
+      "aliases": [
+        "the system"
+      ],
+      "types": [
+        "system"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The system refers to a Bayesian learning algorithm designed to predict moves in the board game of Go by analyzing patterns from 181,000 expert game records.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the system",
+          "local_types": [
+            "system"
+          ],
+          "iri": "Entity-the_system-Mention-1"
+        }
+      ],
+      "relevance": 0.73876953125
+    },
+    "Entity-this_distribution": {
+      "node_id": "this_distribution",
+      "disambiguation_index": 0,
+      "label": "This distribution",
+      "aliases": [
+        "This distribution"
+      ],
+      "types": [
+        "distribution"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "This distribution refers to the probability distribution over legal moves in the board game of Go, derived from expert game records, which is utilized for various applications in computer Go, such as move selection and training tools.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "This distribution",
+          "local_types": [
+            "distribution"
+          ],
+          "iri": "Entity-this_distribution-Mention-1"
+        }
+      ],
+      "relevance": 0.73583984375
+    },
+    "Entity-distribution": {
+      "node_id": "distribution",
+      "disambiguation_index": 0,
+      "label": "distribution",
+      "aliases": [
+        "distribution"
+      ],
+      "types": [
+        "statistical concept",
+        "mathematical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'distribution' refers to a probability distribution over legal moves in the board game of Go, which is derived from expert game records and is used to predict moves based on the current board position.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "distribution",
+          "local_types": [
+            "statistical concept",
+            "mathematical concept"
+          ],
+          "iri": "Entity-distribution-Mention-1"
+        }
+      ],
+      "relevance": 0.7294921875
+    },
+    "Entity-training_tool_for_go_player": {
+      "node_id": "training_tool_for_go_player",
+      "disambiguation_index": 0,
+      "label": "training tool for Go players",
+      "aliases": [
+        "training tool for Go players"
+      ],
+      "types": [
+        "tool",
+        "Go",
+        "training tool",
+        "Go players",
+        "training"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A training tool for Go players refers to a system or method that utilizes a learned probability distribution over legal moves in the game of Go, derived from expert game records, to assist players in improving their strategic decision-making and move selection during gameplay.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "training tool for Go players",
+          "local_types": [
+            "tool",
+            "Go",
+            "training tool",
+            "Go players",
+            "training"
+          ],
+          "iri": "Entity-training_tool_for_go_player-Mention-1"
+        }
+      ],
+      "relevance": 0.720703125
+    },
+    "Entity-pattern_extraction_scheme": {
+      "node_id": "pattern_extraction_scheme",
+      "disambiguation_index": 0,
+      "label": "pattern extraction scheme",
+      "aliases": [
+        "pattern extraction scheme"
+      ],
+      "types": [
+        "component",
+        "scheme",
+        "pattern extraction",
+        "algorithm",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The pattern extraction scheme is a component of the proposed method that efficiently harvests patterns of specified size and shape from expert game records in order to aid in predicting moves in the game of Go.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "pattern extraction scheme",
+          "local_types": [
+            "component",
+            "scheme",
+            "pattern extraction",
+            "algorithm",
+            "method"
+          ],
+          "iri": "Entity-pattern_extraction_scheme-Mention-1"
+        }
+      ],
+      "relevance": 0.70556640625
+    },
+    "Entity-move_selector": {
+      "node_id": "move_selector",
+      "disambiguation_index": 0,
+      "label": "move selector",
+      "aliases": [
+        "move selector"
+      ],
+      "types": [
+        "tool",
+        "move selector",
+        "game strategy",
+        "selector",
+        "algorithm"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'move selector' refers to a component of a system designed to predict and evaluate legal moves in the game of Go, utilizing a probability distribution derived from expert game records to enhance game tree search and training for players.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "move selector",
+          "local_types": [
+            "tool",
+            "move selector",
+            "game strategy",
+            "selector",
+            "algorithm"
+          ],
+          "iri": "Entity-move_selector-Mention-1"
+        }
+      ],
+      "relevance": 0.70458984375
+    },
+    "Entity-local_pattern_context": {
+      "node_id": "local_pattern_context",
+      "disambiguation_index": 0,
+      "label": "local pattern context",
+      "aliases": [
+        "local pattern context"
+      ],
+      "types": [
+        "data structure",
+        "pattern analysis",
+        "pattern",
+        "context"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'local pattern context' refers to the specific arrangement and characteristics of patterns derived from expert game records in the board game of Go, which are used to inform a Bayesian learning algorithm for predicting the value of moves based on the current board position.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "local pattern context",
+          "local_types": [
+            "data structure",
+            "pattern analysis",
+            "pattern",
+            "context"
+          ],
+          "iri": "Entity-local_pattern_context-Mention-1"
+        }
+      ],
+      "relevance": 0.70263671875
+    },
+    "Entity-181000_expert_game": {
+      "node_id": "181000_expert_game",
+      "disambiguation_index": 0,
+      "label": "181,000 expert games",
+      "aliases": [
+        "181,000 expert games"
+      ],
+      "types": [
+        "games",
+        "game records",
+        "expert games",
+        "expert",
+        "data",
+        "dataset"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "181,000 expert games refers to a dataset of game records from professional players of the board game Go, used to train a system for predicting moves based on patterns extracted from these games.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "181,000 expert games",
+          "local_types": [
+            "games",
+            "game records",
+            "expert games",
+            "expert",
+            "data",
+            "dataset"
+          ],
+          "iri": "Entity-181000_expert_game-Mention-1"
+        }
+      ],
+      "relevance": 0.7021484375
+    },
+    "Entity-34_": {
+      "node_id": "34_",
+      "disambiguation_index": 0,
+      "label": "34 %",
+      "aliases": [
+        "34 %"
+      ],
+      "types": [
+        "statistic",
+        "percentage"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The mention '34 %' refers to the percentage of test positions in the board game of Go where the system is able to perfectly predict the moves made by professional players.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "34 %",
+          "local_types": [
+            "statistic",
+            "percentage"
+          ],
+          "iri": "Entity-34_-Mention-1"
+        }
+      ],
+      "relevance": 0.69970703125
+    },
+    "Entity-distribution_over_the_value_of_a_move": {
+      "node_id": "distribution_over_the_value_of_a_move",
+      "disambiguation_index": 0,
+      "label": "distribution over the values of a move",
+      "aliases": [
+        "distribution over the values of a move"
+      ],
+      "types": [
+        "distribution",
+        "move",
+        "move values"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'distribution over the values of a move' refers to a probabilistic model that predicts the likelihood of various possible moves in the game of Go, based on the current board position and the context of local patterns derived from expert game records.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "distribution over the values of a move",
+          "local_types": [
+            "distribution",
+            "move",
+            "move values"
+          ],
+          "iri": "Entity-distribution_over_the_value_of_a_move-Mention-1"
+        }
+      ],
+      "relevance": 0.6962890625
+    },
+    "Entity-expert_game_record": {
+      "node_id": "expert_game_record",
+      "disambiguation_index": 0,
+      "label": "expert game records",
+      "aliases": [
+        "expert game records",
+        "expert games"
+      ],
+      "types": [
+        "data set",
+        "data source",
+        "game data",
+        "game records",
+        "data",
+        "training data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Expert game records refer to the collected game data from professional players of the board game Go, which is used to analyze and predict moves based on established patterns and strategies.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "expert game records",
+          "local_types": [
+            "game records",
+            "data source",
+            "game data",
+            "data"
+          ],
+          "iri": "Entity-expert_game_record-Mention-1"
+        },
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "expert games",
+          "local_types": [
+            "data",
+            "game records"
+          ],
+          "iri": "Entity-expert_game_record-Mention-2"
+        },
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "expert games",
+          "local_types": [
+            "data set",
+            "training data"
+          ],
+          "iri": "Entity-expert_game_record-Mention-3"
+        }
+      ],
+      "relevance": 0.69189453125
+    },
+    "Entity-game_record_of_expert_player": {
+      "node_id": "game_record_of_expert_player",
+      "disambiguation_index": 0,
+      "label": "game records of expert players",
+      "aliases": [
+        "game records of expert players"
+      ],
+      "types": [
+        "game records",
+        "expert players"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Game records of expert players refer to the documented sequences of moves and strategies employed by highly skilled individuals in the board game of Go, which are utilized for training algorithms to predict future moves and improve gameplay performance.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "game records of expert players",
+          "local_types": [
+            "game records",
+            "expert players"
+          ],
+          "iri": "Entity-game_record_of_expert_player-Mention-1"
+        }
+      ],
+      "relevance": 0.68798828125
+    },
+    "Entity-numerous_application": {
+      "node_id": "numerous_application",
+      "disambiguation_index": 0,
+      "label": "numerous applications",
+      "aliases": [
+        "numerous applications"
+      ],
+      "types": [
+        "application"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'numerous applications' refers to the various uses of the probability distribution over legal moves in the board game of Go, which includes functioning as an efficient stand-alone Go player, a move selector, a move sorter for game tree search, and a training tool for Go players.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "numerous applications",
+          "local_types": [
+            "application"
+          ],
+          "iri": "Entity-numerous_application-Mention-1"
+        }
+      ],
+      "relevance": 0.6796875
+    },
+    "Entity-two_variant": {
+      "node_id": "two_variant",
+      "disambiguation_index": 0,
+      "label": "two variants",
+      "aliases": [
+        "two variants"
+      ],
+      "types": [
+        "variant"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'two variants' refers to the two different implementations of a Bayesian learning algorithm used to learn a distribution over the values of a move in the game of Go, based on the local pattern context derived from expert game records.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "two variants",
+          "local_types": [
+            "variant"
+          ],
+          "iri": "Entity-two_variant-Mention-1"
+        }
+      ],
+      "relevance": 0.67529296875
+    },
+    "Entity-34__of_test_position": {
+      "node_id": "34__of_test_position",
+      "disambiguation_index": 0,
+      "label": "34 % of test positions",
+      "aliases": [
+        "34 % of test positions"
+      ],
+      "types": [
+        "performance metric",
+        "test positions",
+        "statistical measure",
+        "percentage"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The phrase '34 % of test positions' refers to the proportion of game positions in which the developed system successfully predicts the moves made by professional Go players during testing.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "34 % of test positions",
+          "local_types": [
+            "performance metric",
+            "test positions",
+            "statistical measure",
+            "percentage"
+          ],
+          "iri": "Entity-34__of_test_position-Mention-1"
+        }
+      ],
+      "relevance": 0.67041015625
+    },
+    "Entity-game_record": {
+      "node_id": "game_record",
+      "disambiguation_index": 0,
+      "label": "game records",
+      "aliases": [
+        "game records"
+      ],
+      "types": [
+        "data",
+        "historical records",
+        "historical record"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Game records refer to the documented sequences of moves and strategies employed by expert players in the board game of Go, which are used to train models for predicting future moves.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "game records",
+          "local_types": [
+            "data",
+            "historical records",
+            "historical record"
+          ],
+          "iri": "Entity-game_record-Mention-1"
+        }
+      ],
+      "relevance": 0.66552734375
+    },
+    "Entity-move_made_by_professional_go_player": {
+      "node_id": "move_made_by_professional_go_player",
+      "disambiguation_index": 0,
+      "label": "moves made by professional Go players",
+      "aliases": [
+        "moves made by professional Go players"
+      ],
+      "types": [
+        "moves",
+        "Go",
+        "players",
+        "action",
+        "professional Go players",
+        "professional players"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The term 'moves made by professional Go players' refers to the specific actions or decisions taken by expert players during a game of Go, which are analyzed and predicted based on historical game records to enhance the performance of computer Go systems.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "moves made by professional Go players",
+          "local_types": [
+            "moves",
+            "Go",
+            "players",
+            "action",
+            "professional Go players",
+            "professional players"
+          ],
+          "iri": "Entity-move_made_by_professional_go_player-Mention-1"
+        }
+      ],
+      "relevance": 0.66259765625
+    },
+    "Entity-expert_player": {
+      "node_id": "expert_player",
+      "disambiguation_index": 0,
+      "label": "expert players",
+      "aliases": [
+        "expert players"
+      ],
+      "types": [
+        "human",
+        "player",
+        "game players",
+        "individuals"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Expert players refer to highly skilled individuals who play the board game Go at a professional level, whose game records are used to train models for predicting moves in the game.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "expert players",
+          "local_types": [
+            "human",
+            "player",
+            "game players",
+            "individuals"
+          ],
+          "iri": "Entity-expert_player-Mention-1"
+        }
+      ],
+      "relevance": 0.6611328125
+    },
+    "Entity-move_sorter": {
+      "node_id": "move_sorter",
+      "disambiguation_index": 0,
+      "label": "move sorter",
+      "aliases": [
+        "move sorter"
+      ],
+      "types": [
+        "algorithm",
+        "sorter",
+        "game strategy",
+        "tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'move sorter' refers to a component of a system designed to predict and organize legal moves in the board game of Go, facilitating efficient game tree search and serving as a training tool for players.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "move sorter",
+          "local_types": [
+            "algorithm",
+            "sorter",
+            "game strategy",
+            "tool"
+          ],
+          "iri": "Entity-move_sorter-Mention-1"
+        }
+      ],
+      "relevance": 0.6572265625
+    },
+    "Entity-position": {
+      "node_id": "position",
+      "disambiguation_index": 0,
+      "label": "position",
+      "aliases": [
+        "board position",
+        "position"
+      ],
+      "types": [
+        "configuration",
+        "board",
+        "game state",
+        "position"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of the board game Go, 'position' refers to the specific arrangement of pieces on the board at a given moment in the game, which is crucial for predicting legal moves and strategies.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "position",
+          "local_types": [
+            "game state",
+            "configuration"
+          ],
+          "iri": "Entity-position-Mention-1"
+        },
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "board position",
+          "local_types": [
+            "board",
+            "game state",
+            "position"
+          ],
+          "iri": "Entity-position-Mention-2"
+        }
+      ],
+      "relevance": 0.646484375
+    },
+    "Entity-test_position": {
+      "node_id": "test_position",
+      "disambiguation_index": 0,
+      "label": "test positions",
+      "aliases": [
+        "test positions"
+      ],
+      "types": [
+        "evaluation scenario",
+        "game state"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Test positions refer to specific board configurations in the game of Go used to evaluate the performance of a predictive model by measuring its accuracy in predicting moves made by professional players.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "test positions",
+          "local_types": [
+            "evaluation scenario",
+            "game state"
+          ],
+          "iri": "Entity-test_position-Mention-1"
+        }
+      ],
+      "relevance": 0.6455078125
+    },
+    "Entity-given_position": {
+      "node_id": "given_position",
+      "disambiguation_index": 0,
+      "label": "given position",
+      "aliases": [
+        "given position"
+      ],
+      "types": [
+        "position"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'given position' refers to a specific arrangement of pieces on the Go board at a particular moment in the game, which is used to determine the probability distribution over legal moves that can be made by players.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "given position",
+          "local_types": [
+            "position"
+          ],
+          "iri": "Entity-given_position-Mention-1"
+        }
+      ],
+      "relevance": 0.6455078125
+    },
+    "Entity-legal_move": {
+      "node_id": "legal_move",
+      "disambiguation_index": 0,
+      "label": "legal moves",
+      "aliases": [
+        "legal moves"
+      ],
+      "types": [
+        "rules",
+        "game move",
+        "game mechanics"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Legal moves refer to the valid actions that a player can take in the board game of Go, which are determined based on the current board position and the rules of the game.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "legal moves",
+          "local_types": [
+            "rules",
+            "game move",
+            "game mechanics"
+          ],
+          "iri": "Entity-legal_move-Mention-1"
+        }
+      ],
+      "relevance": 0.63916015625
+    },
+    "Entity-probability_distribution_over_legal_move_for_professional_play": {
+      "node_id": "probability_distribution_over_legal_move_for_professional_play",
+      "disambiguation_index": 0,
+      "label": "probability distribution over legal moves for professional play",
+      "aliases": [
+        "probability distribution over legal moves for professional play"
+      ],
+      "types": [
+        "professional play",
+        "legal moves",
+        "probability distribution"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical representation that quantifies the likelihood of each possible legal move in a game setting, specifically tailored for professional-level gameplay.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "probability distribution over legal moves for professional play",
+          "local_types": [
+            "professional play",
+            "legal moves",
+            "probability distribution"
+          ],
+          "iri": "Entity-probability_distribution_over_legal_move_for_professional_play-Mention-1"
+        }
+      ],
+      "relevance": 0.63720703125
+    },
+    "Entity-stand-alone_go_player": {
+      "node_id": "stand-alone_go_player",
+      "disambiguation_index": 0,
+      "label": "stand-alone Go player",
+      "aliases": [
+        "efficient stand-alone Go player",
+        "stand-alone Go player"
+      ],
+      "types": [
+        "Go player",
+        "player",
+        "Go"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A stand-alone Go player refers to a computer program or system designed to play the board game Go independently, utilizing a probability distribution over legal moves derived from expert game records to make decisions during gameplay.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "stand-alone Go player",
+          "local_types": [
+            "Go player",
+            "player"
+          ],
+          "iri": "Entity-stand-alone_go_player-Mention-1"
+        },
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "efficient stand-alone Go player",
+          "local_types": [
+            "Go player",
+            "player",
+            "Go"
+          ],
+          "iri": "Entity-stand-alone_go_player-Mention-2"
+        }
+      ],
+      "relevance": 0.619140625
+    },
+    "Entity-professional_play": {
+      "node_id": "professional_play",
+      "disambiguation_index": 0,
+      "label": "professional play",
+      "aliases": [
+        "professional play"
+      ],
+      "types": [
+        "professional",
+        "competitive play",
+        "game context",
+        "play"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Professional play refers to the competitive and expert-level gameplay in the board game of Go, characterized by the strategic and skillful moves made by highly trained players.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "professional play",
+          "local_types": [
+            "professional",
+            "competitive play",
+            "game context",
+            "play"
+          ],
+          "iri": "Entity-professional_play-Mention-1"
+        }
+      ],
+      "relevance": 0.6171875
+    },
+    "Entity-computer_go": {
+      "node_id": "computer_go",
+      "disambiguation_index": 0,
+      "label": "computer Go",
+      "aliases": [
+        "computer Go"
+      ],
+      "types": [
+        "game",
+        "computer science",
+        "computer game",
+        "artificial intelligence application",
+        "Go",
+        "computer",
+        "artificial intelligence"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Computer Go refers to the field of artificial intelligence and computer science focused on developing algorithms and programs that enable computers to play the board game Go.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "computer Go",
+          "local_types": [
+            "game",
+            "computer science",
+            "computer game",
+            "artificial intelligence application",
+            "Go",
+            "computer",
+            "artificial intelligence"
+          ],
+          "iri": "Entity-computer_go-Mention-1"
+        }
+      ],
+      "relevance": 0.59716796875
+    },
+    "Entity-go": {
+      "node_id": "go",
+      "disambiguation_index": 0,
+      "label": "Go",
+      "aliases": [
+        "Go"
+      ],
+      "types": [
+        "game",
+        "board game",
+        "sport"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Go is a strategic board game originating from East Asia, played by two players who alternately place black and white stones on a grid, with the objective of capturing territory.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Go",
+          "local_types": [
+            "game",
+            "board game"
+          ],
+          "iri": "Entity-go-Mention-1"
+        },
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Go",
+          "local_types": [
+            "game",
+            "board game"
+          ],
+          "iri": "Entity-go-Mention-2"
+        },
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Go",
+          "local_types": [
+            "game",
+            "board game"
+          ],
+          "iri": "Entity-go-Mention-3"
+        },
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "Go",
+          "local_types": [
+            "game",
+            "sport"
+          ],
+          "iri": "Entity-go-Mention-4"
+        }
+      ],
+      "relevance": 0.58984375
+    },
+    "Entity-game_tree_search": {
+      "node_id": "game_tree_search",
+      "disambiguation_index": 0,
+      "label": "game tree search",
+      "aliases": [
+        "game tree search"
+      ],
+      "types": [
+        "search",
+        "game theory",
+        "search algorithm",
+        "search technique",
+        "algorithm",
+        "process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Game tree search is a computational method used to explore possible moves in a game by representing the game's possible states and decisions in a tree structure, allowing for the evaluation of strategies and outcomes.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "game tree search",
+          "local_types": [
+            "search",
+            "game theory",
+            "search algorithm",
+            "search technique",
+            "algorithm",
+            "process"
+          ],
+          "iri": "Entity-game_tree_search-Mention-1"
+        }
+      ],
+      "relevance": 0.5859375
+    },
+    "Entity-go_player": {
+      "node_id": "go_player",
+      "disambiguation_index": 0,
+      "label": "Go player",
+      "aliases": [
+        "Go player",
+        "Go players"
+      ],
+      "types": [
+        "game players",
+        "player",
+        "human",
+        "professionals",
+        "game participant"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A Go player is an individual who participates in the board game Go, engaging in strategic gameplay that involves placing black and white stones on a grid to capture territory.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Go player",
+          "local_types": [
+            "human",
+            "player",
+            "game participant"
+          ],
+          "iri": "Entity-go_player-Mention-1"
+        },
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Go players",
+          "local_types": [
+            "player",
+            "game participant"
+          ],
+          "iri": "Entity-go_player-Mention-2"
+        },
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "Go players",
+          "local_types": [
+            "professionals",
+            "game players"
+          ],
+          "iri": "Entity-go_player-Mention-3"
+        }
+      ],
+      "relevance": 0.58349609375
+    },
+    "Entity-board_game_of_go": {
+      "node_id": "board_game_of_go",
+      "disambiguation_index": 0,
+      "label": "board game of Go",
+      "aliases": [
+        "board game of Go"
+      ],
+      "types": [
+        "game",
+        "strategy game"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The board game of Go is an ancient strategy game originating from East Asia, played on a grid with black and white stones, where the objective is to control more territory than the opponent.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "board game of Go",
+          "local_types": [
+            "game",
+            "strategy game"
+          ],
+          "iri": "Entity-board_game_of_go-Mention-1"
+        }
+      ],
+      "relevance": 0.5830078125
+    },
+    "Entity-bayesian_learning_algorithm": {
+      "node_id": "bayesian_learning_algorithm",
+      "disambiguation_index": 0,
+      "label": "Bayesian learning algorithm",
+      "aliases": [
+        "Bayesian learning algorithm"
+      ],
+      "types": [
+        "algorithm",
+        "machine learning method",
+        "machine learning",
+        "Bayesian learning"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A Bayesian learning algorithm is a statistical method used in machine learning that applies Bayes' theorem to update the probability distribution of a hypothesis as more evidence or information becomes available.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Bayesian learning algorithm",
+          "local_types": [
+            "algorithm",
+            "machine learning method",
+            "machine learning",
+            "Bayesian learning"
+          ],
+          "iri": "Entity-bayesian_learning_algorithm-Mention-1"
+        }
+      ],
+      "relevance": 0.56396484375
+    },
+    "Entity-move_sorter_for_game_tree_search": {
+      "node_id": "move_sorter_for_game_tree_search",
+      "disambiguation_index": 0,
+      "label": "move sorter for game tree search",
+      "aliases": [
+        "move sorter for game tree search"
+      ],
+      "types": [
+        "sorter",
+        "move sorter",
+        "game tree search",
+        "tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A move sorter for game tree search is a computational tool designed to organize and prioritize possible moves in a game tree, enhancing the efficiency of decision-making processes in strategic games.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "move sorter for game tree search",
+          "local_types": [
+            "sorter",
+            "move sorter",
+            "game tree search",
+            "tool"
+          ],
+          "iri": "Entity-move_sorter_for_game_tree_search-Mention-1"
+        }
+      ],
+      "relevance": 0.5625
+    },
+    "Entity-prediction_performance": {
+      "node_id": "prediction_performance",
+      "disambiguation_index": 0,
+      "label": "prediction performance",
+      "aliases": [
+        "prediction performance"
+      ],
+      "types": [
+        "evaluation metric",
+        "performance measure",
+        "performance",
+        "prediction"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Prediction performance refers to the effectiveness of a model or system in accurately forecasting outcomes or behaviors based on input data.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "prediction performance",
+          "local_types": [
+            "evaluation metric",
+            "performance measure",
+            "performance",
+            "prediction"
+          ],
+          "iri": "Entity-prediction_performance-Mention-1"
+        }
+      ],
+      "relevance": 0.493896484375
+    },
+    "Entity-probability_distribution": {
+      "node_id": "probability_distribution",
+      "disambiguation_index": 0,
+      "label": "probability distribution",
+      "aliases": [
+        "probability distribution"
+      ],
+      "types": [
+        "mathematical model",
+        "mathematical concept",
+        "statistical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A probability distribution is a mathematical function that describes the likelihood of different outcomes in a random experiment, assigning probabilities to each possible outcome.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "probability distribution",
+          "local_types": [
+            "mathematical model",
+            "mathematical concept",
+            "statistical concept"
+          ],
+          "iri": "Entity-probability_distribution-Mention-1"
+        }
+      ],
+      "relevance": 0.47900390625
+    },
+    "Entity-training_tool": {
+      "node_id": "training_tool",
+      "disambiguation_index": 0,
+      "label": "training tool",
+      "aliases": [
+        "training tool"
+      ],
+      "types": [
+        "educational resource",
+        "software",
+        "tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A training tool is an educational resource or software designed to enhance skills and knowledge in a specific area, often through practice and feedback.",
+      "mentions": [
+        {
+          "reference": "Paper-48-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "training tool",
+          "local_types": [
+            "educational resource",
+            "software",
+            "tool"
+          ],
+          "iri": "Entity-training_tool-Mention-1"
+        }
+      ],
+      "relevance": 0.44970703125
+    }
+  },
+  "summary": "We investigate the problem of learning to predict moves in the board game of Go from game records of expert players . In particular , we obtain a probability distribution over legal moves for professional play in a given position . This distribution has numerous applications in computer Go , including serving as an efficient stand-alone Go player . It would also be effective as a move selector and move sorter for game tree search and as a training tool for Go players . Our method has two major components : a -RRB- a pattern extraction scheme for efficiently harvesting patterns of given size and shape from expert game records and b -RRB- a Bayesian learning algorithm -LRB- in two variants -RRB- that learns a distribution over the values of a move given a board position based on the local pattern context . The system is trained on 181,000 expert games and shows excellent prediction performance as indicated by its ability to perfectly predict the moves made by professional Go players in 34 % of test positions .",
+  "triples": [
+    [
+      "Entity-the_problem_of_learning_to_predict_move_in_the_board_game_of_go",
+      "Predicate-investigate",
+      "Entity-learning_to_predict_move"
+    ],
+    [
+      "Entity-game_record",
+      "Predicate-come_from",
+      "Entity-expert_player"
+    ],
+    [
+      "Entity-board_game_of_go",
+      "Predicate-involves",
+      "Entity-learning_to_predict_move"
+    ],
+    [
+      "Entity-probability_distribution",
+      "Predicate-obtains",
+      "Entity-legal_move"
+    ],
+    [
+      "Entity-probability_distribution_over_legal_move_for_professional_play",
+      "Predicate-obtains",
+      "Entity-legal_move"
+    ],
+    [
+      "Entity-probability_distribution_over_legal_move_for_professional_play",
+      "Predicate-obtains",
+      "Entity-professional_play"
+    ],
+    [
+      "Entity-probability_distribution_over_legal_move_for_professional_play",
+      "Predicate-obtains",
+      "Entity-given_position"
+    ],
+    [
+      "Entity-this_distribution",
+      "Predicate-has",
+      "Entity-numerous_application"
+    ],
+    [
+      "Entity-move_selector",
+      "Predicate-is_effective_as",
+      "Entity-move_sorter_for_game_tree_search"
+    ],
+    [
+      "Entity-training_tool",
+      "Predicate-is_effective_as",
+      "Entity-training_tool_for_go_player"
+    ],
+    [
+      "Entity-move",
+      "Predicate-is_given_by",
+      "Entity-position"
+    ],
+    [
+      "Entity-bayesian_learning_algorithm",
+      "Predicate-is_in",
+      "Entity-two_variant"
+    ],
+    [
+      "Entity-the_system",
+      "Predicate-is_trained_on",
+      "Entity-181000_expert_game"
+    ],
+    [
+      "Entity-the_system",
+      "Predicate-predicts_in",
+      "Entity-34__of_test_position"
+    ],
+    [
+      "Entity-our_method",
+      "Predicate-is_trained_on",
+      "Entity-181000_expert_game"
+    ],
+    [
+      "Entity-the_problem_of_learning_to_predict_move_in_the_board_game_of_go",
+      "Predicate-addresses",
+      "Entity-learning_to_predict_move"
+    ],
+    [
+      "Entity-our_method",
+      "Predicate-implements",
+      "Entity-learning_to_predict_move"
+    ],
+    [
+      "Entity-system",
+      "Predicate-is_implemented_by",
+      "Entity-learning_to_predict_move"
+    ],
+    [
+      "Entity-our_method",
+      "Predicate-addresses",
+      "Entity-the_problem_of_learning_to_predict_move_in_the_board_game_of_go"
+    ],
+    [
+      "Entity-our_method",
+      "Predicate-implements",
+      "Entity-system"
+    ],
+    [
+      "Entity-system",
+      "Predicate-addresses",
+      "Entity-the_problem_of_learning_to_predict_move_in_the_board_game_of_go"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-stand-alone_go_player",
+      "skos:broader",
+      "Entity-board_game_of_go"
+    ],
+    [
+      "Entity-move_made_by_professional_go_player",
+      "skos:broader",
+      "Entity-go"
+    ],
+    [
+      "Entity-probability_distribution_over_legal_move_for_professional_play",
+      "skos:broader",
+      "Entity-professional_play"
+    ],
+    [
+      "Entity-stand-alone_go_player",
+      "skos:broader",
+      "Entity-go"
+    ],
+    [
+      "Entity-training_tool_for_go_player",
+      "skos:broader",
+      "Entity-go_player"
+    ],
+    [
+      "Entity-the_system",
+      "skos:broader",
+      "Entity-system"
+    ],
+    [
+      "Entity-probability_distribution_over_legal_move_for_professional_play",
+      "skos:broader",
+      "Entity-legal_move"
+    ],
+    [
+      "Entity-probability_distribution_over_legal_move_for_professional_play",
+      "skos:broader",
+      "Entity-probability_distribution"
+    ],
+    [
+      "Entity-expert_game_record",
+      "skos:broader",
+      "Entity-game_record"
+    ],
+    [
+      "Entity-given_position",
+      "skos:broader",
+      "Entity-position"
+    ],
+    [
+      "Entity-distribution_over_the_value_of_a_move",
+      "skos:broader",
+      "Entity-distribution"
+    ],
+    [
+      "Entity-game_record_of_expert_player",
+      "skos:broader",
+      "Entity-expert_player"
+    ],
+    [
+      "Entity-181000_expert_game",
+      "skos:broader",
+      "Entity-expert_game_record"
+    ],
+    [
+      "Entity-181000_expert_game",
+      "skos:broader",
+      "Entity-game_record"
+    ],
+    [
+      "Entity-move_made_by_professional_go_player",
+      "skos:broader",
+      "Entity-professional_play"
+    ],
+    [
+      "Entity-training_tool_for_go_player",
+      "skos:broader",
+      "Entity-training_tool"
+    ],
+    [
+      "Entity-stand-alone_go_player",
+      "skos:broader",
+      "Entity-go_player"
+    ],
+    [
+      "Entity-computer_go",
+      "skos:broader",
+      "Entity-board_game_of_go"
+    ],
+    [
+      "Entity-34__of_test_position",
+      "skos:broader",
+      "Entity-test_position"
+    ],
+    [
+      "Entity-move_sorter_for_game_tree_search",
+      "skos:broader",
+      "Entity-game_tree_search"
+    ],
+    [
+      "Entity-the_problem_of_learning_to_predict_move_in_the_board_game_of_go",
+      "skos:broader",
+      "Entity-board_game_of_go"
+    ],
+    [
+      "Entity-distribution_over_the_value_of_a_move",
+      "skos:broader",
+      "Entity-move"
+    ],
+    [
+      "Entity-training_tool_for_go_player",
+      "skos:broader",
+      "Entity-board_game_of_go"
+    ],
+    [
+      "Entity-game_record_of_expert_player",
+      "skos:broader",
+      "Entity-game_record"
+    ],
+    [
+      "Entity-move_sorter_for_game_tree_search",
+      "skos:broader",
+      "Entity-move_sorter"
+    ],
+    [
+      "Entity-computer_go",
+      "skos:broader",
+      "Entity-go"
+    ],
+    [
+      "Entity-the_problem_of_learning_to_predict_move_in_the_board_game_of_go",
+      "skos:broader",
+      "Entity-go"
+    ],
+    [
+      "Entity-training_tool_for_go_player",
+      "skos:broader",
+      "Entity-go"
+    ],
+    [
+      "Entity-this_distribution",
+      "skos:broader",
+      "Entity-distribution"
+    ],
+    [
+      "Entity-move_made_by_professional_go_player",
+      "skos:broader",
+      "Entity-board_game_of_go"
+    ],
+    [
+      "Entity-move_made_by_professional_go_player",
+      "skos:broader",
+      "Entity-move"
+    ]
+  ],
+  "predicates": {
+    "Predicate-investigate": {
+      "label": "investigate",
+      "description": "The predicate 'investigate' denotes the action of examining, exploring, or inquiring into a subject or issue in order to gain a deeper understanding or uncover information about it. In the context of the triple, it connects the subject, which represents a specific area of inquiry or problem, with the object, which signifies the particular aspect or phenomenon being examined. This relationship implies a process of analysis or research aimed at elucidating the complexities or details of the object in relation to the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-come_from": {
+      "label": "come from",
+      "description": "The predicate 'come from' indicates a source or origin relationship between the subject and the object. It signifies that the subject is derived, produced, or generated by the entity represented by the object, establishing a connection that highlights the source of the subject's existence or characteristics.",
+      "disambiguation_index": 0
+    },
+    "Predicate-involves": {
+      "label": "involves",
+      "description": "The predicate 'involves' indicates a relationship where the subject encompasses or requires the object as a necessary component or activity. It suggests that the subject cannot be fully understood or executed without engaging in the object, highlighting a connection where the object is integral to the nature or function of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-obtains": {
+      "label": "obtains",
+      "description": "The predicate 'obtains' indicates a relationship where the subject acquires or gains possession of the object. It implies a process or action through which the subject comes to have or receive the object, often suggesting a transition from a state of not having to a state of having. This can involve gathering, collecting, or deriving the object from a source or through a specific method.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has": {
+      "label": "has",
+      "description": "The predicate 'has' indicates a relationship of possession or ownership between the subject and the object. It signifies that the subject possesses, contains, or is associated with the object, which can represent qualities, characteristics, features, or entities. This relationship implies that the subject is in some way defined or enriched by the presence of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_effective_as": {
+      "label": "is effective as",
+      "description": "The predicate 'is effective as' establishes a relationship between the subject and the object, indicating that the subject performs its function or role in a manner that achieves desired outcomes or results comparable to the object. It suggests that the subject possesses qualities or capabilities that make it suitable or advantageous for the purpose represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_given_by": {
+      "label": "is given by",
+      "description": "The predicate 'is given by' establishes a relationship where the subject is defined or characterized by the object. It indicates that the subject's existence, state, or action is determined or described through the object, suggesting a dependency or a source of information that clarifies the nature of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_in": {
+      "label": "is in",
+      "description": "The predicate 'is in' establishes a relationship of inclusion or membership between the subject and the object, indicating that the subject is a part of, or exists within, the category or group represented by the object. This relationship suggests that the subject shares characteristics or attributes with the object, or that it can be classified under the object in a broader context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_trained_on": {
+      "label": "is trained on",
+      "description": "The predicate 'is trained on' establishes a relationship where the subject, typically an entity such as a system or model, undergoes a process of learning or adaptation based on the information or data represented by the object. This indicates that the subject utilizes the specified data set to improve its performance, capabilities, or understanding in a particular domain.",
+      "disambiguation_index": 0
+    },
+    "Predicate-predicts_in": {
+      "label": "predicts in",
+      "description": "The predicate 'predicts in' establishes a relationship where the subject is making a forecast or estimation regarding the object, which typically represents a specific context, condition, or metric. In this structure, the subject is often a system, model, or entity that generates predictions, while the object quantifies the extent or accuracy of those predictions within a defined scope or set of parameters.",
+      "disambiguation_index": 0
+    },
+    "Predicate-addresses": {
+      "label": "addresses",
+      "description": "The predicate 'addresses' indicates that the subject is concerned with, tackles, or deals with the issues, challenges, or topics represented by the object. It implies a relationship where the subject seeks to provide solutions, insights, or understanding related to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-implements": {
+      "label": "implements",
+      "description": "The predicate 'implements' signifies the action of putting a plan, idea, or method into effect or practice. It connects the subject, which represents the entity or system that is executing the action, with the object, which denotes the specific concept, technique, or process being applied or utilized. In this context, the subject is actively engaging in the realization or execution of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_implemented_by": {
+      "label": "is implemented by",
+      "description": "The predicate 'is implemented by' establishes a relationship where the subject, typically a system or framework, is realized or executed through the methods, processes, or techniques described by the object. It indicates that the functionality or behavior of the subject is achieved by the application of the object, highlighting the dependency of the subject on the object for its operation or effectiveness.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or category that falls under the wider classification represented by the object. This relationship suggests that the object encompasses a larger set of characteristics or entities that include the subject as a subset.",
+      "disambiguation_index": 0
+    }
+  }
+}

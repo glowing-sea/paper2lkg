@@ -1,0 +1,942 @@
+{
+  "iri": "Paper-7",
+  "title": "P85-1019",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-7-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-7-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-7-Section-1-Paragraph-1-Sentence-1",
+              "text": "We have implemented a restricted domain parser called Plume ."
+            },
+            {
+              "iri": "Paper-7-Section-1-Paragraph-1-Sentence-2",
+              "text": "Building on previous work at Carnegie-Mellon University e.g. -LSB- 4 , 5 , 8 -RSB- , Plume 's approach to parsing is based on semantic caseframe instantiation ."
+            },
+            {
+              "iri": "Paper-7-Section-1-Paragraph-1-Sentence-3",
+              "text": "This has the advantages of efficiency on grammatical input , and robustness in the face of ungrammatical input ."
+            },
+            {
+              "iri": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+              "text": "While Plume is well adapted to simple declarative and imperative utterances , it handles passives , relative clauses and interrogatives in an ad hoc manner leading to patchy syntactic coverage ."
+            },
+            {
+              "iri": "Paper-7-Section-1-Paragraph-1-Sentence-5",
+              "text": "This paper outlines Plume as it currently exists and describes our detailed design for extending Plume to handle passives , relative clauses , and interrogatives in a general manner ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    6.914138793945312e-05,
+    12.640564918518066,
+    32.449646949768066,
+    23.245059967041016,
+    0.0304868221282959,
+    0.00019216537475585938,
+    0.00018477439880371094,
+    29.351467609405518,
+    40.65303015708923,
+    2.7027711868286133,
+    0.04404497146606445,
+    0.008496999740600586,
+    0.00018596649169921875,
+    18.55303120613098,
+    0.0013339519500732422,
+    0.03846383094787598,
+    0.0010328292846679688,
+    3.4939539432525635,
+    0.6926100254058838,
+    1.125014066696167,
+    60.304197788238525,
+    5.154862880706787,
+    36.80218195915222,
+    1.965296983718872,
+    0.0005772113800048828,
+    0.008621931076049805
+  ],
+  "nodes": {
+    "Entity-plume": {
+      "node_id": "plume",
+      "disambiguation_index": 0,
+      "label": "Plume",
+      "aliases": [
+        "restricted domain parser",
+        "Plume",
+        "a restricted domain parser",
+        "a restricted domain parser called Plume"
+      ],
+      "types": [
+        "parser",
+        "tool",
+        "software",
+        "organization",
+        "company"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Plume is a restricted domain parser developed at Carnegie-Mellon University, designed for efficient parsing based on semantic caseframe instantiation, with a focus on handling simple declarative and imperative utterances.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Plume",
+          "local_types": [
+            "software",
+            "parser",
+            "tool"
+          ],
+          "iri": "Entity-plume-Mention-1"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Plume",
+          "local_types": [
+            "software",
+            "organization",
+            "company"
+          ],
+          "iri": "Entity-plume-Mention-2"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Plume",
+          "local_types": [
+            "software",
+            "tool"
+          ],
+          "iri": "Entity-plume-Mention-3"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Plume",
+          "local_types": [
+            "software",
+            "tool"
+          ],
+          "iri": "Entity-plume-Mention-4"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "restricted domain parser",
+          "local_types": [
+            "software",
+            "tool"
+          ],
+          "iri": "Entity-plume-Mention-5"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a restricted domain parser called Plume",
+          "local_types": [
+            "parser",
+            "software"
+          ],
+          "iri": "Entity-plume-Mention-6"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a restricted domain parser",
+          "local_types": [
+            "parser",
+            "software"
+          ],
+          "iri": "Entity-plume-Mention-7"
+        }
+      ],
+      "relevance": 0.8310546875
+    },
+    "Entity-plume_s_approach_to_parsing": {
+      "node_id": "plume_s_approach_to_parsing",
+      "disambiguation_index": 0,
+      "label": "Plume 's approach to parsing",
+      "aliases": [
+        "Plume 's approach to parsing"
+      ],
+      "types": [
+        "methodology",
+        "parser"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Plume's approach to parsing refers to a methodology for a restricted domain parser that utilizes semantic caseframe instantiation to achieve efficiency with grammatical input and robustness against ungrammatical input.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Plume 's approach to parsing",
+          "local_types": [
+            "methodology",
+            "parser"
+          ],
+          "iri": "Entity-plume_s_approach_to_parsing-Mention-1"
+        }
+      ],
+      "relevance": 0.80908203125
+    },
+    "Entity-our_detailed_design_for_extending_plume": {
+      "node_id": "our_detailed_design_for_extending_plume",
+      "disambiguation_index": 0,
+      "label": "our detailed design for extending Plume",
+      "aliases": [
+        "our detailed design for extending Plume"
+      ],
+      "types": [
+        "design",
+        "parser"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The entity 'our detailed design for extending Plume' refers to a proposed enhancement of the Plume parser aimed at improving its ability to process passives, relative clauses, and interrogatives more systematically.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "our detailed design for extending Plume",
+          "local_types": [
+            "design",
+            "parser"
+          ],
+          "iri": "Entity-our_detailed_design_for_extending_plume-Mention-1"
+        }
+      ],
+      "relevance": 0.75341796875
+    },
+    "Entity-semantic_caseframe_instantiation": {
+      "node_id": "semantic_caseframe_instantiation",
+      "disambiguation_index": 0,
+      "label": "semantic caseframe instantiation",
+      "aliases": [
+        "semantic caseframe instantiation"
+      ],
+      "types": [
+        "methodology",
+        "concept",
+        "linguistic framework",
+        "parsing technique",
+        "method",
+        "linguistic method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Semantic caseframe instantiation refers to a parsing methodology utilized by the Plume parser, which enhances efficiency and robustness in processing both grammatical and ungrammatical input by leveraging semantic structures associated with linguistic expressions.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "semantic caseframe instantiation",
+          "local_types": [
+            "methodology",
+            "concept",
+            "linguistic framework",
+            "parsing technique",
+            "method",
+            "linguistic method"
+          ],
+          "iri": "Entity-semantic_caseframe_instantiation-Mention-1"
+        }
+      ],
+      "relevance": 0.72119140625
+    },
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "this paper",
+      "aliases": [
+        "This paper",
+        "this paper"
+      ],
+      "types": [
+        "document",
+        "paper",
+        "academic paper",
+        "research",
+        "research document"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "This paper presents an overview of the Plume parser, detailing its current capabilities and proposed enhancements for improved handling of complex sentence structures.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "this paper",
+          "local_types": [
+            "document",
+            "paper",
+            "academic paper",
+            "research",
+            "research document"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.72119140625
+    },
+    "Entity-our_detailed_design": {
+      "node_id": "our_detailed_design",
+      "disambiguation_index": 0,
+      "label": "our detailed design",
+      "aliases": [
+        "our detailed design"
+      ],
+      "types": [
+        "design"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'our detailed design' refers to the proposed enhancements and structural modifications to the Plume parser aimed at improving its ability to process passives, relative clauses, and interrogatives in a systematic way.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "our detailed design",
+          "local_types": [
+            "design"
+          ],
+          "iri": "Entity-our_detailed_design-Mention-1"
+        }
+      ],
+      "relevance": 0.72119140625
+    },
+    "Entity-syntactic_coverage": {
+      "node_id": "syntactic_coverage",
+      "disambiguation_index": 0,
+      "label": "syntactic coverage",
+      "aliases": [
+        "syntactic coverage"
+      ],
+      "types": [
+        "linguistic concept",
+        "theoretical framework"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Syntactic coverage refers to the extent to which a parser, specifically the Plume parser, can accurately handle and process various syntactic structures, including complex sentence forms like passives, relative clauses, and interrogatives.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "syntactic coverage",
+          "local_types": [
+            "linguistic concept",
+            "theoretical framework"
+          ],
+          "iri": "Entity-syntactic_coverage-Mention-1"
+        }
+      ],
+      "relevance": 0.6953125
+    },
+    "Entity-previous_work_at_carnegie-mellon_university": {
+      "node_id": "previous_work_at_carnegie-mellon_university",
+      "disambiguation_index": 0,
+      "label": "previous work at Carnegie-Mellon University",
+      "aliases": [
+        "previous work at Carnegie-Mellon University"
+      ],
+      "types": [
+        "institution",
+        "research"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The entity 'previous work at Carnegie-Mellon University' refers to prior research and developments in the field of parsing and semantic caseframe instantiation that informed the design and implementation of the Plume parser.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "previous work at Carnegie-Mellon University",
+          "local_types": [
+            "institution",
+            "research"
+          ],
+          "iri": "Entity-previous_work_at_carnegie-mellon_university-Mention-1"
+        }
+      ],
+      "relevance": 0.6904296875
+    },
+    "Entity-patchy_syntactic_coverage": {
+      "node_id": "patchy_syntactic_coverage",
+      "disambiguation_index": 0,
+      "label": "patchy syntactic coverage",
+      "aliases": [
+        "patchy syntactic coverage"
+      ],
+      "types": [
+        "coverage"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Patchy syntactic coverage refers to the incomplete and inconsistent ability of the Plume parser to handle certain complex syntactic structures, such as passives, relative clauses, and interrogatives, resulting in suboptimal parsing performance for these types of sentences.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "patchy syntactic coverage",
+          "local_types": [
+            "coverage"
+          ],
+          "iri": "Entity-patchy_syntactic_coverage-Mention-1"
+        }
+      ],
+      "relevance": 0.67578125
+    },
+    "Entity-efficiency_on_grammatical_input": {
+      "node_id": "efficiency_on_grammatical_input",
+      "disambiguation_index": 0,
+      "label": "efficiency on grammatical input",
+      "aliases": [
+        "the advantages of efficiency on grammatical input",
+        "efficiency on grammatical input"
+      ],
+      "types": [
+        "grammatical input",
+        "efficiency",
+        "input",
+        "advantage"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'efficiency on grammatical input' refers to the ability of the Plume parser to effectively process and analyze grammatically correct sentences, enhancing its performance in parsing tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "efficiency on grammatical input",
+          "local_types": [
+            "advantage",
+            "input"
+          ],
+          "iri": "Entity-efficiency_on_grammatical_input-Mention-1"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the advantages of efficiency on grammatical input",
+          "local_types": [
+            "advantage",
+            "efficiency",
+            "grammatical input"
+          ],
+          "iri": "Entity-efficiency_on_grammatical_input-Mention-2"
+        }
+      ],
+      "relevance": 0.67333984375
+    },
+    "Entity-grammatical_input": {
+      "node_id": "grammatical_input",
+      "disambiguation_index": 0,
+      "label": "grammatical input",
+      "aliases": [
+        "grammatical input"
+      ],
+      "types": [
+        "input type",
+        "linguistic construct"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Grammatical input refers to the structured and syntactically correct language data that the Plume parser efficiently processes to generate semantic caseframes.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "grammatical input",
+          "local_types": [
+            "input type",
+            "linguistic construct"
+          ],
+          "iri": "Entity-grammatical_input-Mention-1"
+        }
+      ],
+      "relevance": 0.662109375
+    },
+    "Entity-robustness_in_the_face_of_ungrammatical_input": {
+      "node_id": "robustness_in_the_face_of_ungrammatical_input",
+      "disambiguation_index": 0,
+      "label": "robustness in the face of ungrammatical input",
+      "aliases": [
+        "robustness in the face of ungrammatical input"
+      ],
+      "types": [
+        "robustness",
+        "input",
+        "ungrammatical input",
+        "advantage"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Robustness in the face of ungrammatical input refers to the ability of the Plume parser to effectively process and derive meaning from input that does not conform to standard grammatical rules, thereby maintaining functionality despite the presence of errors in the input.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "robustness in the face of ungrammatical input",
+          "local_types": [
+            "robustness",
+            "input",
+            "ungrammatical input",
+            "advantage"
+          ],
+          "iri": "Entity-robustness_in_the_face_of_ungrammatical_input-Mention-1"
+        }
+      ],
+      "relevance": 0.634765625
+    },
+    "Entity-simple_declarative_and_imperative_utterance": {
+      "node_id": "simple_declarative_and_imperative_utterance",
+      "disambiguation_index": 0,
+      "label": "simple declarative and imperative utterances",
+      "aliases": [
+        "simple declarative and imperative utterances"
+      ],
+      "types": [
+        "utterance type",
+        "sentence type",
+        "utterance"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Simple declarative and imperative utterances refer to straightforward sentence types that express statements or commands, which are effectively processed by the Plume parser in contrast to more complex structures like passives and interrogatives.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "simple declarative and imperative utterances",
+          "local_types": [
+            "utterance type",
+            "sentence type",
+            "utterance"
+          ],
+          "iri": "Entity-simple_declarative_and_imperative_utterance-Mention-1"
+        }
+      ],
+      "relevance": 0.63330078125
+    },
+    "Entity-efficiency": {
+      "node_id": "efficiency",
+      "disambiguation_index": 0,
+      "label": "efficiency",
+      "aliases": [
+        "efficiency"
+      ],
+      "types": [
+        "quality",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'efficiency' refers to the effectiveness of the Plume parser in processing grammatical input, highlighting its ability to perform well under optimal conditions.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "efficiency",
+          "local_types": [
+            "quality",
+            "performance metric"
+          ],
+          "iri": "Entity-efficiency-Mention-1"
+        }
+      ],
+      "relevance": 0.62939453125
+    },
+    "Entity-passive__relative_clause_and_interrogative": {
+      "node_id": "passive__relative_clause_and_interrogative",
+      "disambiguation_index": 0,
+      "label": "passives, relative clauses and interrogatives",
+      "aliases": [
+        "passives, relative clauses and interrogatives"
+      ],
+      "types": [
+        "sentence type",
+        "grammatical structure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Passives, relative clauses, and interrogatives are types of grammatical structures that modify the way information is conveyed in sentences, affecting their syntactic form and function.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "passives, relative clauses and interrogatives",
+          "local_types": [
+            "sentence type",
+            "grammatical structure"
+          ],
+          "iri": "Entity-passive__relative_clause_and_interrogative-Mention-1"
+        }
+      ],
+      "relevance": 0.60791015625
+    },
+    "Entity-relative_clause": {
+      "node_id": "relative_clause",
+      "disambiguation_index": 0,
+      "label": "relative clauses",
+      "aliases": [
+        "relative clauses"
+      ],
+      "types": [
+        "linguistic feature",
+        "grammatical structure",
+        "linguistic structure",
+        "grammatical concept",
+        "sentence type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Relative clauses are a type of dependent clause that provide additional information about a noun and typically begin with a relative pronoun such as 'who', 'which', or 'that'.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "relative clauses",
+          "local_types": [
+            "linguistic feature",
+            "grammatical structure",
+            "sentence type",
+            "linguistic structure"
+          ],
+          "iri": "Entity-relative_clause-Mention-1"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "relative clauses",
+          "local_types": [
+            "grammatical concept",
+            "linguistic structure",
+            "linguistic feature"
+          ],
+          "iri": "Entity-relative_clause-Mention-2"
+        }
+      ],
+      "relevance": 0.578125
+    },
+    "Entity-passive": {
+      "node_id": "passive",
+      "disambiguation_index": 0,
+      "label": "passives",
+      "aliases": [
+        "passives"
+      ],
+      "types": [
+        "linguistic feature",
+        "grammatical structure",
+        "linguistic structure",
+        "grammatical concept",
+        "sentence type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of linguistics, 'passives' refer to a grammatical structure where the subject of the sentence is the recipient of the action rather than the doer, often formed by using a form of the verb 'to be' followed by the past participle of the main verb.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "passives",
+          "local_types": [
+            "linguistic feature",
+            "grammatical structure",
+            "sentence type",
+            "linguistic structure"
+          ],
+          "iri": "Entity-passive-Mention-1"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "passives",
+          "local_types": [
+            "grammatical concept",
+            "linguistic structure",
+            "linguistic feature"
+          ],
+          "iri": "Entity-passive-Mention-2"
+        }
+      ],
+      "relevance": 0.556640625
+    },
+    "Entity-interrogative": {
+      "node_id": "interrogative",
+      "disambiguation_index": 0,
+      "label": "interrogatives",
+      "aliases": [
+        "interrogatives"
+      ],
+      "types": [
+        "linguistic feature",
+        "grammatical structure",
+        "linguistic structure",
+        "grammatical concept",
+        "sentence type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Interrogatives are a type of sentence structure used to pose questions, characterized by their grammatical form and function in eliciting information.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "interrogatives",
+          "local_types": [
+            "linguistic feature",
+            "grammatical structure",
+            "sentence type",
+            "linguistic structure"
+          ],
+          "iri": "Entity-interrogative-Mention-1"
+        },
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "interrogatives",
+          "local_types": [
+            "grammatical concept",
+            "linguistic structure",
+            "linguistic feature"
+          ],
+          "iri": "Entity-interrogative-Mention-2"
+        }
+      ],
+      "relevance": 0.53955078125
+    },
+    "Entity-imperative_utterance": {
+      "node_id": "imperative_utterance",
+      "disambiguation_index": 0,
+      "label": "imperative utterances",
+      "aliases": [
+        "imperative utterances"
+      ],
+      "types": [
+        "linguistic structure",
+        "sentence type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Imperative utterances are a type of sentence structure that express commands, requests, or instructions, typically characterized by the use of the base form of a verb.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "imperative utterances",
+          "local_types": [
+            "linguistic structure",
+            "sentence type"
+          ],
+          "iri": "Entity-imperative_utterance-Mention-1"
+        }
+      ],
+      "relevance": 0.517578125
+    },
+    "Entity-ungrammatical_input": {
+      "node_id": "ungrammatical_input",
+      "disambiguation_index": 0,
+      "label": "ungrammatical input",
+      "aliases": [
+        "ungrammatical input"
+      ],
+      "types": [
+        "input type",
+        "linguistic construct"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Ungrammatical input refers to linguistic expressions or sentences that do not conform to the rules of grammar in a given language.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "ungrammatical input",
+          "local_types": [
+            "input type",
+            "linguistic construct"
+          ],
+          "iri": "Entity-ungrammatical_input-Mention-1"
+        }
+      ],
+      "relevance": 0.47509765625
+    },
+    "Entity-robustness": {
+      "node_id": "robustness",
+      "disambiguation_index": 0,
+      "label": "robustness",
+      "aliases": [
+        "robustness"
+      ],
+      "types": [
+        "quality",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Robustness refers to the quality or performance metric of a system or model that indicates its ability to maintain functionality and performance under varying conditions, including the presence of errors or unexpected inputs.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "robustness",
+          "local_types": [
+            "quality",
+            "performance metric"
+          ],
+          "iri": "Entity-robustness-Mention-1"
+        }
+      ],
+      "relevance": 0.437255859375
+    },
+    "Entity-carnegie-mellon_university": {
+      "node_id": "carnegie-mellon_university",
+      "disambiguation_index": 0,
+      "label": "Carnegie-Mellon University",
+      "aliases": [
+        "Carnegie-Mellon University"
+      ],
+      "types": [
+        "university",
+        "institution"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Carnegie-Mellon University is a private research university located in Pittsburgh, Pennsylvania, known for its programs in computer science, engineering, and the arts.",
+      "mentions": [
+        {
+          "reference": "Paper-7-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Carnegie-Mellon University",
+          "local_types": [
+            "university",
+            "institution"
+          ],
+          "iri": "Entity-carnegie-mellon_university-Mention-1"
+        }
+      ],
+      "relevance": 0.4130859375
+    }
+  },
+  "summary": "We have implemented a restricted domain parser called Plume . Building on previous work at Carnegie-Mellon University e.g. -LSB- 4 , 5 , 8 -RSB- , Plume 's approach to parsing is based on semantic caseframe instantiation . This has the advantages of efficiency on grammatical input , and robustness in the face of ungrammatical input . While Plume is well adapted to simple declarative and imperative utterances , it handles passives , relative clauses and interrogatives in an ad hoc manner leading to patchy syntactic coverage . This paper outlines Plume as it currently exists and describes our detailed design for extending Plume to handle passives , relative clauses , and interrogatives in a general manner .",
+  "triples": [
+    [
+      "Entity-plume",
+      "Predicate-is",
+      "Entity-plume"
+    ],
+    [
+      "Entity-plume",
+      "Predicate-is_based_on",
+      "Entity-semantic_caseframe_instantiation"
+    ],
+    [
+      "Entity-plume",
+      "Predicate-approach_to_parsing",
+      "Entity-previous_work_at_carnegie-mellon_university"
+    ],
+    [
+      "Entity-efficiency_on_grammatical_input",
+      "Predicate-has",
+      "Entity-efficiency_on_grammatical_input"
+    ],
+    [
+      "Entity-efficiency_on_grammatical_input",
+      "Predicate-has",
+      "Entity-robustness_in_the_face_of_ungrammatical_input"
+    ],
+    [
+      "Entity-plume",
+      "Predicate-is_well_adapted_to",
+      "Entity-simple_declarative_and_imperative_utterance"
+    ],
+    [
+      "Entity-plume",
+      "Predicate-handles",
+      "Entity-passive"
+    ],
+    [
+      "Entity-plume",
+      "Predicate-handles",
+      "Entity-relative_clause"
+    ],
+    [
+      "Entity-plume",
+      "Predicate-handles",
+      "Entity-interrogative"
+    ],
+    [
+      "Entity-plume",
+      "Predicate-leads_to",
+      "Entity-patchy_syntactic_coverage"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-outlines",
+      "Entity-plume"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-describes",
+      "Entity-our_detailed_design_for_extending_plume"
+    ],
+    [
+      "Entity-plume_s_approach_to_parsing",
+      "Predicate-is_based_on",
+      "Entity-plume"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-robustness_in_the_face_of_ungrammatical_input",
+      "skos:broader",
+      "Entity-ungrammatical_input"
+    ],
+    [
+      "Entity-robustness_in_the_face_of_ungrammatical_input",
+      "skos:broader",
+      "Entity-robustness"
+    ],
+    [
+      "Entity-efficiency_on_grammatical_input",
+      "skos:broader",
+      "Entity-efficiency"
+    ],
+    [
+      "Entity-efficiency_on_grammatical_input",
+      "skos:broader",
+      "Entity-grammatical_input"
+    ]
+  ],
+  "predicates": {
+    "Predicate-is": {
+      "label": "is",
+      "description": "The predicate 'is' serves as a linking verb that establishes an identity or equivalence between the subject and the object. It indicates that the subject and object refer to the same entity or concept, thereby affirming their sameness or defining characteristics.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_based_on": {
+      "label": "is based on",
+      "description": "The predicate 'is based on' establishes a foundational relationship between the subject and the object, indicating that the subject derives its principles, concepts, or structure from the object. It suggests that the subject's existence, functionality, or characteristics are fundamentally linked to the object, which serves as a source or reference point for the subject's development or understanding.",
+      "disambiguation_index": 0
+    },
+    "Predicate-approach_to_parsing": {
+      "label": "approach to parsing",
+      "description": "The predicate 'approach to parsing' describes a specific methodology or perspective that the subject employs in the context of analyzing and interpreting language structures. It connects the subject to the object by indicating that the subject's parsing strategy or framework is informed by or derived from the object, which represents a particular body of work, theory, or research in the field of parsing.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has": {
+      "label": "has",
+      "description": "The predicate 'has' indicates a possessive relationship between the subject and the object, signifying that the subject possesses, contains, or is characterized by the qualities or attributes represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_well_adapted_to": {
+      "label": "is well adapted to",
+      "description": "The predicate 'is well adapted to' indicates a suitability or compatibility between the subject and the object, suggesting that the subject has been modified, developed, or is inherently capable of effectively functioning within the context or requirements represented by the object. This relationship implies that the subject possesses qualities or characteristics that align well with the nature or demands of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-handles": {
+      "label": "handles",
+      "description": "The predicate 'handles' indicates that the subject is responsible for managing, dealing with, or taking care of the object. It implies an active engagement or interaction where the subject exercises control or influence over the object, which can represent a task, concept, or category.",
+      "disambiguation_index": 0
+    },
+    "Predicate-leads_to": {
+      "label": "leads to",
+      "description": "The predicate 'leads to' indicates a causal or consequential relationship between the subject and the object, suggesting that the subject is a factor or condition that results in the occurrence or existence of the object. It implies a directional influence where the subject contributes to or brings about the state or situation represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-outlines": {
+      "label": "outlines",
+      "description": "The predicate 'outlines' indicates that the subject provides a structured summary or overview of the object, highlighting key points, features, or concepts related to it. This connection suggests that the subject serves to clarify or present information about the object in a coherent manner.",
+      "disambiguation_index": 0
+    },
+    "Predicate-describes": {
+      "label": "describes",
+      "description": "The predicate 'describes' indicates a relationship where the subject provides an explanation, account, or representation of the object. It conveys that the subject contains information or details that clarify or elaborate on the nature, characteristics, or aspects of the object.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or concept that falls under the wider category or concept represented by the object. This relationship implies that the object encompasses a broader scope or definition that includes the subject as a subset or example.",
+      "disambiguation_index": 0
+    }
+  }
+}

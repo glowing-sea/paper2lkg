@@ -1,0 +1,1440 @@
+{
+  "iri": "Paper-35",
+  "title": "ICML_2016_10_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-35-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-35-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-35-Section-1-Paragraph-1-Sentence-1",
+              "text": "This paper solves a specialized regression problem to obtain sampling probabilities for records in databases ."
+            },
+            {
+              "iri": "Paper-35-Section-1-Paragraph-1-Sentence-2",
+              "text": "The goal is to sample a small set of records over which evaluating aggregate queries can be done both efficiently and accurately ."
+            },
+            {
+              "iri": "Paper-35-Section-1-Paragraph-1-Sentence-3",
+              "text": "We provide a principled and provable solution for this problem ; it is parameterless and requires no data insights ."
+            },
+            {
+              "iri": "Paper-35-Section-1-Paragraph-1-Sentence-4",
+              "text": "Unlike standard regression problems , the loss is inversely proportional to the regressed-to values ."
+            },
+            {
+              "iri": "Paper-35-Section-1-Paragraph-1-Sentence-5",
+              "text": "Moreover , a cost zero solution always exists and can only be excluded by hard budget constraints ."
+            },
+            {
+              "iri": "Paper-35-Section-1-Paragraph-1-Sentence-6",
+              "text": "A unique form of reg-ularization is also needed ."
+            },
+            {
+              "iri": "Paper-35-Section-1-Paragraph-1-Sentence-7",
+              "text": "We provide an efficient and simple regularized Empirical Risk Minimization -LRB- ERM -RRB- algorithm along with a theoretical generalization result ."
+            },
+            {
+              "iri": "Paper-35-Section-1-Paragraph-1-Sentence-8",
+              "text": "Our extensive experimental results significantly improve over both uniform sampling and standard stratified sampling which are de-facto the industry standards ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00020837783813476562,
+    21.436861515045166,
+    30.144372940063477,
+    27.531999826431274,
+    0.04455828666687012,
+    0.00011873245239257812,
+    0.00013184547424316406,
+    49.31549906730652,
+    65.96541547775269,
+    2.3761284351348877,
+    1.294255018234253,
+    0.013387203216552734,
+    0.00023055076599121094,
+    39.04265093803406,
+    12.76123046875,
+    0.02584099769592285,
+    1.1083474159240723,
+    3.599524736404419,
+    16.592406272888184,
+    19.45320439338684,
+    42.6090407371521,
+    3.590454339981079,
+    28.75407910346985,
+    1.4183900356292725,
+    0.0007588863372802734,
+    0.014447689056396484
+  ],
+  "nodes": {
+    "Entity-a_principled_and_provable_solution_for_this_problem": {
+      "node_id": "a_principled_and_provable_solution_for_this_problem",
+      "disambiguation_index": 0,
+      "label": "a principled and provable solution for this problem",
+      "aliases": [
+        "a principled and provable solution for this problem"
+      ],
+      "types": [
+        "solution"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A regularized Empirical Risk Minimization algorithm, which is parameterless, requires no data insights, and provides efficient and accurate sampling probabilities for records in databases.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "a principled and provable solution for this problem",
+          "local_types": [
+            "solution"
+          ],
+          "iri": "Entity-a_principled_and_provable_solution_for_this_problem-Mention-1"
+        }
+      ],
+      "relevance": 0.80224609375
+    },
+    "Entity-empirical_risk_minimization_-lrb-_erm_-rrb-_algorithm": {
+      "node_id": "empirical_risk_minimization_-lrb-_erm_-rrb-_algorithm",
+      "disambiguation_index": 0,
+      "label": "Empirical Risk Minimization -LRB- ERM -RRB- algorithm",
+      "aliases": [
+        "Empirical Risk Minimization -LRB- ERM -RRB- algorithm",
+        "We provide an efficient and simple regularized Empirical Risk Minimization -LRB- ERM -RRB- algorithm"
+      ],
+      "types": [
+        "mathematical concept",
+        "algorithm",
+        "computational method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A parameterless and provable regularized Empirical Risk Minimization (ERM) algorithm for sampling records in databases.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "Empirical Risk Minimization -LRB- ERM -RRB- algorithm",
+          "local_types": [
+            "mathematical concept",
+            "algorithm",
+            "computational method"
+          ],
+          "iri": "Entity-empirical_risk_minimization_-lrb-_erm_-rrb-_algorithm-Mention-1"
+        },
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "We provide an efficient and simple regularized Empirical Risk Minimization -LRB- ERM -RRB- algorithm",
+          "local_types": [
+            "algorithm"
+          ],
+          "iri": "Entity-empirical_risk_minimization_-lrb-_erm_-rrb-_algorithm-Mention-2"
+        }
+      ],
+      "relevance": 0.79541015625
+    },
+    "Entity-specialized_regression_problem": {
+      "node_id": "specialized_regression_problem",
+      "disambiguation_index": 0,
+      "label": "specialized regression problem",
+      "aliases": [
+        "specialized regression problem",
+        "a specialized regression problem"
+      ],
+      "types": [
+        "mathematical concept",
+        "statistical technique",
+        "problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical concept and statistical technique used to solve the problem of obtaining sampling probabilities for records in databases, with the goal of efficiently and accurately evaluating aggregate queries.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "specialized regression problem",
+          "local_types": [
+            "mathematical concept",
+            "statistical technique"
+          ],
+          "iri": "Entity-specialized_regression_problem-Mention-1"
+        },
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a specialized regression problem",
+          "local_types": [
+            "problem"
+          ],
+          "iri": "Entity-specialized_regression_problem-Mention-2"
+        }
+      ],
+      "relevance": 0.7451171875
+    },
+    "Entity-unique_form": {
+      "node_id": "unique_form",
+      "disambiguation_index": 0,
+      "label": "unique form",
+      "aliases": [
+        "unique form"
+      ],
+      "types": [
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The type of regularization required for solving the specialized regression problem in databases, which involves obtaining sampling probabilities for records.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "unique form",
+          "local_types": [
+            "concept"
+          ],
+          "iri": "Entity-unique_form-Mention-1"
+        }
+      ],
+      "relevance": 0.7158203125
+    },
+    "Entity-we_provide": {
+      "node_id": "we_provide",
+      "disambiguation_index": 0,
+      "label": "We provide",
+      "aliases": [
+        "We provide"
+      ],
+      "types": [
+        "author"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A principled and provable solution for obtaining sampling probabilities in databases, which is parameterless and requires no data insights.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "We provide",
+          "local_types": [
+            "author"
+          ],
+          "iri": "Entity-we_provide-Mention-1"
+        }
+      ],
+      "relevance": 0.69677734375
+    },
+    "Entity-it_is_parameterless": {
+      "node_id": "it_is_parameterless",
+      "disambiguation_index": 0,
+      "label": "it is parameterless",
+      "aliases": [
+        "it is parameterless"
+      ],
+      "types": [
+        "property"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The proposed solution for obtaining sampling probabilities in databases, which does not require any data insights and has no adjustable parameters.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "it is parameterless",
+          "local_types": [
+            "property"
+          ],
+          "iri": "Entity-it_is_parameterless-Mention-1"
+        }
+      ],
+      "relevance": 0.68017578125
+    },
+    "Entity-and_requires_no_data_insight": {
+      "node_id": "and_requires_no_data_insight",
+      "disambiguation_index": 0,
+      "label": "and requires no data insights",
+      "aliases": [
+        "and requires no data insights"
+      ],
+      "types": [
+        "requirement"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The proposed solution for obtaining sampling probabilities in databases, which is parameterless and does not rely on any prior knowledge of the underlying data.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "and requires no data insights",
+          "local_types": [
+            "requirement"
+          ],
+          "iri": "Entity-and_requires_no_data_insight-Mention-1"
+        }
+      ],
+      "relevance": 0.66845703125
+    },
+    "Entity-sampling_probability_for_record_in_database": {
+      "node_id": "sampling_probability_for_record_in_database",
+      "disambiguation_index": 0,
+      "label": "sampling probabilities for records in databases",
+      "aliases": [
+        "sampling probabilities for records in databases"
+      ],
+      "types": [
+        "problem",
+        "concept"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The concept of obtaining and using probability values to select specific database records, with the goal of efficiently evaluating aggregate queries.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "sampling probabilities for records in databases",
+          "local_types": [
+            "problem",
+            "concept"
+          ],
+          "iri": "Entity-sampling_probability_for_record_in_database-Mention-1"
+        }
+      ],
+      "relevance": 0.6669921875
+    },
+    "Entity-empirical_risk_minimization": {
+      "node_id": "empirical_risk_minimization",
+      "disambiguation_index": 0,
+      "label": "Empirical Risk Minimization",
+      "aliases": [
+        "Empirical Risk Minimization"
+      ],
+      "types": [
+        "algorithm",
+        "concept"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A statistical learning concept that aims to minimize the expected risk of an error by optimizing a loss function based on empirical data.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "Empirical Risk Minimization",
+          "local_types": [
+            "algorithm",
+            "concept"
+          ],
+          "iri": "Entity-empirical_risk_minimization-Mention-1"
+        }
+      ],
+      "relevance": 0.640625
+    },
+    "Entity-regressed-to_value": {
+      "node_id": "regressed-to_value",
+      "disambiguation_index": 0,
+      "label": "regressed-to values",
+      "aliases": [
+        "regressed-to values"
+      ],
+      "types": [
+        "target variable",
+        "dependent variable"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The target variable or dependent variable whose sampling probabilities are being obtained through regression in order to efficiently and accurately evaluate aggregate queries.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "regressed-to values",
+          "local_types": [
+            "target variable",
+            "dependent variable"
+          ],
+          "iri": "Entity-regressed-to_value-Mention-1"
+        }
+      ],
+      "relevance": 0.62841796875
+    },
+    "Entity-cost_zero_solution": {
+      "node_id": "cost_zero_solution",
+      "disambiguation_index": 0,
+      "label": "cost zero solution",
+      "aliases": [
+        "cost zero solution"
+      ],
+      "types": [
+        "solution"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A parameterless and data-insight-free sampling method that requires no computational resources or costs.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "cost zero solution",
+          "local_types": [
+            "solution"
+          ],
+          "iri": "Entity-cost_zero_solution-Mention-1"
+        }
+      ],
+      "relevance": 0.6279296875
+    },
+    "Entity-a_cost_zero_solution": {
+      "node_id": "a_cost_zero_solution",
+      "disambiguation_index": 0,
+      "label": "a cost zero solution",
+      "aliases": [
+        "a cost zero solution"
+      ],
+      "types": [
+        "solution"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A parameterless and provable solution that requires no data insights and has a loss inversely proportional to the regressed-to values, which always exists unless excluded by hard budget constraints.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "a cost zero solution",
+          "local_types": [
+            "solution"
+          ],
+          "iri": "Entity-a_cost_zero_solution-Mention-1"
+        }
+      ],
+      "relevance": 0.62158203125
+    },
+    "Entity-standard_regression_problem": {
+      "node_id": "standard_regression_problem",
+      "disambiguation_index": 0,
+      "label": "standard regression problems",
+      "aliases": [
+        "standard regression problems"
+      ],
+      "types": [
+        "mathematical concept",
+        "problem",
+        "concept",
+        "task",
+        "statistical problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of statistical problem involving the estimation of relationships between variables using linear models.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "standard regression problems",
+          "local_types": [
+            "mathematical concept",
+            "problem",
+            "concept",
+            "task",
+            "statistical problem"
+          ],
+          "iri": "Entity-standard_regression_problem-Mention-1"
+        }
+      ],
+      "relevance": 0.62109375
+    },
+    "Entity-regression_problem": {
+      "node_id": "regression_problem",
+      "disambiguation_index": 0,
+      "label": "regression problem",
+      "aliases": [
+        "regression problem",
+        "regression problems"
+      ],
+      "types": [
+        "mathematical concept",
+        "problem",
+        "algorithm",
+        "task",
+        "computational problem",
+        "mathematical problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A statistical task that involves finding the best-fitting linear or non-linear relationship between variables, often used to predict continuous outcomes.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "regression problem",
+          "local_types": [
+            "problem",
+            "algorithm",
+            "task",
+            "computational problem",
+            "mathematical problem"
+          ],
+          "iri": "Entity-regression_problem-Mention-1"
+        },
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "regression problems",
+          "local_types": [
+            "mathematical concept"
+          ],
+          "iri": "Entity-regression_problem-Mention-2"
+        }
+      ],
+      "relevance": 0.61962890625
+    },
+    "Entity-a_theoretical_generalization_result": {
+      "node_id": "a_theoretical_generalization_result",
+      "disambiguation_index": 0,
+      "label": "a theoretical generalization result",
+      "aliases": [
+        "a theoretical generalization result"
+      ],
+      "types": [
+        "result"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A mathematical proof or theorem that describes the conditions under which an empirical risk minimization-based learning algorithm can generalize well to unseen data.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "a theoretical generalization result",
+          "local_types": [
+            "result"
+          ],
+          "iri": "Entity-a_theoretical_generalization_result-Mention-1"
+        }
+      ],
+      "relevance": 0.60302734375
+    },
+    "Entity-uniform_sampling": {
+      "node_id": "uniform_sampling",
+      "disambiguation_index": 0,
+      "label": "uniform sampling",
+      "aliases": [
+        "uniform sampling"
+      ],
+      "types": [
+        "algorithm",
+        "methodology",
+        "sampling technique",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A statistical method that selects data points or samples uniformly from a population, dataset, or distribution.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "uniform sampling",
+          "local_types": [
+            "algorithm",
+            "methodology",
+            "sampling technique",
+            "method"
+          ],
+          "iri": "Entity-uniform_sampling-Mention-1"
+        }
+      ],
+      "relevance": 0.5771484375
+    },
+    "Entity-standard_stratified_sampling": {
+      "node_id": "standard_stratified_sampling",
+      "disambiguation_index": 0,
+      "label": "standard stratified sampling",
+      "aliases": [
+        "standard stratified sampling",
+        "stratified sampling"
+      ],
+      "types": [
+        "algorithm",
+        "methodology",
+        "sampling technique",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A statistical method for selecting a representative sample of individuals or items from a larger population, where the selection process involves dividing the population into subgroups and then randomly sampling within each subgroup.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "standard stratified sampling",
+          "local_types": [
+            "algorithm",
+            "methodology"
+          ],
+          "iri": "Entity-standard_stratified_sampling-Mention-1"
+        },
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "stratified sampling",
+          "local_types": [
+            "method",
+            "sampling technique"
+          ],
+          "iri": "Entity-standard_stratified_sampling-Mention-2"
+        }
+      ],
+      "relevance": 0.56884765625
+    },
+    "Entity-reg-ularization": {
+      "node_id": "reg-ularization",
+      "disambiguation_index": 0,
+      "label": "reg-ularization",
+      "aliases": [
+        "reg-ularization"
+      ],
+      "types": [
+        "method",
+        "technique",
+        "algorithmic technique",
+        "computational method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical or computational process used to modify and improve a model, algorithm, or data set by reducing its complexity or variability.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "reg-ularization",
+          "local_types": [
+            "method",
+            "technique",
+            "algorithmic technique",
+            "computational method"
+          ],
+          "iri": "Entity-reg-ularization-Mention-1"
+        }
+      ],
+      "relevance": 0.5673828125
+    },
+    "Entity-sampling_probability": {
+      "node_id": "sampling_probability",
+      "disambiguation_index": 0,
+      "label": "sampling probabilities",
+      "aliases": [
+        "sampling probabilities"
+      ],
+      "types": [
+        "mathematical concept",
+        "data processing",
+        "statistical concept",
+        "data analysis",
+        "probability theory",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The probability distribution of selecting specific data points or samples from a larger dataset.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "sampling probabilities",
+          "local_types": [
+            "mathematical concept",
+            "data processing",
+            "statistical concept",
+            "data analysis",
+            "probability theory",
+            "concept"
+          ],
+          "iri": "Entity-sampling_probability-Mention-1"
+        }
+      ],
+      "relevance": 0.56396484375
+    },
+    "Entity-the_goal": {
+      "node_id": "the_goal",
+      "disambiguation_index": 0,
+      "label": "The goal",
+      "aliases": [
+        "The goal"
+      ],
+      "types": [
+        "goal"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Sampling a small set of records over which evaluating aggregate queries can be done efficiently and accurately.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "The goal",
+          "local_types": [
+            "goal"
+          ],
+          "iri": "Entity-the_goal-Mention-1"
+        }
+      ],
+      "relevance": 0.56298828125
+    },
+    "Entity-our_extensive_experimental_result": {
+      "node_id": "our_extensive_experimental_result",
+      "disambiguation_index": 0,
+      "label": "Our extensive experimental results",
+      "aliases": [
+        "Our extensive experimental results"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The outcomes of various experiments conducted to evaluate the performance of different sampling methods, including uniform sampling and standard stratified sampling.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "Our extensive experimental results",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-our_extensive_experimental_result-Mention-1"
+        }
+      ],
+      "relevance": 0.56298828125
+    },
+    "Entity-the_loss_is_inversely_proportional_to_the_regressed-to_value": {
+      "node_id": "the_loss_is_inversely_proportional_to_the_regressed-to_value",
+      "disambiguation_index": 0,
+      "label": "the loss is inversely proportional to the regressed-to values",
+      "aliases": [
+        "the loss is inversely proportional to the regressed-to values"
+      ],
+      "types": [
+        "loss function"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A property of the proposed algorithm, where the error metric used for training decreases as the target regression values increase.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the loss is inversely proportional to the regressed-to values",
+          "local_types": [
+            "loss function"
+          ],
+          "iri": "Entity-the_loss_is_inversely_proportional_to_the_regressed-to_value-Mention-1"
+        }
+      ],
+      "relevance": 0.55810546875
+    },
+    "Entity-a_small_set_of_record": {
+      "node_id": "a_small_set_of_record",
+      "disambiguation_index": 0,
+      "label": "a small set of records",
+      "aliases": [
+        "a small set of records"
+      ],
+      "types": [
+        "dataset"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A subset of database records selected for efficient evaluation of aggregate queries.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "a small set of records",
+          "local_types": [
+            "dataset"
+          ],
+          "iri": "Entity-a_small_set_of_record-Mention-1"
+        }
+      ],
+      "relevance": 0.55712890625
+    },
+    "Entity-over_which_evaluating_aggregate_query_can_be_done_both_efficiently_and_accurately": {
+      "node_id": "over_which_evaluating_aggregate_query_can_be_done_both_efficiently_and_accurately",
+      "disambiguation_index": 0,
+      "label": "over which evaluating aggregate queries can be done both efficiently and accurately",
+      "aliases": [
+        "over which evaluating aggregate queries can be done both efficiently and accurately"
+      ],
+      "types": [
+        "query"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A small set of records in databases, selected for efficient and accurate evaluation of aggregate queries.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "over which evaluating aggregate queries can be done both efficiently and accurately",
+          "local_types": [
+            "query"
+          ],
+          "iri": "Entity-over_which_evaluating_aggregate_query_can_be_done_both_efficiently_and_accurately-Mention-1"
+        }
+      ],
+      "relevance": 0.55322265625
+    },
+    "Entity-uniform_sampling_and_standard_stratified_sampling": {
+      "node_id": "uniform_sampling_and_standard_stratified_sampling",
+      "disambiguation_index": 0,
+      "label": "uniform sampling and standard stratified sampling",
+      "aliases": [
+        "uniform sampling and standard stratified sampling"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A statistical method for selecting a representative sample from a population",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "uniform sampling and standard stratified sampling",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-uniform_sampling_and_standard_stratified_sampling-Mention-1"
+        }
+      ],
+      "relevance": 0.55029296875
+    },
+    "Entity-aggregate_query": {
+      "node_id": "aggregate_query",
+      "disambiguation_index": 0,
+      "label": "aggregate queries",
+      "aliases": [
+        "aggregate queries"
+      ],
+      "types": [
+        "query optimization",
+        "query",
+        "computational task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of query that involves calculating summary statistics or aggregations from data, such as sums, averages, counts, etc.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "aggregate queries",
+          "local_types": [
+            "query optimization",
+            "query",
+            "computational task"
+          ],
+          "iri": "Entity-aggregate_query-Mention-1"
+        }
+      ],
+      "relevance": 0.53271484375
+    },
+    "Entity-solution": {
+      "node_id": "solution",
+      "disambiguation_index": 0,
+      "label": "solution",
+      "aliases": [
+        "solution"
+      ],
+      "types": [
+        "algorithm",
+        "problem-solving approach",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A method or approach used to solve a particular problem, characterized by being algorithmic, requiring minimal or no external input.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "solution",
+          "local_types": [
+            "algorithm",
+            "method"
+          ],
+          "iri": "Entity-solution-Mention-1"
+        },
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "solution",
+          "local_types": [
+            "problem-solving approach",
+            "algorithm"
+          ],
+          "iri": "Entity-solution-Mention-2"
+        }
+      ],
+      "relevance": 0.52978515625
+    },
+    "Entity-a_unique_form": {
+      "node_id": "a_unique_form",
+      "disambiguation_index": 0,
+      "label": "A unique form",
+      "aliases": [
+        "A unique form"
+      ],
+      "types": [
+        "regularization"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A regularization technique required for the proposed solution, which differs from standard approaches.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "A unique form",
+          "local_types": [
+            "regularization"
+          ],
+          "iri": "Entity-a_unique_form-Mention-1"
+        }
+      ],
+      "relevance": 0.5283203125
+    },
+    "Entity-query": {
+      "node_id": "query",
+      "disambiguation_index": 0,
+      "label": "queries",
+      "aliases": [
+        "queries"
+      ],
+      "types": [
+        "database query",
+        "information retrieval"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A request or inquiry made to retrieve specific information from a database, system, or service.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "queries",
+          "local_types": [
+            "database query",
+            "information retrieval"
+          ],
+          "iri": "Entity-query-Mention-1"
+        }
+      ],
+      "relevance": 0.5029296875
+    },
+    "Entity-principled_and_provable_solution": {
+      "node_id": "principled_and_provable_solution",
+      "disambiguation_index": 0,
+      "label": "principled and provable solution",
+      "aliases": [
+        "principled and provable solution"
+      ],
+      "types": [
+        "mathematical concept",
+        "algorithmic approach",
+        "algorithm",
+        "solution"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical concept or algorithmic approach that provides a logical and verifiable method for solving a problem.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "principled and provable solution",
+          "local_types": [
+            "mathematical concept",
+            "algorithmic approach",
+            "algorithm",
+            "solution"
+          ],
+          "iri": "Entity-principled_and_provable_solution-Mention-1"
+        }
+      ],
+      "relevance": 0.4931640625
+    },
+    "Entity-record_in_database": {
+      "node_id": "record_in_database",
+      "disambiguation_index": 0,
+      "label": "records in databases",
+      "aliases": [
+        "records in databases"
+      ],
+      "types": [
+        "data set",
+        "digital data",
+        "information storage",
+        "database records"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of digital data stored electronically",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "records in databases",
+          "local_types": [
+            "data set",
+            "digital data",
+            "information storage",
+            "database records"
+          ],
+          "iri": "Entity-record_in_database-Mention-1"
+        }
+      ],
+      "relevance": 0.492431640625
+    },
+    "Entity-theoretical_generalization_result": {
+      "node_id": "theoretical_generalization_result",
+      "disambiguation_index": 0,
+      "label": "theoretical generalization result",
+      "aliases": [
+        "theoretical generalization result"
+      ],
+      "types": [
+        "mathematical concept",
+        "result",
+        "statistical theory"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical concept that summarizes and explains statistical theory findings",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "theoretical generalization result",
+          "local_types": [
+            "mathematical concept",
+            "result",
+            "statistical theory"
+          ],
+          "iri": "Entity-theoretical_generalization_result-Mention-1"
+        }
+      ],
+      "relevance": 0.484130859375
+    },
+    "Entity-loss": {
+      "node_id": "loss",
+      "disambiguation_index": 0,
+      "label": "loss",
+      "aliases": [
+        "loss"
+      ],
+      "types": [
+        "metric",
+        "performance measure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A quantifiable measure of performance or error that indicates the magnitude of deviation from an expected outcome.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "loss",
+          "local_types": [
+            "metric",
+            "performance measure"
+          ],
+          "iri": "Entity-loss-Mention-1"
+        }
+      ],
+      "relevance": 0.4736328125
+    },
+    "Entity-experimental_result": {
+      "node_id": "experimental_result",
+      "disambiguation_index": 0,
+      "label": "experimental results",
+      "aliases": [
+        "experimental results"
+      ],
+      "types": [
+        "research outcome",
+        "data analysis",
+        "computational evaluation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The outcome of experiments or trials, typically involving data analysis or computational evaluation.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "experimental results",
+          "local_types": [
+            "research outcome",
+            "data analysis",
+            "computational evaluation"
+          ],
+          "iri": "Entity-experimental_result-Mention-1"
+        }
+      ],
+      "relevance": 0.4736328125
+    },
+    "Entity-hard_budget_constraint": {
+      "node_id": "hard_budget_constraint",
+      "disambiguation_index": 0,
+      "label": "hard budget constraints",
+      "aliases": [
+        "hard budget constraints"
+      ],
+      "types": [
+        "constraint"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A situation where the existence of a cost-free solution is impossible due to strict financial limitations.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "hard budget constraints",
+          "local_types": [
+            "constraint"
+          ],
+          "iri": "Entity-hard_budget_constraint-Mention-1"
+        }
+      ],
+      "relevance": 0.466552734375
+    },
+    "Entity-record": {
+      "node_id": "record",
+      "disambiguation_index": 0,
+      "label": "records",
+      "aliases": [
+        "records"
+      ],
+      "types": [
+        "dataset",
+        "data set"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of data or information",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "records",
+          "local_types": [
+            "dataset",
+            "data set"
+          ],
+          "iri": "Entity-record-Mention-1"
+        }
+      ],
+      "relevance": 0.455810546875
+    },
+    "Entity-problem": {
+      "node_id": "problem",
+      "disambiguation_index": 0,
+      "label": "problem",
+      "aliases": [
+        "problem"
+      ],
+      "types": [
+        "challenge",
+        "issue"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A challenge or issue requiring resolution, often characterized by uncertainty, complexity, or difficulty.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "problem",
+          "local_types": [
+            "challenge",
+            "issue"
+          ],
+          "iri": "Entity-problem-Mention-1"
+        }
+      ],
+      "relevance": 0.44189453125
+    },
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "This paper",
+      "aliases": [
+        "paper",
+        "This paper"
+      ],
+      "types": [
+        "research publication",
+        "academic work",
+        "research",
+        "paper",
+        "research paper",
+        "document"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A written work presenting research or findings on a specific topic",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "This paper",
+          "local_types": [
+            "document",
+            "paper",
+            "research"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        },
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "paper",
+          "local_types": [
+            "research paper",
+            "academic work",
+            "research publication"
+          ],
+          "iri": "Entity-this_paper-Mention-2"
+        }
+      ],
+      "relevance": 0.42333984375
+    },
+    "Entity-cost": {
+      "node_id": "cost",
+      "disambiguation_index": 0,
+      "label": "cost",
+      "aliases": [
+        "cost"
+      ],
+      "types": [
+        "financial concept",
+        "economic factor"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A financial or economic expense incurred to achieve a particular goal or objective.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "cost",
+          "local_types": [
+            "financial concept",
+            "economic factor"
+          ],
+          "iri": "Entity-cost-Mention-1"
+        }
+      ],
+      "relevance": 0.415771484375
+    },
+    "Entity-industry_standard": {
+      "node_id": "industry_standard",
+      "disambiguation_index": 0,
+      "label": "industry standards",
+      "aliases": [
+        "industry standards"
+      ],
+      "types": [
+        "best practice"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Established guidelines or norms that govern a particular sector, profession, or activity.",
+      "mentions": [
+        {
+          "reference": "Paper-35-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "industry standards",
+          "local_types": [
+            "best practice"
+          ],
+          "iri": "Entity-industry_standard-Mention-1"
+        }
+      ],
+      "relevance": 0.414794921875
+    }
+  },
+  "summary": "This paper solves a specialized regression problem to obtain sampling probabilities for records in databases . The goal is to sample a small set of records over which evaluating aggregate queries can be done both efficiently and accurately . We provide a principled and provable solution for this problem ; it is parameterless and requires no data insights . Unlike standard regression problems , the loss is inversely proportional to the regressed-to values . Moreover , a cost zero solution always exists and can only be excluded by hard budget constraints . A unique form of reg-ularization is also needed . We provide an efficient and simple regularized Empirical Risk Minimization -LRB- ERM -RRB- algorithm along with a theoretical generalization result . Our extensive experimental results significantly improve over both uniform sampling and standard stratified sampling which are de-facto the industry standards .",
+  "triples": [
+    [
+      "Entity-this_paper",
+      "Predicate-solves",
+      "Entity-specialized_regression_problem"
+    ],
+    [
+      "Entity-specialized_regression_problem",
+      "Predicate-to_obtain",
+      "Entity-sampling_probability_for_record_in_database"
+    ],
+    [
+      "Entity-the_goal",
+      "Predicate-sample",
+      "Entity-a_small_set_of_record"
+    ],
+    [
+      "Entity-record",
+      "Predicate-evaluating",
+      "Entity-aggregate_query"
+    ],
+    [
+      "Entity-regression_problem",
+      "Predicate-have",
+      "Entity-the_loss_is_inversely_proportional_to_the_regressed-to_value"
+    ],
+    [
+      "Entity-solution",
+      "Predicate-exists",
+      "Entity-a_cost_zero_solution"
+    ],
+    [
+      "Entity-a_cost_zero_solution",
+      "Predicate-can_be_excluded_by",
+      "Entity-hard_budget_constraint"
+    ],
+    [
+      "Entity-cost_zero_solution",
+      "Predicate-always_exists_and_can_only_be_excluded_by",
+      "Entity-hard_budget_constraint"
+    ],
+    [
+      "Entity-a_unique_form",
+      "Predicate-is_also_needed_for",
+      "Entity-reg-ularization"
+    ],
+    [
+      "Entity-empirical_risk_minimization_-lrb-_erm_-rrb-_algorithm",
+      "Predicate-provides",
+      "Entity-a_principled_and_provable_solution_for_this_problem"
+    ],
+    [
+      "Entity-specialized_regression_problem",
+      "Predicate-solves",
+      "Entity-a_principled_and_provable_solution_for_this_problem"
+    ],
+    [
+      "Entity-a_principled_and_provable_solution_for_this_problem",
+      "Predicate-requires",
+      "Entity-unique_form"
+    ],
+    [
+      "Entity-empirical_risk_minimization_-lrb-_erm_-rrb-_algorithm",
+      "Predicate-solves",
+      "Entity-specialized_regression_problem"
+    ],
+    [
+      "Entity-unique_form",
+      "Predicate-requires",
+      "Entity-empirical_risk_minimization_-lrb-_erm_-rrb-_algorithm"
+    ],
+    [
+      "Entity-specialized_regression_problem",
+      "Predicate-requires",
+      "Entity-unique_form"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-specialized_regression_problem",
+      "skos:broader",
+      "Entity-problem"
+    ],
+    [
+      "Entity-principled_and_provable_solution",
+      "skos:broader",
+      "Entity-solution"
+    ],
+    [
+      "Entity-standard_regression_problem",
+      "skos:broader",
+      "Entity-problem"
+    ],
+    [
+      "Entity-theoretical_generalization_result",
+      "skos:broader",
+      "Entity-experimental_result"
+    ],
+    [
+      "Entity-sampling_probability_for_record_in_database",
+      "skos:broader",
+      "Entity-problem"
+    ],
+    [
+      "Entity-over_which_evaluating_aggregate_query_can_be_done_both_efficiently_and_accurately",
+      "skos:broader",
+      "Entity-query"
+    ],
+    [
+      "Entity-a_theoretical_generalization_result",
+      "skos:broader",
+      "Entity-experimental_result"
+    ],
+    [
+      "Entity-regression_problem",
+      "skos:broader",
+      "Entity-problem"
+    ],
+    [
+      "Entity-aggregate_query",
+      "skos:broader",
+      "Entity-query"
+    ],
+    [
+      "Entity-a_cost_zero_solution",
+      "skos:broader",
+      "Entity-solution"
+    ],
+    [
+      "Entity-a_principled_and_provable_solution_for_this_problem",
+      "skos:broader",
+      "Entity-solution"
+    ],
+    [
+      "Entity-cost_zero_solution",
+      "skos:broader",
+      "Entity-solution"
+    ]
+  ],
+  "predicates": {
+    "Predicate-solves": {
+      "label": "solves",
+      "description": "The predicate 'solves' indicates that the subject has successfully addressed or overcome a challenge, obstacle, or difficulty represented by the object. It implies a sense of resolution, completion, or triumph over the problem or issue at hand.",
+      "disambiguation_index": 0
+    },
+    "Predicate-to_obtain": {
+      "label": "to obtain",
+      "description": "To obtain indicates a relationship where the subject takes action or makes an effort to acquire or gain access to something specified by the object. The predicate suggests a sense of procurement, attainment, or achievement, implying that the subject has taken steps to get what it wants from the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-sample": {
+      "label": "sample",
+      "description": "To sample means to select or extract a portion from a larger whole, often for the purpose of representation, analysis, or evaluation. The predicate 'sample' establishes a connection between the subject and object by indicating that the subject has been reduced or condensed into a smaller form, which is then represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-evaluating": {
+      "label": "evaluating",
+      "description": "The predicate 'evaluating' indicates the process of assessing or determining the value or quality of something (the subject), typically in relation to a specific standard, criteria, or method (the object).",
+      "disambiguation_index": 0
+    },
+    "Predicate-have": {
+      "label": "have",
+      "description": "The predicate 'have' indicates a relationship of possession or association between the subject and object. It suggests that the subject has, possesses, or is related to the described property or characteristic expressed by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-exists": {
+      "label": "exists",
+      "description": "The predicate 'exists' indicates that there is at least one instance or entity of the object that corresponds to the subject. It implies the presence, occurrence, or existence of something related to the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-can_be_excluded_by": {
+      "label": "can be excluded by",
+      "description": "The predicate 'can be excluded by' indicates a relationship where the subject (e.g., an idea, option, or solution) can be eliminated or ruled out due to the presence of the object (e.g., constraints, limitations). The connection between the subject and object suggests that the existence or feasibility of the subject is conditional upon the absence or relaxation of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-always_exists_and_can_only_be_excluded_by": {
+      "label": "always exists and can only be excluded by",
+      "description": "This predicate indicates that a particular condition or state (subject) inherently exists and cannot be eliminated unless there are specific circumstances or factors (object) that prevent it from being present. The object serves as an exception to the rule, highlighting what can potentially disrupt or negate the existence of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_also_needed_for": {
+      "label": "is also needed for",
+      "description": "The predicate 'is also needed for' indicates a relationship where the subject (a resource or entity) plays an essential role in facilitating or enabling the object (an action, process, or outcome). In this sense, the subject is not only necessary but also instrumental in achieving the desired result.",
+      "disambiguation_index": 0
+    },
+    "Predicate-provides": {
+      "label": "provides",
+      "description": "The predicate 'provides' indicates that the subject offers or furnishes something (the object), often implying a sense of fulfillment, satisfaction, or meeting a need. It suggests a causal relationship between the subject and the object, where the subject's action or existence leads to the provision of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-requires": {
+      "label": "requires",
+      "description": "The predicate 'requires' indicates that a certain condition or property must be met in order to satisfy or fulfill something. It implies a necessary relationship between the subject and object, where the subject needs or demands the presence of the object's characteristic(s) or quality(ies).",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' indicates that the subject is a specific instance or category of a more general concept represented by the object. It establishes a hierarchical relationship between the two, where the subject is a subcategory or specialization of the object.",
+      "disambiguation_index": 0
+    }
+  }
+}

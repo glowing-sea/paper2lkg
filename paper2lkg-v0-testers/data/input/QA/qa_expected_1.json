@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the main purpose of the MEL tool introduced in the paper?",
+    "answer": "The main purpose of MEL is to implement a set of methods to extract metadata and content-based information from unstructured data sets encoded in different source document formats, generating results as JSON files to aid pre-processing tasks in Knowledge Graph Construction Pipelines."
+  },
+  {
+    "question": "How does MEL integrate with TNNT, and what is the benefit of this integration?",
+    "answer": "MEL is integrated with The NLP-NER Toolkit (TNNT) to automate the extraction of categorized named entities from the MEL results by using diverse state-of-the-art NLP tools and NER models. This integration enhances content-based analysis by providing named entity recognition capabilities."
+  },
+  {
+    "question": "What are the main differences between MEL and Apache Tika?",
+    "answer": "While both MEL and Apache Tika aim to extract metadata and content from various file formats, the main differences are that MEL is a lightweight Python-based package specifically designed for metadata extraction of common file formats for use in Knowledge Graph Construction Pipelines, whereas Apache Tika is a complete and complex Java-based general-purpose system."
+  },
+  {
+    "question": "How many different file types does MEL support, and what is the significance of this feature?",
+    "answer": "MEL supports more than 20 different file types. This comprehensive support makes it a versatile tool capable of processing heterogeneous document sets, which is significant for pre-processing tasks in Knowledge Graph Construction Pipelines."
+  },
+  {
+    "question": "What are the four major contributions of MEL as highlighted in the paper?",
+    "answer": "The four major contributions of MEL are: (1) the ability to extract metadata sets and content-based information from different source document formats; (2) the comprehensive support of over 20 different file types/formats integrated into one easy-to-use Python-based system; (3) integration with TNNT which automates the extraction of categorized named entities from the results by using diverse state-of-the-art NLP tools and NER models; and (4) the JSON result files can be easily mapped to RDF using J2RM."
+  },
+  {
+    "question": "What is the role of the configuration JSON file in MEL?",
+    "answer": "The configuration JSON file in MEL defines how the processing will be performed through a set of parameters and flags that establish the initial settings related to the document store, input document sets, TNNT general configuration, file extension mappings, the 'Associated-Metadata' processing, and regular expressions to apply in the text analysis task, among other settings."
+  },
+  {
+    "question": "Explain how MEL can make the extracted metadata 'RDF ready.'",
+    "answer": "By structuring MEL's JSON results to include JSON-LD annotations, it is possible to add a vocabulary or lightweight ontology. This integration with JSON-LD allows the extracted metadata to be easily mapped to RDF, making it 'RDF ready' for use in semantic web applications."
+  },
+  {
+    "question": "What limitations does MEL have regarding the processing of certain file types, and why?",
+    "answer": "OLE 2 file types and .docm files can only be processed on Windows operating systems. Specifically for OLE 2 file types, MEL uses the olemeta tool, which is dependent on Windows-specific features, limiting the processing of these file types on other operating systems."
+  },
+  {
+    "question": "Describe the process MEL follows to extract metadata and content-based information from documents.",
+    "answer": "MEL takes a document set as input. For each document, it extracts related metadata and content-based information while performing basic text analysis such as applying a configurable set of regular expressions and keyword extraction tasks. It then generates a JSON file with the extracted metadata and text content structured based on the document object model of each supported format."
+  },
+  {
+    "question": "What future enhancements are planned for MEL as mentioned in the paper?",
+    "answer": "Future enhancements planned for MEL include exploring the integration with JSON-LD ontologies to make the extracted metadata 'RDF ready,' adding more file formats on a per-use-case requirements basis to support Knowledge Graph Construction Pipelines, and a project to 'containerize' the MEL+TNNT tools."
+  }
+]

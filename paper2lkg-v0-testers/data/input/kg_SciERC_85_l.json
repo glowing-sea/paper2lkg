@@ -1,0 +1,889 @@
+{
+  "iri": "Paper-85",
+  "title": "H05-1095",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-85-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-85-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-85-Section-1-Paragraph-1-Sentence-1",
+              "text": "This paper presents a phrase-based statistical machine translation method , based on non-contiguous phrases , i.e. phrases with gaps ."
+            },
+            {
+              "iri": "Paper-85-Section-1-Paragraph-1-Sentence-2",
+              "text": "A method for producing such phrases from a word-aligned corpora is proposed ."
+            },
+            {
+              "iri": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+              "text": "A statistical translation model is also presented that deals such phrases , as well as a training method based on the maximization of translation accuracy , as measured with the NIST evaluation metric ."
+            },
+            {
+              "iri": "Paper-85-Section-1-Paragraph-1-Sentence-4",
+              "text": "Translations are produced by means of a beam-search decoder ."
+            },
+            {
+              "iri": "Paper-85-Section-1-Paragraph-1-Sentence-5",
+              "text": "Experimental results are presented , that demonstrate how the proposed method allows to better generalize from the training data ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00021219253540039062,
+    14.619406461715698,
+    22.290700912475586,
+    20.50006914138794,
+    0.020213603973388672,
+    7.843971252441406e-05,
+    9.751319885253906e-05,
+    29.41363501548767,
+    36.470030784606934,
+    1.3940250873565674,
+    1.1646013259887695,
+    0.007962703704833984,
+    0.00015544891357421875,
+    25.457610845565796,
+    2.664699077606201,
+    0.01386713981628418,
+    1.0989446640014648,
+    3.338611364364624,
+    3.049318313598633,
+    3.403196096420288,
+    31.663034915924072,
+    2.702045440673828,
+    21.223549604415894,
+    1.120962381362915,
+    0.0006699562072753906,
+    0.009132146835327148
+  ],
+  "nodes": {
+    "Entity-the_proposed_method": {
+      "node_id": "the_proposed_method",
+      "disambiguation_index": 0,
+      "label": "the proposed method",
+      "aliases": [
+        "the proposed method"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A phrase-based statistical machine translation approach for producing translations by means of a beam-search decoder and maximizing translation accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "the proposed method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-the_proposed_method-Mention-1"
+        }
+      ],
+      "relevance": 0.7822265625
+    },
+    "Entity-a_statistical_translation_model": {
+      "node_id": "a_statistical_translation_model",
+      "disambiguation_index": 0,
+      "label": "A statistical translation model",
+      "aliases": [
+        "A statistical translation model"
+      ],
+      "types": [
+        "model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A statistical model for translating text by maximizing translation accuracy using phrases with gaps.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "A statistical translation model",
+          "local_types": [
+            "model"
+          ],
+          "iri": "Entity-a_statistical_translation_model-Mention-1"
+        }
+      ],
+      "relevance": 0.76806640625
+    },
+    "Entity-phrase-based_statistical_machine_translation_method": {
+      "node_id": "phrase-based_statistical_machine_translation_method",
+      "disambiguation_index": 0,
+      "label": "phrase-based statistical machine translation method",
+      "aliases": [
+        "phrase-based statistical machine translation",
+        "phrase-based statistical machine translation method"
+      ],
+      "types": [
+        "algorithm",
+        "research approach",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A computational approach that translates text from one language to another by analyzing and combining individual phrases using statistical models.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "phrase-based statistical machine translation method",
+          "local_types": [
+            "algorithm",
+            "research approach",
+            "method"
+          ],
+          "iri": "Entity-phrase-based_statistical_machine_translation_method-Mention-1"
+        },
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "phrase-based statistical machine translation",
+          "local_types": [
+            "method",
+            "algorithm"
+          ],
+          "iri": "Entity-phrase-based_statistical_machine_translation_method-Mention-2"
+        }
+      ],
+      "relevance": 0.75439453125
+    },
+    "Entity-non-contiguous_phrase": {
+      "node_id": "non-contiguous_phrase",
+      "disambiguation_index": 0,
+      "label": "non-contiguous phrases",
+      "aliases": [
+        "non-contiguous phrases"
+      ],
+      "types": [
+        "linguistic concept",
+        "concept",
+        "idea",
+        "language processing technique",
+        "phrasing"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Phrases consisting of words separated by gaps or pauses, used as input for phrase-based statistical machine translation methods.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "non-contiguous phrases",
+          "local_types": [
+            "linguistic concept",
+            "concept",
+            "idea",
+            "language processing technique",
+            "phrasing"
+          ],
+          "iri": "Entity-non-contiguous_phrase-Mention-1"
+        }
+      ],
+      "relevance": 0.75048828125
+    },
+    "Entity-such_phrase": {
+      "node_id": "such_phrase",
+      "disambiguation_index": 0,
+      "label": "such phrases",
+      "aliases": [
+        "such phrases"
+      ],
+      "types": [
+        "phrase"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Non-contiguous phrases or phrases with gaps that are used in statistical machine translation.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "such phrases",
+          "local_types": [
+            "phrase"
+          ],
+          "iri": "Entity-such_phrase-Mention-1"
+        }
+      ],
+      "relevance": 0.74658203125
+    },
+    "Entity-such_phrase_from_a_word-aligned_corpus_is_proposed": {
+      "node_id": "such_phrase_from_a_word-aligned_corpus_is_proposed",
+      "disambiguation_index": 0,
+      "label": "such phrases from a word-aligned corpora is proposed",
+      "aliases": [
+        "such phrases from a word-aligned corpora is proposed"
+      ],
+      "types": [
+        "proposal"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A method for generating non-contiguous phrases with gaps, also known as such phrases, from a word-aligned corpora.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "such phrases from a word-aligned corpora is proposed",
+          "local_types": [
+            "proposal"
+          ],
+          "iri": "Entity-such_phrase_from_a_word-aligned_corpus_is_proposed-Mention-1"
+        }
+      ],
+      "relevance": 0.72509765625
+    },
+    "Entity-statistical_translation_model": {
+      "node_id": "statistical_translation_model",
+      "disambiguation_index": 0,
+      "label": "statistical translation model",
+      "aliases": [
+        "statistical translation model"
+      ],
+      "types": [
+        "algorithm",
+        "translation",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of machine learning algorithm that uses statistical methods to translate text from one language to another.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "statistical translation model",
+          "local_types": [
+            "algorithm",
+            "translation",
+            "model"
+          ],
+          "iri": "Entity-statistical_translation_model-Mention-1"
+        }
+      ],
+      "relevance": 0.6923828125
+    },
+    "Entity-a_method": {
+      "node_id": "a_method",
+      "disambiguation_index": 0,
+      "label": "A method",
+      "aliases": [
+        "A method"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A technique or approach used to produce non-contiguous phrases from a word-aligned corpus.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "A method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-a_method-Mention-1"
+        }
+      ],
+      "relevance": 0.66845703125
+    },
+    "Entity-word-aligned_corpus": {
+      "node_id": "word-aligned_corpus",
+      "disambiguation_index": 0,
+      "label": "word-aligned corpora",
+      "aliases": [
+        "word-aligned corpora"
+      ],
+      "types": [
+        "dataset",
+        "collection of text data",
+        "resource",
+        "corpora"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A collection of text data where words are aligned with their corresponding translations, used as input for producing non-contiguous phrases.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "word-aligned corpora",
+          "local_types": [
+            "dataset",
+            "collection of text data",
+            "resource",
+            "corpora"
+          ],
+          "iri": "Entity-word-aligned_corpus-Mention-1"
+        }
+      ],
+      "relevance": 0.66455078125
+    },
+    "Entity-beam-search_decoder": {
+      "node_id": "beam-search_decoder",
+      "disambiguation_index": 0,
+      "label": "beam-search decoder",
+      "aliases": [
+        "beam-search decoder"
+      ],
+      "types": [
+        "algorithm",
+        "decoder",
+        "technique",
+        "computational method",
+        "tool"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A computational technique used to generate translations or decode sequences, typically involving a search process with a limited number of possible outcomes.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "beam-search decoder",
+          "local_types": [
+            "algorithm",
+            "decoder",
+            "technique",
+            "computational method",
+            "tool"
+          ],
+          "iri": "Entity-beam-search_decoder-Mention-1"
+        }
+      ],
+      "relevance": 0.630859375
+    },
+    "Entity-training_method_based_on_the_maximization_of_translation_accuracy": {
+      "node_id": "training_method_based_on_the_maximization_of_translation_accuracy",
+      "disambiguation_index": 0,
+      "label": "training method based on the maximization of translation accuracy",
+      "aliases": [
+        "training method based on the maximization of translation accuracy",
+        "a training method based on the maximization of translation accuracy"
+      ],
+      "types": [
+        "method",
+        "approach",
+        "evaluation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A machine learning approach that optimizes its performance by maximizing translation accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "training method based on the maximization of translation accuracy",
+          "local_types": [
+            "method",
+            "approach",
+            "evaluation"
+          ],
+          "iri": "Entity-training_method_based_on_the_maximization_of_translation_accuracy-Mention-1"
+        },
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "a training method based on the maximization of translation accuracy",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-training_method_based_on_the_maximization_of_translation_accuracy-Mention-2"
+        }
+      ],
+      "relevance": 0.6220703125
+    },
+    "Entity-a_beam-search_decoder": {
+      "node_id": "a_beam-search_decoder",
+      "disambiguation_index": 0,
+      "label": "a beam-search decoder",
+      "aliases": [
+        "a beam-search decoder"
+      ],
+      "types": [
+        "algorithm",
+        "decoder"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A decoding algorithm that uses a search strategy to find the most likely translation sequence, considering a set of possible translations and their probabilities.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "a beam-search decoder",
+          "local_types": [
+            "algorithm",
+            "decoder"
+          ],
+          "iri": "Entity-a_beam-search_decoder-Mention-1"
+        }
+      ],
+      "relevance": 0.6220703125
+    },
+    "Entity-the_nist_evaluation_metric": {
+      "node_id": "the_nist_evaluation_metric",
+      "disambiguation_index": 0,
+      "label": "the NIST evaluation metric",
+      "aliases": [
+        "the NIST evaluation metric"
+      ],
+      "types": [
+        "metric"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A widely-used measure to evaluate the accuracy and quality of machine translations.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the NIST evaluation metric",
+          "local_types": [
+            "metric"
+          ],
+          "iri": "Entity-the_nist_evaluation_metric-Mention-1"
+        }
+      ],
+      "relevance": 0.6162109375
+    },
+    "Entity-nist_evaluation_metric": {
+      "node_id": "nist_evaluation_metric",
+      "disambiguation_index": 0,
+      "label": "NIST evaluation metric",
+      "aliases": [
+        "NIST evaluation metric"
+      ],
+      "types": [
+        "standard",
+        "evaluation method",
+        "evaluation framework",
+        "standardised measurement tool",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A standardized measurement tool used to evaluate and compare the performance of language translation systems.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "NIST evaluation metric",
+          "local_types": [
+            "standard",
+            "evaluation method",
+            "evaluation framework",
+            "standardised measurement tool",
+            "metric"
+          ],
+          "iri": "Entity-nist_evaluation_metric-Mention-1"
+        }
+      ],
+      "relevance": 0.6123046875
+    },
+    "Entity-phrase_with_gap": {
+      "node_id": "phrase_with_gap",
+      "disambiguation_index": 0,
+      "label": "phrases with gaps",
+      "aliases": [
+        "phrases with gaps"
+      ],
+      "types": [
+        "concept",
+        "idea"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Non-contiguous phrases that do not contain all the words in a phrase, leaving gaps between them.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "phrases with gaps",
+          "local_types": [
+            "concept",
+            "idea"
+          ],
+          "iri": "Entity-phrase_with_gap-Mention-1"
+        }
+      ],
+      "relevance": 0.60791015625
+    },
+    "Entity-translation_accuracy": {
+      "node_id": "translation_accuracy",
+      "disambiguation_index": 0,
+      "label": "translation accuracy",
+      "aliases": [
+        "translation accuracy"
+      ],
+      "types": [
+        "evaluation metric",
+        "performance measure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A measure of how accurately a translation is rendered.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "translation accuracy",
+          "local_types": [
+            "evaluation metric",
+            "performance measure"
+          ],
+          "iri": "Entity-translation_accuracy-Mention-1"
+        }
+      ],
+      "relevance": 0.5654296875
+    },
+    "Entity-phrase": {
+      "node_id": "phrase",
+      "disambiguation_index": 0,
+      "label": "phrases",
+      "aliases": [
+        "phrases"
+      ],
+      "types": [
+        "text fragment",
+        "textual expression",
+        "sentence",
+        "linguistic unit"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A sequence of words with meaning",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "phrases",
+          "local_types": [
+            "textual expression",
+            "sentence"
+          ],
+          "iri": "Entity-phrase-Mention-1"
+        },
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "phrases",
+          "local_types": [
+            "linguistic unit",
+            "text fragment"
+          ],
+          "iri": "Entity-phrase-Mention-2"
+        }
+      ],
+      "relevance": 0.55859375
+    },
+    "Entity-nist": {
+      "node_id": "nist",
+      "disambiguation_index": 0,
+      "label": "NIST",
+      "aliases": [
+        "NIST"
+      ],
+      "types": [
+        "organization",
+        "metric"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "The National Institute of Standards and Technology is an American organization that develops and maintains standards and metrics, including those used to evaluate translation accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "NIST",
+          "local_types": [
+            "organization",
+            "metric"
+          ],
+          "iri": "Entity-nist-Mention-1"
+        }
+      ],
+      "relevance": 0.5302734375
+    },
+    "Entity-training_data": {
+      "node_id": "training_data",
+      "disambiguation_index": 0,
+      "label": "training data",
+      "aliases": [
+        "training data"
+      ],
+      "types": [
+        "dataset",
+        "information source",
+        "data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of examples or instances used for learning and improving a model's performance.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "training data",
+          "local_types": [
+            "dataset",
+            "information source",
+            "data"
+          ],
+          "iri": "Entity-training_data-Mention-1"
+        }
+      ],
+      "relevance": 0.52978515625
+    },
+    "Entity-translation": {
+      "node_id": "translation",
+      "disambiguation_index": 0,
+      "label": "Translations",
+      "aliases": [
+        "Translations"
+      ],
+      "types": [
+        "product",
+        "translation",
+        "output"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A product or result that represents the conversion of text from one language to another.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Translations",
+          "local_types": [
+            "product",
+            "translation",
+            "output"
+          ],
+          "iri": "Entity-translation-Mention-1"
+        }
+      ],
+      "relevance": 0.52587890625
+    },
+    "Entity-method": {
+      "node_id": "method",
+      "disambiguation_index": 0,
+      "label": "method",
+      "aliases": [
+        "method",
+        "proposed method"
+      ],
+      "types": [
+        "algorithm",
+        "approach"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A systematic procedure or technique used to achieve a specific goal",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "method",
+          "local_types": [
+            "algorithm",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-1"
+        },
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "proposed method",
+          "local_types": [
+            "algorithm",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-2"
+        }
+      ],
+      "relevance": 0.50390625
+    },
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "This paper",
+      "aliases": [
+        "This paper"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The current research being discussed",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "This paper",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.474853515625
+    },
+    "Entity-experimental_result": {
+      "node_id": "experimental_result",
+      "disambiguation_index": 0,
+      "label": "Experimental results",
+      "aliases": [
+        "Experimental results"
+      ],
+      "types": [
+        "results",
+        "study finding",
+        "research outcome",
+        "evaluation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The outcomes or findings of a scientific experiment or study.",
+      "mentions": [
+        {
+          "reference": "Paper-85-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Experimental results",
+          "local_types": [
+            "results",
+            "study finding",
+            "research outcome",
+            "evaluation"
+          ],
+          "iri": "Entity-experimental_result-Mention-1"
+        }
+      ],
+      "relevance": 0.46044921875
+    }
+  },
+  "summary": "This paper presents a phrase-based statistical machine translation method , based on non-contiguous phrases , i.e. phrases with gaps . A method for producing such phrases from a word-aligned corpora is proposed . A statistical translation model is also presented that deals such phrases , as well as a training method based on the maximization of translation accuracy , as measured with the NIST evaluation metric . Translations are produced by means of a beam-search decoder . Experimental results are presented , that demonstrate how the proposed method allows to better generalize from the training data .",
+  "triples": [
+    [
+      "Entity-phrase-based_statistical_machine_translation_method",
+      "Predicate-based_on",
+      "Entity-non-contiguous_phrase"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents",
+      "Entity-phrase-based_statistical_machine_translation_method"
+    ],
+    [
+      "Entity-a_method",
+      "Predicate-proposed",
+      "Entity-such_phrase_from_a_word-aligned_corpus_is_proposed"
+    ],
+    [
+      "Entity-statistical_translation_model",
+      "Predicate-presents",
+      "Entity-training_method_based_on_the_maximization_of_translation_accuracy"
+    ],
+    [
+      "Entity-a_statistical_translation_model",
+      "Predicate-deals_with",
+      "Entity-such_phrase"
+    ],
+    [
+      "Entity-training_method_based_on_the_maximization_of_translation_accuracy",
+      "Predicate-based_on",
+      "Entity-the_nist_evaluation_metric"
+    ],
+    [
+      "Entity-statistical_translation_model",
+      "Predicate-deals_with",
+      "Entity-such_phrase"
+    ],
+    [
+      "Entity-translation",
+      "Predicate-produced_by_means_of",
+      "Entity-a_beam-search_decoder"
+    ],
+    [
+      "Entity-the_proposed_method",
+      "Predicate-allows_to_better_generalize_from",
+      "Entity-training_data"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents",
+      "Entity-statistical_translation_model"
+    ],
+    [
+      "Entity-a_statistical_translation_model",
+      "Predicate-is_based_on",
+      "Entity-the_proposed_method"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-the_proposed_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-such_phrase",
+      "skos:broader",
+      "Entity-phrase"
+    ],
+    [
+      "Entity-statistical_translation_model",
+      "skos:broader",
+      "Entity-translation"
+    ],
+    [
+      "Entity-beam-search_decoder",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-phrase-based_statistical_machine_translation_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-training_method_based_on_the_maximization_of_translation_accuracy",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-a_method",
+      "skos:broader",
+      "Entity-method"
+    ]
+  ],
+  "predicates": {
+    "Predicate-based_on": {
+      "label": "based on",
+      "description": "The predicate 'based on' indicates a relationship where the subject (a concept or approach) relies on or draws inspiration from the object (another concept, method, or principle). This connection implies that the subject's characteristics, principles, or methodology are derived from or grounded in the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents": {
+      "label": "presents",
+      "description": "To present means to introduce or offer something, typically an idea, concept, or methodology. In this sense, the predicate 'presents' indicates that the subject (a person, entity, or work) provides a new perspective, explanation, or approach to understand the object (an idea, method, or phenomenon).",
+      "disambiguation_index": 0
+    },
+    "Predicate-proposed": {
+      "label": "proposed",
+      "description": "The predicate 'proposed' indicates that an idea or plan has been put forward for consideration, discussion, or implementation. It suggests a sense of suggestion, recommendation, or introduction to a new concept, method, or approach.",
+      "disambiguation_index": 0
+    },
+    "Predicate-deals_with": {
+      "label": "deals with",
+      "description": "The predicate 'deals with' indicates a relationship where the subject (a person, entity, or system) has some level of interaction, processing, handling, or management responsibility for the object. This can include tasks such as analyzing, interpreting, manipulating, organizing, or providing solutions related to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-produced_by_means_of": {
+      "label": "produced by means of",
+      "description": "The predicate 'produced by means of' indicates that the subject (in this case, Translations) was created or generated using the specified object (a beam-search decoder), implying a causal relationship between the two. It highlights the method or tool used to produce the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-allows_to_better_generalize_from": {
+      "label": "allows to better generalize from",
+      "description": "This predicate indicates that the subject enables or facilitates a process of generalization from the object. In other words, it suggests that the subject provides a means to derive more comprehensive and abstract concepts or patterns from the information contained within the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_based_on": {
+      "label": "is based on",
+      "description": "The predicate 'is based on' indicates a relationship where the subject relies on or has its foundation in the object. It suggests that the subject's existence, validity, or functionality is grounded in or derived from the object.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' indicates that the subject concept is a specific instance or subclass of a more general category or class represented by the object. It establishes a hierarchical relationship between the two, where the subject is a narrower term within the scope defined by the object.",
+      "disambiguation_index": 0
+    }
+  }
+}

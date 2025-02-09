@@ -1,0 +1,1343 @@
+{
+  "iri": "Paper-An_Analysis_of_Links_in_Wikidata",
+  "title": "An Analysis of Links in Wikidata",
+  "authors": [
+    "Armin Haller",
+    "Axel Polleres",
+    "Daniil Dobriy",
+    "Nicolas Ferranti",
+    "Sergio J. Rodr\u0131\u0301guez M\u00e9ndez"
+  ],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-1",
+              "text": "Wikidata has become one of the most prominent open knowledge graphs (KGs) on the Web."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-2",
+              "text": "Relying on a community of users with different expertise, this cross-domain KG is directly related to other data sources."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-3",
+              "text": "This paper investigates how Wikidata is linked to other data sources in the Linked Data ecosystem."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-1",
+              "text": "To this end, we adapt previous definitions of ontology links and instance links to the terminological part of the Wikidata vocabulary and perform an analysis of the links in Wikidata to external datasets and ontologies from the Linked Data ecosystem."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-2",
+              "text": "As a side effect, this reveals insights on the ontological expressiveness of meta-properties used in Wikidata."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-3-Sentence-1",
+              "text": "The results of this analysis show that while Wikidata defines a large number of individuals, classes and properties within its own namespace, they are not yet extensively linked."
+            },
+            {
+              "iri": "Section-1-Paragraph-3-Sentence-2",
+              "text": "We discuss reasons for this and conclude with some suggestions to increase the interconnectedness of Wikidata with other KGs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-2",
+      "subtitle": "Introduction",
+      "paragraphs": [
+        {
+          "iri": "Section-2-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-1",
+              "text": "Wikidata, as a multilingual Wikipedia for data, has grown to a knowledge graph (KG) containing over 95 million entities."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-2",
+              "text": "Since its beginning in 2012, Wikidata has been conceived as a KG that is built bottom-up by its many editors, plus, partially, automatic bots."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-3",
+              "text": "As a backend, Wikidata uses Wikibase, an open-source software suite for creating collaborative knowledge bases, which allow its many editors to contribute to this KG."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-4",
+              "text": "Being built bottom-up by domain experts who often also maintain the external original source of data that is being added, Wikidata already includes many links to other datasets, for example, through the reuse of external identifiers for entities, such as ORCID records for academics, DOIs for digital artifacts, or the Ensembl identifier for genes."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-5",
+              "text": "This allows the editors of Wikidata to automatically integrate data from external KGs that remain under the control of the original publisher."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-6",
+              "text": "In fact, such automatic integration of external data through bots already exists on Wikidata itself, for example, a Citationgraph bot that updates citation numbers of academic works."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-7",
+              "text": "Consequently, Wikidata has become in practice a data directory that serves as an entry point to external datasets, other knowledge graphs, or ID providers."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-8",
+              "text": "These observations motivate a more in-depth study on the linkage of Wikidata with other KGs and the types of links used for such linking."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-1",
+              "text": "Previous work has established link types definitions between datasets."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-2",
+              "text": "Broadly, this work defined two categories of links: ontology links and instance links."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-3",
+              "text": "We aim to herein re-use and adapt these definitions and apply them to the Wikidata data model."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-4",
+              "text": "To do so, we evaluate the HDT dump of the entire Wikidata KG from March 3, 2021."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-5",
+              "text": "For the analysis of ontology links, however, we cannot directly use the established link types definitions, since Wikidata does practically not rely on the RDFS/OWL semantics and vocabularies."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-6",
+              "text": "While strictly speaking, in terms of its RDFS and OWL TBox constructs used, Wikibase and, as such, Wikidata, use a very simple ontology, the actual ontology to describe entities in Wikidata is largely built bottom-up by the community itself, not using RDFS/OWL."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-7",
+              "text": "Indeed, Wikidata partially tries to re-use and integrate external ontologies, but it does so by introducing its own meta-model, and only links to external ontologies through specific, again community-introduced, property relations, such as equivalent class."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-1",
+              "text": "This flexibility allows the community to extend the knowledge graph rapidly by adding a rich set of statements about entities in the world without much concern for logical consistency expected in the stricter frameworks of RDFS and OWL."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-2",
+              "text": "This liberty comes with drawbacks, though, with semantic errors or inconsistencies, such as incoherent meta-modeling of classes/instances, being prevalent."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-3",
+              "text": "However, many of these problems are eventually resolved through discussions among the editors."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-4",
+              "text": "There have been some studies on such quality issues within Wikidata, but generally there is still little understanding of the quality and evolution of knowledge contained within Wikidata, particularly on the schema level and the schematic relations to other ontologies on the Web."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-1",
+              "text": "We therefore present an extension of the definitions of ontology links by mapping them to the informal, community-developed Wikidata meta-model."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-2",
+              "text": "In the course of that, we also compare the available meta-properties in Wikidata to their respective corresponding properties in the OWL and RDFS vocabulary, which allows us to draw some preliminary conclusions about the ontological expressivity used in Wikidata's meta-modeling."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-3",
+              "text": "The mapping also allows us to analyze the extent of ontology links and instance links from Wikidata to other KGs."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-4",
+              "text": "Specifically, we aim to investigate how central Wikidata is to the Linked Data ecosystem by testing the following hypotheses in our analysis."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-1",
+              "text": "First, for a KG to serve as a central hub for Linked Data, it should use classes and properties that are defined within its own namespace to represent entities in its KG."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-2",
+              "text": "Not relying on external ontologies to provide semantics to entities within makes a KG robust to changes in the semantics or availability of external ontologies and as such, a reliable link target for other KGs."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-3",
+              "text": "It has been observed in our previous study that DBpedia, an existing central hub for Linked Data, exhibits this phenomenon that we test in our first hypothesis."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-1",
+              "text": "H1: Wikidata defines the vast majority of its terminological entities and properties in its authoritative namespace."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-2",
+              "text": "Our next set of hypotheses are concerned with the extent to which Wikidata is linked to other ontologies in the Linked Data ecosystem."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-3",
+              "text": "H2.1: As a central KG, the ratio of class links to classes defined within Wikidata is much larger than the same ratio for other datasets in the Linked Data ecosystem."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-4",
+              "text": "H2.2: As a central KG, the ratio of property links to properties defined within Wikidata is much larger than the same ratio for other datasets in the Linked Data ecosystem."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-5",
+              "text": "H3: As a central KG, Wikidata does not type entities using classes from external ontologies, i.e., classes using a namespace other than the authoritative namespace of Wikidata."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-1",
+              "text": "Our next two hypotheses are concerned with the extent to which Wikidata is linked to other KGs on an instance level and if the link targets are indeed RDF data."
+            },
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-2",
+              "text": "H4.1: As a central KG, Wikidata includes links from entities defined in its authoritative namespace to entities defined in other KGs and the ratio of such instance links to entities defined in Wikidata is much larger than for other datasets in the Linked Data ecosystem."
+            },
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-3",
+              "text": "H4.2: The amount of instance links to RDF resources is relatively higher than to other types of Web resources, i.e., the content type of the target URI in an instance link is a common RDF serialization."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-1",
+              "text": "In our last hypothesis, we test for how many of the entities defined within Wikidata, it is claimed to be the only authoritative source."
+            },
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-2",
+              "text": "A central hub for Linked Data should not be the authoritative source for entities, but rather only provide a persistent identity for an entity, while linking to the authoritative external source."
+            },
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-3",
+              "text": "H5: Wikidata establishes equivalence or some weaker forms of likeness relations for the majority of its unique individuals that are part of an instance link, i.e., between entities defined within the Wikidata authoritative namespace and entities defined in other authoritative namespaces."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-1",
+              "text": "The remainder of this paper is structured as follows."
+            },
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-2",
+              "text": "In Section 2, we discuss the ontology in Wikidata and provide our mapping semantics between the Wikidata meta-model and RDFS/OWL."
+            },
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-3",
+              "text": "In Section 3, we describe our methodology to analyze link types in Wikidata."
+            },
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-4",
+              "text": "Section 4 presents the results of this analysis and the hypotheses tested on the entire Wikidata RDF corpus."
+            },
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-5",
+              "text": "We discuss related work in Section 5 before we conclude in Section 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-3",
+      "subtitle": "The Wikidata Ontology Schema",
+      "paragraphs": [
+        {
+          "iri": "Section-3-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-1",
+              "text": "In terms of a formal backbone terminology, Wikidata relies on Wikibase's minimal predefined schema, i.e., wikiba.se/ontology that is used to describe the wiki pages of an entity on Wikidata, and, among other things, defines what constitutes a statement for an entity through the wikiba.se/ontology#Statement class."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-2",
+              "text": "However, for our research, this ontology is somewhat irrelevant, as we are looking at internal and external links between entities and the schema (properties and classes used at the statement level) in Wikidata's itself, rather than the Wikibase meta-model."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-3",
+              "text": "The actual vocabulary used to describe entities in Wikidata is collaboratively built, bottom-up, and indeed its own meta-modelling properties, similar to RDFS/OWL vocabulary properties, have been introduced to this end in the Wikidata namespace."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-4",
+              "text": "That is, while Wikidata follows the RDF model, it does not use the RDFS or OWL semantics for its ontological meta-model: it rather conflates what in the traditional Semantic Web stack is defined in RDFS and OWL, i.e., the knowledge about things, groups of things, and relations between things, with what would normally be defined in upper-level or domain ontologies."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-5",
+              "text": "In this section we will therefore discuss the specific meta-modelling classes and relations that are introduced in Wikidata, their relations and \u2013 where possible \u2013 their mapping to RDFS/OWL."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-6",
+              "text": "This mapping will form the basis of our link analysis."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-7",
+              "text": "We emphasize that our proposed mapping is one possible interpretation of the evolving meta-model in Wikidata, with the specific purpose of providing formal semantics for our link analysis: we acknowledge that the community does not provide such a mapping by design, in order to avoid too strong formal ontological commitment."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-1",
+              "text": "Classes in Wikidata."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-2",
+              "text": "Figure 1 presents the top-level class hierarchy of Wikidata."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-3",
+              "text": "Wikidata formally distinguishes between items that are classes, for example, person (Q215627), and items that are instances, for example, Barack Obama (Q76) who is an instance of (P31) human, which itself is a subclass of (P279) person (Q215627)."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-4",
+              "text": "These instances are related to its class via the instance of (P31) relation."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-5",
+              "text": "Classes in Wikidata are items that are in the object position of an instance of (P31) relation or in the subject or object position in a subclass of (P279) statement."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-6",
+              "text": "There is also a is meta-subclass of (P2445) relation, but it is hardly used in Wikidata."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-7",
+              "text": "The Wikidata top-level class for class items is class (Q16889133), which itself is a subclass of entity (Q35120)."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-8",
+              "text": "Wikidata also distinguishes between first-order classes (Q104086571) and second-order classes (Q104086571)."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-9",
+              "text": "A metaclass (Q19361238) is defined that is the superclass of fixed-order classes."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-10",
+              "text": "As such, a second-order class is a metaclass, the instances of which are classes of individuals, for example, the aircraft class (Q1875621) is a second-order class whose members (instances) are first-order classes, including for example wide-body quadjet (Q19394992) and aircraft functional class (Q20027953) which has a subclass wide-body twinjet (Q18683432)."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-11",
+              "text": "While the latter (i.e., the use of an aircraft functional class only for wide-body twinjet, but not for wide-body quadjets) is an example of a non-intuitive subclass hierarchy in Wikidata, it may also reflect different modelling choices by different users."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-12",
+              "text": "We have argued previously that such a bottom-up development may eventually lead to a more broadly accepted Web ontology."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-13",
+              "text": "Also, while Wikidata does distinguish between classes and instances, it does not mandate that instances can not also be subclasses of (P279) a class or classes can not be defined as instances of (P31) an instance."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-14",
+              "text": "While such meta-modeling is not per se forbidden in OWL (i.e., through punning), in Wikidata it often appears with entities that should be either a class or an instance, but not both."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-15",
+              "text": "For example, Wiener Schnitzel (Q6497852) is a subclass of schnitzel which is a subclass of meat dish, while at the same time Wiener Schnitzel is also an instance of veal dish which itself is a subclass of meat dish."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-16",
+              "text": "The only assumption in Wikidata is that entity (Q35120) is the class of all items and therefore all items are an instance of entity (Q35120), as well as all classes are subclasses of entity (Q35120) which is not unlike the role of rdfs:Resource in the RDF meta-model."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-4",
+      "subtitle": "The Wikidata Ontology Schema: Properties in Wikidata",
+      "paragraphs": [
+        {
+          "iri": "Section-4-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-1",
+              "text": "Properties in Wikidata."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-2",
+              "text": "Properties in Wikidata use the full generality of RDF properties in the sense that they represent both binary (object) relations and (atomic value) attributes."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-3",
+              "text": "That is, properties are used to define arbitrary item-property-value triples where the value can either be an item or a literal."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-4",
+              "text": "On top of that, reminding one of RDF's reification mechanism, each such statement can also be qualified, i.e., additional information can be added to the statement (e.g., contextual or provenance information)."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-5",
+              "text": "Indeed, the relation between Wikidata's qualified statements to reification and other potential meta-statement encodings in RDF has been discussed in detail by Hern\u00e1ndez et al."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-6",
+              "text": "Properties, like entities, have their own Wikidata page and use opaque identifiers starting with 'P'."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-7",
+              "text": "Wikidata reuses some RDFS/OWL properties, e.g., rdf:type, rdfs:label, owl:complementOf, owl:someValuesFrom, owl:allValuesFrom etc."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-8",
+              "text": "However, as discussed earlier, these are merely used to define statements about pages in Wikidata using the wikiba.se ontology, rather than for terminological statements about Wikidata classes and properties."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-9",
+              "text": "Yet, in order to define such terminological properties within the Wikidata KG, properties for properties (73 as of November 2021) are defined in the Wikidata ontology."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-10",
+              "text": "As compared to other RDF KGs, where typically the RDFS/OWL namespaces are used for terminological properties and a separate ontology namespace is used for domain entities/relations, Wikidata's terminological properties use the same namespace as properties that describe entities/relations."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-11",
+              "text": "For example, in KGs using the RDFS/OWL semantics, relations such as 'subClassOf' use the RDFS namespace while a relation like 'name' uses a domain-ontology namespace such as FOAF, whereas in Wikidata 'subclass of' (P279) and 'given name' (P735) share the same namespace."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-12",
+              "text": "In the following we discuss under which circumstances we treat which of these properties as equivalent to their related RDFS/OWL properties as per Table 1: additional to introducing its own already mentioned instance of (P31), and subclass of (P279) relations, to describe taxonomic relations and identify class memberships and hierarchies, respectively, Wikidata introduces a property to describe the hierarchical relation between properties, i.e., subproperty of (P1647), which we consider equivalent to the rdfs:subPropertyOf relation."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-13",
+              "text": "However, note that this property is used in Wikidata exclusively to link properties within the Wikidata namespace, i.e., it is not used for linking to external vocabularies."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-14",
+              "text": "For linking to properties external to the Wikidata namespace, external subproperty (P2236) and external superproperty (P2235) are introduced."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-15",
+              "text": "We consider these equivalent to rdfs:subPropertyOf, or its inverse, respectively."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-1",
+              "text": "Domain and range properties are not directly defined in Wikidata."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-2",
+              "text": "These property restrictions can be stated in Wikidata using a qualified property constraint (P2302) on the property, where a skolemized IRI is assigned to the entity that is defined as either a type constraint (Q21503250) for the domain classes of the property, or, respectively, as value-type constraint (Q21510865) for the range classes of the property; the respective target class is referenced with the property (P2308)."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-3",
+              "text": "For example, the domain for the date of birth property (P569) is defined to be Human (Q5) with the following triples, t1 = wdt:P569 p:P2302 :qe, t2 = :qe ps:P2302 wd:Q21503250, t3 = :qe pq:P2308 wd:Q5, where :qe is actually a skolemized blank node with the IRI wd:statement/P569-F9768BAA-6BB3-4710-A3E1-B6FB9432D372."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-4",
+              "text": "Note that for our analysis of links, when only considering whether an external ontology is referenced on a property, we do not need to distinguish if the object that belongs to an external namespace is a domain or range class, i.e., we will not need to check in our SPARQL query below if the target object is a type constraint (Q21503250) or value-type constraint (Q21510865)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-1",
+              "text": "In order to state equivalence between two properties, Wikidata introduces the property equivalent property (P1628)."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-2",
+              "text": "Disjointness between properties cannot be stated in Wikidata: in fact, disjointness between properties was proposed by the community, but eventually not included."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-3",
+              "text": "While the reason for its non-inclusion is unclear, it is challenging to maintain disjointness with other properties in a bottom-up created knowledge graph where properties can be added arbitrarily."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-1",
+              "text": "There is also no relation to define property chain axioms, nor is there support for negative property assertions."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-2",
+              "text": "As shown above, Wikidata uses the relation property constraint (P2302) to define restrictions on a property."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-3",
+              "text": "While such a restriction can have more than one triple, it is otherwise very similar to owl:onProperty; as such, for the purpose of our analysis, we consider it equivalent."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-4",
+              "text": "Restrictions are linked to either a class or property using the OWL properties, owl:onClass, owl:onProperty."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-5",
+      "subtitle": "Links in Wikidata",
+      "paragraphs": [
+        {
+          "iri": "Section-5-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-1",
+              "text": "Based on the above correspondences of Wikidata's terminological properties with RDF-S/OWL, we are ready to define different link types in the Wikidata data model."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-2",
+              "text": "Here we will rely on definitions of link types in the RDFS/OWL model defined in our earlier work in terms of respective SPARQL queries on the Wikidata model."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-1",
+              "text": "This enables us to directly provide a quantitative and qualitative analysis of the discovered links in terms of the respective query results."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-1",
+              "text": "In order to analyze links to other datasets in the Wikidata Knowledge Graph, we first need to establish a list of authoritative namespace URIs that are defined by Knowledge Graphs other than Wikidata."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-2",
+              "text": "For that, we are using the dataset corpus that was defined and published in our earlier work, i.e., the LODCloud, augmented with historically available datasets that were cached in the LODLaundromat and provided as a downloadable corpus in HDT."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-3",
+              "text": "The Wikidata HDT file (using the http://www.wikidata.org namespace URI) was added to that corpus."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-4",
+              "text": "The resulting corpus consists of 431 Linked Datasets, each encoded in HDT for a total size of 104 GB (uncompressed 353 GB), with a total number of 17,841,499,814 (approximately 17.8 billion) triples."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-1",
+              "text": "As with the dataset corpus, we are reusing the ontology corpus published by Haller et al., i.e., a crawl of the unique classes and properties in prefix.cc as well as the declared classes and properties in each dataset (the 431 from above)."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-2",
+              "text": "While not every ontology is registered in prefix.cc (a total of 2,794 ontologies are registered as of August 2021), our process also follows all import statements in those ontologies."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-3",
+              "text": "Given that ontologies are supposed to be a shared conceptualization of a domain, if no other ontology reuses the ontology, it is unlikely to be used in many datasets, nor is it likely to have been used in Wikidata either."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-1",
+              "text": "As per the definitions in our previous work, we distinguish two general types of links: Ontology (TBox) Links and Instance (ABox) Links."
+            },
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-2",
+              "text": "Ontology Links are further classified into class links, instance typing links, property links, and instance role links."
+            },
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-3",
+              "text": "Instead of providing re-definitions of those links to match the meta-model of Wikidata, we provide reformulations of the operationalized SPARQL queries that retrieve those link types and that implement the mapping relations between the Wikidata meta-model and the RDFS/OWL semantics as defined in Table 1."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-1",
+              "text": "For instance, let the dataset dsW D be Wikidata with the set of its authoritative namespaces (i.e., the namespaces denoting Wikidata-defined URIs) being N SdsW D = { http://www.wikidata.org/entity/, http://www.wikidata.org/prop/direct/, https://www.wikidata.org/wiki/Special:EntityData/}."
+            },
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-2",
+              "text": "Further, let ds2 denote the Disease Ontology, with N Sds2 = { http://identifiers.org/doid/} and let further ds3 denote the schema.org vocabulary, with N Sds3 = {http://schema.org/}."
+            },
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-3",
+              "text": "We shall denote the mentioned namespaces with the prefixes wd:, wdt:, data:, doid:, and schema:, respectively."
+            },
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-4",
+              "text": "If we consider now the triple, t1 = wd:Q84263196 wdt:P2888 doid:0080600."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-7-Sentence-1",
+              "text": "In dsW D, stating that COVID-19 is an exact match to the class DOID:0080600 in the Human Disease Ontology, it shall be considered an instance link from dsW D to ds2."
+            },
+            {
+              "iri": "Section-5-Paragraph-7-Sentence-2",
+              "text": "While doid:0080600 is a class in the Human Disease Ontology, it is used in an instance position in the triple above from Wikidata; therefore, it is an instance link."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-8-Sentence-1",
+              "text": "The next triple we consider is t2 = wd:Q84263196 wdt:P31 wd:Q609748, which defines COVID-19 as an instance of the emerging communicable disease class."
+            },
+            {
+              "iri": "Section-5-Paragraph-8-Sentence-2",
+              "text": "While this is not a link, but rather an internal ontological reference within dsW D, t02 = wd:Q84263196 rdf:type schema:Dataset is indeed an ontology link, more specifically, an instance typing link from dsW D to ds3."
+            },
+            {
+              "iri": "Section-5-Paragraph-8-Sentence-3",
+              "text": "In fact, every wiki page in Wikidata is defined as of type schema:Dataset."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-9-Sentence-1",
+              "text": "Next, t3 = wdt:P569 wdt:P1628 schema:birthDate is an example of a property link from dsW D to ds3."
+            },
+            {
+              "iri": "Section-5-Paragraph-9-Sentence-2",
+              "text": "Finally, t4 = wd:Q5 wdt:P1709 schema:Person is a class link from dsW D to ds3."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-10-Sentence-1",
+              "text": "In order to define these link types more clearly, we provide SPARQL queries on the Wikidata data model that correspond to the link types defined in the adapted correspondences."
+            },
+            {
+              "iri": "Section-5-Paragraph-10-Sentence-2",
+              "text": "Ontology (TBox) Links: With the query shown in Listing 1.1, we retrieve all external classes, i.e., classes using a namespace other than the Wikidata namespace that are not explicitly declared as an RDFS/OWL class or as a type of class, but are used to define an instance, define a terminological axiom that either extends or narrows a class through a subclass of relation, define a class\u2019 equivalence, union of, disjoint union of, or define the domain or range of a property."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-11-Sentence-1",
+              "text": "Listing 1.1 shows the SPARQL query used to retrieve all external classes."
+            },
+            {
+              "iri": "Section-5-Paragraph-11-Sentence-2",
+              "text": "For each class URI retrieved through this query, we check its occurrence in either the subject or object position in any triple in the knowledge graph."
+            },
+            {
+              "iri": "Section-5-Paragraph-11-Sentence-3",
+              "text": "The number of resulting triples constitutes the number of Class Links in the Wikidata KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-12",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-12-Sentence-1",
+              "text": "For Property Links, we follow a similar process."
+            },
+            {
+              "iri": "Section-5-Paragraph-12-Sentence-2",
+              "text": "With the query shown in Listing 1.2, we retrieve all external properties that are not explicitly declared as a property but are used within a subproperty relation or external sub/superproperty relation, in a property restriction or to define the domain or range of a class, or to define a property\u2019s equivalence, inverseness with/to another property, different from, or complement of."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-13",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-13-Sentence-1",
+              "text": "Listing 1.2 shows the SPARQL query used to retrieve external properties."
+            },
+            {
+              "iri": "Section-5-Paragraph-13-Sentence-2",
+              "text": "For each property URI retrieved through this query, we check its occurrence in the predicate position in any triple in the dataset."
+            },
+            {
+              "iri": "Section-5-Paragraph-13-Sentence-3",
+              "text": "The number of resulting property URIs constitutes the occurrence of Property Links in the dataset."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-14",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-14-Sentence-1",
+              "text": "Instance Links (ABox Links): Before we can compute the number of Instance Links from an individual in the Wikidata namespace to any individual in an external namespace, we first need to find all unique individuals in the knowledge graph."
+            },
+            {
+              "iri": "Section-5-Paragraph-14-Sentence-2",
+              "text": "We find all individuals of classes/properties that are declared, checking if they are defined in the Wikidata namespace."
+            },
+            {
+              "iri": "Section-5-Paragraph-14-Sentence-3",
+              "text": "If not, the triple they appear in is counted as an Instance Typing Link."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-15",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-15-Sentence-1",
+              "text": "We then find all individuals that are reused from a non-authoritative namespace URI in the subject position without being explicitly declared as a type of a class or property."
+            },
+            {
+              "iri": "Section-5-Paragraph-15-Sentence-2",
+              "text": "To retrieve those, we first query all triples in the dataset and then check for each unique subject URI that is not in the Wikidata namespace."
+            },
+            {
+              "iri": "Section-5-Paragraph-15-Sentence-3",
+              "text": "If it is neither, we count the triple as an Instance Link."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-16",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-16-Sentence-1",
+              "text": "We then follow a similar process for each individual reused from a non-authoritative namespace URI in the object position."
+            },
+            {
+              "iri": "Section-5-Paragraph-16-Sentence-2",
+              "text": "For each unique object URI, we check the following conditions: the subject URI does not contain the Wikidata namespace URI, the predicate is not an instance of relation, and the object URI is not already contained within the set of declared instances."
+            },
+            {
+              "iri": "Section-5-Paragraph-16-Sentence-3",
+              "text": "If none of these conditions are satisfied, we record it as an Instance Link."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-6",
+      "subtitle": "Evaluation of Links: General statistics of the Wikidata KG",
+      "paragraphs": [
+        {
+          "iri": "Section-6-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-1",
+              "text": "In the following, we discuss the results of the link analysis of Wikidata."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-2",
+              "text": "All tests were performed on a machine with 8 vCPUs, 380 GB RAM, and 5 TB hard disk space."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-1",
+              "text": "Before we analyze the number and types of links in Wikidata, we present some general statistics of the Wikidata Knowledge Graph (KG) that we computed using its HDT file."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-2",
+              "text": "The first noteworthy observation we can make is that the ratio between unique subjects to unique predicates in Wikidata is 1 to 41810, whereas in the Linked Open Data (LOD) dataset corpus, the ratio was 1 to 3900 if using the mean and 1 to 19 if using the median."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-3",
+              "text": "Since the Wikidata KG with 1.69 billion triples is much larger than the largest KG in the LOD corpus, which is the 2016 version of DBpedia with 1.04 billion triples, this suggests that the number of predicates in a KG grows following an asymptotic function."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-4",
+              "text": "This seems natural, as while the number of entities in a general KG such as Wikidata is potentially infinite, the attributes that can be assigned to those entities are somehow limited."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-1",
+              "text": "Supporting our first hypothesis, Wikidata defines all of its 89 million unique individuals using its own ontology."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-2",
+              "text": "The number of unique individuals is also larger than the number of claimed unique entities defined in Wikidata at the time the HDT file was generated in March 2021, which was 73 million."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-3",
+              "text": "This means that all entities, plus some more, are defined within the Wikidata namespace."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-4",
+              "text": "While the number of unique subjects, which is 1.62 billion, is a lot larger than the number of unique individuals (89 million), this is due to the fact that Wikidata introduces skolemized IRIs for qualified statements on an entity, and not because of entities being defined using external ontologies."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-1",
+              "text": "On average, for each unique entity, about 18 entities are created as part of the subgraph for that entity, and that redirect in the Linked Data API to that target entity."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-2",
+              "text": "For example, for the entity Barack Obama (Q76), there are 394 skolemized IRIs, such as http://www.wikidata.org/entity/statement/q76-F23589FF-58A6-438B-BC7E-79F6B436AFD0, that describes a qualifier about Barack Obama\u2019s education at (P69) Harvard Law School, which he completed with an academic degree (P512) of Juris Doctor with an end time (P582) of 1991."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-3",
+              "text": "These qualified statements do not have their own page on Wikidata, but they do resolve to the page where they are defined through the Linked Data API."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-1",
+              "text": "The general statistics of the Wikidata KG are as follows:"
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-2",
+              "text": "The total number of triples is 1,693,668,039."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-3",
+              "text": "The number of unique subjects is 1,625,057,179."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-4",
+              "text": "The number of unique predicates is 38,867."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-5",
+              "text": "The number of unique objects is 2,538,585,808."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-6",
+              "text": "The number of unique individuals is 89,120,227."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-7",
+              "text": "The number of unique declared classes is 0."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-8",
+              "text": "The number of unique undeclared classes is 2,522,595."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-9",
+              "text": "The number of unique declared properties is 74,309."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-10",
+              "text": "The number of unique undeclared properties is 29,167."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-7",
+      "subtitle": "Evaluation of Links: Ontology Links",
+      "paragraphs": [
+        {
+          "iri": "Section-7-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-1",
+              "text": "Before we set out to test our hypotheses related to ontology links in Wikidata, we first present some general statistics on the use of classes and properties in Wikidata."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-2",
+              "text": "For our analysis, we distinguish between declared and undeclared classes, i.e., class URIs that are defined within the authoritative namespace of the knowledge graph using a triple {[] rdf:type owl:Class .} or {[] rdf:type rdfs:Class .}, and class URIs that are merely reused from a different namespace URI."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-3",
+              "text": "Since Wikidata does not use rdf:type relations for class definitions, all 2,522,595 unique classes defined in Wikidata are undeclared according to the RDFS/OWL semantics."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-4",
+              "text": "In contrast to class URIs, properties in Wikidata are declared using the owl:DatatypeProperty and owl:ObjectProperty types."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-5",
+              "text": "In fact, each property, denoted by an identifier starting with 'P', includes up to nine datatype and object property definitions, each with a different URI of that property identifier, as defined by the wikiba.se ontology."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-6",
+              "text": "For example, for date of birth (P569), this includes http://www.wikidata.org/prop/direct/P569 which is defined as an owl:DatatypeProperty and http://www.wikidata.org/prop/statement/P569 as a shorthand property to find the statements this property is used in, which is also defined as an owl:DatatypeProperty."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-7",
+              "text": "Therefore, the number of declared properties in March 2021, which is 74,309, is more than six times larger than the claimed number of properties on Wikidata, which is 9,367 properties as of November 2021."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-1",
+              "text": "There are only 3,955 class links defined in Wikidata."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-2",
+              "text": "This is comparable to the other datasets in the Linked Open Vocabularies corpus that were analyzed previously, where the number of class links is relatively constant around 100 to 10,000 per dataset."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-3",
+              "text": "However, Wikidata uses 2.5 million classes, compared to an average of 6,379 classes per dataset, with a ratio of class links per class of only 0.0015, while the average ratio of class links per class for the datasets in the LOV cloud is 11.27."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-4",
+              "text": "One of the reasons why the ratio is so low is that many instances in Wikidata are also defined as classes, contrary to many other knowledge graphs where there is a strict separation between TBox and ABox axioms."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-5",
+              "text": "Also, the user interface's autocomplete feature when creating links to classes only works for classes in the Wikidata namespace, but not for external URIs of classes."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-6",
+              "text": "Still, as a central hub of the Linked Data ecosystem, one would expect Wikidata to have more such links, particularly given the bottom-up development of the Wikidata ontology."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-7",
+              "text": "The 2016 version of DBpedia, for example, includes 8,258 class links for its 3,197 classes with a ratio of 2.58, even though its ontology is built by experts top-down."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-8",
+              "text": "We therefore need to reject our hypothesis H2.1."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-9",
+              "text": "To increase the number of class links, a relation similar to 'external subproperty' should be introduced in Wikidata to define external subclass relations on a class."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-10",
+              "text": "A lookup service, based for example on the LOV API, could then guide Wikidata editors to the existence of external classes."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-1",
+              "text": "There are only 835 property links for a total of 74,309 properties in Wikidata, which means there are on average only 0.01 property links per property, a ratio that is much lower than for the Linked Open Data corpus."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-2",
+              "text": "We therefore must also reject our hypothesis H2.2, that Wikidata includes many more property links per property than other datasets."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-3",
+              "text": "One of the reasons for this low property link ratio might be that while there exist several properties in the Wikidata ontology that are specifically designed to link to external ontologies or allow external URIs to be used, these are only relatively recent additions."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-4",
+              "text": "External subproperty and superproperty, which are used 94 and 159 times, respectively, were only added in May 2017 and May 2018, after many of the 74,000 properties in Wikidata had been defined."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-5",
+              "text": "There would need to be a concerted effort by the community to update existing properties with these relations."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-1",
+              "text": "There are no instance typing links in Wikidata that use the instance of (P31) relation."
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-2",
+              "text": "Since, to the best of our knowledge, Wikibase does not allow users to add an external URI when using the instance of relation, it is not unexpected that there are no such links."
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-3",
+              "text": "There are 173 million instance typing links using the rdf:type relation."
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-4",
+              "text": "However, since they are all auto-generated links to define a Wikidata page as a schema:Dataset and a schema:Article, we excluded them."
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-5",
+              "text": "Therefore, we can confirm our hypothesis H3 that as a knowledge graph with a general and sufficiently comprehensive ontology, Wikidata types all entities using its own ontology and therefore includes no instance typing links."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-8",
+      "subtitle": "Evaluation of Links: Instance Links",
+      "paragraphs": [
+        {
+          "iri": "Section-8-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-1",
+              "text": "Wikidata includes many links from entities defined in its authoritative namespace to entities defined in other knowledge graphs."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-2",
+              "text": "With 173 million such links, it means that 10.22% of all triples in the Wikidata graph link to individuals that use a namespace other than the Wikidata namespace."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-3",
+              "text": "However, the ratio of such links to entities, at 1.94, is much lower than with other datasets in the Linked Open Data ecosystem, which is 8.6, and we therefore need to reject our hypothesis H4.1."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-1",
+              "text": "Even this number includes many links to Wikipedia."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-2",
+              "text": "In fact, every entity in Wikidata that also has a Wikipedia entry includes hundreds of links to Wikipedia."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-3",
+              "text": "However, while they are considered links according to our definition, none of the target resources are RDF resources, but the Wikipedia entity is created in the Wikidata namespace."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-1",
+              "text": "While for ontology links we are able to verify for all links if the target URI is an RDF resource, with the large number of instance links, we cannot."
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-2",
+              "text": "However, to test our hypothesis H4.2, a sample of 1,924,940 target URIs from all instance links was randomly collected."
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-3",
+              "text": "We then built a simple crawler that checked for each URI if a document in RDF format can be retrieved at the target URI, classifying the links into two main groups: Web resources and RDF entities."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-4-Sentence-1",
+              "text": "The majority of links point to resources other than RDF."
+            },
+            {
+              "iri": "Section-8-Paragraph-4-Sentence-2",
+              "text": "While we therefore need to reject our hypothesis H4.2, the fact that a quarter of resources are RDF resources is encouraging, given that for many entities there may not yet exist an RDF representation outside of Wikidata."
+            },
+            {
+              "iri": "Section-8-Paragraph-4-Sentence-3",
+              "text": "To distinguish RDF from non-RDF resources in links, i.e., to distinguish 1-star linked data from higher-ordered linked data, Wikidata should automatically qualify links based on the target format of the linked resource."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-5-Sentence-1",
+              "text": "We also checked how many of the instance links use an equivalence or some weaker forms of likeness relations to test our Hypothesis 5."
+            },
+            {
+              "iri": "Section-8-Paragraph-5-Sentence-2",
+              "text": "Unsurprisingly, no instance link uses the owl:sameAs relation, as Wikibase does not allow its use and encourages the use of the exact match (P2888) relation."
+            },
+            {
+              "iri": "Section-8-Paragraph-5-Sentence-3",
+              "text": "However, with 3,268,021 such links, at most 20, only 3.7% of all unique individuals use the exact match relation to an individual defined in a namespace other than the Wikidata namespace."
+            },
+            {
+              "iri": "Section-8-Paragraph-5-Sentence-4",
+              "text": "P460 and P1696 are not used."
+            },
+            {
+              "iri": "Section-8-Paragraph-5-Sentence-5",
+              "text": "We therefore must also reject Hypothesis 5."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-6-Sentence-1",
+              "text": "Wikidata defines the vast majority of its terminological entities and properties in its authoritative namespace."
+            },
+            {
+              "iri": "Section-8-Paragraph-6-Sentence-2",
+              "text": "The ratio of class links to classes in Wikidata is higher than in the Linked Open Data ecosystem."
+            },
+            {
+              "iri": "Section-8-Paragraph-6-Sentence-3",
+              "text": "The ratio of property links to properties in Wikidata is higher than in the Linked Open Data ecosystem."
+            },
+            {
+              "iri": "Section-8-Paragraph-6-Sentence-4",
+              "text": "Wikidata does not type entities using classes from external ontologies."
+            },
+            {
+              "iri": "Section-8-Paragraph-6-Sentence-5",
+              "text": "Wikidata\u2019s ratio of instance links to entities is higher than for other datasets in the Linked Open Data ecosystem."
+            },
+            {
+              "iri": "Section-8-Paragraph-6-Sentence-6",
+              "text": "Most instance links point to RDF Web resources."
+            },
+            {
+              "iri": "Section-8-Paragraph-6-Sentence-7",
+              "text": "Wikidata includes similarity relations for a majority of its instance links."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-9",
+      "subtitle": "Related Work",
+      "paragraphs": [
+        {
+          "iri": "Section-9-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-1",
+              "text": "There are many works that analyse different quality aspects of Wikidata."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-2",
+              "text": "Erxleben et al. introduce RDF exports that connect Wikidata to the Linked Data Web."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-3",
+              "text": "An axiomatic theory for multi-level modeling is used to analyse Wikidata content and to identify a significant number of problematic classification and taxonomic statements."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-4",
+              "text": "F\u00e4rber et al. present an extensive survey of open KGs, including Wikidata."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-5",
+              "text": "Freire and Isaac present an assessment of Wikidata for high-quality machine interpretation of its alignment properties to RDF/S, OWL, SKOS, and schema.org."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-6",
+              "text": "Piscopo and Simperl present a systematic literature review of 28 papers about data quality in Wikidata, categorised by quality dimensions addressed."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-7",
+              "text": "The completeness aspect of Wikidata is analysed, which cites some tools and services that address various quality aspects around the WikiMedia projects."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-8",
+              "text": "Pillai et al. compare Wikidata with other KGs from the perspectives of completeness of its relations, timeliness of the data, and accessibility as the data quality criteria."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-9",
+              "text": "Abian et al. present an approach based on cross-comparing date values to discover inconsistent temporal data in Wikidata."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-10",
+              "text": "Piscopo and Simperl study the relationship between different Wikidata user roles and the quality of the Wikidata ontology by proposing a framework to evaluate the ontology as it evolves."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-11",
+              "text": "Samuel introduces the WDProp tool that provides to human users an overview and statistics of various multi-language aspects of Wikidata properties, such as labels, descriptions, and aliases."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-12",
+              "text": "Shenoy et al. present a quality analysis of Wikidata focusing on correctness."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-1",
+              "text": "Other work exists that analyse interlinking in linked data in general or quality studies and approaches that considered interlinking of linked data as an assessment metric."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-2",
+              "text": "None of the above works, however, have analysed how interlinked and central Wikidata is to the LOD ecosystem, and more specifically, analysed the number and types of links defined within Wikidata as presented in this paper."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-10",
+      "subtitle": "Conclusion",
+      "paragraphs": [
+        {
+          "iri": "Section-10-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-1",
+              "text": "We have analysed the number and types of links in Wikidata to evaluate how central Wikidata is to the Linked Open Data ecosystem."
+            },
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-2",
+              "text": "While Wikidata is the largest, most comprehensive general knowledge knowledge graph on the Web, using a comprehensive, bottom-up developed ontology that is used to type its many entities, it is not yet serving as a central hub for linked data on the Web."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-1",
+              "text": "For its relative lack of instance links, this means that either the Wikidata editors deem such links as obsolete, or that these links are yet to be included, or that they already exist, but rather as incoming links from the external dataset to Wikidata."
+            },
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-2",
+              "text": "However, as a bottom-up created knowledge graph, there is the possibility for anyone who owns a dataset to actually create an outgoing link in the Wikidata namespace to the dataset they own."
+            },
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-3",
+              "text": "Many bots have been created for exactly this reason, automatically creating outgoing links from Wikidata to other datasets, and they improve the discoverability and visibility of the external dataset."
+            },
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-4",
+              "text": "Every dataset publisher, for their own benefit, should therefore consider creating those outgoing links in the Wikidata knowledge graph."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-1",
+              "text": "Comparatively, for its size, Wikidata also includes less ontology links than other datasets in the Linked Open Data ecosystem."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-2",
+              "text": "While this can be partially explained by the fact that many individuals defined in Wikidata are also classes, skewing the ratio between classes and class links, this does not apply to property links, where there is no such distinction."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-3",
+              "text": "Most properties in Wikidata are not linked to external properties at all, even though specific properties exist in the Wikidata ontology to do so."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-1",
+              "text": "While we have suggested in this paper that some changes to the user interface of Wikibase may encourage editors to provide more such links, a fundamental rethink of ontology design may have to occur too."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-2",
+              "text": "Specifically, common best practice in ontology engineering is to include links from an ontology to other ontologies through import statements or URI reuse."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-3",
+              "text": "However, in the case of the Wikidata ontology, the developers of domain ontologies should consider creating those links to their ontologies in the Wikidata namespace, rather than in the other direction."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-1",
+              "text": "Wikidata also does not yet provide many equivalence or weaker forms of likeness relations from its entities to external entities."
+            },
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-2",
+              "text": "There is an onus on the Wikidata editor community to ensure that such links are increasingly provided, given that Wikidata should generally not be the authoritative source of entities, but link to an authoritative representation of an entity through, for example, the exact match relation in Wikidata."
+            },
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-3",
+              "text": "However, the lack of such links may also be an indication that entities defined in Wikidata do not yet exist or never will exist in the Linked Open Data ecosystem."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-6-Sentence-1",
+              "text": "As future works, we first would like to analyse the evolution of links on Wikidata over time using several historical snapshots of the published Wikidata HDT files."
+            },
+            {
+              "iri": "Section-10-Paragraph-6-Sentence-2",
+              "text": "Also, a deeper analysis of the entities that are linked, such as what are the top-ranked instance and ontology namespaces referenced from Wikidata, is planned for future work."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

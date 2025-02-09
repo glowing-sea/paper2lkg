@@ -1,0 +1,1480 @@
+{
+  "iri": "Paper-6",
+  "title": "CVPR_2009_18_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-6-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-6-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-6-Section-1-Paragraph-1-Sentence-1",
+              "text": "We present a new method for detecting interest points using histogram information ."
+            },
+            {
+              "iri": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+              "text": "Unlike existing interest point detectors , which measure pixel-wise differences in image intensity , our detectors incorporate histogram-based representations , and thus can find image regions that present a distinct distribution in the neighborhood ."
+            },
+            {
+              "iri": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+              "text": "The proposed detectors are able to capture large-scale structures and distinctive textured patterns , and exhibit strong invariance to rotation , illumination variation , and blur ."
+            },
+            {
+              "iri": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+              "text": "The experimental results show that the proposed histogram-based interest point detectors perform particularly well for the tasks of matching textured scenes under blur and illumination changes , in terms of repeatability and distinctiveness ."
+            },
+            {
+              "iri": "Paper-6-Section-1-Paragraph-1-Sentence-5",
+              "text": "An extension of our method to space-time interest point detection for action classification is also presented ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    8.392333984375e-05,
+    9.84584903717041,
+    31.640971899032593,
+    33.322997093200684,
+    0.050958871841430664,
+    0.00012421607971191406,
+    0.0001647472381591797,
+    36.04386305809021,
+    59.28726768493652,
+    3.6702919006347656,
+    0.09386301040649414,
+    0.012692928314208984,
+    0.00038695335388183594,
+    24.66489601135254,
+    0.001049041748046875,
+    0.03165888786315918,
+    0.0010380744934082031,
+    4.608773708343506,
+    2.557119131088257,
+    3.7780017852783203,
+    110.27826714515686,
+    8.134819030761719,
+    77.95954704284668,
+    3.806057929992676,
+    0.0012998580932617188,
+    0.011946916580200195
+  ],
+  "nodes": {
+    "Entity-the_proposed_histogram-based_interest_point_detector": {
+      "node_id": "the_proposed_histogram-based_interest_point_detector",
+      "disambiguation_index": 0,
+      "label": "the proposed histogram-based interest point detectors",
+      "aliases": [
+        "the proposed histogram-based interest point detectors"
+      ],
+      "types": [
+        "detector",
+        "algorithm"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The proposed histogram-based interest point detectors are a novel algorithm designed to identify interest points in images by utilizing histogram information, allowing for effective detection of large-scale structures and textured patterns while maintaining robustness against variations in rotation, illumination, and blur.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the proposed histogram-based interest point detectors",
+          "local_types": [
+            "detector",
+            "algorithm"
+          ],
+          "iri": "Entity-the_proposed_histogram-based_interest_point_detector-Mention-1"
+        }
+      ],
+      "relevance": 0.89013671875
+    },
+    "Entity-our_detector": {
+      "node_id": "our_detector",
+      "disambiguation_index": 0,
+      "label": "our detectors",
+      "aliases": [
+        "The proposed detectors",
+        "our detectors"
+      ],
+      "types": [
+        "detector"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Our detectors refer to a novel type of interest point detectors that utilize histogram-based representations to identify image regions with distinct distributions, offering advantages in capturing large-scale structures and textured patterns while maintaining invariance to rotation, illumination changes, and blur.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "our detectors",
+          "local_types": [
+            "detector"
+          ],
+          "iri": "Entity-our_detector-Mention-1"
+        },
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "The proposed detectors",
+          "local_types": [
+            "detector"
+          ],
+          "iri": "Entity-our_detector-Mention-2"
+        }
+      ],
+      "relevance": 0.83837890625
+    },
+    "Entity-detecting_interest_point": {
+      "node_id": "detecting_interest_point",
+      "disambiguation_index": 0,
+      "label": "detecting interest points",
+      "aliases": [
+        "detecting interest points"
+      ],
+      "types": [
+        "task"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Detecting interest points refers to the task of identifying specific regions in an image that exhibit distinct characteristics, utilizing histogram-based representations to enhance the detection of large-scale structures and textured patterns, while maintaining robustness against variations in rotation, illumination, and blur.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "detecting interest points",
+          "local_types": [
+            "task"
+          ],
+          "iri": "Entity-detecting_interest_point-Mention-1"
+        }
+      ],
+      "relevance": 0.80859375
+    },
+    "Entity-a_new_method": {
+      "node_id": "a_new_method",
+      "disambiguation_index": 0,
+      "label": "a new method",
+      "aliases": [
+        "a new method"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The new method refers to a histogram-based approach for detecting interest points in images, which improves upon traditional pixel-wise intensity difference methods by utilizing histogram representations to identify distinct distributions in image regions.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a new method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-a_new_method-Mention-1"
+        }
+      ],
+      "relevance": 0.806640625
+    },
+    "Entity-detector": {
+      "node_id": "detector",
+      "disambiguation_index": 0,
+      "label": "detectors",
+      "aliases": [
+        "detectors"
+      ],
+      "types": [
+        "algorithm",
+        "technology",
+        "device",
+        "computer vision"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'detectors' refers to a novel type of interest point detection algorithm that utilizes histogram-based representations to identify image regions with distinct distributions, enhancing performance in recognizing large-scale structures and textured patterns under varying conditions.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "detectors",
+          "local_types": [
+            "algorithm",
+            "computer vision"
+          ],
+          "iri": "Entity-detector-Mention-1"
+        },
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "detectors",
+          "local_types": [
+            "device",
+            "technology"
+          ],
+          "iri": "Entity-detector-Mention-2"
+        }
+      ],
+      "relevance": 0.8056640625
+    },
+    "Entity-a_new_method_for_detecting_interest_point": {
+      "node_id": "a_new_method_for_detecting_interest_point",
+      "disambiguation_index": 0,
+      "label": "a new method for detecting interest points",
+      "aliases": [
+        "a new method for detecting interest points"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The entity 'a new method for detecting interest points' refers to a novel approach that utilizes histogram information to identify interest points in images, distinguishing itself from traditional methods by focusing on histogram-based representations to capture large-scale structures and textured patterns with strong invariance to various image transformations.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a new method for detecting interest points",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-a_new_method_for_detecting_interest_point-Mention-1"
+        }
+      ],
+      "relevance": 0.80126953125
+    },
+    "Entity-distinctive_textured_pattern": {
+      "node_id": "distinctive_textured_pattern",
+      "disambiguation_index": 0,
+      "label": "distinctive textured patterns",
+      "aliases": [
+        "distinctive textured patterns"
+      ],
+      "types": [
+        "pattern"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Distinctive textured patterns refer to unique surface characteristics in images that can be effectively identified and analyzed by the proposed histogram-based interest point detectors, which are designed to recognize variations in texture and structure while maintaining robustness against changes in rotation, illumination, and blur.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "distinctive textured patterns",
+          "local_types": [
+            "pattern"
+          ],
+          "iri": "Entity-distinctive_textured_pattern-Mention-1"
+        }
+      ],
+      "relevance": 0.791015625
+    },
+    "Entity-textured_pattern": {
+      "node_id": "textured_pattern",
+      "disambiguation_index": 0,
+      "label": "textured patterns",
+      "aliases": [
+        "textured patterns"
+      ],
+      "types": [
+        "pattern",
+        "image processing",
+        "feature",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Textured patterns refer to distinctive visual features in images that exhibit unique distributions in their neighborhood, which can be effectively captured by the proposed histogram-based interest point detectors.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "textured patterns",
+          "local_types": [
+            "pattern",
+            "image processing",
+            "feature",
+            "concept"
+          ],
+          "iri": "Entity-textured_pattern-Mention-1"
+        }
+      ],
+      "relevance": 0.7880859375
+    },
+    "Entity-existing_interest_point_detector": {
+      "node_id": "existing_interest_point_detector",
+      "disambiguation_index": 0,
+      "label": "existing interest point detectors",
+      "aliases": [
+        "existing interest point detectors"
+      ],
+      "types": [
+        "detector"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Existing interest point detectors are algorithms that identify key points in images by analyzing pixel-wise differences in image intensity, but do not utilize histogram-based representations to capture distinct distributions in the neighborhood.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "existing interest point detectors",
+          "local_types": [
+            "detector"
+          ],
+          "iri": "Entity-existing_interest_point_detector-Mention-1"
+        }
+      ],
+      "relevance": 0.78515625
+    },
+    "Entity-method": {
+      "node_id": "method",
+      "disambiguation_index": 0,
+      "label": "method",
+      "aliases": [
+        "method"
+      ],
+      "types": [
+        "technique",
+        "approach"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The method refers to a novel technique for detecting interest points in images by utilizing histogram information, which allows for the identification of regions with distinct distributions, enhancing performance in various conditions such as rotation and illumination changes.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "method",
+          "local_types": [
+            "technique",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-1"
+        },
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "method",
+          "local_types": [
+            "technique",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-2"
+        }
+      ],
+      "relevance": 0.7822265625
+    },
+    "Entity-matching_textured_scene_under_blur_and_illumination_change": {
+      "node_id": "matching_textured_scene_under_blur_and_illumination_change",
+      "disambiguation_index": 0,
+      "label": "matching textured scenes under blur and illumination changes",
+      "aliases": [
+        "matching textured scenes under blur and illumination changes"
+      ],
+      "types": [
+        "task",
+        "scene matching"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Matching textured scenes under blur and illumination changes refers to the task of accurately identifying and correlating regions in images that exhibit distinct textures, despite variations in blur and lighting conditions, utilizing advanced histogram-based interest point detection methods.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "matching textured scenes under blur and illumination changes",
+          "local_types": [
+            "task",
+            "scene matching"
+          ],
+          "iri": "Entity-matching_textured_scene_under_blur_and_illumination_change-Mention-1"
+        }
+      ],
+      "relevance": 0.7822265625
+    },
+    "Entity-textured_scene": {
+      "node_id": "textured_scene",
+      "disambiguation_index": 0,
+      "label": "textured scenes",
+      "aliases": [
+        "textured scenes"
+      ],
+      "types": [
+        "visual data",
+        "image processing"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Textured scenes refer to image regions characterized by distinct patterns and structures that can be effectively matched and analyzed using histogram-based interest point detection methods, particularly under varying conditions such as blur and illumination changes.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "textured scenes",
+          "local_types": [
+            "visual data",
+            "image processing"
+          ],
+          "iri": "Entity-textured_scene-Mention-1"
+        }
+      ],
+      "relevance": 0.7783203125
+    },
+    "Entity-histogram_information": {
+      "node_id": "histogram_information",
+      "disambiguation_index": 0,
+      "label": "histogram information",
+      "aliases": [
+        "histogram information"
+      ],
+      "types": [
+        "data representation",
+        "information",
+        "data",
+        "histogram",
+        "statistical information",
+        "statistical measure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Histogram information refers to the statistical representation of pixel intensity distributions in images, which is utilized in the proposed method for detecting interest points by identifying distinct patterns and structures in the neighborhood of image regions.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "histogram information",
+          "local_types": [
+            "data representation",
+            "information",
+            "data",
+            "histogram",
+            "statistical information",
+            "statistical measure"
+          ],
+          "iri": "Entity-histogram_information-Mention-1"
+        }
+      ],
+      "relevance": 0.763671875
+    },
+    "Entity-repeatability_and_distinctiveness": {
+      "node_id": "repeatability_and_distinctiveness",
+      "disambiguation_index": 0,
+      "label": "repeatability and distinctiveness",
+      "aliases": [
+        "repeatability and distinctiveness"
+      ],
+      "types": [
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Repeatability and distinctiveness refer to the performance metrics of the proposed histogram-based interest point detectors, indicating their effectiveness in consistently identifying and distinguishing textured regions in images despite variations in blur and illumination.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "repeatability and distinctiveness",
+          "local_types": [
+            "metric"
+          ],
+          "iri": "Entity-repeatability_and_distinctiveness-Mention-1"
+        }
+      ],
+      "relevance": 0.75927734375
+    },
+    "Entity-matching_textured_scene": {
+      "node_id": "matching_textured_scene",
+      "disambiguation_index": 0,
+      "label": "matching textured scenes",
+      "aliases": [
+        "matching textured scenes"
+      ],
+      "types": [
+        "image processing",
+        "task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Matching textured scenes refers to the task of identifying and aligning image regions with similar texture patterns, particularly under varying conditions such as blur and changes in illumination, using histogram-based interest point detection methods.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "matching textured scenes",
+          "local_types": [
+            "image processing",
+            "task"
+          ],
+          "iri": "Entity-matching_textured_scene-Mention-1"
+        }
+      ],
+      "relevance": 0.75634765625
+    },
+    "Entity-interest_point_detector": {
+      "node_id": "interest_point_detector",
+      "disambiguation_index": 0,
+      "label": "interest point detectors",
+      "aliases": [
+        "histogram-based interest point detectors",
+        "interest point detectors"
+      ],
+      "types": [
+        "algorithm",
+        "image processing tool",
+        "detector",
+        "computer vision"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Interest point detectors are algorithms or tools used in computer vision and image processing to identify specific points in an image that are considered to be of interest, often based on variations in intensity or other features.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "interest point detectors",
+          "local_types": [
+            "algorithm",
+            "image processing tool",
+            "computer vision"
+          ],
+          "iri": "Entity-interest_point_detector-Mention-1"
+        },
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "histogram-based interest point detectors",
+          "local_types": [
+            "algorithm",
+            "detector",
+            "computer vision"
+          ],
+          "iri": "Entity-interest_point_detector-Mention-2"
+        }
+      ],
+      "relevance": 0.75537109375
+    },
+    "Entity-interest_point": {
+      "node_id": "interest_point",
+      "disambiguation_index": 0,
+      "label": "interest points",
+      "aliases": [
+        "interest points"
+      ],
+      "types": [
+        "image processing",
+        "feature",
+        "data point"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Interest points refer to specific locations in an image that are identified as significant features based on histogram information, allowing for robust detection of distinct image regions and patterns, particularly in the context of image processing and feature extraction.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "interest points",
+          "local_types": [
+            "image processing",
+            "feature",
+            "data point"
+          ],
+          "iri": "Entity-interest_point-Mention-1"
+        }
+      ],
+      "relevance": 0.74609375
+    },
+    "Entity-distinctiveness": {
+      "node_id": "distinctiveness",
+      "disambiguation_index": 0,
+      "label": "distinctiveness",
+      "aliases": [
+        "distinctiveness"
+      ],
+      "types": [
+        "evaluation criterion",
+        "performance metric",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Distinctiveness refers to a performance metric used to evaluate the effectiveness of histogram-based interest point detectors in identifying and matching textured scenes, particularly under varying conditions such as blur and illumination changes.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "distinctiveness",
+          "local_types": [
+            "evaluation criterion",
+            "performance metric",
+            "metric"
+          ],
+          "iri": "Entity-distinctiveness-Mention-1"
+        }
+      ],
+      "relevance": 0.740234375
+    },
+    "Entity-blur_and_illumination_change": {
+      "node_id": "blur_and_illumination_change",
+      "disambiguation_index": 0,
+      "label": "blur and illumination changes",
+      "aliases": [
+        "blur and illumination changes"
+      ],
+      "types": [
+        "change"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Blur and illumination changes refer to variations in image quality and lighting conditions that affect the appearance of textured scenes, which the proposed histogram-based interest point detectors are designed to handle effectively.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "blur and illumination changes",
+          "local_types": [
+            "change"
+          ],
+          "iri": "Entity-blur_and_illumination_change-Mention-1"
+        }
+      ],
+      "relevance": 0.740234375
+    },
+    "Entity-an_extension_of_our_method": {
+      "node_id": "an_extension_of_our_method",
+      "disambiguation_index": 0,
+      "label": "An extension of our method",
+      "aliases": [
+        "An extension of our method"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "An extension of our method refers to the adaptation of the proposed histogram-based interest point detection technique for the specific application of space-time interest point detection aimed at action classification.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "An extension of our method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-an_extension_of_our_method-Mention-1"
+        }
+      ],
+      "relevance": 0.72265625
+    },
+    "Entity-distinct_distribution_in_the_neighborhood": {
+      "node_id": "distinct_distribution_in_the_neighborhood",
+      "disambiguation_index": 0,
+      "label": "distinct distribution in the neighborhood",
+      "aliases": [
+        "distinct distribution in the neighborhood"
+      ],
+      "types": [
+        "distribution"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'distinct distribution in the neighborhood' refers to the unique arrangement of pixel intensity values within a local area of an image, as identified by histogram-based representations in a method for detecting interest points.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "distinct distribution in the neighborhood",
+          "local_types": [
+            "distribution"
+          ],
+          "iri": "Entity-distinct_distribution_in_the_neighborhood-Mention-1"
+        }
+      ],
+      "relevance": 0.708984375
+    },
+    "Entity-strong_invariance_to_rotation": {
+      "node_id": "strong_invariance_to_rotation",
+      "disambiguation_index": 0,
+      "label": "strong invariance to rotation",
+      "aliases": [
+        "strong invariance to rotation"
+      ],
+      "types": [
+        "rotation",
+        "invariance"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Strong invariance to rotation refers to the ability of the proposed histogram-based interest point detectors to consistently identify and match image features regardless of the orientation of the image, thereby enhancing their robustness against changes in viewpoint.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "strong invariance to rotation",
+          "local_types": [
+            "rotation",
+            "invariance"
+          ],
+          "iri": "Entity-strong_invariance_to_rotation-Mention-1"
+        }
+      ],
+      "relevance": 0.70458984375
+    },
+    "Entity-histogram-based_representation": {
+      "node_id": "histogram-based_representation",
+      "disambiguation_index": 0,
+      "label": "histogram-based representations",
+      "aliases": [
+        "histogram-based representations"
+      ],
+      "types": [
+        "data representation",
+        "image processing",
+        "representation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Histogram-based representations are data structures that summarize the distribution of data points or pixel intensities in a dataset, often used in image processing to capture the frequency of different intensity values within specified intervals.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "histogram-based representations",
+          "local_types": [
+            "data representation",
+            "image processing",
+            "representation"
+          ],
+          "iri": "Entity-histogram-based_representation-Mention-1"
+        }
+      ],
+      "relevance": 0.69775390625
+    },
+    "Entity-space-time_interest_point_detection": {
+      "node_id": "space-time_interest_point_detection",
+      "disambiguation_index": 0,
+      "label": "space-time interest point detection",
+      "aliases": [
+        "space-time interest point detection"
+      ],
+      "types": [
+        "technique",
+        "action classification",
+        "detection method",
+        "detection technique",
+        "computer vision",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Space-time interest point detection is a computer vision technique used to identify significant points in a video that capture important spatial and temporal information, facilitating the analysis and classification of actions.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "space-time interest point detection",
+          "local_types": [
+            "technique",
+            "action classification",
+            "detection method",
+            "detection technique",
+            "computer vision",
+            "method"
+          ],
+          "iri": "Entity-space-time_interest_point_detection-Mention-1"
+        }
+      ],
+      "relevance": 0.68798828125
+    },
+    "Entity-distribution": {
+      "node_id": "distribution",
+      "disambiguation_index": 0,
+      "label": "distribution",
+      "aliases": [
+        "distribution"
+      ],
+      "types": [
+        "statistical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'distribution' refers to the statistical representation of pixel intensity values in image regions, which is used to identify distinct areas in the neighborhood for interest point detection.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "distribution",
+          "local_types": [
+            "statistical concept"
+          ],
+          "iri": "Entity-distribution-Mention-1"
+        }
+      ],
+      "relevance": 0.67431640625
+    },
+    "Entity-illumination_change": {
+      "node_id": "illumination_change",
+      "disambiguation_index": 0,
+      "label": "illumination changes",
+      "aliases": [
+        "illumination changes"
+      ],
+      "types": [
+        "lighting condition",
+        "visual effect"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Illumination changes refer to variations in lighting conditions that affect the appearance of textured scenes, impacting the performance of interest point detectors in image processing.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "illumination changes",
+          "local_types": [
+            "lighting condition",
+            "visual effect"
+          ],
+          "iri": "Entity-illumination_change-Mention-1"
+        }
+      ],
+      "relevance": 0.67138671875
+    },
+    "Entity-pixel-wise_difference_in_image_intensity": {
+      "node_id": "pixel-wise_difference_in_image_intensity",
+      "disambiguation_index": 0,
+      "label": "pixel-wise differences in image intensity",
+      "aliases": [
+        "pixel-wise differences in image intensity"
+      ],
+      "types": [
+        "image property",
+        "image processing"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Pixel-wise differences in image intensity refer to the variations in brightness values between corresponding pixels in an image, which are commonly used in image processing to identify features and detect interest points.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "pixel-wise differences in image intensity",
+          "local_types": [
+            "image property",
+            "image processing"
+          ],
+          "iri": "Entity-pixel-wise_difference_in_image_intensity-Mention-1"
+        }
+      ],
+      "relevance": 0.6630859375
+    },
+    "Entity-blur": {
+      "node_id": "blur",
+      "disambiguation_index": 0,
+      "label": "blur",
+      "aliases": [
+        "blur"
+      ],
+      "types": [
+        "visual effect",
+        "effect",
+        "image distortion",
+        "image quality issue",
+        "image property",
+        "blur"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of image processing, 'blur' refers to a visual effect that results in a loss of sharpness and detail in images, often caused by factors such as motion or out-of-focus conditions, which the proposed interest point detectors are designed to handle effectively.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "blur",
+          "local_types": [
+            "visual effect",
+            "effect",
+            "image distortion",
+            "image quality issue",
+            "image property",
+            "blur"
+          ],
+          "iri": "Entity-blur-Mention-1"
+        },
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "blur",
+          "local_types": [
+            "image distortion",
+            "visual effect"
+          ],
+          "iri": "Entity-blur-Mention-2"
+        }
+      ],
+      "relevance": 0.662109375
+    },
+    "Entity-rotation": {
+      "node_id": "rotation",
+      "disambiguation_index": 0,
+      "label": "rotation",
+      "aliases": [
+        "rotation"
+      ],
+      "types": [
+        "transformation",
+        "physical property",
+        "geometric operation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'rotation' refers to the geometric transformation property that allows the proposed interest point detectors to maintain their performance and accuracy despite changes in the orientation of the image.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "rotation",
+          "local_types": [
+            "transformation",
+            "physical property",
+            "geometric operation"
+          ],
+          "iri": "Entity-rotation-Mention-1"
+        }
+      ],
+      "relevance": 0.64697265625
+    },
+    "Entity-neighborhood": {
+      "node_id": "neighborhood",
+      "disambiguation_index": 0,
+      "label": "neighborhood",
+      "aliases": [
+        "neighborhood"
+      ],
+      "types": [
+        "spatial context"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'neighborhood' refers to the local area or region in an image where distinct histogram-based distributions are identified for the purpose of detecting interest points.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "neighborhood",
+          "local_types": [
+            "spatial context"
+          ],
+          "iri": "Entity-neighborhood-Mention-1"
+        }
+      ],
+      "relevance": 0.63818359375
+    },
+    "Entity-illumination_variation": {
+      "node_id": "illumination_variation",
+      "disambiguation_index": 0,
+      "label": "illumination variation",
+      "aliases": [
+        "illumination variation"
+      ],
+      "types": [
+        "image processing",
+        "illumination",
+        "lighting condition",
+        "variation",
+        "environmental factor"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Illumination variation refers to the changes in lighting conditions that affect the appearance of images, which can impact the performance of image processing techniques, particularly in detecting interest points.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "illumination variation",
+          "local_types": [
+            "image processing",
+            "illumination",
+            "lighting condition",
+            "variation",
+            "environmental factor"
+          ],
+          "iri": "Entity-illumination_variation-Mention-1"
+        }
+      ],
+      "relevance": 0.61865234375
+    },
+    "Entity-image_intensity": {
+      "node_id": "image_intensity",
+      "disambiguation_index": 0,
+      "label": "image intensity",
+      "aliases": [
+        "image intensity"
+      ],
+      "types": [
+        "image property",
+        "visual characteristic"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Image intensity refers to the brightness or darkness of a pixel in an image, representing the amount of light captured at that point.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "image intensity",
+          "local_types": [
+            "image property",
+            "visual characteristic"
+          ],
+          "iri": "Entity-image_intensity-Mention-1"
+        }
+      ],
+      "relevance": 0.59765625
+    },
+    "Entity-image_region": {
+      "node_id": "image_region",
+      "disambiguation_index": 0,
+      "label": "image regions",
+      "aliases": [
+        "image regions"
+      ],
+      "types": [
+        "spatial area",
+        "image processing",
+        "image analysis",
+        "image region",
+        "image",
+        "image component",
+        "visual area",
+        "region"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Image regions refer to specific areas or segments within an image that can be analyzed or processed for various purposes, such as identifying features or patterns.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "image regions",
+          "local_types": [
+            "spatial area",
+            "image processing",
+            "image analysis",
+            "image region",
+            "image",
+            "image component",
+            "visual area",
+            "region"
+          ],
+          "iri": "Entity-image_region-Mention-1"
+        }
+      ],
+      "relevance": 0.591796875
+    },
+    "Entity-action_classification": {
+      "node_id": "action_classification",
+      "disambiguation_index": 0,
+      "label": "action classification",
+      "aliases": [
+        "action classification"
+      ],
+      "types": [
+        "classification",
+        "machine learning",
+        "computer vision",
+        "task",
+        "classification task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Action classification is a task in machine learning and computer vision that involves identifying and categorizing actions or activities from visual data, such as video sequences.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "action classification",
+          "local_types": [
+            "classification",
+            "machine learning",
+            "computer vision",
+            "task",
+            "classification task"
+          ],
+          "iri": "Entity-action_classification-Mention-1"
+        }
+      ],
+      "relevance": 0.55517578125
+    },
+    "Entity-large-scale_structure": {
+      "node_id": "large-scale_structure",
+      "disambiguation_index": 0,
+      "label": "large-scale structures",
+      "aliases": [
+        "large-scale structures"
+      ],
+      "types": [
+        "image processing",
+        "structure",
+        "feature",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Large-scale structures refer to significant and extensive formations or patterns that can be identified in various contexts, such as in images or physical environments, often characterized by their size and complexity.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "large-scale structures",
+          "local_types": [
+            "image processing",
+            "structure",
+            "feature",
+            "concept"
+          ],
+          "iri": "Entity-large-scale_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.53466796875
+    },
+    "Entity-repeatability": {
+      "node_id": "repeatability",
+      "disambiguation_index": 0,
+      "label": "repeatability",
+      "aliases": [
+        "repeatability"
+      ],
+      "types": [
+        "evaluation criterion",
+        "performance metric",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Repeatability refers to the ability of a measurement or experimental result to be consistently reproduced under the same conditions, often used as an evaluation criterion or performance metric in various scientific and engineering contexts.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "repeatability",
+          "local_types": [
+            "evaluation criterion",
+            "performance metric",
+            "metric"
+          ],
+          "iri": "Entity-repeatability-Mention-1"
+        }
+      ],
+      "relevance": 0.505859375
+    },
+    "Entity-experimental_result": {
+      "node_id": "experimental_result",
+      "disambiguation_index": 0,
+      "label": "experimental results",
+      "aliases": [
+        "experimental results"
+      ],
+      "types": [
+        "research outcome",
+        "findings",
+        "results",
+        "research findings",
+        "data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Experimental results refer to the data and findings obtained from conducting experiments, which provide evidence to support or refute hypotheses in research.",
+      "mentions": [
+        {
+          "reference": "Paper-6-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "experimental results",
+          "local_types": [
+            "research outcome",
+            "findings",
+            "results",
+            "research findings",
+            "data"
+          ],
+          "iri": "Entity-experimental_result-Mention-1"
+        }
+      ],
+      "relevance": 0.44384765625
+    }
+  },
+  "summary": "We present a new method for detecting interest points using histogram information . Unlike existing interest point detectors , which measure pixel-wise differences in image intensity , our detectors incorporate histogram-based representations , and thus can find image regions that present a distinct distribution in the neighborhood . The proposed detectors are able to capture large-scale structures and distinctive textured patterns , and exhibit strong invariance to rotation , illumination variation , and blur . The experimental results show that the proposed histogram-based interest point detectors perform particularly well for the tasks of matching textured scenes under blur and illumination changes , in terms of repeatability and distinctiveness . An extension of our method to space-time interest point detection for action classification is also presented .",
+  "triples": [
+    [
+      "Entity-a_new_method_for_detecting_interest_point",
+      "Predicate-is_for",
+      "Entity-detecting_interest_point"
+    ],
+    [
+      "Entity-a_new_method_for_detecting_interest_point",
+      "Predicate-uses",
+      "Entity-histogram_information"
+    ],
+    [
+      "Entity-a_new_method_for_detecting_interest_point",
+      "Predicate-detects",
+      "Entity-interest_point"
+    ],
+    [
+      "Entity-a_new_method_for_detecting_interest_point",
+      "Predicate-presents",
+      "Entity-interest_point"
+    ],
+    [
+      "Entity-existing_interest_point_detector",
+      "Predicate-measure",
+      "Entity-pixel-wise_difference_in_image_intensity"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-incorporate",
+      "Entity-histogram-based_representation"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-can_find",
+      "Entity-image_region"
+    ],
+    [
+      "Entity-interest_point_detector",
+      "Predicate-measure",
+      "Entity-pixel-wise_difference_in_image_intensity"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-find",
+      "Entity-image_region"
+    ],
+    [
+      "Entity-image_region",
+      "Predicate-present",
+      "Entity-distinct_distribution_in_the_neighborhood"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-are_able_to_capture",
+      "Entity-large-scale_structure"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-are_able_to_capture",
+      "Entity-distinctive_textured_pattern"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-exhibit",
+      "Entity-strong_invariance_to_rotation"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-exhibit",
+      "Entity-illumination_variation"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-exhibit",
+      "Entity-blur"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-exhibit",
+      "Entity-rotation"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-capture",
+      "Entity-large-scale_structure"
+    ],
+    [
+      "Entity-experimental_result",
+      "Predicate-show",
+      "Entity-the_proposed_histogram-based_interest_point_detector"
+    ],
+    [
+      "Entity-the_proposed_histogram-based_interest_point_detector",
+      "Predicate-perform_particularly_well_for",
+      "Entity-matching_textured_scene_under_blur_and_illumination_change"
+    ],
+    [
+      "Entity-the_proposed_histogram-based_interest_point_detector",
+      "Predicate-perform_particularly_well_for",
+      "Entity-repeatability_and_distinctiveness"
+    ],
+    [
+      "Entity-an_extension_of_our_method",
+      "Predicate-is_presented_for",
+      "Entity-space-time_interest_point_detection"
+    ],
+    [
+      "Entity-an_extension_of_our_method",
+      "Predicate-is_presented_for",
+      "Entity-action_classification"
+    ],
+    [
+      "Entity-space-time_interest_point_detection",
+      "Predicate-is_used_for",
+      "Entity-action_classification"
+    ],
+    [
+      "Entity-an_extension_of_our_method",
+      "Predicate-is_presented",
+      "Entity-space-time_interest_point_detection"
+    ],
+    [
+      "Entity-a_new_method_for_detecting_interest_point",
+      "Predicate-is_extended_to",
+      "Entity-space-time_interest_point_detection"
+    ],
+    [
+      "Entity-the_proposed_histogram-based_interest_point_detector",
+      "Predicate-are_a_novel_type_of_interest_point_detectors_that_utilize_histogram-based_representations",
+      "Entity-our_detector"
+    ],
+    [
+      "Entity-the_proposed_histogram-based_interest_point_detector",
+      "Predicate-utilizes",
+      "Entity-detecting_interest_point"
+    ],
+    [
+      "Entity-our_detector",
+      "Predicate-utilizes",
+      "Entity-detecting_interest_point"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-our_detector",
+      "skos:broader",
+      "Entity-detector"
+    ],
+    [
+      "Entity-the_proposed_histogram-based_interest_point_detector",
+      "skos:broader",
+      "Entity-detector"
+    ],
+    [
+      "Entity-space-time_interest_point_detection",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-distinct_distribution_in_the_neighborhood",
+      "skos:broader",
+      "Entity-distribution"
+    ],
+    [
+      "Entity-space-time_interest_point_detection",
+      "skos:broader",
+      "Entity-action_classification"
+    ],
+    [
+      "Entity-strong_invariance_to_rotation",
+      "skos:broader",
+      "Entity-rotation"
+    ],
+    [
+      "Entity-existing_interest_point_detector",
+      "skos:broader",
+      "Entity-detector"
+    ],
+    [
+      "Entity-matching_textured_scene_under_blur_and_illumination_change",
+      "skos:broader",
+      "Entity-matching_textured_scene"
+    ],
+    [
+      "Entity-a_new_method_for_detecting_interest_point",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-an_extension_of_our_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-a_new_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-interest_point_detector",
+      "skos:broader",
+      "Entity-detector"
+    ]
+  ],
+  "predicates": {
+    "Predicate-is_for": {
+      "label": "is for",
+      "description": "The predicate 'is for' establishes a purpose or intended use relationship between the subject and the object. It indicates that the subject is designed, created, or intended to achieve the goal or function represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-uses": {
+      "label": "uses",
+      "description": "The predicate 'uses' indicates a functional relationship where the subject employs or utilizes the object as a means to achieve a specific purpose or outcome. It signifies that the subject actively incorporates the object into its process or methodology, highlighting the role of the object as a tool, resource, or component that facilitates the actions or objectives of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-detects": {
+      "label": "detects",
+      "description": "The predicate 'detects' indicates the action of identifying or discovering the presence of something, where the subject is the entity or method that performs the detection, and the object is the specific item or phenomenon being identified. This relationship highlights the capability of the subject to recognize or ascertain the existence of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents": {
+      "label": "presents",
+      "description": "The predicate 'presents' indicates that the subject introduces, showcases, or offers the object, often implying a demonstration or explanation of the object's characteristics, features, or significance. It establishes a relationship where the subject serves as a source of information or a proposal regarding the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-measure": {
+      "label": "measure",
+      "description": "The predicate 'measure' indicates a relationship where the subject quantifies or assesses a specific characteristic or property of the object. In this context, it implies that the subject performs an evaluation or calculation to determine the extent, amount, or degree of the object, which is typically a measurable attribute or phenomenon.",
+      "disambiguation_index": 0
+    },
+    "Predicate-incorporate": {
+      "label": "incorporate",
+      "description": "The predicate 'incorporate' signifies the action of integrating or including one element within another. In the context of the subject and object, it indicates that the subject is actively combining or assimilating the object into its structure, functionality, or operation, thereby enhancing or modifying its capabilities or characteristics.",
+      "disambiguation_index": 0
+    },
+    "Predicate-can_find": {
+      "label": "can find",
+      "description": "The predicate 'can find' indicates the ability or capacity of the subject to locate or identify the object within a certain context or environment. It suggests that the subject possesses the necessary tools, skills, or mechanisms to discover or recognize the presence of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-find": {
+      "label": "find",
+      "description": "The predicate 'find' indicates an action where the subject actively discovers, identifies, or locates the object within a certain context or environment. It implies a process of searching or detecting, resulting in the recognition or retrieval of the object by the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-present": {
+      "label": "present",
+      "description": "The predicate 'present' indicates the existence or occurrence of a particular characteristic, feature, or quality associated with the subject, in relation to the object. It establishes a connection where the subject is identified as having or exhibiting the specified attribute or condition represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_able_to_capture": {
+      "label": "are able to capture",
+      "description": "The predicate 'are able to capture' indicates the capability or potential of the subject to successfully perceive, record, or represent the object. It implies that the subject possesses the necessary attributes, tools, or mechanisms to effectively engage with and obtain information about the object, which in this context refers to a specific type of entity or phenomenon.",
+      "disambiguation_index": 0
+    },
+    "Predicate-exhibit": {
+      "label": "exhibit",
+      "description": "The predicate 'exhibit' indicates that the subject demonstrates, displays, or shows a particular quality, characteristic, or property represented by the object. It implies a relationship where the subject actively reveals or makes evident the nature of the object in a way that can be observed or measured.",
+      "disambiguation_index": 0
+    },
+    "Predicate-capture": {
+      "label": "capture",
+      "description": "The predicate 'capture' denotes the action of seizing, recording, or obtaining something, typically involving the subject actively engaging with the object to acquire or represent it in some form. In this context, it implies that the subject has the capability or function to detect, collect, or represent the object, which can be a physical entity, data, or information.",
+      "disambiguation_index": 0
+    },
+    "Predicate-show": {
+      "label": "show",
+      "description": "The predicate 'show' indicates a relationship where the subject provides evidence, demonstration, or illustration of the object. It implies that the subject presents information or data that supports, clarifies, or exemplifies the characteristics or effectiveness of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-perform_particularly_well_for": {
+      "label": "perform particularly well for",
+      "description": "The predicate 'perform particularly well for' indicates a strong effectiveness or suitability of the subject in achieving success or optimal results in the context specified by the object. It suggests that the subject excels in addressing the challenges or requirements presented by the object, highlighting a favorable relationship between the two.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_presented_for": {
+      "label": "is presented for",
+      "description": "The predicate 'is presented for' indicates that the subject is being introduced, demonstrated, or explained in relation to the object, which typically represents a specific application, purpose, or context. This connection suggests that the subject serves a role or function that is relevant to the object, highlighting its significance or utility in that particular area.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_used_for": {
+      "label": "is used for",
+      "description": "The predicate 'is used for' establishes a functional relationship between the subject and the object, indicating that the subject serves a specific purpose or application represented by the object. It implies that the subject is a tool, method, or process that facilitates or contributes to the achievement of the outcome or goal denoted by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_presented": {
+      "label": "is presented",
+      "description": "The predicate 'is presented' serves to indicate that the subject is being introduced, demonstrated, or made known in relation to the object. It establishes a connection where the subject is the focus of attention, and the object represents the content, concept, or idea being conveyed or showcased. This predicate often implies a formal or structured communication of information, suggesting that the subject is providing insights, findings, or developments regarding the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_extended_to": {
+      "label": "is extended to",
+      "description": "The predicate 'is extended to' indicates a relationship where the subject is broadened or applied to encompass the object, suggesting that the principles, techniques, or functionalities of the subject are relevant or applicable in the context of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_a_novel_type_of_interest_point_detectors_that_utilize_histogram-based_representations": {
+      "label": "are a novel type of interest point detectors that utilize histogram-based representations",
+      "description": "The predicate describes a classification of a specific category of interest point detectors, emphasizing their innovative nature and the unique method they employ, which is based on histogram representations. It establishes a relationship where the subject is identified as a distinct example within the broader category of interest point detectors, while the object serves to clarify or specify the nature of the subject's functionality and approach.",
+      "disambiguation_index": 0
+    },
+    "Predicate-utilizes": {
+      "label": "utilizes",
+      "description": "The predicate 'utilizes' indicates that the subject employs or makes use of the object in order to achieve a specific function or purpose. It suggests a practical application where the subject actively engages the object as a tool, method, or resource to fulfill a task or solve a problem.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or subset of the more general category represented by the object. This relationship implies that the object encompasses a wider range of concepts or entities than the subject, thereby situating the subject within a broader context.",
+      "disambiguation_index": 0
+    }
+  }
+}

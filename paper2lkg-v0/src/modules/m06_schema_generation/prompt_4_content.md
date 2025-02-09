@@ -1,0 +1,2 @@
+Predicate: {label}
+Description: {description}

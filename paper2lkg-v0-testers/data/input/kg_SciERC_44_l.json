@@ -1,0 +1,961 @@
+{
+  "iri": "Paper-44",
+  "title": "C04-1036",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-44-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-44-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-44-Section-1-Paragraph-1-Sentence-1",
+              "text": "We suggest a new goal and evaluation criterion for word similarity measures ."
+            },
+            {
+              "iri": "Paper-44-Section-1-Paragraph-1-Sentence-2",
+              "text": "The new criterion -- meaning-entailing substitutability -- fits the needs of semantic-oriented NLP applications and can be evaluated directly -LRB- independent of an application -RRB- at a good level of human agreement ."
+            },
+            {
+              "iri": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+              "text": "Motivated by this semantic criterion we analyze the empirical quality of distributional word feature vectors and its impact on word similarity results , proposing an objective measure for evaluating feature vector quality ."
+            },
+            {
+              "iri": "Paper-44-Section-1-Paragraph-1-Sentence-4",
+              "text": "Finally , a novel feature weighting and selection function is presented , which yields superior feature vectors and better word similarity performance ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0002257823944091797,
+    12.563500881195068,
+    19.381777048110962,
+    17.655066967010498,
+    0.01696157455444336,
+    8.487701416015625e-05,
+    9.608268737792969e-05,
+    35.21450185775757,
+    36.56686496734619,
+    1.4032187461853027,
+    1.1497600078582764,
+    0.008378028869628906,
+    0.0001735687255859375,
+    23.723701238632202,
+    5.981827735900879,
+    0.011919260025024414,
+    1.0904359817504883,
+    13.079560995101929,
+    3.185096502304077,
+    3.515162706375122,
+    30.383983612060547,
+    2.7089779376983643,
+    18.594505786895752,
+    1.1518428325653076,
+    0.0006256103515625,
+    0.009733915328979492
+  ],
+  "nodes": {
+    "Entity-meaning-entailing_substitutability": {
+      "node_id": "meaning-entailing_substitutability",
+      "disambiguation_index": 0,
+      "label": "meaning-entailing substitutability",
+      "aliases": [
+        "-- meaning-entailing substitutability --",
+        "meaning-entailing substitutability"
+      ],
+      "types": [
+        "criterion",
+        "metric",
+        "concept",
+        "semantic concept",
+        "linguistic theory",
+        "philosophical concept",
+        "evaluation metric",
+        "substitutability"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A semantic criterion for evaluating word similarity measures, which assesses whether two words can be substituted with each other in a sentence without changing its meaning.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "meaning-entailing substitutability",
+          "local_types": [
+            "criterion",
+            "metric",
+            "semantic concept",
+            "linguistic theory",
+            "philosophical concept",
+            "evaluation metric"
+          ],
+          "iri": "Entity-meaning-entailing_substitutability-Mention-1"
+        },
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "-- meaning-entailing substitutability --",
+          "local_types": [
+            "concept",
+            "substitutability"
+          ],
+          "iri": "Entity-meaning-entailing_substitutability-Mention-2"
+        }
+      ],
+      "relevance": 0.76708984375
+    },
+    "Entity-an_objective_measure_for_evaluating_feature_vector_quality": {
+      "node_id": "an_objective_measure_for_evaluating_feature_vector_quality",
+      "disambiguation_index": 0,
+      "label": "an objective measure for evaluating feature vector quality",
+      "aliases": [
+        "an objective measure for evaluating feature vector quality"
+      ],
+      "types": [
+        "measure",
+        "evaluation metric"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A proposed metric used to assess the quality of feature vectors representing words in a way that is independent of specific NLP applications.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "an objective measure for evaluating feature vector quality",
+          "local_types": [
+            "measure",
+            "evaluation metric"
+          ],
+          "iri": "Entity-an_objective_measure_for_evaluating_feature_vector_quality-Mention-1"
+        }
+      ],
+      "relevance": 0.7607421875
+    },
+    "Entity-a_new_goal_and_evaluation_criterion_for_word_similarity_measure": {
+      "node_id": "a_new_goal_and_evaluation_criterion_for_word_similarity_measure",
+      "disambiguation_index": 0,
+      "label": "a new goal and evaluation criterion for word similarity measures",
+      "aliases": [
+        "a new goal and evaluation criterion for word similarity measures"
+      ],
+      "types": [
+        "measure",
+        "criterion",
+        "goal"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A novel approach to evaluating the quality of word similarity measures, introducing a semantic-based goal and corresponding criteria.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a new goal and evaluation criterion for word similarity measures",
+          "local_types": [
+            "measure",
+            "criterion",
+            "goal"
+          ],
+          "iri": "Entity-a_new_goal_and_evaluation_criterion_for_word_similarity_measure-Mention-1"
+        }
+      ],
+      "relevance": 0.7421875
+    },
+    "Entity-motivated_by_this_semantic_criterion": {
+      "node_id": "motivated_by_this_semantic_criterion",
+      "disambiguation_index": 0,
+      "label": "Motivated by this semantic criterion",
+      "aliases": [
+        "Motivated by this semantic criterion"
+      ],
+      "types": [
+        "motivation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The new goal and evaluation criterion for word similarity measures, meaning-entailing substitutability.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Motivated by this semantic criterion",
+          "local_types": [
+            "motivation"
+          ],
+          "iri": "Entity-motivated_by_this_semantic_criterion-Mention-1"
+        }
+      ],
+      "relevance": 0.7412109375
+    },
+    "Entity-which_yield_superior_feature_vector_and_better_word_similarity_performance": {
+      "node_id": "which_yield_superior_feature_vector_and_better_word_similarity_performance",
+      "disambiguation_index": 0,
+      "label": "which yields superior feature vectors and better word similarity performance",
+      "aliases": [
+        "which yields superior feature vectors and better word similarity performance"
+      ],
+      "types": [
+        "performance metric"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A novel feature weighting and selection function that produces high-quality feature vectors with improved word similarity results.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "which yields superior feature vectors and better word similarity performance",
+          "local_types": [
+            "performance metric"
+          ],
+          "iri": "Entity-which_yield_superior_feature_vector_and_better_word_similarity_performance-Mention-1"
+        }
+      ],
+      "relevance": 0.72412109375
+    },
+    "Entity-the_new_criterion": {
+      "node_id": "the_new_criterion",
+      "disambiguation_index": 0,
+      "label": "The new criterion",
+      "aliases": [
+        "The new criterion"
+      ],
+      "types": [
+        "criterion"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A criterion for evaluating word similarity measures that assesses whether two words can be substituted with each other in a sentence without changing the meaning.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "The new criterion",
+          "local_types": [
+            "criterion"
+          ],
+          "iri": "Entity-the_new_criterion-Mention-1"
+        }
+      ],
+      "relevance": 0.7216796875
+    },
+    "Entity-it_impact_on_word_similarity_result": {
+      "node_id": "it_impact_on_word_similarity_result",
+      "disambiguation_index": 0,
+      "label": "its impact on word similarity results",
+      "aliases": [
+        "its impact on word similarity results"
+      ],
+      "types": [
+        "impact",
+        "evaluation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The effect of using distributional word feature vectors in measuring semantic similarities between words.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "its impact on word similarity results",
+          "local_types": [
+            "impact",
+            "evaluation"
+          ],
+          "iri": "Entity-it_impact_on_word_similarity_result-Mention-1"
+        }
+      ],
+      "relevance": 0.71826171875
+    },
+    "Entity-novel_feature_weighting_and_selection_function": {
+      "node_id": "novel_feature_weighting_and_selection_function",
+      "disambiguation_index": 0,
+      "label": "novel feature weighting and selection function",
+      "aliases": [
+        "a novel feature weighting and selection function",
+        "novel feature weighting and selection function"
+      ],
+      "types": [
+        "algorithm",
+        "technique",
+        "function",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A method for selecting and weighing features that produces superior distributional word feature vectors and improves word similarity results.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "novel feature weighting and selection function",
+          "local_types": [
+            "algorithm",
+            "technique",
+            "method"
+          ],
+          "iri": "Entity-novel_feature_weighting_and_selection_function-Mention-1"
+        },
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "a novel feature weighting and selection function",
+          "local_types": [
+            "algorithm",
+            "technique",
+            "function"
+          ],
+          "iri": "Entity-novel_feature_weighting_and_selection_function-Mention-2"
+        }
+      ],
+      "relevance": 0.71240234375
+    },
+    "Entity-distributional_word_feature_vector_and_it_impact_on_word_similarity_result": {
+      "node_id": "distributional_word_feature_vector_and_it_impact_on_word_similarity_result",
+      "disambiguation_index": 0,
+      "label": "distributional word feature vectors and its impact on word similarity results",
+      "aliases": [
+        "distributional word feature vectors and its impact on word similarity results"
+      ],
+      "types": [
+        "methodology",
+        "research finding"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A methodology or research finding that uses statistical models to represent words as numerical vectors and evaluates their effectiveness in measuring semantic similarity between words.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "distributional word feature vectors and its impact on word similarity results",
+          "local_types": [
+            "methodology",
+            "research finding"
+          ],
+          "iri": "Entity-distributional_word_feature_vector_and_it_impact_on_word_similarity_result-Mention-1"
+        }
+      ],
+      "relevance": 0.677734375
+    },
+    "Entity-word_similarity_result": {
+      "node_id": "word_similarity_result",
+      "disambiguation_index": 0,
+      "label": "word similarity results",
+      "aliases": [
+        "word similarity results"
+      ],
+      "types": [
+        "output",
+        "evaluation metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of metrics used to quantify the degree of semantic relatedness between words.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "word similarity results",
+          "local_types": [
+            "output",
+            "evaluation metric"
+          ],
+          "iri": "Entity-word_similarity_result-Mention-1"
+        }
+      ],
+      "relevance": 0.673828125
+    },
+    "Entity-word_similarity_performance": {
+      "node_id": "word_similarity_performance",
+      "disambiguation_index": 0,
+      "label": "word similarity performance",
+      "aliases": [
+        "word similarity performance"
+      ],
+      "types": [
+        "evaluation metric",
+        "performance measure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A measure of how well words are related or similar to each other.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "word similarity performance",
+          "local_types": [
+            "evaluation metric",
+            "performance measure"
+          ],
+          "iri": "Entity-word_similarity_performance-Mention-1"
+        }
+      ],
+      "relevance": 0.66015625
+    },
+    "Entity-we_suggest": {
+      "node_id": "we_suggest",
+      "disambiguation_index": 0,
+      "label": "We suggest",
+      "aliases": [
+        "We suggest"
+      ],
+      "types": [
+        "researcher",
+        "proposition",
+        "author"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A proposal or recommendation to establish a new goal and evaluation criterion for measuring word similarity.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "We suggest",
+          "local_types": [
+            "researcher",
+            "proposition",
+            "author"
+          ],
+          "iri": "Entity-we_suggest-Mention-1"
+        }
+      ],
+      "relevance": 0.65771484375
+    },
+    "Entity-feature_vector_quality": {
+      "node_id": "feature_vector_quality",
+      "disambiguation_index": 0,
+      "label": "feature vector quality",
+      "aliases": [
+        "feature vector quality"
+      ],
+      "types": [
+        "metric",
+        "evaluation criterion"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A metric used to evaluate or assess the quality of a set of features representing words or concepts.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "feature vector quality",
+          "local_types": [
+            "metric",
+            "evaluation criterion"
+          ],
+          "iri": "Entity-feature_vector_quality-Mention-1"
+        }
+      ],
+      "relevance": 0.65576171875
+    },
+    "Entity-word_similarity_measure": {
+      "node_id": "word_similarity_measure",
+      "disambiguation_index": 0,
+      "label": "word similarity measures",
+      "aliases": [
+        "word similarity measures"
+      ],
+      "types": [
+        "algorithm",
+        "concept",
+        "method",
+        "measure",
+        "natural language processing technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical approach or metric used to quantify the degree of semantic relatedness between words.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "word similarity measures",
+          "local_types": [
+            "algorithm",
+            "concept",
+            "method",
+            "measure",
+            "natural language processing technique"
+          ],
+          "iri": "Entity-word_similarity_measure-Mention-1"
+        }
+      ],
+      "relevance": 0.654296875
+    },
+    "Entity-semantic_criterion": {
+      "node_id": "semantic_criterion",
+      "disambiguation_index": 0,
+      "label": "semantic criterion",
+      "aliases": [
+        "semantic criterion"
+      ],
+      "types": [
+        "concept",
+        "theory"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A principle or standard used to evaluate or judge the meaning of words",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "semantic criterion",
+          "local_types": [
+            "concept",
+            "theory"
+          ],
+          "iri": "Entity-semantic_criterion-Mention-1"
+        }
+      ],
+      "relevance": 0.634765625
+    },
+    "Entity-distributional_word_feature_vector": {
+      "node_id": "distributional_word_feature_vector",
+      "disambiguation_index": 0,
+      "label": "distributional word feature vectors",
+      "aliases": [
+        "distributional word feature vectors"
+      ],
+      "types": [
+        "representation",
+        "algorithm",
+        "concept",
+        "word representation",
+        "technique",
+        "methodology",
+        "feature vector",
+        "data structure",
+        "method",
+        "model component"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of representation that captures semantic relationships between words based on their co-occurrence patterns in a large corpus.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "distributional word feature vectors",
+          "local_types": [
+            "representation",
+            "algorithm",
+            "concept",
+            "word representation",
+            "technique",
+            "methodology",
+            "feature vector",
+            "data structure",
+            "method",
+            "model component"
+          ],
+          "iri": "Entity-distributional_word_feature_vector-Mention-1"
+        }
+      ],
+      "relevance": 0.6240234375
+    },
+    "Entity-a_good_level_of_human_agreement": {
+      "node_id": "a_good_level_of_human_agreement",
+      "disambiguation_index": 0,
+      "label": "a good level of human agreement",
+      "aliases": [
+        "a good level of human agreement"
+      ],
+      "types": [
+        "agreement"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A threshold or standard for evaluating the similarity between words, where humans agree on their meanings and relationships.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "a good level of human agreement",
+          "local_types": [
+            "agreement"
+          ],
+          "iri": "Entity-a_good_level_of_human_agreement-Mention-1"
+        }
+      ],
+      "relevance": 0.623046875
+    },
+    "Entity-evaluation_criterion": {
+      "node_id": "evaluation_criterion",
+      "disambiguation_index": 0,
+      "label": "evaluation criterion",
+      "aliases": [
+        "evaluation criterion"
+      ],
+      "types": [
+        "standard",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of standards or metrics used to assess the quality, accuracy, or effectiveness of something.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "evaluation criterion",
+          "local_types": [
+            "standard",
+            "metric"
+          ],
+          "iri": "Entity-evaluation_criterion-Mention-1"
+        }
+      ],
+      "relevance": 0.60302734375
+    },
+    "Entity-the_need_of_semantic-oriented_nlp_application": {
+      "node_id": "the_need_of_semantic-oriented_nlp_application",
+      "disambiguation_index": 0,
+      "label": "the needs of semantic-oriented NLP applications",
+      "aliases": [
+        "the needs of semantic-oriented NLP applications"
+      ],
+      "types": [
+        "field",
+        "application"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Requirements or demands for natural language processing systems that prioritize semantic understanding and meaning-based interactions.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the needs of semantic-oriented NLP applications",
+          "local_types": [
+            "field",
+            "application"
+          ],
+          "iri": "Entity-the_need_of_semantic-oriented_nlp_application-Mention-1"
+        }
+      ],
+      "relevance": 0.59765625
+    },
+    "Entity-feature_weighting_and_selection_function": {
+      "node_id": "feature_weighting_and_selection_function",
+      "disambiguation_index": 0,
+      "label": "feature weighting and selection function",
+      "aliases": [
+        "feature weighting and selection function"
+      ],
+      "types": [
+        "algorithm",
+        "technique",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A mathematical technique used to assign relative importance or weights to features in order to select the most relevant ones.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "feature weighting and selection function",
+          "local_types": [
+            "algorithm",
+            "technique",
+            "methodology"
+          ],
+          "iri": "Entity-feature_weighting_and_selection_function-Mention-1"
+        }
+      ],
+      "relevance": 0.59716796875
+    },
+    "Entity-criterion": {
+      "node_id": "criterion",
+      "disambiguation_index": 0,
+      "label": "criterion",
+      "aliases": [
+        "criterion"
+      ],
+      "types": [
+        "concept",
+        "standard"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A standard or principle used to evaluate or judge something, often based on specific criteria.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "criterion",
+          "local_types": [
+            "concept",
+            "standard"
+          ],
+          "iri": "Entity-criterion-Mention-1"
+        }
+      ],
+      "relevance": 0.58154296875
+    },
+    "Entity-objective_measure": {
+      "node_id": "objective_measure",
+      "disambiguation_index": 0,
+      "label": "objective measure",
+      "aliases": [
+        "objective measure"
+      ],
+      "types": [
+        "standard",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A quantifiable standard or metric used to assess the quality of something.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "objective measure",
+          "local_types": [
+            "standard",
+            "metric"
+          ],
+          "iri": "Entity-objective_measure-Mention-1"
+        }
+      ],
+      "relevance": 0.578125
+    },
+    "Entity-semantic-oriented_nlp_application": {
+      "node_id": "semantic-oriented_nlp_application",
+      "disambiguation_index": 0,
+      "label": "semantic-oriented NLP applications",
+      "aliases": [
+        "semantic-oriented NLP applications"
+      ],
+      "types": [
+        "research area",
+        "field of study",
+        "field",
+        "domain",
+        "NLP application",
+        "application"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of natural language processing (NLP) that focuses on the meaning and interpretation of text, rather than just its syntax or structure.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "semantic-oriented NLP applications",
+          "local_types": [
+            "research area",
+            "field of study",
+            "field",
+            "domain",
+            "NLP application",
+            "application"
+          ],
+          "iri": "Entity-semantic-oriented_nlp_application-Mention-1"
+        }
+      ],
+      "relevance": 0.57275390625
+    },
+    "Entity-feature_vector": {
+      "node_id": "feature_vector",
+      "disambiguation_index": 0,
+      "label": "feature vectors",
+      "aliases": [
+        "feature vectors"
+      ],
+      "types": [
+        "data structure",
+        "representation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A set of numerical representations used to describe or characterize entities in a data-driven context.",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "feature vectors",
+          "local_types": [
+            "data structure",
+            "representation"
+          ],
+          "iri": "Entity-feature_vector-Mention-1"
+        }
+      ],
+      "relevance": 0.546875
+    },
+    "Entity-nlp_application": {
+      "node_id": "nlp_application",
+      "disambiguation_index": 0,
+      "label": "NLP applications",
+      "aliases": [
+        "NLP applications"
+      ],
+      "types": [
+        "domain",
+        "field of study"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Natural Language Processing techniques or technologies used to analyze, understand, and generate human language",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "NLP applications",
+          "local_types": [
+            "domain",
+            "field of study"
+          ],
+          "iri": "Entity-nlp_application-Mention-1"
+        }
+      ],
+      "relevance": 0.5361328125
+    },
+    "Entity-new_goal": {
+      "node_id": "new_goal",
+      "disambiguation_index": 0,
+      "label": "new goal",
+      "aliases": [
+        "new goal"
+      ],
+      "types": [
+        "target",
+        "objective"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A target or objective that has been newly established",
+      "mentions": [
+        {
+          "reference": "Paper-44-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "new goal",
+          "local_types": [
+            "target",
+            "objective"
+          ],
+          "iri": "Entity-new_goal-Mention-1"
+        }
+      ],
+      "relevance": 0.52490234375
+    }
+  },
+  "summary": "We suggest a new goal and evaluation criterion for word similarity measures . The new criterion -- meaning-entailing substitutability -- fits the needs of semantic-oriented NLP applications and can be evaluated directly -LRB- independent of an application -RRB- at a good level of human agreement . Motivated by this semantic criterion we analyze the empirical quality of distributional word feature vectors and its impact on word similarity results , proposing an objective measure for evaluating feature vector quality . Finally , a novel feature weighting and selection function is presented , which yields superior feature vectors and better word similarity performance .",
+  "triples": [
+    [
+      "Entity-we_suggest",
+      "Predicate-suggests_a_new_goal_and_evaluation_criterion_for",
+      "Entity-word_similarity_measure"
+    ],
+    [
+      "Entity-the_new_criterion",
+      "Predicate-fits",
+      "Entity-the_need_of_semantic-oriented_nlp_application"
+    ],
+    [
+      "Entity-the_new_criterion",
+      "Predicate-fits_the_needs_of_semantic-oriented_NLP_applications",
+      "Entity-semantic-oriented_nlp_application"
+    ],
+    [
+      "Entity-distributional_word_feature_vector_and_it_impact_on_word_similarity_result",
+      "Predicate-propose",
+      "Entity-an_objective_measure_for_evaluating_feature_vector_quality"
+    ],
+    [
+      "Entity-motivated_by_this_semantic_criterion",
+      "Predicate-analyzes_the_empirical_quality_of_distributional_word_feature_vectors_and_its_impact_on",
+      "Entity-word_similarity_result"
+    ],
+    [
+      "Entity-an_objective_measure_for_evaluating_feature_vector_quality",
+      "Predicate-proposing",
+      "Entity-an_objective_measure_for_evaluating_feature_vector_quality"
+    ],
+    [
+      "Entity-novel_feature_weighting_and_selection_function",
+      "Predicate-is_presented",
+      "Entity-which_yield_superior_feature_vector_and_better_word_similarity_performance"
+    ],
+    [
+      "Entity-meaning-entailing_substitutability",
+      "Predicate-fits",
+      "Entity-an_objective_measure_for_evaluating_feature_vector_quality"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-feature_vector_quality",
+      "skos:broader",
+      "Entity-evaluation_criterion"
+    ],
+    [
+      "Entity-a_new_goal_and_evaluation_criterion_for_word_similarity_measure",
+      "skos:broader",
+      "Entity-criterion"
+    ],
+    [
+      "Entity-a_new_goal_and_evaluation_criterion_for_word_similarity_measure",
+      "skos:broader",
+      "Entity-evaluation_criterion"
+    ],
+    [
+      "Entity-distributional_word_feature_vector",
+      "skos:broader",
+      "Entity-feature_vector"
+    ],
+    [
+      "Entity-the_new_criterion",
+      "skos:broader",
+      "Entity-criterion"
+    ],
+    [
+      "Entity-the_new_criterion",
+      "skos:broader",
+      "Entity-evaluation_criterion"
+    ],
+    [
+      "Entity-semantic-oriented_nlp_application",
+      "skos:broader",
+      "Entity-nlp_application"
+    ],
+    [
+      "Entity-meaning-entailing_substitutability",
+      "skos:broader",
+      "Entity-criterion"
+    ],
+    [
+      "Entity-meaning-entailing_substitutability",
+      "skos:broader",
+      "Entity-evaluation_criterion"
+    ]
+  ],
+  "predicates": {
+    "Predicate-suggests_a_new_goal_and_evaluation_criterion_for": {
+      "label": "suggests a new goal and evaluation criterion for",
+      "description": "This predicate indicates that the subject proposes or recommends a novel objective and corresponding assessment standard for evaluating the object. The connection between the subject and object is one of proposing an alternative framework, guideline, or approach to assess or measure something.",
+      "disambiguation_index": 0
+    },
+    "Predicate-fits": {
+      "label": "fits",
+      "description": "Indicates that a subject has a property or characteristic that matches or corresponds to an object. The predicate 'fits' suggests a sense of congruence, compatibility, or suitability between the subject and the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-fits_the_needs_of_semantic-oriented_NLP_applications": {
+      "label": "fits the needs of semantic-oriented NLP applications",
+      "description": "Indicates that a subject meets or satisfies the requirements and expectations of semantic-oriented natural language processing (NLP) applications.",
+      "disambiguation_index": 0
+    },
+    "Predicate-propose": {
+      "label": "propose",
+      "description": "To suggest or recommend something as a potential solution, approach, or standard to be considered and evaluated.",
+      "disambiguation_index": 0
+    },
+    "Predicate-analyzes_the_empirical_quality_of_distributional_word_feature_vectors_and_its_impact_on": {
+      "label": "analyzes the empirical quality of distributional word feature vectors and its impact on",
+      "description": "Evaluates the reliability or accuracy of a method that represents words as numerical features (vectors), examining how well these representations capture relationships between words and their impact on downstream applications.",
+      "disambiguation_index": 0
+    },
+    "Predicate-proposing": {
+      "label": "proposing",
+      "description": "Proposing connects a subject to an object by suggesting or putting forward something as a potential solution, idea, or approach. It implies that the subject is offering or presenting the object as a viable option for consideration.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_presented": {
+      "label": "is presented",
+      "description": "The predicate 'is presented' indicates that a concept or idea (subject) is introduced, explained, or made available to others through some medium or representation (object). It suggests a formal or informal presentation of information, which can take various forms such as an explanation, demonstration, illustration, or example.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' indicates that the subject concept is a specific instance or subclass of the object concept. It represents an is-a relationship, where the subject is more precise and detailed than the object.",
+      "disambiguation_index": 0
+    }
+  }
+}

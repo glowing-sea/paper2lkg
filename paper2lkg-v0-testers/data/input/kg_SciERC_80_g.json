@@ -1,0 +1,941 @@
+{
+  "iri": "Paper-80",
+  "title": "C90-3045",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-80-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-80-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-80-Section-1-Paragraph-1-Sentence-1",
+              "text": "The unique properties of tree-adjoining grammars -LRB- TAG -RRB- present a challenge for the application of TAGs beyond the limited confines of syntax , for instance , to the task of semantic interpretation or automatic translation of natural language ."
+            },
+            {
+              "iri": "Paper-80-Section-1-Paragraph-1-Sentence-2",
+              "text": "We present a variant of TAGs , called synchronous TAGs , which characterize correspondences between languages ."
+            },
+            {
+              "iri": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+              "text": "The formalism 's intended usage is to relate expressions of natural languages to their associated semantics represented in a logical form language , or to their translates in another natural language ; in summary , we intend it to allow TAGs to be used beyond their role in syntax proper ."
+            },
+            {
+              "iri": "Paper-80-Section-1-Paragraph-1-Sentence-4",
+              "text": "We discuss the application of synchronous TAGs to concrete examples , mentioning primarily in passing some computational issues that arise in its interpretation ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00021505355834960938,
+    45.038013219833374,
+    56.77251577377319,
+    46.74599814414978,
+    0.03373217582702637,
+    0.00010704994201660156,
+    0.0001461505889892578,
+    189.0768678188324,
+    194.582994222641,
+    2.464892864227295,
+    0.03343701362609863,
+    0.0070018768310546875,
+    0.00016832351684570312,
+    51.92427325248718,
+    0.0014028549194335938,
+    0.03079986572265625,
+    0.0012011528015136719,
+    4.27547287940979,
+    0.563431978225708,
+    9.821144819259644,
+    404.3576989173889,
+    5.791023015975952,
+    209.67571878433228,
+    3.297039031982422,
+    0.0016748905181884766,
+    0.009678125381469727
+  ],
+  "nodes": {
+    "Entity-synchronous_tag": {
+      "node_id": "synchronous_tag",
+      "disambiguation_index": 0,
+      "label": "synchronous TAGs",
+      "aliases": [
+        "synchronous TAGs"
+      ],
+      "types": [
+        "formalism",
+        "formal grammar",
+        "linguistic theory",
+        "linguistic framework",
+        "concept",
+        "TAG",
+        "grammar",
+        "method",
+        "linguistic model",
+        "synchronous TAG"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Synchronous TAGs are a variant of tree-adjoining grammars (TAGs) designed to characterize correspondences between languages, enabling the application of TAGs beyond syntax to tasks such as semantic interpretation and automatic translation.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "synchronous TAGs",
+          "local_types": [
+            "formalism",
+            "formal grammar",
+            "linguistic theory",
+            "linguistic framework",
+            "concept",
+            "grammar",
+            "linguistic model",
+            "synchronous TAG"
+          ],
+          "iri": "Entity-synchronous_tag-Mention-1"
+        },
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "synchronous TAGs",
+          "local_types": [
+            "formal grammar",
+            "linguistic framework",
+            "TAG",
+            "method",
+            "linguistic model"
+          ],
+          "iri": "Entity-synchronous_tag-Mention-2"
+        }
+      ],
+      "relevance": 0.85693359375
+    },
+    "Entity-a_variant_of_tag": {
+      "node_id": "a_variant_of_tag",
+      "disambiguation_index": 0,
+      "label": "a variant of TAGs",
+      "aliases": [
+        "a variant of TAGs"
+      ],
+      "types": [
+        "variant",
+        "TAG"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A variant of tree-adjoining grammars (TAGs) known as synchronous TAGs, which is designed to establish correspondences between different languages and facilitate semantic interpretation and translation beyond traditional syntactic applications.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "a variant of TAGs",
+          "local_types": [
+            "variant",
+            "TAG"
+          ],
+          "iri": "Entity-a_variant_of_tag-Mention-1"
+        }
+      ],
+      "relevance": 0.82861328125
+    },
+    "Entity-formalism": {
+      "node_id": "formalism",
+      "disambiguation_index": 0,
+      "label": "formalism",
+      "aliases": [
+        "formalism",
+        "The formalism"
+      ],
+      "types": [
+        "concept",
+        "theoretical framework"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The formalism refers to synchronous tree-adjoining grammars (TAGs), which are designed to relate natural language expressions to their semantics in logical form or to translations in other languages, extending the application of TAGs beyond syntax.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "formalism",
+          "local_types": [
+            "theoretical framework",
+            "concept"
+          ],
+          "iri": "Entity-formalism-Mention-1"
+        },
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "The formalism",
+          "local_types": [
+            "concept"
+          ],
+          "iri": "Entity-formalism-Mention-2"
+        }
+      ],
+      "relevance": 0.82568359375
+    },
+    "Entity-tag": {
+      "node_id": "tag",
+      "disambiguation_index": 0,
+      "label": "TAG",
+      "aliases": [
+        "TAG",
+        "TAGs"
+      ],
+      "types": [
+        "formalism",
+        "formal grammar",
+        "linguistic theory",
+        "linguistic framework",
+        "concept",
+        "grammar",
+        "abbreviation",
+        "linguistic model"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "TAG refers to Tree-Adjoining Grammars, a formalism in linguistic theory that extends beyond syntax to applications such as semantic interpretation and automatic translation of natural language.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "TAG",
+          "local_types": [
+            "formalism",
+            "linguistic theory",
+            "linguistic framework",
+            "grammar",
+            "abbreviation"
+          ],
+          "iri": "Entity-tag-Mention-1"
+        },
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "TAGs",
+          "local_types": [
+            "linguistic model",
+            "concept",
+            "formal grammar"
+          ],
+          "iri": "Entity-tag-Mention-2"
+        },
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "TAGs",
+          "local_types": [
+            "linguistic model",
+            "concept",
+            "grammar"
+          ],
+          "iri": "Entity-tag-Mention-3"
+        }
+      ],
+      "relevance": 0.81005859375
+    },
+    "Entity-it_interpretation": {
+      "node_id": "it_interpretation",
+      "disambiguation_index": 0,
+      "label": "its interpretation",
+      "aliases": [
+        "its interpretation"
+      ],
+      "types": [
+        "interpretation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'its interpretation' refers to the computational issues that arise when applying synchronous tree-adjoining grammars (TAGs) to the semantic interpretation of natural language expressions.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "its interpretation",
+          "local_types": [
+            "interpretation"
+          ],
+          "iri": "Entity-it_interpretation-Mention-1"
+        }
+      ],
+      "relevance": 0.76318359375
+    },
+    "Entity-translates": {
+      "node_id": "translates",
+      "disambiguation_index": 0,
+      "label": "translates",
+      "aliases": [
+        "translates"
+      ],
+      "types": [
+        "action",
+        "translation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "In the context of the paper, 'translates' refers to the process of converting expressions from one natural language to their equivalent forms in another natural language, facilitated by the use of synchronous tree-adjoining grammars (TAGs).",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "translates",
+          "local_types": [
+            "action",
+            "translation"
+          ],
+          "iri": "Entity-translates-Mention-1"
+        }
+      ],
+      "relevance": 0.74560546875
+    },
+    "Entity-tree-adjoining_grammar": {
+      "node_id": "tree-adjoining_grammar",
+      "disambiguation_index": 0,
+      "label": "tree-adjoining grammars",
+      "aliases": [
+        "tree-adjoining grammars"
+      ],
+      "types": [
+        "linguistic framework",
+        "linguistic theory",
+        "grammar"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Tree-adjoining grammars are a formalism in computational linguistics used to describe the syntax and structure of natural languages through the combination of tree structures and adjoining operations.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "tree-adjoining grammars",
+          "local_types": [
+            "linguistic framework",
+            "linguistic theory",
+            "grammar"
+          ],
+          "iri": "Entity-tree-adjoining_grammar-Mention-1"
+        }
+      ],
+      "relevance": 0.7421875
+    },
+    "Entity-computational_issue": {
+      "node_id": "computational_issue",
+      "disambiguation_index": 0,
+      "label": "computational issues",
+      "aliases": [
+        "computational issues"
+      ],
+      "types": [
+        "computational theory",
+        "computational",
+        "problem",
+        "issue",
+        "technical challenge"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'computational issues' refers to the technical challenges and problems encountered in the interpretation of synchronous tree-adjoining grammars (TAGs) when applied to tasks such as semantic interpretation and automatic translation of natural language.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "computational issues",
+          "local_types": [
+            "computational theory",
+            "computational",
+            "problem",
+            "issue",
+            "technical challenge"
+          ],
+          "iri": "Entity-computational_issue-Mention-1"
+        }
+      ],
+      "relevance": 0.74072265625
+    },
+    "Entity-correspondence_between_language": {
+      "node_id": "correspondence_between_language",
+      "disambiguation_index": 0,
+      "label": "correspondences between languages",
+      "aliases": [
+        "correspondences between languages"
+      ],
+      "types": [
+        "correspondence",
+        "languages"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Correspondences between languages refer to the relationships and mappings that exist between different natural languages, particularly in the context of their syntactic and semantic structures, as characterized by synchronous tree-adjoining grammars (TAGs).",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "correspondences between languages",
+          "local_types": [
+            "correspondence",
+            "languages"
+          ],
+          "iri": "Entity-correspondence_between_language-Mention-1"
+        }
+      ],
+      "relevance": 0.72607421875
+    },
+    "Entity-language": {
+      "node_id": "language",
+      "disambiguation_index": 0,
+      "label": "languages",
+      "aliases": [
+        "languages"
+      ],
+      "types": [
+        "linguistic system",
+        "communication method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'languages' refers to natural languages that are characterized by their syntax and semantics, and are the subject of study in the context of tree-adjoining grammars and their applications in semantic interpretation and translation.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "languages",
+          "local_types": [
+            "linguistic system",
+            "communication method"
+          ],
+          "iri": "Entity-language-Mention-1"
+        }
+      ],
+      "relevance": 0.67041015625
+    },
+    "Entity-another_natural_language": {
+      "node_id": "another_natural_language",
+      "disambiguation_index": 0,
+      "label": "another natural language",
+      "aliases": [
+        "another natural language"
+      ],
+      "types": [
+        "language"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'another natural language' refers to a different language into which expressions from a source natural language can be translated, highlighting the application of synchronous tree-adjoining grammars in facilitating automatic translation between languages.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "another natural language",
+          "local_types": [
+            "language"
+          ],
+          "iri": "Entity-another_natural_language-Mention-1"
+        }
+      ],
+      "relevance": 0.67041015625
+    },
+    "Entity-automatic_translation_of_natural_language": {
+      "node_id": "automatic_translation_of_natural_language",
+      "disambiguation_index": 0,
+      "label": "automatic translation of natural language",
+      "aliases": [
+        "automatic translation of natural language"
+      ],
+      "types": [
+        "task",
+        "translation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Automatic translation of natural language refers to the computational process of converting text or speech from one natural language to another, utilizing formal systems like tree-adjoining grammars to facilitate semantic interpretation and language correspondences.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "automatic translation of natural language",
+          "local_types": [
+            "task",
+            "translation"
+          ],
+          "iri": "Entity-automatic_translation_of_natural_language-Mention-1"
+        }
+      ],
+      "relevance": 0.6611328125
+    },
+    "Entity-interpretation": {
+      "node_id": "interpretation",
+      "disambiguation_index": 0,
+      "label": "interpretation",
+      "aliases": [
+        "interpretation"
+      ],
+      "types": [
+        "analysis",
+        "understanding"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'interpretation' refers to the process of deriving meaning from expressions in natural languages using synchronous tree-adjoining grammars, particularly focusing on the semantic aspects and computational challenges involved.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "interpretation",
+          "local_types": [
+            "analysis",
+            "understanding"
+          ],
+          "iri": "Entity-interpretation-Mention-1"
+        }
+      ],
+      "relevance": 0.66015625
+    },
+    "Entity-logical_form_language": {
+      "node_id": "logical_form_language",
+      "disambiguation_index": 0,
+      "label": "logical form language",
+      "aliases": [
+        "logical form language"
+      ],
+      "types": [
+        "linguistic theory",
+        "representation system",
+        "formal language",
+        "language",
+        "semantic representation",
+        "logical representation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'logical form language' refers to a formal system used to represent the semantics of natural language expressions, enabling the mapping of these expressions to their meanings or translations in other languages.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "logical form language",
+          "local_types": [
+            "linguistic theory",
+            "representation system",
+            "formal language",
+            "language",
+            "semantic representation",
+            "logical representation"
+          ],
+          "iri": "Entity-logical_form_language-Mention-1"
+        }
+      ],
+      "relevance": 0.6220703125
+    },
+    "Entity-semantic_interpretation": {
+      "node_id": "semantic_interpretation",
+      "disambiguation_index": 0,
+      "label": "semantic interpretation",
+      "aliases": [
+        "semantic interpretation"
+      ],
+      "types": [
+        "linguistic task",
+        "natural language processing",
+        "interpretation",
+        "task",
+        "semantics",
+        "field of study",
+        "linguistic process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Semantic interpretation is the process of deriving meaning from linguistic expressions in natural language, often involving the analysis of syntax and semantics to understand the intended message.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "semantic interpretation",
+          "local_types": [
+            "linguistic task",
+            "natural language processing",
+            "interpretation",
+            "task",
+            "semantics",
+            "field of study",
+            "linguistic process"
+          ],
+          "iri": "Entity-semantic_interpretation-Mention-1"
+        }
+      ],
+      "relevance": 0.57958984375
+    },
+    "Entity-natural_language": {
+      "node_id": "natural_language",
+      "disambiguation_index": 0,
+      "label": "natural language",
+      "aliases": [
+        "natural languages",
+        "natural language"
+      ],
+      "types": [
+        "field of study",
+        "language",
+        "communication",
+        "communication system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Natural language refers to a type of communication system that is used by humans, characterized by its complexity and ability to convey meaning through spoken, written, or signed forms.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "natural language",
+          "local_types": [
+            "field of study",
+            "language",
+            "communication",
+            "communication system"
+          ],
+          "iri": "Entity-natural_language-Mention-1"
+        },
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "natural languages",
+          "local_types": [
+            "language",
+            "communication system"
+          ],
+          "iri": "Entity-natural_language-Mention-2"
+        }
+      ],
+      "relevance": 0.5732421875
+    },
+    "Entity-automatic_translation": {
+      "node_id": "automatic_translation",
+      "disambiguation_index": 0,
+      "label": "automatic translation",
+      "aliases": [
+        "automatic translation"
+      ],
+      "types": [
+        "translation",
+        "linguistic task",
+        "natural language processing",
+        "task",
+        "technology",
+        "linguistic process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Automatic translation refers to the process of using computer software to translate text or speech from one language to another without human intervention.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "automatic translation",
+          "local_types": [
+            "translation",
+            "linguistic task",
+            "natural language processing",
+            "task",
+            "technology",
+            "linguistic process"
+          ],
+          "iri": "Entity-automatic_translation-Mention-1"
+        }
+      ],
+      "relevance": 0.5625
+    },
+    "Entity-syntax_proper": {
+      "node_id": "syntax_proper",
+      "disambiguation_index": 0,
+      "label": "syntax proper",
+      "aliases": [
+        "syntax proper"
+      ],
+      "types": [
+        "concept"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'syntax proper' refers to the traditional role of syntax in linguistics, which focuses on the structure and rules governing the arrangement of words and phrases to create well-formed sentences, as opposed to its application in other areas such as semantics or translation.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "syntax proper",
+          "local_types": [
+            "concept"
+          ],
+          "iri": "Entity-syntax_proper-Mention-1"
+        }
+      ],
+      "relevance": 0.55859375
+    },
+    "Entity-semantics": {
+      "node_id": "semantics",
+      "disambiguation_index": 0,
+      "label": "semantics",
+      "aliases": [
+        "semantics"
+      ],
+      "types": [
+        "linguistic concept",
+        "meaning",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Semantics is the branch of linguistics concerned with the meaning of words, phrases, and sentences in natural languages.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "semantics",
+          "local_types": [
+            "linguistic concept",
+            "meaning",
+            "concept"
+          ],
+          "iri": "Entity-semantics-Mention-1"
+        }
+      ],
+      "relevance": 0.54150390625
+    },
+    "Entity-syntax": {
+      "node_id": "syntax",
+      "disambiguation_index": 0,
+      "label": "syntax",
+      "aliases": [
+        "syntax"
+      ],
+      "types": [
+        "field",
+        "linguistic concept",
+        "linguistic structure",
+        "grammar"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Syntax is the branch of linguistics that studies the structure and rules governing the arrangement of words and phrases to create well-formed sentences in a language.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "syntax",
+          "local_types": [
+            "field",
+            "linguistic concept"
+          ],
+          "iri": "Entity-syntax-Mention-1"
+        },
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "syntax",
+          "local_types": [
+            "linguistic structure",
+            "grammar"
+          ],
+          "iri": "Entity-syntax-Mention-2"
+        }
+      ],
+      "relevance": 0.52490234375
+    },
+    "Entity-concrete_example": {
+      "node_id": "concrete_example",
+      "disambiguation_index": 0,
+      "label": "concrete examples",
+      "aliases": [
+        "concrete examples"
+      ],
+      "types": [
+        "illustration",
+        "example",
+        "case study"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "concrete examples refer to specific instances or cases that illustrate a concept or principle, often used to clarify or support theoretical discussions.",
+      "mentions": [
+        {
+          "reference": "Paper-80-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "concrete examples",
+          "local_types": [
+            "illustration",
+            "example",
+            "case study"
+          ],
+          "iri": "Entity-concrete_example-Mention-1"
+        }
+      ],
+      "relevance": 0.45068359375
+    }
+  },
+  "summary": "The unique properties of tree-adjoining grammars -LRB- TAG -RRB- present a challenge for the application of TAGs beyond the limited confines of syntax , for instance , to the task of semantic interpretation or automatic translation of natural language . We present a variant of TAGs , called synchronous TAGs , which characterize correspondences between languages . The formalism 's intended usage is to relate expressions of natural languages to their associated semantics represented in a logical form language , or to their translates in another natural language ; in summary , we intend it to allow TAGs to be used beyond their role in syntax proper . We discuss the application of synchronous TAGs to concrete examples , mentioning primarily in passing some computational issues that arise in its interpretation .",
+  "triples": [
+    [
+      "Entity-automatic_translation",
+      "Predicate-is_of",
+      "Entity-natural_language"
+    ],
+    [
+      "Entity-a_variant_of_tag",
+      "Predicate-characterizes",
+      "Entity-correspondence_between_language"
+    ],
+    [
+      "Entity-synchronous_tag",
+      "Predicate-characterizes",
+      "Entity-correspondence_between_language"
+    ],
+    [
+      "Entity-formalism",
+      "Predicate-relates",
+      "Entity-natural_language"
+    ],
+    [
+      "Entity-formalism",
+      "Predicate-relates",
+      "Entity-semantics"
+    ],
+    [
+      "Entity-formalism",
+      "Predicate-relates",
+      "Entity-logical_form_language"
+    ],
+    [
+      "Entity-formalism",
+      "Predicate-relates",
+      "Entity-translates"
+    ],
+    [
+      "Entity-formalism",
+      "Predicate-relates",
+      "Entity-another_natural_language"
+    ],
+    [
+      "Entity-tag",
+      "Predicate-used_beyond",
+      "Entity-syntax_proper"
+    ],
+    [
+      "Entity-synchronous_tag",
+      "Predicate-applied_to",
+      "Entity-concrete_example"
+    ],
+    [
+      "Entity-synchronous_tag",
+      "Predicate-mentioning",
+      "Entity-computational_issue"
+    ],
+    [
+      "Entity-computational_issue",
+      "Predicate-arise_in",
+      "Entity-it_interpretation"
+    ],
+    [
+      "Entity-synchronous_tag",
+      "Predicate-discuss_the_application_of",
+      "Entity-concrete_example"
+    ],
+    [
+      "Entity-synchronous_tag",
+      "Predicate-is_a_variant_of",
+      "Entity-a_variant_of_tag"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-semantic_interpretation",
+      "skos:broader",
+      "Entity-interpretation"
+    ],
+    [
+      "Entity-synchronous_tag",
+      "skos:broader",
+      "Entity-a_variant_of_tag"
+    ],
+    [
+      "Entity-logical_form_language",
+      "skos:broader",
+      "Entity-language"
+    ],
+    [
+      "Entity-tag",
+      "skos:broader",
+      "Entity-formalism"
+    ],
+    [
+      "Entity-semantic_interpretation",
+      "skos:broader",
+      "Entity-semantics"
+    ],
+    [
+      "Entity-natural_language",
+      "skos:broader",
+      "Entity-language"
+    ],
+    [
+      "Entity-synchronous_tag",
+      "skos:broader",
+      "Entity-tag"
+    ],
+    [
+      "Entity-synchronous_tag",
+      "skos:broader",
+      "Entity-formalism"
+    ],
+    [
+      "Entity-a_variant_of_tag",
+      "skos:broader",
+      "Entity-tag"
+    ],
+    [
+      "Entity-it_interpretation",
+      "skos:broader",
+      "Entity-interpretation"
+    ],
+    [
+      "Entity-another_natural_language",
+      "skos:broader",
+      "Entity-language"
+    ],
+    [
+      "Entity-correspondence_between_language",
+      "skos:broader",
+      "Entity-language"
+    ]
+  ],
+  "predicates": {
+    "Predicate-is_of": {
+      "label": "is of",
+      "description": "The predicate 'is of' establishes a relationship of belonging or classification between the subject and the object, indicating that the subject is a specific instance, type, or category that falls under the broader concept represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-characterizes": {
+      "label": "characterizes",
+      "description": "The predicate 'characterizes' establishes a defining relationship between the subject and the object, indicating that the subject possesses specific qualities or features that are representative of or indicative of the object. In this context, the subject serves as a particular instance or example that exemplifies the broader concept or category represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-relates": {
+      "label": "relates",
+      "description": "The predicate 'relates' indicates a connection or association between the subject and the object, suggesting that they share a relevant link or interaction. This relationship can encompass various forms of connection, such as conceptual, functional, or contextual ties, where the subject influences, is influenced by, or has a significant relevance to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-used_beyond": {
+      "label": "used beyond",
+      "description": "The predicate 'used beyond' indicates that the subject is applied or utilized in a context or manner that extends past its conventional or primary function, reaching into areas or applications that may not be typical or expected. It suggests a broader or more innovative use of the subject in relation to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-applied_to": {
+      "label": "applied to",
+      "description": "The predicate 'applied to' indicates a relationship where the subject is utilized or implemented in relation to the object, suggesting that the subject serves a functional or practical purpose in the context of the object. This connection implies that the subject can be effectively used to address, illustrate, or enhance the understanding of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-mentioning": {
+      "label": "mentioning",
+      "description": "The predicate 'mentioning' serves to establish a relationship where the subject identifies or refers to the object, highlighting its relevance or significance within a given context. It indicates that the subject brings attention to the object, often to discuss, analyze, or acknowledge its existence or importance.",
+      "disambiguation_index": 0
+    },
+    "Predicate-arise_in": {
+      "label": "arise in",
+      "description": "The predicate 'arise in' indicates that the subject emerges or occurs within the context or framework of the object. It suggests a relationship where the subject is generated, developed, or manifested as a result of the conditions or characteristics defined by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-discuss_the_application_of": {
+      "label": "discuss the application of",
+      "description": "The predicate 'discuss the application of' serves to establish a relationship where the subject is examined in terms of its practical use or relevance to the object. It indicates a conversation or analysis focused on how the subject can be implemented, utilized, or exemplified through the object, thereby connecting theoretical concepts with real-world instances or scenarios.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_variant_of": {
+      "label": "is a variant of",
+      "description": "The predicate 'is a variant of' establishes a relationship of similarity or derivation between the subject and the object, indicating that the subject represents a specific form, version, or adaptation of the broader concept or category represented by the object. This relationship suggests that while the subject may have unique characteristics or features, it fundamentally shares a common lineage or foundational principles with the object.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' indicates a hierarchical relationship where the subject represents a specific concept or entity that falls under a more general category represented by the object. This relationship suggests that the object encompasses a wider scope or range of meanings, characteristics, or instances than the subject, thereby establishing a classification or categorization that reflects the broader context in which the subject exists.",
+      "disambiguation_index": 0
+    }
+  }
+}

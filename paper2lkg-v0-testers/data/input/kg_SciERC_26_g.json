@@ -1,0 +1,670 @@
+{
+  "iri": "Paper-26",
+  "title": "P06-3007",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-26-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-26-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-26-Section-1-Paragraph-1-Sentence-1",
+              "text": "We investigate independent and relevant event-based extractive mutli-document summarization approaches ."
+            },
+            {
+              "iri": "Paper-26-Section-1-Paragraph-1-Sentence-2",
+              "text": "In this paper , events are defined as event terms and associated event elements ."
+            },
+            {
+              "iri": "Paper-26-Section-1-Paragraph-1-Sentence-3",
+              "text": "With independent approach , we identify important contents by frequency of events ."
+            },
+            {
+              "iri": "Paper-26-Section-1-Paragraph-1-Sentence-4",
+              "text": "With relevant approach , we identify important contents by PageRank algorithm on the event map constructed from documents ."
+            },
+            {
+              "iri": "Paper-26-Section-1-Paragraph-1-Sentence-5",
+              "text": "Experimental results are encouraging ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    5.91278076171875e-05,
+    10.564138889312744,
+    26.52148985862732,
+    20.992730855941772,
+    0.02269887924194336,
+    9.298324584960938e-05,
+    0.00011515617370605469,
+    11.748311042785645,
+    19.248521089553833,
+    1.9050538539886475,
+    0.017838716506958008,
+    0.0066449642181396484,
+    0.00012683868408203125,
+    13.997732877731323,
+    0.0011341571807861328,
+    0.025777101516723633,
+    0.0009217262268066406,
+    2.7618608474731445,
+    0.0006771087646484375,
+    0.0008299350738525391,
+    54.092357873916626,
+    4.4435179233551025,
+    37.43109393119812,
+    2.4595530033111572,
+    0.0005598068237304688,
+    0.0058710575103759766
+  ],
+  "nodes": {
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "this paper",
+      "aliases": [
+        "this paper"
+      ],
+      "types": [
+        "document",
+        "paper"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "This paper presents a study on event-based extractive multi-document summarization, defining events as event terms and associated elements, and exploring both independent and relevant approaches to identify important content.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "this paper",
+          "local_types": [
+            "document",
+            "paper"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.83447265625
+    },
+    "Entity-relevant_approach": {
+      "node_id": "relevant_approach",
+      "disambiguation_index": 0,
+      "label": "relevant approach",
+      "aliases": [
+        "relevant approach"
+      ],
+      "types": [
+        "approach",
+        "summarization approach",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'relevant approach' refers to a method in event-based extractive multi-document summarization that utilizes the PageRank algorithm to identify important content based on an event map constructed from the documents.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "relevant approach",
+          "local_types": [
+            "approach",
+            "summarization approach",
+            "methodology"
+          ],
+          "iri": "Entity-relevant_approach-Mention-1"
+        }
+      ],
+      "relevance": 0.80712890625
+    },
+    "Entity-approach": {
+      "node_id": "approach",
+      "disambiguation_index": 0,
+      "label": "approaches",
+      "aliases": [
+        "approaches"
+      ],
+      "types": [
+        "methodology",
+        "strategy"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'approaches' refers to the independent and relevant methodologies used for event-based extractive multi-document summarization, which involve identifying important content through frequency analysis and PageRank algorithms.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "approaches",
+          "local_types": [
+            "methodology",
+            "strategy"
+          ],
+          "iri": "Entity-approach-Mention-1"
+        }
+      ],
+      "relevance": 0.79833984375
+    },
+    "Entity-independent_approach": {
+      "node_id": "independent_approach",
+      "disambiguation_index": 0,
+      "label": "independent approach",
+      "aliases": [
+        "independent approach"
+      ],
+      "types": [
+        "approach",
+        "summarization approach",
+        "research approach",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'independent approach' refers to a method in event-based extractive multi-document summarization that identifies important content based on the frequency of event terms.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "independent approach",
+          "local_types": [
+            "approach",
+            "summarization approach",
+            "research approach",
+            "methodology"
+          ],
+          "iri": "Entity-independent_approach-Mention-1"
+        }
+      ],
+      "relevance": 0.7890625
+    },
+    "Entity-event_map": {
+      "node_id": "event_map",
+      "disambiguation_index": 0,
+      "label": "event map",
+      "aliases": [
+        "event map"
+      ],
+      "types": [
+        "conceptual model",
+        "concept",
+        "map",
+        "representation",
+        "data structure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'event map' refers to a data structure that organizes and represents events extracted from multiple documents, which is utilized in a PageRank algorithm to identify important content in the context of event-based extractive summarization.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "event map",
+          "local_types": [
+            "conceptual model",
+            "concept",
+            "map",
+            "representation",
+            "data structure"
+          ],
+          "iri": "Entity-event_map-Mention-1"
+        }
+      ],
+      "relevance": 0.77978515625
+    },
+    "Entity-event": {
+      "node_id": "event",
+      "disambiguation_index": 0,
+      "label": "events",
+      "aliases": [
+        "event terms",
+        "events"
+      ],
+      "types": [
+        "concept",
+        "term",
+        "event term",
+        "definition",
+        "event"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this paper, 'events' refers to defined event terms and their associated elements that are utilized in the context of event-based extractive multi-document summarization.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "events",
+          "local_types": [
+            "term",
+            "event term",
+            "event",
+            "concept"
+          ],
+          "iri": "Entity-event-Mention-1"
+        },
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "event terms",
+          "local_types": [
+            "concept",
+            "term",
+            "event term",
+            "definition",
+            "event"
+          ],
+          "iri": "Entity-event-Mention-2"
+        }
+      ],
+      "relevance": 0.771484375
+    },
+    "Entity-important_content": {
+      "node_id": "important_content",
+      "disambiguation_index": 0,
+      "label": "important contents",
+      "aliases": [
+        "important contents"
+      ],
+      "types": [
+        "data",
+        "content",
+        "information"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'important contents' refers to the significant data or information extracted from documents based on the frequency of identified event terms in the context of event-based extractive multi-document summarization.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "important contents",
+          "local_types": [
+            "data",
+            "content",
+            "information"
+          ],
+          "iri": "Entity-important_content-Mention-1"
+        }
+      ],
+      "relevance": 0.7685546875
+    },
+    "Entity-associated_event_element": {
+      "node_id": "associated_event_element",
+      "disambiguation_index": 0,
+      "label": "associated event elements",
+      "aliases": [
+        "associated event elements"
+      ],
+      "types": [
+        "element",
+        "event"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Associated event elements refer to the components or attributes that are linked to specific events, which are utilized in the context of event-based extractive multi-document summarization to identify and analyze important content.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "associated event elements",
+          "local_types": [
+            "element",
+            "event"
+          ],
+          "iri": "Entity-associated_event_element-Mention-1"
+        }
+      ],
+      "relevance": 0.759765625
+    },
+    "Entity-event_element": {
+      "node_id": "event_element",
+      "disambiguation_index": 0,
+      "label": "event elements",
+      "aliases": [
+        "event elements"
+      ],
+      "types": [
+        "component",
+        "concept",
+        "definition",
+        "event",
+        "event component",
+        "element"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Event elements refer to the components or aspects associated with events that are utilized in the context of event-based extractive multi-document summarization.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "event elements",
+          "local_types": [
+            "component",
+            "concept",
+            "definition",
+            "event",
+            "event component",
+            "element"
+          ],
+          "iri": "Entity-event_element-Mention-1"
+        }
+      ],
+      "relevance": 0.7529296875
+    },
+    "Entity-frequency_of_event": {
+      "node_id": "frequency_of_event",
+      "disambiguation_index": 0,
+      "label": "frequency of events",
+      "aliases": [
+        "frequency of events"
+      ],
+      "types": [
+        "metric",
+        "statistical measure",
+        "event analysis",
+        "event"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'frequency of events' refers to a metric used in the independent approach of event-based extractive multi-document summarization to identify important content by quantifying how often specific events occur within the analyzed documents.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "frequency of events",
+          "local_types": [
+            "metric",
+            "statistical measure",
+            "event analysis",
+            "event"
+          ],
+          "iri": "Entity-frequency_of_event-Mention-1"
+        }
+      ],
+      "relevance": 0.74853515625
+    },
+    "Entity-document": {
+      "node_id": "document",
+      "disambiguation_index": 0,
+      "label": "documents",
+      "aliases": [
+        "documents"
+      ],
+      "types": [
+        "data source",
+        "document",
+        "data",
+        "text"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'documents' refers to the collection of texts or written materials used as the basis for constructing an event map in the context of event-based extractive multi-document summarization.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "documents",
+          "local_types": [
+            "data source",
+            "document",
+            "data",
+            "text"
+          ],
+          "iri": "Entity-document-Mention-1"
+        }
+      ],
+      "relevance": 0.71044921875
+    },
+    "Entity-encouraging": {
+      "node_id": "encouraging",
+      "disambiguation_index": 0,
+      "label": "encouraging",
+      "aliases": [
+        "encouraging"
+      ],
+      "types": [
+        "evaluation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'encouraging' refers to the positive outcomes observed in the experimental results of the event-based extractive multi-document summarization approaches discussed in the paper.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "encouraging",
+          "local_types": [
+            "evaluation"
+          ],
+          "iri": "Entity-encouraging-Mention-1"
+        }
+      ],
+      "relevance": 0.68017578125
+    },
+    "Entity-pagerank_algorithm": {
+      "node_id": "pagerank_algorithm",
+      "disambiguation_index": 0,
+      "label": "PageRank algorithm",
+      "aliases": [
+        "PageRank algorithm"
+      ],
+      "types": [
+        "graph theory",
+        "ranking algorithm",
+        "ranking method",
+        "algorithm",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "The PageRank algorithm is a mathematical method used to rank web pages or nodes in a graph based on their importance, primarily by analyzing the structure of links between them.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "PageRank algorithm",
+          "local_types": [
+            "graph theory",
+            "ranking algorithm",
+            "ranking method",
+            "algorithm",
+            "method"
+          ],
+          "iri": "Entity-pagerank_algorithm-Mention-1"
+        }
+      ],
+      "relevance": 0.6630859375
+    },
+    "Entity-experimental_result": {
+      "node_id": "experimental_result",
+      "disambiguation_index": 0,
+      "label": "Experimental results",
+      "aliases": [
+        "Experimental results"
+      ],
+      "types": [
+        "results",
+        "experiment",
+        "research outcome",
+        "findings"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Experimental results refer to the outcomes or findings obtained from conducting scientific experiments or research studies.",
+      "mentions": [
+        {
+          "reference": "Paper-26-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Experimental results",
+          "local_types": [
+            "results",
+            "experiment",
+            "research outcome",
+            "findings"
+          ],
+          "iri": "Entity-experimental_result-Mention-1"
+        }
+      ],
+      "relevance": 0.54345703125
+    }
+  },
+  "summary": "We investigate independent and relevant event-based extractive mutli-document summarization approaches . In this paper , events are defined as event terms and associated event elements . With independent approach , we identify important contents by frequency of events . With relevant approach , we identify important contents by PageRank algorithm on the event map constructed from documents . Experimental results are encouraging .",
+  "triples": [
+    [
+      "Entity-event",
+      "Predicate-are_defined_as",
+      "Entity-event"
+    ],
+    [
+      "Entity-event",
+      "Predicate-associated_with",
+      "Entity-event_element"
+    ],
+    [
+      "Entity-independent_approach",
+      "Predicate-identify",
+      "Entity-important_content"
+    ],
+    [
+      "Entity-independent_approach",
+      "Predicate-by",
+      "Entity-frequency_of_event"
+    ],
+    [
+      "Entity-independent_approach",
+      "Predicate-identifies",
+      "Entity-important_content"
+    ],
+    [
+      "Entity-important_content",
+      "Predicate-are_identified_by",
+      "Entity-frequency_of_event"
+    ],
+    [
+      "Entity-independent_approach",
+      "Predicate-uses",
+      "Entity-frequency_of_event"
+    ],
+    [
+      "Entity-relevant_approach",
+      "Predicate-identifies",
+      "Entity-important_content"
+    ],
+    [
+      "Entity-pagerank_algorithm",
+      "Predicate-is_applied_on",
+      "Entity-event_map"
+    ],
+    [
+      "Entity-event_map",
+      "Predicate-constructed_from",
+      "Entity-document"
+    ],
+    [
+      "Entity-important_content",
+      "Predicate-are_identified_by",
+      "Entity-pagerank_algorithm"
+    ],
+    [
+      "Entity-relevant_approach",
+      "Predicate-uses",
+      "Entity-pagerank_algorithm"
+    ],
+    [
+      "Entity-experimental_result",
+      "Predicate-are",
+      "Entity-encouraging"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-investigates",
+      "Entity-approach"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-independent_approach",
+      "skos:broader",
+      "Entity-approach"
+    ],
+    [
+      "Entity-frequency_of_event",
+      "skos:broader",
+      "Entity-event"
+    ],
+    [
+      "Entity-associated_event_element",
+      "skos:broader",
+      "Entity-event"
+    ],
+    [
+      "Entity-this_paper",
+      "skos:broader",
+      "Entity-document"
+    ],
+    [
+      "Entity-event_element",
+      "skos:broader",
+      "Entity-event"
+    ],
+    [
+      "Entity-relevant_approach",
+      "skos:broader",
+      "Entity-approach"
+    ]
+  ],
+  "predicates": {
+    "Predicate-are_defined_as": {
+      "label": "are defined as",
+      "description": "The predicate 'are defined as' establishes a relationship of equivalence or identity between the subject and the object, indicating that the subject can be understood or characterized by the properties or nature of the object. It serves to clarify or specify the meaning of the subject by linking it to a particular concept or category represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-associated_with": {
+      "label": "associated with",
+      "description": "The predicate 'associated with' indicates a relationship of connection or relevance between the subject and the object, suggesting that the subject has a link, correlation, or relationship to the object in a meaningful way. This connection can imply that the subject influences, is influenced by, or shares characteristics with the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-identify": {
+      "label": "identify",
+      "description": "The predicate 'identify' denotes the action of recognizing, determining, or establishing the existence or nature of the object in relation to the subject. It implies a process where the subject discerns or points out specific characteristics, features, or elements of the object, thereby clarifying or defining its significance or role within a given context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-by": {
+      "label": "by",
+      "description": "The predicate 'by' indicates a means, method, or agent through which the subject is related to the object. It often signifies the manner in which an action is performed or the way in which a particular outcome is achieved, establishing a connection that highlights the role of the object in relation to the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-identifies": {
+      "label": "identifies",
+      "description": "The predicate 'identifies' denotes the action of recognizing, determining, or establishing the existence or significance of the object by the subject. It implies a relationship where the subject actively discerns or points out specific characteristics, elements, or entities represented by the object, thereby establishing a connection between them.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_identified_by": {
+      "label": "are identified by",
+      "description": "The predicate 'are identified by' establishes a relationship where the subject is recognized or characterized through the lens of the object. It implies that the object serves as a criterion, measure, or descriptor that helps to define or clarify the nature, significance, or attributes of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-uses": {
+      "label": "uses",
+      "description": "The predicate 'uses' indicates that the subject employs or utilizes the object in some capacity. It signifies a functional relationship where the subject actively engages with the object to achieve a purpose, perform a task, or derive benefit from it. This connection implies that the object serves as a tool, resource, or method that the subject relies on in its operations or activities.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_applied_on": {
+      "label": "is applied on",
+      "description": "The predicate 'is applied on' indicates that the subject, which is typically a method, technique, or algorithm, is utilized or executed in relation to the object, which represents a specific dataset, system, or context. This relationship signifies that the subject is being used to analyze, process, or derive insights from the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-constructed_from": {
+      "label": "constructed from",
+      "description": "The predicate 'constructed from' indicates a relationship where the subject is created or formed using the materials, components, or elements represented by the object. It implies that the object serves as a foundational or essential basis for the subject, highlighting the process of assembly or synthesis that leads to the existence of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are": {
+      "label": "are",
+      "description": "The predicate 'are' serves as a linking verb that connects the subject to a complement, indicating a state of being or existence. It establishes an identity or condition between the subject and the object, often describing characteristics, qualities, or classifications of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-investigates": {
+      "label": "investigates",
+      "description": "The predicate 'investigates' denotes an action where the subject conducts a systematic examination or inquiry into the object, which represents a concept, method, or phenomenon. This action implies a thorough analysis aimed at uncovering insights, understanding relationships, or evaluating the effectiveness of the object in question.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or category that falls under the wider classification represented by the object. This relationship suggests that the object encompasses a larger set of concepts or categories, of which the subject is a part, thereby illustrating a generalization from the specific to the more inclusive.",
+      "disambiguation_index": 0
+    }
+  }
+}

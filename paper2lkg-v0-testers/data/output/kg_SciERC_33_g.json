@@ -1,0 +1,52 @@
+{
+  "iri": "Paper-33",
+  "title": "P05-1056",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-33-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-33-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+              "text": "Sentence boundary detection in speech is important for enriching speech recognition output , making it easier for humans to read and downstream modules to process ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+              "text": "In previous work , we have developed hidden Markov model -LRB- HMM -RRB- and maximum entropy -LRB- Maxent -RRB- classifiers that integrate textual and prosodic knowledge sources for detecting sentence boundaries ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-3",
+              "text": "In this paper , we evaluate the use of a conditional random field -LRB- CRF -RRB- for this task and relate results with this model to our prior work ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+              "text": "We evaluate across two corpora -LRB- conversational telephone speech and broadcast news speech -RRB- on both human transcriptions and speech recognition output ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-5",
+              "text": "In general , our CRF model yields a lower error rate than the HMM and Max-ent models on the NIST sentence boundary detection task in speech , although it is interesting to note that the best results are achieved by three-way voting among the classifiers ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-6",
+              "text": "This probably occurs because each model has different strengths and weaknesses for modeling the knowledge sources ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Sentence boundary detection in speech is important for enriching speech recognition output , making it easier for humans to read and downstream modules to process . In previous work , we have developed hidden Markov model -LRB- HMM -RRB- and maximum entropy -LRB- Maxent -RRB- classifiers that integrate textual and prosodic knowledge sources for detecting sentence boundaries . In this paper , we evaluate the use of a conditional random field -LRB- CRF -RRB- for this task and relate results with this model to our prior work . We evaluate across two corpora -LRB- conversational telephone speech and broadcast news speech -RRB- on both human transcriptions and speech recognition output . In general , our CRF model yields a lower error rate than the HMM and Max-ent models on the NIST sentence boundary detection task in speech , although it is interesting to note that the best results are achieved by three-way voting among the classifiers . This probably occurs because each model has different strengths and weaknesses for modeling the knowledge sources .",
+  "kg2text": [
+    "This paper evaluates the model used for sentence boundary detection, specifically focusing on the conditional random field (CRF) model and comparing it to each model, which includes hidden Markov models (HMM) and maximum entropy (Maxent) classifiers. Each model has different strengths and weaknesses, and they all share a broader term of 'model'. The CRF, as a type of conditional random field, is evaluated for its effectiveness in this task. Additionally, each model is designed to integrate knowledge sources, including prosodic knowledge sources, which classifiers utilize to enhance their performance in detecting sentence boundaries. The hidden Markov model and maximum entropy model have also been developed as classifiers for this purpose.",
+    "The Maximum Entropy model (Max-ent) is compared to the Conditional Random Field (CRF) in the context of machine learning. Prosodic knowledge sources, which include auditory features and patterns in speech, are a broader category that encompasses knowledge sources used in classifiers. Sentence boundary detection plays a crucial role in enriching and is important for improving speech recognition output, which is essential for various downstream modules. This detection task is a subset of the broader field of speech recognition. The hidden Markov model (HMM) and maximum entropy models are classifiers that integrate prosodic knowledge sources to enhance performance. Additionally, the evaluation of speech recognition output is conducted using two corpora, which include conversational telephone speech and broadcast news speech, both of which fall under the broader term of speech. These corpora are also evaluated against human transcriptions to assess the effectiveness of the models. The results of these evaluations relate to our prior work, which focused on developing HMM and Maxent classifiers.",
+    "The concept of maximum entropy encompasses a broader term known as Maxent, which is utilized in statistical modeling and machine learning. In the realm of linguistic data, both broadcast news speech and conversational telephone speech fall under the broader category of corpora, which are essential for linguistic analysis. Furthermore, the Max-ent models and hidden Markov models (HMM) are both significant in their ability to yield error rates, providing insights into the performance of various classification tasks. Additionally, the output generated from speech recognition systems plays a crucial role in making communication easier for humans."
+  ],
+  "times": [
+    12.011329412460327
+  ]
+}

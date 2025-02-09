@@ -1,0 +1,59 @@
+{
+  "iri": "Paper-63",
+  "title": "CVPR_2008_256_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-63-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-63-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+              "text": "Given an object model and a black-box measure of similarity between the model and candidate targets , we consider visual object tracking as a numerical optimization problem ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+              "text": "During normal tracking conditions when the object is visible from frame to frame , local optimization is used to track the local mode of the similarity measure in a parameter space of translation , rotation and scale ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+              "text": "However , when the object becomes partially or totally occluded , such local tracking is prone to failure , especially when common prediction techniques like the Kalman filter do not provide a good estimate of object parameters in future frames ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-4",
+              "text": "To recover from these inevitable tracking failures , we consider object detection as a global optimization problem and solve it via Adaptive Simulated Annealing -LRB- ASA -RRB- , a method that avoids becoming trapped at local modes and is much faster than exhaustive search ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-5",
+              "text": "As a Monte Carlo approach , ASA stochastically samples the parameter space , in contrast to local deterministic search ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+              "text": "We apply cluster analysis on the sampled parameter space to redetect the object and renew the local tracker ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+              "text": "Our numerical hybrid local and global mode-seeking tracker is validated on challenging airborne videos with heavy occlusion and large camera motions ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-8",
+              "text": "Our approach outperforms state-of-the-art trackers on the VIVID benchmark datasets ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Given an object model and a black-box measure of similarity between the model and candidate targets , we consider visual object tracking as a numerical optimization problem . During normal tracking conditions when the object is visible from frame to frame , local optimization is used to track the local mode of the similarity measure in a parameter space of translation , rotation and scale . However , when the object becomes partially or totally occluded , such local tracking is prone to failure , especially when common prediction techniques like the Kalman filter do not provide a good estimate of object parameters in future frames . To recover from these inevitable tracking failures , we consider object detection as a global optimization problem and solve it via Adaptive Simulated Annealing -LRB- ASA -RRB- , a method that avoids becoming trapped at local modes and is much faster than exhaustive search . As a Monte Carlo approach , ASA stochastically samples the parameter space , in contrast to local deterministic search . We apply cluster analysis on the sampled parameter space to redetect the object and renew the local tracker . Our numerical hybrid local and global mode-seeking tracker is validated on challenging airborne videos with heavy occlusion and large camera motions . Our approach outperforms state-of-the-art trackers on the VIVID benchmark datasets .",
+  "kg2text": [
+    "To recover from inevitable tracking failures, we consider object detection as a global optimization problem and solve it via Adaptive Simulated Annealing. This approach avoids being trapped at local modes and is much faster than exhaustive search. Our numerical hybrid local and global mode-seeing tracker uses this method to redetect the object and renew the local tracker when necessary. Given an object model, we apply cluster analysis on the sampled parameter space to re-detect the object's location using a black-box measure of similarity between the model and candidate targets. This approach has been shown to outperform state-of-the-art trackers on the VIVID benchmark datasets.",
+    "The object being tracked can become partially or totally occluded and requires recovery from tracking failures. Our approach, Adaptive Simulated Annealing (ASA), stochastically samples the parameter space of translation, rotation, and scale to recover from such failures. ASA outperforms state-of-the-art trackers on VIVID benchmark datasets by using local optimization techniques under normal tracking conditions. Given an object model, we apply cluster analysis to group data into clusters based on their similarities or patterns."
+  ],
+  "times": [
+    16.33723211288452
+  ]
+}

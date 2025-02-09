@@ -1,0 +1,943 @@
+{
+  "iri": "Paper-40",
+  "title": "E06-1022",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-40-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-40-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-40-Section-1-Paragraph-1-Sentence-1",
+              "text": "We present results on addressee identification in four-participants face-to-face meetings using Bayesian Network and Naive Bayes classifiers ."
+            },
+            {
+              "iri": "Paper-40-Section-1-Paragraph-1-Sentence-2",
+              "text": "First , we investigate how well the addressee of a dialogue act can be predicted based on gaze , utterance and conversational context features ."
+            },
+            {
+              "iri": "Paper-40-Section-1-Paragraph-1-Sentence-3",
+              "text": "Then , we explore whether information about meeting context can aid classifiers ' performances ."
+            },
+            {
+              "iri": "Paper-40-Section-1-Paragraph-1-Sentence-4",
+              "text": "Both classifiers perform the best when conversational context and utterance features are combined with speaker 's gaze information ."
+            },
+            {
+              "iri": "Paper-40-Section-1-Paragraph-1-Sentence-5",
+              "text": "The classifiers show little gain from information about meeting context ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    7.009506225585938e-05,
+    8.304935216903687,
+    19.439632892608643,
+    25.083332300186157,
+    0.01751089096069336,
+    0.00011181831359863281,
+    0.00014901161193847656,
+    33.66500687599182,
+    33.17699599266052,
+    2.4298698902130127,
+    0.03266000747680664,
+    0.007161140441894531,
+    0.0001881122589111328,
+    26.215706825256348,
+    0.001172780990600586,
+    0.02654886245727539,
+    0.0010170936584472656,
+    3.105678081512451,
+    0.7491791248321533,
+    0.9623007774353027,
+    65.2254729270935,
+    5.601914882659912,
+    54.378690242767334,
+    3.011820077896118,
+    0.002042055130004883,
+    0.008935928344726562
+  ],
+  "nodes": {
+    "Entity-the_classifier": {
+      "node_id": "the_classifier",
+      "disambiguation_index": 0,
+      "label": "The classifiers",
+      "aliases": [
+        "The classifiers"
+      ],
+      "types": [
+        "classifier"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The classifiers refer to the Bayesian Network and Naive Bayes models used for predicting the addressee in dialogue acts during face-to-face meetings.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "The classifiers",
+          "local_types": [
+            "classifier"
+          ],
+          "iri": "Entity-the_classifier-Mention-1"
+        }
+      ],
+      "relevance": 0.79736328125
+    },
+    "Entity-classifier__performance": {
+      "node_id": "classifier__performance",
+      "disambiguation_index": 0,
+      "label": "classifiers' performances",
+      "aliases": [
+        "classifiers' performances"
+      ],
+      "types": [
+        "performance",
+        "classifier"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The term 'classifiers' performances' refers to the effectiveness and accuracy of machine learning models, specifically Bayesian Network and Naive Bayes classifiers, in predicting the addressee of dialogue acts based on various contextual features in face-to-face meetings.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "classifiers' performances",
+          "local_types": [
+            "performance",
+            "classifier"
+          ],
+          "iri": "Entity-classifier__performance-Mention-1"
+        }
+      ],
+      "relevance": 0.79150390625
+    },
+    "Entity-both_classifier": {
+      "node_id": "both_classifier",
+      "disambiguation_index": 0,
+      "label": "Both classifiers",
+      "aliases": [
+        "Both classifiers"
+      ],
+      "types": [
+        "classifier"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Both classifiers refer to the Bayesian Network and Naive Bayes classifiers used for addressee identification in face-to-face meetings.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Both classifiers",
+          "local_types": [
+            "classifier"
+          ],
+          "iri": "Entity-both_classifier-Mention-1"
+        }
+      ],
+      "relevance": 0.767578125
+    },
+    "Entity-classifier": {
+      "node_id": "classifier",
+      "disambiguation_index": 0,
+      "label": "classifiers",
+      "aliases": [
+        "classifiers"
+      ],
+      "types": [
+        "algorithm",
+        "model",
+        "predictive model",
+        "machine learning model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Classifiers refer to machine learning models, specifically Bayesian Network and Naive Bayes algorithms, used for predicting the addressee in dialogue acts during face-to-face meetings.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "classifiers",
+          "local_types": [
+            "model",
+            "predictive model",
+            "machine learning model"
+          ],
+          "iri": "Entity-classifier-Mention-1"
+        },
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "classifiers",
+          "local_types": [
+            "machine learning model",
+            "algorithm"
+          ],
+          "iri": "Entity-classifier-Mention-2"
+        },
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "classifiers",
+          "local_types": [
+            "machine learning model",
+            "algorithm"
+          ],
+          "iri": "Entity-classifier-Mention-3"
+        },
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "classifiers",
+          "local_types": [
+            "machine learning model",
+            "algorithm"
+          ],
+          "iri": "Entity-classifier-Mention-4"
+        }
+      ],
+      "relevance": 0.76708984375
+    },
+    "Entity-addressee_identification": {
+      "node_id": "addressee_identification",
+      "disambiguation_index": 0,
+      "label": "addressee identification",
+      "aliases": [
+        "addressee identification"
+      ],
+      "types": [
+        "communication analysis",
+        "task",
+        "research topic",
+        "dialogue analysis"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Addressee identification refers to the process of determining which participant in a dialogue is the intended recipient of a spoken utterance during face-to-face meetings, utilizing features such as gaze, utterance, and conversational context.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "addressee identification",
+          "local_types": [
+            "communication analysis",
+            "task",
+            "research topic",
+            "dialogue analysis"
+          ],
+          "iri": "Entity-addressee_identification-Mention-1"
+        }
+      ],
+      "relevance": 0.7646484375
+    },
+    "Entity-speaker_s_gaze_information": {
+      "node_id": "speaker_s_gaze_information",
+      "disambiguation_index": 0,
+      "label": "speaker's gaze information",
+      "aliases": [
+        "speaker's gaze information"
+      ],
+      "types": [
+        "non-verbal communication",
+        "non-verbal cue",
+        "behavioral feature",
+        "gaze information",
+        "feature"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Speaker's gaze information refers to the data regarding the direction and focus of a speaker's gaze during a conversation, which is utilized to enhance the prediction of the addressee in dialogue acts within face-to-face meetings.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "speaker's gaze information",
+          "local_types": [
+            "non-verbal communication",
+            "non-verbal cue",
+            "behavioral feature",
+            "gaze information",
+            "feature"
+          ],
+          "iri": "Entity-speaker_s_gaze_information-Mention-1"
+        }
+      ],
+      "relevance": 0.74169921875
+    },
+    "Entity-meeting_context": {
+      "node_id": "meeting_context",
+      "disambiguation_index": 0,
+      "label": "meeting context",
+      "aliases": [
+        "meeting context"
+      ],
+      "types": [
+        "context",
+        "information",
+        "environment",
+        "environmental factor",
+        "social interaction",
+        "contextual information"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'meeting context' refers to the specific situational and environmental factors present during a four-participant face-to-face meeting that may influence the performance of classifiers in identifying the addressee of dialogue acts.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "meeting context",
+          "local_types": [
+            "context",
+            "information",
+            "environmental factor",
+            "social interaction",
+            "contextual information"
+          ],
+          "iri": "Entity-meeting_context-Mention-1"
+        },
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "meeting context",
+          "local_types": [
+            "contextual information",
+            "environment"
+          ],
+          "iri": "Entity-meeting_context-Mention-2"
+        }
+      ],
+      "relevance": 0.7265625
+    },
+    "Entity-performance": {
+      "node_id": "performance",
+      "disambiguation_index": 0,
+      "label": "performances",
+      "aliases": [
+        "performances"
+      ],
+      "types": [
+        "evaluation metric",
+        "effectiveness"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'performances' refers to the effectiveness of classifiers in predicting the addressee of dialogue acts based on various features in the context of face-to-face meetings.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "performances",
+          "local_types": [
+            "evaluation metric",
+            "effectiveness"
+          ],
+          "iri": "Entity-performance-Mention-1"
+        }
+      ],
+      "relevance": 0.72509765625
+    },
+    "Entity-gaze": {
+      "node_id": "gaze",
+      "disambiguation_index": 0,
+      "label": "gaze",
+      "aliases": [
+        "gaze"
+      ],
+      "types": [
+        "nonverbal cue",
+        "feature",
+        "non-verbal communication",
+        "behavioral feature"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'gaze' refers to the nonverbal cue of eye movement and direction used by speakers in face-to-face meetings to convey attention and intention, which is analyzed for its predictive value in identifying the addressee of dialogue acts.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "gaze",
+          "local_types": [
+            "nonverbal cue",
+            "feature",
+            "non-verbal communication",
+            "behavioral feature"
+          ],
+          "iri": "Entity-gaze-Mention-1"
+        }
+      ],
+      "relevance": 0.71484375
+    },
+    "Entity-four-participants_face-to-face_meeting": {
+      "node_id": "four-participants_face-to-face_meeting",
+      "disambiguation_index": 0,
+      "label": "four-participants face-to-face meetings",
+      "aliases": [
+        "four-participants face-to-face meetings"
+      ],
+      "types": [
+        "context",
+        "event",
+        "meeting format",
+        "meeting",
+        "social interaction",
+        "format"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Four-participants face-to-face meetings refer to in-person gatherings involving four individuals, during which interactions and dialogue occur, and are the focus of research on addressee identification using machine learning techniques.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "four-participants face-to-face meetings",
+          "local_types": [
+            "context",
+            "event",
+            "meeting format",
+            "meeting",
+            "social interaction",
+            "format"
+          ],
+          "iri": "Entity-four-participants_face-to-face_meeting-Mention-1"
+        }
+      ],
+      "relevance": 0.701171875
+    },
+    "Entity-conversational_context_feature": {
+      "node_id": "conversational_context_feature",
+      "disambiguation_index": 0,
+      "label": "conversational context features",
+      "aliases": [
+        "conversational context features"
+      ],
+      "types": [
+        "dialogue analysis",
+        "context",
+        "contextual feature",
+        "interaction feature",
+        "feature",
+        "contextual information"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Conversational context features refer to the elements of dialogue that provide situational information, such as the dynamics of the conversation and the interactions between participants, which are used to predict the addressee of a dialogue act in face-to-face meetings.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "conversational context features",
+          "local_types": [
+            "dialogue analysis",
+            "context",
+            "contextual feature",
+            "interaction feature",
+            "feature",
+            "contextual information"
+          ],
+          "iri": "Entity-conversational_context_feature-Mention-1"
+        }
+      ],
+      "relevance": 0.68994140625
+    },
+    "Entity-utterance_feature": {
+      "node_id": "utterance_feature",
+      "disambiguation_index": 0,
+      "label": "utterance features",
+      "aliases": [
+        "utterance features"
+      ],
+      "types": [
+        "linguistic feature",
+        "communication feature",
+        "feature"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Utterance features refer to the characteristics of spoken dialogue acts that can be analyzed to improve the prediction of the addressee in face-to-face meetings.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "utterance features",
+          "local_types": [
+            "linguistic feature",
+            "communication feature",
+            "feature"
+          ],
+          "iri": "Entity-utterance_feature-Mention-1"
+        }
+      ],
+      "relevance": 0.6806640625
+    },
+    "Entity-the_addressee_of_a_dialogue_act": {
+      "node_id": "the_addressee_of_a_dialogue_act",
+      "disambiguation_index": 0,
+      "label": "the addressee of a dialogue act",
+      "aliases": [
+        "the addressee of a dialogue act"
+      ],
+      "types": [
+        "addressee",
+        "dialogue act"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The addressee of a dialogue act refers to the individual in a conversation who is the intended recipient of a specific utterance or communicative action, which can be identified through various contextual features such as gaze, utterance content, and the surrounding conversational dynamics.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the addressee of a dialogue act",
+          "local_types": [
+            "addressee",
+            "dialogue act"
+          ],
+          "iri": "Entity-the_addressee_of_a_dialogue_act-Mention-1"
+        }
+      ],
+      "relevance": 0.6806640625
+    },
+    "Entity-information_about_meeting_context": {
+      "node_id": "information_about_meeting_context",
+      "disambiguation_index": 0,
+      "label": "information about meeting context",
+      "aliases": [
+        "information about meeting context"
+      ],
+      "types": [
+        "context",
+        "information"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Information about meeting context refers to the details and circumstances surrounding a meeting that may influence the understanding and interpretation of dialogue acts, but in this study, it is found to provide little additional benefit to classifier performance in identifying addressees.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "information about meeting context",
+          "local_types": [
+            "information",
+            "context"
+          ],
+          "iri": "Entity-information_about_meeting_context-Mention-1"
+        },
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "information about meeting context",
+          "local_types": [
+            "information",
+            "context"
+          ],
+          "iri": "Entity-information_about_meeting_context-Mention-2"
+        }
+      ],
+      "relevance": 0.6796875
+    },
+    "Entity-addressee": {
+      "node_id": "addressee",
+      "disambiguation_index": 0,
+      "label": "addressee",
+      "aliases": [
+        "addressee"
+      ],
+      "types": [
+        "dialogue participant",
+        "communication entity"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The addressee refers to the individual or entity to whom a communication or dialogue act is directed.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "addressee",
+          "local_types": [
+            "dialogue participant",
+            "communication entity"
+          ],
+          "iri": "Entity-addressee-Mention-1"
+        }
+      ],
+      "relevance": 0.63330078125
+    },
+    "Entity-naive_bayes_classifier": {
+      "node_id": "naive_bayes_classifier",
+      "disambiguation_index": 0,
+      "label": "Naive Bayes classifiers",
+      "aliases": [
+        "Naive Bayes classifiers"
+      ],
+      "types": [
+        "machine learning algorithm",
+        "statistical model",
+        "machine learning technique",
+        "algorithm",
+        "classification algorithm"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Naive Bayes classifiers are a family of probabilistic algorithms based on Bayes' theorem, used for classification tasks in machine learning by assuming independence among predictors.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Naive Bayes classifiers",
+          "local_types": [
+            "machine learning algorithm",
+            "statistical model",
+            "machine learning technique",
+            "algorithm",
+            "classification algorithm"
+          ],
+          "iri": "Entity-naive_bayes_classifier-Mention-1"
+        }
+      ],
+      "relevance": 0.58740234375
+    },
+    "Entity-conversational_context": {
+      "node_id": "conversational_context",
+      "disambiguation_index": 0,
+      "label": "conversational context",
+      "aliases": [
+        "conversational context"
+      ],
+      "types": [
+        "communication feature",
+        "context",
+        "contextual information"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Conversational context refers to the situational and background information that influences the interpretation and understanding of communication between participants in a conversation.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "conversational context",
+          "local_types": [
+            "communication feature",
+            "context",
+            "contextual information"
+          ],
+          "iri": "Entity-conversational_context-Mention-1"
+        }
+      ],
+      "relevance": 0.58154296875
+    },
+    "Entity-naive_bayes": {
+      "node_id": "naive_bayes",
+      "disambiguation_index": 0,
+      "label": "Naive Bayes",
+      "aliases": [
+        "Naive Bayes"
+      ],
+      "types": [
+        "method",
+        "statistical model"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Naive Bayes is a family of probabilistic algorithms based on applying Bayes' theorem with strong (naive) independence assumptions between the features.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Naive Bayes",
+          "local_types": [
+            "method",
+            "statistical model"
+          ],
+          "iri": "Entity-naive_bayes-Mention-1"
+        }
+      ],
+      "relevance": 0.556640625
+    },
+    "Entity-bayesian_network": {
+      "node_id": "bayesian_network",
+      "disambiguation_index": 0,
+      "label": "Bayesian Network",
+      "aliases": [
+        "Bayesian Network"
+      ],
+      "types": [
+        "machine learning algorithm",
+        "statistical model",
+        "machine learning technique",
+        "algorithm",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A Bayesian Network is a graphical model that represents a set of variables and their conditional dependencies using directed acyclic graphs, commonly used for probabilistic inference and decision making in various fields.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Bayesian Network",
+          "local_types": [
+            "machine learning algorithm",
+            "statistical model",
+            "machine learning technique",
+            "algorithm",
+            "method"
+          ],
+          "iri": "Entity-bayesian_network-Mention-1"
+        }
+      ],
+      "relevance": 0.5458984375
+    },
+    "Entity-utterance": {
+      "node_id": "utterance",
+      "disambiguation_index": 0,
+      "label": "utterance",
+      "aliases": [
+        "utterance"
+      ],
+      "types": [
+        "linguistic feature",
+        "dialogue act",
+        "linguistic unit",
+        "spoken expression",
+        "dialogue component",
+        "feature"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "An utterance is a spoken or written expression that conveys meaning in a communicative context.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "utterance",
+          "local_types": [
+            "linguistic feature",
+            "dialogue act",
+            "linguistic unit",
+            "spoken expression",
+            "dialogue component",
+            "feature"
+          ],
+          "iri": "Entity-utterance-Mention-1"
+        }
+      ],
+      "relevance": 0.53564453125
+    },
+    "Entity-dialogue_act": {
+      "node_id": "dialogue_act",
+      "disambiguation_index": 0,
+      "label": "dialogue act",
+      "aliases": [
+        "dialogue act"
+      ],
+      "types": [
+        "communication action",
+        "linguistic act"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A dialogue act is a communicative action or linguistic act that conveys a specific intention or function within a conversation, such as asking, answering, or informing.",
+      "mentions": [
+        {
+          "reference": "Paper-40-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "dialogue act",
+          "local_types": [
+            "communication action",
+            "linguistic act"
+          ],
+          "iri": "Entity-dialogue_act-Mention-1"
+        }
+      ],
+      "relevance": 0.52294921875
+    }
+  },
+  "summary": "We present results on addressee identification in four-participants face-to-face meetings using Bayesian Network and Naive Bayes classifiers . First , we investigate how well the addressee of a dialogue act can be predicted based on gaze , utterance and conversational context features . Then , we explore whether information about meeting context can aid classifiers ' performances . Both classifiers perform the best when conversational context and utterance features are combined with speaker 's gaze information . The classifiers show little gain from information about meeting context .",
+  "triples": [
+    [
+      "Entity-addressee_identification",
+      "Predicate-results_on",
+      "Entity-four-participants_face-to-face_meeting"
+    ],
+    [
+      "Entity-naive_bayes_classifier",
+      "Predicate-uses",
+      "Entity-bayesian_network"
+    ],
+    [
+      "Entity-naive_bayes_classifier",
+      "Predicate-uses",
+      "Entity-naive_bayes"
+    ],
+    [
+      "Entity-addressee_identification",
+      "Predicate-presents_results_on",
+      "Entity-four-participants_face-to-face_meeting"
+    ],
+    [
+      "Entity-the_addressee_of_a_dialogue_act",
+      "Predicate-can_be_predicted_based_on",
+      "Entity-gaze"
+    ],
+    [
+      "Entity-the_addressee_of_a_dialogue_act",
+      "Predicate-can_be_predicted_based_on",
+      "Entity-utterance"
+    ],
+    [
+      "Entity-the_addressee_of_a_dialogue_act",
+      "Predicate-can_be_predicted_based_on",
+      "Entity-conversational_context_feature"
+    ],
+    [
+      "Entity-addressee",
+      "Predicate-can_be_predicted_based_on",
+      "Entity-gaze"
+    ],
+    [
+      "Entity-addressee",
+      "Predicate-can_be_predicted_based_on",
+      "Entity-utterance"
+    ],
+    [
+      "Entity-addressee",
+      "Predicate-can_be_predicted_based_on",
+      "Entity-conversational_context_feature"
+    ],
+    [
+      "Entity-information_about_meeting_context",
+      "Predicate-can_aid",
+      "Entity-classifier__performance"
+    ],
+    [
+      "Entity-both_classifier",
+      "Predicate-perform_the_best_when_combined_with",
+      "Entity-conversational_context"
+    ],
+    [
+      "Entity-both_classifier",
+      "Predicate-perform_the_best_when_combined_with",
+      "Entity-utterance_feature"
+    ],
+    [
+      "Entity-both_classifier",
+      "Predicate-perform_the_best_when_combined_with",
+      "Entity-speaker_s_gaze_information"
+    ],
+    [
+      "Entity-the_classifier",
+      "Predicate-show_gain_from",
+      "Entity-information_about_meeting_context"
+    ],
+    [
+      "Entity-the_classifier",
+      "Predicate-show_little_gain_from",
+      "Entity-meeting_context"
+    ],
+    [
+      "Entity-the_classifier",
+      "Predicate-show_little_gain_from",
+      "Entity-information_about_meeting_context"
+    ],
+    [
+      "Entity-addressee_identification",
+      "Predicate-is_based_on",
+      "Entity-gaze"
+    ],
+    [
+      "Entity-addressee_identification",
+      "Predicate-is_based_on",
+      "Entity-utterance"
+    ],
+    [
+      "Entity-addressee_identification",
+      "Predicate-is_based_on",
+      "Entity-conversational_context_feature"
+    ],
+    [
+      "Entity-the_classifier",
+      "Predicate-affect",
+      "Entity-classifier__performance"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-classifier__performance",
+      "skos:broader",
+      "Entity-performance"
+    ],
+    [
+      "Entity-the_addressee_of_a_dialogue_act",
+      "skos:broader",
+      "Entity-dialogue_act"
+    ],
+    [
+      "Entity-both_classifier",
+      "skos:broader",
+      "Entity-classifier"
+    ],
+    [
+      "Entity-classifier__performance",
+      "skos:broader",
+      "Entity-classifier"
+    ],
+    [
+      "Entity-the_addressee_of_a_dialogue_act",
+      "skos:broader",
+      "Entity-addressee"
+    ],
+    [
+      "Entity-utterance",
+      "skos:broader",
+      "Entity-dialogue_act"
+    ],
+    [
+      "Entity-the_classifier",
+      "skos:broader",
+      "Entity-classifier"
+    ]
+  ],
+  "predicates": {
+    "Predicate-results_on": {
+      "label": "results on",
+      "description": "The predicate 'results on' indicates a causal or consequential relationship where the subject leads to or produces the object. It suggests that the subject is a factor or process that contributes to the occurrence or establishment of the object, highlighting a connection where the outcome or effect is directly linked to the initial subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-uses": {
+      "label": "uses",
+      "description": "The predicate 'uses' indicates that the subject employs or utilizes the object as a means to achieve a specific function, purpose, or outcome. It establishes a relationship where the subject actively incorporates the object into its processes or operations.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents_results_on": {
+      "label": "presents results on",
+      "description": "The predicate 'presents results on' indicates that the subject is providing or sharing findings, conclusions, or data related to the object. It establishes a relationship where the subject conveys information that pertains to the specific topic or area represented by the object, often in a formal or structured manner.",
+      "disambiguation_index": 0
+    },
+    "Predicate-can_be_predicted_based_on": {
+      "label": "can be predicted based on",
+      "description": "The predicate 'can be predicted based on' establishes a relationship where the subject's characteristics, behaviors, or states can be inferred or anticipated through the analysis of the object. It implies that there is a systematic or logical connection between the two, suggesting that knowledge or information about the object provides insights into the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-can_aid": {
+      "label": "can aid",
+      "description": "The predicate 'can aid' indicates a supportive or beneficial relationship between the subject and the object, suggesting that the subject has the potential to enhance, improve, or facilitate the effectiveness or quality of the object in some way.",
+      "disambiguation_index": 0
+    },
+    "Predicate-perform_the_best_when_combined_with": {
+      "label": "perform the best when combined with",
+      "description": "This predicate indicates that the subject achieves optimal effectiveness or efficiency when it is used in conjunction with the object. It suggests a synergistic relationship where the combination enhances performance beyond what either the subject or object could achieve independently.",
+      "disambiguation_index": 0
+    },
+    "Predicate-show_gain_from": {
+      "label": "show gain from",
+      "description": "The predicate 'show gain from' indicates a relationship where the subject derives a benefit, advantage, or positive outcome as a result of the information or resource represented by the object. It implies that the subject experiences an improvement or enhancement in their capabilities, understanding, or performance due to the influence of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-show_little_gain_from": {
+      "label": "show little gain from",
+      "description": "The predicate 'show little gain from' indicates that the subject experiences minimal or negligible benefits or improvements as a result of the interaction or relationship with the object. It suggests that the expected positive outcomes are not realized, highlighting a lack of effectiveness or value in the connection between the subject and the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_based_on": {
+      "label": "is based on",
+      "description": "The predicate 'is based on' establishes a foundational relationship between the subject and the object, indicating that the subject derives its principles, characteristics, or functionality from the object. It suggests that the subject relies upon or is fundamentally influenced by the object, highlighting a dependency or a source of support that informs the subject's nature or operation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-affect": {
+      "label": "affect",
+      "description": "The predicate 'affect' denotes a relationship in which the subject exerts an influence or impact on the object, resulting in a change or modification in the state, condition, or behavior of the object. In this context, the subject is the entity that initiates the influence, while the object is the entity that experiences the effect of that influence.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or subset that falls under the more general category represented by the object. This relationship implies that the object encompasses a wider scope or range of concepts, of which the subject is a part.",
+      "disambiguation_index": 0
+    }
+  }
+}

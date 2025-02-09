@@ -1,0 +1,1222 @@
+{
+  "iri": "Paper-45",
+  "title": "CVPR_2011_10_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-45-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-45-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-45-Section-1-Paragraph-1-Sentence-1",
+              "text": "Reflections in image sequences consist of several layers superimposed over each other ."
+            },
+            {
+              "iri": "Paper-45-Section-1-Paragraph-1-Sentence-2",
+              "text": "This phenomenon causes many image processing techniques to fail as they assume the presence of only one layer at each examined site e.g. motion estimation and object recognition ."
+            },
+            {
+              "iri": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+              "text": "This work presents an automated technique for detecting reflections in image sequences by analyzing motion trajectories of feature points ."
+            },
+            {
+              "iri": "Paper-45-Section-1-Paragraph-1-Sentence-4",
+              "text": "It models reflection as regions containing two different layers moving over each other ."
+            },
+            {
+              "iri": "Paper-45-Section-1-Paragraph-1-Sentence-5",
+              "text": "We present a strong detector based on combining a set of weak detectors ."
+            },
+            {
+              "iri": "Paper-45-Section-1-Paragraph-1-Sentence-6",
+              "text": "We use novel priors , generate sparse and dense detection maps and our results show high detection rate with rejection to pathological motion and occlusion ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0002779960632324219,
+    10.157954216003418,
+    29.287251949310303,
+    30.718743085861206,
+    0.03524899482727051,
+    0.00011205673217773438,
+    0.00014519691467285156,
+    27.705276012420654,
+    52.63073706626892,
+    3.1742000579833984,
+    0.06904292106628418,
+    0.011193037033081055,
+    0.00020766258239746094,
+    28.59651517868042,
+    0.0012638568878173828,
+    0.04297804832458496,
+    0.0009739398956298828,
+    3.65081787109375,
+    0.6337852478027344,
+    1.0225059986114502,
+    90.20705986022949,
+    7.309043884277344,
+    54.71200203895569,
+    2.980212926864624,
+    0.0009300708770751953,
+    0.011278152465820312
+  ],
+  "nodes": {
+    "Entity-reflection_in_image_sequence": {
+      "node_id": "reflection_in_image_sequence",
+      "disambiguation_index": 0,
+      "label": "Reflections in image sequences",
+      "aliases": [
+        "Reflections in image sequences",
+        "reflections in image sequences"
+      ],
+      "types": [
+        "phenomenon",
+        "image processing",
+        "visual effect",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Reflections in image sequences refer to a visual phenomenon where multiple layers of images overlap, complicating image processing tasks such as motion estimation and object recognition due to the presence of two distinct moving layers.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Reflections in image sequences",
+          "local_types": [
+            "phenomenon",
+            "image processing",
+            "visual effect",
+            "concept"
+          ],
+          "iri": "Entity-reflection_in_image_sequence-Mention-1"
+        },
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "reflections in image sequences",
+          "local_types": [
+            "phenomenon",
+            "image processing"
+          ],
+          "iri": "Entity-reflection_in_image_sequence-Mention-2"
+        }
+      ],
+      "relevance": 0.8330078125
+    },
+    "Entity-automated_technique": {
+      "node_id": "automated_technique",
+      "disambiguation_index": 0,
+      "label": "automated technique",
+      "aliases": [
+        "automated technique",
+        "automated technique for detecting reflections"
+      ],
+      "types": [
+        "technique",
+        "methodology",
+        "approach",
+        "detection",
+        "automation",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The automated technique refers to a method for detecting reflections in image sequences by analyzing the motion trajectories of feature points, effectively modeling reflections as overlapping layers of motion.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "automated technique",
+          "local_types": [
+            "technique",
+            "methodology",
+            "approach",
+            "automation",
+            "method"
+          ],
+          "iri": "Entity-automated_technique-Mention-1"
+        },
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "automated technique for detecting reflections",
+          "local_types": [
+            "technique",
+            "detection"
+          ],
+          "iri": "Entity-automated_technique-Mention-2"
+        }
+      ],
+      "relevance": 0.8017578125
+    },
+    "Entity-phenomenon": {
+      "node_id": "phenomenon",
+      "disambiguation_index": 0,
+      "label": "phenomenon",
+      "aliases": [
+        "phenomenon"
+      ],
+      "types": [
+        "event",
+        "observable occurrence"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The phenomenon refers to the occurrence of reflections in image sequences, where multiple layers are superimposed, leading to challenges in image processing techniques that typically assume a single layer.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "phenomenon",
+          "local_types": [
+            "event",
+            "observable occurrence"
+          ],
+          "iri": "Entity-phenomenon-Mention-1"
+        }
+      ],
+      "relevance": 0.80126953125
+    },
+    "Entity-this_phenomenon": {
+      "node_id": "this_phenomenon",
+      "disambiguation_index": 0,
+      "label": "This phenomenon",
+      "aliases": [
+        "This phenomenon"
+      ],
+      "types": [
+        "phenomenon"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "This phenomenon refers to the occurrence of reflections in image sequences, where multiple layers of images are superimposed, leading to challenges in image processing techniques that typically assume a single layer at each site.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "This phenomenon",
+          "local_types": [
+            "phenomenon"
+          ],
+          "iri": "Entity-this_phenomenon-Mention-1"
+        }
+      ],
+      "relevance": 0.80078125
+    },
+    "Entity-reflection": {
+      "node_id": "reflection",
+      "disambiguation_index": 0,
+      "label": "reflections",
+      "aliases": [
+        "reflections",
+        "reflection"
+      ],
+      "types": [
+        "phenomenon",
+        "physical phenomenon",
+        "optical effect",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Reflections refer to the optical phenomenon in image sequences where multiple layers of images are superimposed, complicating image processing tasks that typically assume a single layer.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "reflections",
+          "local_types": [
+            "phenomenon",
+            "optical effect"
+          ],
+          "iri": "Entity-reflection-Mention-1"
+        },
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "reflections",
+          "local_types": [
+            "phenomenon",
+            "optical effect"
+          ],
+          "iri": "Entity-reflection-Mention-2"
+        },
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "reflection",
+          "local_types": [
+            "concept",
+            "optical effect",
+            "physical phenomenon"
+          ],
+          "iri": "Entity-reflection-Mention-3"
+        }
+      ],
+      "relevance": 0.79931640625
+    },
+    "Entity-this_work": {
+      "node_id": "this_work",
+      "disambiguation_index": 0,
+      "label": "This work",
+      "aliases": [
+        "This work"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "This work refers to a research study that introduces an automated technique for detecting reflections in image sequences by analyzing the motion trajectories of feature points.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "This work",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-this_work-Mention-1"
+        }
+      ],
+      "relevance": 0.796875
+    },
+    "Entity-two_different_layer": {
+      "node_id": "two_different_layer",
+      "disambiguation_index": 0,
+      "label": "two different layers",
+      "aliases": [
+        "two different layers"
+      ],
+      "types": [
+        "layer",
+        "material"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'two different layers' refers to the distinct superimposed regions in image sequences that are involved in reflections, which move independently and complicate image processing tasks such as motion estimation and object recognition.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "two different layers",
+          "local_types": [
+            "layer",
+            "material"
+          ],
+          "iri": "Entity-two_different_layer-Mention-1"
+        }
+      ],
+      "relevance": 0.7646484375
+    },
+    "Entity-sparse_and_dense_detection_map": {
+      "node_id": "sparse_and_dense_detection_map",
+      "disambiguation_index": 0,
+      "label": "sparse and dense detection maps",
+      "aliases": [
+        "sparse and dense detection maps"
+      ],
+      "types": [
+        "visualization technique",
+        "data representation",
+        "output",
+        "detection map"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Sparse and dense detection maps refer to the visual representations generated by the automated technique for detecting reflections in image sequences, which utilize both sparse and dense data to enhance the detection of overlapping layers in motion analysis.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "sparse and dense detection maps",
+          "local_types": [
+            "visualization technique",
+            "data representation",
+            "output",
+            "detection map"
+          ],
+          "iri": "Entity-sparse_and_dense_detection_map-Mention-1"
+        }
+      ],
+      "relevance": 0.755859375
+    },
+    "Entity-region_containing_two_different_layer": {
+      "node_id": "region_containing_two_different_layer",
+      "disambiguation_index": 0,
+      "label": "regions containing two different layers",
+      "aliases": [
+        "regions containing two different layers"
+      ],
+      "types": [
+        "layer",
+        "region"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Regions containing two different layers refer to areas in image sequences where reflections are modeled as overlapping layers that move independently, complicating image processing tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "regions containing two different layers",
+          "local_types": [
+            "layer",
+            "region"
+          ],
+          "iri": "Entity-region_containing_two_different_layer-Mention-1"
+        }
+      ],
+      "relevance": 0.748046875
+    },
+    "Entity-detector": {
+      "node_id": "detector",
+      "disambiguation_index": 0,
+      "label": "detector",
+      "aliases": [
+        "detector"
+      ],
+      "types": [
+        "algorithm",
+        "system",
+        "detection system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'detector' refers to a robust detection system designed to identify reflections in image sequences by integrating multiple weak detection algorithms.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "detector",
+          "local_types": [
+            "algorithm",
+            "system",
+            "detection system"
+          ],
+          "iri": "Entity-detector-Mention-1"
+        }
+      ],
+      "relevance": 0.7412109375
+    },
+    "Entity-high_detection_rate": {
+      "node_id": "high_detection_rate",
+      "disambiguation_index": 0,
+      "label": "high detection rate",
+      "aliases": [
+        "high detection rate"
+      ],
+      "types": [
+        "performance metric",
+        "result"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The term 'high detection rate' refers to the effectiveness of the proposed automated technique in accurately identifying reflections in image sequences, demonstrating superior performance in distinguishing these reflections despite challenges such as pathological motion and occlusion.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "high detection rate",
+          "local_types": [
+            "performance metric",
+            "result"
+          ],
+          "iri": "Entity-high_detection_rate-Mention-1"
+        }
+      ],
+      "relevance": 0.740234375
+    },
+    "Entity-region": {
+      "node_id": "region",
+      "disambiguation_index": 0,
+      "label": "regions",
+      "aliases": [
+        "regions"
+      ],
+      "types": [
+        "spatial concept",
+        "geographical feature",
+        "geographical area"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of image processing, 'regions' refers to areas within image sequences that exhibit reflections, characterized by the presence of two distinct layers of visual information that are in motion relative to each other.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "regions",
+          "local_types": [
+            "spatial concept",
+            "geographical feature",
+            "geographical area"
+          ],
+          "iri": "Entity-region-Mention-1"
+        }
+      ],
+      "relevance": 0.73828125
+    },
+    "Entity-strong_detector": {
+      "node_id": "strong_detector",
+      "disambiguation_index": 0,
+      "label": "strong detector",
+      "aliases": [
+        "strong detector",
+        "a strong detector"
+      ],
+      "types": [
+        "detector"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'strong detector' refers to an advanced detection mechanism that integrates multiple weak detectors to effectively identify reflections in image sequences, enhancing detection rates while managing challenges such as pathological motion and occlusion.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "strong detector",
+          "local_types": [
+            "detector"
+          ],
+          "iri": "Entity-strong_detector-Mention-1"
+        },
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "a strong detector",
+          "local_types": [
+            "detector"
+          ],
+          "iri": "Entity-strong_detector-Mention-2"
+        }
+      ],
+      "relevance": 0.73779296875
+    },
+    "Entity-moving_over_each_other": {
+      "node_id": "moving_over_each_other",
+      "disambiguation_index": 0,
+      "label": "moving over each other",
+      "aliases": [
+        "moving over each other"
+      ],
+      "types": [
+        "action"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'moving over each other' refers to the interaction of two distinct layers in image sequences, particularly in the context of reflections, where these layers exhibit relative motion, complicating image processing tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "moving over each other",
+          "local_types": [
+            "action"
+          ],
+          "iri": "Entity-moving_over_each_other-Mention-1"
+        }
+      ],
+      "relevance": 0.734375
+    },
+    "Entity-motion_trajectory_of_feature_point": {
+      "node_id": "motion_trajectory_of_feature_point",
+      "disambiguation_index": 0,
+      "label": "motion trajectories of feature points",
+      "aliases": [
+        "motion trajectories of feature points"
+      ],
+      "types": [
+        "motion trajectory",
+        "feature point"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Motion trajectories of feature points refer to the paths traced by distinct points of interest in an image sequence, which are analyzed to detect and differentiate overlapping layers caused by reflections in the visual data.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "motion trajectories of feature points",
+          "local_types": [
+            "motion trajectory",
+            "feature point"
+          ],
+          "iri": "Entity-motion_trajectory_of_feature_point-Mention-1"
+        }
+      ],
+      "relevance": 0.7255859375
+    },
+    "Entity-layer": {
+      "node_id": "layer",
+      "disambiguation_index": 0,
+      "label": "layers",
+      "aliases": [
+        "layers"
+      ],
+      "types": [
+        "material structure",
+        "component",
+        "structure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of image processing, 'layers' refer to the distinct superimposed regions in reflections of image sequences that complicate analysis by creating multiple overlapping visual elements.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "layers",
+          "local_types": [
+            "component",
+            "structure"
+          ],
+          "iri": "Entity-layer-Mention-1"
+        },
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "layers",
+          "local_types": [
+            "material structure",
+            "component"
+          ],
+          "iri": "Entity-layer-Mention-2"
+        }
+      ],
+      "relevance": 0.71435546875
+    },
+    "Entity-several_layer": {
+      "node_id": "several_layer",
+      "disambiguation_index": 0,
+      "label": "several layers",
+      "aliases": [
+        "several layers"
+      ],
+      "types": [
+        "component",
+        "layer"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'several layers' refers to the multiple overlapping components in image sequences that represent reflections, which complicate image processing tasks by introducing complexity beyond the assumption of a single layer.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "several layers",
+          "local_types": [
+            "component",
+            "layer"
+          ],
+          "iri": "Entity-several_layer-Mention-1"
+        }
+      ],
+      "relevance": 0.712890625
+    },
+    "Entity-feature_point": {
+      "node_id": "feature_point",
+      "disambiguation_index": 0,
+      "label": "feature points",
+      "aliases": [
+        "feature points"
+      ],
+      "types": [
+        "image feature",
+        "data point"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Feature points refer to distinct locations in an image that are used to analyze motion trajectories for detecting reflections in image sequences.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "feature points",
+          "local_types": [
+            "image feature",
+            "data point"
+          ],
+          "iri": "Entity-feature_point-Mention-1"
+        }
+      ],
+      "relevance": 0.71142578125
+    },
+    "Entity-weak_detector": {
+      "node_id": "weak_detector",
+      "disambiguation_index": 0,
+      "label": "weak detectors",
+      "aliases": [
+        "weak detectors",
+        "a set of weak detectors"
+      ],
+      "types": [
+        "algorithm",
+        "system",
+        "detector",
+        "detection system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Weak detectors refer to a collection of algorithms or systems that individually have limited detection capabilities but are combined to enhance overall performance in detecting reflections in image sequences.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "weak detectors",
+          "local_types": [
+            "algorithm",
+            "system",
+            "detector",
+            "detection system"
+          ],
+          "iri": "Entity-weak_detector-Mention-1"
+        },
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "a set of weak detectors",
+          "local_types": [
+            "detector"
+          ],
+          "iri": "Entity-weak_detector-Mention-2"
+        }
+      ],
+      "relevance": 0.70654296875
+    },
+    "Entity-novel_prior": {
+      "node_id": "novel_prior",
+      "disambiguation_index": 0,
+      "label": "novel priors",
+      "aliases": [
+        "novel priors"
+      ],
+      "types": [
+        "statistical method",
+        "statistical model",
+        "prior knowledge",
+        "machine learning technique",
+        "machine learning concept",
+        "prior",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Novel priors refer to innovative statistical models or techniques that incorporate prior knowledge to enhance the detection of reflections in image sequences, enabling improved performance in image processing tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "novel priors",
+          "local_types": [
+            "statistical method",
+            "statistical model",
+            "prior knowledge",
+            "machine learning technique",
+            "machine learning concept",
+            "prior",
+            "method"
+          ],
+          "iri": "Entity-novel_prior-Mention-1"
+        }
+      ],
+      "relevance": 0.66796875
+    },
+    "Entity-pathological_motion": {
+      "node_id": "pathological_motion",
+      "disambiguation_index": 0,
+      "label": "pathological motion",
+      "aliases": [
+        "pathological motion"
+      ],
+      "types": [
+        "anomaly",
+        "motion",
+        "motion analysis",
+        "motion type",
+        "condition",
+        "biomedical concept",
+        "phenomenon"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Pathological motion refers to abnormal or problematic motion patterns in image sequences that can interfere with image processing techniques, particularly in the context of detecting reflections and occlusions.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "pathological motion",
+          "local_types": [
+            "anomaly",
+            "motion",
+            "motion analysis",
+            "motion type",
+            "condition",
+            "biomedical concept",
+            "phenomenon"
+          ],
+          "iri": "Entity-pathological_motion-Mention-1"
+        }
+      ],
+      "relevance": 0.658203125
+    },
+    "Entity-motion_estimation": {
+      "node_id": "motion_estimation",
+      "disambiguation_index": 0,
+      "label": "motion estimation",
+      "aliases": [
+        "motion estimation"
+      ],
+      "types": [
+        "motion estimation",
+        "technique",
+        "image processing",
+        "image processing technique",
+        "algorithm"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Motion estimation is a computational technique used in image processing to determine the motion of objects between consecutive frames in a video sequence.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "motion estimation",
+          "local_types": [
+            "motion estimation",
+            "technique",
+            "image processing",
+            "image processing technique",
+            "algorithm"
+          ],
+          "iri": "Entity-motion_estimation-Mention-1"
+        }
+      ],
+      "relevance": 0.65234375
+    },
+    "Entity-occlusion": {
+      "node_id": "occlusion",
+      "disambiguation_index": 0,
+      "label": "occlusion",
+      "aliases": [
+        "occlusion"
+      ],
+      "types": [
+        "visual effect",
+        "condition",
+        "visual obstruction",
+        "visual phenomenon",
+        "phenomenon",
+        "obstruction"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Occlusion refers to the visual obstruction or phenomenon that occurs when one object partially or completely blocks the view of another object in image sequences, complicating image processing tasks such as motion estimation and object recognition.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "occlusion",
+          "local_types": [
+            "visual effect",
+            "condition",
+            "visual obstruction",
+            "visual phenomenon",
+            "phenomenon",
+            "obstruction"
+          ],
+          "iri": "Entity-occlusion-Mention-1"
+        }
+      ],
+      "relevance": 0.6474609375
+    },
+    "Entity-image_sequence": {
+      "node_id": "image_sequence",
+      "disambiguation_index": 0,
+      "label": "image sequences",
+      "aliases": [
+        "image sequences"
+      ],
+      "types": [
+        "data structure",
+        "data type",
+        "visual data",
+        "data format"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Image sequences are ordered collections of images that represent a series of visual data, often used in various applications such as video processing, animation, and computer vision.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "image sequences",
+          "local_types": [
+            "data structure",
+            "data type",
+            "visual data"
+          ],
+          "iri": "Entity-image_sequence-Mention-1"
+        },
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "image sequences",
+          "local_types": [
+            "data format",
+            "visual data"
+          ],
+          "iri": "Entity-image_sequence-Mention-2"
+        }
+      ],
+      "relevance": 0.6298828125
+    },
+    "Entity-object_recognition": {
+      "node_id": "object_recognition",
+      "disambiguation_index": 0,
+      "label": "object recognition",
+      "aliases": [
+        "object recognition"
+      ],
+      "types": [
+        "technique",
+        "image processing",
+        "image processing technique",
+        "algorithm",
+        "object recognition"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Object recognition is a computer vision technique that enables the identification and classification of objects within digital images or video streams.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "object recognition",
+          "local_types": [
+            "technique",
+            "image processing",
+            "image processing technique",
+            "algorithm",
+            "object recognition"
+          ],
+          "iri": "Entity-object_recognition-Mention-1"
+        }
+      ],
+      "relevance": 0.60791015625
+    },
+    "Entity-motion_trajectory": {
+      "node_id": "motion_trajectory",
+      "disambiguation_index": 0,
+      "label": "motion trajectories",
+      "aliases": [
+        "motion trajectories"
+      ],
+      "types": [
+        "data representation",
+        "spatial analysis",
+        "motion analysis"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Motion trajectories refer to the paths or patterns that moving objects or points follow over time, often represented in a spatial context for analysis in various fields such as computer vision and robotics.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "motion trajectories",
+          "local_types": [
+            "data representation",
+            "spatial analysis",
+            "motion analysis"
+          ],
+          "iri": "Entity-motion_trajectory-Mention-1"
+        }
+      ],
+      "relevance": 0.59521484375
+    },
+    "Entity-detection_rate": {
+      "node_id": "detection_rate",
+      "disambiguation_index": 0,
+      "label": "detection rate",
+      "aliases": [
+        "detection rate"
+      ],
+      "types": [
+        "evaluation criterion",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Detection rate is a performance metric that quantifies the proportion of actual positive instances that are correctly identified by a detection system.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "detection rate",
+          "local_types": [
+            "evaluation criterion",
+            "performance metric"
+          ],
+          "iri": "Entity-detection_rate-Mention-1"
+        }
+      ],
+      "relevance": 0.59228515625
+    },
+    "Entity-image_processing_technique": {
+      "node_id": "image_processing_technique",
+      "disambiguation_index": 0,
+      "label": "image processing techniques",
+      "aliases": [
+        "image processing techniques"
+      ],
+      "types": [
+        "technique",
+        "image processing",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Image processing techniques are methodologies used to manipulate and analyze digital images to enhance their quality or extract useful information.",
+      "mentions": [
+        {
+          "reference": "Paper-45-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "image processing techniques",
+          "local_types": [
+            "technique",
+            "image processing",
+            "methodology"
+          ],
+          "iri": "Entity-image_processing_technique-Mention-1"
+        }
+      ],
+      "relevance": 0.58349609375
+    }
+  },
+  "summary": "Reflections in image sequences consist of several layers superimposed over each other . This phenomenon causes many image processing techniques to fail as they assume the presence of only one layer at each examined site e.g. motion estimation and object recognition . This work presents an automated technique for detecting reflections in image sequences by analyzing motion trajectories of feature points . It models reflection as regions containing two different layers moving over each other . We present a strong detector based on combining a set of weak detectors . We use novel priors , generate sparse and dense detection maps and our results show high detection rate with rejection to pathological motion and occlusion .",
+  "triples": [
+    [
+      "Entity-reflection_in_image_sequence",
+      "Predicate-consist_of",
+      "Entity-several_layer"
+    ],
+    [
+      "Entity-reflection_in_image_sequence",
+      "Predicate-consist_of",
+      "Entity-layer"
+    ],
+    [
+      "Entity-this_phenomenon",
+      "Predicate-causes",
+      "Entity-image_processing_technique"
+    ],
+    [
+      "Entity-image_processing_technique",
+      "Predicate-fail_as_they_assume_the_presence_of",
+      "Entity-motion_estimation"
+    ],
+    [
+      "Entity-image_processing_technique",
+      "Predicate-fail_as_they_assume_the_presence_of",
+      "Entity-object_recognition"
+    ],
+    [
+      "Entity-this_work",
+      "Predicate-presents",
+      "Entity-automated_technique"
+    ],
+    [
+      "Entity-automated_technique",
+      "Predicate-detects",
+      "Entity-reflection_in_image_sequence"
+    ],
+    [
+      "Entity-automated_technique",
+      "Predicate-analyzes",
+      "Entity-motion_trajectory_of_feature_point"
+    ],
+    [
+      "Entity-region_containing_two_different_layer",
+      "Predicate-models",
+      "Entity-reflection"
+    ],
+    [
+      "Entity-reflection",
+      "Predicate-is_modeled_as",
+      "Entity-region_containing_two_different_layer"
+    ],
+    [
+      "Entity-reflection",
+      "Predicate-models_as",
+      "Entity-region_containing_two_different_layer"
+    ],
+    [
+      "Entity-region_containing_two_different_layer",
+      "Predicate-are",
+      "Entity-moving_over_each_other"
+    ],
+    [
+      "Entity-strong_detector",
+      "Predicate-is_based_on_combining",
+      "Entity-weak_detector"
+    ],
+    [
+      "Entity-novel_prior",
+      "Predicate-generate",
+      "Entity-sparse_and_dense_detection_map"
+    ],
+    [
+      "Entity-high_detection_rate",
+      "Predicate-with_rejection_to",
+      "Entity-pathological_motion"
+    ],
+    [
+      "Entity-high_detection_rate",
+      "Predicate-with_rejection_to_(1)",
+      "Entity-occlusion"
+    ],
+    [
+      "Entity-high_detection_rate",
+      "Predicate-with_rejection_to",
+      "Entity-occlusion"
+    ],
+    [
+      "Entity-this_work",
+      "Predicate-presents",
+      "Entity-strong_detector"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-region_containing_two_different_layer",
+      "skos:broader",
+      "Entity-region"
+    ],
+    [
+      "Entity-weak_detector",
+      "skos:broader",
+      "Entity-detector"
+    ],
+    [
+      "Entity-strong_detector",
+      "skos:broader",
+      "Entity-detector"
+    ],
+    [
+      "Entity-motion_trajectory_of_feature_point",
+      "skos:broader",
+      "Entity-feature_point"
+    ],
+    [
+      "Entity-several_layer",
+      "skos:broader",
+      "Entity-layer"
+    ],
+    [
+      "Entity-reflection_in_image_sequence",
+      "skos:broader",
+      "Entity-image_processing_technique"
+    ],
+    [
+      "Entity-motion_estimation",
+      "skos:broader",
+      "Entity-image_processing_technique"
+    ],
+    [
+      "Entity-two_different_layer",
+      "skos:broader",
+      "Entity-layer"
+    ],
+    [
+      "Entity-motion_trajectory_of_feature_point",
+      "skos:broader",
+      "Entity-motion_trajectory"
+    ],
+    [
+      "Entity-object_recognition",
+      "skos:broader",
+      "Entity-image_processing_technique"
+    ],
+    [
+      "Entity-region_containing_two_different_layer",
+      "skos:broader",
+      "Entity-layer"
+    ],
+    [
+      "Entity-pathological_motion",
+      "skos:broader",
+      "Entity-phenomenon"
+    ],
+    [
+      "Entity-reflection_in_image_sequence",
+      "skos:broader",
+      "Entity-phenomenon"
+    ],
+    [
+      "Entity-reflection",
+      "skos:broader",
+      "Entity-phenomenon"
+    ],
+    [
+      "Entity-occlusion",
+      "skos:broader",
+      "Entity-phenomenon"
+    ],
+    [
+      "Entity-this_phenomenon",
+      "skos:broader",
+      "Entity-phenomenon"
+    ]
+  ],
+  "predicates": {
+    "Predicate-consist_of": {
+      "label": "consist of",
+      "description": "The predicate 'consist of' indicates that the subject is made up of or composed of the elements represented by the object. It establishes a relationship where the object represents the components or parts that collectively form the whole described by the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-causes": {
+      "label": "causes",
+      "description": "The predicate 'causes' indicates a relationship where the subject is responsible for bringing about a change, effect, or result that is represented by the object. It implies a causal connection, suggesting that the occurrence or existence of the subject leads to the development or implementation of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-fail_as_they_assume_the_presence_of": {
+      "label": "fail as they assume the presence of",
+      "description": "The predicate 'fail as they assume the presence of' indicates that the subject does not succeed or perform effectively due to an incorrect or unfounded assumption regarding the existence or availability of the object. This suggests that the subject's performance is contingent upon the belief that the object is present, and when this assumption is proven false or inaccurate, it leads to failure in achieving the intended outcome.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents": {
+      "label": "presents",
+      "description": "The predicate 'presents' indicates that the subject is introducing, showcasing, or making known the object to an audience. It implies a formal or structured communication of information, findings, or concepts, where the subject serves as the source or origin of the presentation, and the object represents the content or subject matter being conveyed.",
+      "disambiguation_index": 0
+    },
+    "Predicate-detects": {
+      "label": "detects",
+      "description": "The predicate 'detects' indicates the action of identifying or discovering the presence of a particular phenomenon, feature, or element within a given context. It establishes a relationship where the subject is capable of recognizing or observing the object, which represents the specific entity or occurrence being identified. This connection implies a process of analysis or observation that leads to the awareness of the object's characteristics or existence.",
+      "disambiguation_index": 0
+    },
+    "Predicate-analyzes": {
+      "label": "analyzes",
+      "description": "The predicate 'analyzes' denotes an action where the subject systematically examines, inspects, or studies the object in order to understand its structure, components, or underlying patterns. This process often involves breaking down the object into its constituent parts and interpreting the data or information it contains, leading to insights or conclusions about the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-models": {
+      "label": "models",
+      "description": "The predicate 'models' indicates a relationship where the subject serves as a representation or simulation of the object. It implies that the subject embodies or illustrates the characteristics, properties, or behaviors of the object, allowing for analysis, understanding, or visualization of the object through the lens of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_modeled_as": {
+      "label": "is modeled as",
+      "description": "The predicate 'is modeled as' establishes a representational relationship between the subject and the object, indicating that the subject can be understood, interpreted, or conceptualized in terms of the characteristics or structure of the object. This suggests that the object serves as a framework or analogy that helps to explain or visualize the nature of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-models_as": {
+      "label": "models as",
+      "description": "The predicate 'models as' establishes a relationship where the subject is represented or conceptualized in a manner that aligns with the characteristics or properties of the object. It indicates that the subject serves as a representation or example of the object, suggesting a similarity or analogy between the two. This connection allows for a deeper understanding of the subject by framing it in terms of the object, which may provide additional context or insight.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are": {
+      "label": "are",
+      "description": "The predicate 'are' serves as a linking verb that connects the subject to the object by indicating a state of being or existence. It establishes a relationship where the subject is characterized or defined by the object, often implying an ongoing action or condition that the subject is experiencing or undergoing.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_based_on_combining": {
+      "label": "is based on combining",
+      "description": "The predicate 'is based on combining' indicates that the subject derives its effectiveness, functionality, or characteristics from the integration or synthesis of multiple components represented by the object. This suggests a foundational relationship where the subject's properties are enhanced or established through the amalgamation of the elements denoted by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-generate": {
+      "label": "generate",
+      "description": "The predicate 'generate' indicates the action of producing or creating something as a result of a process or function. In the context of the subject and object, it signifies that the subject is responsible for the creation of the object, which can take various forms such as data, outputs, or representations. This relationship highlights the transformative capability of the subject in yielding the specified object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-with_rejection_to": {
+      "label": "with rejection to",
+      "description": "The predicate 'with rejection to' establishes a relationship where the subject is being evaluated or considered in relation to the object, indicating that the subject's characteristics or performance are specifically assessed while excluding or disregarding the object. This implies a focus on the subject's qualities in the context of the object, often highlighting a distinction or a limitation in the subject's applicability or effectiveness concerning the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-with_rejection_to_(1)": {
+      "label": "with rejection to",
+      "description": "The predicate 'with rejection to' indicates a relationship where the subject is being evaluated or considered in relation to the object, often implying a focus on the subject's performance, effectiveness, or characteristics when the object is present or relevant. It suggests that the subject's qualities are being assessed specifically in the context of the object, highlighting how the two are interconnected.",
+      "disambiguation_index": 1
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a more specific instance or category that falls under the wider classification represented by the object. This relationship implies that the object encompasses a larger scope or set of characteristics that includes the subject, thereby providing a context in which the subject can be understood as part of a broader conceptual framework.",
+      "disambiguation_index": 0
+    }
+  }
+}

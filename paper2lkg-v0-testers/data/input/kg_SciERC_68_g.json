@@ -1,0 +1,1132 @@
+{
+  "iri": "Paper-68",
+  "title": "C00-2123",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-68-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-68-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-68-Section-1-Paragraph-1-Sentence-1",
+              "text": "In this paper , we describe a search procedure for statistical machine translation -LRB- MT -RRB- based on dynamic programming -LRB- DP -RRB- ."
+            },
+            {
+              "iri": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+              "text": "Starting from a DP-based solution to the traveling salesman problem , we present a novel technique to restrict the possible word reordering between source and target language in order to achieve an efficient search algorithm ."
+            },
+            {
+              "iri": "Paper-68-Section-1-Paragraph-1-Sentence-3",
+              "text": "A search restriction especially useful for the translation direction from German to English is presented ."
+            },
+            {
+              "iri": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+              "text": "The experimental tests are carried out on the Verbmobil task -LRB- German-English , 8000-word vocabulary -RRB- , which is a limited-domain spoken-language task ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00044989585876464844,
+    50.60351204872131,
+    50.49664497375488,
+    49.25882005691528,
+    0.03952908515930176,
+    0.00016307830810546875,
+    0.0001690387725830078,
+    286.8494122028351,
+    283.23980021476746,
+    3.4477291107177734,
+    0.07098102569580078,
+    0.01217198371887207,
+    0.00020313262939453125,
+    55.0571768283844,
+    0.0017349720001220703,
+    0.03032994270324707,
+    0.0013680458068847656,
+    5.740232944488525,
+    12.205283880233765,
+    21.349385023117065,
+    468.77418327331543,
+    7.47629714012146,
+    173.87739992141724,
+    2.5624959468841553,
+    0.0013980865478515625,
+    0.00978994369506836
+  ],
+  "nodes": {
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "this paper",
+      "aliases": [
+        "this paper"
+      ],
+      "types": [
+        "research",
+        "document"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "This paper presents a novel search procedure for statistical machine translation utilizing dynamic programming techniques, specifically addressing word reordering for efficient translation from German to English.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "this paper",
+          "local_types": [
+            "research",
+            "document"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.75146484375
+    },
+    "Entity-verbmobil_task": {
+      "node_id": "verbmobil_task",
+      "disambiguation_index": 0,
+      "label": "Verbmobil task",
+      "aliases": [
+        "Verbmobil task"
+      ],
+      "types": [
+        "limited-domain spoken-language task",
+        "research task",
+        "language processing task",
+        "spoken-language task",
+        "task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The Verbmobil task is a research initiative focused on limited-domain spoken language processing, specifically involving the translation and interpretation of spoken dialogue between German and English.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Verbmobil task",
+          "local_types": [
+            "limited-domain spoken-language task",
+            "research task",
+            "language processing task",
+            "spoken-language task",
+            "task"
+          ],
+          "iri": "Entity-verbmobil_task-Mention-1"
+        }
+      ],
+      "relevance": 0.72021484375
+    },
+    "Entity-search_restriction": {
+      "node_id": "search_restriction",
+      "disambiguation_index": 0,
+      "label": "search restriction",
+      "aliases": [
+        "search restriction",
+        "A search restriction"
+      ],
+      "types": [
+        "criteria",
+        "restriction",
+        "method",
+        "constraint"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'search restriction' refers to a technique that limits the possible word reordering in statistical machine translation, specifically designed to enhance the efficiency of the translation process from German to English.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "search restriction",
+          "local_types": [
+            "restriction",
+            "criteria",
+            "method",
+            "constraint"
+          ],
+          "iri": "Entity-search_restriction-Mention-1"
+        },
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "A search restriction",
+          "local_types": [
+            "restriction"
+          ],
+          "iri": "Entity-search_restriction-Mention-2"
+        }
+      ],
+      "relevance": 0.71337890625
+    },
+    "Entity-novel_technique_to_restrict_the_possible_word_reordering": {
+      "node_id": "novel_technique_to_restrict_the_possible_word_reordering",
+      "disambiguation_index": 0,
+      "label": "novel technique to restrict the possible word reordering",
+      "aliases": [
+        "novel technique to restrict the possible word reordering"
+      ],
+      "types": [
+        "technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A novel technique designed to limit the reordering of words in statistical machine translation, enhancing the efficiency of the search algorithm, particularly for translating from German to English.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "novel technique to restrict the possible word reordering",
+          "local_types": [
+            "technique"
+          ],
+          "iri": "Entity-novel_technique_to_restrict_the_possible_word_reordering-Mention-1"
+        }
+      ],
+      "relevance": 0.70166015625
+    },
+    "Entity-the_verbmobil_task": {
+      "node_id": "the_verbmobil_task",
+      "disambiguation_index": 0,
+      "label": "the Verbmobil task",
+      "aliases": [
+        "the Verbmobil task"
+      ],
+      "types": [
+        "task",
+        "language task"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The Verbmobil task refers to a limited-domain spoken-language task focused on German-English translation, utilizing an 8000-word vocabulary.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the Verbmobil task",
+          "local_types": [
+            "task",
+            "language task"
+          ],
+          "iri": "Entity-the_verbmobil_task-Mention-1"
+        }
+      ],
+      "relevance": 0.701171875
+    },
+    "Entity-verbmobil": {
+      "node_id": "verbmobil",
+      "disambiguation_index": 0,
+      "label": "Verbmobil",
+      "aliases": [
+        "Verbmobil"
+      ],
+      "types": [
+        "project",
+        "task",
+        "spoken-language"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Verbmobil is a research project focused on developing a limited-domain spoken-language translation system, specifically for German and English.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Verbmobil",
+          "local_types": [
+            "project",
+            "task",
+            "spoken-language"
+          ],
+          "iri": "Entity-verbmobil-Mention-1"
+        }
+      ],
+      "relevance": 0.693359375
+    },
+    "Entity-dp-based_solution": {
+      "node_id": "dp-based_solution",
+      "disambiguation_index": 0,
+      "label": "DP-based solution",
+      "aliases": [
+        "DP-based solution"
+      ],
+      "types": [
+        "algorithm",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "The DP-based solution refers to an algorithm derived from dynamic programming techniques applied to the traveling salesman problem, which is utilized in the context of developing an efficient search procedure for statistical machine translation.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "DP-based solution",
+          "local_types": [
+            "algorithm",
+            "method"
+          ],
+          "iri": "Entity-dp-based_solution-Mention-1"
+        }
+      ],
+      "relevance": 0.6875
+    },
+    "Entity-search_procedure": {
+      "node_id": "search_procedure",
+      "disambiguation_index": 0,
+      "label": "search procedure",
+      "aliases": [
+        "search procedure"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The 'search procedure' refers to a method for statistical machine translation that utilizes dynamic programming to efficiently manage word reordering between source and target languages.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "search procedure",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-search_procedure-Mention-1"
+        }
+      ],
+      "relevance": 0.6796875
+    },
+    "Entity-the_experimental_test": {
+      "node_id": "the_experimental_test",
+      "disambiguation_index": 0,
+      "label": "The experimental tests",
+      "aliases": [
+        "The experimental tests"
+      ],
+      "types": [
+        "experiment",
+        "test"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The experimental tests refer to the evaluations conducted on the Verbmobil task, which involves translating spoken language from German to English using a limited vocabulary of 8000 words.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "The experimental tests",
+          "local_types": [
+            "experiment",
+            "test"
+          ],
+          "iri": "Entity-the_experimental_test-Mention-1"
+        }
+      ],
+      "relevance": 0.66845703125
+    },
+    "Entity-8000-word_vocabulary": {
+      "node_id": "8000-word_vocabulary",
+      "disambiguation_index": 0,
+      "label": "8000-word vocabulary",
+      "aliases": [
+        "8000-word vocabulary"
+      ],
+      "types": [
+        "vocabulary size",
+        "vocabulary",
+        "dataset",
+        "language resource"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The '8000-word vocabulary' refers to the specific set of words used in the Verbmobil task, which is a limited-domain spoken-language task focused on German to English translation.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "8000-word vocabulary",
+          "local_types": [
+            "vocabulary size",
+            "vocabulary",
+            "dataset",
+            "language resource"
+          ],
+          "iri": "Entity-8000-word_vocabulary-Mention-1"
+        }
+      ],
+      "relevance": 0.66064453125
+    },
+    "Entity-dp": {
+      "node_id": "dp",
+      "disambiguation_index": 0,
+      "label": "DP",
+      "aliases": [
+        "DP"
+      ],
+      "types": [
+        "algorithm",
+        "abbreviation",
+        "programming"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "DP refers to dynamic programming, an algorithmic approach used in the paper to develop a search procedure for statistical machine translation.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "DP",
+          "local_types": [
+            "algorithm",
+            "abbreviation",
+            "programming"
+          ],
+          "iri": "Entity-dp-Mention-1"
+        }
+      ],
+      "relevance": 0.63818359375
+    },
+    "Entity-word_reordering_between_source_and_target_language": {
+      "node_id": "word_reordering_between_source_and_target_language",
+      "disambiguation_index": 0,
+      "label": "word reordering between source and target language",
+      "aliases": [
+        "word reordering between source and target language"
+      ],
+      "types": [
+        "language",
+        "reordering"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Word reordering between source and target language refers to the systematic rearrangement of words during the translation process to accommodate the syntactic and semantic differences between the source language and the target language, thereby enhancing the efficiency of statistical machine translation algorithms.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "word reordering between source and target language",
+          "local_types": [
+            "language",
+            "reordering"
+          ],
+          "iri": "Entity-word_reordering_between_source_and_target_language-Mention-1"
+        }
+      ],
+      "relevance": 0.63134765625
+    },
+    "Entity-dp-based_solution_to_the_traveling_salesman_problem": {
+      "node_id": "dp-based_solution_to_the_traveling_salesman_problem",
+      "disambiguation_index": 0,
+      "label": "DP-based solution to the traveling salesman problem",
+      "aliases": [
+        "DP-based solution to the traveling salesman problem"
+      ],
+      "types": [
+        "algorithm",
+        "problem",
+        "solution"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A DP-based solution to the traveling salesman problem refers to an algorithmic approach that utilizes dynamic programming techniques to efficiently solve the traveling salesman problem, which involves finding the shortest possible route that visits a set of cities and returns to the origin city.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "DP-based solution to the traveling salesman problem",
+          "local_types": [
+            "algorithm",
+            "problem",
+            "solution"
+          ],
+          "iri": "Entity-dp-based_solution_to_the_traveling_salesman_problem-Mention-1"
+        }
+      ],
+      "relevance": 0.6298828125
+    },
+    "Entity-search_procedure_for_statistical_machine_translation": {
+      "node_id": "search_procedure_for_statistical_machine_translation",
+      "disambiguation_index": 0,
+      "label": "search procedure for statistical machine translation",
+      "aliases": [
+        "search procedure for statistical machine translation"
+      ],
+      "types": [
+        "method",
+        "machine translation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A search procedure for statistical machine translation is a systematic method used to find the best translation output from a statistical model by evaluating possible translation candidates based on certain criteria.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "search procedure for statistical machine translation",
+          "local_types": [
+            "method",
+            "machine translation"
+          ],
+          "iri": "Entity-search_procedure_for_statistical_machine_translation-Mention-1"
+        }
+      ],
+      "relevance": 0.62939453125
+    },
+    "Entity-efficient_search_algorithm": {
+      "node_id": "efficient_search_algorithm",
+      "disambiguation_index": 0,
+      "label": "efficient search algorithm",
+      "aliases": [
+        "efficient search algorithm"
+      ],
+      "types": [
+        "algorithm",
+        "search"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "An efficient search algorithm refers to a computational method designed to optimize the process of finding solutions in statistical machine translation by employing dynamic programming techniques to limit word reordering between source and target languages.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "efficient search algorithm",
+          "local_types": [
+            "algorithm",
+            "search"
+          ],
+          "iri": "Entity-efficient_search_algorithm-Mention-1"
+        }
+      ],
+      "relevance": 0.62158203125
+    },
+    "Entity-mt": {
+      "node_id": "mt",
+      "disambiguation_index": 0,
+      "label": "MT",
+      "aliases": [
+        "MT"
+      ],
+      "types": [
+        "translation method",
+        "abbreviation",
+        "machine translation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "MT refers to 'machine translation', specifically a statistical approach to translating languages using dynamic programming techniques.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "MT",
+          "local_types": [
+            "translation method",
+            "abbreviation",
+            "machine translation"
+          ],
+          "iri": "Entity-mt-Mention-1"
+        }
+      ],
+      "relevance": 0.61474609375
+    },
+    "Entity-novel_technique": {
+      "node_id": "novel_technique",
+      "disambiguation_index": 0,
+      "label": "novel technique",
+      "aliases": [
+        "novel technique"
+      ],
+      "types": [
+        "technique",
+        "approach",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'novel technique' refers to a method for restricting word reordering between source and target languages in statistical machine translation, aimed at improving the efficiency of the search algorithm.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "novel technique",
+          "local_types": [
+            "technique",
+            "approach",
+            "method"
+          ],
+          "iri": "Entity-novel_technique-Mention-1"
+        }
+      ],
+      "relevance": 0.61181640625
+    },
+    "Entity-statistical_machine_translation": {
+      "node_id": "statistical_machine_translation",
+      "disambiguation_index": 0,
+      "label": "statistical machine translation",
+      "aliases": [
+        "statistical machine translation"
+      ],
+      "types": [
+        "technology",
+        "computational linguistics",
+        "field",
+        "machine translation",
+        "translation method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Statistical machine translation is a method of translating text from one language to another using statistical models that analyze and predict the likelihood of word sequences based on large corpora of bilingual text.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "statistical machine translation",
+          "local_types": [
+            "technology",
+            "computational linguistics",
+            "field",
+            "machine translation",
+            "translation method"
+          ],
+          "iri": "Entity-statistical_machine_translation-Mention-1"
+        }
+      ],
+      "relevance": 0.607421875
+    },
+    "Entity-limited-domain_spoken-language_task": {
+      "node_id": "limited-domain_spoken-language_task",
+      "disambiguation_index": 0,
+      "label": "limited-domain spoken-language task",
+      "aliases": [
+        "limited-domain spoken-language task",
+        "a limited-domain spoken-language task"
+      ],
+      "types": [
+        "spoken language processing",
+        "language processing task",
+        "domain",
+        "task type",
+        "spoken-language task",
+        "task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A limited-domain spoken-language task is a specific type of language processing task that focuses on a restricted set of topics or vocabulary, typically designed for applications such as speech recognition or dialogue systems.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "limited-domain spoken-language task",
+          "local_types": [
+            "spoken language processing",
+            "language processing task",
+            "task type",
+            "domain",
+            "task"
+          ],
+          "iri": "Entity-limited-domain_spoken-language_task-Mention-1"
+        },
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "a limited-domain spoken-language task",
+          "local_types": [
+            "task",
+            "spoken-language task"
+          ],
+          "iri": "Entity-limited-domain_spoken-language_task-Mention-2"
+        }
+      ],
+      "relevance": 0.6015625
+    },
+    "Entity-word_reordering": {
+      "node_id": "word_reordering",
+      "disambiguation_index": 0,
+      "label": "word reordering",
+      "aliases": [
+        "word reordering"
+      ],
+      "types": [
+        "process",
+        "language processing",
+        "translation technique",
+        "linguistic process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Word reordering is a linguistic process that involves rearranging the sequence of words in a sentence to improve clarity, coherence, or to meet the syntactic and semantic requirements of a target language during translation or language processing.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "word reordering",
+          "local_types": [
+            "process",
+            "language processing",
+            "translation technique",
+            "linguistic process"
+          ],
+          "iri": "Entity-word_reordering-Mention-1"
+        }
+      ],
+      "relevance": 0.576171875
+    },
+    "Entity-german": {
+      "node_id": "german",
+      "disambiguation_index": 0,
+      "label": "German",
+      "aliases": [
+        "German"
+      ],
+      "types": [
+        "language"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "German refers to the German language, which is the source language in the context of statistical machine translation to English.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "German",
+          "local_types": [
+            "language"
+          ],
+          "iri": "Entity-german-Mention-1"
+        }
+      ],
+      "relevance": 0.57470703125
+    },
+    "Entity-traveling_salesman_problem": {
+      "node_id": "traveling_salesman_problem",
+      "disambiguation_index": 0,
+      "label": "traveling salesman problem",
+      "aliases": [
+        "traveling salesman problem"
+      ],
+      "types": [
+        "mathematical problem",
+        "optimization problem",
+        "problem",
+        "combinatorial optimization problem",
+        "combinatorial problem"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "The traveling salesman problem is a classic optimization problem in combinatorial mathematics that seeks to determine the shortest possible route for a salesman to visit a set of cities and return to the origin city, visiting each city exactly once.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "traveling salesman problem",
+          "local_types": [
+            "mathematical problem",
+            "optimization problem",
+            "problem",
+            "combinatorial optimization problem",
+            "combinatorial problem"
+          ],
+          "iri": "Entity-traveling_salesman_problem-Mention-1"
+        }
+      ],
+      "relevance": 0.5576171875
+    },
+    "Entity-translation_direction_from_german_to_english": {
+      "node_id": "translation_direction_from_german_to_english",
+      "disambiguation_index": 0,
+      "label": "translation direction from German to English",
+      "aliases": [
+        "translation direction from German to English",
+        "the translation direction from German to English"
+      ],
+      "types": [
+        "translation",
+        "translation direction",
+        "language pair"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The translation direction from German to English refers to the process or method of converting text or speech from the German language into the English language.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "translation direction from German to English",
+          "local_types": [
+            "translation",
+            "language pair"
+          ],
+          "iri": "Entity-translation_direction_from_german_to_english-Mention-1"
+        },
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the translation direction from German to English",
+          "local_types": [
+            "translation direction",
+            "language pair"
+          ],
+          "iri": "Entity-translation_direction_from_german_to_english-Mention-2"
+        }
+      ],
+      "relevance": 0.546875
+    },
+    "Entity-german-english": {
+      "node_id": "german-english",
+      "disambiguation_index": 0,
+      "label": "German-English",
+      "aliases": [
+        "German-English"
+      ],
+      "types": [
+        "translation",
+        "language pair"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "German-English refers to the language pair used for translation between the German and English languages.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "German-English",
+          "local_types": [
+            "translation",
+            "language pair"
+          ],
+          "iri": "Entity-german-english-Mention-1"
+        }
+      ],
+      "relevance": 0.517578125
+    },
+    "Entity-search_algorithm": {
+      "node_id": "search_algorithm",
+      "disambiguation_index": 0,
+      "label": "search algorithm",
+      "aliases": [
+        "search algorithm"
+      ],
+      "types": [
+        "algorithm",
+        "computational method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A search algorithm is a computational method used to retrieve information or find solutions by exploring a set of possible options or paths based on defined criteria.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "search algorithm",
+          "local_types": [
+            "algorithm",
+            "computational method"
+          ],
+          "iri": "Entity-search_algorithm-Mention-1"
+        }
+      ],
+      "relevance": 0.5126953125
+    },
+    "Entity-translation_direction": {
+      "node_id": "translation_direction",
+      "disambiguation_index": 0,
+      "label": "translation direction",
+      "aliases": [
+        "translation direction"
+      ],
+      "types": [
+        "language process",
+        "translation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Translation direction refers to the specific pathway or orientation in which a text is translated from one language to another, indicating the source and target languages involved in the translation process.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "translation direction",
+          "local_types": [
+            "language process",
+            "translation"
+          ],
+          "iri": "Entity-translation_direction-Mention-1"
+        }
+      ],
+      "relevance": 0.50390625
+    },
+    "Entity-dynamic_programming": {
+      "node_id": "dynamic_programming",
+      "disambiguation_index": 0,
+      "label": "dynamic programming",
+      "aliases": [
+        "dynamic programming"
+      ],
+      "types": [
+        "programming",
+        "computational method",
+        "algorithm",
+        "optimization technique",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Dynamic programming is a computational method used for solving complex problems by breaking them down into simpler subproblems, which can be solved independently and combined to find the overall solution.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "dynamic programming",
+          "local_types": [
+            "programming",
+            "computational method",
+            "algorithm",
+            "optimization technique",
+            "method"
+          ],
+          "iri": "Entity-dynamic_programming-Mention-1"
+        }
+      ],
+      "relevance": 0.50048828125
+    },
+    "Entity-target_language": {
+      "node_id": "target_language",
+      "disambiguation_index": 0,
+      "label": "target language",
+      "aliases": [
+        "target language"
+      ],
+      "types": [
+        "language"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A target language is the specific language into which text or speech is translated or adapted from a source language.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "target language",
+          "local_types": [
+            "language"
+          ],
+          "iri": "Entity-target_language-Mention-1"
+        }
+      ],
+      "relevance": 0.48828125
+    },
+    "Entity-english": {
+      "node_id": "english",
+      "disambiguation_index": 0,
+      "label": "English",
+      "aliases": [
+        "English"
+      ],
+      "types": [
+        "language"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "English is a West Germanic language that is primarily spoken in England and is widely used as a global lingua franca.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "English",
+          "local_types": [
+            "language"
+          ],
+          "iri": "Entity-english-Mention-1"
+        }
+      ],
+      "relevance": 0.4443359375
+    },
+    "Entity-experimental_test": {
+      "node_id": "experimental_test",
+      "disambiguation_index": 0,
+      "label": "experimental tests",
+      "aliases": [
+        "experimental tests"
+      ],
+      "types": [
+        "research method",
+        "experiment",
+        "evaluation technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Experimental tests are systematic procedures conducted to evaluate hypotheses or assess the performance of a system or process under controlled conditions.",
+      "mentions": [
+        {
+          "reference": "Paper-68-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "experimental tests",
+          "local_types": [
+            "research method",
+            "experiment",
+            "evaluation technique"
+          ],
+          "iri": "Entity-experimental_test-Mention-1"
+        }
+      ],
+      "relevance": 0.43310546875
+    }
+  },
+  "summary": "In this paper , we describe a search procedure for statistical machine translation -LRB- MT -RRB- based on dynamic programming -LRB- DP -RRB- . Starting from a DP-based solution to the traveling salesman problem , we present a novel technique to restrict the possible word reordering between source and target language in order to achieve an efficient search algorithm . A search restriction especially useful for the translation direction from German to English is presented . The experimental tests are carried out on the Verbmobil task -LRB- German-English , 8000-word vocabulary -RRB- , which is a limited-domain spoken-language task .",
+  "triples": [
+    [
+      "Entity-this_paper",
+      "Predicate-describes",
+      "Entity-search_procedure_for_statistical_machine_translation"
+    ],
+    [
+      "Entity-search_procedure_for_statistical_machine_translation",
+      "Predicate-is_based_on",
+      "Entity-dynamic_programming"
+    ],
+    [
+      "Entity-dp-based_solution",
+      "Predicate-is_based_on",
+      "Entity-traveling_salesman_problem"
+    ],
+    [
+      "Entity-novel_technique",
+      "Predicate-restricts",
+      "Entity-word_reordering"
+    ],
+    [
+      "Entity-novel_technique_to_restrict_the_possible_word_reordering",
+      "Predicate-achieves",
+      "Entity-efficient_search_algorithm"
+    ],
+    [
+      "Entity-dp-based_solution",
+      "Predicate-is_a_solution_to",
+      "Entity-traveling_salesman_problem"
+    ],
+    [
+      "Entity-search_restriction",
+      "Predicate-is_useful_for",
+      "Entity-translation_direction_from_german_to_english"
+    ],
+    [
+      "Entity-the_experimental_test",
+      "Predicate-are_carried_out_on",
+      "Entity-the_verbmobil_task"
+    ],
+    [
+      "Entity-the_verbmobil_task",
+      "Predicate-is",
+      "Entity-limited-domain_spoken-language_task"
+    ],
+    [
+      "Entity-experimental_test",
+      "Predicate-are_carried_out_on",
+      "Entity-verbmobil_task"
+    ],
+    [
+      "Entity-verbmobil_task",
+      "Predicate-is_a_task_of",
+      "Entity-german-english"
+    ],
+    [
+      "Entity-verbmobil_task",
+      "Predicate-has_a_vocabulary_of",
+      "Entity-8000-word_vocabulary"
+    ],
+    [
+      "Entity-verbmobil_task",
+      "Predicate-is_a_type_of",
+      "Entity-limited-domain_spoken-language_task"
+    ],
+    [
+      "Entity-verbmobil_task",
+      "Predicate-experimental_tests_are_carried_out_on",
+      "Entity-this_paper"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents",
+      "Entity-search_restriction"
+    ],
+    [
+      "Entity-search_restriction",
+      "Predicate-is_applied_in",
+      "Entity-verbmobil_task"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-verbmobil_task",
+      "skos:broader",
+      "Entity-limited-domain_spoken-language_task"
+    ],
+    [
+      "Entity-search_procedure_for_statistical_machine_translation",
+      "skos:broader",
+      "Entity-statistical_machine_translation"
+    ],
+    [
+      "Entity-mt",
+      "skos:broader",
+      "Entity-statistical_machine_translation"
+    ],
+    [
+      "Entity-translation_direction_from_german_to_english",
+      "skos:broader",
+      "Entity-translation_direction"
+    ]
+  ],
+  "predicates": {
+    "Predicate-describes": {
+      "label": "describes",
+      "description": "The predicate 'describes' indicates that the subject provides an explanation, account, or detailed information about the object, which can be a concept, process, or entity. It establishes a relationship where the subject conveys knowledge or insights regarding the characteristics, functions, or significance of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_based_on": {
+      "label": "is based on",
+      "description": "The predicate 'is based on' indicates that the subject is founded upon, derived from, or relies upon the object as a fundamental principle, method, or concept. It establishes a relationship where the object serves as a foundational element that informs, supports, or influences the subject's structure, function, or operation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-restricts": {
+      "label": "restricts",
+      "description": "The predicate 'restricts' indicates a limiting or constraining relationship between the subject and the object, where the subject imposes certain boundaries or conditions that prevent the object from occurring freely or in its entirety. This implies that the subject has the power or authority to control the extent or manner in which the object can manifest or be utilized.",
+      "disambiguation_index": 0
+    },
+    "Predicate-achieves": {
+      "label": "achieves",
+      "description": "The predicate 'achieves' indicates a successful outcome or result that is obtained through the application or implementation of the subject. It connects the subject, which represents a method, process, or initiative, to the object, which signifies the goal, result, or product that is realized as a consequence of the subject's effectiveness.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_solution_to": {
+      "label": "is a solution to",
+      "description": "The predicate 'is a solution to' establishes a relationship between a subject, which represents a method, approach, or technique, and an object, which denotes a problem, challenge, or question. This relationship indicates that the subject effectively addresses, resolves, or provides an answer to the object, thereby demonstrating its applicability or effectiveness in the context of the specified issue.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_useful_for": {
+      "label": "is useful for",
+      "description": "The predicate 'is useful for' establishes a relationship where the subject provides a benefit or advantage in achieving a specific purpose or goal represented by the object. It indicates that the subject contributes positively to the effectiveness or efficiency of the action or process described by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_carried_out_on": {
+      "label": "are carried out on",
+      "description": "The predicate 'are carried out on' indicates that the subject performs or executes a specific action, process, or activity that is directed towards or focused on the object. It implies a relationship where the subject is actively engaging with the object in a manner that involves investigation, experimentation, or application, often to achieve a particular goal or to gather information.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is": {
+      "label": "is",
+      "description": "The predicate 'is' serves as a linking verb that establishes an identity or equivalence between the subject and the object. It indicates that the subject can be classified or defined in terms of the object, suggesting that they share a specific relationship or characteristic. In this context, 'is' functions to assert that the subject embodies the qualities or attributes represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_task_of": {
+      "label": "is a task of",
+      "description": "The predicate 'is a task of' establishes a relationship where the subject represents a specific task or activity, and the object denotes the domain, language pair, or context in which that task is relevant or applicable. It indicates that the subject is an instance or example of a broader category of tasks associated with the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has_a_vocabulary_of": {
+      "label": "has a vocabulary of",
+      "description": "The predicate 'has a vocabulary of' establishes a relationship between a subject and an object by indicating the specific set of words or terms that the subject is capable of recognizing, producing, or utilizing. This relationship highlights the extent or size of the vocabulary associated with the subject, often quantified in terms of the number of words or phrases included in that vocabulary.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_type_of": {
+      "label": "is a type of",
+      "description": "The predicate 'is a type of' establishes a hierarchical relationship between the subject and the object, indicating that the subject belongs to a broader category represented by the object. It signifies that the subject is a specific instance or variation within the general classification denoted by the object, thereby providing a way to categorize and understand the subject in relation to other entities.",
+      "disambiguation_index": 0
+    },
+    "Predicate-experimental_tests_are_carried_out_on": {
+      "label": "experimental tests are carried out on",
+      "description": "The predicate 'experimental tests are carried out on' indicates that a systematic investigation or evaluation is being conducted regarding the object, which is typically a concept, method, or material, in relation to the subject. This implies that the subject is the focus of the testing process, and the results or findings from these tests are intended to provide insights, validate hypotheses, or assess performance related to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents": {
+      "label": "presents",
+      "description": "The predicate 'presents' indicates that the subject is providing, showcasing, or introducing the object in a manner that conveys information, findings, or concepts related to the object. It implies a formal or structured delivery of content, often in a context where the subject aims to inform or educate the audience about the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_applied_in": {
+      "label": "is applied in",
+      "description": "The predicate 'is applied in' indicates that the subject is utilized or implemented within the context of the object. It signifies a relationship where the subject serves a functional role or contributes to the processes, activities, or frameworks represented by the object.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or example that falls under the wider category represented by the object. This relationship suggests that the object encompasses a larger set of concepts or entities, of which the subject is a part, thereby illustrating a generalization from the specific to the more inclusive.",
+      "disambiguation_index": 0
+    }
+  }
+}

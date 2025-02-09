@@ -1,0 +1,698 @@
+{
+  "iri": "Paper-87",
+  "title": "N03-1033",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-87-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-87-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-87-Section-1-Paragraph-1-Sentence-1",
+              "text": "We present a new part-of-speech tagger that demonstrates the following ideas : -LRB- i -RRB- explicit use of both preceding and following tag contexts via a dependency network representation , -LRB- ii -RRB- broad use of lexical features , including jointly conditioning on multiple consecutive words , -LRB- iii -RRB- effective use of priors in conditional loglinear models , and -LRB- iv -RRB- fine-grained modeling of unknown word features ."
+            },
+            {
+              "iri": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+              "text": "Using these ideas together , the resulting tagger gives a 97.24 % accuracy on the Penn Treebank WSJ , an error reduction of 4.4 % on the best previous single automatically learned tagging result ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00023412704467773438,
+    6.258589029312134,
+    19.927736520767212,
+    13.226868152618408,
+    0.01944279670715332,
+    6.508827209472656e-05,
+    8.296966552734375e-05,
+    18.172729015350342,
+    28.712544918060303,
+    1.2785186767578125,
+    0.039582014083862305,
+    0.006502628326416016,
+    0.00013685226440429688,
+    13.336732149124146,
+    0.00023245811462402344,
+    0.013165712356567383,
+    0.0005955696105957031,
+    2.045466423034668,
+    0.0005924701690673828,
+    0.00018143653869628906,
+    32.640976905822754,
+    2.0178239345550537,
+    20.13012146949768,
+    0.9737286567687988,
+    0.0005502700805664062,
+    0.007683277130126953
+  ],
+  "nodes": {
+    "Entity-a_new_part-of-speech_tagger": {
+      "node_id": "a_new_part-of-speech_tagger",
+      "disambiguation_index": 0,
+      "label": "a new part-of-speech tagger",
+      "aliases": [
+        "a new part-of-speech tagger"
+      ],
+      "types": [
+        "tool",
+        "tagger"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A new part-of-speech tagger that utilizes a dependency network representation for context, incorporates a wide range of lexical features, employs effective priors in conditional loglinear models, and models unknown word features finely, achieving 97.24% accuracy on the Penn Treebank WSJ.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a new part-of-speech tagger",
+          "local_types": [
+            "tool",
+            "tagger"
+          ],
+          "iri": "Entity-a_new_part-of-speech_tagger-Mention-1"
+        }
+      ],
+      "relevance": 0.8427734375
+    },
+    "Entity-the_resulting_tagger": {
+      "node_id": "the_resulting_tagger",
+      "disambiguation_index": 0,
+      "label": "the resulting tagger",
+      "aliases": [
+        "the resulting tagger"
+      ],
+      "types": [
+        "tool",
+        "tagger"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The resulting tagger refers to a newly developed part-of-speech tagging tool that achieves 97.24% accuracy on the Penn Treebank WSJ by utilizing advanced techniques such as dependency network representation, broad lexical feature conditioning, and effective prior modeling in conditional loglinear models.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the resulting tagger",
+          "local_types": [
+            "tool",
+            "tagger"
+          ],
+          "iri": "Entity-the_resulting_tagger-Mention-1"
+        }
+      ],
+      "relevance": 0.7939453125
+    },
+    "Entity-best_previous_single_automatically_learned_tagging_result": {
+      "node_id": "best_previous_single_automatically_learned_tagging_result",
+      "disambiguation_index": 0,
+      "label": "best previous single automatically learned tagging result",
+      "aliases": [
+        "the best previous single automatically learned tagging result",
+        "best previous single automatically learned tagging result"
+      ],
+      "types": [
+        "result",
+        "tagging result",
+        "benchmark"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'best previous single automatically learned tagging result' refers to the highest accuracy achieved by any prior automated part-of-speech tagging system before the introduction of the new tagger, which improved upon it by achieving a 97.24% accuracy on the Penn Treebank WSJ.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "best previous single automatically learned tagging result",
+          "local_types": [
+            "result",
+            "benchmark"
+          ],
+          "iri": "Entity-best_previous_single_automatically_learned_tagging_result-Mention-1"
+        },
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the best previous single automatically learned tagging result",
+          "local_types": [
+            "result",
+            "tagging result"
+          ],
+          "iri": "Entity-best_previous_single_automatically_learned_tagging_result-Mention-2"
+        }
+      ],
+      "relevance": 0.75146484375
+    },
+    "Entity-97.24__accuracy": {
+      "node_id": "97.24__accuracy",
+      "disambiguation_index": 0,
+      "label": "97.24 % accuracy",
+      "aliases": [
+        "97.24 % accuracy"
+      ],
+      "types": [
+        "accuracy",
+        "metric"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The term '97.24 % accuracy' refers to the performance metric achieved by a new part-of-speech tagger on the Penn Treebank WSJ, indicating the proportion of correctly tagged words in the dataset.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "97.24 % accuracy",
+          "local_types": [
+            "accuracy",
+            "metric"
+          ],
+          "iri": "Entity-97.24__accuracy-Mention-1"
+        }
+      ],
+      "relevance": 0.7197265625
+    },
+    "Entity-tagger": {
+      "node_id": "tagger",
+      "disambiguation_index": 0,
+      "label": "tagger",
+      "aliases": [
+        "tagger"
+      ],
+      "types": [
+        "tool",
+        "software"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'tagger' refers to a part-of-speech tagging software that utilizes advanced techniques such as dependency network representation and conditional loglinear models to achieve high accuracy in linguistic analysis.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "tagger",
+          "local_types": [
+            "tool",
+            "software"
+          ],
+          "iri": "Entity-tagger-Mention-1"
+        }
+      ],
+      "relevance": 0.70849609375
+    },
+    "Entity-these_idea": {
+      "node_id": "these_idea",
+      "disambiguation_index": 0,
+      "label": "these ideas",
+      "aliases": [
+        "these ideas"
+      ],
+      "types": [
+        "concept"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'these ideas' refers to the combined methodologies employed in a new part-of-speech tagger, which include explicit use of tag contexts through a dependency network, broad lexical feature utilization, effective prior application in conditional loglinear models, and fine-grained modeling of unknown word features.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "these ideas",
+          "local_types": [
+            "concept"
+          ],
+          "iri": "Entity-these_idea-Mention-1"
+        }
+      ],
+      "relevance": 0.703125
+    },
+    "Entity-dependency_network_representation": {
+      "node_id": "dependency_network_representation",
+      "disambiguation_index": 0,
+      "label": "dependency network representation",
+      "aliases": [
+        "dependency network representation"
+      ],
+      "types": [
+        "representation",
+        "model",
+        "network"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The dependency network representation refers to a structured model used in a part-of-speech tagger that explicitly incorporates both preceding and following tag contexts to improve tagging accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "dependency network representation",
+          "local_types": [
+            "representation",
+            "model",
+            "network"
+          ],
+          "iri": "Entity-dependency_network_representation-Mention-1"
+        }
+      ],
+      "relevance": 0.6728515625
+    },
+    "Entity-part-of-speech_tagger": {
+      "node_id": "part-of-speech_tagger",
+      "disambiguation_index": 0,
+      "label": "part-of-speech tagger",
+      "aliases": [
+        "part-of-speech tagger"
+      ],
+      "types": [
+        "linguistic model",
+        "software",
+        "linguistic tool",
+        "tool",
+        "tagger"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A part-of-speech tagger is a linguistic tool or software that assigns parts of speech to individual words in a text based on their context and grammatical rules.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "part-of-speech tagger",
+          "local_types": [
+            "linguistic model",
+            "software",
+            "linguistic tool",
+            "tool",
+            "tagger"
+          ],
+          "iri": "Entity-part-of-speech_tagger-Mention-1"
+        }
+      ],
+      "relevance": 0.662109375
+    },
+    "Entity-error_reduction": {
+      "node_id": "error_reduction",
+      "disambiguation_index": 0,
+      "label": "error reduction",
+      "aliases": [
+        "error reduction"
+      ],
+      "types": [
+        "performance improvement"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Error reduction refers to the decrease in the error rate achieved by the new part-of-speech tagger, which results in a 4.4% improvement over the previous best tagging accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "error reduction",
+          "local_types": [
+            "performance improvement"
+          ],
+          "iri": "Entity-error_reduction-Mention-1"
+        }
+      ],
+      "relevance": 0.6513671875
+    },
+    "Entity-prior_in_conditional_loglinear_model": {
+      "node_id": "prior_in_conditional_loglinear_model",
+      "disambiguation_index": 0,
+      "label": "priors in conditional loglinear models",
+      "aliases": [
+        "priors in conditional loglinear models"
+      ],
+      "types": [
+        "model",
+        "loglinear model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Priors in conditional loglinear models refer to the prior probability distributions that are incorporated into the framework of conditional loglinear models to influence the estimation of parameters and improve the model's performance in tasks such as part-of-speech tagging.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "priors in conditional loglinear models",
+          "local_types": [
+            "model",
+            "loglinear model"
+          ],
+          "iri": "Entity-prior_in_conditional_loglinear_model-Mention-1"
+        }
+      ],
+      "relevance": 0.6318359375
+    },
+    "Entity-unknown_word_feature": {
+      "node_id": "unknown_word_feature",
+      "disambiguation_index": 0,
+      "label": "unknown word features",
+      "aliases": [
+        "unknown word features"
+      ],
+      "types": [
+        "feature",
+        "linguistic feature"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Unknown word features refer to the linguistic characteristics and properties of words that are not present in the training data of a part-of-speech tagger, which are modeled in a fine-grained manner to improve tagging accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "unknown word features",
+          "local_types": [
+            "feature",
+            "linguistic feature"
+          ],
+          "iri": "Entity-unknown_word_feature-Mention-1"
+        }
+      ],
+      "relevance": 0.623046875
+    },
+    "Entity-error_reduction_of_4.4_": {
+      "node_id": "error_reduction_of_4.4_",
+      "disambiguation_index": 0,
+      "label": "error reduction of 4.4 %",
+      "aliases": [
+        "an error reduction of 4.4 %",
+        "error reduction of 4.4 %"
+      ],
+      "types": [
+        "error reduction",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The entity 'error reduction of 4.4 %' refers to the improvement in accuracy achieved by the new part-of-speech tagger compared to the best previous tagging result, indicating a decrease in tagging errors.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "error reduction of 4.4 %",
+          "local_types": [
+            "error reduction",
+            "metric"
+          ],
+          "iri": "Entity-error_reduction_of_4.4_-Mention-1"
+        },
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "an error reduction of 4.4 %",
+          "local_types": [
+            "metric",
+            "error reduction"
+          ],
+          "iri": "Entity-error_reduction_of_4.4_-Mention-2"
+        }
+      ],
+      "relevance": 0.62060546875
+    },
+    "Entity-multiple_consecutive_word": {
+      "node_id": "multiple_consecutive_word",
+      "disambiguation_index": 0,
+      "label": "multiple consecutive words",
+      "aliases": [
+        "multiple consecutive words"
+      ],
+      "types": [
+        "words",
+        "text"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'multiple consecutive words' refers to a linguistic feature used in part-of-speech tagging that involves analyzing and conditioning on sequences of words that appear together in a text to improve tagging accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "multiple consecutive words",
+          "local_types": [
+            "words",
+            "text"
+          ],
+          "iri": "Entity-multiple_consecutive_word-Mention-1"
+        }
+      ],
+      "relevance": 0.61572265625
+    },
+    "Entity-penn_treebank_wsj": {
+      "node_id": "penn_treebank_wsj",
+      "disambiguation_index": 0,
+      "label": "Penn Treebank WSJ",
+      "aliases": [
+        "Penn Treebank WSJ",
+        "the Penn Treebank WSJ"
+      ],
+      "types": [
+        "Penn Treebank",
+        "dataset",
+        "corpus"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "The Penn Treebank WSJ is a linguistic dataset derived from the Wall Street Journal, used for training and evaluating natural language processing models, particularly in syntactic parsing and part-of-speech tagging.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Penn Treebank WSJ",
+          "local_types": [
+            "dataset",
+            "corpus"
+          ],
+          "iri": "Entity-penn_treebank_wsj-Mention-1"
+        },
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the Penn Treebank WSJ",
+          "local_types": [
+            "dataset",
+            "Penn Treebank"
+          ],
+          "iri": "Entity-penn_treebank_wsj-Mention-2"
+        }
+      ],
+      "relevance": 0.5947265625
+    },
+    "Entity-lexical_feature": {
+      "node_id": "lexical_feature",
+      "disambiguation_index": 0,
+      "label": "lexical features",
+      "aliases": [
+        "lexical features"
+      ],
+      "types": [
+        "feature",
+        "linguistic feature"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Lexical features are characteristics of words that can include aspects such as their form, meaning, and usage in context, often utilized in linguistic analysis and natural language processing tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "lexical features",
+          "local_types": [
+            "feature",
+            "linguistic feature"
+          ],
+          "iri": "Entity-lexical_feature-Mention-1"
+        }
+      ],
+      "relevance": 0.56982421875
+    },
+    "Entity-conditional_loglinear_model": {
+      "node_id": "conditional_loglinear_model",
+      "disambiguation_index": 0,
+      "label": "conditional loglinear models",
+      "aliases": [
+        "conditional loglinear models"
+      ],
+      "types": [
+        "machine learning model",
+        "statistical model",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Conditional loglinear models are a class of statistical models used in machine learning that leverage log-linear functions to model the conditional probability of a target variable given a set of input features.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "conditional loglinear models",
+          "local_types": [
+            "machine learning model",
+            "statistical model",
+            "model"
+          ],
+          "iri": "Entity-conditional_loglinear_model-Mention-1"
+        }
+      ],
+      "relevance": 0.5654296875
+    },
+    "Entity-penn_treebank": {
+      "node_id": "penn_treebank",
+      "disambiguation_index": 0,
+      "label": "Penn Treebank",
+      "aliases": [
+        "Penn Treebank"
+      ],
+      "types": [
+        "dataset",
+        "corpus"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The Penn Treebank is a linguistic dataset that provides annotated text for the purpose of training and evaluating natural language processing models.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Penn Treebank",
+          "local_types": [
+            "dataset",
+            "corpus"
+          ],
+          "iri": "Entity-penn_treebank-Mention-1"
+        }
+      ],
+      "relevance": 0.5595703125
+    },
+    "Entity-accuracy": {
+      "node_id": "accuracy",
+      "disambiguation_index": 0,
+      "label": "accuracy",
+      "aliases": [
+        "accuracy"
+      ],
+      "types": [
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Accuracy is a performance metric that measures the proportion of correct predictions made by a model compared to the total number of predictions.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "accuracy",
+          "local_types": [
+            "performance metric"
+          ],
+          "iri": "Entity-accuracy-Mention-1"
+        }
+      ],
+      "relevance": 0.50390625
+    },
+    "Entity-wsj": {
+      "node_id": "wsj",
+      "disambiguation_index": 0,
+      "label": "WSJ",
+      "aliases": [
+        "WSJ"
+      ],
+      "types": [
+        "newspaper",
+        "dataset"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "WSJ refers to The Wall Street Journal, a prominent American newspaper known for its coverage of financial and economic news.",
+      "mentions": [
+        {
+          "reference": "Paper-87-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "WSJ",
+          "local_types": [
+            "newspaper",
+            "dataset"
+          ],
+          "iri": "Entity-wsj-Mention-1"
+        }
+      ],
+      "relevance": 0.34375
+    }
+  },
+  "summary": "We present a new part-of-speech tagger that demonstrates the following ideas : -LRB- i -RRB- explicit use of both preceding and following tag contexts via a dependency network representation , -LRB- ii -RRB- broad use of lexical features , including jointly conditioning on multiple consecutive words , -LRB- iii -RRB- effective use of priors in conditional loglinear models , and -LRB- iv -RRB- fine-grained modeling of unknown word features . Using these ideas together , the resulting tagger gives a 97.24 % accuracy on the Penn Treebank WSJ , an error reduction of 4.4 % on the best previous single automatically learned tagging result .",
+  "triples": [
+    [
+      "Entity-a_new_part-of-speech_tagger",
+      "Predicate-demonstrates",
+      "Entity-dependency_network_representation"
+    ],
+    [
+      "Entity-the_resulting_tagger",
+      "Predicate-gives",
+      "Entity-97.24__accuracy"
+    ],
+    [
+      "Entity-the_resulting_tagger",
+      "Predicate-gives",
+      "Entity-error_reduction_of_4.4_"
+    ],
+    [
+      "Entity-error_reduction_of_4.4_",
+      "Predicate-is_on",
+      "Entity-best_previous_single_automatically_learned_tagging_result"
+    ],
+    [
+      "Entity-the_resulting_tagger",
+      "Predicate-gives",
+      "Entity-accuracy"
+    ],
+    [
+      "Entity-a_new_part-of-speech_tagger",
+      "Predicate-demonstrates",
+      "Entity-these_idea"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-97.24__accuracy",
+      "skos:broader",
+      "Entity-accuracy"
+    ],
+    [
+      "Entity-a_new_part-of-speech_tagger",
+      "skos:broader",
+      "Entity-tagger"
+    ],
+    [
+      "Entity-error_reduction_of_4.4_",
+      "skos:broader",
+      "Entity-error_reduction"
+    ],
+    [
+      "Entity-the_resulting_tagger",
+      "skos:broader",
+      "Entity-tagger"
+    ],
+    [
+      "Entity-prior_in_conditional_loglinear_model",
+      "skos:broader",
+      "Entity-conditional_loglinear_model"
+    ],
+    [
+      "Entity-penn_treebank_wsj",
+      "skos:broader",
+      "Entity-penn_treebank"
+    ],
+    [
+      "Entity-part-of-speech_tagger",
+      "skos:broader",
+      "Entity-tagger"
+    ]
+  ],
+  "predicates": {
+    "Predicate-demonstrates": {
+      "label": "demonstrates",
+      "description": "The predicate 'demonstrates' indicates that the subject provides evidence or a clear example of the object, showcasing its characteristics, functionality, or validity. It implies a relationship where the subject serves to illustrate or prove the existence or effectiveness of the object in a tangible or observable manner.",
+      "disambiguation_index": 0
+    },
+    "Predicate-gives": {
+      "label": "gives",
+      "description": "The predicate 'gives' indicates a relationship where the subject provides, delivers, or produces a certain outcome or result represented by the object. In this context, it signifies that the subject is the source or agent that generates the specified value or quality expressed in the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_on": {
+      "label": "is on",
+      "description": "The predicate 'is on' indicates a relationship of relevance or association between the subject and the object, suggesting that the subject is positioned in relation to the object in a way that highlights a specific context, condition, or state. It often implies that the subject is being evaluated, measured, or compared against the object, establishing a connection that can denote performance, status, or a particular characteristic.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject represents a more specific instance or measure that falls under the general category defined by the object. In this context, the subject is a particular example or value that is encompassed by the broader concept represented by the object.",
+      "disambiguation_index": 0
+    }
+  }
+}

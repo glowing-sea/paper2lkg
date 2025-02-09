@@ -1,0 +1,819 @@
+{
+  "iri": "Paper-Building_An_Open_Source_Linux_Computing_System_On_RISC-V",
+  "title": "Building An Open Source Linux Computing System On RISC-V",
+  "authors": [
+    "M. Numan Ince",
+    "Joseph Ledet",
+    "Melih Gunay"
+  ],
+  "keywords": [
+    "Open Instruction Set Architecture",
+    "RISC-V",
+    "Linux from Scratch",
+    "Hardware",
+    "QEMU"
+  ],
+  "sections": [
+    {
+      "iri": "Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-1",
+              "text": "Abstract\u2014As is commonly known, hardware in a computer system requires a processor to run the operating system."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-2",
+              "text": "The primary architectures that form the basis of most processors are CISC and RISC."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-3",
+              "text": "CISC includes long sub-level commands for effective memory management and simple compiler implementations to be developed."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-4",
+              "text": "Thus CISC has a complex set of commands; hence the name Complex Instruction Set Computer."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-5",
+              "text": "On the other hand, CISC has had backward compatibility since the 1970s."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-6",
+              "text": "Reduced Instruction Set Computer (RISC), the other popular architecture, simplifies command sets and handles access to memory with load-store commands."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-7",
+              "text": "Since the instruction set is simplified, the hardware runs faster."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-8",
+              "text": "In addition, RISC-based processors contain less chip-sets and may be designed faster."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-9",
+              "text": "Currently, with the prevalence of the Internet of Things (IoT), the demand for RISC architectures has increased and its usage in embedded devices has become widespread."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-10",
+              "text": "The ARM processor is a successful example of the RISC architecture adaptation."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-11",
+              "text": "However, ARM processor production has certain license term limitations and contains a few design flaws in its architecture [1]."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-12",
+              "text": "In 2010, the RISC-V processor architecture, which was developed as an open source instruction set at Berkeley University, paves the way for open source hardware in terms of its BSD license and design professionalism."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-13",
+              "text": "As a result, it will be possible to produce their own processors for communities and organizations without license restrictions."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-14",
+              "text": "In this paper, we discuss the building blocks of the development life-cycle of an open source operating system on the RISC-V architecture."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-15",
+              "text": "As an operating system base, we implement MILIS Linux, an open source operating system development project."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-16",
+              "text": "It has an independent user space and its own package manager."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-17",
+              "text": "For a completely independent open source computing system, open source RISC-V hardware architecture provides the freedom that is needed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-2",
+      "subtitle": "Introduction",
+      "paragraphs": [
+        {
+          "iri": "Section-2-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-1",
+              "text": "A. RISC-V"
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-2",
+              "text": "In order to understand the RISC-V architectures that are used by current processor families, first it is essential to understand RISC."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-3",
+              "text": "These processors have a general set of instructions that are more homogeneous in length and execution time than CISC, which corresponds to more basic computational operations."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-4",
+              "text": "The implementation of the instructions is optimized and cluster command processing is used to increase the operating speed."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-5",
+              "text": "More register areas to minimize memory usage is included."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-6",
+              "text": "In order to achieve less memory and processing power, methods such as compression of the instruction set are utilized [2]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-7",
+              "text": "The disclosure of the Meltdown and Spectre vulnerabilities [1] shows that if we apply high security at software level, still weakness of computing resumes if we don't ensure at hardware level."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-8",
+              "text": "Processors are executing instructions in the computer with high-level access rights."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-9",
+              "text": "Some of the runtime conditions of the system are not visible, such as the Intel management engine [3]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-10",
+              "text": "In order to overcome this vulnerability, we have to make use of the open source synergy that Linux creates in the kernel on the hardware side."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-11",
+              "text": "Because the opening of ISA (Instruction Set Architecture), it can be discovered and improved by industry experts, commercial innovators and top academics."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-12",
+              "text": "The ability to add extensions to basic ISA makes it suitable for applications that require special configuration."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-13",
+              "text": "Although the processor market has been running for a long time, it has not been able to make great improvements, due to closed and license problems [4]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-14",
+              "text": "Although open source hardware studies have historically been conducted on Sparc [5] architectures or Power ISA [6] as open concepts, these projects have been insufficient and will not be able to create a large enough open source ecosystem."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-15",
+              "text": "Similarly, OpenRISC [7] is based on the open-source processor architecture OpenRISC1000."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-16",
+              "text": "Although Linux kernel 3.1 is supported, kernel-based improvements have slowed down over time."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-17",
+              "text": "Currently, though there is insufficient attention paid to these types of advances, Debian produced a port in 2014."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-18",
+              "text": "However, it closed the project due to copyright reasons in 2016."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-19",
+              "text": "But since UC-Berkeley started designing the RISC-V command set architecture, there has been new mobilization in academia and industry [8]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-20",
+              "text": "First of all, RISC-V is free and open source."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-21",
+              "text": "The usage license is licensed under the BSD license."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-22",
+              "text": "RISC-V primarily focuses on defining the command set architecture rather than specific implementations."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-23",
+              "text": "Still, there are also free open source core hardware designs [9]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-24",
+              "text": "RISC-V which is a nice leap for the processor sector has started to support many companies."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-25",
+              "text": "Technology relevant companies from many countries participated to RISC-V foundation."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-26",
+              "text": "Some major companies and institutes that contribute this foundation include; IIT Madras(India) [10], ETH Zurich(Swiss) [11], ASTC(Australia) [12], Barcelona Supercomputing Center(Spain) [13], ASELSAN(Turkey) [14]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-27",
+              "text": "By the way Western Digital also started to develop and use RISC-V architecture based processors in storage devices [15]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-28",
+              "text": "Unlike OpenRISC, RISC-V is aimed at a wider range of applications."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-29",
+              "text": "The Linux kernel's support for RISC-V is fairly new, starting with version 4.15 and 5.0 provides more extensive support, as well as RISC-V / Linux support for the kernel porting."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-30",
+              "text": "One of the outputs of RISC-V for hardware is to offer a more secure architecture and processor capabilities [12]."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-31",
+              "text": "Due to the lack of speculative memory access in the RISC-V processor, there is no hardware weakness such as the Meltdown-Spectre vulnerability."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-32",
+              "text": "The most important advantage of RISC-V is that it is easy to apply qualified security ideas because the work is carried out as open source."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-1",
+              "text": "B. MILIS Linux"
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-2",
+              "text": "MILIS (Milli Isletim Sistemi in Turkish) [16] project is a Linux distribution project that started voluntarily in 2016 and implemented using LFS (Linux from Scratch) [17] techniques."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-3",
+              "text": "Since 2019, the project is supported by Akdeniz University BAP unit [18]."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-4",
+              "text": "MILIS Linux differs from other GNU/Linux projects with its independent base and own package manager."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-5",
+              "text": "For the time being, a desktop-targeted operating system is being developed for x86-64 systems."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-6",
+              "text": "Target users of MILIS are, primarily government agencies, commercial organizations and private users."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-7",
+              "text": "It has the goal of being a free and easy to use operating system for individual and organizational use."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-8",
+              "text": "Unlike the other distributions, which is commonly forked from Debian, MILIS is not based on any existing Linux distribution."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-9",
+              "text": "It has its own package production collection and independent root file-system production."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-10",
+              "text": "It has open development platform for developers by providing pure Linux usage and development experience."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-11",
+              "text": "Secure network structure may easily be configured via a web browser."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-12",
+              "text": "Although the project has been initiated voluntarily, it has the ultimate goal of being an open source software ecosystem for the academic environment."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-13",
+              "text": "MILIS Linux project now aims to completely work on open source hardware and be one of the first in among Linux distributions."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-14",
+              "text": "Such open source hardware and operating system will have the benefit of being immune to world trade disputes such as the recent developments of Huawei product bans."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-1",
+              "text": "C. MILIS Linux and RISC-V"
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-2",
+              "text": "In order to achieve a completely open and secure system, related studies were followed and concluded that the RISC-V ISA study seem to be the most promising."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-3",
+              "text": "The members of the RISC-V foundation include some reputable companies including ASELSAN as a silver member."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-4",
+              "text": "ASELSAN and Bilkent University are collaborating to produce chips using RISC-V architecture [19]."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-5",
+              "text": "Although R&D for chip production is ongoing, to our knowledge, we are not aware of any operating system work locally to support such architecture."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-6",
+              "text": "Globally, such work is also limited to few distributions."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-7",
+              "text": "To remedy this gap, we are developing a fork of the MILIS project to support RISC-V architecture."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-8",
+              "text": "In addition, it is desired to work as a separate branch for embedded devices."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-9",
+              "text": "It is expected that with an increasing interest in IoT and Industry 4.0, such software will likely have high interest."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-10",
+              "text": "Currently, Genpro from Israel [20] and Shakti [21] from India are working on new generation processors based on RISC-V architecture."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-11",
+              "text": "Recent interest in open processor architecture are likely to promote the open source operating systems."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-12",
+              "text": "The MILIS project is now planned to be one of the first open source Linux based OS targeting RISC-V."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-3",
+      "subtitle": "Related Work",
+      "paragraphs": [
+        {
+          "iri": "Section-3-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-1",
+              "text": "With the RISC-V processor productions, Si-five has produced a number of development motherboards for developers [22]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-2",
+              "text": "Linux distributions on motherboards with these processors started to gain momentum."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-3",
+              "text": "Legacy distributions such as Debian have created a project group on the RISC-V and started porting as infrastructure transfer work [23]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-4",
+              "text": "Fedora develops a native OS by compiling packages targeting RISC-V."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-5",
+              "text": "It has also established a web-based compilation tracking system [24]."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-6",
+              "text": "Apart from these, it can also produce minimal custom Linux images with Yocto [25] and Buildroot [26] Linux Kit."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-7",
+              "text": "Buildroot currently ported for 64-bit RISC-V architecture."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-8",
+              "text": "Buildroot supports RISC-V with native and original implementation."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-9",
+              "text": "In this paper, we will focus on increasing kernel support and reducing porting times by a proposed reference implementation based on MILIS."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-10",
+              "text": "We endeavored to build a Linux from Scratch from the root file system."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-11",
+              "text": "Also with the rapid integration of Linux distro developers, we can improve our user-space application level."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-4",
+      "subtitle": "Implementation",
+      "paragraphs": [
+        {
+          "iri": "Section-4-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-1",
+              "text": "Currently, MILIS Linux is running smoothly with 64-bit systems."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-2",
+              "text": "Our RISC-V architecture-oriented work can be called a port in the Linux community."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-3",
+              "text": "Port aims to produce kernel and userspace packages available in MILIS and a hardware based 64-bit little-endian RISC-V compatible base system."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-4",
+              "text": "RISC-V also allows 32-bit and 128-bit ISA configurations, however the development of other variants will be considered as future work."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-5",
+              "text": "\u2022 32-bit architectures, except for specific purposes;"
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-6",
+              "text": "\u2022 32-bit ports in MILIS have never been done, it is not necessary."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-7",
+              "text": "\u2022 128-bit operation is not realistic at this time."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-8",
+              "text": "Since MILIS is a Linux system that applies the Linux from Scratch directives, similar methods can be used to build the basis of the RISC-V architecture."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-9",
+              "text": "In this section, we detail the work packages that are typically included in porting."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-1",
+              "text": "A. System Emulation"
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-2",
+              "text": "RISC-V system emulator may be used during the development and testing of the OS without real hardware."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-3",
+              "text": "Low cost easy setup QEMU virtual machine [27] supports RISC-V since 2.12."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-4",
+              "text": "This is opposite of QEMU's full system emulation mode, which ensures emulation devices and requires you to boot an operating system natively."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-5",
+              "text": "We use QEMU 4.0.0 version."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-1",
+              "text": "B. Toolchain"
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-2",
+              "text": "Toolchain is a cross-compiler for GNU."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-3",
+              "text": "RISC-V requires Binutils 2.30 or above versions to build a kernel with GCC 7.1 or above."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-4",
+              "text": "Currently, we choose GCC 9.1 and Binutils 2.32 versions."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-5",
+              "text": "There are 3 common C libraries; Glibc, Uclibc and Musl."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-6",
+              "text": "Only Glibc has upstream RISC-V support for 64-bit only architecture."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-7",
+              "text": "We choose Glibc version 2.29 to build packages [28]."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-1",
+              "text": "C. Bootloader"
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-2",
+              "text": "A bootloader is a piece of code that executes before an operating system runs."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-3",
+              "text": "Bootloaders usually provide several options to boot the OS kernel and also contain commands for debugging and/or modifying the kernel environment before booting."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-4",
+              "text": "RISC-V specific Berkley Bootloader(BBL) may be used in this project [29]."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-5",
+              "text": "U-boot may be another alternative, but requires more work for porting to RISC-V."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-6",
+              "text": "BBL will support;"
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-7",
+              "text": "\u2022 Starting and response tasks to timer interrupts,"
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-8",
+              "text": "\u2022 Boot chain loading for Linux and default boot loading process,"
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-9",
+              "text": "\u2022 RISC-V processor is not equipped to handle some instructions directly in hardware so BBL handles them as well."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-1",
+              "text": "BBL is somewhat special in that it cannot chainload a Linux kernel like GRUB or U-Boot, but instead the BBL compile scripts links the kernel binary directly into the BBL ELF file."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-2",
+              "text": "Therefore BBL must always be rebuilt within kernel."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-3",
+              "text": "Creating a proper separation between BBL and the kernel is planned but not yet implemented."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-1",
+              "text": "RISC-V Linux port has been accepted into Linux tree and is slated to release as part of 4.15 since 2017."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-2",
+              "text": "While this is a major milestone, still much work remains related to the Linux kernel and the userspace."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-3",
+              "text": "Additionally, much research and many tasks remain in the following areas:"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-4",
+              "text": "\u2022 Init and Halt Code"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-5",
+              "text": "\u2022 Atomic and Locking Code"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-6",
+              "text": "\u2022 Generic library routines and assembly"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-7",
+              "text": "\u2022 ELF and module implementation"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-8",
+              "text": "\u2022 Task implementation"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-9",
+              "text": "\u2022 Device, timer, IRQs, and the SBI"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-10",
+              "text": "\u2022 Paging and MMU"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-11",
+              "text": "\u2022 User-facing API"
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-12",
+              "text": "\u2022 Build Infrastructure"
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-7-Sentence-1",
+              "text": "For building the kernel, we used the 5.0 stable version from the kernel git repository [30] using the following compilation parameters; CROSSCOMPILE=riscv64-linuxgnu- ARCH=riscv."
+            },
+            {
+              "iri": "Section-4-Paragraph-7-Sentence-2",
+              "text": "And BBL will compile with -withpayload config parameter to reference compiled kernel."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-1",
+              "text": "E. Pre-Root File System and Package Production"
+            },
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-2",
+              "text": "We cross-compile packages from x86-64 host to riscv64 target file system."
+            },
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-3",
+              "text": "At the conclusion of this process, we were able to achieve a bootable operating system for RISC-V hardware or an emulator."
+            },
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-4",
+              "text": "This root filesystem, named prerootfs, will be used at package production."
+            },
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-5",
+              "text": "After producing the necessary packages, we will re-construct the base file system of RISC-V using these packages."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-1",
+              "text": "F. Bootable Image"
+            },
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-2",
+              "text": "Recreation of Rootfs using MILIS enables us to distribute an initial bootable binary disk image that is completely built from MILIS packages for kernel and user space software."
+            },
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-3",
+              "text": "With adding live system packages, we will get a live image to run a virtual board."
+            },
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-4",
+              "text": "Fig. 1 shows the general workflow that is applied during the building of the RISC-V computing environment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-5",
+      "subtitle": "Conclusion",
+      "paragraphs": [
+        {
+          "iri": "Section-5-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-1",
+              "text": "In this paper, the RISC-V processor has been compared to other architectures and its bright future was implied."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-2",
+              "text": "Being opensource and its community driven design through open source hardware initiative, it may be used in mission critical projects."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-3",
+              "text": "Especially with the advances in the Internet of Things, the use of RISC-V processor boards may likely become popular in the market with the exciting features it provides."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-4",
+              "text": "Because many companies have started R&D studies for RISC-V and become members of the RISC-V foundation."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-5",
+              "text": "In addition to hardware information, this open source hardware that we have emphasized in this paper is the necessity of developing an open source and reliable operating system."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-6",
+              "text": "In this case, Linux is the best candidate on the basis of this work as the kernel."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-7",
+              "text": "Even though port migration of different Linux distributions has already begun, we are stressing the need to create an open source and reliable user ecosystem directly on the Linux kernel by enabling the MILIS Linux project to be ported to a different architecture."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-8",
+              "text": "Any development and optimization in this process will add experience to our IT process."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-9",
+              "text": "This study will gain momentum with the open computing proposal and will gain more."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-6",
+      "subtitle": "Future Work",
+      "paragraphs": [
+        {
+          "iri": "Section-6-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-1",
+              "text": "A. Physical Implementation and Optimizations"
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-2",
+              "text": "The work outline performed on the QEMU virtual machine discussed in this study will be applied on a real board based on RISC-V processor."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-3",
+              "text": "Compilation and testing will give more accurate results using physical hardware."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-4",
+              "text": "Thus, we will have a better understanding of the components that will need to be optimized."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-5",
+              "text": "The compilation tools that we use in the bootstrap process will offer more RISC-V support over time and will be optimized."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-6",
+              "text": "In addition, alternative libraries instead of Glibc, which we currently use as C libraries, will be evaluated."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-7",
+              "text": "Also, with the RISC-V support in the LLVM Compiler Infrastructure [31], native compile support will be increased at the level of programming languages which use LLVM as back-end compiler."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-8",
+              "text": "RISC-V porting will be further explored for the kernel level difficulties encountered while providing the necessary solutions."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-9",
+              "text": "The necessary sponsors and research project funding supports will be provided for the R&D studies and RISC-V processors with different features will be obtained and the studies will be performed on real equipment."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-1",
+              "text": "B. The Future: Open Hardware and Open Source Operating System"
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-2",
+              "text": "Open hardware means license-free; namely with RISC-V virtually anyone can produce potentially better evaluations and much more accurate comparisons with existing works."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-3",
+              "text": "There is a range of high quality, open-source RISC-V implementations to modify, rather than just based on estimating or simulations."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-4",
+              "text": "Also opening standard will bring about a more active development community so that when sharing patches or ideas, projects will get contributions more quickly."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-5",
+              "text": "As of now one aspect of the RISC-V Foundation is responding to proposals and discussing them."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-6",
+              "text": "The other aspect is producing proposed changes either in a future specification revision or in hardware."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-7",
+              "text": "On the other hand, opening the standards and having a commercially open license would certainly make the processor design and production race more fair."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-8",
+              "text": "Also RISC-V will bring a new synergy of open source computer architecture research areas, such as universities started to establish research groups on RISC-V, such as OpenCelerity [32] and SCARV [33]."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-9",
+              "text": "Research is expected to be carried out on real hardware with the increase of RISC-V processor manufacturers."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-10",
+              "text": "As a result, Linux kernel and userspace seems the best candidate software stack for RISC-V."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

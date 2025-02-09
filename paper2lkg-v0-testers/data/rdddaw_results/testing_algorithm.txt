@@ -1,0 +1,66 @@
+# Evaluation via Reverse Engineering
+
+# Split the total number of nodes into 5 parts
+part_1 = <0-20% most relevant>
+part_2 = <20-40% most relevant>
+part_3 = <40-60% most relevant>
+part_4 = <60-80% most relevant>
+part_5 = <80-10% most relevant>
+entity_subsets = [part_1, part_2, part_3, part_4, part_5]
+
+text = ""
+
+for each entity_subset
+	triples = <get all triples whose subject or object is in the entity subset.>
+	paper["triples"].remove(triples)
+	paragraph = <ask the LLM to reconstruct a paragraph given the label, aliases, 
+			description of all entities in the entity subset and the triples.>
+	text  = text + paragraph + '\n\n'
+	
+
+
+# Evaluation via Application
+
+question_answer_pairs = <ask gpt-o1-preview to read the whole paper 
+				and generate 10 question-answer pairs>
+				
+kg_rag_answers = []
+
+for question, _ in question_answer_pairs:
+	entities_in_question = <use a LLM to extract the entities in the question>
+	relevant_entities_in_kg = <for each entities_in_question, find the 2 most relevant
+				entities in the KG throug embeddings.>
+	relevant_triples_in_kg = <find all 2-hops triples starting from 
+						the relevant_entities_in_kg>
+	relevant_entities_in_kg.add(<all entities being either 
+					the subject or object in relevant_triples_in_kg>
+	
+	hints = <ask the LLM to reconstruct a paragraph given the label, aliases, 
+		description of all relevant_entities_in_kg in the entity subset 
+		and the relevant_triples_in_kg.>
+		
+	answer = <ask a small LLM to answer the question given the hints.>
+
+
+trad_rag_answers []
+
+for question, _ in question_answer_pairs:
+	relevant_sentences = <find 10 sentences that the most matches 
+					with the question through embeddings>
+	answer = <ask a small LLM to answer the question given the relevant_sentences.>
+
+
+
+# Manual Evaluation & Use Case
+
+
+
+
+
+
+
+# Ablation Study
+
+
+
+

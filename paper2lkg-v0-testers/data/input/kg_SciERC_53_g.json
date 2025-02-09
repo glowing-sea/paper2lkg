@@ -1,0 +1,1237 @@
+{
+  "iri": "Paper-53",
+  "title": "ICML_1995_38_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-53-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-53-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-53-Section-1-Paragraph-1-Sentence-1",
+              "text": "An important area of learning in autonomous agents is the ability to learn domain-speciic models of actions to be used by planning systems ."
+            },
+            {
+              "iri": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+              "text": "In this paper , we present methods by which an agent learns action models from its own experience and from its observation of a domain expert ."
+            },
+            {
+              "iri": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+              "text": "These methods diier from previous work in the area in two ways : the use of an action model formalism which is better suited to the needs of a re-active agent , and successful implementation of noise-handling mechanisms ."
+            },
+            {
+              "iri": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+              "text": "Training instances are generated from experience and observation , and a variant of GOLEM is used to learn action models from these instances ."
+            },
+            {
+              "iri": "Paper-53-Section-1-Paragraph-1-Sentence-5",
+              "text": "The integrated learning system has been experimentally validated in simulated construction and ooce domains ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0003509521484375,
+    11.311742067337036,
+    20.584391832351685,
+    31.12797498703003,
+    0.03849506378173828,
+    0.0001251697540283203,
+    0.0001461505889892578,
+    32.50005483627319,
+    42.000359773635864,
+    3.284597158432007,
+    0.07766294479370117,
+    0.011579751968383789,
+    0.0002429485321044922,
+    19.441444158554077,
+    0.0063931941986083984,
+    0.0343470573425293,
+    0.0016739368438720703,
+    4.224743843078613,
+    4.344018936157227,
+    3.3772919178009033,
+    75.95585370063782,
+    6.65416693687439,
+    55.68342304229736,
+    3.088826894760132,
+    0.002749919891357422,
+    0.012079954147338867
+  ],
+  "nodes": {
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "this paper",
+      "aliases": [
+        "this paper"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "This paper presents methods for autonomous agents to learn action models from their own experiences and observations of domain experts, utilizing a specialized action model formalism and noise-handling mechanisms, validated through experiments in simulated environments.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "this paper",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.84228515625
+    },
+    "Entity-these_method": {
+      "node_id": "these_method",
+      "disambiguation_index": 0,
+      "label": "These methods",
+      "aliases": [
+        "These methods"
+      ],
+      "types": [
+        "methods"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "These methods refer to the techniques developed for autonomous agents to learn domain-specific action models from their own experiences and observations of domain experts, characterized by a suitable action model formalism for reactive agents and effective noise-handling mechanisms.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "These methods",
+          "local_types": [
+            "methods"
+          ],
+          "iri": "Entity-these_method-Mention-1"
+        }
+      ],
+      "relevance": 0.78515625
+    },
+    "Entity-action_model": {
+      "node_id": "action_model",
+      "disambiguation_index": 0,
+      "label": "action models",
+      "aliases": [
+        "action models"
+      ],
+      "types": [
+        "model",
+        "action",
+        "representation",
+        "action model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Action models refer to domain-specific representations of actions that autonomous agents learn from their experiences and observations, which are utilized for planning in various environments.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "action models",
+          "local_types": [
+            "model",
+            "action",
+            "representation",
+            "action model"
+          ],
+          "iri": "Entity-action_model-Mention-1"
+        },
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "action models",
+          "local_types": [
+            "model",
+            "representation",
+            "action model"
+          ],
+          "iri": "Entity-action_model-Mention-2"
+        }
+      ],
+      "relevance": 0.77294921875
+    },
+    "Entity-golem": {
+      "node_id": "golem",
+      "disambiguation_index": 0,
+      "label": "GOLEM",
+      "aliases": [
+        "GOLEM"
+      ],
+      "types": [
+        "algorithm",
+        "model",
+        "system",
+        "learning system"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "GOLEM refers to a variant of a learning system used to learn action models from training instances generated by an agent's experience and observation.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "GOLEM",
+          "local_types": [
+            "algorithm",
+            "model",
+            "system",
+            "learning system"
+          ],
+          "iri": "Entity-golem-Mention-1"
+        }
+      ],
+      "relevance": 0.77099609375
+    },
+    "Entity-agent": {
+      "node_id": "agent",
+      "disambiguation_index": 0,
+      "label": "agent",
+      "aliases": [
+        "an agent",
+        "agent"
+      ],
+      "types": [
+        "system",
+        "entity",
+        "agent"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'agent' refers to an autonomous learning system that acquires domain-specific action models through its own experiences and observations of a domain expert, aimed at enhancing its planning capabilities.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "agent",
+          "local_types": [
+            "entity",
+            "system"
+          ],
+          "iri": "Entity-agent-Mention-1"
+        },
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "an agent",
+          "local_types": [
+            "agent"
+          ],
+          "iri": "Entity-agent-Mention-2"
+        }
+      ],
+      "relevance": 0.75341796875
+    },
+    "Entity-experience": {
+      "node_id": "experience",
+      "disambiguation_index": 0,
+      "label": "experience",
+      "aliases": [
+        "experience"
+      ],
+      "types": [
+        "knowledge",
+        "learning process",
+        "knowledge acquisition",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'experience' refers to the knowledge and insights gained by an autonomous agent through its own interactions and activities within a specific domain, which are utilized to learn action models for planning systems.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "experience",
+          "local_types": [
+            "learning process",
+            "knowledge acquisition"
+          ],
+          "iri": "Entity-experience-Mention-1"
+        },
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "experience",
+          "local_types": [
+            "concept",
+            "knowledge"
+          ],
+          "iri": "Entity-experience-Mention-2"
+        }
+      ],
+      "relevance": 0.74951171875
+    },
+    "Entity-the_integrated_learning_system": {
+      "node_id": "the_integrated_learning_system",
+      "disambiguation_index": 0,
+      "label": "The integrated learning system",
+      "aliases": [
+        "The integrated learning system"
+      ],
+      "types": [
+        "system",
+        "learning system"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The integrated learning system refers to a framework for autonomous agents that enables them to learn domain-specific action models through experience and observation, validated in simulated environments.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "The integrated learning system",
+          "local_types": [
+            "system",
+            "learning system"
+          ],
+          "iri": "Entity-the_integrated_learning_system-Mention-1"
+        }
+      ],
+      "relevance": 0.74755859375
+    },
+    "Entity-observation": {
+      "node_id": "observation",
+      "disambiguation_index": 0,
+      "label": "observation",
+      "aliases": [
+        "observation"
+      ],
+      "types": [
+        "concept",
+        "knowledge"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of the paper, 'observation' refers to the process by which an autonomous agent learns action models by monitoring and analyzing the actions of a domain expert.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "observation",
+          "local_types": [
+            "concept",
+            "knowledge"
+          ],
+          "iri": "Entity-observation-Mention-1"
+        }
+      ],
+      "relevance": 0.7470703125
+    },
+    "Entity-re-active_agent": {
+      "node_id": "re-active_agent",
+      "disambiguation_index": 0,
+      "label": "re-active agent",
+      "aliases": [
+        "re-active agent"
+      ],
+      "types": [
+        "system",
+        "agent"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 're-active agent' refers to an autonomous agent that learns action models from its experiences and observations, utilizing a specific action model formalism designed to meet its operational needs.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "re-active agent",
+          "local_types": [
+            "system",
+            "agent"
+          ],
+          "iri": "Entity-re-active_agent-Mention-1"
+        }
+      ],
+      "relevance": 0.744140625
+    },
+    "Entity-action_model_formalism": {
+      "node_id": "action_model_formalism",
+      "disambiguation_index": 0,
+      "label": "action model formalism",
+      "aliases": [
+        "action model formalism",
+        "an action model formalism"
+      ],
+      "types": [
+        "theoretical framework",
+        "model",
+        "formalism",
+        "action model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The action model formalism refers to a theoretical framework designed to enable autonomous agents to learn and represent domain-specific models of actions, particularly tailored for reactive agents, facilitating improved planning and decision-making processes.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "action model formalism",
+          "local_types": [
+            "theoretical framework",
+            "model",
+            "formalism",
+            "action model"
+          ],
+          "iri": "Entity-action_model_formalism-Mention-1"
+        },
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "an action model formalism",
+          "local_types": [
+            "model",
+            "formalism"
+          ],
+          "iri": "Entity-action_model_formalism-Mention-2"
+        }
+      ],
+      "relevance": 0.7412109375
+    },
+    "Entity-experience_and_observation": {
+      "node_id": "experience_and_observation",
+      "disambiguation_index": 0,
+      "label": "experience and observation",
+      "aliases": [
+        "experience and observation"
+      ],
+      "types": [
+        "experience",
+        "observation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Experience and observation refer to the processes through which an autonomous agent learns action models by utilizing its own past interactions and by observing the actions of a domain expert.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "experience and observation",
+          "local_types": [
+            "experience",
+            "observation"
+          ],
+          "iri": "Entity-experience_and_observation-Mention-1"
+        }
+      ],
+      "relevance": 0.74072265625
+    },
+    "Entity-action": {
+      "node_id": "action",
+      "disambiguation_index": 0,
+      "label": "actions",
+      "aliases": [
+        "actions"
+      ],
+      "types": [
+        "activity",
+        "behavior"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'actions' refers to the domain-specific models of activities and behaviors that autonomous agents learn to utilize in planning systems.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "actions",
+          "local_types": [
+            "activity",
+            "behavior"
+          ],
+          "iri": "Entity-action-Mention-1"
+        }
+      ],
+      "relevance": 0.7392578125
+    },
+    "Entity-the_area": {
+      "node_id": "the_area",
+      "disambiguation_index": 0,
+      "label": "the area",
+      "aliases": [
+        "the area"
+      ],
+      "types": [
+        "area"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "the area refers to the field of learning in autonomous agents, specifically focusing on the development of domain-specific action models for planning systems.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the area",
+          "local_types": [
+            "area"
+          ],
+          "iri": "Entity-the_area-Mention-1"
+        }
+      ],
+      "relevance": 0.734375
+    },
+    "Entity-a_variant_of_golem": {
+      "node_id": "a_variant_of_golem",
+      "disambiguation_index": 0,
+      "label": "a variant of GOLEM",
+      "aliases": [
+        "a variant of GOLEM"
+      ],
+      "types": [
+        "model",
+        "Golem"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A variant of GOLEM refers to a modified version of the GOLEM model that is utilized for learning action models from training instances generated through an agent's experience and observation of a domain expert.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "a variant of GOLEM",
+          "local_types": [
+            "model",
+            "Golem"
+          ],
+          "iri": "Entity-a_variant_of_golem-Mention-1"
+        }
+      ],
+      "relevance": 0.73095703125
+    },
+    "Entity-observation_of_a_domain_expert": {
+      "node_id": "observation_of_a_domain_expert",
+      "disambiguation_index": 0,
+      "label": "observation of a domain expert",
+      "aliases": [
+        "observation of a domain expert"
+      ],
+      "types": [
+        "observation",
+        "domain expert"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'observation of a domain expert' refers to the process by which an autonomous agent learns action models by analyzing and interpreting the actions and decisions made by a knowledgeable individual in a specific field.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "observation of a domain expert",
+          "local_types": [
+            "observation",
+            "domain expert"
+          ],
+          "iri": "Entity-observation_of_a_domain_expert-Mention-1"
+        }
+      ],
+      "relevance": 0.72705078125
+    },
+    "Entity-method_(1)": {
+      "node_id": "method_(1)",
+      "disambiguation_index": 1,
+      "label": "methods",
+      "aliases": [
+        "methods"
+      ],
+      "types": [
+        "method",
+        "methodology"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The term 'methods' refers to the specific techniques and approaches developed in the paper for enabling autonomous agents to learn action models from their own experiences and observations of domain experts.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "methods",
+          "local_types": [
+            "method",
+            "methodology"
+          ],
+          "iri": "Entity-method_(1)-Mention-1"
+        }
+      ],
+      "relevance": 0.7138671875
+    },
+    "Entity-instance": {
+      "node_id": "instance",
+      "disambiguation_index": 0,
+      "label": "instances",
+      "aliases": [
+        "these instances",
+        "instances"
+      ],
+      "types": [
+        "example",
+        "data",
+        "instance"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'instances' refers to the training examples generated from the agent's own experiences and observations, which are used to learn action models in the context of autonomous agents.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "instances",
+          "local_types": [
+            "data",
+            "example"
+          ],
+          "iri": "Entity-instance-Mention-1"
+        },
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "these instances",
+          "local_types": [
+            "instance"
+          ],
+          "iri": "Entity-instance-Mention-2"
+        }
+      ],
+      "relevance": 0.71044921875
+    },
+    "Entity-ooce_domain": {
+      "node_id": "ooce_domain",
+      "disambiguation_index": 0,
+      "label": "ooce domains",
+      "aliases": [
+        "ooce domains"
+      ],
+      "types": [
+        "domain"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'ooce domains' refers to specific simulated environments used in the context of learning action models for autonomous agents, particularly in the field of planning systems.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "ooce domains",
+          "local_types": [
+            "domain"
+          ],
+          "iri": "Entity-ooce_domain-Mention-1"
+        }
+      ],
+      "relevance": 0.7080078125
+    },
+    "Entity-previous_work": {
+      "node_id": "previous_work",
+      "disambiguation_index": 0,
+      "label": "previous work",
+      "aliases": [
+        "previous work"
+      ],
+      "types": [
+        "work"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The term 'previous work' refers to earlier research and methodologies in the field of learning domain-specific action models for autonomous agents, which the current paper aims to improve upon by introducing a more suitable action model formalism and effective noise-handling mechanisms.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "previous work",
+          "local_types": [
+            "work"
+          ],
+          "iri": "Entity-previous_work-Mention-1"
+        }
+      ],
+      "relevance": 0.70703125
+    },
+    "Entity-it_own_experience": {
+      "node_id": "it_own_experience",
+      "disambiguation_index": 0,
+      "label": "its own experience",
+      "aliases": [
+        "its own experience"
+      ],
+      "types": [
+        "experience"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'its own experience' refers to the firsthand interactions and observations that an autonomous agent undergoes in a specific domain, which are utilized to learn and develop action models for planning systems.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "its own experience",
+          "local_types": [
+            "experience"
+          ],
+          "iri": "Entity-it_own_experience-Mention-1"
+        }
+      ],
+      "relevance": 0.703125
+    },
+    "Entity-simulated_construction_and_ooce_domain": {
+      "node_id": "simulated_construction_and_ooce_domain",
+      "disambiguation_index": 0,
+      "label": "simulated construction and ooce domains",
+      "aliases": [
+        "simulated construction and ooce domains"
+      ],
+      "types": [
+        "domain",
+        "construction domain",
+        "ooce domain"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Simulated construction and ooce domains refer to controlled environments used for testing and validating learning systems in autonomous agents, specifically focusing on action model learning in scenarios that mimic real-world construction and operational contexts.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "simulated construction and ooce domains",
+          "local_types": [
+            "domain",
+            "construction domain",
+            "ooce domain"
+          ],
+          "iri": "Entity-simulated_construction_and_ooce_domain-Mention-1"
+        }
+      ],
+      "relevance": 0.69921875
+    },
+    "Entity-the_need_of_a_re-active_agent": {
+      "node_id": "the_need_of_a_re-active_agent",
+      "disambiguation_index": 0,
+      "label": "the needs of a re-active agent",
+      "aliases": [
+        "the needs of a re-active agent"
+      ],
+      "types": [
+        "needs",
+        "agent"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The needs of a re-active agent refer to the specific requirements and considerations for developing action model formalisms that enable autonomous agents to effectively learn and adapt their behavior based on real-time experiences and observations in dynamic environments.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the needs of a re-active agent",
+          "local_types": [
+            "needs",
+            "agent"
+          ],
+          "iri": "Entity-the_need_of_a_re-active_agent-Mention-1"
+        }
+      ],
+      "relevance": 0.6982421875
+    },
+    "Entity-simulated_construction": {
+      "node_id": "simulated_construction",
+      "disambiguation_index": 0,
+      "label": "simulated construction",
+      "aliases": [
+        "simulated construction"
+      ],
+      "types": [
+        "domain",
+        "simulation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Simulated construction refers to a testing environment where an integrated learning system for autonomous agents is validated, specifically focusing on the learning of action models in a construction domain through simulation.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "simulated construction",
+          "local_types": [
+            "domain",
+            "simulation"
+          ],
+          "iri": "Entity-simulated_construction-Mention-1"
+        }
+      ],
+      "relevance": 0.6865234375
+    },
+    "Entity-construction": {
+      "node_id": "construction",
+      "disambiguation_index": 0,
+      "label": "construction",
+      "aliases": [
+        "construction"
+      ],
+      "types": [
+        "field",
+        "domain"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'construction' refers to a simulated domain used for validating an integrated learning system that enables autonomous agents to learn action models from experience and observation.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "construction",
+          "local_types": [
+            "field",
+            "domain"
+          ],
+          "iri": "Entity-construction-Mention-1"
+        }
+      ],
+      "relevance": 0.6826171875
+    },
+    "Entity-autonomous_agent": {
+      "node_id": "autonomous_agent",
+      "disambiguation_index": 0,
+      "label": "autonomous agents",
+      "aliases": [
+        "autonomous agents"
+      ],
+      "types": [
+        "technology",
+        "system",
+        "artificial intelligence",
+        "agent"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Autonomous agents are systems or technologies that can operate independently to perform tasks or make decisions based on their environment, often utilizing artificial intelligence to learn and adapt.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "autonomous agents",
+          "local_types": [
+            "technology",
+            "system",
+            "artificial intelligence",
+            "agent"
+          ],
+          "iri": "Entity-autonomous_agent-Mention-1"
+        }
+      ],
+      "relevance": 0.66357421875
+    },
+    "Entity-noise-handling_mechanism": {
+      "node_id": "noise-handling_mechanism",
+      "disambiguation_index": 0,
+      "label": "noise-handling mechanisms",
+      "aliases": [
+        "noise-handling mechanisms"
+      ],
+      "types": [
+        "technique",
+        "method",
+        "mechanism"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Noise-handling mechanisms refer to techniques and methods implemented in learning systems to effectively manage and mitigate the impact of noise in data, thereby improving the accuracy and reliability of action model learning in autonomous agents.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "noise-handling mechanisms",
+          "local_types": [
+            "technique",
+            "method",
+            "mechanism"
+          ],
+          "iri": "Entity-noise-handling_mechanism-Mention-1"
+        }
+      ],
+      "relevance": 0.65966796875
+    },
+    "Entity-training_instance": {
+      "node_id": "training_instance",
+      "disambiguation_index": 0,
+      "label": "Training instances",
+      "aliases": [
+        "Training instances"
+      ],
+      "types": [
+        "data",
+        "instance",
+        "input"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Training instances refer to specific examples or data points used in machine learning to train models, typically consisting of input features and corresponding output labels.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Training instances",
+          "local_types": [
+            "data",
+            "instance",
+            "input"
+          ],
+          "iri": "Entity-training_instance-Mention-1"
+        }
+      ],
+      "relevance": 0.57861328125
+    },
+    "Entity-planning_system": {
+      "node_id": "planning_system",
+      "disambiguation_index": 0,
+      "label": "planning systems",
+      "aliases": [
+        "planning systems"
+      ],
+      "types": [
+        "algorithm",
+        "software",
+        "system",
+        "planning"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Planning systems are computational frameworks or algorithms designed to generate sequences of actions or decisions to achieve specific goals in various domains.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "planning systems",
+          "local_types": [
+            "algorithm",
+            "software",
+            "system",
+            "planning"
+          ],
+          "iri": "Entity-planning_system-Mention-1"
+        }
+      ],
+      "relevance": 0.5771484375
+    },
+    "Entity-integrated_learning_system": {
+      "node_id": "integrated_learning_system",
+      "disambiguation_index": 0,
+      "label": "integrated learning system",
+      "aliases": [
+        "integrated learning system"
+      ],
+      "types": [
+        "educational technology",
+        "software",
+        "learning",
+        "system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "An integrated learning system is a type of educational technology that combines various instructional methods and resources into a cohesive software platform to facilitate and enhance the learning process.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "integrated learning system",
+          "local_types": [
+            "educational technology",
+            "software",
+            "learning",
+            "system"
+          ],
+          "iri": "Entity-integrated_learning_system-Mention-1"
+        }
+      ],
+      "relevance": 0.5419921875
+    },
+    "Entity-domain_expert": {
+      "node_id": "domain_expert",
+      "disambiguation_index": 0,
+      "label": "domain expert",
+      "aliases": [
+        "domain expert"
+      ],
+      "types": [
+        "expert",
+        "individual"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A domain expert is an individual with specialized knowledge and skills in a specific area or field, often providing insights and guidance based on their extensive experience.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "domain expert",
+          "local_types": [
+            "expert",
+            "individual"
+          ],
+          "iri": "Entity-domain_expert-Mention-1"
+        }
+      ],
+      "relevance": 0.5234375
+    },
+    "Entity-method": {
+      "node_id": "method",
+      "disambiguation_index": 0,
+      "label": "methods",
+      "aliases": [
+        "methods"
+      ],
+      "types": [
+        "research methodology",
+        "approach"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Methods refer to systematic approaches or techniques used in research to achieve specific objectives or solve problems.",
+      "mentions": [
+        {
+          "reference": "Paper-53-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "methods",
+          "local_types": [
+            "research methodology",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-1"
+        }
+      ],
+      "relevance": 0.49365234375
+    }
+  },
+  "summary": "An important area of learning in autonomous agents is the ability to learn domain-speciic models of actions to be used by planning systems . In this paper , we present methods by which an agent learns action models from its own experience and from its observation of a domain expert . These methods diier from previous work in the area in two ways : the use of an action model formalism which is better suited to the needs of a re-active agent , and successful implementation of noise-handling mechanisms . Training instances are generated from experience and observation , and a variant of GOLEM is used to learn action models from these instances . The integrated learning system has been experimentally validated in simulated construction and ooce domains .",
+  "triples": [
+    [
+      "Entity-this_paper",
+      "Predicate-presents",
+      "Entity-method_(1)"
+    ],
+    [
+      "Entity-agent",
+      "Predicate-learns",
+      "Entity-action_model"
+    ],
+    [
+      "Entity-agent",
+      "Predicate-learns_from",
+      "Entity-it_own_experience"
+    ],
+    [
+      "Entity-agent",
+      "Predicate-learns_from",
+      "Entity-observation_of_a_domain_expert"
+    ],
+    [
+      "Entity-method_(1)",
+      "Predicate-presented_in",
+      "Entity-this_paper"
+    ],
+    [
+      "Entity-these_method",
+      "Predicate-differ_from",
+      "Entity-previous_work"
+    ],
+    [
+      "Entity-action_model_formalism",
+      "Predicate-is_better_suited_to",
+      "Entity-the_need_of_a_re-active_agent"
+    ],
+    [
+      "Entity-noise-handling_mechanism",
+      "Predicate-successful_implementation_of",
+      "Entity-the_area"
+    ],
+    [
+      "Entity-action_model_formalism",
+      "Predicate-is_suited_to",
+      "Entity-the_need_of_a_re-active_agent"
+    ],
+    [
+      "Entity-training_instance",
+      "Predicate-are_generated_from",
+      "Entity-experience_and_observation"
+    ],
+    [
+      "Entity-a_variant_of_golem",
+      "Predicate-is_used_to_learn",
+      "Entity-action_model"
+    ],
+    [
+      "Entity-instance",
+      "Predicate-are_generated_from",
+      "Entity-experience_and_observation"
+    ],
+    [
+      "Entity-instance",
+      "Predicate-is_used_to_learn",
+      "Entity-action_model"
+    ],
+    [
+      "Entity-the_integrated_learning_system",
+      "Predicate-has_been_experimentally_validated_in",
+      "Entity-simulated_construction_and_ooce_domain"
+    ],
+    [
+      "Entity-the_integrated_learning_system",
+      "Predicate-has_been_validated_in",
+      "Entity-simulated_construction_and_ooce_domain"
+    ],
+    [
+      "Entity-autonomous_agent",
+      "Predicate-learns",
+      "Entity-action_model"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents",
+      "Entity-these_method"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents_methods_for_learning",
+      "Entity-action_model"
+    ],
+    [
+      "Entity-these_method",
+      "Predicate-learns",
+      "Entity-action_model"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-re-active_agent",
+      "skos:broader",
+      "Entity-agent"
+    ],
+    [
+      "Entity-it_own_experience",
+      "skos:broader",
+      "Entity-experience"
+    ],
+    [
+      "Entity-these_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-method_(1)",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-experience_and_observation",
+      "skos:broader",
+      "Entity-observation"
+    ],
+    [
+      "Entity-observation_of_a_domain_expert",
+      "skos:broader",
+      "Entity-domain_expert"
+    ],
+    [
+      "Entity-simulated_construction_and_ooce_domain",
+      "skos:broader",
+      "Entity-ooce_domain"
+    ],
+    [
+      "Entity-the_need_of_a_re-active_agent",
+      "skos:broader",
+      "Entity-agent"
+    ],
+    [
+      "Entity-autonomous_agent",
+      "skos:broader",
+      "Entity-agent"
+    ],
+    [
+      "Entity-noise-handling_mechanism",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-training_instance",
+      "skos:broader",
+      "Entity-instance"
+    ],
+    [
+      "Entity-action_model",
+      "skos:broader",
+      "Entity-action"
+    ],
+    [
+      "Entity-these_method",
+      "skos:broader",
+      "Entity-method_(1)"
+    ],
+    [
+      "Entity-experience_and_observation",
+      "skos:broader",
+      "Entity-experience"
+    ],
+    [
+      "Entity-action_model_formalism",
+      "skos:broader",
+      "Entity-action_model"
+    ],
+    [
+      "Entity-a_variant_of_golem",
+      "skos:broader",
+      "Entity-golem"
+    ],
+    [
+      "Entity-noise-handling_mechanism",
+      "skos:broader",
+      "Entity-method_(1)"
+    ],
+    [
+      "Entity-observation_of_a_domain_expert",
+      "skos:broader",
+      "Entity-observation"
+    ]
+  ],
+  "predicates": {
+    "Predicate-presents": {
+      "label": "presents",
+      "description": "The predicate 'presents' indicates that the subject is introducing, showcasing, or delivering information, ideas, or items to the audience or context represented by the object. It implies a formal or structured communication where the subject conveys content that is relevant or significant to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-learns": {
+      "label": "learns",
+      "description": "The predicate 'learns' denotes the process by which the subject acquires knowledge, skills, or understanding related to the object. It implies an active engagement of the subject in the assimilation of information or experience pertaining to the object, which can be concepts, behaviors, or techniques. This relationship highlights the transformative nature of learning, where the subject evolves or develops as a result of their interaction with the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-learns_from": {
+      "label": "learns from",
+      "description": "The predicate 'learns from' establishes a relationship where the subject acquires knowledge, skills, or understanding by utilizing information, insights, or experiences represented by the object. This connection implies that the subject actively engages with the object to enhance its cognitive or practical abilities, indicating a process of growth or development through observation, reflection, or interaction.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presented_in": {
+      "label": "presented in",
+      "description": "The predicate 'presented in' indicates that the subject is introduced, described, or discussed within the context of the object. It establishes a relationship where the subject is a key element or component that is elaborated upon or showcased in the specified object, which often represents a document, publication, or other formal work.",
+      "disambiguation_index": 0
+    },
+    "Predicate-differ_from": {
+      "label": "differ from",
+      "description": "The predicate 'differ from' establishes a comparative relationship between the subject and the object, indicating that the subject possesses distinct characteristics, qualities, or features that set it apart from the object. This implies a contrast or variation in aspects such as functionality, approach, methodology, or results, highlighting the uniqueness of the subject in relation to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_better_suited_to": {
+      "label": "is better suited to",
+      "description": "The predicate 'is better suited to' establishes a comparative relationship between a subject and an object, indicating that the subject possesses qualities, characteristics, or functionalities that align more effectively or appropriately with the requirements, preferences, or conditions represented by the object. This suggests a level of compatibility or adequacy where the subject is deemed more favorable or advantageous in fulfilling the needs or expectations associated with the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-successful_implementation_of": {
+      "label": "successful implementation of",
+      "description": "The predicate 'successful implementation of' indicates that the subject has effectively put into practice or executed a particular strategy, method, or system, resulting in a positive outcome or impact within the context of the object. It suggests a process where the subject's actions lead to the realization or operationalization of the object, highlighting the effectiveness and achievement of intended goals.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_suited_to": {
+      "label": "is suited to",
+      "description": "The predicate 'is suited to' establishes a relationship of appropriateness or compatibility between the subject and the object. It indicates that the subject possesses qualities, characteristics, or features that align well with the requirements, preferences, or conditions represented by the object. This connection suggests that the subject is capable of effectively fulfilling or addressing the needs or expectations outlined in the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_generated_from": {
+      "label": "are generated from",
+      "description": "The predicate 'are generated from' indicates a causal or foundational relationship where the subject is produced or created as a result of the processes, materials, or influences represented by the object. It implies that the object serves as a source or origin from which the subject emerges, highlighting the dependency of the subject on the object for its existence or formation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_used_to_learn": {
+      "label": "is used to learn",
+      "description": "The predicate 'is used to learn' indicates that the subject serves as a tool, method, or resource for acquiring knowledge or understanding about the object. It implies a functional relationship where the subject facilitates the process of learning regarding the object, which can encompass various domains or types of information.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has_been_experimentally_validated_in": {
+      "label": "has been experimentally validated in",
+      "description": "The predicate 'has been experimentally validated in' indicates that the subject has undergone a process of testing or experimentation that confirms its effectiveness, reliability, or applicability within the context specified by the object. This connection implies that the subject has been assessed through empirical methods in the areas or domains mentioned, providing evidence of its performance or utility in those specific contexts.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has_been_validated_in": {
+      "label": "has been validated in",
+      "description": "The predicate 'has been validated in' indicates that the subject has undergone a process of assessment or testing that confirms its effectiveness, reliability, or applicability within the specified areas or domains represented by the object. This connection implies that the subject has met certain criteria or standards in the contexts mentioned, thereby establishing its credibility and acceptance in those fields.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents_methods_for_learning": {
+      "label": "presents methods for learning",
+      "description": "The predicate 'presents methods for learning' indicates that the subject is providing or introducing various techniques, strategies, or approaches aimed at facilitating the process of acquiring knowledge or skills related to the object. In this context, the subject is typically a source of information, such as a research paper, article, or educational resource, while the object represents the specific area or topic for which these learning methods are applicable.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a more specific instance or category that falls under the wider classification represented by the object. This relationship implies that the object encompasses a broader range of entities or concepts than the subject, thereby situating the subject within a larger conceptual framework.",
+      "disambiguation_index": 0
+    }
+  }
+}

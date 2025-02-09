@@ -1,0 +1,1127 @@
+{
+  "iri": "Paper-38",
+  "title": "N04-1022",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-38-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-38-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-38-Section-1-Paragraph-1-Sentence-1",
+              "text": "We present Minimum Bayes-Risk -LRB- MBR -RRB- decoding for statistical machine translation ."
+            },
+            {
+              "iri": "Paper-38-Section-1-Paragraph-1-Sentence-2",
+              "text": "This statistical approach aims to minimize expected loss of translation errors under loss functions that measure translation performance ."
+            },
+            {
+              "iri": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+              "text": "We describe a hierarchy of loss functions that incorporate different levels of linguistic information from word strings , word-to-word alignments from an MT system , and syntactic structure from parse-trees of source and target language sentences ."
+            },
+            {
+              "iri": "Paper-38-Section-1-Paragraph-1-Sentence-4",
+              "text": "We report the performance of the MBR decoders on a Chinese-to-English translation task ."
+            },
+            {
+              "iri": "Paper-38-Section-1-Paragraph-1-Sentence-5",
+              "text": "Our results show that MBR decoding can be used to tune statistical MT performance for specific loss functions ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    6.198883056640625e-05,
+    13.60576581954956,
+    34.10079216957092,
+    37.575539112091064,
+    0.030591964721679688,
+    9.393692016601562e-05,
+    0.00011610984802246094,
+    21.362473964691162,
+    43.10556602478027,
+    2.772678852081299,
+    0.05060887336730957,
+    0.010420083999633789,
+    0.0001900196075439453,
+    19.37186288833618,
+    0.0018167495727539062,
+    0.022840023040771484,
+    0.0028951168060302734,
+    3.669581890106201,
+    0.7606971263885498,
+    1.4281227588653564,
+    90.72134804725647,
+    7.622516870498657,
+    56.53900098800659,
+    2.9868600368499756,
+    0.0007772445678710938,
+    0.009485006332397461
+  ],
+  "nodes": {
+    "Entity-this_statistical_approach": {
+      "node_id": "this_statistical_approach",
+      "disambiguation_index": 0,
+      "label": "This statistical approach",
+      "aliases": [
+        "This statistical approach"
+      ],
+      "types": [
+        "methodology"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "This statistical approach refers to Minimum Bayes-Risk (MBR) decoding, a methodology in statistical machine translation that seeks to minimize the expected loss of translation errors by utilizing various loss functions to evaluate translation performance.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "This statistical approach",
+          "local_types": [
+            "methodology"
+          ],
+          "iri": "Entity-this_statistical_approach-Mention-1"
+        }
+      ],
+      "relevance": 0.8486328125
+    },
+    "Entity-the_performance_of_the_mbr_decoder": {
+      "node_id": "the_performance_of_the_mbr_decoder",
+      "disambiguation_index": 0,
+      "label": "the performance of the MBR decoders",
+      "aliases": [
+        "the performance of the MBR decoders"
+      ],
+      "types": [
+        "performance",
+        "decoder"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The performance of the MBR decoders refers to the effectiveness and accuracy of Minimum Bayes-Risk decoding methods applied to a Chinese-to-English translation task, specifically in terms of minimizing expected translation errors based on various loss functions.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the performance of the MBR decoders",
+          "local_types": [
+            "performance",
+            "decoder"
+          ],
+          "iri": "Entity-the_performance_of_the_mbr_decoder-Mention-1"
+        }
+      ],
+      "relevance": 0.8427734375
+    },
+    "Entity-mbr_decoder": {
+      "node_id": "mbr_decoder",
+      "disambiguation_index": 0,
+      "label": "MBR decoders",
+      "aliases": [
+        "MBR decoding",
+        "MBR decoders"
+      ],
+      "types": [
+        "decoder",
+        "technology",
+        "decoding method",
+        "statistical model",
+        "decoding technique",
+        "algorithm",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "MBR decoders refer to Minimum Bayes-Risk decoders, a statistical decoding method used in machine translation that aims to minimize expected translation error losses by utilizing various linguistic information and loss functions.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "MBR decoders",
+          "local_types": [
+            "decoder",
+            "technology",
+            "decoding method",
+            "statistical model",
+            "algorithm",
+            "method"
+          ],
+          "iri": "Entity-mbr_decoder-Mention-1"
+        },
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "MBR decoding",
+          "local_types": [
+            "algorithm",
+            "decoding technique",
+            "method",
+            "decoding method"
+          ],
+          "iri": "Entity-mbr_decoder-Mention-2"
+        }
+      ],
+      "relevance": 0.83642578125
+    },
+    "Entity-mbr": {
+      "node_id": "mbr",
+      "disambiguation_index": 0,
+      "label": "MBR",
+      "aliases": [
+        "MBR"
+      ],
+      "types": [
+        "abbreviation",
+        "decoding method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "MBR refers to Minimum Bayes-Risk decoding, a statistical method used in machine translation to minimize expected translation error losses by utilizing various loss functions.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "MBR",
+          "local_types": [
+            "abbreviation",
+            "decoding method"
+          ],
+          "iri": "Entity-mbr-Mention-1"
+        }
+      ],
+      "relevance": 0.83056640625
+    },
+    "Entity-minimum_bayes-risk": {
+      "node_id": "minimum_bayes-risk",
+      "disambiguation_index": 0,
+      "label": "Minimum Bayes-Risk",
+      "aliases": [
+        "Minimum Bayes-Risk"
+      ],
+      "types": [
+        "decoding method",
+        "statistical method",
+        "decoding technique",
+        "decoding",
+        "method",
+        "statistical approach"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Minimum Bayes-Risk is a statistical decision-making method used in various applications, including decoding in machine translation, that aims to minimize the expected loss by selecting the output with the lowest average risk.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Minimum Bayes-Risk",
+          "local_types": [
+            "decoding method",
+            "statistical method",
+            "decoding technique",
+            "decoding",
+            "method",
+            "statistical approach"
+          ],
+          "iri": "Entity-minimum_bayes-risk-Mention-1"
+        }
+      ],
+      "relevance": 0.76611328125
+    },
+    "Entity-hierarchy_of_loss_function": {
+      "node_id": "hierarchy_of_loss_function",
+      "disambiguation_index": 0,
+      "label": "hierarchy of loss functions",
+      "aliases": [
+        "hierarchy of loss functions"
+      ],
+      "types": [
+        "algorithm",
+        "loss function",
+        "mathematical concept",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'hierarchy of loss functions' refers to a structured set of loss functions used in Minimum Bayes-Risk decoding for statistical machine translation, which integrates varying levels of linguistic information, including word strings, word-to-word alignments, and syntactic structures from parse-trees.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "hierarchy of loss functions",
+          "local_types": [
+            "algorithm",
+            "loss function",
+            "mathematical concept",
+            "concept"
+          ],
+          "iri": "Entity-hierarchy_of_loss_function-Mention-1"
+        }
+      ],
+      "relevance": 0.759765625
+    },
+    "Entity-specific_loss_function": {
+      "node_id": "specific_loss_function",
+      "disambiguation_index": 0,
+      "label": "specific loss functions",
+      "aliases": [
+        "specific loss functions"
+      ],
+      "types": [
+        "loss function",
+        "function"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Specific loss functions refer to tailored mathematical functions used in Minimum Bayes-Risk decoding to evaluate and optimize the performance of statistical machine translation by quantifying translation errors based on various linguistic criteria.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "specific loss functions",
+          "local_types": [
+            "loss function",
+            "function"
+          ],
+          "iri": "Entity-specific_loss_function-Mention-1"
+        }
+      ],
+      "relevance": 0.73486328125
+    },
+    "Entity-statistical_approach": {
+      "node_id": "statistical_approach",
+      "disambiguation_index": 0,
+      "label": "statistical approach",
+      "aliases": [
+        "statistical approach"
+      ],
+      "types": [
+        "methodology",
+        "research method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'statistical approach' refers to a methodology in statistical machine translation that utilizes Minimum Bayes-Risk decoding to minimize expected translation error losses by employing various loss functions that account for different linguistic information.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "statistical approach",
+          "local_types": [
+            "methodology",
+            "research method"
+          ],
+          "iri": "Entity-statistical_approach-Mention-1"
+        }
+      ],
+      "relevance": 0.71875
+    },
+    "Entity-a_chinese-to-english_translation_task": {
+      "node_id": "a_chinese-to-english_translation_task",
+      "disambiguation_index": 0,
+      "label": "a Chinese-to-English translation task",
+      "aliases": [
+        "a Chinese-to-English translation task"
+      ],
+      "types": [
+        "task",
+        "translation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A Chinese-to-English translation task refers to the process of converting text or speech from the Chinese language into the English language, specifically evaluated in the context of statistical machine translation using Minimum Bayes-Risk decoding to assess and improve translation performance.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "a Chinese-to-English translation task",
+          "local_types": [
+            "task",
+            "translation"
+          ],
+          "iri": "Entity-a_chinese-to-english_translation_task-Mention-1"
+        }
+      ],
+      "relevance": 0.6943359375
+    },
+    "Entity-expected_loss_of_translation_error": {
+      "node_id": "expected_loss_of_translation_error",
+      "disambiguation_index": 0,
+      "label": "expected loss of translation errors",
+      "aliases": [
+        "expected loss of translation errors"
+      ],
+      "types": [
+        "concept",
+        "translation error"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The expected loss of translation errors refers to a statistical measure used in machine translation that quantifies the anticipated cost associated with errors in translation, guiding the optimization of translation performance through various loss functions.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "expected loss of translation errors",
+          "local_types": [
+            "concept",
+            "translation error"
+          ],
+          "iri": "Entity-expected_loss_of_translation_error-Mention-1"
+        }
+      ],
+      "relevance": 0.6669921875
+    },
+    "Entity-statistical_mt_performance": {
+      "node_id": "statistical_mt_performance",
+      "disambiguation_index": 0,
+      "label": "statistical MT performance",
+      "aliases": [
+        "statistical MT performance"
+      ],
+      "types": [
+        "machine translation evaluation",
+        "performance",
+        "machine translation",
+        "performance metric",
+        "statistical MT"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Statistical MT performance refers to the effectiveness and accuracy of machine translation systems that utilize statistical methods for translating text from one language to another.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "statistical MT performance",
+          "local_types": [
+            "machine translation evaluation",
+            "performance",
+            "machine translation",
+            "performance metric",
+            "statistical MT"
+          ],
+          "iri": "Entity-statistical_mt_performance-Mention-1"
+        }
+      ],
+      "relevance": 0.64404296875
+    },
+    "Entity-statistical_mt": {
+      "node_id": "statistical_mt",
+      "disambiguation_index": 0,
+      "label": "statistical MT",
+      "aliases": [
+        "statistical MT"
+      ],
+      "types": [
+        "computational linguistics",
+        "method",
+        "machine translation"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Statistical MT refers to a method of machine translation that uses statistical models to generate translations based on the analysis of large corpora of bilingual text.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "statistical MT",
+          "local_types": [
+            "computational linguistics",
+            "method",
+            "machine translation"
+          ],
+          "iri": "Entity-statistical_mt-Mention-1"
+        }
+      ],
+      "relevance": 0.61669921875
+    },
+    "Entity-statistical_machine_translation": {
+      "node_id": "statistical_machine_translation",
+      "disambiguation_index": 0,
+      "label": "statistical machine translation",
+      "aliases": [
+        "statistical machine translation"
+      ],
+      "types": [
+        "technology",
+        "computational linguistics",
+        "field",
+        "machine translation",
+        "translation",
+        "field of study"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Statistical machine translation is a technology in computational linguistics that uses statistical models to automatically translate text from one language to another.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "statistical machine translation",
+          "local_types": [
+            "technology",
+            "computational linguistics",
+            "field",
+            "machine translation",
+            "translation",
+            "field of study"
+          ],
+          "iri": "Entity-statistical_machine_translation-Mention-1"
+        }
+      ],
+      "relevance": 0.60498046875
+    },
+    "Entity-loss_function": {
+      "node_id": "loss_function",
+      "disambiguation_index": 0,
+      "label": "loss functions",
+      "aliases": [
+        "loss functions"
+      ],
+      "types": [
+        "performance measure",
+        "concept",
+        "performance metric",
+        "function",
+        "mathematical concept",
+        "optimization criterion",
+        "mathematical function"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Loss functions are mathematical functions used to quantify the difference between predicted values and actual values, serving as a criterion for optimizing models in various statistical and machine learning applications.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "loss functions",
+          "local_types": [
+            "performance measure",
+            "concept",
+            "performance metric",
+            "function",
+            "mathematical function"
+          ],
+          "iri": "Entity-loss_function-Mention-1"
+        },
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "loss functions",
+          "local_types": [
+            "mathematical concept",
+            "optimization criterion"
+          ],
+          "iri": "Entity-loss_function-Mention-2"
+        }
+      ],
+      "relevance": 0.58203125
+    },
+    "Entity-word_string": {
+      "node_id": "word_string",
+      "disambiguation_index": 0,
+      "label": "word strings",
+      "aliases": [
+        "word strings"
+      ],
+      "types": [
+        "text",
+        "linguistic unit",
+        "text structure",
+        "data",
+        "word"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'word strings' refers to sequences of words that serve as linguistic units in the context of statistical machine translation, where they are used to derive various levels of linguistic information for optimizing translation performance.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "word strings",
+          "local_types": [
+            "text",
+            "linguistic unit",
+            "text structure",
+            "data",
+            "word"
+          ],
+          "iri": "Entity-word_string-Mention-1"
+        }
+      ],
+      "relevance": 0.5771484375
+    },
+    "Entity-translation_performance": {
+      "node_id": "translation_performance",
+      "disambiguation_index": 0,
+      "label": "translation performance",
+      "aliases": [
+        "translation performance"
+      ],
+      "types": [
+        "evaluation metric",
+        "translation",
+        "performance measure",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Translation performance refers to the assessment of the quality and accuracy of translated text, typically evaluated using various metrics that quantify the effectiveness of translation processes.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "translation performance",
+          "local_types": [
+            "evaluation metric",
+            "translation",
+            "performance measure",
+            "performance metric"
+          ],
+          "iri": "Entity-translation_performance-Mention-1"
+        }
+      ],
+      "relevance": 0.5673828125
+    },
+    "Entity-expected_loss": {
+      "node_id": "expected_loss",
+      "disambiguation_index": 0,
+      "label": "expected loss",
+      "aliases": [
+        "expected loss"
+      ],
+      "types": [
+        "statistical measure",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Expected loss is a statistical measure used to quantify the average loss or cost associated with a decision or prediction, often employed in various fields to evaluate performance and optimize outcomes.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "expected loss",
+          "local_types": [
+            "statistical measure",
+            "performance metric"
+          ],
+          "iri": "Entity-expected_loss-Mention-1"
+        }
+      ],
+      "relevance": 0.56396484375
+    },
+    "Entity-word-to-word_alignment": {
+      "node_id": "word-to-word_alignment",
+      "disambiguation_index": 0,
+      "label": "word-to-word alignments",
+      "aliases": [
+        "word-to-word alignments"
+      ],
+      "types": [
+        "translation technique",
+        "linguistic structure",
+        "alignment method",
+        "alignment",
+        "linguistic relationship",
+        "MT system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Word-to-word alignments refer to the mapping of individual words in a source language to their corresponding words in a target language, often used in machine translation to facilitate understanding of linguistic relationships between languages.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "word-to-word alignments",
+          "local_types": [
+            "translation technique",
+            "linguistic structure",
+            "alignment method",
+            "alignment",
+            "linguistic relationship",
+            "MT system"
+          ],
+          "iri": "Entity-word-to-word_alignment-Mention-1"
+        }
+      ],
+      "relevance": 0.55712890625
+    },
+    "Entity-mt_system": {
+      "node_id": "mt_system",
+      "disambiguation_index": 0,
+      "label": "MT system",
+      "aliases": [
+        "MT system"
+      ],
+      "types": [
+        "software",
+        "system",
+        "machine translation system",
+        "machine translation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "An MT system is a type of software designed to automatically translate text or speech from one language to another using computational methods.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "MT system",
+          "local_types": [
+            "software",
+            "system",
+            "machine translation system",
+            "machine translation"
+          ],
+          "iri": "Entity-mt_system-Mention-1"
+        }
+      ],
+      "relevance": 0.54638671875
+    },
+    "Entity-source_and_target_language_sentence": {
+      "node_id": "source_and_target_language_sentence",
+      "disambiguation_index": 0,
+      "label": "source and target language sentences",
+      "aliases": [
+        "source and target language sentences"
+      ],
+      "types": [
+        "sentence",
+        "language"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Source and target language sentences refer to the original sentences in a source language and their corresponding translations in a target language, which are used in statistical machine translation to analyze and improve translation performance.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "source and target language sentences",
+          "local_types": [
+            "sentence",
+            "language"
+          ],
+          "iri": "Entity-source_and_target_language_sentence-Mention-1"
+        }
+      ],
+      "relevance": 0.53515625
+    },
+    "Entity-chinese-to-english": {
+      "node_id": "chinese-to-english",
+      "disambiguation_index": 0,
+      "label": "Chinese-to-English",
+      "aliases": [
+        "Chinese-to-English",
+        "Chinese-to-English translation task"
+      ],
+      "types": [
+        "language pair",
+        "translation",
+        "task",
+        "language processing",
+        "translation task"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Chinese-to-English refers to the process or task of translating text or speech from the Chinese language into the English language.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Chinese-to-English",
+          "local_types": [
+            "translation",
+            "translation task",
+            "language pair"
+          ],
+          "iri": "Entity-chinese-to-english-Mention-1"
+        },
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Chinese-to-English translation task",
+          "local_types": [
+            "language pair",
+            "translation",
+            "task",
+            "language processing",
+            "translation task"
+          ],
+          "iri": "Entity-chinese-to-english-Mention-2"
+        }
+      ],
+      "relevance": 0.5244140625
+    },
+    "Entity-translation_error": {
+      "node_id": "translation_error",
+      "disambiguation_index": 0,
+      "label": "translation errors",
+      "aliases": [
+        "translation errors"
+      ],
+      "types": [
+        "translation issue",
+        "linguistic issue",
+        "error type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Translation errors refer to inaccuracies or mistakes that occur during the process of converting text from one language to another, affecting the fidelity and clarity of the translated content.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "translation errors",
+          "local_types": [
+            "translation issue",
+            "linguistic issue",
+            "error type"
+          ],
+          "iri": "Entity-translation_error-Mention-1"
+        }
+      ],
+      "relevance": 0.51318359375
+    },
+    "Entity-target_language_sentence": {
+      "node_id": "target_language_sentence",
+      "disambiguation_index": 0,
+      "label": "target language sentences",
+      "aliases": [
+        "target language sentences"
+      ],
+      "types": [
+        "language data",
+        "linguistic unit",
+        "text"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Target language sentences refer to sentences that are expressed in the language into which text is being translated or processed in the context of language translation or linguistic analysis.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "target language sentences",
+          "local_types": [
+            "language data",
+            "linguistic unit",
+            "text"
+          ],
+          "iri": "Entity-target_language_sentence-Mention-1"
+        }
+      ],
+      "relevance": 0.49755859375
+    },
+    "Entity-parse-trees": {
+      "node_id": "parse-trees",
+      "disambiguation_index": 0,
+      "label": "parse-trees",
+      "aliases": [
+        "parse-trees"
+      ],
+      "types": [
+        "tree",
+        "linguistic structure",
+        "structure",
+        "parse",
+        "data structure",
+        "linguistic representation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Parse-trees are hierarchical tree structures that represent the syntactic structure of sentences, illustrating the relationships between words and phrases in a language.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "parse-trees",
+          "local_types": [
+            "tree",
+            "linguistic structure",
+            "structure",
+            "parse",
+            "data structure",
+            "linguistic representation"
+          ],
+          "iri": "Entity-parse-trees-Mention-1"
+        }
+      ],
+      "relevance": 0.489990234375
+    },
+    "Entity-linguistic_information": {
+      "node_id": "linguistic_information",
+      "disambiguation_index": 0,
+      "label": "linguistic information",
+      "aliases": [
+        "linguistic information"
+      ],
+      "types": [
+        "data type",
+        "linguistic",
+        "concept",
+        "information type",
+        "information",
+        "language data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Linguistic information refers to data and insights derived from language, encompassing various levels of structure and meaning, such as phonetics, syntax, semantics, and pragmatics.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "linguistic information",
+          "local_types": [
+            "data type",
+            "linguistic",
+            "concept",
+            "information type",
+            "information",
+            "language data"
+          ],
+          "iri": "Entity-linguistic_information-Mention-1"
+        }
+      ],
+      "relevance": 0.439208984375
+    },
+    "Entity-syntactic_structure": {
+      "node_id": "syntactic_structure",
+      "disambiguation_index": 0,
+      "label": "syntactic structure",
+      "aliases": [
+        "syntactic structure"
+      ],
+      "types": [
+        "syntax",
+        "grammar",
+        "linguistic structure",
+        "structure",
+        "grammar component"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Syntactic structure refers to the arrangement and organization of words and phrases in a language, which defines the grammatical relationships and hierarchy within sentences.",
+      "mentions": [
+        {
+          "reference": "Paper-38-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "syntactic structure",
+          "local_types": [
+            "syntax",
+            "grammar",
+            "linguistic structure",
+            "structure",
+            "grammar component"
+          ],
+          "iri": "Entity-syntactic_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.407470703125
+    }
+  },
+  "summary": "We present Minimum Bayes-Risk -LRB- MBR -RRB- decoding for statistical machine translation . This statistical approach aims to minimize expected loss of translation errors under loss functions that measure translation performance . We describe a hierarchy of loss functions that incorporate different levels of linguistic information from word strings , word-to-word alignments from an MT system , and syntactic structure from parse-trees of source and target language sentences . We report the performance of the MBR decoders on a Chinese-to-English translation task . Our results show that MBR decoding can be used to tune statistical MT performance for specific loss functions .",
+  "triples": [
+    [
+      "Entity-minimum_bayes-risk",
+      "Predicate-decoding_for",
+      "Entity-statistical_machine_translation"
+    ],
+    [
+      "Entity-mbr",
+      "Predicate-decoding_for",
+      "Entity-statistical_machine_translation"
+    ],
+    [
+      "Entity-this_statistical_approach",
+      "Predicate-aims_to_minimize",
+      "Entity-expected_loss_of_translation_error"
+    ],
+    [
+      "Entity-loss_function",
+      "Predicate-measure",
+      "Entity-translation_performance"
+    ],
+    [
+      "Entity-hierarchy_of_loss_function",
+      "Predicate-incorporates",
+      "Entity-linguistic_information"
+    ],
+    [
+      "Entity-hierarchy_of_loss_function",
+      "Predicate-incorporates",
+      "Entity-word_string"
+    ],
+    [
+      "Entity-hierarchy_of_loss_function",
+      "Predicate-incorporates",
+      "Entity-word-to-word_alignment"
+    ],
+    [
+      "Entity-hierarchy_of_loss_function",
+      "Predicate-incorporates",
+      "Entity-syntactic_structure"
+    ],
+    [
+      "Entity-syntactic_structure",
+      "Predicate-comes_from",
+      "Entity-parse-trees"
+    ],
+    [
+      "Entity-parse-trees",
+      "Predicate-of",
+      "Entity-source_and_target_language_sentence"
+    ],
+    [
+      "Entity-mbr_decoder",
+      "Predicate-report_the_performance_on",
+      "Entity-chinese-to-english"
+    ],
+    [
+      "Entity-the_performance_of_the_mbr_decoder",
+      "Predicate-is_on",
+      "Entity-a_chinese-to-english_translation_task"
+    ],
+    [
+      "Entity-mbr_decoder",
+      "Predicate-report",
+      "Entity-the_performance_of_the_mbr_decoder"
+    ],
+    [
+      "Entity-mbr_decoder",
+      "Predicate-perform_on",
+      "Entity-a_chinese-to-english_translation_task"
+    ],
+    [
+      "Entity-mbr_decoder",
+      "Predicate-report_the_performance_on",
+      "Entity-a_chinese-to-english_translation_task"
+    ],
+    [
+      "Entity-mbr_decoder",
+      "Predicate-used_to_tune",
+      "Entity-statistical_mt_performance"
+    ],
+    [
+      "Entity-statistical_mt_performance",
+      "Predicate-for",
+      "Entity-specific_loss_function"
+    ],
+    [
+      "Entity-mbr_decoder",
+      "Predicate-can_be_used_to_tune",
+      "Entity-statistical_mt_performance"
+    ],
+    [
+      "Entity-this_statistical_approach",
+      "Predicate-evaluates",
+      "Entity-the_performance_of_the_mbr_decoder"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-hierarchy_of_loss_function",
+      "skos:broader",
+      "Entity-loss_function"
+    ],
+    [
+      "Entity-word-to-word_alignment",
+      "skos:broader",
+      "Entity-mt_system"
+    ],
+    [
+      "Entity-statistical_mt",
+      "skos:broader",
+      "Entity-statistical_machine_translation"
+    ],
+    [
+      "Entity-minimum_bayes-risk",
+      "skos:broader",
+      "Entity-statistical_approach"
+    ],
+    [
+      "Entity-statistical_mt_performance",
+      "skos:broader",
+      "Entity-statistical_machine_translation"
+    ],
+    [
+      "Entity-expected_loss_of_translation_error",
+      "skos:broader",
+      "Entity-translation_error"
+    ],
+    [
+      "Entity-mt_system",
+      "skos:broader",
+      "Entity-statistical_machine_translation"
+    ],
+    [
+      "Entity-specific_loss_function",
+      "skos:broader",
+      "Entity-loss_function"
+    ],
+    [
+      "Entity-hierarchy_of_loss_function",
+      "skos:broader",
+      "Entity-specific_loss_function"
+    ],
+    [
+      "Entity-statistical_mt_performance",
+      "skos:broader",
+      "Entity-statistical_mt"
+    ]
+  ],
+  "predicates": {
+    "Predicate-decoding_for": {
+      "label": "decoding for",
+      "description": "The predicate 'decoding for' indicates a process or method by which a particular approach, model, or framework (the subject) is applied to interpret, translate, or convert information into a comprehensible format or output (the object). It signifies the relationship where the subject provides a mechanism or strategy that facilitates the understanding or transformation of the object, often in the context of information processing or language translation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-aims_to_minimize": {
+      "label": "aims to minimize",
+      "description": "The predicate 'aims to minimize' indicates an intention or goal of the subject to reduce the extent, degree, or impact of the object. It suggests a proactive effort to lower negative outcomes or undesirable effects associated with the object, reflecting a strategic or methodological focus on improvement or optimization.",
+      "disambiguation_index": 0
+    },
+    "Predicate-measure": {
+      "label": "measure",
+      "description": "The predicate 'measure' indicates a relationship where the subject quantifies or evaluates the extent, degree, or quality of the object. In this context, it implies that the subject provides a systematic way to assess the characteristics or performance of the object, often through numerical or comparative means.",
+      "disambiguation_index": 0
+    },
+    "Predicate-incorporates": {
+      "label": "incorporates",
+      "description": "The predicate 'incorporates' indicates that the subject integrates or includes the object as a component or element within its structure or function. This relationship suggests that the subject is enhanced or modified by the presence of the object, implying a synthesis where the object contributes to the overall characteristics or capabilities of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-comes_from": {
+      "label": "comes from",
+      "description": "The predicate 'comes from' indicates a source or origin relationship between the subject and the object. It implies that the subject is derived from, or has its roots in, the object, suggesting a directional flow of influence or development from the object to the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-of": {
+      "label": "of",
+      "description": "The predicate 'of' serves to establish a relationship of belonging or association between the subject and the object. It indicates that the subject is related to, derived from, or characterized by the object, thereby providing context or specification about the subject's nature, function, or origin in relation to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-report_the_performance_on": {
+      "label": "report the performance on",
+      "description": "The predicate 'report the performance on' indicates an action where the subject provides an assessment or evaluation regarding the effectiveness, efficiency, or quality of a specific task, process, or system represented by the object. In this context, the subject is typically an entity or system that conducts the evaluation, while the object specifies the particular area or domain for which the performance is being assessed.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_on": {
+      "label": "is on",
+      "description": "The predicate 'is on' indicates that the subject is engaged in, focused upon, or relevant to the object, suggesting a relationship where the subject's activities, characteristics, or status are directly associated with the context or topic represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-report": {
+      "label": "report",
+      "description": "The predicate 'report' serves to establish a communicative relationship between the subject and the object, where the subject conveys information, findings, or observations regarding the object. In this context, the subject is typically an entity or agent that has the authority or capability to provide insights, while the object represents the specific information or data being discussed or analyzed. The act of reporting implies a transfer of knowledge or an update on the status, characteristics, or outcomes related to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-perform_on": {
+      "label": "perform on",
+      "description": "The predicate 'perform on' indicates that the subject is actively engaged in executing or carrying out a specific action, task, or function represented by the object. It establishes a relationship where the subject is responsible for the execution of the task, highlighting the subject's role in the process and the nature of the task being undertaken.",
+      "disambiguation_index": 0
+    },
+    "Predicate-used_to_tune": {
+      "label": "used to tune",
+      "description": "The predicate 'used to tune' indicates a functional relationship where the subject is employed as a tool or method to adjust, optimize, or enhance the characteristics or performance of the object. This implies that the subject plays a significant role in the process of refining or calibrating the object to achieve desired outcomes or improvements.",
+      "disambiguation_index": 0
+    },
+    "Predicate-for": {
+      "label": "for",
+      "description": "The predicate 'for' indicates a relationship of purpose, benefit, or relevance between the subject and the object. It suggests that the subject is associated with, intended to serve, or is applicable to the object, highlighting a connection where the subject is considered in the context of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-can_be_used_to_tune": {
+      "label": "can be used to tune",
+      "description": "The predicate 'can be used to tune' indicates that the subject has the capability or functionality to adjust, optimize, or refine the characteristics or performance of the object. This implies a relationship where the subject serves as a tool, method, or mechanism that influences or enhances the quality or effectiveness of the object in question.",
+      "disambiguation_index": 0
+    },
+    "Predicate-evaluates": {
+      "label": "evaluates",
+      "description": "The predicate 'evaluates' signifies an action where the subject assesses, analyzes, or measures the qualities, effectiveness, or performance of the object. It establishes a relationship in which the subject applies a method or criteria to determine the value or success of the object in question.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between two concepts, where the subject represents a more specific or narrower concept, and the object represents a more general or encompassing concept. This relationship indicates that the subject falls under the category defined by the object, suggesting that the object includes the subject as part of its broader classification.",
+      "disambiguation_index": 0
+    }
+  }
+}

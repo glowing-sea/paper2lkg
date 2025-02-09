@@ -1,0 +1,1 @@
+Given an entity and its description, represent the entity for searching purposes:

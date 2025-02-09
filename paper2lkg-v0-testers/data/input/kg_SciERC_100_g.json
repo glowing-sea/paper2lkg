@@ -1,0 +1,1041 @@
+{
+  "iri": "Paper-100",
+  "title": "NIPS_2016_80_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-100-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-100-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-100-Section-1-Paragraph-1-Sentence-1",
+              "text": "Fast algorithms for nearest neighbor -LRB- NN -RRB- search have in large part focused on 2 distance ."
+            },
+            {
+              "iri": "Paper-100-Section-1-Paragraph-1-Sentence-2",
+              "text": "Here we develop an approach for 1 distance that begins with an explicit and exactly distance-preserving embedding of the points into 2 2 ."
+            },
+            {
+              "iri": "Paper-100-Section-1-Paragraph-1-Sentence-3",
+              "text": "We show how this can efficiently be combined with random-projection based methods for 2 NN search , such as locality-sensitive hashing -LRB- LSH -RRB- or random projection trees ."
+            },
+            {
+              "iri": "Paper-100-Section-1-Paragraph-1-Sentence-4",
+              "text": "We rigorously establish the correctness of the methodology and show by experimentation using LSH that it is competitive in practice with available alternatives ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    5.6743621826171875e-05,
+    55.15127873420715,
+    56.1221718788147,
+    49.922900438308716,
+    0.018540143966674805,
+    8.153915405273438e-05,
+    0.00010848045349121094,
+    216.2545771598816,
+    211.72963666915894,
+    1.3485584259033203,
+    0.048964738845825195,
+    0.007166147232055664,
+    0.00016069412231445312,
+    58.12872767448425,
+    0.0002474784851074219,
+    0.01889657974243164,
+    0.0006427764892578125,
+    2.2231812477111816,
+    1.1994850635528564,
+    1.1002755165100098,
+    403.890291929245,
+    2.7281103134155273,
+    256.8629848957062,
+    1.5599637031555176,
+    0.0007729530334472656,
+    0.010283470153808594
+  ],
+  "nodes": {
+    "Entity-fast_algorithm_for_nearest_neighbor": {
+      "node_id": "fast_algorithm_for_nearest_neighbor",
+      "disambiguation_index": 0,
+      "label": "Fast algorithms for nearest neighbor",
+      "aliases": [
+        "Fast algorithms for nearest neighbor"
+      ],
+      "types": [
+        "search method",
+        "method",
+        "algorithm"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Fast algorithms for nearest neighbor refer to efficient computational methods designed to quickly find the closest points in a dataset based on distance metrics, particularly focusing on optimizing search techniques for both 1 and 2 distance metrics.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Fast algorithms for nearest neighbor",
+          "local_types": [
+            "search method",
+            "method",
+            "algorithm"
+          ],
+          "iri": "Entity-fast_algorithm_for_nearest_neighbor-Mention-1"
+        }
+      ],
+      "relevance": 0.72216796875
+    },
+    "Entity-an_approach_for_1_distance": {
+      "node_id": "an_approach_for_1_distance",
+      "disambiguation_index": 0,
+      "label": "an approach for 1 distance",
+      "aliases": [
+        "an approach for 1 distance"
+      ],
+      "types": [
+        "method",
+        "approach"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "An approach for 1 distance refers to a method for nearest neighbor search that utilizes a distance-preserving embedding of data points into a two-dimensional space, enabling efficient integration with random-projection techniques for improved search performance.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "an approach for 1 distance",
+          "local_types": [
+            "method",
+            "approach"
+          ],
+          "iri": "Entity-an_approach_for_1_distance-Mention-1"
+        }
+      ],
+      "relevance": 0.71826171875
+    },
+    "Entity-lsh": {
+      "node_id": "lsh",
+      "disambiguation_index": 0,
+      "label": "LSH",
+      "aliases": [
+        "LSH"
+      ],
+      "types": [
+        "locality-sensitive hashing",
+        "method",
+        "algorithm",
+        "hashing technique",
+        "data structure",
+        "abbreviation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "LSH refers to locality-sensitive hashing, a method used in computer science for reducing the dimensionality of data while preserving the relative distances between points, facilitating efficient approximate nearest neighbor searches.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "LSH",
+          "local_types": [
+            "locality-sensitive hashing",
+            "method",
+            "abbreviation",
+            "hashing technique",
+            "data structure",
+            "algorithm"
+          ],
+          "iri": "Entity-lsh-Mention-1"
+        },
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "LSH",
+          "local_types": [
+            "algorithm",
+            "data structure"
+          ],
+          "iri": "Entity-lsh-Mention-2"
+        }
+      ],
+      "relevance": 0.69677734375
+    },
+    "Entity-random_projection_tree": {
+      "node_id": "random_projection_tree",
+      "disambiguation_index": 0,
+      "label": "random projection trees",
+      "aliases": [
+        "random projection trees"
+      ],
+      "types": [
+        "tree",
+        "data structure",
+        "method",
+        "algorithm"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Random projection trees are a type of data structure and algorithm used for efficient nearest neighbor search by leveraging random projections to reduce dimensionality.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "random projection trees",
+          "local_types": [
+            "tree",
+            "data structure",
+            "method",
+            "algorithm"
+          ],
+          "iri": "Entity-random_projection_tree-Mention-1"
+        }
+      ],
+      "relevance": 0.68798828125
+    },
+    "Entity-2_nn_search": {
+      "node_id": "2_nn_search",
+      "disambiguation_index": 0,
+      "label": "2 NN search",
+      "aliases": [
+        "2 NN search"
+      ],
+      "types": [
+        "search",
+        "nearest neighbor search",
+        "method",
+        "search algorithm"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "2 NN search refers to a search algorithm used to find the two nearest neighbors of a given data point in a dataset.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "2 NN search",
+          "local_types": [
+            "search",
+            "nearest neighbor search",
+            "method",
+            "search algorithm"
+          ],
+          "iri": "Entity-2_nn_search-Mention-1"
+        }
+      ],
+      "relevance": 0.68603515625
+    },
+    "Entity-nn": {
+      "node_id": "nn",
+      "disambiguation_index": 0,
+      "label": "NN",
+      "aliases": [
+        "NN"
+      ],
+      "types": [
+        "search method",
+        "method",
+        "abbreviation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "NN refers to 'nearest neighbor', a search method used in algorithms that focus on finding the closest points in a dataset based on distance metrics.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "NN",
+          "local_types": [
+            "search method",
+            "method",
+            "abbreviation"
+          ],
+          "iri": "Entity-nn-Mention-1"
+        }
+      ],
+      "relevance": 0.66455078125
+    },
+    "Entity-locality-sensitive_hashing": {
+      "node_id": "locality-sensitive_hashing",
+      "disambiguation_index": 0,
+      "label": "locality-sensitive hashing",
+      "aliases": [
+        "locality-sensitive hashing"
+      ],
+      "types": [
+        "method",
+        "hashing technique",
+        "hashing",
+        "data structure",
+        "algorithm"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Locality-sensitive hashing is a technique used in computer science for performing probabilistic dimension reduction of high-dimensional data, enabling efficient approximate nearest neighbor searches by hashing similar input items into the same buckets with high probability.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "locality-sensitive hashing",
+          "local_types": [
+            "method",
+            "hashing technique",
+            "hashing",
+            "data structure",
+            "algorithm"
+          ],
+          "iri": "Entity-locality-sensitive_hashing-Mention-1"
+        }
+      ],
+      "relevance": 0.662109375
+    },
+    "Entity-experimentation_using_lsh": {
+      "node_id": "experimentation_using_lsh",
+      "disambiguation_index": 0,
+      "label": "experimentation using LSH",
+      "aliases": [
+        "experimentation using LSH"
+      ],
+      "types": [
+        "experiment",
+        "LSH",
+        "experimentation",
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Experimentation using LSH refers to the practical evaluation and comparison of a proposed nearest neighbor search methodology that incorporates locality-sensitive hashing to assess its performance against existing alternatives.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "experimentation using LSH",
+          "local_types": [
+            "experiment",
+            "LSH",
+            "experimentation",
+            "method"
+          ],
+          "iri": "Entity-experimentation_using_lsh-Mention-1"
+        }
+      ],
+      "relevance": 0.662109375
+    },
+    "Entity-nearest_neighbor": {
+      "node_id": "nearest_neighbor",
+      "disambiguation_index": 0,
+      "label": "nearest neighbor",
+      "aliases": [
+        "nearest neighbor"
+      ],
+      "types": [
+        "machine learning technique",
+        "machine learning",
+        "search algorithm"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Nearest neighbor refers to a machine learning technique and search algorithm used to classify or retrieve data points based on their proximity to other data points in a feature space.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "nearest neighbor",
+          "local_types": [
+            "machine learning technique",
+            "machine learning",
+            "search algorithm"
+          ],
+          "iri": "Entity-nearest_neighbor-Mention-1"
+        }
+      ],
+      "relevance": 0.65185546875
+    },
+    "Entity-correctness_of_the_methodology": {
+      "node_id": "correctness_of_the_methodology",
+      "disambiguation_index": 0,
+      "label": "correctness of the methodology",
+      "aliases": [
+        "the correctness of the methodology",
+        "correctness of the methodology"
+      ],
+      "types": [
+        "correctness",
+        "methodology",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'correctness of the methodology' refers to the validation and reliability of the proposed approach for nearest neighbor search that utilizes a distance-preserving embedding and integrates with random-projection methods, ensuring its effectiveness compared to existing alternatives.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "correctness of the methodology",
+          "local_types": [
+            "method",
+            "methodology"
+          ],
+          "iri": "Entity-correctness_of_the_methodology-Mention-1"
+        },
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the correctness of the methodology",
+          "local_types": [
+            "methodology",
+            "correctness"
+          ],
+          "iri": "Entity-correctness_of_the_methodology-Mention-2"
+        }
+      ],
+      "relevance": 0.6455078125
+    },
+    "Entity-distance-preserving_embedding": {
+      "node_id": "distance-preserving_embedding",
+      "disambiguation_index": 0,
+      "label": "distance-preserving embedding",
+      "aliases": [
+        "distance-preserving embedding"
+      ],
+      "types": [
+        "embedding",
+        "technique",
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A distance-preserving embedding is a mathematical technique that transforms data points from one metric space to another while maintaining the distances between the points, specifically enabling efficient nearest neighbor search in lower-dimensional spaces.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "distance-preserving embedding",
+          "local_types": [
+            "embedding",
+            "technique",
+            "method"
+          ],
+          "iri": "Entity-distance-preserving_embedding-Mention-1"
+        }
+      ],
+      "relevance": 0.63037109375
+    },
+    "Entity-embedding": {
+      "node_id": "embedding",
+      "disambiguation_index": 0,
+      "label": "embedding",
+      "aliases": [
+        "embedding"
+      ],
+      "types": [
+        "mathematical technique",
+        "data representation",
+        "mathematical transformation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'embedding' refers to a mathematical transformation that explicitly preserves distances while mapping points from a one-dimensional space into a two-dimensional space, facilitating efficient nearest neighbor search.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "embedding",
+          "local_types": [
+            "mathematical technique",
+            "data representation",
+            "mathematical transformation"
+          ],
+          "iri": "Entity-embedding-Mention-1"
+        }
+      ],
+      "relevance": 0.62744140625
+    },
+    "Entity-2_2": {
+      "node_id": "2_2",
+      "disambiguation_index": 0,
+      "label": "2 2",
+      "aliases": [
+        "2 2"
+      ],
+      "types": [
+        "coordinate system",
+        "dimension",
+        "mathematical space"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The mention '2 2' refers to a two-dimensional mathematical space used for embedding points in the context of nearest neighbor search algorithms.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "2 2",
+          "local_types": [
+            "coordinate system",
+            "dimension",
+            "mathematical space"
+          ],
+          "iri": "Entity-2_2-Mention-1"
+        }
+      ],
+      "relevance": 0.6240234375
+    },
+    "Entity-distance": {
+      "node_id": "distance",
+      "disambiguation_index": 0,
+      "label": "distance",
+      "aliases": [
+        "distance"
+      ],
+      "types": [
+        "mathematical concept",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of nearest neighbor search algorithms, 'distance' refers to a mathematical metric that quantifies the separation between points in a given space, specifically focusing on the 2-distance metric in this paper.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "distance",
+          "local_types": [
+            "mathematical concept",
+            "metric"
+          ],
+          "iri": "Entity-distance-Mention-1"
+        },
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "distance",
+          "local_types": [
+            "mathematical concept",
+            "metric"
+          ],
+          "iri": "Entity-distance-Mention-2"
+        }
+      ],
+      "relevance": 0.62060546875
+    },
+    "Entity-2_distance": {
+      "node_id": "2_distance",
+      "disambiguation_index": 0,
+      "label": "2 distance",
+      "aliases": [
+        "2 distance"
+      ],
+      "types": [
+        "distance",
+        "distance metric"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "2 distance refers to the Euclidean distance metric, which is commonly used in nearest neighbor search algorithms to measure the straight-line distance between points in a multi-dimensional space.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "2 distance",
+          "local_types": [
+            "distance",
+            "distance metric"
+          ],
+          "iri": "Entity-2_distance-Mention-1"
+        }
+      ],
+      "relevance": 0.6083984375
+    },
+    "Entity-random-projection_based_method": {
+      "node_id": "random-projection_based_method",
+      "disambiguation_index": 0,
+      "label": "random-projection based methods",
+      "aliases": [
+        "random-projection based methods"
+      ],
+      "types": [
+        "data processing technique",
+        "dimensionality reduction technique",
+        "method",
+        "algorithm"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Random-projection based methods are techniques used in data processing and dimensionality reduction that utilize random projections to reduce the dimensionality of data while preserving its structure.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "random-projection based methods",
+          "local_types": [
+            "data processing technique",
+            "dimensionality reduction technique",
+            "method",
+            "algorithm"
+          ],
+          "iri": "Entity-random-projection_based_method-Mention-1"
+        }
+      ],
+      "relevance": 0.59765625
+    },
+    "Entity-the_point": {
+      "node_id": "the_point",
+      "disambiguation_index": 0,
+      "label": "the points",
+      "aliases": [
+        "the points"
+      ],
+      "types": [
+        "points",
+        "data"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The points refer to a set of data points that are being embedded into a two-dimensional space for the purpose of nearest neighbor search using a distance-preserving method.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the points",
+          "local_types": [
+            "points",
+            "data"
+          ],
+          "iri": "Entity-the_point-Mention-1"
+        }
+      ],
+      "relevance": 0.59521484375
+    },
+    "Entity-1_distance": {
+      "node_id": "1_distance",
+      "disambiguation_index": 0,
+      "label": "1 distance",
+      "aliases": [
+        "1 distance"
+      ],
+      "types": [
+        "distance"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "1 distance refers to a specific metric used in nearest neighbor search that is based on the Manhattan distance, which is characterized by the sum of the absolute differences of their coordinates.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "1 distance",
+          "local_types": [
+            "distance"
+          ],
+          "iri": "Entity-1_distance-Mention-1"
+        }
+      ],
+      "relevance": 0.57421875
+    },
+    "Entity-alternative": {
+      "node_id": "alternative",
+      "disambiguation_index": 0,
+      "label": "alternatives",
+      "aliases": [
+        "alternatives",
+        "available alternatives"
+      ],
+      "types": [
+        "alternatives",
+        "method",
+        "methods",
+        "options",
+        "alternative"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'alternatives' refers to other existing methods or algorithms for nearest neighbor search that the proposed approach is being compared against in terms of performance.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "alternatives",
+          "local_types": [
+            "options",
+            "methods"
+          ],
+          "iri": "Entity-alternative-Mention-1"
+        },
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "available alternatives",
+          "local_types": [
+            "alternatives",
+            "alternative",
+            "method"
+          ],
+          "iri": "Entity-alternative-Mention-2"
+        }
+      ],
+      "relevance": 0.564453125
+    },
+    "Entity-point": {
+      "node_id": "point",
+      "disambiguation_index": 0,
+      "label": "points",
+      "aliases": [
+        "points"
+      ],
+      "types": [
+        "mathematical object",
+        "geometric entity"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'points' refers to mathematical objects that represent specific locations in a geometric space, which are being embedded into a two-dimensional space for the purpose of nearest neighbor search.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "points",
+          "local_types": [
+            "mathematical object",
+            "geometric entity"
+          ],
+          "iri": "Entity-point-Mention-1"
+        }
+      ],
+      "relevance": 0.548828125
+    },
+    "Entity-algorithm": {
+      "node_id": "algorithm",
+      "disambiguation_index": 0,
+      "label": "algorithms",
+      "aliases": [
+        "algorithms"
+      ],
+      "types": [
+        "computational technique",
+        "method",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Algorithms are systematic procedures or formulas used for solving problems or performing tasks, often involving a sequence of steps or rules to achieve a desired outcome.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "algorithms",
+          "local_types": [
+            "computational technique",
+            "method",
+            "methodology"
+          ],
+          "iri": "Entity-algorithm-Mention-1"
+        }
+      ],
+      "relevance": 0.488037109375
+    },
+    "Entity-methodology": {
+      "node_id": "methodology",
+      "disambiguation_index": 0,
+      "label": "methodology",
+      "aliases": [
+        "methodology"
+      ],
+      "types": [
+        "research approach",
+        "research method",
+        "approach",
+        "systematic procedure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Methodology refers to a systematic procedure or framework used in research to guide the collection, analysis, and interpretation of data.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "methodology",
+          "local_types": [
+            "research approach",
+            "research method",
+            "approach",
+            "systematic procedure"
+          ],
+          "iri": "Entity-methodology-Mention-1"
+        }
+      ],
+      "relevance": 0.433837890625
+    },
+    "Entity-experimentation": {
+      "node_id": "experimentation",
+      "disambiguation_index": 0,
+      "label": "experimentation",
+      "aliases": [
+        "experimentation"
+      ],
+      "types": [
+        "empirical study",
+        "research process",
+        "research method",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Experimentation refers to a systematic process of conducting tests or trials to investigate hypotheses, gather data, and validate methodologies in various fields of research.",
+      "mentions": [
+        {
+          "reference": "Paper-100-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "experimentation",
+          "local_types": [
+            "empirical study",
+            "research process",
+            "research method",
+            "method"
+          ],
+          "iri": "Entity-experimentation-Mention-1"
+        }
+      ],
+      "relevance": 0.413330078125
+    }
+  },
+  "summary": "Fast algorithms for nearest neighbor -LRB- NN -RRB- search have in large part focused on 2 distance . Here we develop an approach for 1 distance that begins with an explicit and exactly distance-preserving embedding of the points into 2 2 . We show how this can efficiently be combined with random-projection based methods for 2 NN search , such as locality-sensitive hashing -LRB- LSH -RRB- or random projection trees . We rigorously establish the correctness of the methodology and show by experimentation using LSH that it is competitive in practice with available alternatives .",
+  "triples": [
+    [
+      "Entity-fast_algorithm_for_nearest_neighbor",
+      "Predicate-focused_on",
+      "Entity-2_distance"
+    ],
+    [
+      "Entity-algorithm",
+      "Predicate-focused_on",
+      "Entity-2_distance"
+    ],
+    [
+      "Entity-nearest_neighbor",
+      "Predicate-focused_on",
+      "Entity-2_distance"
+    ],
+    [
+      "Entity-nn",
+      "Predicate-related_to",
+      "Entity-nearest_neighbor"
+    ],
+    [
+      "Entity-an_approach_for_1_distance",
+      "Predicate-develops",
+      "Entity-distance-preserving_embedding"
+    ],
+    [
+      "Entity-distance-preserving_embedding",
+      "Predicate-embeds",
+      "Entity-the_point"
+    ],
+    [
+      "Entity-an_approach_for_1_distance",
+      "Predicate-begins_with",
+      "Entity-distance-preserving_embedding"
+    ],
+    [
+      "Entity-distance-preserving_embedding",
+      "Predicate-of",
+      "Entity-the_point"
+    ],
+    [
+      "Entity-random-projection_based_method",
+      "Predicate-combined_with",
+      "Entity-2_nn_search"
+    ],
+    [
+      "Entity-random-projection_based_method",
+      "Predicate-combined_with",
+      "Entity-locality-sensitive_hashing"
+    ],
+    [
+      "Entity-random-projection_based_method",
+      "Predicate-combined_with",
+      "Entity-random_projection_tree"
+    ],
+    [
+      "Entity-random-projection_based_method",
+      "Predicate-for",
+      "Entity-2_nn_search"
+    ],
+    [
+      "Entity-locality-sensitive_hashing",
+      "Predicate-is_a_type_of",
+      "Entity-random-projection_based_method"
+    ],
+    [
+      "Entity-lsh",
+      "Predicate-used_in",
+      "Entity-experimentation_using_lsh"
+    ],
+    [
+      "Entity-methodology",
+      "Predicate-establishes",
+      "Entity-correctness_of_the_methodology"
+    ],
+    [
+      "Entity-methodology",
+      "Predicate-is_competitive_in_practice_with",
+      "Entity-alternative"
+    ],
+    [
+      "Entity-experimentation_using_lsh",
+      "Predicate-shows",
+      "Entity-correctness_of_the_methodology"
+    ],
+    [
+      "Entity-correctness_of_the_methodology",
+      "Predicate-is_established_by",
+      "Entity-experimentation"
+    ],
+    [
+      "Entity-an_approach_for_1_distance",
+      "Predicate-develops",
+      "Entity-fast_algorithm_for_nearest_neighbor"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-random-projection_based_method",
+      "skos:broader",
+      "Entity-algorithm"
+    ],
+    [
+      "Entity-random_projection_tree",
+      "skos:broader",
+      "Entity-algorithm"
+    ],
+    [
+      "Entity-distance-preserving_embedding",
+      "skos:broader",
+      "Entity-embedding"
+    ],
+    [
+      "Entity-1_distance",
+      "skos:broader",
+      "Entity-distance"
+    ],
+    [
+      "Entity-algorithm",
+      "skos:broader",
+      "Entity-methodology"
+    ],
+    [
+      "Entity-2_distance",
+      "skos:broader",
+      "Entity-distance"
+    ],
+    [
+      "Entity-locality-sensitive_hashing",
+      "skos:broader",
+      "Entity-algorithm"
+    ],
+    [
+      "Entity-fast_algorithm_for_nearest_neighbor",
+      "skos:broader",
+      "Entity-algorithm"
+    ],
+    [
+      "Entity-correctness_of_the_methodology",
+      "skos:broader",
+      "Entity-methodology"
+    ],
+    [
+      "Entity-2_nn_search",
+      "skos:broader",
+      "Entity-nearest_neighbor"
+    ],
+    [
+      "Entity-lsh",
+      "skos:broader",
+      "Entity-algorithm"
+    ],
+    [
+      "Entity-experimentation_using_lsh",
+      "skos:broader",
+      "Entity-lsh"
+    ],
+    [
+      "Entity-lsh",
+      "skos:broader",
+      "Entity-locality-sensitive_hashing"
+    ],
+    [
+      "Entity-2_nn_search",
+      "skos:broader",
+      "Entity-fast_algorithm_for_nearest_neighbor"
+    ],
+    [
+      "Entity-the_point",
+      "skos:broader",
+      "Entity-point"
+    ],
+    [
+      "Entity-experimentation_using_lsh",
+      "skos:broader",
+      "Entity-experimentation"
+    ],
+    [
+      "Entity-experimentation_using_lsh",
+      "skos:broader",
+      "Entity-locality-sensitive_hashing"
+    ]
+  ],
+  "predicates": {
+    "Predicate-focused_on": {
+      "label": "focused on",
+      "description": "The predicate 'focused on' indicates a relationship where the subject is primarily concerned with, directed towards, or emphasizes the object. It suggests that the subject's attention, efforts, or objectives are centered around the object, highlighting its importance or relevance in the context of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-related_to": {
+      "label": "related to",
+      "description": "The predicate 'related to' establishes a connection or association between the subject and the object, indicating that they share a relevant relationship or are linked in some meaningful way. This relationship can encompass various forms of association, such as similarity, proximity, or functional relevance, depending on the context in which the subject and object are situated.",
+      "disambiguation_index": 0
+    },
+    "Predicate-develops": {
+      "label": "develops",
+      "description": "The predicate 'develops' indicates a process in which the subject creates, formulates, or enhances the object, typically resulting in a new or improved version of the object that serves a specific purpose or function.",
+      "disambiguation_index": 0
+    },
+    "Predicate-embeds": {
+      "label": "embeds",
+      "description": "The predicate 'embeds' indicates a relationship where the subject is a method, process, or structure that incorporates or integrates the object into a specific context or framework, often preserving certain properties or characteristics of the object in the new setting.",
+      "disambiguation_index": 0
+    },
+    "Predicate-begins_with": {
+      "label": "begins with",
+      "description": "The predicate 'begins with' indicates that the subject is initiated or starts from the object, suggesting a foundational or primary element that serves as the starting point for the subject's development, process, or methodology.",
+      "disambiguation_index": 0
+    },
+    "Predicate-of": {
+      "label": "of",
+      "description": "The predicate 'of' is used to indicate a relationship of belonging, association, or specification between the subject and the object. It connects the subject to the object by expressing that the subject is characterized by, derived from, or related to the object in some meaningful way.",
+      "disambiguation_index": 0
+    },
+    "Predicate-combined_with": {
+      "label": "combined with",
+      "description": "The predicate 'combined with' indicates a relationship where the subject and object are brought together or integrated to form a unified entity or to enhance functionality. It suggests that the two elements work in conjunction, often resulting in improved performance, capabilities, or outcomes compared to when they are considered separately.",
+      "disambiguation_index": 0
+    },
+    "Predicate-for": {
+      "label": "for",
+      "description": "The predicate 'for' indicates a purpose, function, or intended use of the subject in relation to the object. It establishes a connection where the subject is designed, utilized, or relevant in the context of achieving, facilitating, or addressing the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_type_of": {
+      "label": "is a type of",
+      "description": "The predicate 'is a type of' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or category that falls under the broader classification represented by the object. This relationship implies that the subject shares common characteristics or functionalities with other entities that are also categorized under the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-used_in": {
+      "label": "used in",
+      "description": "The predicate 'used in' establishes a functional relationship between the subject and the object, indicating that the subject is employed or applied within the context or process described by the object. It signifies that the subject plays a role or serves a purpose in the activities or methodologies outlined in the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-establishes": {
+      "label": "establishes",
+      "description": "The predicate 'establishes' denotes a relationship in which the subject is responsible for creating, confirming, or validating the existence, validity, or truth of the object. It implies a foundational or authoritative connection where the subject provides evidence, support, or a basis for the object, thereby making the object recognized or accepted in a particular context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_competitive_in_practice_with": {
+      "label": "is competitive in practice with",
+      "description": "The predicate 'is competitive in practice with' establishes a relationship between the subject and the object, indicating that the subject performs comparably or favorably in practical applications when compared to the object. This suggests that both entities are engaged in a similar domain or context, where their effectiveness, efficiency, or overall performance can be evaluated against one another.",
+      "disambiguation_index": 0
+    },
+    "Predicate-shows": {
+      "label": "shows",
+      "description": "The predicate 'shows' indicates a relationship where the subject provides evidence, demonstration, or illustration of the truth, validity, or existence of the object. It implies that the subject serves as a means to reveal or substantiate the qualities or characteristics represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_established_by": {
+      "label": "is established by",
+      "description": "The predicate 'is established by' indicates a relationship where the subject is confirmed, validated, or supported through the process or means represented by the object. It suggests that the existence, validity, or truth of the subject is contingent upon the actions, processes, or evidence provided by the object.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or category that falls under the wider classification represented by the object. This relationship implies that the object encompasses a larger set of concepts or entities, of which the subject is a part, thereby illustrating a taxonomy or categorization in which the subject is more specialized compared to the general nature of the object.",
+      "disambiguation_index": 0
+    }
+  }
+}

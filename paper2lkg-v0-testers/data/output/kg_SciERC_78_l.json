@@ -1,0 +1,58 @@
+{
+  "iri": "Paper-78",
+  "title": "CVPR_1994_10_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-78-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-78-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-1",
+              "text": "MINPRAN , a new robust operator , nds good ts in data sets where more than 50 % of the points are outliers ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-2",
+              "text": "Unlike other techniques that handle large outlier percentages , MINPRAN does not rely on a known error bound for the good data ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-3",
+              "text": "Instead it assumes that the bad data are randomly -LRB- uniformly -RRB- distributed within the dynamic range of the sensor ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-4",
+              "text": "Based on this , MINPRAN uses random sampling to search for the t and the number of inliers to the t that are least likely to have occurred randomly ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-5",
+              "text": "It runs in time O -LRB- N 2 + SN log N -RRB- , where S is the number of random samples and N is the number of data points ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-6",
+              "text": "We demonstrate analytically that MINPRAN distinguishes good ts from ts to random data , and that MINPRAN nds accurate ts and nearly the correct number of inliers , regardless of the percentage of true inliers ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-7",
+              "text": "MINPRAN 's properties are connrmed experimentally on synthetic data and compare favorably to least median of squares ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-8",
+              "text": "Related work applies MINPRAN to complex range and intensity data 23 -RSB- ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "MINPRAN , a new robust operator , nds good ts in data sets where more than 50 % of the points are outliers . Unlike other techniques that handle large outlier percentages , MINPRAN does not rely on a known error bound for the good data . Instead it assumes that the bad data are randomly -LRB- uniformly -RRB- distributed within the dynamic range of the sensor . Based on this , MINPRAN uses random sampling to search for the t and the number of inliers to the t that are least likely to have occurred randomly . It runs in time O -LRB- N 2 + SN log N -RRB- , where S is the number of random samples and N is the number of data points . We demonstrate analytically that MINPRAN distinguishes good ts from ts to random data , and that MINPRAN nds accurate ts and nearly the correct number of inliers , regardless of the percentage of true inliers . MINPRAN 's properties are connrmed experimentally on synthetic data and compare favorably to least median of squares . Related work applies MINPRAN to complex range and intensity data 23 -RSB- .",
+  "kg2text": [
+    "MINPRAN, a robust operator for handling large outlier percentages in data sets, assumes 'the bad data' and finds accurate transformations and nearly correct numbers of inliers. It has properties that compare favorably to least median of squares. MINPRAN also distinguishes between time series from actual data and random data. The algorithm uses random sampling to search for the threshold value or parameter used by its random sampling algorithm, which handles large outlier percentages. Additionally, MINPRAN applies to complex range and intensity data, a collection of numerical values representing a range of intensities. Furthermore, it has been applied in related work on applications of the MINPRAN robust operator to such data."
+  ],
+  "times": [
+    7.7110595703125
+  ]
+}

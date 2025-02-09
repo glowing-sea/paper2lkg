@@ -1,0 +1,42 @@
+[
+    {
+      "question": "What are the main advantages of the RISC-V architecture compared to other processor architectures?",
+      "answer": "The main advantages of the RISC-V architecture include its open-source nature, BSD licensing, and design professionalism, which allow communities and organizations to produce their own processors without license restrictions. It focuses on defining the instruction set architecture (ISA) rather than specific implementations, making it suitable for applications that require special configuration. Additionally, RISC-V aims to provide a more secure architecture, lacking speculative memory access and thus being immune to vulnerabilities like Meltdown and Spectre."
+    },
+    {
+      "question": "Why was MILIS Linux chosen as the operating system base for this project?",
+      "answer": "MILIS Linux was chosen because it is an open-source operating system development project with an independent user space and its own package manager. It differs from other GNU/Linux projects by not being based on any existing Linux distribution and provides a pure Linux usage and development experience. The project aims to work on open-source hardware and be one of the first among Linux distributions to support RISC-V, aligning with the goal of creating a completely independent open-source computing system."
+    },
+    {
+      "question": "What challenges are associated with booting the Linux kernel on RISC-V, and how does the Berkeley Bootloader (BBL) address them?",
+      "answer": "One challenge is that RISC-V lacks a traditional bootloader like GRUB or U-Boot that can chainload a Linux kernel. The Berkeley Bootloader (BBL) addresses this by linking the kernel binary directly into the BBL ELF file during the compile process. BBL supports starting and responding to timer interrupts, boot chain loading for Linux, and handles certain instructions that the RISC-V processor cannot execute directly in hardware."
+    },
+    {
+      "question": "What are the key components involved in porting MILIS Linux to the RISC-V architecture as described in the paper?",
+      "answer": "The key components involved in porting MILIS Linux to RISC-V include system emulation using QEMU, setting up the toolchain with a cross-compiler for GNU, compiling a compatible kernel, using the Berkeley Bootloader (BBL) as the bootloader, creating a pre-root filesystem and producing necessary packages, and finally building a bootable image using MILIS packages for kernel and user space software."
+    },
+    {
+      "question": "How does the open-source nature of RISC-V contribute to improved security, according to the paper?",
+      "answer": "The open-source nature of RISC-V allows for the ISA to be discovered and improved by industry experts, commercial innovators, and academics. This openness facilitates the application of qualified security ideas and enables the community to address vulnerabilities more effectively. Additionally, because RISC-V lacks speculative memory access, it is inherently immune to hardware weaknesses like the Meltdown and Spectre vulnerabilities, enhancing security."
+    },
+    {
+      "question": "What is the significance of RISC-V's lack of speculative memory access in the context of Meltdown and Spectre vulnerabilities?",
+      "answer": "The lack of speculative memory access in RISC-V means that it does not perform the speculative execution that led to the Meltdown and Spectre vulnerabilities in other processors. As a result, RISC-V processors are inherently immune to these specific hardware vulnerabilities, which enhances the security of systems based on RISC-V architecture."
+    },
+    {
+      "question": "According to the paper, why have previous open-source hardware projects like OpenRISC and OpenSPARC been insufficient in creating a large open-source ecosystem?",
+      "answer": "Previous open-source hardware projects like OpenRISC and OpenSPARC have been insufficient because they lacked the necessary support and failed to gain widespread adoption. OpenRISC's development slowed over time, and projects like Debian dropped support due to reasons such as copyright issues. These projects did not attract enough attention or contributions to create a significant open-source ecosystem."
+    },
+    {
+      "question": "What future work is proposed in the paper to advance the development of MILIS Linux on RISC-V?",
+      "answer": "The future work proposed includes applying the work performed on the QEMU virtual machine to real hardware based on RISC-V processors, which will provide more accurate results and help identify components that need optimization. There is also a plan to explore alternative C libraries to Glibc, evaluate RISC-V support in the LLVM Compiler Infrastructure, and further explore kernel-level difficulties. Additionally, efforts will be made to secure funding for R&D studies and obtain RISC-V processors with different features for testing."
+    },
+    {
+      "question": "How does the paper envision the impact of RISC-V and open-source operating systems on industry and academia?",
+      "answer": "The paper envisions that RISC-V and open-source operating systems will foster an open computing proposal, enabling more organizations to produce their own processors without license restrictions. This will promote innovation and collaboration in both industry and academia. Open-source hardware and software will facilitate more accurate comparisons, rapid contributions, and a more active development community, ultimately leading to advancements in computing technology."
+    },
+    {
+      "question": "What role do companies and institutions like Western Digital, IIT Madras, and ASELSAN play in the RISC-V ecosystem, according to the paper?",
+      "answer": "Companies and institutions like Western Digital, IIT Madras, and ASELSAN contribute to the RISC-V ecosystem by developing and using RISC-V-based processors, participating in the RISC-V Foundation, and collaborating on R&D projects. Western Digital, for example, is developing RISC-V processors for storage devices. IIT Madras and ASELSAN are involved in producing chips using RISC-V architecture and supporting the foundation's goals, helping to drive the adoption and advancement of RISC-V technology."
+    }
+]

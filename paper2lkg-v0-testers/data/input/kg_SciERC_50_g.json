@@ -1,0 +1,1524 @@
+{
+  "iri": "Paper-50",
+  "title": "NIPS_2016_560_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-50-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-50-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-50-Section-1-Paragraph-1-Sentence-1",
+              "text": "Joint matrix triangularization is often used for estimating the joint eigenstructure of a set M of matrices , with applications in signal processing and machine learning ."
+            },
+            {
+              "iri": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+              "text": "We consider the problem of approximate joint matrix triangularization when the matrices in M are jointly diagonalizable and real , but we only observe a set M ' of noise perturbed versions of the matrices in M ."
+            },
+            {
+              "iri": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+              "text": "Our main result is a first-order upper bound on the distance between any approximate joint triangularizer of the matrices in M ' and any exact joint triangularizer of the matrices in M ."
+            },
+            {
+              "iri": "Paper-50-Section-1-Paragraph-1-Sentence-4",
+              "text": "The bound depends only on the observable matrices in M ' and the noise level ."
+            },
+            {
+              "iri": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+              "text": "In particular , it does not depend on optimization specific properties of the triangularizer , such as its proximity to critical points , that are typical of existing bounds in the literature ."
+            },
+            {
+              "iri": "Paper-50-Section-1-Paragraph-1-Sentence-6",
+              "text": "To our knowledge , this is the first a posteriori bound for joint matrix decomposition ."
+            },
+            {
+              "iri": "Paper-50-Section-1-Paragraph-1-Sentence-7",
+              "text": "We demonstrate the bound on synthetic data for which the ground truth is known ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0002732276916503906,
+    11.923050880432129,
+    45.56929898262024,
+    40.72541379928589,
+    0.05925107002258301,
+    0.0005183219909667969,
+    0.00017309188842773438,
+    41.406708002090454,
+    73.01123523712158,
+    4.060380935668945,
+    0.1311042308807373,
+    0.015387773513793945,
+    0.0002880096435546875,
+    36.50571894645691,
+    0.0013120174407958984,
+    0.04172372817993164,
+    0.002481222152709961,
+    4.067744970321655,
+    2.8553318977355957,
+    4.602653980255127,
+    88.1667959690094,
+    6.930102109909058,
+    64.84717392921448,
+    3.5395700931549072,
+    0.0007939338684082031,
+    0.015016317367553711
+  ],
+  "nodes": {
+    "Entity-approximate_joint_triangularizer": {
+      "node_id": "approximate_joint_triangularizer",
+      "disambiguation_index": 0,
+      "label": "approximate joint triangularizer",
+      "aliases": [
+        "approximate joint triangularizer"
+      ],
+      "types": [
+        "algorithm",
+        "mathematical concept",
+        "mathematical tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The approximate joint triangularizer is an algorithm used to estimate the joint eigenstructure of a set of noise-perturbed matrices by providing a first-order upper bound on the distance between its output and the exact joint triangularizer of the original matrices.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "approximate joint triangularizer",
+          "local_types": [
+            "algorithm",
+            "mathematical concept",
+            "mathematical tool"
+          ],
+          "iri": "Entity-approximate_joint_triangularizer-Mention-1"
+        }
+      ],
+      "relevance": 0.83935546875
+    },
+    "Entity-the_problem_of_approximate_joint_matrix_triangularization": {
+      "node_id": "the_problem_of_approximate_joint_matrix_triangularization",
+      "disambiguation_index": 0,
+      "label": "the problem of approximate joint matrix triangularization",
+      "aliases": [
+        "the problem of approximate joint matrix triangularization"
+      ],
+      "types": [
+        "problem"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The problem of approximate joint matrix triangularization refers to the challenge of estimating a joint triangular representation of a set of matrices that are jointly diagonalizable, based on observed noisy versions of these matrices, while quantifying the distance between approximate and exact triangularizers.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the problem of approximate joint matrix triangularization",
+          "local_types": [
+            "problem"
+          ],
+          "iri": "Entity-the_problem_of_approximate_joint_matrix_triangularization-Mention-1"
+        }
+      ],
+      "relevance": 0.81103515625
+    },
+    "Entity-a_posteriori_bound_for_joint_matrix_decomposition": {
+      "node_id": "a_posteriori_bound_for_joint_matrix_decomposition",
+      "disambiguation_index": 0,
+      "label": "a posteriori bound for joint matrix decomposition",
+      "aliases": [
+        "first a posteriori bound for joint matrix decomposition",
+        "a posteriori bound for joint matrix decomposition"
+      ],
+      "types": [
+        "theoretical result",
+        "mathematical concept",
+        "result"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'a posteriori bound for joint matrix decomposition' refers to a theoretical result that provides a first-order upper bound on the distance between approximate and exact joint triangularizers of matrices, which is determined solely by observable matrices and noise levels, without reliance on optimization properties.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "a posteriori bound for joint matrix decomposition",
+          "local_types": [
+            "theoretical result",
+            "mathematical concept"
+          ],
+          "iri": "Entity-a_posteriori_bound_for_joint_matrix_decomposition-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "first a posteriori bound for joint matrix decomposition",
+          "local_types": [
+            "result"
+          ],
+          "iri": "Entity-a_posteriori_bound_for_joint_matrix_decomposition-Mention-2"
+        }
+      ],
+      "relevance": 0.80126953125
+    },
+    "Entity-distance_between_any_approximate_joint_triangularizer": {
+      "node_id": "distance_between_any_approximate_joint_triangularizer",
+      "disambiguation_index": 0,
+      "label": "distance between any approximate joint triangularizer",
+      "aliases": [
+        "distance between any approximate joint triangularizer"
+      ],
+      "types": [
+        "theoretical result",
+        "mathematical concept",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'distance between any approximate joint triangularizer' refers to a quantitative measure that provides a first-order upper bound on how far an approximate joint triangularizer of noise-perturbed matrices is from an exact joint triangularizer of the original matrices, highlighting the relationship between the observable matrices and the noise level.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "distance between any approximate joint triangularizer",
+          "local_types": [
+            "theoretical result",
+            "mathematical concept",
+            "concept"
+          ],
+          "iri": "Entity-distance_between_any_approximate_joint_triangularizer-Mention-1"
+        }
+      ],
+      "relevance": 0.7919921875
+    },
+    "Entity-joint_matrix_decomposition": {
+      "node_id": "joint_matrix_decomposition",
+      "disambiguation_index": 0,
+      "label": "joint matrix decomposition",
+      "aliases": [
+        "joint matrix decomposition"
+      ],
+      "types": [
+        "matrix decomposition",
+        "matrix factorization",
+        "mathematical technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Joint matrix decomposition refers to a mathematical technique used to estimate the joint eigenstructure of a set of matrices, particularly in the context of approximate joint matrix triangularization when dealing with noise-perturbed versions of the original matrices.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "joint matrix decomposition",
+          "local_types": [
+            "matrix decomposition",
+            "matrix factorization",
+            "mathematical technique"
+          ],
+          "iri": "Entity-joint_matrix_decomposition-Mention-1"
+        }
+      ],
+      "relevance": 0.77978515625
+    },
+    "Entity-triangularizer": {
+      "node_id": "triangularizer",
+      "disambiguation_index": 0,
+      "label": "triangularizer",
+      "aliases": [
+        "the triangularizer",
+        "triangularizer"
+      ],
+      "types": [
+        "algorithm",
+        "mathematical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The triangularizer refers to an algorithm used in joint matrix triangularization, which estimates the joint eigenstructure of matrices, particularly in the context of handling noise-perturbed versions of these matrices.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "triangularizer",
+          "local_types": [
+            "mathematical concept",
+            "algorithm"
+          ],
+          "iri": "Entity-triangularizer-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "the triangularizer",
+          "local_types": [
+            "algorithm"
+          ],
+          "iri": "Entity-triangularizer-Mention-2"
+        }
+      ],
+      "relevance": 0.77880859375
+    },
+    "Entity-joint_matrix_triangularization": {
+      "node_id": "joint_matrix_triangularization",
+      "disambiguation_index": 0,
+      "label": "Joint matrix triangularization",
+      "aliases": [
+        "Joint matrix triangularization",
+        "approximate joint matrix triangularization"
+      ],
+      "types": [
+        "mathematics",
+        "mathematical technique",
+        "linear algebra",
+        "mathematical problem",
+        "algorithm",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Joint matrix triangularization is a mathematical technique used to estimate the joint eigenstructure of a set of matrices, particularly in the context of signal processing and machine learning.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Joint matrix triangularization",
+          "local_types": [
+            "mathematics",
+            "algorithm",
+            "method",
+            "mathematical technique"
+          ],
+          "iri": "Entity-joint_matrix_triangularization-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "approximate joint matrix triangularization",
+          "local_types": [
+            "mathematical technique",
+            "linear algebra",
+            "mathematical problem",
+            "algorithm",
+            "method"
+          ],
+          "iri": "Entity-joint_matrix_triangularization-Mention-2"
+        }
+      ],
+      "relevance": 0.76220703125
+    },
+    "Entity-bound": {
+      "node_id": "bound",
+      "disambiguation_index": 0,
+      "label": "bounds",
+      "aliases": [
+        "bounds"
+      ],
+      "types": [
+        "mathematical concept",
+        "theoretical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'bounds' refers to a first-order upper bound on the distance between approximate and exact joint triangularizers of matrices, which is a mathematical concept used to quantify the accuracy of matrix decomposition in the presence of noise.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "bounds",
+          "local_types": [
+            "mathematical concept",
+            "theoretical concept"
+          ],
+          "iri": "Entity-bound-Mention-1"
+        }
+      ],
+      "relevance": 0.755859375
+    },
+    "Entity-the_bound": {
+      "node_id": "the_bound",
+      "disambiguation_index": 0,
+      "label": "The bound",
+      "aliases": [
+        "The bound"
+      ],
+      "types": [
+        "mathematical concept"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The bound refers to a first-order upper bound on the distance between approximate and exact joint triangularizers of matrices, which is determined solely by the observable matrices and the noise level, independent of specific optimization properties.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "The bound",
+          "local_types": [
+            "mathematical concept"
+          ],
+          "iri": "Entity-the_bound-Mention-1"
+        }
+      ],
+      "relevance": 0.7509765625
+    },
+    "Entity-exact_joint_triangularizer": {
+      "node_id": "exact_joint_triangularizer",
+      "disambiguation_index": 0,
+      "label": "exact joint triangularizer",
+      "aliases": [
+        "exact joint triangularizer"
+      ],
+      "types": [
+        "concept",
+        "mathematical concept",
+        "mathematical tool",
+        "algorithm",
+        "theoretical result",
+        "mathematical object"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The exact joint triangularizer refers to a theoretical mathematical tool used in joint matrix triangularization, which accurately decomposes a set of jointly diagonalizable matrices into a triangular form, serving as a benchmark for evaluating the performance of approximate triangularizers in the presence of noise.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "exact joint triangularizer",
+          "local_types": [
+            "concept",
+            "mathematical concept",
+            "mathematical tool",
+            "algorithm",
+            "theoretical result",
+            "mathematical object"
+          ],
+          "iri": "Entity-exact_joint_triangularizer-Mention-1"
+        }
+      ],
+      "relevance": 0.74169921875
+    },
+    "Entity-observable_matrix_in_m_": {
+      "node_id": "observable_matrix_in_m_",
+      "disambiguation_index": 0,
+      "label": "observable matrices in M '",
+      "aliases": [
+        "observable matrices in M '"
+      ],
+      "types": [
+        "matrix",
+        "observable matrix",
+        "matrices",
+        "data structure",
+        "set",
+        "mathematical object"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The observable matrices in M ' refer to the noise-perturbed versions of a set of jointly diagonalizable and real matrices M, which are used in the context of approximate joint matrix triangularization.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "observable matrices in M '",
+          "local_types": [
+            "matrix",
+            "observable matrix",
+            "matrices",
+            "data structure",
+            "set",
+            "mathematical object"
+          ],
+          "iri": "Entity-observable_matrix_in_m_-Mention-1"
+        }
+      ],
+      "relevance": 0.74072265625
+    },
+    "Entity-m": {
+      "node_id": "m",
+      "disambiguation_index": 0,
+      "label": "M",
+      "aliases": [
+        "M"
+      ],
+      "types": [
+        "matrix",
+        "mathematical notation",
+        "set"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "M refers to a set of matrices that are jointly diagonalizable and real, which are used in the context of joint matrix triangularization for estimating their joint eigenstructure.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "M",
+          "local_types": [
+            "matrix",
+            "mathematical notation",
+            "set"
+          ],
+          "iri": "Entity-m-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "M",
+          "local_types": [
+            "set",
+            "mathematical notation"
+          ],
+          "iri": "Entity-m-Mention-2"
+        }
+      ],
+      "relevance": 0.72216796875
+    },
+    "Entity-set_m_of_matrix": {
+      "node_id": "set_m_of_matrix",
+      "disambiguation_index": 0,
+      "label": "set M of matrices",
+      "aliases": [
+        "a set M of matrices",
+        "set M of matrices"
+      ],
+      "types": [
+        "data structure",
+        "mathematical object",
+        "set",
+        "matrices"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The set M of matrices refers to a collection of jointly diagonalizable and real matrices used in the context of joint matrix triangularization for estimating their joint eigenstructure, particularly in applications related to signal processing and machine learning.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "set M of matrices",
+          "local_types": [
+            "data structure",
+            "matrices",
+            "set",
+            "mathematical object"
+          ],
+          "iri": "Entity-set_m_of_matrix-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a set M of matrices",
+          "local_types": [
+            "matrices",
+            "set"
+          ],
+          "iri": "Entity-set_m_of_matrix-Mention-2"
+        }
+      ],
+      "relevance": 0.72216796875
+    },
+    "Entity-first-order_upper_bound": {
+      "node_id": "first-order_upper_bound",
+      "disambiguation_index": 0,
+      "label": "first-order upper bound",
+      "aliases": [
+        "first-order upper bound"
+      ],
+      "types": [
+        "theoretical result",
+        "mathematical concept",
+        "result"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'first-order upper bound' refers to a theoretical result that quantifies the maximum distance between approximate and exact joint triangularizers of matrices, depending solely on observable matrices and noise levels, without relying on specific optimization properties.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "first-order upper bound",
+          "local_types": [
+            "theoretical result",
+            "mathematical concept",
+            "result"
+          ],
+          "iri": "Entity-first-order_upper_bound-Mention-1"
+        }
+      ],
+      "relevance": 0.71630859375
+    },
+    "Entity-matrix_in_m": {
+      "node_id": "matrix_in_m",
+      "disambiguation_index": 0,
+      "label": "matrices in M",
+      "aliases": [
+        "the matrices in M",
+        "matrices in M '",
+        "matrices in M"
+      ],
+      "types": [
+        "matrix",
+        "matrices",
+        "data structure",
+        "set",
+        "mathematical object"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The mention 'matrices in M' refers to a set of jointly diagonalizable and real matrices that are the subject of approximate joint matrix triangularization in the context of estimating their joint eigenstructure.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "matrices in M",
+          "local_types": [
+            "data structure",
+            "matrices",
+            "set",
+            "mathematical object"
+          ],
+          "iri": "Entity-matrix_in_m-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the matrices in M",
+          "local_types": [
+            "matrix"
+          ],
+          "iri": "Entity-matrix_in_m-Mention-2"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "matrices in M '",
+          "local_types": [
+            "matrices",
+            "mathematical object"
+          ],
+          "iri": "Entity-matrix_in_m-Mention-3"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "matrices in M",
+          "local_types": [
+            "matrices",
+            "mathematical object"
+          ],
+          "iri": "Entity-matrix_in_m-Mention-4"
+        }
+      ],
+      "relevance": 0.7158203125
+    },
+    "Entity-m_": {
+      "node_id": "m_",
+      "disambiguation_index": 0,
+      "label": "M '",
+      "aliases": [
+        "M'",
+        "M '"
+      ],
+      "types": [
+        "matrix",
+        "mathematical notation",
+        "set"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "M ' refers to a set of noise-perturbed versions of the original matrices in the set M, which are used in the context of approximate joint matrix triangularization.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "M '",
+          "local_types": [
+            "matrix",
+            "mathematical notation",
+            "set"
+          ],
+          "iri": "Entity-m_-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "M '",
+          "local_types": [
+            "set",
+            "mathematical notation"
+          ],
+          "iri": "Entity-m_-Mention-2"
+        }
+      ],
+      "relevance": 0.71142578125
+    },
+    "Entity-distance": {
+      "node_id": "distance",
+      "disambiguation_index": 0,
+      "label": "distance",
+      "aliases": [
+        "distance"
+      ],
+      "types": [
+        "mathematical concept",
+        "metric",
+        "mathematical measure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'distance' refers to a mathematical measure that quantifies the difference between an approximate joint triangularizer of noise-perturbed matrices and the exact joint triangularizer of the original matrices.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "distance",
+          "local_types": [
+            "mathematical concept",
+            "metric",
+            "mathematical measure"
+          ],
+          "iri": "Entity-distance-Mention-1"
+        }
+      ],
+      "relevance": 0.6904296875
+    },
+    "Entity-optimization_specific_property_of_the_triangularizer": {
+      "node_id": "optimization_specific_property_of_the_triangularizer",
+      "disambiguation_index": 0,
+      "label": "optimization specific properties of the triangularizer",
+      "aliases": [
+        "optimization specific properties of the triangularizer"
+      ],
+      "types": [
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The phrase 'optimization specific properties of the triangularizer' refers to characteristics related to the optimization process of a triangularization algorithm, particularly aspects like its proximity to critical points, which influence the performance and accuracy of the triangularization in the context of joint matrix decomposition.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "optimization specific properties of the triangularizer",
+          "local_types": [
+            "concept"
+          ],
+          "iri": "Entity-optimization_specific_property_of_the_triangularizer-Mention-1"
+        }
+      ],
+      "relevance": 0.66943359375
+    },
+    "Entity-joint_eigenstructure": {
+      "node_id": "joint_eigenstructure",
+      "disambiguation_index": 0,
+      "label": "joint eigenstructure",
+      "aliases": [
+        "joint eigenstructure"
+      ],
+      "types": [
+        "mathematical concept",
+        "linear algebra",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The joint eigenstructure refers to a mathematical concept in linear algebra that characterizes the simultaneous eigenvalues and eigenvectors of a set of matrices, particularly in the context of joint matrix triangularization used in applications such as signal processing and machine learning.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "joint eigenstructure",
+          "local_types": [
+            "mathematical concept",
+            "linear algebra",
+            "concept"
+          ],
+          "iri": "Entity-joint_eigenstructure-Mention-1"
+        }
+      ],
+      "relevance": 0.66162109375
+    },
+    "Entity-existing_bound_in_the_literature": {
+      "node_id": "existing_bound_in_the_literature",
+      "disambiguation_index": 0,
+      "label": "existing bounds in the literature",
+      "aliases": [
+        "existing bounds",
+        "existing bounds in the literature"
+      ],
+      "types": [
+        "bound",
+        "literature",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Existing bounds in the literature refer to previously established theoretical limits or constraints on the performance of optimization methods for joint matrix triangularization, particularly those that are influenced by the proximity to critical points.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "existing bounds in the literature",
+          "local_types": [
+            "concept"
+          ],
+          "iri": "Entity-existing_bound_in_the_literature-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "existing bounds",
+          "local_types": [
+            "bound",
+            "literature"
+          ],
+          "iri": "Entity-existing_bound_in_the_literature-Mention-2"
+        }
+      ],
+      "relevance": 0.66064453125
+    },
+    "Entity-noise_level": {
+      "node_id": "noise_level",
+      "disambiguation_index": 0,
+      "label": "noise level",
+      "aliases": [
+        "the noise level",
+        "noise level"
+      ],
+      "types": [
+        "concept",
+        "parameter",
+        "level",
+        "statistical measure",
+        "noise",
+        "statistical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The noise level refers to the degree of perturbation or variability introduced in the observed matrices, which affects the accuracy of the joint matrix triangularization process.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "noise level",
+          "local_types": [
+            "statistical concept",
+            "statistical measure",
+            "parameter",
+            "concept"
+          ],
+          "iri": "Entity-noise_level-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the noise level",
+          "local_types": [
+            "noise",
+            "level"
+          ],
+          "iri": "Entity-noise_level-Mention-2"
+        }
+      ],
+      "relevance": 0.6494140625
+    },
+    "Entity-literature": {
+      "node_id": "literature",
+      "disambiguation_index": 0,
+      "label": "literature",
+      "aliases": [
+        "literature",
+        "the literature"
+      ],
+      "types": [
+        "academic work",
+        "research",
+        "literature"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The term 'literature' refers to the body of existing academic work and research that discusses optimization specific properties of triangularizers and their proximity to critical points in the context of joint matrix triangularization.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "literature",
+          "local_types": [
+            "academic work",
+            "research"
+          ],
+          "iri": "Entity-literature-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "the literature",
+          "local_types": [
+            "literature"
+          ],
+          "iri": "Entity-literature-Mention-2"
+        }
+      ],
+      "relevance": 0.64599609375
+    },
+    "Entity-noise_perturbed_version": {
+      "node_id": "noise_perturbed_version",
+      "disambiguation_index": 0,
+      "label": "noise perturbed versions",
+      "aliases": [
+        "noise perturbed versions"
+      ],
+      "types": [
+        "data type",
+        "statistical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'noise perturbed versions' refers to the modified matrices obtained from a set of original matrices, which have been altered by the addition of noise, complicating the process of approximate joint matrix triangularization.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "noise perturbed versions",
+          "local_types": [
+            "data type",
+            "statistical concept"
+          ],
+          "iri": "Entity-noise_perturbed_version-Mention-1"
+        }
+      ],
+      "relevance": 0.630859375
+    },
+    "Entity-set_m__of_noise_perturbed_version": {
+      "node_id": "set_m__of_noise_perturbed_version",
+      "disambiguation_index": 0,
+      "label": "set M ' of noise perturbed versions",
+      "aliases": [
+        "set M ' of noise perturbed versions",
+        "a set M ' of noise perturbed versions of the matrices in M"
+      ],
+      "types": [
+        "matrix",
+        "matrices",
+        "data structure",
+        "set",
+        "mathematical object"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "set M ' of noise perturbed versions refers to a collection of matrices that are derived from a set M of jointly diagonalizable and real matrices, but are affected by noise, making them approximate representations of the original matrices.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "set M ' of noise perturbed versions",
+          "local_types": [
+            "data structure",
+            "matrices",
+            "set",
+            "mathematical object"
+          ],
+          "iri": "Entity-set_m__of_noise_perturbed_version-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "a set M ' of noise perturbed versions of the matrices in M",
+          "local_types": [
+            "set",
+            "matrix"
+          ],
+          "iri": "Entity-set_m__of_noise_perturbed_version-Mention-2"
+        }
+      ],
+      "relevance": 0.62255859375
+    },
+    "Entity-optimization_specific_property": {
+      "node_id": "optimization_specific_property",
+      "disambiguation_index": 0,
+      "label": "optimization specific properties",
+      "aliases": [
+        "optimization specific properties"
+      ],
+      "types": [
+        "concept",
+        "theoretical aspect",
+        "optimization",
+        "mathematical concept",
+        "property",
+        "theoretical result"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'optimization specific properties' refers to characteristics of an optimization algorithm or method, particularly those related to its behavior near critical points, which are not considered in the context of the proposed upper bound for joint matrix triangularization.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "optimization specific properties",
+          "local_types": [
+            "concept",
+            "theoretical aspect",
+            "optimization",
+            "mathematical concept",
+            "property",
+            "theoretical result"
+          ],
+          "iri": "Entity-optimization_specific_property-Mention-1"
+        }
+      ],
+      "relevance": 0.62158203125
+    },
+    "Entity-jointly_diagonalizable": {
+      "node_id": "jointly_diagonalizable",
+      "disambiguation_index": 0,
+      "label": "jointly diagonalizable",
+      "aliases": [
+        "jointly diagonalizable"
+      ],
+      "types": [
+        "property",
+        "linear algebra"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Jointly diagonalizable refers to a property of a set of matrices that can be simultaneously diagonalized by a single invertible matrix, indicating that they share a common set of eigenvectors.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "jointly diagonalizable",
+          "local_types": [
+            "property",
+            "linear algebra"
+          ],
+          "iri": "Entity-jointly_diagonalizable-Mention-1"
+        }
+      ],
+      "relevance": 0.59423828125
+    },
+    "Entity-critical_point": {
+      "node_id": "critical_point",
+      "disambiguation_index": 0,
+      "label": "critical points",
+      "aliases": [
+        "critical points"
+      ],
+      "types": [
+        "theoretical result",
+        "concept",
+        "theoretical aspect",
+        "point",
+        "mathematical concept",
+        "theoretical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Critical points refer to specific values in the optimization landscape of a function where the gradient is zero, indicating potential local minima, maxima, or saddle points, which are significant in the context of joint matrix triangularization and its optimization properties.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "critical points",
+          "local_types": [
+            "theoretical result",
+            "concept",
+            "theoretical aspect",
+            "point",
+            "mathematical concept",
+            "theoretical concept"
+          ],
+          "iri": "Entity-critical_point-Mention-1"
+        }
+      ],
+      "relevance": 0.5576171875
+    },
+    "Entity-observable_matrix": {
+      "node_id": "observable_matrix",
+      "disambiguation_index": 0,
+      "label": "observable matrices",
+      "aliases": [
+        "observable matrices"
+      ],
+      "types": [
+        "mathematical object",
+        "data structure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Observable matrices are mathematical objects used in various fields, particularly in control theory and systems analysis, that represent the relationship between system states and outputs, allowing for the assessment of system observability.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "observable matrices",
+          "local_types": [
+            "mathematical object",
+            "data structure"
+          ],
+          "iri": "Entity-observable_matrix-Mention-1"
+        }
+      ],
+      "relevance": 0.55224609375
+    },
+    "Entity-a_posteriori_bound": {
+      "node_id": "a_posteriori_bound",
+      "disambiguation_index": 0,
+      "label": "a posteriori bound",
+      "aliases": [
+        "a posteriori bound"
+      ],
+      "types": [
+        "bound",
+        "statistical measure",
+        "mathematical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A posteriori bound is a statistical measure or mathematical concept that provides an upper limit on the error or uncertainty of an estimate based on observed data.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "a posteriori bound",
+          "local_types": [
+            "bound",
+            "statistical measure",
+            "mathematical concept"
+          ],
+          "iri": "Entity-a_posteriori_bound-Mention-1"
+        }
+      ],
+      "relevance": 0.53076171875
+    },
+    "Entity-matrix": {
+      "node_id": "matrix",
+      "disambiguation_index": 0,
+      "label": "matrices",
+      "aliases": [
+        "matrices"
+      ],
+      "types": [
+        "linear algebra",
+        "mathematical object"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Matrices are mathematical objects consisting of rectangular arrays of numbers, symbols, or expressions, arranged in rows and columns, which are used in various fields of mathematics, including linear algebra, to represent and solve systems of linear equations and perform transformations.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "matrices",
+          "local_types": [
+            "mathematical object",
+            "linear algebra"
+          ],
+          "iri": "Entity-matrix-Mention-1"
+        },
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "matrices",
+          "local_types": [
+            "mathematical object",
+            "linear algebra"
+          ],
+          "iri": "Entity-matrix-Mention-2"
+        }
+      ],
+      "relevance": 0.51708984375
+    },
+    "Entity-real": {
+      "node_id": "real",
+      "disambiguation_index": 0,
+      "label": "real",
+      "aliases": [
+        "real"
+      ],
+      "types": [
+        "number type",
+        "mathematical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'real' refers to matrices that are composed of real numbers, indicating that the entries of the matrices in the set M are real-valued rather than complex or of any other type.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "real",
+          "local_types": [
+            "number type",
+            "mathematical concept"
+          ],
+          "iri": "Entity-real-Mention-1"
+        }
+      ],
+      "relevance": 0.50244140625
+    },
+    "Entity-ground_truth": {
+      "node_id": "ground_truth",
+      "disambiguation_index": 0,
+      "label": "ground truth",
+      "aliases": [
+        "ground truth"
+      ],
+      "types": [
+        "reference standard",
+        "concept",
+        "reference point",
+        "reference value",
+        "truth"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Ground truth refers to the actual, verified information or data that serves as a benchmark or standard for comparison in various fields, particularly in research and data analysis.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "ground truth",
+          "local_types": [
+            "reference standard",
+            "concept",
+            "reference point",
+            "reference value",
+            "truth"
+          ],
+          "iri": "Entity-ground_truth-Mention-1"
+        }
+      ],
+      "relevance": 0.476318359375
+    },
+    "Entity-signal_processing": {
+      "node_id": "signal_processing",
+      "disambiguation_index": 0,
+      "label": "signal processing",
+      "aliases": [
+        "signal processing"
+      ],
+      "types": [
+        "field",
+        "application area",
+        "application",
+        "engineering",
+        "field of study"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Signal processing is a field of study and engineering that focuses on the analysis, manipulation, and interpretation of signals, which can be in the form of sound, images, or other data types.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "signal processing",
+          "local_types": [
+            "field",
+            "application area",
+            "application",
+            "engineering",
+            "field of study"
+          ],
+          "iri": "Entity-signal_processing-Mention-1"
+        }
+      ],
+      "relevance": 0.4736328125
+    },
+    "Entity-machine_learning": {
+      "node_id": "machine_learning",
+      "disambiguation_index": 0,
+      "label": "machine learning",
+      "aliases": [
+        "machine learning"
+      ],
+      "types": [
+        "field",
+        "application area",
+        "artificial intelligence",
+        "application",
+        "field of study"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Machine learning is a subfield of artificial intelligence that focuses on the development of algorithms and statistical models that enable computers to perform tasks without explicit instructions, relying on patterns and inference instead.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "machine learning",
+          "local_types": [
+            "field",
+            "application area",
+            "artificial intelligence",
+            "application",
+            "field of study"
+          ],
+          "iri": "Entity-machine_learning-Mention-1"
+        }
+      ],
+      "relevance": 0.466064453125
+    },
+    "Entity-synthetic_data": {
+      "node_id": "synthetic_data",
+      "disambiguation_index": 0,
+      "label": "synthetic data",
+      "aliases": [
+        "synthetic data"
+      ],
+      "types": [
+        "experimental data",
+        "data type",
+        "data",
+        "artificial data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Synthetic data refers to artificially generated information that mimics real-world data, often used for testing, training, or validating models in various fields such as machine learning and statistics.",
+      "mentions": [
+        {
+          "reference": "Paper-50-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "synthetic data",
+          "local_types": [
+            "experimental data",
+            "data type",
+            "data",
+            "artificial data"
+          ],
+          "iri": "Entity-synthetic_data-Mention-1"
+        }
+      ],
+      "relevance": 0.463623046875
+    }
+  },
+  "summary": "Joint matrix triangularization is often used for estimating the joint eigenstructure of a set M of matrices , with applications in signal processing and machine learning . We consider the problem of approximate joint matrix triangularization when the matrices in M are jointly diagonalizable and real , but we only observe a set M ' of noise perturbed versions of the matrices in M . Our main result is a first-order upper bound on the distance between any approximate joint triangularizer of the matrices in M ' and any exact joint triangularizer of the matrices in M . The bound depends only on the observable matrices in M ' and the noise level . In particular , it does not depend on optimization specific properties of the triangularizer , such as its proximity to critical points , that are typical of existing bounds in the literature . To our knowledge , this is the first a posteriori bound for joint matrix decomposition . We demonstrate the bound on synthetic data for which the ground truth is known .",
+  "triples": [
+    [
+      "Entity-joint_matrix_triangularization",
+      "Predicate-is_used_for_estimating",
+      "Entity-joint_eigenstructure"
+    ],
+    [
+      "Entity-joint_matrix_triangularization",
+      "Predicate-has_applications_in",
+      "Entity-signal_processing"
+    ],
+    [
+      "Entity-joint_matrix_triangularization",
+      "Predicate-has_applications_in",
+      "Entity-machine_learning"
+    ],
+    [
+      "Entity-set_m_of_matrix",
+      "Predicate-is",
+      "Entity-set_m_of_matrix"
+    ],
+    [
+      "Entity-the_problem_of_approximate_joint_matrix_triangularization",
+      "Predicate-considers",
+      "Entity-joint_matrix_triangularization"
+    ],
+    [
+      "Entity-m",
+      "Predicate-contains",
+      "Entity-matrix"
+    ],
+    [
+      "Entity-m_",
+      "Predicate-is_a_set_of",
+      "Entity-noise_perturbed_version"
+    ],
+    [
+      "Entity-matrix_in_m",
+      "Predicate-are",
+      "Entity-jointly_diagonalizable"
+    ],
+    [
+      "Entity-matrix_in_m",
+      "Predicate-are",
+      "Entity-real"
+    ],
+    [
+      "Entity-m",
+      "Predicate-is_observed_as",
+      "Entity-set_m__of_noise_perturbed_version"
+    ],
+    [
+      "Entity-m_",
+      "Predicate-is",
+      "Entity-set_m__of_noise_perturbed_version"
+    ],
+    [
+      "Entity-matrix_in_m",
+      "Predicate-is_related_to",
+      "Entity-matrix_in_m"
+    ],
+    [
+      "Entity-first-order_upper_bound",
+      "Predicate-is_on",
+      "Entity-distance_between_any_approximate_joint_triangularizer"
+    ],
+    [
+      "Entity-distance_between_any_approximate_joint_triangularizer",
+      "Predicate-is_between",
+      "Entity-approximate_joint_triangularizer"
+    ],
+    [
+      "Entity-distance_between_any_approximate_joint_triangularizer",
+      "Predicate-is_between",
+      "Entity-exact_joint_triangularizer"
+    ],
+    [
+      "Entity-the_bound",
+      "Predicate-depends_on",
+      "Entity-observable_matrix"
+    ],
+    [
+      "Entity-the_bound",
+      "Predicate-depends_on",
+      "Entity-noise_level"
+    ],
+    [
+      "Entity-a_posteriori_bound_for_joint_matrix_decomposition",
+      "Predicate-is",
+      "Entity-a_posteriori_bound_for_joint_matrix_decomposition"
+    ],
+    [
+      "Entity-a_posteriori_bound_for_joint_matrix_decomposition",
+      "Predicate-is_for",
+      "Entity-joint_matrix_decomposition"
+    ],
+    [
+      "Entity-synthetic_data",
+      "Predicate-bound_on",
+      "Entity-ground_truth"
+    ],
+    [
+      "Entity-the_bound",
+      "Predicate-is_demonstrated_on",
+      "Entity-synthetic_data"
+    ],
+    [
+      "Entity-approximate_joint_triangularizer",
+      "Predicate-addresses",
+      "Entity-the_problem_of_approximate_joint_matrix_triangularization"
+    ],
+    [
+      "Entity-a_posteriori_bound_for_joint_matrix_decomposition",
+      "Predicate-provides_a_first-order_upper_bound_on_the_distance_between_approximate_and_exact_joint_triangularizers",
+      "Entity-approximate_joint_triangularizer"
+    ],
+    [
+      "Entity-a_posteriori_bound_for_joint_matrix_decomposition",
+      "Predicate-provides_an_upper_bound_for_the_problem_of_approximate_joint_matrix_triangularization",
+      "Entity-the_problem_of_approximate_joint_matrix_triangularization"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-set_m_of_matrix",
+      "skos:broader",
+      "Entity-matrix"
+    ],
+    [
+      "Entity-set_m__of_noise_perturbed_version",
+      "skos:broader",
+      "Entity-matrix"
+    ],
+    [
+      "Entity-m",
+      "skos:broader",
+      "Entity-matrix"
+    ],
+    [
+      "Entity-m_",
+      "skos:broader",
+      "Entity-matrix"
+    ],
+    [
+      "Entity-a_posteriori_bound",
+      "skos:broader",
+      "Entity-bound"
+    ],
+    [
+      "Entity-matrix_in_m",
+      "skos:broader",
+      "Entity-matrix"
+    ],
+    [
+      "Entity-existing_bound_in_the_literature",
+      "skos:broader",
+      "Entity-literature"
+    ],
+    [
+      "Entity-observable_matrix_in_m_",
+      "skos:broader",
+      "Entity-observable_matrix"
+    ],
+    [
+      "Entity-observable_matrix_in_m_",
+      "skos:broader",
+      "Entity-matrix"
+    ],
+    [
+      "Entity-existing_bound_in_the_literature",
+      "skos:broader",
+      "Entity-bound"
+    ]
+  ],
+  "predicates": {
+    "Predicate-is_used_for_estimating": {
+      "label": "is used for estimating",
+      "description": "The predicate 'is used for estimating' indicates that the subject serves a purpose or function in the process of making an estimation or assessment regarding the object. It implies that the subject provides a method, technique, or tool that facilitates the evaluation or approximation of the characteristics, values, or properties represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has_applications_in": {
+      "label": "has applications in",
+      "description": "The predicate 'has applications in' indicates that the subject is relevant or useful within the context of the object, suggesting that the subject can be employed or utilized to achieve specific outcomes or solve problems related to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is": {
+      "label": "is",
+      "description": "The predicate 'is' serves as a linking verb that establishes an identity or equivalence between the subject and the object in a triple. It indicates that the subject and object refer to the same entity or concept, thereby affirming their sameness or defining the subject in terms of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-considers": {
+      "label": "considers",
+      "description": "The predicate 'considers' indicates that the subject is engaging in a thought process or evaluation regarding the object. It implies that the subject is reflecting on, analyzing, or taking into account the object in a manner that suggests importance or relevance. This relationship often involves a cognitive assessment where the subject weighs the implications, characteristics, or significance of the object in relation to its own context or objectives.",
+      "disambiguation_index": 0
+    },
+    "Predicate-contains": {
+      "label": "contains",
+      "description": "The predicate 'contains' indicates that the subject has within it or includes the object as a part or component. It establishes a relationship where the subject is seen as a whole that encompasses or holds the object, which can be an element, item, or group of items. This relationship implies that the object is an integral part of the subject's structure or composition.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_set_of": {
+      "label": "is a set of",
+      "description": "The predicate 'is a set of' establishes a relationship where the subject is identified as a collection or grouping that includes the elements represented by the object. It indicates that the subject encompasses all instances or variations of the object, suggesting a categorization or classification of the object within the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are": {
+      "label": "are",
+      "description": "The predicate 'are' serves as a linking verb that establishes a relationship of identity or classification between the subject and the object. It indicates that the subject possesses the characteristics or properties described by the object, thereby affirming that the subject belongs to a certain category or exhibits a specific quality.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_observed_as": {
+      "label": "is observed as",
+      "description": "The predicate 'is observed as' establishes a relationship where the subject is perceived or identified in a particular manner or context, leading to the characterization or classification of the subject in relation to the object. It indicates that the subject exhibits certain properties or behaviors that allow it to be recognized or interpreted as the object, often in a specific situation or under certain conditions.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_related_to": {
+      "label": "is related to",
+      "description": "The predicate 'is related to' establishes a connection or association between the subject and the object, indicating that they share a relevant relationship or commonality. This relationship can encompass various forms of connections, such as similarity, dependency, interaction, or relevance, depending on the context in which the subject and object are situated.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_on": {
+      "label": "is on",
+      "description": "The predicate 'is on' establishes a relationship of relevance or dependency between the subject and the object, indicating that the subject is situated within the context or framework defined by the object. It suggests that the subject is influenced by, related to, or positioned in relation to the object, often implying a foundational or supportive role of the object in understanding or defining the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_between": {
+      "label": "is between",
+      "description": "The predicate 'is between' establishes a relational context where the subject is positioned in relation to the object, indicating that the subject occupies an intermediary state or value that lies within the bounds defined by the object. This implies a spatial, numerical, or conceptual relationship where the subject is not only associated with the object but also signifies a range or interval that encompasses the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-depends_on": {
+      "label": "depends on",
+      "description": "The predicate 'depends on' indicates a relationship where the subject is contingent or reliant upon the object for its existence, functionality, or characteristics. This implies that any change or condition of the object directly influences or determines the state or behavior of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_for": {
+      "label": "is for",
+      "description": "The predicate 'is for' establishes a relationship of purpose or intended use between the subject and the object, indicating that the subject serves a specific function or is designed to support, facilitate, or relate to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-bound_on": {
+      "label": "bound on",
+      "description": "The predicate 'bound on' indicates a relationship where the subject is constrained, limited, or defined in relation to the object. It suggests that the subject's characteristics, behavior, or properties are influenced or determined by the object, establishing a dependency or connection that shapes the subject's nature or function.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_demonstrated_on": {
+      "label": "is demonstrated on",
+      "description": "The predicate 'is demonstrated on' indicates a relationship where the subject is shown, illustrated, or validated through the use of the object. It implies that the object serves as a medium or context in which the subject's properties, behaviors, or effects are made evident or observable.",
+      "disambiguation_index": 0
+    },
+    "Predicate-addresses": {
+      "label": "addresses",
+      "description": "The predicate 'addresses' indicates that the subject is concerned with, deals with, or provides a solution to the issue or topic specified in the object. It implies a relationship where the subject takes action or provides insight related to the object, which typically represents a problem, challenge, or area of inquiry.",
+      "disambiguation_index": 0
+    },
+    "Predicate-provides_a_first-order_upper_bound_on_the_distance_between_approximate_and_exact_joint_triangularizers": {
+      "label": "provides a first-order upper bound on the distance between approximate and exact joint triangularizers",
+      "description": "The predicate establishes a relationship where the subject offers a quantitative measure that limits the maximum possible difference between an approximate method and its exact counterpart in the context of joint triangularization. This indicates that the subject serves as a theoretical framework or tool that helps assess the accuracy of the approximate joint triangularizer by providing a first-order estimate of the deviation from the exact solution.",
+      "disambiguation_index": 0
+    },
+    "Predicate-provides_an_upper_bound_for_the_problem_of_approximate_joint_matrix_triangularization": {
+      "label": "provides an upper bound for the problem of approximate joint matrix triangularization",
+      "description": "The predicate 'provides an upper bound for the problem of approximate joint matrix triangularization' establishes a relationship where the subject offers a limit or constraint on the possible solutions or outcomes of the object, which is the problem of approximate joint matrix triangularization. This indicates that the subject serves as a theoretical or practical guideline that helps in understanding the maximum extent or performance achievable in addressing the object, thereby framing the context in which the problem can be analyzed or solved.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or subset that falls under the more general category represented by the object. This relationship suggests that the object encompasses a wider range of entities or concepts than the subject, thereby providing a context in which the subject can be understood as part of a larger classification.",
+      "disambiguation_index": 0
+    }
+  }
+}

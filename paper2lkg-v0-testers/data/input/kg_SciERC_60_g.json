@@ -1,0 +1,1159 @@
+{
+  "iri": "Paper-60",
+  "title": "J82-3002",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-60-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-60-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-60-Section-1-Paragraph-1-Sentence-1",
+              "text": "This paper gives an overall account of a prototype natural language question answering system , called Chat-80 ."
+            },
+            {
+              "iri": "Paper-60-Section-1-Paragraph-1-Sentence-2",
+              "text": "Chat-80 has been designed to be both efficient and easily adaptable to a variety of applications ."
+            },
+            {
+              "iri": "Paper-60-Section-1-Paragraph-1-Sentence-3",
+              "text": "The system is implemented entirely in Prolog , a programming language based on logic ."
+            },
+            {
+              "iri": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+              "text": "With the aid of a logic-based grammar formalism called extraposition grammars , Chat-80 translates English questions into the Prolog subset of logic ."
+            },
+            {
+              "iri": "Paper-60-Section-1-Paragraph-1-Sentence-5",
+              "text": "The resulting logical expression is then transformed by a planning algorithm into efficient Prolog , cf. query optimisation in a relational database ."
+            },
+            {
+              "iri": "Paper-60-Section-1-Paragraph-1-Sentence-6",
+              "text": "Finally , the Prolog form is executed to yield the answer ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00018787384033203125,
+    21.403012990951538,
+    22.885191917419434,
+    27.187567234039307,
+    0.03924298286437988,
+    0.00013208389282226562,
+    0.0002009868621826172,
+    23.505486965179443,
+    38.2939829826355,
+    2.919809103012085,
+    0.0569918155670166,
+    0.009786844253540039,
+    0.00019478797912597656,
+    17.08818483352661,
+    0.0012989044189453125,
+    0.021760940551757812,
+    0.0015501976013183594,
+    4.129021883010864,
+    0.7297022342681885,
+    1.0625979900360107,
+    78.68104577064514,
+    6.5765156745910645,
+    57.91051173210144,
+    2.747421979904175,
+    0.0005879402160644531,
+    0.01106119155883789
+  ],
+  "nodes": {
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "This paper",
+      "aliases": [
+        "This paper"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "This paper presents a comprehensive overview of Chat-80, a prototype natural language question answering system designed for efficiency and adaptability, implemented in Prolog and utilizing extraposition grammars for translating English questions into logical expressions.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "This paper",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.91455078125
+    },
+    "Entity-a_prototype_natural_language_question_answering_system": {
+      "node_id": "a_prototype_natural_language_question_answering_system",
+      "disambiguation_index": 0,
+      "label": "a prototype natural language question answering system",
+      "aliases": [
+        "a prototype natural language question answering system"
+      ],
+      "types": [
+        "question answering",
+        "system",
+        "prototype",
+        "question answering system"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A prototype natural language question answering system, called Chat-80, is designed to efficiently translate English questions into a logical form using Prolog and extraposition grammars, enabling it to provide answers through a planning algorithm and execution of Prolog queries.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a prototype natural language question answering system",
+          "local_types": [
+            "question answering",
+            "system",
+            "prototype",
+            "question answering system"
+          ],
+          "iri": "Entity-a_prototype_natural_language_question_answering_system-Mention-1"
+        }
+      ],
+      "relevance": 0.9130859375
+    },
+    "Entity-chat-80": {
+      "node_id": "chat-80",
+      "disambiguation_index": 0,
+      "label": "Chat-80",
+      "aliases": [
+        "Chat-80"
+      ],
+      "types": [
+        "question answering system",
+        "tool",
+        "prototype",
+        "software",
+        "natural language processing system",
+        "natural language processing",
+        "system",
+        "application",
+        "translation tool"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Chat-80 is a prototype natural language question answering system designed to efficiently translate English questions into Prolog logic for processing and answering.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Chat-80",
+          "local_types": [
+            "question answering system",
+            "tool",
+            "prototype",
+            "software",
+            "natural language processing system",
+            "natural language processing",
+            "system"
+          ],
+          "iri": "Entity-chat-80-Mention-1"
+        },
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Chat-80",
+          "local_types": [
+            "software",
+            "application",
+            "tool"
+          ],
+          "iri": "Entity-chat-80-Mention-2"
+        },
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Chat-80",
+          "local_types": [
+            "software",
+            "translation tool",
+            "system",
+            "tool"
+          ],
+          "iri": "Entity-chat-80-Mention-3"
+        }
+      ],
+      "relevance": 0.8974609375
+    },
+    "Entity-system": {
+      "node_id": "system",
+      "disambiguation_index": 0,
+      "label": "system",
+      "aliases": [
+        "The system",
+        "system"
+      ],
+      "types": [
+        "software",
+        "technology",
+        "system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The system refers to Chat-80, a prototype natural language question answering software implemented in Prolog, designed for efficient question processing and adaptable to various applications.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "system",
+          "local_types": [
+            "software",
+            "technology"
+          ],
+          "iri": "Entity-system-Mention-1"
+        },
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "The system",
+          "local_types": [
+            "system"
+          ],
+          "iri": "Entity-system-Mention-2"
+        }
+      ],
+      "relevance": 0.86474609375
+    },
+    "Entity-the_prolog_form": {
+      "node_id": "the_prolog_form",
+      "disambiguation_index": 0,
+      "label": "the Prolog form",
+      "aliases": [
+        "the Prolog form"
+      ],
+      "types": [
+        "programming language",
+        "form",
+        "Prolog"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The Prolog form refers to the logical expression generated from natural language questions that is executed within the Prolog programming environment to produce answers in the context of the Chat-80 question answering system.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the Prolog form",
+          "local_types": [
+            "programming language",
+            "form",
+            "Prolog"
+          ],
+          "iri": "Entity-the_prolog_form-Mention-1"
+        }
+      ],
+      "relevance": 0.82080078125
+    },
+    "Entity-logic": {
+      "node_id": "logic",
+      "disambiguation_index": 0,
+      "label": "logic",
+      "aliases": [
+        "logic"
+      ],
+      "types": [
+        "mathematics",
+        "formal system",
+        "mathematical concept",
+        "philosophy"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'logic' refers to the formal system and mathematical framework that underpins the Prolog programming language, enabling the representation and manipulation of knowledge in the natural language question answering system Chat-80.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "logic",
+          "local_types": [
+            "philosophy",
+            "mathematics"
+          ],
+          "iri": "Entity-logic-Mention-1"
+        },
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "logic",
+          "local_types": [
+            "mathematical concept",
+            "formal system"
+          ],
+          "iri": "Entity-logic-Mention-2"
+        }
+      ],
+      "relevance": 0.78955078125
+    },
+    "Entity-the_resulting_logical_expression": {
+      "node_id": "the_resulting_logical_expression",
+      "disambiguation_index": 0,
+      "label": "The resulting logical expression",
+      "aliases": [
+        "The resulting logical expression"
+      ],
+      "types": [
+        "logical expression"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The resulting logical expression refers to the formal representation of a natural language question in the Prolog subset of logic, generated by the Chat-80 system after translating English input using extraposition grammars.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "The resulting logical expression",
+          "local_types": [
+            "logical expression"
+          ],
+          "iri": "Entity-the_resulting_logical_expression-Mention-1"
+        }
+      ],
+      "relevance": 0.78125
+    },
+    "Entity-answer": {
+      "node_id": "answer",
+      "disambiguation_index": 0,
+      "label": "answer",
+      "aliases": [
+        "answer",
+        "the answer"
+      ],
+      "types": [
+        "output",
+        "result"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'answer' refers to the result produced by the execution of a Prolog form in the Chat-80 natural language question answering system.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "answer",
+          "local_types": [
+            "result",
+            "output"
+          ],
+          "iri": "Entity-answer-Mention-1"
+        },
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the answer",
+          "local_types": [
+            "result"
+          ],
+          "iri": "Entity-answer-Mention-2"
+        }
+      ],
+      "relevance": 0.7421875
+    },
+    "Entity-extraposition_grammar": {
+      "node_id": "extraposition_grammar",
+      "disambiguation_index": 0,
+      "label": "extraposition grammars",
+      "aliases": [
+        "a logic-based grammar formalism called extraposition grammars",
+        "extraposition grammars"
+      ],
+      "types": [
+        "linguistic formalism",
+        "linguistic theory",
+        "grammar formalism"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Extraposition grammars are a logic-based grammar formalism used in natural language processing to facilitate the translation of English questions into a logical representation suitable for execution in Prolog.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "extraposition grammars",
+          "local_types": [
+            "linguistic formalism",
+            "linguistic theory",
+            "grammar formalism"
+          ],
+          "iri": "Entity-extraposition_grammar-Mention-1"
+        },
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "a logic-based grammar formalism called extraposition grammars",
+          "local_types": [
+            "grammar formalism"
+          ],
+          "iri": "Entity-extraposition_grammar-Mention-2"
+        }
+      ],
+      "relevance": 0.73291015625
+    },
+    "Entity-english_question": {
+      "node_id": "english_question",
+      "disambiguation_index": 0,
+      "label": "English questions",
+      "aliases": [
+        "English questions"
+      ],
+      "types": [
+        "query type",
+        "question",
+        "questions",
+        "language"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "English questions refer to inquiries formulated in the English language that are processed by the Chat-80 system to be converted into logical expressions for answering.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "English questions",
+          "local_types": [
+            "query type",
+            "question",
+            "questions",
+            "language"
+          ],
+          "iri": "Entity-english_question-Mention-1"
+        }
+      ],
+      "relevance": 0.70068359375
+    },
+    "Entity-efficient_and_easily_adaptable_to_a_variety_of_application": {
+      "node_id": "efficient_and_easily_adaptable_to_a_variety_of_application",
+      "disambiguation_index": 0,
+      "label": "efficient and easily adaptable to a variety of applications",
+      "aliases": [
+        "efficient and easily adaptable to a variety of applications"
+      ],
+      "types": [
+        "feature",
+        "application"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'efficient and easily adaptable to a variety of applications' refers to the design characteristics of the Chat-80 natural language question answering system, which allows it to perform effectively across different use cases.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "efficient and easily adaptable to a variety of applications",
+          "local_types": [
+            "feature",
+            "application"
+          ],
+          "iri": "Entity-efficient_and_easily_adaptable_to_a_variety_of_application-Mention-1"
+        }
+      ],
+      "relevance": 0.6962890625
+    },
+    "Entity-a_programming_language_based_on_logic": {
+      "node_id": "a_programming_language_based_on_logic",
+      "disambiguation_index": 0,
+      "label": "a programming language based on logic",
+      "aliases": [
+        "a programming language based on logic"
+      ],
+      "types": [
+        "programming language",
+        "logic"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A programming language based on logic refers to Prolog, which is designed for symbolic reasoning and allows for the expression of logic in a way that can be executed by a computer, making it suitable for applications such as natural language processing and artificial intelligence.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "a programming language based on logic",
+          "local_types": [
+            "programming language",
+            "logic"
+          ],
+          "iri": "Entity-a_programming_language_based_on_logic-Mention-1"
+        }
+      ],
+      "relevance": 0.6875
+    },
+    "Entity-the_prolog_subset_of_logic": {
+      "node_id": "the_prolog_subset_of_logic",
+      "disambiguation_index": 0,
+      "label": "the Prolog subset of logic",
+      "aliases": [
+        "the Prolog subset of logic"
+      ],
+      "types": [
+        "programming language",
+        "logic",
+        "Prolog"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The Prolog subset of logic refers to the specific logical expressions and constructs that can be represented and manipulated within the Prolog programming language, which is based on formal logic and used for implementing logic-based systems such as natural language processing applications.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the Prolog subset of logic",
+          "local_types": [
+            "programming language",
+            "logic",
+            "Prolog"
+          ],
+          "iri": "Entity-the_prolog_subset_of_logic-Mention-1"
+        }
+      ],
+      "relevance": 0.68408203125
+    },
+    "Entity-application": {
+      "node_id": "application",
+      "disambiguation_index": 0,
+      "label": "applications",
+      "aliases": [
+        "applications"
+      ],
+      "types": [
+        "use case",
+        "context"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'applications' refers to the various use cases and contexts in which the Chat-80 natural language question answering system can be efficiently utilized and adapted.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "applications",
+          "local_types": [
+            "use case",
+            "context"
+          ],
+          "iri": "Entity-application-Mention-1"
+        }
+      ],
+      "relevance": 0.68115234375
+    },
+    "Entity-prolog": {
+      "node_id": "prolog",
+      "disambiguation_index": 0,
+      "label": "Prolog",
+      "aliases": [
+        "Prolog"
+      ],
+      "types": [
+        "logic-based language",
+        "logic programming language",
+        "logic programming",
+        "programming language"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Prolog is a high-level programming language that is based on formal logic and is primarily used for logic programming and artificial intelligence applications.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Prolog",
+          "local_types": [
+            "logic-based language",
+            "logic programming language",
+            "logic programming",
+            "programming language"
+          ],
+          "iri": "Entity-prolog-Mention-1"
+        },
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Prolog",
+          "local_types": [
+            "logic programming",
+            "programming language"
+          ],
+          "iri": "Entity-prolog-Mention-2"
+        },
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Prolog",
+          "local_types": [
+            "logic programming language",
+            "logic programming",
+            "programming language"
+          ],
+          "iri": "Entity-prolog-Mention-3"
+        },
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "Prolog",
+          "local_types": [
+            "programming language",
+            "logic programming"
+          ],
+          "iri": "Entity-prolog-Mention-4"
+        }
+      ],
+      "relevance": 0.67431640625
+    },
+    "Entity-prototype_natural_language_question_answering_system": {
+      "node_id": "prototype_natural_language_question_answering_system",
+      "disambiguation_index": 0,
+      "label": "prototype natural language question answering system",
+      "aliases": [
+        "prototype natural language question answering system"
+      ],
+      "types": [
+        "system",
+        "software",
+        "technology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A prototype natural language question answering system is an experimental software designed to understand and respond to questions posed in natural language, typically used for research and development purposes.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "prototype natural language question answering system",
+          "local_types": [
+            "system",
+            "software",
+            "technology"
+          ],
+          "iri": "Entity-prototype_natural_language_question_answering_system-Mention-1"
+        }
+      ],
+      "relevance": 0.671875
+    },
+    "Entity-efficient_prolog": {
+      "node_id": "efficient_prolog",
+      "disambiguation_index": 0,
+      "label": "efficient Prolog",
+      "aliases": [
+        "efficient Prolog"
+      ],
+      "types": [
+        "programming language",
+        "Prolog"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Efficient Prolog refers to a refined subset of the Prolog programming language that has been optimized for performance, particularly in the context of executing logical expressions derived from natural language processing tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "efficient Prolog",
+          "local_types": [
+            "programming language",
+            "Prolog"
+          ],
+          "iri": "Entity-efficient_prolog-Mention-1"
+        }
+      ],
+      "relevance": 0.66943359375
+    },
+    "Entity-logic-based_grammar_formalism": {
+      "node_id": "logic-based_grammar_formalism",
+      "disambiguation_index": 0,
+      "label": "logic-based grammar formalism",
+      "aliases": [
+        "logic-based grammar formalism"
+      ],
+      "types": [
+        "grammar formalism"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A logic-based grammar formalism is a type of grammatical framework that utilizes principles of logic to define and analyze the structure and rules of natural language syntax and semantics.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "logic-based grammar formalism",
+          "local_types": [
+            "grammar formalism"
+          ],
+          "iri": "Entity-logic-based_grammar_formalism-Mention-1"
+        }
+      ],
+      "relevance": 0.5791015625
+    },
+    "Entity-programming_language": {
+      "node_id": "programming_language",
+      "disambiguation_index": 0,
+      "label": "programming language",
+      "aliases": [
+        "programming language"
+      ],
+      "types": [
+        "computer language"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A programming language is a formal set of instructions that can be used to produce various kinds of output, including software applications, algorithms, and data processing tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "programming language",
+          "local_types": [
+            "computer language"
+          ],
+          "iri": "Entity-programming_language-Mention-1"
+        }
+      ],
+      "relevance": 0.5283203125
+    },
+    "Entity-logical_expression": {
+      "node_id": "logical_expression",
+      "disambiguation_index": 0,
+      "label": "logical expression",
+      "aliases": [
+        "logical expression"
+      ],
+      "types": [
+        "mathematical concept",
+        "expression"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A logical expression is a formal statement that combines variables and logical operators to represent a logical relationship or proposition in mathematical logic.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "logical expression",
+          "local_types": [
+            "mathematical concept",
+            "expression"
+          ],
+          "iri": "Entity-logical_expression-Mention-1"
+        }
+      ],
+      "relevance": 0.52294921875
+    },
+    "Entity-english": {
+      "node_id": "english",
+      "disambiguation_index": 0,
+      "label": "English",
+      "aliases": [
+        "English"
+      ],
+      "types": [
+        "language"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "English is a West Germanic language that is the primary language spoken in England and widely used as a global lingua franca.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "English",
+          "local_types": [
+            "language"
+          ],
+          "iri": "Entity-english-Mention-1"
+        }
+      ],
+      "relevance": 0.5
+    },
+    "Entity-planning_algorithm": {
+      "node_id": "planning_algorithm",
+      "disambiguation_index": 0,
+      "label": "planning algorithm",
+      "aliases": [
+        "planning algorithm"
+      ],
+      "types": [
+        "algorithm",
+        "computational method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A planning algorithm is a computational method used to generate a sequence of actions or decisions to achieve specific goals based on given constraints and conditions.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "planning algorithm",
+          "local_types": [
+            "algorithm",
+            "computational method"
+          ],
+          "iri": "Entity-planning_algorithm-Mention-1"
+        }
+      ],
+      "relevance": 0.496337890625
+    },
+    "Entity-query_optimisation_in_a_relational_database": {
+      "node_id": "query_optimisation_in_a_relational_database",
+      "disambiguation_index": 0,
+      "label": "query optimisation in a relational database",
+      "aliases": [
+        "query optimisation in a relational database"
+      ],
+      "types": [
+        "relational database",
+        "query optimisation",
+        "database",
+        "process",
+        "optimisation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Query optimisation in a relational database refers to the process of improving the efficiency of database queries by restructuring them or adjusting the database schema to reduce resource consumption and enhance performance.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "query optimisation in a relational database",
+          "local_types": [
+            "relational database",
+            "query optimisation",
+            "database",
+            "process",
+            "optimisation"
+          ],
+          "iri": "Entity-query_optimisation_in_a_relational_database-Mention-1"
+        }
+      ],
+      "relevance": 0.494384765625
+    },
+    "Entity-query_optimisation": {
+      "node_id": "query_optimisation",
+      "disambiguation_index": 0,
+      "label": "query optimisation",
+      "aliases": [
+        "query optimisation"
+      ],
+      "types": [
+        "performance improvement",
+        "database technique",
+        "database concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Query optimisation refers to the process of enhancing the performance and efficiency of database queries by restructuring them or using algorithms to minimize resource usage and execution time.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "query optimisation",
+          "local_types": [
+            "performance improvement",
+            "database technique",
+            "database concept"
+          ],
+          "iri": "Entity-query_optimisation-Mention-1"
+        }
+      ],
+      "relevance": 0.48974609375
+    },
+    "Entity-relational_database": {
+      "node_id": "relational_database",
+      "disambiguation_index": 0,
+      "label": "relational database",
+      "aliases": [
+        "relational database"
+      ],
+      "types": [
+        "data management system",
+        "database type",
+        "database",
+        "data management"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A relational database is a type of data management system that stores data in structured formats using tables, allowing for the establishment of relationships between different data entities through the use of keys.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "relational database",
+          "local_types": [
+            "data management system",
+            "database type",
+            "database",
+            "data management"
+          ],
+          "iri": "Entity-relational_database-Mention-1"
+        }
+      ],
+      "relevance": 0.451171875
+    },
+    "Entity-paper": {
+      "node_id": "paper",
+      "disambiguation_index": 0,
+      "label": "paper",
+      "aliases": [
+        "paper"
+      ],
+      "types": [
+        "academic work",
+        "research document"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A paper is a written document that presents research findings, analyses, or discussions on a specific topic, typically in an academic or professional context.",
+      "mentions": [
+        {
+          "reference": "Paper-60-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "paper",
+          "local_types": [
+            "academic work",
+            "research document"
+          ],
+          "iri": "Entity-paper-Mention-1"
+        }
+      ],
+      "relevance": 0.40625
+    }
+  },
+  "summary": "This paper gives an overall account of a prototype natural language question answering system , called Chat-80 . Chat-80 has been designed to be both efficient and easily adaptable to a variety of applications . The system is implemented entirely in Prolog , a programming language based on logic . With the aid of a logic-based grammar formalism called extraposition grammars , Chat-80 translates English questions into the Prolog subset of logic . The resulting logical expression is then transformed by a planning algorithm into efficient Prolog , cf. query optimisation in a relational database . Finally , the Prolog form is executed to yield the answer .",
+  "triples": [
+    [
+      "Entity-this_paper",
+      "Predicate-gives_an_overall_account_of",
+      "Entity-a_prototype_natural_language_question_answering_system"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-gives_an_overall_account_of",
+      "Entity-prototype_natural_language_question_answering_system"
+    ],
+    [
+      "Entity-chat-80",
+      "Predicate-is_called",
+      "Entity-a_prototype_natural_language_question_answering_system"
+    ],
+    [
+      "Entity-chat-80",
+      "Predicate-designed_to_be",
+      "Entity-efficient_and_easily_adaptable_to_a_variety_of_application"
+    ],
+    [
+      "Entity-chat-80",
+      "Predicate-has_been_designed_to_be",
+      "Entity-efficient_and_easily_adaptable_to_a_variety_of_application"
+    ],
+    [
+      "Entity-system",
+      "Predicate-is_implemented_in",
+      "Entity-prolog"
+    ],
+    [
+      "Entity-prolog",
+      "Predicate-is_a",
+      "Entity-programming_language"
+    ],
+    [
+      "Entity-programming_language",
+      "Predicate-is_based_on",
+      "Entity-logic"
+    ],
+    [
+      "Entity-system",
+      "Predicate-is_implemented_entirely_in",
+      "Entity-prolog"
+    ],
+    [
+      "Entity-chat-80",
+      "Predicate-translates",
+      "Entity-english_question"
+    ],
+    [
+      "Entity-english_question",
+      "Predicate-into",
+      "Entity-the_prolog_subset_of_logic"
+    ],
+    [
+      "Entity-the_resulting_logical_expression",
+      "Predicate-is_transformed_by",
+      "Entity-planning_algorithm"
+    ],
+    [
+      "Entity-planning_algorithm",
+      "Predicate-transforms",
+      "Entity-efficient_prolog"
+    ],
+    [
+      "Entity-query_optimisation",
+      "Predicate-involves",
+      "Entity-relational_database"
+    ],
+    [
+      "Entity-the_prolog_form",
+      "Predicate-is_executed_to_yield",
+      "Entity-answer"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents_an_overview_of",
+      "Entity-a_prototype_natural_language_question_answering_system"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-the_prolog_subset_of_logic",
+      "skos:broader",
+      "Entity-prolog"
+    ],
+    [
+      "Entity-the_prolog_subset_of_logic",
+      "skos:broader",
+      "Entity-programming_language"
+    ],
+    [
+      "Entity-the_prolog_form",
+      "skos:broader",
+      "Entity-prolog"
+    ],
+    [
+      "Entity-the_prolog_form",
+      "skos:broader",
+      "Entity-programming_language"
+    ],
+    [
+      "Entity-a_programming_language_based_on_logic",
+      "skos:broader",
+      "Entity-programming_language"
+    ],
+    [
+      "Entity-efficient_prolog",
+      "skos:broader",
+      "Entity-prolog"
+    ],
+    [
+      "Entity-efficient_prolog",
+      "skos:broader",
+      "Entity-programming_language"
+    ],
+    [
+      "Entity-prolog",
+      "skos:broader",
+      "Entity-programming_language"
+    ],
+    [
+      "Entity-query_optimisation_in_a_relational_database",
+      "skos:broader",
+      "Entity-relational_database"
+    ],
+    [
+      "Entity-the_resulting_logical_expression",
+      "skos:broader",
+      "Entity-logical_expression"
+    ],
+    [
+      "Entity-prototype_natural_language_question_answering_system",
+      "skos:broader",
+      "Entity-system"
+    ],
+    [
+      "Entity-the_prolog_subset_of_logic",
+      "skos:broader",
+      "Entity-logic"
+    ],
+    [
+      "Entity-efficient_and_easily_adaptable_to_a_variety_of_application",
+      "skos:broader",
+      "Entity-application"
+    ],
+    [
+      "Entity-query_optimisation_in_a_relational_database",
+      "skos:broader",
+      "Entity-query_optimisation"
+    ],
+    [
+      "Entity-chat-80",
+      "skos:broader",
+      "Entity-application"
+    ],
+    [
+      "Entity-prolog",
+      "skos:broader",
+      "Entity-a_programming_language_based_on_logic"
+    ],
+    [
+      "Entity-chat-80",
+      "skos:broader",
+      "Entity-system"
+    ],
+    [
+      "Entity-a_prototype_natural_language_question_answering_system",
+      "skos:broader",
+      "Entity-system"
+    ],
+    [
+      "Entity-a_programming_language_based_on_logic",
+      "skos:broader",
+      "Entity-logic"
+    ]
+  ],
+  "predicates": {
+    "Predicate-gives_an_overall_account_of": {
+      "label": "gives an overall account of",
+      "description": "The predicate 'gives an overall account of' indicates that the subject provides a comprehensive summary or detailed explanation regarding the object. It suggests that the subject presents key information, insights, or findings that encapsulate the essential aspects of the object, allowing the audience to understand its main features, significance, or functionality.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_called": {
+      "label": "is called",
+      "description": "The predicate 'is called' serves to establish a naming relationship between the subject and the object, indicating that the subject is referred to by the name or term specified in the object. This predicate is commonly used to denote the designation, title, or label that is assigned to the subject, thereby providing a way to identify or categorize it within a particular context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-designed_to_be": {
+      "label": "designed to be",
+      "description": "The predicate 'designed to be' indicates the intended purpose or functionality of the subject, linking it to specific characteristics or qualities expressed in the object. It suggests that the subject has been intentionally created or configured to fulfill certain criteria or roles, highlighting the relationship between the subject's design and its expected performance or adaptability in various contexts.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has_been_designed_to_be": {
+      "label": "has been designed to be",
+      "description": "The predicate 'has been designed to be' indicates that the subject has undergone a deliberate process of creation or modification with the intention of achieving specific characteristics or functionalities as described in the object. It implies that the subject's attributes or capabilities are the result of thoughtful planning and design, aimed at fulfilling particular needs or purposes.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_implemented_in": {
+      "label": "is implemented in",
+      "description": "The predicate 'is implemented in' establishes a relationship between a subject, typically a system, and an object, which is a programming language or framework. It indicates that the functionality or operations of the subject are realized or executed using the methods, syntax, and features provided by the object. This connection highlights the dependency of the subject on the object for its implementation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a": {
+      "label": "is a",
+      "description": "The predicate 'is a' establishes a classification or categorization relationship between the subject and the object, indicating that the subject belongs to the category or type defined by the object. It implies that the subject possesses the characteristics or qualities associated with the object, thereby providing a way to understand the nature or identity of the subject in relation to a broader class.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_based_on": {
+      "label": "is based on",
+      "description": "The predicate 'is based on' establishes a foundational relationship between the subject and the object, indicating that the subject derives its principles, structure, or functionality from the object. This connection implies that the object serves as a source of inspiration, framework, or underlying theory that informs or supports the subject's existence or development.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_implemented_entirely_in": {
+      "label": "is implemented entirely in",
+      "description": "The predicate 'is implemented entirely in' establishes a relationship between a subject, typically a software system or application, and an object, which is a programming language or technology. It indicates that the entirety of the subject's functionality, logic, and operations are realized using the specified object, signifying that no other programming languages or technologies are utilized in its implementation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-translates": {
+      "label": "translates",
+      "description": "The predicate 'translates' indicates an action where the subject converts or interprets content from one language or form into another, resulting in the object being expressed in a different linguistic or communicative format.",
+      "disambiguation_index": 0
+    },
+    "Predicate-into": {
+      "label": "into",
+      "description": "The predicate 'into' indicates a transformation or transition of the subject into the state, form, or category represented by the object. It suggests a movement or conversion from one context to another, often implying a change in structure, understanding, or classification.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_transformed_by": {
+      "label": "is transformed by",
+      "description": "The predicate 'is transformed by' indicates a relationship where the subject undergoes a change or modification as a result of the action or process performed by the object. In this context, the subject represents an entity that is altered, while the object denotes the agent or mechanism responsible for this transformation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-transforms": {
+      "label": "transforms",
+      "description": "The predicate 'transforms' indicates a process or action in which the subject undergoes a change or modification that results in the object. This relationship suggests that the subject is capable of altering its state, form, or characteristics to produce the object, which represents the new or resulting state after the transformation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-involves": {
+      "label": "involves",
+      "description": "The predicate 'involves' indicates a relationship where the subject is engaged in or requires the object as a necessary component, process, or aspect. It suggests that the subject cannot be fully understood or executed without the inclusion or consideration of the object, highlighting a connection where the object plays a significant role in the context of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_executed_to_yield": {
+      "label": "is executed to yield",
+      "description": "The predicate 'is executed to yield' indicates a process in which a specific subject undergoes an action or operation that results in the generation or production of a particular object. It implies a causal relationship where the execution of the subject leads to the outcome represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents_an_overview_of": {
+      "label": "presents an overview of",
+      "description": "The predicate 'presents an overview of' indicates that the subject provides a summary or general description of the object, which typically encompasses key features, concepts, or components related to the object. This connection implies that the subject aims to inform or educate the audience about the essential aspects of the object in a concise manner.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between two concepts, where the subject represents a more specific instance or subset of the object, which is a more general or inclusive category. This relationship indicates that the subject is encompassed within the broader context defined by the object, highlighting the organizational structure of knowledge or classification.",
+      "disambiguation_index": 0
+    }
+  }
+}

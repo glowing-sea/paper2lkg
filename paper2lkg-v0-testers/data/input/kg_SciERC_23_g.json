@@ -1,0 +1,996 @@
+{
+  "iri": "Paper-23",
+  "title": "C04-1128",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-23-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-23-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+              "text": "While sentence extraction as an approach to summarization has been shown to work in documents of certain genres , because of the conversational nature of email communication where utterances are made in relation to one made previously , sentence extraction may not capture the necessary segments of dialogue that would make a summary coherent ."
+            },
+            {
+              "iri": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+              "text": "In this paper , we present our work on the detection of question-answer pairs in an email conversation for the task of email summarization ."
+            },
+            {
+              "iri": "Paper-23-Section-1-Paragraph-1-Sentence-3",
+              "text": "We show that various features based on the structure of email-threads can be used to improve upon lexical similarity of discourse segments for question-answer pairing ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    7.700920104980469e-05,
+    6.876316785812378,
+    17.204174995422363,
+    22.012977123260498,
+    0.036438941955566406,
+    0.00011372566223144531,
+    0.00014495849609375,
+    22.792704105377197,
+    43.519883155822754,
+    2.819324254989624,
+    0.04703402519226074,
+    0.00995016098022461,
+    0.00016617774963378906,
+    22.206174850463867,
+    0.0010061264038085938,
+    0.027217864990234375,
+    0.0008721351623535156,
+    4.142560005187988,
+    0.891016960144043,
+    1.1922059059143066,
+    88.22081995010376,
+    6.414524078369141,
+    49.76051211357117,
+    2.5421700477600098,
+    0.0005996227264404297,
+    0.008385181427001953
+  ],
+  "nodes": {
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "this paper",
+      "aliases": [
+        "this paper"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "This paper presents research on detecting question-answer pairs in email conversations to enhance email summarization.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "this paper",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.79541015625
+    },
+    "Entity-detection_of_question-answer_pair": {
+      "node_id": "detection_of_question-answer_pair",
+      "disambiguation_index": 0,
+      "label": "detection of question-answer pairs",
+      "aliases": [
+        "the detection of question-answer pairs",
+        "detection of question-answer pairs"
+      ],
+      "types": [
+        "detection",
+        "task",
+        "question-answer pair"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The detection of question-answer pairs refers to the process of identifying segments in email conversations where questions are posed and corresponding answers are provided, aimed at enhancing the coherence of email summarization.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "detection of question-answer pairs",
+          "local_types": [
+            "task",
+            "question-answer pair"
+          ],
+          "iri": "Entity-detection_of_question-answer_pair-Mention-1"
+        },
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the detection of question-answer pairs",
+          "local_types": [
+            "task",
+            "detection"
+          ],
+          "iri": "Entity-detection_of_question-answer_pair-Mention-2"
+        }
+      ],
+      "relevance": 0.79345703125
+    },
+    "Entity-various_feature_based_on_the_structure_of_email-threads": {
+      "node_id": "various_feature_based_on_the_structure_of_email-threads",
+      "disambiguation_index": 0,
+      "label": "various features based on the structure of email-threads",
+      "aliases": [
+        "various features based on the structure of email-threads"
+      ],
+      "types": [
+        "features",
+        "feature",
+        "email-thread"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Various features based on the structure of email-threads refer to the specific characteristics and patterns derived from the organization and flow of email conversations that can enhance the identification and pairing of question-answer segments for effective email summarization.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "various features based on the structure of email-threads",
+          "local_types": [
+            "features",
+            "feature",
+            "email-thread"
+          ],
+          "iri": "Entity-various_feature_based_on_the_structure_of_email-threads-Mention-1"
+        }
+      ],
+      "relevance": 0.755859375
+    },
+    "Entity-segment_of_dialogue": {
+      "node_id": "segment_of_dialogue",
+      "disambiguation_index": 0,
+      "label": "segments of dialogue",
+      "aliases": [
+        "segments of dialogue"
+      ],
+      "types": [
+        "segment",
+        "dialogue"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Segments of dialogue refer to distinct portions of conversational exchanges in communication, particularly in email threads, that are essential for maintaining coherence in summarization tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "segments of dialogue",
+          "local_types": [
+            "segment",
+            "dialogue"
+          ],
+          "iri": "Entity-segment_of_dialogue-Mention-1"
+        }
+      ],
+      "relevance": 0.7392578125
+    },
+    "Entity-feature": {
+      "node_id": "feature",
+      "disambiguation_index": 0,
+      "label": "features",
+      "aliases": [
+        "features"
+      ],
+      "types": [
+        "attributes",
+        "characteristics"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'features' refers to the various attributes derived from the structure of email threads that enhance the identification of question-answer pairs in email summarization.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "features",
+          "local_types": [
+            "attributes",
+            "characteristics"
+          ],
+          "iri": "Entity-feature-Mention-1"
+        }
+      ],
+      "relevance": 0.72705078125
+    },
+    "Entity-question-answer_pairing": {
+      "node_id": "question-answer_pairing",
+      "disambiguation_index": 0,
+      "label": "question-answer pairing",
+      "aliases": [
+        "question-answer pairing"
+      ],
+      "types": [
+        "information retrieval",
+        "task",
+        "question-answer",
+        "question-answer pair"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Question-answer pairing refers to the identification and matching of questions and their corresponding answers within email conversations, aimed at enhancing the coherence of summaries generated from such dialogues.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "question-answer pairing",
+          "local_types": [
+            "information retrieval",
+            "task",
+            "question-answer",
+            "question-answer pair"
+          ],
+          "iri": "Entity-question-answer_pairing-Mention-1"
+        }
+      ],
+      "relevance": 0.72119140625
+    },
+    "Entity-lexical_similarity_of_discourse_segment": {
+      "node_id": "lexical_similarity_of_discourse_segment",
+      "disambiguation_index": 0,
+      "label": "lexical similarity of discourse segments",
+      "aliases": [
+        "lexical similarity of discourse segments"
+      ],
+      "types": [
+        "lexical similarity",
+        "discourse segment"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'lexical similarity of discourse segments' refers to the degree of similarity in word choice and phrasing between segments of dialogue in a conversation, which is crucial for identifying relationships such as question-answer pairs in email communications.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "lexical similarity of discourse segments",
+          "local_types": [
+            "lexical similarity",
+            "discourse segment"
+          ],
+          "iri": "Entity-lexical_similarity_of_discourse_segment-Mention-1"
+        }
+      ],
+      "relevance": 0.720703125
+    },
+    "Entity-task_of_email_summarization": {
+      "node_id": "task_of_email_summarization",
+      "disambiguation_index": 0,
+      "label": "task of email summarization",
+      "aliases": [
+        "task of email summarization",
+        "the task of email summarization"
+      ],
+      "types": [
+        "summarization",
+        "task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The task of email summarization involves creating concise and coherent summaries of email content to facilitate quick understanding and information retrieval.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "task of email summarization",
+          "local_types": [
+            "task",
+            "summarization"
+          ],
+          "iri": "Entity-task_of_email_summarization-Mention-1"
+        },
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the task of email summarization",
+          "local_types": [
+            "task",
+            "summarization"
+          ],
+          "iri": "Entity-task_of_email_summarization-Mention-2"
+        }
+      ],
+      "relevance": 0.70654296875
+    },
+    "Entity-email_summarization": {
+      "node_id": "email_summarization",
+      "disambiguation_index": 0,
+      "label": "email summarization",
+      "aliases": [
+        "email summarization"
+      ],
+      "types": [
+        "text summarization",
+        "summarization",
+        "text processing",
+        "task",
+        "process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Email summarization is the process of condensing the content of email messages into shorter, more concise summaries while retaining the essential information.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "email summarization",
+          "local_types": [
+            "text summarization",
+            "summarization",
+            "text processing",
+            "task",
+            "process"
+          ],
+          "iri": "Entity-email_summarization-Mention-1"
+        }
+      ],
+      "relevance": 0.70166015625
+    },
+    "Entity-email-threads": {
+      "node_id": "email-threads",
+      "disambiguation_index": 0,
+      "label": "email-threads",
+      "aliases": [
+        "email-threads"
+      ],
+      "types": [
+        "data structure",
+        "communication structure",
+        "context",
+        "email format"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Email-threads are organized sequences of email messages that are grouped together based on their subject and reply relationships, facilitating coherent communication and context tracking in email exchanges.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "email-threads",
+          "local_types": [
+            "data structure",
+            "communication structure",
+            "context",
+            "email format"
+          ],
+          "iri": "Entity-email-threads-Mention-1"
+        }
+      ],
+      "relevance": 0.69921875
+    },
+    "Entity-sentence_extraction": {
+      "node_id": "sentence_extraction",
+      "disambiguation_index": 0,
+      "label": "sentence extraction",
+      "aliases": [
+        "sentence extraction"
+      ],
+      "types": [
+        "summarization",
+        "text processing method",
+        "approach",
+        "summarization technique",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Sentence extraction is a text processing method that involves selecting specific sentences from a larger body of text to create a summary.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "sentence extraction",
+          "local_types": [
+            "summarization",
+            "text processing method",
+            "approach",
+            "summarization technique",
+            "method"
+          ],
+          "iri": "Entity-sentence_extraction-Mention-1"
+        }
+      ],
+      "relevance": 0.68017578125
+    },
+    "Entity-document_of_certain_genre": {
+      "node_id": "document_of_certain_genre",
+      "disambiguation_index": 0,
+      "label": "documents of certain genres",
+      "aliases": [
+        "documents of certain genres"
+      ],
+      "types": [
+        "documents",
+        "genre"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'documents of certain genres' refers to specific types of written texts, such as formal reports or academic papers, where sentence extraction techniques for summarization have been effective, but may not be suitable for more conversational formats like email communications.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "documents of certain genres",
+          "local_types": [
+            "documents",
+            "genre"
+          ],
+          "iri": "Entity-document_of_certain_genre-Mention-1"
+        }
+      ],
+      "relevance": 0.6494140625
+    },
+    "Entity-coherent": {
+      "node_id": "coherent",
+      "disambiguation_index": 0,
+      "label": "coherent",
+      "aliases": [
+        "coherent"
+      ],
+      "types": [
+        "quality of text",
+        "textual clarity"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'coherent' refers to the quality of a summary being logically connected and understandable, particularly in the context of email communication where dialogue segments must relate to one another to form a clear and meaningful summary.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "coherent",
+          "local_types": [
+            "quality of text",
+            "textual clarity"
+          ],
+          "iri": "Entity-coherent-Mention-1"
+        }
+      ],
+      "relevance": 0.63330078125
+    },
+    "Entity-dialogue": {
+      "node_id": "dialogue",
+      "disambiguation_index": 0,
+      "label": "dialogue",
+      "aliases": [
+        "dialogue"
+      ],
+      "types": [
+        "conversation",
+        "communication"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of email communication, 'dialogue' refers to the conversational exchanges between participants, where each utterance is contextually linked to previous ones, necessitating a coherent summary that captures these interactions.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "dialogue",
+          "local_types": [
+            "conversation",
+            "communication"
+          ],
+          "iri": "Entity-dialogue-Mention-1"
+        }
+      ],
+      "relevance": 0.6318359375
+    },
+    "Entity-summarization": {
+      "node_id": "summarization",
+      "disambiguation_index": 0,
+      "label": "summarization",
+      "aliases": [
+        "summarization"
+      ],
+      "types": [
+        "text processing",
+        "information retrieval",
+        "text analysis",
+        "information reduction"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Summarization is the process of condensing a text or conversation into a shorter version while retaining its essential information and meaning.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "summarization",
+          "local_types": [
+            "text processing",
+            "information retrieval",
+            "text analysis",
+            "information reduction"
+          ],
+          "iri": "Entity-summarization-Mention-1"
+        }
+      ],
+      "relevance": 0.62939453125
+    },
+    "Entity-document": {
+      "node_id": "document",
+      "disambiguation_index": 0,
+      "label": "documents",
+      "aliases": [
+        "documents"
+      ],
+      "types": [
+        "textual data",
+        "information source"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'documents' refers to textual data, specifically written communications such as emails, that are analyzed for summarization purposes in the context of this paper.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "documents",
+          "local_types": [
+            "textual data",
+            "information source"
+          ],
+          "iri": "Entity-document-Mention-1"
+        }
+      ],
+      "relevance": 0.62451171875
+    },
+    "Entity-the_conversational_nature_of_email_communication": {
+      "node_id": "the_conversational_nature_of_email_communication",
+      "disambiguation_index": 0,
+      "label": "the conversational nature of email communication",
+      "aliases": [
+        "the conversational nature of email communication"
+      ],
+      "types": [
+        "email",
+        "communication"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "the characteristic of email communication that resembles a dialogue, where messages are often responses to previous messages, creating a back-and-forth exchange.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "the conversational nature of email communication",
+          "local_types": [
+            "email",
+            "communication"
+          ],
+          "iri": "Entity-the_conversational_nature_of_email_communication-Mention-1"
+        }
+      ],
+      "relevance": 0.6240234375
+    },
+    "Entity-email_conversation": {
+      "node_id": "email_conversation",
+      "disambiguation_index": 0,
+      "label": "email conversation",
+      "aliases": [
+        "an email conversation",
+        "email conversation"
+      ],
+      "types": [
+        "context",
+        "communication",
+        "text format",
+        "conversation",
+        "dialogue",
+        "email"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "An email conversation is a series of exchanged messages between individuals or groups conducted through electronic mail, typically involving dialogue and communication on various topics.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "email conversation",
+          "local_types": [
+            "context",
+            "communication",
+            "text format",
+            "conversation",
+            "dialogue",
+            "email"
+          ],
+          "iri": "Entity-email_conversation-Mention-1"
+        },
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "an email conversation",
+          "local_types": [
+            "context",
+            "email"
+          ],
+          "iri": "Entity-email_conversation-Mention-2"
+        }
+      ],
+      "relevance": 0.6181640625
+    },
+    "Entity-discourse_segment": {
+      "node_id": "discourse_segment",
+      "disambiguation_index": 0,
+      "label": "discourse segments",
+      "aliases": [
+        "discourse segments"
+      ],
+      "types": [
+        "linguistic unit",
+        "text component",
+        "text structure",
+        "communication units",
+        "communication unit"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Discourse segments are defined as distinct units of communication within a text that contribute to the overall structure and meaning of the discourse.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "discourse segments",
+          "local_types": [
+            "linguistic unit",
+            "text component",
+            "text structure",
+            "communication units",
+            "communication unit"
+          ],
+          "iri": "Entity-discourse_segment-Mention-1"
+        }
+      ],
+      "relevance": 0.58544921875
+    },
+    "Entity-question-answer_pair": {
+      "node_id": "question-answer_pair",
+      "disambiguation_index": 0,
+      "label": "question-answer pairs",
+      "aliases": [
+        "question-answer pairs"
+      ],
+      "types": [
+        "data type",
+        "information exchange",
+        "dialogue structure",
+        "information structure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Question-answer pairs are structured interactions that consist of a question posed by one participant and a corresponding answer provided by another, commonly used in various forms of communication and information exchange.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "question-answer pairs",
+          "local_types": [
+            "data type",
+            "information exchange",
+            "dialogue structure",
+            "information structure"
+          ],
+          "iri": "Entity-question-answer_pair-Mention-1"
+        }
+      ],
+      "relevance": 0.58056640625
+    },
+    "Entity-email_communication": {
+      "node_id": "email_communication",
+      "disambiguation_index": 0,
+      "label": "email communication",
+      "aliases": [
+        "email communication"
+      ],
+      "types": [
+        "medium",
+        "communication",
+        "communication method",
+        "digital communication",
+        "email",
+        "communication type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Email communication refers to the exchange of messages and information through electronic mail, characterized by its digital format and ability to facilitate asynchronous dialogue between individuals or groups.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "email communication",
+          "local_types": [
+            "medium",
+            "communication",
+            "communication method",
+            "digital communication",
+            "email",
+            "communication type"
+          ],
+          "iri": "Entity-email_communication-Mention-1"
+        }
+      ],
+      "relevance": 0.5732421875
+    },
+    "Entity-summary": {
+      "node_id": "summary",
+      "disambiguation_index": 0,
+      "label": "summary",
+      "aliases": [
+        "summary"
+      ],
+      "types": [
+        "summary",
+        "condensed information",
+        "textual output"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A summary is a condensed representation of information that captures the main points or essence of a larger text or conversation.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "summary",
+          "local_types": [
+            "summary",
+            "condensed information",
+            "textual output"
+          ],
+          "iri": "Entity-summary-Mention-1"
+        }
+      ],
+      "relevance": 0.556640625
+    },
+    "Entity-lexical_similarity": {
+      "node_id": "lexical_similarity",
+      "disambiguation_index": 0,
+      "label": "lexical similarity",
+      "aliases": [
+        "lexical similarity"
+      ],
+      "types": [
+        "linguistic feature",
+        "text analysis"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Lexical similarity is a measure of how closely related two pieces of text are based on the similarity of their word usage and structure.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "lexical similarity",
+          "local_types": [
+            "linguistic feature",
+            "text analysis"
+          ],
+          "iri": "Entity-lexical_similarity-Mention-1"
+        }
+      ],
+      "relevance": 0.556640625
+    },
+    "Entity-utterance": {
+      "node_id": "utterance",
+      "disambiguation_index": 0,
+      "label": "utterances",
+      "aliases": [
+        "utterances"
+      ],
+      "types": [
+        "spoken language",
+        "dialogue component",
+        "utterance"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Utterances refer to individual spoken or written expressions or statements made in a dialogue or conversation.",
+      "mentions": [
+        {
+          "reference": "Paper-23-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "utterances",
+          "local_types": [
+            "spoken language",
+            "dialogue component",
+            "utterance"
+          ],
+          "iri": "Entity-utterance-Mention-1"
+        }
+      ],
+      "relevance": 0.51220703125
+    }
+  },
+  "summary": "While sentence extraction as an approach to summarization has been shown to work in documents of certain genres , because of the conversational nature of email communication where utterances are made in relation to one made previously , sentence extraction may not capture the necessary segments of dialogue that would make a summary coherent . In this paper , we present our work on the detection of question-answer pairs in an email conversation for the task of email summarization . We show that various features based on the structure of email-threads can be used to improve upon lexical similarity of discourse segments for question-answer pairing .",
+  "triples": [
+    [
+      "Entity-sentence_extraction",
+      "Predicate-has_been_shown_to_work_in",
+      "Entity-document_of_certain_genre"
+    ],
+    [
+      "Entity-sentence_extraction",
+      "Predicate-may_not_capture",
+      "Entity-segment_of_dialogue"
+    ],
+    [
+      "Entity-email_communication",
+      "Predicate-has",
+      "Entity-the_conversational_nature_of_email_communication"
+    ],
+    [
+      "Entity-summary",
+      "Predicate-make",
+      "Entity-coherent"
+    ],
+    [
+      "Entity-email_communication",
+      "Predicate-is_characterized_by",
+      "Entity-the_conversational_nature_of_email_communication"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents",
+      "Entity-detection_of_question-answer_pair"
+    ],
+    [
+      "Entity-detection_of_question-answer_pair",
+      "Predicate-is_for",
+      "Entity-task_of_email_summarization"
+    ],
+    [
+      "Entity-question-answer_pair",
+      "Predicate-are_detected_in",
+      "Entity-email_conversation"
+    ],
+    [
+      "Entity-task_of_email_summarization",
+      "Predicate-is_related_to",
+      "Entity-email_summarization"
+    ],
+    [
+      "Entity-various_feature_based_on_the_structure_of_email-threads",
+      "Predicate-can_be_used_to_improve_upon",
+      "Entity-lexical_similarity_of_discourse_segment"
+    ],
+    [
+      "Entity-various_feature_based_on_the_structure_of_email-threads",
+      "Predicate-can_be_used_to_improve_upon",
+      "Entity-lexical_similarity"
+    ],
+    [
+      "Entity-various_feature_based_on_the_structure_of_email-threads",
+      "Predicate-can_be_used_to_improve_upon",
+      "Entity-discourse_segment"
+    ],
+    [
+      "Entity-various_feature_based_on_the_structure_of_email-threads",
+      "Predicate-can_be_used_to_improve_upon",
+      "Entity-question-answer_pairing"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents_research_on",
+      "Entity-detection_of_question-answer_pair"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-various_feature_based_on_the_structure_of_email-threads",
+      "skos:broader",
+      "Entity-feature"
+    ],
+    [
+      "Entity-document_of_certain_genre",
+      "skos:broader",
+      "Entity-document"
+    ],
+    [
+      "Entity-sentence_extraction",
+      "skos:broader",
+      "Entity-summarization"
+    ],
+    [
+      "Entity-various_feature_based_on_the_structure_of_email-threads",
+      "skos:broader",
+      "Entity-email-threads"
+    ],
+    [
+      "Entity-task_of_email_summarization",
+      "skos:broader",
+      "Entity-summarization"
+    ],
+    [
+      "Entity-lexical_similarity_of_discourse_segment",
+      "skos:broader",
+      "Entity-discourse_segment"
+    ],
+    [
+      "Entity-detection_of_question-answer_pair",
+      "skos:broader",
+      "Entity-question-answer_pair"
+    ],
+    [
+      "Entity-email_conversation",
+      "skos:broader",
+      "Entity-dialogue"
+    ],
+    [
+      "Entity-email_summarization",
+      "skos:broader",
+      "Entity-summarization"
+    ],
+    [
+      "Entity-lexical_similarity_of_discourse_segment",
+      "skos:broader",
+      "Entity-lexical_similarity"
+    ],
+    [
+      "Entity-question-answer_pairing",
+      "skos:broader",
+      "Entity-question-answer_pair"
+    ],
+    [
+      "Entity-detection_of_question-answer_pair",
+      "skos:broader",
+      "Entity-question-answer_pairing"
+    ],
+    [
+      "Entity-segment_of_dialogue",
+      "skos:broader",
+      "Entity-dialogue"
+    ]
+  ],
+  "predicates": {
+    "Predicate-has_been_shown_to_work_in": {
+      "label": "has been shown to work in",
+      "description": "The predicate 'has been shown to work in' indicates that the subject has demonstrated effectiveness or applicability within the context specified by the object. It suggests that there is evidence or research supporting the claim that the subject performs well or achieves desired outcomes when applied to the scenarios or categories represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-may_not_capture": {
+      "label": "may not capture",
+      "description": "The predicate 'may not capture' indicates a potential limitation or inadequacy in the relationship between the subject and the object. It suggests that the subject, in this case, is not guaranteed to fully encompass or represent the characteristics, qualities, or elements of the object. This implies that there could be instances where the subject fails to include or reflect certain aspects of the object, leading to an incomplete or insufficient understanding.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has": {
+      "label": "has",
+      "description": "The predicate 'has' indicates a relationship of possession or inclusion between the subject and the object. It signifies that the subject possesses, contains, or is characterized by the qualities, attributes, or elements represented by the object. In this context, it establishes a connection where the subject is understood to embody or exhibit the characteristics described by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-make": {
+      "label": "make",
+      "description": "The predicate 'make' indicates a transformative action where the subject is altered or influenced in a way that results in the state or quality described by the object. It signifies the process of causing the subject to attain a particular characteristic or condition, thereby establishing a relationship of change or creation between the two.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_characterized_by": {
+      "label": "is characterized by",
+      "description": "The predicate 'is characterized by' establishes a relationship between a subject and an object by indicating that the object describes a defining quality, feature, or attribute of the subject. It implies that the subject possesses the characteristics mentioned in the object, thereby providing insight into the nature or essence of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents": {
+      "label": "presents",
+      "description": "The predicate 'presents' indicates that the subject is introducing, showcasing, or providing information about the object. It implies a formal or structured delivery of content, often in a context where the subject aims to inform or educate the audience regarding the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_for": {
+      "label": "is for",
+      "description": "The predicate 'is for' establishes a relationship of purpose or intended use between the subject and the object, indicating that the subject serves a specific function or goal represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_detected_in": {
+      "label": "are detected in",
+      "description": "The predicate 'are detected in' indicates a relationship where the subject is identified or observed within the context or environment specified by the object. It implies that the subject can be found, recognized, or noted as present in the setting described by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_related_to": {
+      "label": "is related to",
+      "description": "The predicate 'is related to' establishes a connection or association between the subject and the object, indicating that they share a relevant relationship or context. This relationship can encompass various forms of linkage, such as thematic, functional, or conceptual ties, suggesting that understanding one may provide insights into the other.",
+      "disambiguation_index": 0
+    },
+    "Predicate-can_be_used_to_improve_upon": {
+      "label": "can be used to improve upon",
+      "description": "The predicate 'can be used to improve upon' indicates a potential relationship where the subject provides methods, tools, or insights that enhance or refine the qualities, effectiveness, or understanding of the object. It suggests that the subject has practical applications or implications that contribute positively to the object, leading to advancements or better outcomes in the context described.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents_research_on": {
+      "label": "presents research on",
+      "description": "The predicate 'presents research on' indicates that the subject is providing findings, insights, or analysis related to a specific topic or area of study, which is represented by the object. This connection implies that the subject contributes to the academic or scientific discourse surrounding the object by sharing new information, methodologies, or conclusions derived from systematic investigation.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or subset of a more general category represented by the object. This relationship implies that the object encompasses a wider range of concepts or entities, of which the subject is a part, thereby facilitating a classification or categorization of the subject within a broader context.",
+      "disambiguation_index": 0
+    }
+  }
+}

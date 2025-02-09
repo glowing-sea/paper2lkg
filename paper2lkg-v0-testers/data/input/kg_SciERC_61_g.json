@@ -1,0 +1,1807 @@
+{
+  "iri": "Paper-61",
+  "title": "ECCV_2016_99_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-61-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-61-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-61-Section-1-Paragraph-1-Sentence-1",
+              "text": "Human action recognition from well-segmented 3D skeleton data has been intensively studied and attracting an increasing attention ."
+            },
+            {
+              "iri": "Paper-61-Section-1-Paragraph-1-Sentence-2",
+              "text": "Online action detection goes one step further and is more challenging , which identifies the action type and localizes the action positions on the fly from the untrimmed stream ."
+            },
+            {
+              "iri": "Paper-61-Section-1-Paragraph-1-Sentence-3",
+              "text": "In this paper , we study the problem of online action detection from the streaming skeleton data ."
+            },
+            {
+              "iri": "Paper-61-Section-1-Paragraph-1-Sentence-4",
+              "text": "We propose a multi-task end-to-end Joint Classification-Regression Recurrent Neural Network to better explore the action type and temporal localiza-tion information ."
+            },
+            {
+              "iri": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+              "text": "By employing a joint classification and regression optimization objective , this network is capable of automatically localizing the start and end points of actions more accurately ."
+            },
+            {
+              "iri": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+              "text": "Specifically , by leveraging the merits of the deep Long Short-Term Memory -LRB- LSTM -RRB- subnetwork , the proposed model automatically captures the complex long-range temporal dynamics , which naturally avoids the typical sliding window design and thus ensures high computational efficiency ."
+            },
+            {
+              "iri": "Paper-61-Section-1-Paragraph-1-Sentence-7",
+              "text": "Furthermore , the subtask of regression optimization provides the ability to forecast the action prior to its occurrence ."
+            },
+            {
+              "iri": "Paper-61-Section-1-Paragraph-1-Sentence-8",
+              "text": "To evaluate our proposed model , we build a large streaming video dataset with annotations ."
+            },
+            {
+              "iri": "Paper-61-Section-1-Paragraph-1-Sentence-9",
+              "text": "Experimental results on our dataset and the public G3D dataset both demonstrate very promising performance of our scheme ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0003070831298828125,
+    21.37873363494873,
+    36.25127696990967,
+    35.224045753479004,
+    0.06722807884216309,
+    0.0004909038543701172,
+    0.000209808349609375,
+    52.86200761795044,
+    94.20862674713135,
+    4.652904033660889,
+    0.17708706855773926,
+    0.01836705207824707,
+    0.0013871192932128906,
+    31.10548210144043,
+    0.0017631053924560547,
+    0.051399946212768555,
+    0.0014450550079345703,
+    4.850553035736084,
+    5.781335115432739,
+    7.4768970012664795,
+    134.23952269554138,
+    9.655307054519653,
+    84.23544192314148,
+    3.8441379070281982,
+    0.0014619827270507812,
+    0.014549016952514648
+  ],
+  "nodes": {
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "this paper",
+      "aliases": [
+        "this paper"
+      ],
+      "types": [
+        "research",
+        "document"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "This paper presents a study on online action detection from streaming skeleton data, proposing a multi-task end-to-end Joint Classification-Regression Recurrent Neural Network to enhance action type identification and temporal localization.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "this paper",
+          "local_types": [
+            "research",
+            "document"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.85400390625
+    },
+    "Entity-the_proposed_model": {
+      "node_id": "the_proposed_model",
+      "disambiguation_index": 0,
+      "label": "the proposed model",
+      "aliases": [
+        "our proposed model",
+        "the proposed model"
+      ],
+      "types": [
+        "model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The proposed model refers to a multi-task end-to-end Joint Classification-Regression Recurrent Neural Network designed for online action detection from streaming skeleton data, which utilizes a deep Long Short-Term Memory (LSTM) subnetwork to capture complex long-range temporal dynamics and improve computational efficiency.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the proposed model",
+          "local_types": [
+            "model"
+          ],
+          "iri": "Entity-the_proposed_model-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "our proposed model",
+          "local_types": [
+            "model"
+          ],
+          "iri": "Entity-the_proposed_model-Mention-2"
+        }
+      ],
+      "relevance": 0.81005859375
+    },
+    "Entity-joint_classification-regression_recurrent_neural_network": {
+      "node_id": "joint_classification-regression_recurrent_neural_network",
+      "disambiguation_index": 0,
+      "label": "Joint Classification-Regression Recurrent Neural Network",
+      "aliases": [
+        "Joint Classification-Regression Recurrent Neural Network"
+      ],
+      "types": [
+        "algorithm",
+        "model",
+        "machine learning",
+        "neural network"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "The Joint Classification-Regression Recurrent Neural Network is a multi-task end-to-end neural network model designed for online action detection from streaming skeleton data, capable of simultaneously classifying action types and localizing action positions through a joint optimization objective.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Joint Classification-Regression Recurrent Neural Network",
+          "local_types": [
+            "algorithm",
+            "model",
+            "machine learning",
+            "neural network"
+          ],
+          "iri": "Entity-joint_classification-regression_recurrent_neural_network-Mention-1"
+        }
+      ],
+      "relevance": 0.80322265625
+    },
+    "Entity-this_network": {
+      "node_id": "this_network",
+      "disambiguation_index": 0,
+      "label": "this network",
+      "aliases": [
+        "this network"
+      ],
+      "types": [
+        "network"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "This network refers to the proposed multi-task end-to-end Joint Classification-Regression Recurrent Neural Network designed for online action detection from streaming skeleton data, which effectively localizes the start and end points of actions using a joint optimization approach.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "this network",
+          "local_types": [
+            "network"
+          ],
+          "iri": "Entity-this_network-Mention-1"
+        }
+      ],
+      "relevance": 0.79541015625
+    },
+    "Entity-network": {
+      "node_id": "network",
+      "disambiguation_index": 0,
+      "label": "network",
+      "aliases": [
+        "network"
+      ],
+      "types": [
+        "neural network",
+        "machine learning model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The network refers to a multi-task end-to-end Joint Classification-Regression Recurrent Neural Network designed for online action detection from streaming skeleton data, which utilizes deep Long Short-Term Memory (LSTM) architecture to accurately localize action start and end points.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "network",
+          "local_types": [
+            "neural network",
+            "machine learning model"
+          ],
+          "iri": "Entity-network-Mention-1"
+        }
+      ],
+      "relevance": 0.78857421875
+    },
+    "Entity-model": {
+      "node_id": "model",
+      "disambiguation_index": 0,
+      "label": "model",
+      "aliases": [
+        "model"
+      ],
+      "types": [
+        "research model",
+        "machine learning model",
+        "proposed model",
+        "computational model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'model' refers to a multi-task end-to-end Joint Classification-Regression Recurrent Neural Network designed for online action detection from streaming skeleton data, which utilizes a deep Long Short-Term Memory (LSTM) subnetwork to capture complex long-range temporal dynamics efficiently.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "model",
+          "local_types": [
+            "computational model",
+            "machine learning model"
+          ],
+          "iri": "Entity-model-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "model",
+          "local_types": [
+            "proposed model",
+            "research model"
+          ],
+          "iri": "Entity-model-Mention-2"
+        }
+      ],
+      "relevance": 0.7666015625
+    },
+    "Entity-the_problem_of_online_action_detection": {
+      "node_id": "the_problem_of_online_action_detection",
+      "disambiguation_index": 0,
+      "label": "the problem of online action detection",
+      "aliases": [
+        "the problem of online action detection"
+      ],
+      "types": [
+        "problem",
+        "action detection"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The problem of online action detection refers to the challenge of identifying action types and localizing their positions in real-time from untrimmed streaming data, specifically using 3D skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the problem of online action detection",
+          "local_types": [
+            "problem",
+            "action detection"
+          ],
+          "iri": "Entity-the_problem_of_online_action_detection-Mention-1"
+        }
+      ],
+      "relevance": 0.7646484375
+    },
+    "Entity-scheme": {
+      "node_id": "scheme",
+      "disambiguation_index": 0,
+      "label": "scheme",
+      "aliases": [
+        "scheme",
+        "our scheme"
+      ],
+      "types": [
+        "approach",
+        "method",
+        "scheme"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'scheme' refers to the proposed multi-task end-to-end Joint Classification-Regression Recurrent Neural Network method for online action detection from streaming skeleton data, which demonstrates promising performance in experimental evaluations.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "scheme",
+          "local_types": [
+            "method",
+            "approach"
+          ],
+          "iri": "Entity-scheme-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "our scheme",
+          "local_types": [
+            "scheme"
+          ],
+          "iri": "Entity-scheme-Mention-2"
+        }
+      ],
+      "relevance": 0.75732421875
+    },
+    "Entity-action": {
+      "node_id": "action",
+      "disambiguation_index": 0,
+      "label": "actions",
+      "aliases": [
+        "actions"
+      ],
+      "types": [
+        "events",
+        "activities"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of the paper, 'actions' refer to the specific human activities that are being detected and localized in real-time from streaming 3D skeleton data using a neural network model.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "actions",
+          "local_types": [
+            "events",
+            "activities"
+          ],
+          "iri": "Entity-action-Mention-1"
+        }
+      ],
+      "relevance": 0.7412109375
+    },
+    "Entity-joint_classification_and_regression_optimization_objective": {
+      "node_id": "joint_classification_and_regression_optimization_objective",
+      "disambiguation_index": 0,
+      "label": "joint classification and regression optimization objective",
+      "aliases": [
+        "joint classification and regression optimization objective",
+        "a joint classification and regression optimization objective"
+      ],
+      "types": [
+        "objective",
+        "optimization technique",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The joint classification and regression optimization objective is a methodological framework used in a multi-task neural network to simultaneously classify action types and regressively localize action boundaries in streaming skeleton data for improved accuracy in online action detection.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "joint classification and regression optimization objective",
+          "local_types": [
+            "optimization technique",
+            "methodology"
+          ],
+          "iri": "Entity-joint_classification_and_regression_optimization_objective-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "a joint classification and regression optimization objective",
+          "local_types": [
+            "objective"
+          ],
+          "iri": "Entity-joint_classification_and_regression_optimization_objective-Mention-2"
+        }
+      ],
+      "relevance": 0.736328125
+    },
+    "Entity-regression": {
+      "node_id": "regression",
+      "disambiguation_index": 0,
+      "label": "regression",
+      "aliases": [
+        "regression"
+      ],
+      "types": [
+        "machine learning",
+        "task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of the paper, 'regression' refers to a machine learning task that involves optimizing the model to accurately predict the start and end points of actions in online action detection from streaming skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "regression",
+          "local_types": [
+            "machine learning",
+            "task"
+          ],
+          "iri": "Entity-regression-Mention-1"
+        }
+      ],
+      "relevance": 0.73583984375
+    },
+    "Entity-performance": {
+      "node_id": "performance",
+      "disambiguation_index": 0,
+      "label": "performance",
+      "aliases": [
+        "performance"
+      ],
+      "types": [
+        "evaluation metric",
+        "research outcome"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'performance' refers to the effectiveness and accuracy of the proposed multi-task end-to-end Joint Classification-Regression Recurrent Neural Network in detecting and localizing actions from streaming skeleton data, as evidenced by experimental results on both the custom dataset and the public G3D dataset.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "performance",
+          "local_types": [
+            "evaluation metric",
+            "research outcome"
+          ],
+          "iri": "Entity-performance-Mention-1"
+        }
+      ],
+      "relevance": 0.7333984375
+    },
+    "Entity-our_dataset": {
+      "node_id": "our_dataset",
+      "disambiguation_index": 0,
+      "label": "our dataset",
+      "aliases": [
+        "our dataset"
+      ],
+      "types": [
+        "dataset"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Our dataset refers to a large streaming video dataset with annotations specifically created to evaluate the proposed multi-task end-to-end Joint Classification-Regression Recurrent Neural Network for online action detection from streaming skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "our dataset",
+          "local_types": [
+            "dataset"
+          ],
+          "iri": "Entity-our_dataset-Mention-1"
+        }
+      ],
+      "relevance": 0.72412109375
+    },
+    "Entity-streaming_skeleton_data": {
+      "node_id": "streaming_skeleton_data",
+      "disambiguation_index": 0,
+      "label": "streaming skeleton data",
+      "aliases": [
+        "streaming skeleton data"
+      ],
+      "types": [
+        "data type",
+        "skeleton data",
+        "3D data",
+        "real-time data",
+        "sensor data",
+        "data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Streaming skeleton data refers to real-time 3D skeletal information captured from human movements, which is utilized for online action detection and recognition in untrimmed video streams.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "streaming skeleton data",
+          "local_types": [
+            "data type",
+            "skeleton data",
+            "3D data",
+            "real-time data",
+            "sensor data",
+            "data"
+          ],
+          "iri": "Entity-streaming_skeleton_data-Mention-1"
+        }
+      ],
+      "relevance": 0.7197265625
+    },
+    "Entity-online_action_detection": {
+      "node_id": "online_action_detection",
+      "disambiguation_index": 0,
+      "label": "Online action detection",
+      "aliases": [
+        "Online action detection",
+        "online action detection"
+      ],
+      "types": [
+        "technology",
+        "methodology",
+        "action detection",
+        "research area",
+        "computer vision",
+        "research problem",
+        "method",
+        "research topic"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Online action detection is a methodology in computer vision that involves identifying and localizing actions in real-time from continuous video streams.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Online action detection",
+          "local_types": [
+            "technology",
+            "methodology",
+            "action detection",
+            "research area",
+            "computer vision",
+            "method",
+            "research topic"
+          ],
+          "iri": "Entity-online_action_detection-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "online action detection",
+          "local_types": [
+            "research problem",
+            "computer vision"
+          ],
+          "iri": "Entity-online_action_detection-Mention-2"
+        }
+      ],
+      "relevance": 0.70654296875
+    },
+    "Entity-human_action_recognition": {
+      "node_id": "human_action_recognition",
+      "disambiguation_index": 0,
+      "label": "Human action recognition",
+      "aliases": [
+        "Human action recognition"
+      ],
+      "types": [
+        "research area",
+        "computer vision",
+        "action recognition",
+        "research topic",
+        "field of study"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Human action recognition is a field of study within computer vision that focuses on identifying and classifying human actions from various forms of data, such as video or 3D skeleton representations.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Human action recognition",
+          "local_types": [
+            "research area",
+            "computer vision",
+            "action recognition",
+            "research topic",
+            "field of study"
+          ],
+          "iri": "Entity-human_action_recognition-Mention-1"
+        }
+      ],
+      "relevance": 0.697265625
+    },
+    "Entity-action_type": {
+      "node_id": "action_type",
+      "disambiguation_index": 0,
+      "label": "action type",
+      "aliases": [
+        "action type",
+        "the action type"
+      ],
+      "types": [
+        "concept",
+        "information type",
+        "action type",
+        "classification"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'action type' refers to the specific classification of human actions that are identified and localized in real-time from streaming skeleton data during online action detection.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "action type",
+          "local_types": [
+            "concept",
+            "classification"
+          ],
+          "iri": "Entity-action_type-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "action type",
+          "local_types": [
+            "information type",
+            "concept"
+          ],
+          "iri": "Entity-action_type-Mention-2"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the action type",
+          "local_types": [
+            "action type"
+          ],
+          "iri": "Entity-action_type-Mention-3"
+        }
+      ],
+      "relevance": 0.697265625
+    },
+    "Entity-action_position": {
+      "node_id": "action_position",
+      "disambiguation_index": 0,
+      "label": "action positions",
+      "aliases": [
+        "the action positions",
+        "action positions"
+      ],
+      "types": [
+        "spatial information",
+        "action position",
+        "localization",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Action positions refer to the specific temporal locations within a video stream where actions occur, which are identified and localized during the process of online action detection from untrimmed skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "action positions",
+          "local_types": [
+            "spatial information",
+            "localization",
+            "concept"
+          ],
+          "iri": "Entity-action_position-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the action positions",
+          "local_types": [
+            "action position"
+          ],
+          "iri": "Entity-action_position-Mention-2"
+        }
+      ],
+      "relevance": 0.69482421875
+    },
+    "Entity-large_streaming_video_dataset": {
+      "node_id": "large_streaming_video_dataset",
+      "disambiguation_index": 0,
+      "label": "large streaming video dataset",
+      "aliases": [
+        "large streaming video dataset",
+        "a large streaming video dataset"
+      ],
+      "types": [
+        "video",
+        "dataset"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A large streaming video dataset with annotations created to evaluate a multi-task end-to-end Joint Classification-Regression Recurrent Neural Network for online action detection.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "large streaming video dataset",
+          "local_types": [
+            "dataset"
+          ],
+          "iri": "Entity-large_streaming_video_dataset-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "a large streaming video dataset",
+          "local_types": [
+            "dataset",
+            "video"
+          ],
+          "iri": "Entity-large_streaming_video_dataset-Mention-2"
+        }
+      ],
+      "relevance": 0.68798828125
+    },
+    "Entity-the_start_and_end_point_of_action": {
+      "node_id": "the_start_and_end_point_of_action",
+      "disambiguation_index": 0,
+      "label": "the start and end points of actions",
+      "aliases": [
+        "the start and end points of actions"
+      ],
+      "types": [
+        "points",
+        "actions"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The start and end points of actions refer to the specific temporal locations in a sequence where an action begins and concludes, which are identified and localized by a neural network in the context of online action detection from streaming skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "the start and end points of actions",
+          "local_types": [
+            "points",
+            "actions"
+          ],
+          "iri": "Entity-the_start_and_end_point_of_action-Mention-1"
+        }
+      ],
+      "relevance": 0.6875
+    },
+    "Entity-promising_performance": {
+      "node_id": "promising_performance",
+      "disambiguation_index": 0,
+      "label": "promising performance",
+      "aliases": [
+        "promising performance"
+      ],
+      "types": [
+        "evaluation metric",
+        "performance"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'promising performance' refers to the favorable results achieved by the proposed multi-task end-to-end Joint Classification-Regression Recurrent Neural Network in accurately detecting and localizing actions from streaming skeleton data, as evidenced by experimental evaluations on both a newly created dataset and the public G3D dataset.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "promising performance",
+          "local_types": [
+            "evaluation metric",
+            "performance"
+          ],
+          "iri": "Entity-promising_performance-Mention-1"
+        }
+      ],
+      "relevance": 0.68603515625
+    },
+    "Entity-the_subtask_of_regression_optimization": {
+      "node_id": "the_subtask_of_regression_optimization",
+      "disambiguation_index": 0,
+      "label": "the subtask of regression optimization",
+      "aliases": [
+        "the subtask of regression optimization"
+      ],
+      "types": [
+        "subtask",
+        "optimization"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The subtask of regression optimization refers to the specific process within a multi-task learning framework that focuses on accurately predicting the temporal boundaries of actions in streaming skeleton data, enabling the model to forecast actions before they occur.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "the subtask of regression optimization",
+          "local_types": [
+            "subtask",
+            "optimization"
+          ],
+          "iri": "Entity-the_subtask_of_regression_optimization-Mention-1"
+        }
+      ],
+      "relevance": 0.6845703125
+    },
+    "Entity-well-segmented_3d_skeleton_data": {
+      "node_id": "well-segmented_3d_skeleton_data",
+      "disambiguation_index": 0,
+      "label": "well-segmented 3D skeleton data",
+      "aliases": [
+        "well-segmented 3D skeleton data"
+      ],
+      "types": [
+        "data",
+        "3D skeleton data"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Well-segmented 3D skeleton data refers to accurately labeled three-dimensional representations of human skeletal structures, which are used in the analysis and recognition of human actions in various applications, particularly in the context of online action detection.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "well-segmented 3D skeleton data",
+          "local_types": [
+            "data",
+            "3D skeleton data"
+          ],
+          "iri": "Entity-well-segmented_3d_skeleton_data-Mention-1"
+        }
+      ],
+      "relevance": 0.68359375
+    },
+    "Entity-temporal_dynamic": {
+      "node_id": "temporal_dynamic",
+      "disambiguation_index": 0,
+      "label": "temporal dynamics",
+      "aliases": [
+        "temporal dynamics"
+      ],
+      "types": [
+        "phenomenon",
+        "dynamic system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Temporal dynamics refers to the complex long-range patterns and variations in time that the proposed model captures using a Long Short-Term Memory (LSTM) subnetwork, enabling efficient action detection in streaming skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "temporal dynamics",
+          "local_types": [
+            "phenomenon",
+            "dynamic system"
+          ],
+          "iri": "Entity-temporal_dynamic-Mention-1"
+        }
+      ],
+      "relevance": 0.66259765625
+    },
+    "Entity-complex_long-range_temporal_dynamic": {
+      "node_id": "complex_long-range_temporal_dynamic",
+      "disambiguation_index": 0,
+      "label": "complex long-range temporal dynamics",
+      "aliases": [
+        "complex long-range temporal dynamics"
+      ],
+      "types": [
+        "dynamics"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Complex long-range temporal dynamics refers to the intricate patterns and relationships in time-series data that span extended periods, which are effectively captured by the Long Short-Term Memory (LSTM) subnetwork in the context of online action detection from streaming skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "complex long-range temporal dynamics",
+          "local_types": [
+            "dynamics"
+          ],
+          "iri": "Entity-complex_long-range_temporal_dynamic-Mention-1"
+        }
+      ],
+      "relevance": 0.66064453125
+    },
+    "Entity-high_computational_efficiency": {
+      "node_id": "high_computational_efficiency",
+      "disambiguation_index": 0,
+      "label": "high computational efficiency",
+      "aliases": [
+        "high computational efficiency"
+      ],
+      "types": [
+        "efficiency"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "High computational efficiency refers to the ability of the proposed multi-task end-to-end Joint Classification-Regression Recurrent Neural Network to process streaming skeleton data effectively by avoiding the traditional sliding window approach, thereby optimizing resource usage while maintaining performance.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "high computational efficiency",
+          "local_types": [
+            "efficiency"
+          ],
+          "iri": "Entity-high_computational_efficiency-Mention-1"
+        }
+      ],
+      "relevance": 0.6455078125
+    },
+    "Entity-g3d_dataset": {
+      "node_id": "g3d_dataset",
+      "disambiguation_index": 0,
+      "label": "G3D dataset",
+      "aliases": [
+        "the public G3D dataset",
+        "G3D dataset"
+      ],
+      "types": [
+        "public dataset",
+        "dataset",
+        "public resource"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "The G3D dataset is a public dataset used for evaluating human action recognition algorithms, specifically designed for analyzing 3D skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "G3D dataset",
+          "local_types": [
+            "public dataset",
+            "dataset",
+            "public resource"
+          ],
+          "iri": "Entity-g3d_dataset-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "the public G3D dataset",
+          "local_types": [
+            "dataset"
+          ],
+          "iri": "Entity-g3d_dataset-Mention-2"
+        }
+      ],
+      "relevance": 0.64501953125
+    },
+    "Entity-regression_optimization": {
+      "node_id": "regression_optimization",
+      "disambiguation_index": 0,
+      "label": "regression optimization",
+      "aliases": [
+        "regression optimization"
+      ],
+      "types": [
+        "subtask",
+        "mathematical technique",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Regression optimization refers to a mathematical technique used in the context of a multi-task neural network that aims to improve the accuracy of action localization by jointly optimizing classification and regression objectives.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "regression optimization",
+          "local_types": [
+            "methodology"
+          ],
+          "iri": "Entity-regression_optimization-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "regression optimization",
+          "local_types": [
+            "subtask",
+            "mathematical technique"
+          ],
+          "iri": "Entity-regression_optimization-Mention-2"
+        }
+      ],
+      "relevance": 0.64013671875
+    },
+    "Entity-sliding_window_design": {
+      "node_id": "sliding_window_design",
+      "disambiguation_index": 0,
+      "label": "sliding window design",
+      "aliases": [
+        "sliding window design"
+      ],
+      "types": [
+        "algorithmic approach",
+        "design pattern",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The sliding window design refers to a conventional approach in temporal data processing that involves analyzing fixed-size segments of data sequentially, which the proposed model aims to avoid for improved computational efficiency in online action detection.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "sliding window design",
+          "local_types": [
+            "algorithmic approach",
+            "design pattern",
+            "methodology"
+          ],
+          "iri": "Entity-sliding_window_design-Mention-1"
+        }
+      ],
+      "relevance": 0.63330078125
+    },
+    "Entity-multi-task_end-to-end_joint_classification-regression_recurrent_neural_network": {
+      "node_id": "multi-task_end-to-end_joint_classification-regression_recurrent_neural_network",
+      "disambiguation_index": 0,
+      "label": "multi-task end-to-end Joint Classification-Regression Recurrent Neural Network",
+      "aliases": [
+        "multi-task end-to-end Joint Classification-Regression Recurrent Neural Network"
+      ],
+      "types": [
+        "model",
+        "machine learning",
+        "machine learning model",
+        "neural network"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A multi-task end-to-end Joint Classification-Regression Recurrent Neural Network is a type of machine learning model designed to simultaneously perform classification and regression tasks using recurrent neural network architecture.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "multi-task end-to-end Joint Classification-Regression Recurrent Neural Network",
+          "local_types": [
+            "model",
+            "machine learning",
+            "machine learning model",
+            "neural network"
+          ],
+          "iri": "Entity-multi-task_end-to-end_joint_classification-regression_recurrent_neural_network-Mention-1"
+        }
+      ],
+      "relevance": 0.6201171875
+    },
+    "Entity-intensively_studied": {
+      "node_id": "intensively_studied",
+      "disambiguation_index": 0,
+      "label": "intensively studied",
+      "aliases": [
+        "intensively studied"
+      ],
+      "types": [
+        "research activity"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'intensively studied' refers to the extensive research and exploration of human action recognition techniques utilizing well-segmented 3D skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "intensively studied",
+          "local_types": [
+            "research activity"
+          ],
+          "iri": "Entity-intensively_studied-Mention-1"
+        }
+      ],
+      "relevance": 0.61328125
+    },
+    "Entity-annotation": {
+      "node_id": "annotation",
+      "disambiguation_index": 0,
+      "label": "annotations",
+      "aliases": [
+        "annotations"
+      ],
+      "types": [
+        "annotation",
+        "data type",
+        "metadata",
+        "data labels"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'annotations' refers to the labeled data that accompanies the large streaming video dataset, which is used to evaluate the proposed model for online action detection.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "annotations",
+          "local_types": [
+            "annotation",
+            "data type",
+            "metadata",
+            "data labels"
+          ],
+          "iri": "Entity-annotation-Mention-1"
+        }
+      ],
+      "relevance": 0.609375
+    },
+    "Entity-untrimmed_stream": {
+      "node_id": "untrimmed_stream",
+      "disambiguation_index": 0,
+      "label": "untrimmed stream",
+      "aliases": [
+        "untrimmed stream",
+        "the untrimmed stream"
+      ],
+      "types": [
+        "input source",
+        "data",
+        "data stream"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'untrimmed stream' refers to a continuous input source of video data that contains unsegmented sequences of human actions, which are used for online action detection in the context of recognizing and localizing actions in real-time.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "untrimmed stream",
+          "local_types": [
+            "data",
+            "input source"
+          ],
+          "iri": "Entity-untrimmed_stream-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the untrimmed stream",
+          "local_types": [
+            "data stream"
+          ],
+          "iri": "Entity-untrimmed_stream-Mention-2"
+        }
+      ],
+      "relevance": 0.5947265625
+    },
+    "Entity-increasing_attention": {
+      "node_id": "increasing_attention",
+      "disambiguation_index": 0,
+      "label": "increasing attention",
+      "aliases": [
+        "increasing attention"
+      ],
+      "types": [
+        "attention",
+        "interest"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Increasing attention refers to the growing interest and focus within the research community on the field of human action recognition from 3D skeleton data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "increasing attention",
+          "local_types": [
+            "attention",
+            "interest"
+          ],
+          "iri": "Entity-increasing_attention-Mention-1"
+        }
+      ],
+      "relevance": 0.5869140625
+    },
+    "Entity-3d_skeleton_data": {
+      "node_id": "3d_skeleton_data",
+      "disambiguation_index": 0,
+      "label": "3D skeleton data",
+      "aliases": [
+        "3D skeleton data"
+      ],
+      "types": [
+        "skeleton data",
+        "input data",
+        "3D data",
+        "data type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "3D skeleton data refers to a type of data that represents the spatial configuration of a human skeleton in three-dimensional space, typically used in motion analysis and computer vision applications.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "3D skeleton data",
+          "local_types": [
+            "skeleton data",
+            "input data",
+            "3D data",
+            "data type"
+          ],
+          "iri": "Entity-3d_skeleton_data-Mention-1"
+        }
+      ],
+      "relevance": 0.5859375
+    },
+    "Entity-deep_long_short-term_memory_-lrb-_lstm_-rrb-_subnetwork": {
+      "node_id": "deep_long_short-term_memory_-lrb-_lstm_-rrb-_subnetwork",
+      "disambiguation_index": 0,
+      "label": "deep Long Short-Term Memory -LRB- LSTM -RRB- subnetwork",
+      "aliases": [
+        "deep Long Short-Term Memory -LRB- LSTM -RRB- subnetwork"
+      ],
+      "types": [
+        "model",
+        "neural network"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A deep Long Short-Term Memory (LSTM) subnetwork is a type of neural network architecture designed to model and capture complex temporal dependencies in sequential data through the use of memory cells and gating mechanisms.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "deep Long Short-Term Memory -LRB- LSTM -RRB- subnetwork",
+          "local_types": [
+            "model",
+            "neural network"
+          ],
+          "iri": "Entity-deep_long_short-term_memory_-lrb-_lstm_-rrb-_subnetwork-Mention-1"
+        }
+      ],
+      "relevance": 0.58544921875
+    },
+    "Entity-streaming_video_dataset": {
+      "node_id": "streaming_video_dataset",
+      "disambiguation_index": 0,
+      "label": "streaming video dataset",
+      "aliases": [
+        "streaming video dataset"
+      ],
+      "types": [
+        "data collection",
+        "dataset"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A streaming video dataset is a collection of video content that is designed for analysis and research, often accompanied by metadata or annotations to facilitate various tasks such as model evaluation or training in fields like computer vision and machine learning.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "streaming video dataset",
+          "local_types": [
+            "data collection",
+            "dataset"
+          ],
+          "iri": "Entity-streaming_video_dataset-Mention-1"
+        }
+      ],
+      "relevance": 0.58203125
+    },
+    "Entity-long_short-term_memory": {
+      "node_id": "long_short-term_memory",
+      "disambiguation_index": 0,
+      "label": "Long Short-Term Memory",
+      "aliases": [
+        "LSTM",
+        "deep Long Short-Term Memory",
+        "Long Short-Term Memory"
+      ],
+      "types": [
+        "neural network architecture",
+        "LSTM",
+        "neural network",
+        "machine learning",
+        "model",
+        "machine learning model"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Long Short-Term Memory (LSTM) is a type of recurrent neural network architecture designed to model sequential data and capture long-range dependencies in time series or other ordered data.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "Long Short-Term Memory",
+          "local_types": [
+            "neural network architecture",
+            "neural network",
+            "machine learning",
+            "model",
+            "machine learning model"
+          ],
+          "iri": "Entity-long_short-term_memory-Mention-1"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "LSTM",
+          "local_types": [
+            "neural network architecture",
+            "machine learning model"
+          ],
+          "iri": "Entity-long_short-term_memory-Mention-2"
+        },
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "deep Long Short-Term Memory",
+          "local_types": [
+            "neural network",
+            "LSTM"
+          ],
+          "iri": "Entity-long_short-term_memory-Mention-3"
+        }
+      ],
+      "relevance": 0.56201171875
+    },
+    "Entity-the_ability_to_forecast_the_action_prior_to_it_occurrence": {
+      "node_id": "the_ability_to_forecast_the_action_prior_to_it_occurrence",
+      "disambiguation_index": 0,
+      "label": "the ability to forecast the action prior to its occurrence",
+      "aliases": [
+        "the ability to forecast the action prior to its occurrence"
+      ],
+      "types": [
+        "ability",
+        "forecasting"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The ability to forecast the action prior to its occurrence refers to a predictive capability within a regression optimization framework that enables the anticipation of actions in a streaming context, enhancing the performance of online action detection systems.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "the ability to forecast the action prior to its occurrence",
+          "local_types": [
+            "ability",
+            "forecasting"
+          ],
+          "iri": "Entity-the_ability_to_forecast_the_action_prior_to_it_occurrence-Mention-1"
+        }
+      ],
+      "relevance": 0.5576171875
+    },
+    "Entity-classification": {
+      "node_id": "classification",
+      "disambiguation_index": 0,
+      "label": "classification",
+      "aliases": [
+        "classification"
+      ],
+      "types": [
+        "machine learning",
+        "task"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Classification is a machine learning task that involves assigning labels to data points based on their features.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "classification",
+          "local_types": [
+            "machine learning",
+            "task"
+          ],
+          "iri": "Entity-classification-Mention-1"
+        }
+      ],
+      "relevance": 0.5419921875
+    },
+    "Entity-typical_sliding_window_design": {
+      "node_id": "typical_sliding_window_design",
+      "disambiguation_index": 0,
+      "label": "typical sliding window design",
+      "aliases": [
+        "typical sliding window design"
+      ],
+      "types": [
+        "design"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The typical sliding window design refers to a conventional approach in temporal data processing where a fixed-size window is used to analyze segments of data sequentially, often leading to inefficiencies in capturing long-range dependencies.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "typical sliding window design",
+          "local_types": [
+            "design"
+          ],
+          "iri": "Entity-typical_sliding_window_design-Mention-1"
+        }
+      ],
+      "relevance": 0.51318359375
+    },
+    "Entity-dataset": {
+      "node_id": "dataset",
+      "disambiguation_index": 0,
+      "label": "dataset",
+      "aliases": [
+        "dataset"
+      ],
+      "types": [
+        "data collection",
+        "research resource"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A dataset is a structured collection of data, often used for analysis, research, or training machine learning models.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-9",
+          "local_name": "dataset",
+          "local_types": [
+            "data collection",
+            "research resource"
+          ],
+          "iri": "Entity-dataset-Mention-1"
+        }
+      ],
+      "relevance": 0.4921875
+    },
+    "Entity-computational_efficiency": {
+      "node_id": "computational_efficiency",
+      "disambiguation_index": 0,
+      "label": "computational efficiency",
+      "aliases": [
+        "computational efficiency"
+      ],
+      "types": [
+        "efficiency measure",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Computational efficiency refers to the effectiveness of an algorithm or system in utilizing computational resources, such as time and memory, to achieve desired outcomes with minimal waste.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "computational efficiency",
+          "local_types": [
+            "efficiency measure",
+            "performance metric"
+          ],
+          "iri": "Entity-computational_efficiency-Mention-1"
+        }
+      ],
+      "relevance": 0.469970703125
+    },
+    "Entity-forecast": {
+      "node_id": "forecast",
+      "disambiguation_index": 0,
+      "label": "forecast",
+      "aliases": [
+        "forecast"
+      ],
+      "types": [
+        "action prediction",
+        "process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A forecast is a prediction or estimation of a future event or trend, often based on analysis of data and statistical methods.",
+      "mentions": [
+        {
+          "reference": "Paper-61-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "forecast",
+          "local_types": [
+            "action prediction",
+            "process"
+          ],
+          "iri": "Entity-forecast-Mention-1"
+        }
+      ],
+      "relevance": 0.454833984375
+    }
+  },
+  "summary": "Human action recognition from well-segmented 3D skeleton data has been intensively studied and attracting an increasing attention . Online action detection goes one step further and is more challenging , which identifies the action type and localizes the action positions on the fly from the untrimmed stream . In this paper , we study the problem of online action detection from the streaming skeleton data . We propose a multi-task end-to-end Joint Classification-Regression Recurrent Neural Network to better explore the action type and temporal localiza-tion information . By employing a joint classification and regression optimization objective , this network is capable of automatically localizing the start and end points of actions more accurately . Specifically , by leveraging the merits of the deep Long Short-Term Memory -LRB- LSTM -RRB- subnetwork , the proposed model automatically captures the complex long-range temporal dynamics , which naturally avoids the typical sliding window design and thus ensures high computational efficiency . Furthermore , the subtask of regression optimization provides the ability to forecast the action prior to its occurrence . To evaluate our proposed model , we build a large streaming video dataset with annotations . Experimental results on our dataset and the public G3D dataset both demonstrate very promising performance of our scheme .",
+  "triples": [
+    [
+      "Entity-human_action_recognition",
+      "Predicate-has_been_studied",
+      "Entity-well-segmented_3d_skeleton_data"
+    ],
+    [
+      "Entity-human_action_recognition",
+      "Predicate-is_attracting",
+      "Entity-increasing_attention"
+    ],
+    [
+      "Entity-human_action_recognition",
+      "Predicate-recognizes_from",
+      "Entity-well-segmented_3d_skeleton_data"
+    ],
+    [
+      "Entity-online_action_detection",
+      "Predicate-identifies",
+      "Entity-action_type"
+    ],
+    [
+      "Entity-online_action_detection",
+      "Predicate-localizes",
+      "Entity-action_position"
+    ],
+    [
+      "Entity-online_action_detection",
+      "Predicate-operates_from",
+      "Entity-untrimmed_stream"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-studies",
+      "Entity-the_problem_of_online_action_detection"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-studies",
+      "Entity-online_action_detection"
+    ],
+    [
+      "Entity-the_problem_of_online_action_detection",
+      "Predicate-involves",
+      "Entity-streaming_skeleton_data"
+    ],
+    [
+      "Entity-multi-task_end-to-end_joint_classification-regression_recurrent_neural_network",
+      "Predicate-proposes",
+      "Entity-joint_classification-regression_recurrent_neural_network"
+    ],
+    [
+      "Entity-multi-task_end-to-end_joint_classification-regression_recurrent_neural_network",
+      "Predicate-explores",
+      "Entity-action_type"
+    ],
+    [
+      "Entity-this_network",
+      "Predicate-is_capable_of_localizing",
+      "Entity-the_start_and_end_point_of_action"
+    ],
+    [
+      "Entity-this_network",
+      "Predicate-localizes",
+      "Entity-the_start_and_end_point_of_action"
+    ],
+    [
+      "Entity-the_proposed_model",
+      "Predicate-captures",
+      "Entity-complex_long-range_temporal_dynamic"
+    ],
+    [
+      "Entity-the_proposed_model",
+      "Predicate-ensures",
+      "Entity-high_computational_efficiency"
+    ],
+    [
+      "Entity-the_subtask_of_regression_optimization",
+      "Predicate-provides",
+      "Entity-the_ability_to_forecast_the_action_prior_to_it_occurrence"
+    ],
+    [
+      "Entity-regression_optimization",
+      "Predicate-provides",
+      "Entity-the_ability_to_forecast_the_action_prior_to_it_occurrence"
+    ],
+    [
+      "Entity-the_proposed_model",
+      "Predicate-evaluates",
+      "Entity-large_streaming_video_dataset"
+    ],
+    [
+      "Entity-the_proposed_model",
+      "Predicate-builds",
+      "Entity-large_streaming_video_dataset"
+    ],
+    [
+      "Entity-large_streaming_video_dataset",
+      "Predicate-has",
+      "Entity-annotation"
+    ],
+    [
+      "Entity-g3d_dataset",
+      "Predicate-demonstrates",
+      "Entity-promising_performance"
+    ],
+    [
+      "Entity-our_dataset",
+      "Predicate-demonstrates",
+      "Entity-promising_performance"
+    ],
+    [
+      "Entity-scheme",
+      "Predicate-demonstrates",
+      "Entity-promising_performance"
+    ],
+    [
+      "Entity-the_proposed_model",
+      "Predicate-demonstrates",
+      "Entity-promising_performance"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-proposes",
+      "Entity-the_proposed_model"
+    ],
+    [
+      "Entity-this_network",
+      "Predicate-is",
+      "Entity-the_proposed_model"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-proposes",
+      "Entity-joint_classification-regression_recurrent_neural_network"
+    ],
+    [
+      "Entity-the_proposed_model",
+      "Predicate-is",
+      "Entity-joint_classification-regression_recurrent_neural_network"
+    ],
+    [
+      "Entity-joint_classification-regression_recurrent_neural_network",
+      "Predicate-is",
+      "Entity-this_network"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-proposes",
+      "Entity-this_network"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-the_problem_of_online_action_detection",
+      "skos:broader",
+      "Entity-online_action_detection"
+    ],
+    [
+      "Entity-promising_performance",
+      "skos:broader",
+      "Entity-performance"
+    ],
+    [
+      "Entity-our_dataset",
+      "skos:broader",
+      "Entity-dataset"
+    ],
+    [
+      "Entity-streaming_video_dataset",
+      "skos:broader",
+      "Entity-dataset"
+    ],
+    [
+      "Entity-long_short-term_memory",
+      "skos:broader",
+      "Entity-deep_long_short-term_memory_-lrb-_lstm_-rrb-_subnetwork"
+    ],
+    [
+      "Entity-this_network",
+      "skos:broader",
+      "Entity-network"
+    ],
+    [
+      "Entity-g3d_dataset",
+      "skos:broader",
+      "Entity-dataset"
+    ],
+    [
+      "Entity-joint_classification-regression_recurrent_neural_network",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-long_short-term_memory",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-multi-task_end-to-end_joint_classification-regression_recurrent_neural_network",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-large_streaming_video_dataset",
+      "skos:broader",
+      "Entity-dataset"
+    ],
+    [
+      "Entity-well-segmented_3d_skeleton_data",
+      "skos:broader",
+      "Entity-3d_skeleton_data"
+    ],
+    [
+      "Entity-action_type",
+      "skos:broader",
+      "Entity-classification"
+    ],
+    [
+      "Entity-deep_long_short-term_memory_-lrb-_lstm_-rrb-_subnetwork",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-online_action_detection",
+      "skos:broader",
+      "Entity-human_action_recognition"
+    ],
+    [
+      "Entity-the_problem_of_online_action_detection",
+      "skos:broader",
+      "Entity-human_action_recognition"
+    ],
+    [
+      "Entity-the_proposed_model",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-the_start_and_end_point_of_action",
+      "skos:broader",
+      "Entity-action"
+    ],
+    [
+      "Entity-streaming_skeleton_data",
+      "skos:broader",
+      "Entity-3d_skeleton_data"
+    ],
+    [
+      "Entity-the_ability_to_forecast_the_action_prior_to_it_occurrence",
+      "skos:broader",
+      "Entity-forecast"
+    ]
+  ],
+  "predicates": {
+    "Predicate-has_been_studied": {
+      "label": "has been studied",
+      "description": "The predicate 'has been studied' indicates that the subject has undergone a process of investigation or analysis, typically in a scholarly or scientific context, with the object representing the specific focus or material of that investigation. This relationship suggests that the subject is the topic of research, while the object provides the context or data that has been examined to gain insights or knowledge about the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_attracting": {
+      "label": "is attracting",
+      "description": "The predicate 'is attracting' indicates that the subject is drawing interest, focus, or engagement from an audience or group, resulting in a heightened level of awareness or consideration towards the object. This connection implies that the subject possesses qualities or characteristics that are compelling or noteworthy, leading to the object receiving more attention or significance.",
+      "disambiguation_index": 0
+    },
+    "Predicate-recognizes_from": {
+      "label": "recognizes from",
+      "description": "The predicate 'recognizes from' indicates a relationship where the subject is able to identify or discern specific information or patterns based on the characteristics or features provided by the object. It implies that the subject utilizes the data or input represented by the object to achieve recognition or understanding of a particular phenomenon or action.",
+      "disambiguation_index": 0
+    },
+    "Predicate-identifies": {
+      "label": "identifies",
+      "description": "The predicate 'identifies' denotes a relationship where the subject is capable of recognizing, categorizing, or determining the nature of the object. In this context, it implies that the subject performs an action or process that leads to the understanding or classification of the object, which is typically a specific entity, concept, or category.",
+      "disambiguation_index": 0
+    },
+    "Predicate-localizes": {
+      "label": "localizes",
+      "description": "The predicate 'localizes' indicates the action of identifying and specifying the particular locations or positions of certain elements or phenomena within a given context. It connects the subject, which performs the action, to the object, which represents the specific locations or positions being identified.",
+      "disambiguation_index": 0
+    },
+    "Predicate-operates_from": {
+      "label": "operates from",
+      "description": "The predicate 'operates from' indicates the source or basis from which the subject functions or derives its processes. It establishes a relationship where the subject relies on the object as a foundational element or input for its operations, suggesting that the subject's activities are initiated or informed by the characteristics or content of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-studies": {
+      "label": "studies",
+      "description": "The predicate 'studies' indicates that the subject is engaged in a systematic examination or analysis of the object, which represents a specific topic, phenomenon, or area of inquiry. This relationship implies that the subject seeks to gain insights, understand complexities, or contribute knowledge regarding the object through research or investigation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-involves": {
+      "label": "involves",
+      "description": "The predicate 'involves' indicates a relationship where the subject is engaged with or requires the object as a necessary component, element, or aspect in its context. It suggests that the subject cannot be fully understood or addressed without considering the object, highlighting a connection where the object plays a significant role in the subject's definition, function, or operation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-proposes": {
+      "label": "proposes",
+      "description": "The predicate 'proposes' indicates that the subject puts forward or suggests a particular idea, model, or solution, which is represented by the object. It establishes a relationship where the subject is the source of the proposal, and the object is the proposed concept or entity that is being recommended or introduced.",
+      "disambiguation_index": 0
+    },
+    "Predicate-explores": {
+      "label": "explores",
+      "description": "The predicate 'explores' indicates an active investigation or examination by the subject into the characteristics, possibilities, or implications of the object. It suggests a process of inquiry or analysis where the subject seeks to understand, discover, or evaluate the nature or effects of the object in question.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_capable_of_localizing": {
+      "label": "is capable of localizing",
+      "description": "The predicate 'is capable of localizing' indicates that the subject possesses the ability or functionality to identify, determine, or pinpoint specific elements or features within a given context, which are represented by the object. This connection implies that the subject can effectively analyze or interpret data to recognize the specified components, thereby establishing a relationship between the subject's capabilities and the characteristics of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-captures": {
+      "label": "captures",
+      "description": "The predicate 'captures' indicates that the subject effectively represents, embodies, or conveys the characteristics, features, or essence of the object. It suggests a relationship where the subject successfully encapsulates or illustrates the complexities or nuances of the object, often implying a level of understanding or interpretation.",
+      "disambiguation_index": 0
+    },
+    "Predicate-ensures": {
+      "label": "ensures",
+      "description": "The predicate 'ensures' indicates a relationship where the subject is responsible for guaranteeing or providing a certain outcome or condition represented by the object. It implies a level of assurance or certainty that the subject will lead to the realization of the object, often suggesting a positive or beneficial effect.",
+      "disambiguation_index": 0
+    },
+    "Predicate-provides": {
+      "label": "provides",
+      "description": "The predicate 'provides' indicates a relationship in which the subject offers, supplies, or makes available a certain quality, capability, or resource to the object. It suggests that the subject is a source or facilitator of the object, enabling or enhancing the object's potential or functionality.",
+      "disambiguation_index": 0
+    },
+    "Predicate-evaluates": {
+      "label": "evaluates",
+      "description": "The predicate 'evaluates' signifies an action where the subject assesses, analyzes, or measures the qualities, performance, or characteristics of the object. In this context, the subject is typically an entity, such as a model, system, or method, that conducts the evaluation, while the object represents the entity or dataset being assessed. This relationship indicates a process of judgment or appraisal, often aimed at determining effectiveness, accuracy, or suitability.",
+      "disambiguation_index": 0
+    },
+    "Predicate-builds": {
+      "label": "builds",
+      "description": "The predicate 'builds' indicates an action performed by the subject that results in the creation, development, or construction of the object. It implies a process where the subject actively engages in assembling or generating the object, which can be a physical entity, a system, or a conceptual framework.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has": {
+      "label": "has",
+      "description": "The predicate 'has' indicates a possessive relationship between the subject and the object, signifying that the subject contains, includes, or possesses the object in some form. It establishes a connection where the subject is characterized by the presence of the object, which can represent attributes, components, or associated elements relevant to the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-demonstrates": {
+      "label": "demonstrates",
+      "description": "The predicate 'demonstrates' serves to establish a relationship where the subject provides evidence or showcases a particular quality, characteristic, or outcome represented by the object. It indicates that the subject exhibits or reveals the object in a manner that can be observed or measured, thereby affirming the validity or effectiveness of the object in relation to the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is": {
+      "label": "is",
+      "description": "The predicate 'is' serves as a linking verb that establishes an identity or equivalence between the subject and the object. It indicates that the subject can be defined or categorized by the object, suggesting that they are the same in some respect or that the object provides a description or classification of the subject.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or aspect of a more general concept represented by the object. This relationship suggests that the object encompasses a wider scope or category that includes the subject, thereby providing a context in which the subject can be understood as part of a larger framework.",
+      "disambiguation_index": 0
+    }
+  }
+}

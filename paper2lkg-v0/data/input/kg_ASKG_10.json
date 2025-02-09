@@ -1,0 +1,2534 @@
+{
+  "iri": "Paper-Learning_SHACL_shapes_from_knowledge_graphs",
+  "title": "Learning SHACL shapes from knowledge graphs",
+  "authors": [
+    "Pouya Ghiasnezhad Omran",
+    "Kerry Taylor",
+    "Sergio Rodr\u00edguez M\u00e9ndez",
+    "Armin Haller"
+  ],
+  "keywords": [
+    "HACL shape learning",
+    "hapes constraint language",
+    "knowledge graph",
+    "inverse open path rule"
+  ],
+  "sections": [
+    {
+      "iri": "Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-1",
+              "text": "Knowledge Graphs (KGs) have proliferated on the Web since the introduction of knowledge panels to Google search in 2012."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-2",
+              "text": "KGs are large data-first graph databases with weak inference rules and weakly-constraining data schemes."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-3",
+              "text": "SHACL, the Shapes Constraint Language, is a W3C recommendation for expressing constraints on graph data as shapes."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-4",
+              "text": "SHACL shapes serve to validate a KG, to underpin manual KG editing tasks, and to offer insight into KG structure."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-5",
+              "text": "Often in practice, large KGs have no available shape constraints and so cannot obtain these benefits for ongoing maintenance and extension."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-1",
+              "text": "We introduce Inverse Open Path (IOP) rules, a predicate logic formalism which presents specific shapes in the form of paths over connected entities that are present in a KG."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-2",
+              "text": "IOP rules express simple shape patterns that can be augmented with minimum cardinality constraints and also used as a building block for more complex shapes, such as trees and other rule patterns."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-3",
+              "text": "We define formal quality measures for IOP rules and propose a novel method to learn high-quality rules from KGs."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-4",
+              "text": "We show how to build high-quality tree shapes from the IOP rules."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-5",
+              "text": "Our learning method, SHACLEARNER, is adapted from a state-of-the-art embedding-based open path rule learner."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-3-Sentence-1",
+              "text": "We evaluate SHACLEARNER on some real-world massive KGs, including YAGO2s with 4 million facts, DBpedia 3.8 with 11 million facts, and Wikidata with 8 million facts."
+            },
+            {
+              "iri": "Section-1-Paragraph-3-Sentence-2",
+              "text": "The experiments show that our SHACLEARNER can effectively learn informative and intuitive shapes from massive KGs."
+            },
+            {
+              "iri": "Section-1-Paragraph-3-Sentence-3",
+              "text": "The shapes are diverse in structural features such as depth and width, and also in quality measures that indicate confidence and generality."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-2",
+      "subtitle": "Introduction",
+      "paragraphs": [
+        {
+          "iri": "Section-2-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-1",
+              "text": "While public knowledge graphs (KGs) became popular with the development of DBpedia and Yago more than a decade ago, interest in enterprise knowledge graphs has taken off since the inclusion of knowledge panels on the Google Search engine in 2012, driven by its internal knowledge graph."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-2",
+              "text": "Although these KGs are massive and diverse, they are typically incomplete."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-3",
+              "text": "Regardless of the method that is used to build a KG, whether collaboratively or individually, manually or automatically, it will be incomplete because of the evolving nature of human knowledge, cultural bias, and resource constraints."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-4",
+              "text": "Consider Wikidata, for example, where there is more complete information for some types of entities, such as pop stars, while less for others, like opera singers."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-5",
+              "text": "Even for the same type of entity, such as computer scientists, there are different depths of detail for similarly accomplished scientists, depending on their country of residence."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-1",
+              "text": "However, the power of KGs comes from their data-first approach, enabling contributors to extend a KG in a relatively arbitrary manner."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-2",
+              "text": "By contrast, a relational database typically employs not-null and other schema-based constraints that require some attributes to be instantiated in a defined way at all times."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-3",
+              "text": "Large KGs are typically populated by automatic and semi-automatic methods using non-structured sources such as Wikipedia that are prone to errors of omission and commission."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-4",
+              "text": "Both kinds of errors can be highlighted for correction by a careful application of schema constraints."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-5",
+              "text": "However, such constraints are commonly unavailable and, if available, uncertain and frequently violated in a KG for valid reasons, arising from the intended data-first approach of KG applications."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-1",
+              "text": "SHACL was formally recommended by the W3C in 2017 to express such constraints on a KG as shapes."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-2",
+              "text": "For example, SHACL can be used to express that a person in a specific use case needs to have a name, birth date, and place of birth, and that these attributes have particular types: a string, a date, and a location."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-3",
+              "text": "The shapes are used to guide the population of a KG, although they are not necessarily enforced."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-4",
+              "text": "Typically, SHACL shapes are manually specified."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-5",
+              "text": "However, as for multidimensional relational database schemes, shapes could, in principle, be inferred from KG data."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-6",
+              "text": "As frequent patterns, the shapes characterize a KG and can be used for subsequent data cleaning or ongoing data entry."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-7",
+              "text": "There is scant previous research on this topic."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-1",
+              "text": "While basic SHACL and its advanced features allow the modeling of diverse shapes including rules and constraints, most of these shapes are previously well known when expressed by alternative formalisms, including closed rules, trees, existential rules, and graph functional dependencies."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-2",
+              "text": "We claim that the common underlying form of all these shapes is the path, over which additional constraints induce alternative shapes."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-3",
+              "text": "For example, in DBpedia we see the following path: if an entity x is a song, then x is in an album y which has a record label z."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-1",
+              "text": "Since the satisfaction of a less-constrained shape is a necessary condition for satisfaction of a more complex shape but not a sufficient condition, in this paper we focus on learning paths, the least constrained shape for our purposes."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-2",
+              "text": "In addition, we learn cardinality constraints that can express, for example, that a song has at least 2 producers."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-3",
+              "text": "We also investigate the process of constructing one kind of more complex shape, that is a tree, out of paths."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-4",
+              "text": "For example, we discover a tree about an entity which has song as its type."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-5",
+              "text": "In a KG context, the tree suggests that if we have an entity of type song in the KG, then we would expect to have the associated facts too."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-1",
+              "text": "In this paper, we present a system, SHACLEARNER, that mines shapes from KG data."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-2",
+              "text": "For this purpose, we propose a predicate calculus formalism in which rules have one body atom and a chain of conjunctive atoms in the head with a specific variable binding pattern."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-3",
+              "text": "Since these rules are an inverse version of open path rules, we call them inverse open path (IOP) rules."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-4",
+              "text": "To learn IOP rules, we adapt an embedding-based open path rule learner."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-5",
+              "text": "We define quality measures to express the validity of IOP rules in a KG."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-6",
+              "text": "SHACLEARNER uses the mined IOP rules to subsequently discover more complex tree shapes."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-7",
+              "text": "Each IOP rule or tree is a SHACL shape, in the sense that it can be syntactically rewritten in SHACL."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-8",
+              "text": "Our mined shapes are augmented with a novel numerical confidence measure to express the strength of evidence in the KG for each shape."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-1",
+              "text": "In summary, the main contributions of this paper are: we introduce a new formalism called Inverse Open Path rules, that serves as a building block for more complex shapes such as trees, together with cardinality constraints and quality measurements; we extend the Open Path rule learning method to learn IOP rules annotated with cardinality constraints, while introducing unary predicates that can act as class or type constraints; and we propose a method to aggregate IOP rules to produce tree shapes."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-1",
+              "text": "This paper is organized as follows: after presenting some foundations in Section 2, we describe our SHACL learning method in Section 3, including the formalism of IOP rules, the embedding-based method that discovers IOP rules from a KG, and the method for aggregating IOP rules into trees."
+            },
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-2",
+              "text": "In Section 4, we present related work."
+            },
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-3",
+              "text": "We discuss results of an experimental evaluation in Section 5 before we conclude in Section 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-3",
+      "subtitle": "Preliminaries: Closed-path rules",
+      "paragraphs": [
+        {
+          "iri": "Section-3-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-1",
+              "text": "The presentation of closed path rules and open path rules in this section is adapted and extended."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-1",
+              "text": "An entity e is an identifier for an object such as a place or a person."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-2",
+              "text": "A fact (also known as a link) is an RDF triple (e, P, e'), written here as P(e, e'), meaning that the subject entity e is related to an object entity e' via the binary predicate (also known as a property), P."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-3",
+              "text": "In addition, we allow unary predicates of the form P(e), also equivalently written here as the binary fact P(e, e)."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-4",
+              "text": "We model unary predicates as self-loops to have a unary predicate act as the label of a link in the graph, as shown in Fig. 1, just as for binary predicates."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-5",
+              "text": "Unary predicates may, but are not limited to, represent class assertions expressed in an RDF triple as (e, rdf:type, P) where P is a class or a datatype."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-6",
+              "text": "A knowledge graph (KG) is a pair K = (E, F), where E is a set of entities and F is a set of facts and all the entities occurring in F also occur in E."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-1",
+              "text": "2.1. Closed-path rules"
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-2",
+              "text": "KG rule learning systems employ various rule languages to express rules."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-3",
+              "text": "RLvLR and SCALEKB use so-called closed path (CP) rules."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-4",
+              "text": "Each consists of a head at the front of the implication arrow and a body at the tail."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-5",
+              "text": "We say the rule is about the predicate of the head."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-6",
+              "text": "The rule forms a closed path, or single unbroken loop of links between the variables."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-7",
+              "text": "It has the following general form."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-1",
+              "text": "Pt(x, y) <- P1(x, z1) ^ P2(z1, z2) ^ ... ^ Pn(zn-1, y). (1)"
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-1",
+              "text": "We interpret these kinds of rules with universal quantification of all variables at the outside, and so we can infer a fact that instantiates the head of the rule by finding an instantiation of the body of the rule in the KG."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-2",
+              "text": "For example, from the rule citizenOf(x, y) <- livesIn(x, z) ^ locatedIn(z, y) and the facts in the KG: livesIn(Mary, Canberra) and locatedIn(Canberra, Australia), we can infer and assert the new fact: citizenOf(Mary, Australia)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-6-Sentence-1",
+              "text": "Rules are considered more use if they generalise well, that is, they explain many facts."
+            },
+            {
+              "iri": "Section-3-Paragraph-6-Sentence-2",
+              "text": "To quantify this idea we recall measures support, head coverage and standard confidence that are used in some major approaches to rule learning."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-1",
+              "text": "Definition 1 (satisfies, support)."
+            },
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-2",
+              "text": "Let r be a CP rule of the form (1)."
+            },
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-3",
+              "text": "A pair of entities (e, e') satisfies the body of r, denoted body_r(e, e'), if there exist entities e1, ..., e(n-1) in the KG such that all of {P1(e, e1), P2(e1, e2), ..., Pn(e(n-1), e')} are facts in the KG."
+            },
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-4",
+              "text": "Further (e, e') satisfies the head of r, denoted Pt(e, e'), if Pt(e, e') is a fact in the KG."
+            },
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-5",
+              "text": "Then the support of r counts the rule instances for which the body and the head are both satisfied in the KG."
+            },
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-6",
+              "text": "suppr = |{ (e, e') : body_r(e, e') and Pt(e, e') }|"
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-8-Sentence-1",
+              "text": "Standard confidence (SC) and head coverage (HC) offer standardised measures for comparing rule quality."
+            },
+            {
+              "iri": "Section-3-Paragraph-8-Sentence-2",
+              "text": "SC describes how frequently the rule is true, i.e., of the number of entity pairs that satisfy the body in the KG, what proportion of the inferred head instances are satisfied?"
+            },
+            {
+              "iri": "Section-3-Paragraph-8-Sentence-3",
+              "text": "It is closely related to confidence widely used in association rule mining."
+            },
+            {
+              "iri": "Section-3-Paragraph-8-Sentence-4",
+              "text": "HC measures the explanatory power of the rule, i.e., what proportion of the facts satisfying the head of the rule could be inferred by satisfying the rule body?"
+            },
+            {
+              "iri": "Section-3-Paragraph-8-Sentence-5",
+              "text": "It is closely related to cover which is widely used for rule learning in inductive logic programming."
+            },
+            {
+              "iri": "Section-3-Paragraph-8-Sentence-6",
+              "text": "A non-recursive rule that has both 100% SC and HC is redundant with respect to the KG, and every KG fact that is an instance of the rule head is redundant with respect to the rule."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-9-Sentence-1",
+              "text": "Definition 2 (standard confidence, head coverage)."
+            },
+            {
+              "iri": "Section-3-Paragraph-9-Sentence-2",
+              "text": "Let r, e, e', body_r be as given in Definition 1."
+            },
+            {
+              "iri": "Section-3-Paragraph-9-Sentence-3",
+              "text": "Then standard confidence is SC(r) = suppr / |{ (e, e') : body_r(e, e') }|"
+            },
+            {
+              "iri": "Section-3-Paragraph-9-Sentence-4",
+              "text": "and head coverage is HC(r) = suppr / |{ (e, e') : Pt(e, e') }|"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-4",
+      "subtitle": "Preliminaries: Open-path rules: Rules with open variables",
+      "paragraphs": [
+        {
+          "iri": "Section-4-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-1",
+              "text": "Unlike earlier work in rule mining for KG completion, OPRL for active knowledge graph completion defines open path (OP) rules of the form:"
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-2",
+              "text": "P1(z0, z1) \u2227 P2(z1, z2) \u2227 ... \u2227 Pn(zn\u22121, y) \u2192 \u2203x Pt(x, z0)."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-3",
+              "text": "Here, Pi is a predicate in the KG, each of {x, zi, y} are entity variables, and all free variables are universally quantified at the outside."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-1",
+              "text": "We call a variable closed if it occurs in at least two distinct predicate terms, such as z0 here, and otherwise it is open."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-2",
+              "text": "If all variables of a rule are closed then the rule is closed."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-3",
+              "text": "An OP rule has two open variables, y and x."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-4",
+              "text": "OP rules are used since they imply the existence of a fact, like spouse(x, y) \u2192 \u2203z child(x, z)."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-5",
+              "text": "Unlike CP rules, OP rules do not necessarily form a loop, but a straightforward variable unification transforms an OP rule to a CP rule."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-6",
+              "text": "Every entity-instantiation of a CP rule is also an entity-instantiation of the related OP rule, but not vice versa."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-1",
+              "text": "To assess the quality of OP rules, we use open path standard confidence (OPSC) and open path head coverage (OPHC), which are derived from the closed path forms."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-1",
+              "text": "Definition 3 (open path: OPsupp, OPSC, OPHC)."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-2",
+              "text": "Let r be an OP rule of the given form."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-3",
+              "text": "A pair of entities (e, e') satisfies the body of r, denoted as body_r(e, e'), if there exist entities e1, ..., en\u22121 in the KG such that P1(e, e1), P2(e1, e2), ..., Pn(en\u22121, e') are facts in the KG."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-4",
+              "text": "Also, (e', e) satisfies the head of r, denoted Pt(e', e), if Pt(e', e) is a fact in the KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-1",
+              "text": "The open path support, open path standard confidence, and open path head coverage of r are given respectively by:"
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-2",
+              "text": "OPsupp(r) = |{e : \u2203e', e'' such that body_r(e, e') and Pt(e'', e)}|."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-3",
+              "text": "OPSC(r) = OPsupp(r) / |{e : \u2203e' such that body_r(e, e')}|."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-4",
+              "text": "OPHC(r) = OPsupp(r) / |{e : \u2203e' such that Pt(e', e)}|."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-5",
+      "subtitle": "Preliminaries: SHACL shapes",
+      "paragraphs": [
+        {
+          "iri": "Section-5-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-1",
+              "text": "A KG is a schema-free database and does not need to be augmented with schema information natively."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-2",
+              "text": "However, many KGs are augmented with type information that can be used to understand and validate data and can also be very helpful for inference processes on the KG."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-3",
+              "text": "In 2017 the Shapes Constraint Language (SHACL) was introduced as a W3C recommendation to define schema information for KGs stored as an RDF graph."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-4",
+              "text": "SHACL defines constraints for graphs as shapes."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-5",
+              "text": "KGs can then be validated against a set of shapes."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-1",
+              "text": "Shapes can serve two main purposes: validating the quality of a KG and characterising the frequent patterns in a KG."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-2",
+              "text": "In Fig. 2, we illustrate an example of a shape from Wikidata, where x and z_i are variables that are instantiated by entities."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-3",
+              "text": "Although the shape is originally expressed in ShEx, we translate it to SHACL in the following."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-1",
+              "text": "SHACL, together with SHACL advanced features is extensive."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-2",
+              "text": "Here we focus on the core of SHACL in which node shapes constrain a target predicate (e.g., the unary predicate human in Fig. 2), with property shapes expressing constraints over facts related to the target predicate."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-3",
+              "text": "We particularly focus on property shapes which act to constrain an argument of the target predicate."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-4",
+              "text": "In Fig. 2 the shape expresses that each entity x which satisfies human(x) should satisfy the following paths: (1) citizenOf(x, z1) ^ country(z1), (2) father(x, z2) ^ human(z2), and (3) nativeLanguage(x, z3) ^ language(z3)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-1",
+              "text": "Various formalisms with corresponding shapes have been proposed to express diverse kinds of patterns exhibited in KGs, such as k-cliques, Closed rules (CR) (that include closed path rules), Functional Graph Dependency (FGD), and trees."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-2",
+              "text": "CRs are used for inferring new facts."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-3",
+              "text": "FGDs define constraints like the type of entities in the domain and range of predicates, or the number of entities to which an entity can be related by a specific predicate."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-4",
+              "text": "These constraints are deployed to make the KG consistent."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-5",
+              "text": "Regardless of differences between the formalisms, they share a key feature in their syntax."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-6",
+              "text": "The building block for expressing all of these shape constraints is a sequence of predicates."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-1",
+              "text": "We focus on such path shapes for our shape learning system."
+            },
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-2",
+              "text": "A path is a sequence of predicates connected by closed intermediate variables but terminating with open variables at both ends."
+            },
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-3",
+              "text": "Although shapes in the form of a path are less constrained than some more complex shapes, they are a more general template for more complex shapes like closed rules or trees, which are also paths (with further restrictions)."
+            },
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-4",
+              "text": "We will define Inverse Open Path rules induced from paths that have a straightforward interpretation as shapes, and also propose a method to mine such rules from a KG."
+            },
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-5",
+              "text": "To demonstrate the potential for these kinds of shapes to serve as building blocks for more complex trees, we then propose a method that builds trees out of mined rules, and briefly discuss the application of such trees to KG completion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-6",
+      "subtitle": "SHACL learning: Rules with open variables or uncertain shapes",
+      "paragraphs": [
+        {
+          "iri": "Section-6-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-1",
+              "text": "We observe that the converse of OP rules, which we call inverse open path rules (IOP), correspond to SHACL shapes."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-2",
+              "text": "For example, a shape can be derived from the following three IOP rules: human(x, x) -> citizenOf(x, z1) ^ country(z1, z1), human(x, x) -> father(x, z2) ^ human(z2, z2), and human(x, x) -> nativeLanguage(x, z3) ^ language(z3, z3)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-1",
+              "text": "The general form of an IOP rule is given by Pt'(x, z0) -> exists(z1, ..., z(n-1), y) P1'(z0, z1) ^ P2'(z1, z2) ^ ... ^ Pn'(z(n-1), y). (3)"
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-2",
+              "text": "Here each P'i is either a predicate in the KG or its reverse with subject and object bindings swapped, and free variables are universally quantified at the outside."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-3",
+              "text": "We often omit the quantifiers when writing IOP rules."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-4",
+              "text": "In an IOP rule, the body of the rule is Pt, and its head is the sequence of predicates P1 ^ P2 ^ ... ^ Pn."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-5",
+              "text": "Hence we instantiate the atomic body to predict an instance of the head."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-6",
+              "text": "IOP rules are not Horn."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-7",
+              "text": "The pattern of existential variables in the head and universal variables in the body has been investigated in the literature as existential rules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-1",
+              "text": "To assess the quality of IOP rules, we follow a style of quality measures similar to those used for OP rules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-1",
+              "text": "Definition 4 (inverse open path: IOPsupp, IOPSC, IOPHC)."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-2",
+              "text": "Let r be an IOP rule of the form (3)."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-3",
+              "text": "Then a pair of entities (e, e') satisfies the head of r, denoted head_r(e, e'), if there exist entities e1, ..., e(n-1) in the KG such that P1(e, e1), P2(e1, e2), ..., Pn(e(n-1), e') are facts in the KG."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-4",
+              "text": "A pair of entities (e'', e) satisfies the body of r, denoted Pt(e'', e), if Pt(e'', e) is a fact in the KG."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-5",
+              "text": "The inverse open path support, inverse open path standard confidence, and inverse open path head coverage of r are given respectively by"
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-6",
+              "text": "IOPsupp(r) = |{ (e', e'') : there exists e', e'' such that head_r(e, e') and Pt(e'', e) }|"
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-7",
+              "text": "IOPSC(r) = IOPsupp(r) / |{ e' : Pt(e', e) }|"
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-8",
+              "text": "IOPHC(r) = IOPsupp(r) / |{ e : there exists e' such that head_r(e, e') }|"
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-1",
+              "text": "Notably, because any instantiated open path in a KG includes both an OP and IOP rule, the support for an IOP rule is the same as the corresponding OPSC."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-2",
+              "text": "This close relationship between OP and IOP rules helps us to mine both OP and IOP rules in one process."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-1",
+              "text": "We show the relationship between an OP rule and its converse IOP version in the following example."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-2",
+              "text": "Consider the OP rule P1(x, z0) <- P2(z0, z1) ^ P3(z1, z2)."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-3",
+              "text": "Assume we have three entities (e3, e4, e5) which can instantiate z0 and satisfy both P1(x, z0) and P2(z0, z1) ^ P3(z1, z2)."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-4",
+              "text": "Assume the number of entities that can instantiate z0 to satisfy the head part is 5 ({e1, e2, e3, e4, e5}) and the number of entities that can instantiate z0 to satisfy the body part is 7 ({e2, e4, e5, e6, e7, e8, e9})."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-5",
+              "text": "Hence, for this rule OPsupp = 3, OPSC = 3/7, and OPHC = 3/5."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-6",
+              "text": "For the IOP version of the same rule, P1(x, z0) -> P2(z0, z1) ^ P3(z1, z2), the same entities instantiate z0, but now the body and head predicates are swapped."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-7",
+              "text": "Hence, we have IOPsupp = 3, IOPSC = 3/5, and IOPHC = 3/7."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-1",
+              "text": "In many cases, we need rules to express not only the necessity of a chain of facts (the facts in the head of the IOP rule), but also the number of different chains which should exist."
+            },
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-2",
+              "text": "For example, we may need a rule to express that each human has at least two parents."
+            },
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-3",
+              "text": "Thus, we introduce IOP rules annotated with a cardinality Car, giving the following form."
+            },
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-4",
+              "text": "IOPSC, IOPHC, Car : Pt'(x, z0) -> P1'(z0, z1) ^ P2'(z1, z2) ^ ... ^ Pn'(z(n-1), y). (4)"
+            },
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-5",
+              "text": "Here IOPSC and IOPHC belong to [0, 1] and denote the qualities of the rule, while Car is an integer >= 1."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-1",
+              "text": "Definition 5 (Cardinality of an IOP rule, Car)."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-2",
+              "text": "Let r be an annotated IOP rule of the form (4), and let Car(r) be the cardinality annotation for r."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-3",
+              "text": "Then r satisfies Car(r) if and only if, for each entity e such that Pt(e', e) holds, the number of distinct instantiations of head_r(e, e') is at least Car(r)."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-4",
+              "text": "In other words, the cardinality expresses a lower bound on the number of head paths that are satisfied in the KG for every instantiation linking the body to the head."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-1",
+              "text": "Rules with the same head and the same body may have different cardinalities."
+            },
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-2",
+              "text": "While a rule might have a certain cardinality c1, lower-cardinality versions of that rule may have the same or higher IOPSC values, since a larger required cardinality places a stricter lower bound on the number of instances of the head in the KB."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-1",
+              "text": "Lemma 1 (IOPSC is non-increasing with length)."
+            },
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-2",
+              "text": "Let r be an IOP rule of the form (3) with n >= 2, and let r' be the same rule shortened by removing the last head predicate."
+            },
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-3",
+              "text": "Then IOPSC(r) <= IOPSC(r')."
+            },
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-4",
+              "text": "This result follows because the denominator of IOPSC(r) is not affected by the head of the rule, yet the numerator can only decrease when additional head predicates are included."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-11-Sentence-1",
+              "text": "This lemma is useful for rule learning, because it shows that if we discard a rule due to its low IOPSC, we do not need to check versions of the rule extended with additional head atoms, since their IOPSC values would be at most as low."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-12",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-1",
+              "text": "Algorithm 1: SHACLearner"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-2",
+              "text": "Input: a KG K, a target predicate Pt"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-3",
+              "text": "Parameters: max rule length l, max rule cardinality MCar, MinIOPSC, MinIOPHC, and MinTreeSC"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-4",
+              "text": "Output: a set of IOP rules R and Tree"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-5",
+              "text": "1: K' := Sampling(K, Pt)"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-6",
+              "text": "2: (P, A) := Embeddings(K')"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-7",
+              "text": "3: R' := empty"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-8",
+              "text": "4: for k from 2 to l do"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-9",
+              "text": "   Add PathFinding(K', Pt, P, A, k) to R'"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-10",
+              "text": "end for"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-11",
+              "text": "7: R := Ev(R', K, MCar, MinIOPSC, MinIOPHC)"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-12",
+              "text": "8: Tree := GreedySearch(R, MinTreeSC)"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-13",
+              "text": "9: return Tree and R"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-7",
+      "subtitle": "SHACL learning: IOP learning through representation learning",
+      "paragraphs": [
+        {
+          "iri": "Section-7-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-1",
+              "text": "To mine IOP rules, we start with the open path rule learner OPRL and adapt its embedding-based OP rule learning to learn annotated IOP rules."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-2",
+              "text": "We call this new IOP rule learner SHACLEARNER, shown in Algorithm 1."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-3",
+              "text": "SHACLEARNER uses a sampling method Sampling, shown in Algorithm 2, to prune the entities and predicates that are less relevant to the target predicate to obtain a sampled knowledge graph."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-4",
+              "text": "The sample is fed to an embedding learner, RESCAL, in Embeddings."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-5",
+              "text": "Then in PathFinding, SHACLEARNER uses the computed embedding representations of predicates and entities in heuristic functions that inform the generation of IOP rules bounded by a maximum length."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-6",
+              "text": "Then, potential IOP rules are evaluated, annotated, and filtered in Ev to produce annotated IOP rules."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-7",
+              "text": "Eventually, a tree is discovered for each argument of each target predicate by aggregating mined IOP rules in GreedySearch."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-1",
+              "text": "While the overall algorithm structure of SHACLEARNER is similar to OPRL, as is the embedding-based scoring function, the following elements are novel in SHACLEARNER:"
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-2",
+              "text": "OPRL cannot handle unary predicates while SHACLEARNER admits unary predicates both in the head and the body of IOP rules."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-3",
+              "text": "SHACLEARNER can discover and evaluate IOP rules with minimum cardinality constraints in the head of the IOP rule, while OPRL is effectively limited to learning the special case of minimum cardinality 1 for all rules."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-4",
+              "text": "For this reason, the evaluation method of SHACLEARNER, Ev, differs from the OPRL evaluation module."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-5",
+              "text": "The aggregation module that produces trees out of learnt IOP rules, ready for translation to SHACL, is novel in SHACLEARNER."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-8",
+      "subtitle": "SHACL learning: Sampling",
+      "paragraphs": [
+        {
+          "iri": "Section-8-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-1",
+              "text": "In more detail, the Sampling() method in line 1 of Algorithm 1 computes a fragment of the KG K', consisting of a bounded number of entities that are related to the target predicate Pt."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-2",
+              "text": "This sampling is essential since embedding learners (e.g., HOLE and RESCAL) cannot handle massive KGs with millions of entities (e.g., YAGO2)."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-3",
+              "text": "The sampling method, first introduced, is shown in Algorithm 2."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-4",
+              "text": "Since we search for IOP rules with up to l atoms (including the specific body target predicate, Pt), the entity set Esample and corresponding fact set K' contains the information needed for learning such rules."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-5",
+              "text": "Predicates less relevant to the target predicate are pruned in the sampling process and no facts about those predicates remain in K'."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-1",
+              "text": "This simple approach reduces the size of the problem significantly, as discussed."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-2",
+              "text": "For a KG K with entities E and facts F, the set of sampled entities for a target predicate will be of size 2l|F||E| in the worst case."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-3",
+              "text": "Hence, the complexity of the sampling algorithm is O(|K|) where |K| = |E||F|."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-4",
+              "text": "In the worst case, the sampled KG is the same as the original KG, but real-world KGs are sparse with only a very small proportion of entities associated with any predicate within distance l."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-5",
+              "text": "In practice, the sampled KG is far smaller than the original KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-1",
+              "text": "Algorithm 2: Sampling"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-2",
+              "text": "Input: a KG K, a target predicate Pt"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-3",
+              "text": "Parameters: max rule length l"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-4",
+              "text": "Output: K' a subgraph of the input graph"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-5",
+              "text": "1: E1 = { e | there exists e': Pt(e, e') or Pt(e', e) }"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-6",
+              "text": "2: for 2 <= k <= l do"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-7",
+              "text": "3:   Ek = { e | there exists e': e' in E(k-1) and (Pi(e, e') or Pi(e', e)) }"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-8",
+              "text": "4: end for"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-9",
+              "text": "5: Esample = union (from i=1 to l) of Ei"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-10",
+              "text": "6: K' = { Pi(e, e') | (e in Esample) and (e' in Esample) }"
+            },
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-11",
+              "text": "7: return K'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-9",
+      "subtitle": "SHACL learning: Embeddings",
+      "paragraphs": [
+        {
+          "iri": "Section-9-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-1",
+              "text": "After sampling, in line 2 Embeddings(), we compute predicate embeddings as well as subject and object argument embeddings for all predicates in the sampled K'."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-2",
+              "text": "The embedding is obtained from RESCAL as it can provide an extensive representation of predicates and entities as shown in previous heuristic rule learners."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-3",
+              "text": "Briefly, we use RESCAL to embed each entity e_i to a vector E_i in R^d and each predicate P_k to a matrix P_k in R^(d x d), where R is the set of real numbers and d is an integer parameter of RESCAL."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-4",
+              "text": "For each given fact P0(e1, e2), the following scoring function is computed: f(e1, P0, e2) = E1^T . P0 . E2."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-5",
+              "text": "The scoring function indicates the plausibility of the fact that e1 has relation P0 with e2."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-1",
+              "text": "In Embeddings() we additionally compute argument embeddings."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-2",
+              "text": "To compute the subject (respectively object) argument embeddings of a predicate P_k, we aggregate the embeddings of entities that occur as the subject (respectively object) of P_k in the KG."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-3",
+              "text": "Hence, for each predicate P_k we have two vectors, P1_k and P2_k, that represent the subject argument and object argument of P_k respectively."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-10",
+      "subtitle": "SHACL learning: Generating and pruning rules",
+      "paragraphs": [
+        {
+          "iri": "Section-10-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-1",
+              "text": "After that, in line 3 to line 7 of Algorithm 1, PathFinding() produces candidate IOP rules based on the embedding representation of the predicates involved in each rule."
+            },
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-2",
+              "text": "The candidate rules are pruned by the scoring function heuristic for OP rules."
+            },
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-3",
+              "text": "Due to the close relationship between OP and IOP rules, a high-scoring candidate OP rule suggests both a good OP rule and a good IOP rule."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-1",
+              "text": "An IOP rule Pt(x, y) -> P1(y, z) ^ P2(z, t) acts to connect entities satisfying the subject argument of the body predicate, Pt, to entities forming the object argument of the last predicate, P2, along a path of entities that satisfy a chain of predicates in the rule."
+            },
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-2",
+              "text": "There is a relationship between the logical statement of the rule and certain properties in the embedding space."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-1",
+              "text": "1. The predicate arguments that have the same variable in the rule should have similar argument embeddings."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-2",
+              "text": "For example, we should have the following similarities: P2_t ~ P1_1 and P2_1 ~ P2_1."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-1",
+              "text": "2. The whole path forms a composite predicate, like P*(x, t) = Pt(x, y) ^ P1(y, z) ^ P2(z, t)."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-2",
+              "text": "We compute the embedding representation of the composite predicate based on its components: P*(x, t) = Pt(x, y) . P1(y, z) . P2(z, t)."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-3",
+              "text": "Now we could check the plausibility of P*(x, t) for any pair of entities using the scoring function introduced earlier."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-4",
+              "text": "However, since we are interested in the existence of an entity-free rule, the following similarity will hold: 1 approx P1_t . Pt . P1 . P2 . P2_2."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-1",
+              "text": "Based on the above two properties, two scoring functions are defined to help heuristically mine the space of all possible IOP rules, producing a reduced set of candidate IOP rules."
+            },
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-2",
+              "text": "The ultimate evaluation of an IOP rule will be done in the next step as described below."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-11",
+      "subtitle": "SHACL learning: Efficient computation of quality measures",
+      "paragraphs": [
+        {
+          "iri": "Section-11-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-1-Sentence-1",
+              "text": "Now we focus our attention on the efficient matrix-computation of the quality measures that are novel for SHACLearner."
+            },
+            {
+              "iri": "Section-11-Paragraph-1-Sentence-2",
+              "text": "Ev() in Algorithm 1 first evaluates candidate rules on the small sampled KG, and selects only the rules with IOPsupp(r) >= 1."
+            },
+            {
+              "iri": "Section-11-Paragraph-1-Sentence-3",
+              "text": "They may still include a large number of redundant and low quality rules and so are further downselected based on their IOPSC and IOPHC calculated over the full KG."
+            },
+            {
+              "iri": "Section-11-Paragraph-1-Sentence-4",
+              "text": "We show next how to efficiently compute these measures over massive KGs using an adjacency matrix representation of the KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-1",
+              "text": "Let K = (E, F) with E = {e1, ..., en} be the set of all entities and P = {P1, ..., Pm} be the set of all predicates in F."
+            },
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-2",
+              "text": "We represent K as a set of square n x n adjacency matrices by defining the function A."
+            },
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-3",
+              "text": "Specifically, the [i, j]-th element A(Pk)[i, j] is 1 if the fact Pk(ei, ej) is in F, and 0 otherwise."
+            },
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-4",
+              "text": "Thus, A(Pk) is a matrix of binary values, and the set {A(Pk) | k in 1..m} represents K."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-3-Sentence-1",
+              "text": "We illustrate the computation of IOPSC and IOPHC through an example."
+            },
+            {
+              "iri": "Section-11-Paragraph-3-Sentence-2",
+              "text": "Consider the IOP rule r: Pt(x, z0) -> P1(z0, x) ^ P2(z1, y)."
+            },
+            {
+              "iri": "Section-11-Paragraph-3-Sentence-3",
+              "text": "Let E = {e1, e2, e3} and F = {P1(e1, e2), P1(e2, e1), P1(e2, e3), P1(e3, e1), P2(e1, e2), P2(e3, e2), P2(e3, e3), P1(e1, e3), Pt(e3, e2), Pt(e3, e3)}."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-1",
+              "text": "The adjacency matrices for the predicates P1, P2, and Pt are:"
+            },
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-2",
+              "text": "A(P1) = [0 1 0; 1 0 1; 0 0 0],"
+            },
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-3",
+              "text": "A(P2) = [0 1 0; 0 0 0; 0 1 1],"
+            },
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-4",
+              "text": "A(Pt) = [0 0 0; 0 0 0; 0 1 1]."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-5-Sentence-1",
+              "text": "For IOPSC and IOPHC (Definition 4), we need to calculate:"
+            },
+            {
+              "iri": "Section-11-Paragraph-5-Sentence-2",
+              "text": "1) The number of entities that satisfy the body of the rule, i.e. the count of e' such that there exists e'' with Pt(e'', e')."
+            },
+            {
+              "iri": "Section-11-Paragraph-5-Sentence-3",
+              "text": "2) The number of entities that satisfy the head of the rule, i.e. the count of e' such that there exists e'' with head_r(e'', e')."
+            },
+            {
+              "iri": "Section-11-Paragraph-5-Sentence-4",
+              "text": "3) The number of entities that join the head of the rule to its body, i.e. the count of e' for which there exist e'', e''' such that head_r(e'', e') and Pt(e''', e')."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-6-Sentence-1",
+              "text": "For (1), we can read the pairs (e', e) directly from the matrix A(Pt)."
+            },
+            {
+              "iri": "Section-11-Paragraph-6-Sentence-2",
+              "text": "To find distinct e's we sum each column and transpose to obtain the vector V^2(Pt)."
+            },
+            {
+              "iri": "Section-11-Paragraph-6-Sentence-3",
+              "text": "Each non-zero element indicates a satisfying e, and the number of distinct e's is the count of non-zero elements."
+            },
+            {
+              "iri": "Section-11-Paragraph-6-Sentence-4",
+              "text": "In the example, the only non-zero element in A(Pt) is A(Pt)[1, 3], and after summing columns and transposing we have V^2(Pt) = [0 1 2]^T, so {e2, e3} satisfies the head with count 2."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-1",
+              "text": "For (2), the pairs (e, e') satisfying the head are connected by the path P1, P2, ..., Pm."
+            },
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-2",
+              "text": "They can be obtained from the matrix product A(P1)*A(P2)*...*A(Pm), taking elements with a value >= Car for rules with cardinality Car."
+            },
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-3",
+              "text": "We find distinct e's by summing each row of this product to obtain the vector V^1(A(P1)*A(P2)*...*A(Pm))."
+            },
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-4",
+              "text": "Each element with value >= Car indicates a satisfying e, and the count of distinct e's is the count of non-zero elements in that vector."
+            },
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-5",
+              "text": "In the example, A(P1)*A(P2) = [[0,0,0],[0,2,1],[1,0,0]], and V^1(P1, P2) = [0,3,1]."
+            },
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-6",
+              "text": "Thus, for Car=1 we have satisfying entities e2 and e3 with a count of 2."
+            },
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-7",
+              "text": "For Car=2, only e2 satisfies the rule, so the count is 1."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-1",
+              "text": "Computing (3) is then straightforward."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-2",
+              "text": "The row index of non-zero elements of V^2(Pt) indicates entities that satisfy the second argument of the body, and the row index of elements with value >= Car of V^1(A(P1)*A(P2)*...*A(Pm)) indicates entities that satisfy the first argument of the head."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-3",
+              "text": "We find the entities satisfying both conditions by pairwise multiplication of those vectors."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-4",
+              "text": "For the example, when Car=1, the set of such entities is {e2, e3} with count 2."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-5",
+              "text": "When Car=2, the set is {e2} with count 1."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-9-Sentence-1",
+              "text": "Hence, we could have three versions of r, namely r1, r2, and r3, with three different Car values 1, 2, and 3 respectively."
+            },
+            {
+              "iri": "Section-11-Paragraph-9-Sentence-2",
+              "text": "For Car=1, IOPsupp(r1) = |{e2, e3}| = 2."
+            },
+            {
+              "iri": "Section-11-Paragraph-9-Sentence-3",
+              "text": "From Definition 4, IOPHC(r1) = 2/2 and IOPSC(r1) = 2/2."
+            },
+            {
+              "iri": "Section-11-Paragraph-9-Sentence-4",
+              "text": "For Car=2, IOPsupp(r2) = |{e2}| = 1, IOPHC(r2) = 1/1, and IOPSC(r2) = 1/2."
+            },
+            {
+              "iri": "Section-11-Paragraph-9-Sentence-5",
+              "text": "In this case, for Car=3 we get the same values as for Car=2."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-12",
+      "subtitle": "SHACL learning: From IOP rules to tree shapes",
+      "paragraphs": [
+        {
+          "iri": "Section-12-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-1-Sentence-1",
+              "text": "Now in line 8 of Algorithm 1 we turn to deriving SHACL trees, as illustrated in Fig. 3, from annotated IOP rules."
+            },
+            {
+              "iri": "Section-12-Paragraph-1-Sentence-2",
+              "text": "This procedure is used in SHACLearner."
+            },
+            {
+              "iri": "Section-12-Paragraph-1-Sentence-3",
+              "text": "We use a greedy search to aggregate the IOP rules for the subject argument and the object argument of each target predicate."
+            },
+            {
+              "iri": "Section-12-Paragraph-1-Sentence-4",
+              "text": "For example, the shape of Fig. 2 has the following tree: human(x, x) -> citizenOf(x, z1) ^ country(z1, z1) ^ father(x, z2) ^ human(z2, z2) ^ nativeLanguage(x, z3) ^ language(z3, z3)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-12-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-1",
+              "text": "The general form of a tree is given by P't(x, z0) -> exists(z*s, y*s) P'1( z0, z1 ) ^ P'1_1(z1, z2 ) ^ ... ^ P'n_1(z(n-1), y1 ) ^ P'1_2( z0, z1 ) ^ P'2_2(z1, z2 ) ^ ... ^ P'm_2(z(m-1), y2 ) ... ^ P'1^q(z0, z1^q ) ^ P'2^q(z1^q, z2^q ) ^ ... ^ P't^q(z(q-1)^q, y^q)."
+            },
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-2",
+              "text": "Here each P'i is either a predicate in the KG or its reverse with the subject and object bindings swapped."
+            },
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-3",
+              "text": "Free variables are universally quantified at the outside."
+            },
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-4",
+              "text": "In a tree we say the body of the shape is Pt and its head is the sequence of paths or branches, Path1 ^ Path2 ^ ... ^ Pathq."
+            },
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-5",
+              "text": "Hence we instantiate the atomic body to predict an instance of the head."
+            },
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-6",
+              "text": "All head branches and the body join in one shared variable, z0."
+            },
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-7",
+              "text": "To assess the quality of a tree we follow the quality measures for IOP rules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-12-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-3-Sentence-1",
+              "text": "Definition 6 (Tree: Treesupp, TreeSC)."
+            },
+            {
+              "iri": "Section-12-Paragraph-3-Sentence-2",
+              "text": "Let r be a tree of the above form."
+            },
+            {
+              "iri": "Section-12-Paragraph-3-Sentence-3",
+              "text": "Then a set of pairs of entities (e, e1), ..., (e, eq) satisfies the head of r, denoted headr(e), if there exist sequences of entities e1, ..., e(n-1), e1', ..., e(m-1), e1^q, e(q-1)' in the KG such that P1(e, e1), P2(e1, e2), ..., Pt(e(q-1)', eq) are facts in the KG."
+            },
+            {
+              "iri": "Section-12-Paragraph-3-Sentence-4",
+              "text": "A pair of entities (e'', e) satisfies the body of r, denoted Pt(e'', e), if Pt(e'', e) is a fact in the KG."
+            },
+            {
+              "iri": "Section-12-Paragraph-3-Sentence-5",
+              "text": "The tree support and tree standard confidence of r are given respectively by Treesupp(r) = |{ e : there exists e' such that headr(e) and Pt(e', e) }| and TreeSC(r) = Treesupp(r) / |{ e' : Pt(e'', e') }|."
+            }
+          ]
+        },
+        {
+          "iri": "Section-12-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-4-Sentence-1",
+              "text": "To learn each tree we employ a greedy search, GreedySearch, in line 8 of Algorithm 1."
+            },
+            {
+              "iri": "Section-12-Paragraph-4-Sentence-2",
+              "text": "To do so, we sort all rules that bind the subject argument (for the left-hand tree in Fig. 3) in a non-increasing order with respect to IOPSC."
+            },
+            {
+              "iri": "Section-12-Paragraph-4-Sentence-3",
+              "text": "Then we iteratively try to add the first rule in the list to the tree and compute the TreeSC."
+            },
+            {
+              "iri": "Section-12-Paragraph-4-Sentence-4",
+              "text": "If the TreeSC drops below the defined threshold (TreeSCMIN) we dismiss the rule; otherwise we add it to the tree."
+            },
+            {
+              "iri": "Section-12-Paragraph-4-Sentence-5",
+              "text": "For the right-hand tree we do the same with the rules that bind the object argument of the target predicate."
+            },
+            {
+              "iri": "Section-12-Paragraph-4-Sentence-6",
+              "text": "Since a conjunction of IOP rules forms a tree, TreeSC is bounded above by the minimum IOPSC of its constituent IOP rules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-12-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-5-Sentence-1",
+              "text": "These uncertain shapes can be presented as standard SHACL shapes by ignoring those that fail to satisfy minimum quality thresholds and deleting the quality annotations."
+            },
+            {
+              "iri": "Section-12-Paragraph-5-Sentence-2",
+              "text": "Aside from the cardinality, the tree may be straightforwardly interpreted as a set of SHACL shapes by reading off every path from the target predicate terminating at a node in the tree."
+            },
+            {
+              "iri": "Section-12-Paragraph-5-Sentence-3",
+              "text": "The body predicate is declared as sh:nodeShape and the path of head predicates as nested sh:path declarations within a sh:property declaration."
+            },
+            {
+              "iri": "Section-12-Paragraph-5-Sentence-4",
+              "text": "Cardinality of a path is read from the annotation of the branch at the terminating node, and declared by sh:minCount within the property declaration."
+            }
+          ]
+        },
+        {
+          "iri": "Section-12-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-6-Sentence-1",
+              "text": "SHACLearner supports all the SHACL Core features (node and property shapes)."
+            },
+            {
+              "iri": "Section-12-Paragraph-6-Sentence-2",
+              "text": "The limitations of SHACLearner with respect to SHACL Core are: (1) it treats all properties, both object and datatype properties, as plain predicates so there is no distinction; (2) it does not perform any kind of data type validation; and (3) of cardinality expressions, only min cardinality is handled."
+            },
+            {
+              "iri": "Section-12-Paragraph-6-Sentence-3",
+              "text": "SHACLearner does not mine SPARQL-like constraints (SHACL-SPARQL)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-12-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-7-Sentence-1",
+              "text": "3.7.1. Tree shapes are useful for human interaction"
+            }
+          ]
+        },
+        {
+          "iri": "Section-12-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-8-Sentence-1",
+              "text": "Shapes offer KG documentation as readable patterns and also provide a way to validate a KG."
+            },
+            {
+              "iri": "Section-12-Paragraph-8-Sentence-2",
+              "text": "Our novel tree shapes can additionally be used for KG-completion."
+            },
+            {
+              "iri": "Section-12-Paragraph-8-Sentence-3",
+              "text": "While there are several methods proposed to complete KGs automatically by predicting missing facts, these methods traverse the KG in a breadth-first manner."
+            },
+            {
+              "iri": "Section-12-Paragraph-8-Sentence-4",
+              "text": "Our proposed tree shapes instead provide an opportunity to work sequentially along a path of dependent questions such as birthPlace(Trump, ?) followed by capitalOf(?, ?)."
+            },
+            {
+              "iri": "Section-12-Paragraph-8-Sentence-5",
+              "text": "The latter question cannot even be asked until we have an answer for the former question, and the existence of an answer to the former gives us the confidence to proceed to the next question along the path."
+            },
+            {
+              "iri": "Section-12-Paragraph-8-Sentence-6",
+              "text": "This completion strategy is depth-first as it works through a shape tree."
+            },
+            {
+              "iri": "Section-12-Paragraph-8-Sentence-7",
+              "text": "Importantly, when we want to ask such completion questions of a human, this depth-first questioning strategy will reduce the cognitive load due to the contextual connections between successive questions."
+            },
+            {
+              "iri": "Section-12-Paragraph-8-Sentence-8",
+              "text": "This strategy for human-KG-completion is applied in a smart KG editor using trees that can be generated by SHACLearner."
+            }
+          ]
+        },
+        {
+          "iri": "Section-12-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-9-Sentence-1",
+              "text": "Tree shapes can also help a human expert extract a more intuitive concise sub-tree out of a deeper, more complex tree when desired for human interpretability."
+            },
+            {
+              "iri": "Section-12-Paragraph-9-Sentence-2",
+              "text": "If a tree with confidence TreeSCorig is pruned either by removing a branch or by removing an entire path of shape predicates, it remains a valid tree with a new TreeSCnew, with the property that TreeSCnew >= TreeSCorig."
+            },
+            {
+              "iri": "Section-12-Paragraph-9-Sentence-3",
+              "text": "Hence, by pruning a tree we obtain a simpler tree with higher confidence in the KG."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-13",
+      "subtitle": "Related work",
+      "paragraphs": [
+        {
+          "iri": "Section-13-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-1-Sentence-1",
+              "text": "There are some exploratory attempts to address learning SHACL shapes from KGs."
+            },
+            {
+              "iri": "Section-13-Paragraph-1-Sentence-2",
+              "text": "They are procedural methods without logical foundations and are not shown to be scalable to handle real-world KGs."
+            },
+            {
+              "iri": "Section-13-Paragraph-1-Sentence-3",
+              "text": "They work with a small amount of data and the representation formalism they use for their output is difficult to compare with the IOP rules which we use in this paper."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-2-Sentence-1",
+              "text": "One approach carries out the task in a semi-automatic manner: it provides a sample of data to an off-the-shelf graph structure learner and provides the output in an interactive interface for a human user to create SHACL shapes."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-3-Sentence-1",
+              "text": "Another work provides an interactive framework to define SHACL shapes with different complexities, including nested patterns that are similar to the trees that we use."
+            },
+            {
+              "iri": "Section-13-Paragraph-3-Sentence-2",
+              "text": "A formalisation of the approach is given, but there are no shape quality measures that are essential for large scale shape mining."
+            },
+            {
+              "iri": "Section-13-Paragraph-3-Sentence-3",
+              "text": "Because the paper does not provide a system that discovers patterns from massive KGs, we cannot deploy their method for comparison purposes."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-4-Sentence-1",
+              "text": "There are some works that use existing ontologies for KGs to generate SHACL shapes."
+            },
+            {
+              "iri": "Section-13-Paragraph-4-Sentence-2",
+              "text": "One work uses two different kinds of knowledge to automatically generate SHACL shapes: ontology constraint patterns as well as input ontologies."
+            },
+            {
+              "iri": "Section-13-Paragraph-4-Sentence-3",
+              "text": "In our work, we use the KG itself to discover the shapes, without relying on external modelling artefacts."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-5-Sentence-1",
+              "text": "From an application point of view, there are papers which investigate the application of SHACL shapes to the validation of RDF databases, but these do not contribute to the discovery of shapes."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-6-Sentence-1",
+              "text": "One proposal suggests an extended validation framework for the interaction between inference rules and SHACL shapes in KGs."
+            },
+            {
+              "iri": "Section-13-Paragraph-6-Sentence-2",
+              "text": "When a set of rules and shapes are provided, a method is proposed to detect which shapes could be violated by applying a rule."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-7-Sentence-1",
+              "text": "There are some attempts to provide logical foundations for the semantics of the SHACL language, including one that presents the semantics of recursive SHACL shapes."
+            },
+            {
+              "iri": "Section-13-Paragraph-7-Sentence-2",
+              "text": "By contrast, in our work we approach SHACL semantics in the reverse direction."
+            },
+            {
+              "iri": "Section-13-Paragraph-7-Sentence-3",
+              "text": "We start with logical formalisms with both well-defined semantics and motivating use cases to derive shapes that can be trivially expressed in a fragment of SHACL."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-14",
+      "subtitle": "Experiments: Transforming KGs with type predicates for experiments",
+      "paragraphs": [
+        {
+          "iri": "Section-14-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-14-Paragraph-1-Sentence-1",
+              "text": "We have implemented our SHACLEARNER based on Algorithm 1 and conducted experiments to assess it."
+            },
+            {
+              "iri": "Section-14-Paragraph-1-Sentence-2",
+              "text": "Our experiments are designed to prove the effectiveness of our SHACLEARNER at capturing shapes with varying confidence, length, and cardinality from various real-world massive knowledge graphs (KGs)."
+            },
+            {
+              "iri": "Section-14-Paragraph-1-Sentence-3",
+              "text": "Since our proposed system is the first method to learn shapes from massive KGs automatically, we have no benchmark with which to compare."
+            },
+            {
+              "iri": "Section-14-Paragraph-1-Sentence-4",
+              "text": "However, the performance of our system shows that it can handle the task satisfactorily and can be applied in practice."
+            }
+          ]
+        },
+        {
+          "iri": "Section-14-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-14-Paragraph-2-Sentence-1",
+              "text": "We demonstrate that SHACLEARNER is scalable so it can handle real-world massive KGs including DBpedia with over 11 million facts."
+            },
+            {
+              "iri": "Section-14-Paragraph-2-Sentence-2",
+              "text": "SHACLEARNER can learn several shapes each for various target predicates."
+            },
+            {
+              "iri": "Section-14-Paragraph-2-Sentence-3",
+              "text": "SHACLEARNER can discover diverse shapes with respect to the quality measurements of IOPSC and IOPHC."
+            },
+            {
+              "iri": "Section-14-Paragraph-2-Sentence-4",
+              "text": "SHACLEARNER discovers shapes of varying complexity and diversity with respect to length and cardinality."
+            },
+            {
+              "iri": "Section-14-Paragraph-2-Sentence-5",
+              "text": "SHACLEARNER discovers every high-quality rule (with IOPSC greater than or equal to 0.9) for a small complete KG, by comparison with an ideal learner."
+            },
+            {
+              "iri": "Section-14-Paragraph-2-Sentence-6",
+              "text": "SHACLEARNER discovers more complex shapes (trees) by aggregating learned IOP rules efficiently."
+            }
+          ]
+        },
+        {
+          "iri": "Section-14-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-14-Paragraph-3-Sentence-1",
+              "text": "Our four benchmark KGs are described in Table 1."
+            },
+            {
+              "iri": "Section-14-Paragraph-3-Sentence-2",
+              "text": "Three benchmarks, namely YAGO2s, Wikidata, and DBpedia, are common KGs and have been used in rule learning experiments previously."
+            },
+            {
+              "iri": "Section-14-Paragraph-3-Sentence-3",
+              "text": "The fourth is a small synthetic KG, Poker, for analyzing the completeness of our algorithm."
+            },
+            {
+              "iri": "Section-14-Paragraph-3-Sentence-4",
+              "text": "The Poker KG was adapted from the classic version to be a rich and correct KG for evaluation experiments."
+            },
+            {
+              "iri": "Section-14-Paragraph-3-Sentence-5",
+              "text": "Each poker hand comprises five playing cards drawn from a deck with thirteen ranks and four suits."
+            },
+            {
+              "iri": "Section-14-Paragraph-3-Sentence-6",
+              "text": "Each card is described using two attributes: suit and rank."
+            },
+            {
+              "iri": "Section-14-Paragraph-3-Sentence-7",
+              "text": "Each hand is assigned to any or all of nine different ranks, including High Card, One Pair, Two Pair, etc."
+            },
+            {
+              "iri": "Section-14-Paragraph-3-Sentence-8",
+              "text": "We randomly generate five hundred poker hands and all facts related to them to build a small but complete and correct KG."
+            },
+            {
+              "iri": "Section-14-Paragraph-3-Sentence-9",
+              "text": "Twenty-eight out of thirty-five predicates are unary predicates, such as fullHouse(x) where x is a specific poker hand."
+            }
+          ]
+        },
+        {
+          "iri": "Section-14-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-14-Paragraph-4-Sentence-1",
+              "text": "All experiments were conducted on an Intel Xeon CPU E5-2650 v4 at 2.20 GHz, with 66 GB RAM and running CentOS 8."
+            }
+          ]
+        },
+        {
+          "iri": "Section-14-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-14-Paragraph-5-Sentence-1",
+              "text": "Transforming KGs with type predicates for experiments is necessary since real-world KG models treat predicates and entities in a variety of ways."
+            },
+            {
+              "iri": "Section-14-Paragraph-5-Sentence-2",
+              "text": "We require a common representation for this work that clearly distinguishes entities and predicates."
+            },
+            {
+              "iri": "Section-14-Paragraph-5-Sentence-3",
+              "text": "We employ an abstract model that is used in Description Logic ontologies, where classes and types are named unary predicates, and roles (also called properties) are named binary predicates."
+            }
+          ]
+        },
+        {
+          "iri": "Section-14-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-14-Paragraph-6-Sentence-1",
+              "text": "Presenting the class and type information as unary predicates also allows us to learn fully abstracted (entity-free) shapes instead of partially instantiated shapes."
+            },
+            {
+              "iri": "Section-14-Paragraph-6-Sentence-2",
+              "text": "This feature is important since learning partially instantiated shapes can cause an explosion in the space of possible shapes."
+            },
+            {
+              "iri": "Section-14-Paragraph-6-Sentence-3",
+              "text": "Using self-loop links for unary predicates is convenient syntactic sugar to keep the presentation in the triple format, as for the original input KGs."
+            }
+          ]
+        },
+        {
+          "iri": "Section-14-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-14-Paragraph-7-Sentence-1",
+              "text": "In real-world KGs, concept or class membership may be modeled as entity instances of a binary fact."
+            },
+            {
+              "iri": "Section-14-Paragraph-7-Sentence-2",
+              "text": "For example, DBpedia contains predicates where the second arguments of these predicates are types or classes."
+            },
+            {
+              "iri": "Section-14-Paragraph-7-Sentence-3",
+              "text": "Instead, we choose to model types and classes with unary predicates."
+            },
+            {
+              "iri": "Section-14-Paragraph-7-Sentence-4",
+              "text": "To do so, we make new predicates from facts in the form, where x is the name of an album."
+            },
+            {
+              "iri": "Section-14-Paragraph-7-Sentence-5",
+              "text": "Then we produce new unary facts based on the new predicate and related facts."
+            }
+          ]
+        },
+        {
+          "iri": "Section-14-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-14-Paragraph-8-Sentence-1",
+              "text": "We use the two type-like predicates from DBpedia 3.8 and the one from Wikidata to generate our unary predicates and facts."
+            },
+            {
+              "iri": "Section-14-Paragraph-8-Sentence-2",
+              "text": "These predicates each have a class as their second argument."
+            },
+            {
+              "iri": "Section-14-Paragraph-8-Sentence-3",
+              "text": "To prune the classes with few instances for which learning may be pointless, we consider only our unary predicates which have at least one hundred facts."
+            },
+            {
+              "iri": "Section-14-Paragraph-8-Sentence-4",
+              "text": "We retain the original predicates and facts in the KG as well as extending it with our new ones."
+            },
+            {
+              "iri": "Section-14-Paragraph-8-Sentence-5",
+              "text": "In Table 1, we report the specifications of two benchmarks where we have added the unary predicates and facts."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-15",
+      "subtitle": "Experiments: Learning IOP rules",
+      "paragraphs": [
+        {
+          "iri": "Section-15-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-15-Paragraph-1-Sentence-1",
+              "text": "We follow the established approach for evaluating KG rule-learning methods, that is, measuring the quantity and quality of distinct rules learnt."
+            },
+            {
+              "iri": "Section-15-Paragraph-1-Sentence-2",
+              "text": "Rule quality is measured by Inverse open path standard confidence (IOPSC) and Inverse open path head coverage (IOPHC)."
+            },
+            {
+              "iri": "Section-15-Paragraph-1-Sentence-3",
+              "text": "We randomly select 50 target predicates from Wikidata and DBPedia unary predicates (157 and 355 respectively)."
+            },
+            {
+              "iri": "Section-15-Paragraph-1-Sentence-4",
+              "text": "We use all binary predicates of YAGO2s (i.e., 37) as target predicates."
+            },
+            {
+              "iri": "Section-15-Paragraph-1-Sentence-5",
+              "text": "Each binary target predicate serves as two target predicates, once in the straight form (where the object argument of the predicate is the common variable to connect the head) and secondly in its reverse form (where the subject argument serves to connect)."
+            },
+            {
+              "iri": "Section-15-Paragraph-1-Sentence-6",
+              "text": "In this manner, we ensure that the results of SHACLEARNER on YAGO2s with its binary predicates as targets is comparable with the results for Wikidata and DBpedia that have unary predicates as targets."
+            },
+            {
+              "iri": "Section-15-Paragraph-1-Sentence-7",
+              "text": "Hence for YAGO2s we have 74 target predicates."
+            },
+            {
+              "iri": "Section-15-Paragraph-1-Sentence-8",
+              "text": "A 10 hour limit is set for learning each target predicate."
+            }
+          ]
+        },
+        {
+          "iri": "Section-15-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-15-Paragraph-2-Sentence-1",
+              "text": "Table 2 shows the number of rules, the average numbers of quality IOP rules found, the proportion of target predicates for which at least one IOP rule was found, and the running times in hours, averaged over the targets."
+            },
+            {
+              "iri": "Section-15-Paragraph-2-Sentence-2",
+              "text": "Only high quality rules meeting minimum quality thresholds are included in these figures, that is, with IOPSC greater than or equal to 0.1 and IOPHC greater than or equal to 0.01, thresholds established in comparative work."
+            },
+            {
+              "iri": "Section-15-Paragraph-2-Sentence-3",
+              "text": "These thresholds are quite low, so rules of low quality are also included."
+            },
+            {
+              "iri": "Section-15-Paragraph-2-Sentence-4",
+              "text": "Generally, selecting a low threshold at the time of learning is a safe choice since the rules can be further pruned by applying stricter quality thresholds later on."
+            }
+          ]
+        },
+        {
+          "iri": "Section-15-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-15-Paragraph-3-Sentence-1",
+              "text": "SHACLEARNER shows satisfactory performance in terms of both the runtime and the numbers of quality rules mined."
+            },
+            {
+              "iri": "Section-15-Paragraph-3-Sentence-2",
+              "text": "Note that rules found have a variety of lengths and cardinalities."
+            },
+            {
+              "iri": "Section-15-Paragraph-3-Sentence-3",
+              "text": "To better present the quality performance of rules, we illustrate the distribution of rules with respect to the features, IOPSC, IOPHC, cardinality and length, and also IOPSC vs length."
+            },
+            {
+              "iri": "Section-15-Paragraph-3-Sentence-4",
+              "text": "In the following, the proportion of mined rules having the various feature values is presented, to more evenly demonstrate the quality of performance over the three very different KGs."
+            }
+          ]
+        },
+        {
+          "iri": "Section-15-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-15-Paragraph-4-Sentence-1",
+              "text": "The distribution of mined rules with respect to their IOPSC and IOPHC is shown in the figures."
+            },
+            {
+              "iri": "Section-15-Paragraph-4-Sentence-2",
+              "text": "In the left-hand chart we observe a consistent decrease in the proportion of quality rules as the IOPSC increases."
+            },
+            {
+              "iri": "Section-15-Paragraph-4-Sentence-3",
+              "text": "In the right hand chart we see a similar pattern for increasing IOPHC, but the decrease is not as consistent, showing there must be many relevant rules with many covered head instances."
+            },
+            {
+              "iri": "Section-15-Paragraph-4-Sentence-4",
+              "text": "Over all benchmarks, the majority of learned rules have lower IOPSC and IOPHC."
+            },
+            {
+              "iri": "Section-15-Paragraph-4-Sentence-5",
+              "text": "This is expected because the statistical likelihood of poor quality rules is much higher."
+            },
+            {
+              "iri": "Section-15-Paragraph-4-Sentence-6",
+              "text": "Indeed, we show experimentally that our pruning techniques, that are necessary for scalability, prune away predominantly lower quality rules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-15-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-15-Paragraph-5-Sentence-1",
+              "text": "With respect to IOPSC, proportionally more quality rules are learnt from DBpedia than from the other KGs, with Wikidata coming second, ahead of YAGO2s."
+            },
+            {
+              "iri": "Section-15-Paragraph-5-Sentence-2",
+              "text": "This phenomenon might be a result of our deliberate selection of type-like unary predicates as targets for DBPedia and Wikidata, whereas for YAGO2s we use every one of the 37 binary predicates as a target."
+            }
+          ]
+        },
+        {
+          "iri": "Section-15-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-15-Paragraph-6-Sentence-1",
+              "text": "The distribution of mined rules with respect to their cardinalities shows that the largest proportion of rules has a cardinality of 1, as expected, as they have the least stringent requirements to be met in the KG."
+            },
+            {
+              "iri": "Section-15-Paragraph-6-Sentence-2",
+              "text": "We observe an expected decrease with greater cardinalities as they demand tighter restrictions to be satisfied."
+            },
+            {
+              "iri": "Section-15-Paragraph-6-Sentence-3",
+              "text": "YAGO2 demonstrates a tendency towards higher cardinalities than the other KGs, possibly a result of its more curated development."
+            }
+          ]
+        },
+        {
+          "iri": "Section-15-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-15-Paragraph-7-Sentence-1",
+              "text": "The distribution of mined rules with respect to their lengths shows that as the length increases, the number of rules would increase since the space of possible rules grows, and this is what we see."
+            }
+          ]
+        },
+        {
+          "iri": "Section-15-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-15-Paragraph-8-Sentence-1",
+              "text": "For a concrete example of SHACL learning, we show the following three IOP rules mined from DBpedia in the experiments."
+            },
+            {
+              "iri": "Section-15-Paragraph-8-Sentence-2",
+              "text": "The IOPSC, IOPHC, and Cardinality annotations respectively prefix each rule."
+            },
+            {
+              "iri": "Section-15-Paragraph-8-Sentence-3",
+              "text": "The first rule indicates x should belong to an album that has y as record label."
+            },
+            {
+              "iri": "Section-15-Paragraph-8-Sentence-4",
+              "text": "The second rule requires a song (x) to have at least one producer while the third rule requires a song to have at least two producers, and these two rules are distinguished by the cardinality annotation."
+            },
+            {
+              "iri": "Section-15-Paragraph-8-Sentence-5",
+              "text": "As we discussed, the third rule is more constraining than the second, so the confidence of the third rule is lower than the confidence of the second, based on the KG data."
+            }
+          ]
+        },
+        {
+          "iri": "Section-15-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-15-Paragraph-9-Sentence-1",
+              "text": "Using rules found in the experiments, we further illustrate the practical meaning of the IOPSC and IOPHC qualities."
+            },
+            {
+              "iri": "Section-15-Paragraph-9-Sentence-2",
+              "text": "While IOPSC determines the confidence of a rule based on counting the proportion of target predicate instances for which the rule holds true in the KG, IOPHC indicates the proportion of rule consequent instances that are justified by target predicate instances in the KG, thereby indicating the relevance of the rule to the target."
+            },
+            {
+              "iri": "Section-15-Paragraph-9-Sentence-3",
+              "text": "In Wikidata+UP, all unary predicates are occupations such as singer or entrepreneur, so all the entities which have these types turn out to be persons even though there is no explicit person type in our KG."
+            },
+            {
+              "iri": "Section-15-Paragraph-9-Sentence-4",
+              "text": "Thus, the occupations all have very similar IOP rules about each of them with high IOPSC and low IOPHC."
+            },
+            {
+              "iri": "Section-15-Paragraph-9-Sentence-5",
+              "text": "On the other hand, for these unary occupation predicates there are also some IOP rules with high IOPHC that apply only to one specific unary predicate."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-16",
+      "subtitle": "Experiments: Completeness analysis of IOP rule learning",
+      "paragraphs": [
+        {
+          "iri": "Section-16-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-16-Paragraph-1-Sentence-1",
+              "text": "SHACLEARNER uses two tricks to significantly reduce the search space for IOP rules in PathFinding of Algorithm 1, namely the prior Sampling and the heuristic pruning used inside PathFinding that uses the embedding-based scoring function."
+            },
+            {
+              "iri": "Section-16-Paragraph-1-Sentence-2",
+              "text": "We conduct experiments to explore how these two pruning methods affect SHACLEARNER with regard to the quality and quantity of learnt rules."
+            },
+            {
+              "iri": "Section-16-Paragraph-1-Sentence-3",
+              "text": "To do so, we create three variants of SHACLEARNER as follows."
+            }
+          ]
+        },
+        {
+          "iri": "Section-16-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-16-Paragraph-2-Sentence-1",
+              "text": "(-S+H): SHACLEARNER that does not sample and so uses the complete input KG in all components, including embedding learning, heuristic pruning, and ultimate evaluation."
+            },
+            {
+              "iri": "Section-16-Paragraph-2-Sentence-2",
+              "text": "(+S-H): SHACLEARNER that samples but does not use heuristic pruning and so generates rules based on the sampled KG and evaluates rules on the complete KG."
+            },
+            {
+              "iri": "Section-16-Paragraph-2-Sentence-3",
+              "text": "(-S-H): SHACLEARNER that does not use sampling nor heuristic pruning."
+            },
+            {
+              "iri": "Section-16-Paragraph-2-Sentence-4",
+              "text": "This system is an ideal IOP rule learner that generates and evaluates all possible rules up to the maximum length parameter."
+            },
+            {
+              "iri": "Section-16-Paragraph-2-Sentence-5",
+              "text": "Since this method is a brute-force search, it cannot handle any real-world KG such as those we used in the performance evaluation."
+            },
+            {
+              "iri": "Section-16-Paragraph-2-Sentence-6",
+              "text": "(+S+H): SHACLEARNER with its full functionality."
+            }
+          ]
+        },
+        {
+          "iri": "Section-16-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-16-Paragraph-3-Sentence-1",
+              "text": "Since we use only the small Poker KG for this experiment, we can handle the task without sampling or heuristic mechanisms."
+            },
+            {
+              "iri": "Section-16-Paragraph-3-Sentence-2",
+              "text": "We use all 28 unary predicates as the target predicates."
+            },
+            {
+              "iri": "Section-16-Paragraph-3-Sentence-3",
+              "text": "The first row shows the number of IOP rules that are learnt by ideal, modified SHACLEARNER (-S-H) with no pruning, for all target predicates, separated into various IOPSC intervals."
+            },
+            {
+              "iri": "Section-16-Paragraph-3-Sentence-4",
+              "text": "The latter rows show, for each variant, the percentage difference in the number of rules found, relative to the first row."
+            },
+            {
+              "iri": "Section-16-Paragraph-3-Sentence-5",
+              "text": "The last row corresponds to unmodified SHACLEARNER of Algorithm 1."
+            }
+          ]
+        },
+        {
+          "iri": "Section-16-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-16-Paragraph-4-Sentence-1",
+              "text": "For example, consider the first column (the number of learnt rules with IOPSC in range of [0.1, 0.3))."
+            },
+            {
+              "iri": "Section-16-Paragraph-4-Sentence-2",
+              "text": "In the first row, we have 163 rules learnt by ideal rule learner (SHACLEARNER (-S-H)) that is inefficient yet complete."
+            },
+            {
+              "iri": "Section-16-Paragraph-4-Sentence-3",
+              "text": "In the second row, we have the performance of the SHACLEARNER (-S+H), the system without sampling, but with the heuristic rule learning module, in comparison with the ideal rule learner (SHACLEARNER (-S-H)), given as -10%."
+            },
+            {
+              "iri": "Section-16-Paragraph-4-Sentence-4",
+              "text": "That means SHACLEARNER (-S+H) learns 146 rules with IOPSC in range of [0.1, 0.3): 17 or 10% fewer rules than the ideal learner."
+            }
+          ]
+        },
+        {
+          "iri": "Section-16-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-16-Paragraph-5-Sentence-1",
+              "text": "We observe that SHACLEARNER does not miss any rules of the highest quality, i.e., with IOPSC greater than or equal to 0.9."
+            },
+            {
+              "iri": "Section-16-Paragraph-5-Sentence-2",
+              "text": "SHACLEARNER\u2019s pruning methods cause it to fail to discover more rules of lower quality, with the number of missing rules increasing as quality decreases."
+            },
+            {
+              "iri": "Section-16-Paragraph-5-Sentence-3",
+              "text": "This is a reassuring property, since the goal of pruning is to improve the computational performance without missing high-quality rules."
+            },
+            {
+              "iri": "Section-16-Paragraph-5-Sentence-4",
+              "text": "In real applications, we will typically retain and action only the highest quality rules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-16-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-16-Paragraph-6-Sentence-1",
+              "text": "We observe that, unlike the other pruning variants, using heuristic pruning alone in (-S+H) does not uniformly increase in effectiveness with decreasing rule quality."
+            },
+            {
+              "iri": "Section-16-Paragraph-6-Sentence-2",
+              "text": "This may be because using the complete KG for learning rules about all target predicates could harm the quality of the learnt embeddings used in the scoring function of SHACLEARNER."
+            },
+            {
+              "iri": "Section-16-Paragraph-6-Sentence-3",
+              "text": "The better quality of embeddings extracted from the sampled KG arises from our sampling method that creates a KG that is customised for the target predicate."
+            },
+            {
+              "iri": "Section-16-Paragraph-6-Sentence-4",
+              "text": "All entities in the sampled KG are either directly related to the target predicate or close neighbours of directly related entities."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-17",
+      "subtitle": "Experiments: Learning trees from IOP rules",
+      "paragraphs": [
+        {
+          "iri": "Section-17-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-17-Paragraph-1-Sentence-1",
+              "text": "Now we turn to presenting results for the trees that are built based on the IOP rules discovered in the experiments."
+            },
+            {
+              "iri": "Section-17-Paragraph-1-Sentence-2",
+              "text": "We report the characteristics of discovered trees and use a value of 0.1 for the TreeSCMIN parameter, showing average TreeSC for each KG, along with the average number of branches in the trees and the average tree-building runtime."
+            },
+            {
+              "iri": "Section-17-Paragraph-1-Sentence-3",
+              "text": "The number of trees for each KG is defined by the number of target predicates for which we have at least one IOP rule."
+            }
+          ]
+        },
+        {
+          "iri": "Section-17-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-17-Paragraph-2-Sentence-1",
+              "text": "The results show the running time for aggregating IOP rules into trees is lower than the initial IOP mining time by a factor greater than 10."
+            },
+            {
+              "iri": "Section-17-Paragraph-2-Sentence-2",
+              "text": "If, on the other hand, we wanted to discover such complex shapes from scratch, it would be exhaustively time-consuming due to the sensitivity of rule learners to the maximum length of rules."
+            },
+            {
+              "iri": "Section-17-Paragraph-2-Sentence-3",
+              "text": "The number of potential rules in the search space grows exponentially with the maximum number of predicates of the rules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-17-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-17-Paragraph-3-Sentence-1",
+              "text": "The average number of branches in the mined trees are 50%, 31%, and 56% of the corresponding number of mined rules."
+            },
+            {
+              "iri": "Section-17-Paragraph-3-Sentence-2",
+              "text": "Hence, by imposing the additional tree-shaped constraint over the basic IOP-shaped constraint, at least 44% of IOP rules are pruned."
+            }
+          ]
+        },
+        {
+          "iri": "Section-17-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-17-Paragraph-4-Sentence-1",
+              "text": "For an example of tree shape learning, we show a fragment of a 39-branched tree mined from DBpedia by aggregating IOP rules in the experiments."
+            },
+            {
+              "iri": "Section-17-Paragraph-4-Sentence-2",
+              "text": "Here, the first annotation value (0.13) presents the SC of the tree and the subsequent values at the beginning of each branch indicate the branch cardinality."
+            },
+            {
+              "iri": "Section-17-Paragraph-4-Sentence-3",
+              "text": "This tree can be read as saying that a song has an album with a record label, an album with two producers, an album with a genre, and an artist who is a musical artist."
+            }
+          ]
+        },
+        {
+          "iri": "Section-17-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-17-Paragraph-5-Sentence-1",
+              "text": "As can be seen here, there remains an opportunity for improving tree shapes for simplicity and easier interpretation by unifying some variables that occur in predicates that occur in multiple branches."
+            },
+            {
+              "iri": "Section-17-Paragraph-5-Sentence-2",
+              "text": "We plan to investigate this potential post-processing step in future work."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-18",
+      "subtitle": "Conclusion",
+      "paragraphs": [
+        {
+          "iri": "Section-18-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-18-Paragraph-1-Sentence-1",
+              "text": "In this paper we propose a method to learn SHACL shapes from KGs as a way to describe KG patterns, to validate KGs, and also to support new data entry."
+            },
+            {
+              "iri": "Section-18-Paragraph-1-Sentence-2",
+              "text": "For entities that satisfy target predicates, our shapes describe conjunctive paths of constraints over properties, enhanced with minimum cardinality constraints."
+            },
+            {
+              "iri": "Section-18-Paragraph-1-Sentence-3",
+              "text": "We reduce the SHACL learning problem to learning a novel kind of rules, Inverse Open Path rules (IOP)."
+            },
+            {
+              "iri": "Section-18-Paragraph-1-Sentence-4",
+              "text": "We introduce rule quality measures IOP Standard Confidence, IOP Head Coverage, and Cardinality which augment the rules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-18-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-18-Paragraph-2-Sentence-1",
+              "text": "IOPSC effectively extends SHACL with shapes, representing the quantified uncertainty of a candidate shape to be selected for interestingness or for KG verification."
+            },
+            {
+              "iri": "Section-18-Paragraph-2-Sentence-2",
+              "text": "We also propose a method to aggregate learnt IOP rules in order to discover more complex shapes, that is, trees."
+            },
+            {
+              "iri": "Section-18-Paragraph-2-Sentence-3",
+              "text": "The shapes support efficient and interpretable human validation in a depth-first manner and are employed, for example, in an editor called Schimatos for manual knowledge graph completion."
+            },
+            {
+              "iri": "Section-18-Paragraph-2-Sentence-4",
+              "text": "The shapes can also be used to complete information triggered by entities with only a type or class declaration by automatically generating dynamic data entry forms."
+            }
+          ]
+        },
+        {
+          "iri": "Section-18-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-18-Paragraph-3-Sentence-1",
+              "text": "In this manual mode, they can also be used more traditionally to complete missing facts for a target predicate, as well as other predicates related to the target, while enabling the acquisition of facts about entities that are entirely missing from the KG."
+            },
+            {
+              "iri": "Section-18-Paragraph-3-Sentence-2",
+              "text": "To learn such shapes we adapt an embedding-based Open Path Rule Learner (OPRL) by introducing the following novel components: (1) we propose an IOP rule language that allows us to mine rules with open variables, with one predicate forming the body and a chain of predicates as the head; (2) we introduce cardinality constraints and tree shapes for more expressive patterns; and (3) we propose an efficient method to evaluate IOP rules and trees by exactly computing the quality measures of each rule using fast matrix and vector operations."
+            }
+          ]
+        },
+        {
+          "iri": "Section-18-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-18-Paragraph-4-Sentence-1",
+              "text": "Our experiments show that SHACLearner can mine IOP rules of various lengths, cardinalities, and qualities from three massive real-world benchmark KGs including Yago, Wikidata, and DBpedia."
+            },
+            {
+              "iri": "Section-18-Paragraph-4-Sentence-2",
+              "text": "Learning shape constraints from schema-free knowledge bases, such as most modern KGs, is a challenging task, beginning with the formalism of constraints that determine the scope of knowledge that can be acquired."
+            },
+            {
+              "iri": "Section-18-Paragraph-4-Sentence-3",
+              "text": "The next challenge is designing an efficient learning method, where dealing with uncertainty in the constraints and the learning process adds an extra dimension of challenge but also adds utility."
+            },
+            {
+              "iri": "Section-18-Paragraph-4-Sentence-4",
+              "text": "A good learning algorithm should scale gracefully so that discovered constraints are relatively more certain than those that are missed, and SHACLearner establishes a benchmark for this problem."
+            }
+          ]
+        },
+        {
+          "iri": "Section-18-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-18-Paragraph-5-Sentence-1",
+              "text": "In future work, we will validate the shapes we learn with SHACLearner via formal human-expert evaluation and further extend the expressivity of the shapes we can discover."
+            },
+            {
+              "iri": "Section-18-Paragraph-5-Sentence-2",
+              "text": "We also propose to redesign the SHACLearner algorithm for a MapReduce implementation to handle extremely massive KGs with tens of billions of facts, such as the most recent version of Wikidata."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

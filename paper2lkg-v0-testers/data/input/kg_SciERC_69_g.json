@@ -1,0 +1,1229 @@
+{
+  "iri": "Paper-69",
+  "title": "E91-1012",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-69-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-69-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-1",
+              "text": "A purely functional implementation of LR-parsers is given , together with a simple correctness proof ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-2",
+              "text": "It is presented as a generalization of the recursive descent parser ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+              "text": "For non-LR grammars the time-complexity of our parser is cubic if the functions that constitute the parser are implemented as memo-functions , i.e. functions that memorize the results of previous invocations ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-4",
+              "text": "Memo-functions also facilitate a simple way to construct a very compact representation of the parse forest ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-5",
+              "text": "For LR -LRB- 0 -RRB- grammars , our algorithm is closely related to the recursive ascent parsers recently discovered by Kruse-man Aretz -LSB- 1 -RSB- and Roberts -LSB- 2 -RSB- ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-6",
+              "text": "Extended CF grammars -LRB- grammars with regular expressions at the right hand side -RRB- can be parsed with a simple modification of the LR-parser for normal CF grammars ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00030994415283203125,
+    74.33527612686157,
+    70.97853207588196,
+    70.36315679550171,
+    0.05950617790222168,
+    9.989738464355469e-05,
+    0.00012636184692382812,
+    270.2940068244934,
+    271.3360140323639,
+    3.4940600395202637,
+    0.06616806983947754,
+    0.010850906372070312,
+    0.00019288063049316406,
+    68.14027500152588,
+    0.0018889904022216797,
+    0.0362391471862793,
+    0.001415252685546875,
+    4.475130796432495,
+    20.532907962799072,
+    23.32075810432434,
+    393.2538869380951,
+    6.568122148513794,
+    253.62886118888855,
+    3.0090601444244385,
+    0.0019898414611816406,
+    0.012005090713500977
+  ],
+  "nodes": {
+    "Entity-our_algorithm": {
+      "node_id": "our_algorithm",
+      "disambiguation_index": 0,
+      "label": "our algorithm",
+      "aliases": [
+        "our algorithm"
+      ],
+      "types": [
+        "algorithm"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Our algorithm refers to a purely functional implementation of LR-parsers that generalizes the recursive descent parser and is particularly efficient for non-LR grammars when using memo-functions, achieving cubic time complexity.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "our algorithm",
+          "local_types": [
+            "algorithm"
+          ],
+          "iri": "Entity-our_algorithm-Mention-1"
+        }
+      ],
+      "relevance": 0.7705078125
+    },
+    "Entity-a_purely_functional_implementation_of_lr-parsers": {
+      "node_id": "a_purely_functional_implementation_of_lr-parsers",
+      "disambiguation_index": 0,
+      "label": "A purely functional implementation of LR-parsers",
+      "aliases": [
+        "A purely functional implementation of LR-parsers"
+      ],
+      "types": [
+        "parser",
+        "implementation",
+        "LR-parser"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A purely functional implementation of LR-parsers refers to a method of constructing LR-parsers using functional programming principles, which includes a correctness proof and generalizes the recursive descent parser, while also utilizing memoization to optimize performance and representation of parse forests.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "A purely functional implementation of LR-parsers",
+          "local_types": [
+            "parser",
+            "implementation",
+            "LR-parser"
+          ],
+          "iri": "Entity-a_purely_functional_implementation_of_lr-parsers-Mention-1"
+        }
+      ],
+      "relevance": 0.7529296875
+    },
+    "Entity-the_time-complexity_of_our_parser": {
+      "node_id": "the_time-complexity_of_our_parser",
+      "disambiguation_index": 0,
+      "label": "the time-complexity of our parser",
+      "aliases": [
+        "the time-complexity of our parser"
+      ],
+      "types": [
+        "time-complexity",
+        "parser"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The time-complexity of our parser refers to the computational complexity associated with parsing non-LR grammars using a parser that exhibits cubic time complexity when implemented with memo-functions, which store results of previous function calls to optimize performance.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the time-complexity of our parser",
+          "local_types": [
+            "time-complexity",
+            "parser"
+          ],
+          "iri": "Entity-the_time-complexity_of_our_parser-Mention-1"
+        }
+      ],
+      "relevance": 0.7080078125
+    },
+    "Entity-a_generalization_of_the_recursive_descent_parser": {
+      "node_id": "a_generalization_of_the_recursive_descent_parser",
+      "disambiguation_index": 0,
+      "label": "a generalization of the recursive descent parser",
+      "aliases": [
+        "a generalization of the recursive descent parser"
+      ],
+      "types": [
+        "concept",
+        "parser"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A generalization of the recursive descent parser refers to a parser implementation that extends the capabilities of traditional recursive descent parsing by incorporating memoization techniques, allowing it to handle a broader class of grammars, including non-LR grammars, while maintaining efficient parsing performance.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "a generalization of the recursive descent parser",
+          "local_types": [
+            "concept",
+            "parser"
+          ],
+          "iri": "Entity-a_generalization_of_the_recursive_descent_parser-Mention-1"
+        }
+      ],
+      "relevance": 0.70263671875
+    },
+    "Entity-recursive_ascent_parser": {
+      "node_id": "recursive_ascent_parser",
+      "disambiguation_index": 0,
+      "label": "recursive ascent parsers",
+      "aliases": [
+        "recursive ascent parsers"
+      ],
+      "types": [
+        "parser",
+        "algorithm"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Recursive ascent parsers are a type of parsing algorithm that generalizes the recursive descent parser and is specifically designed for LR(0) grammars, facilitating efficient parsing through a functional approach.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "recursive ascent parsers",
+          "local_types": [
+            "parser",
+            "algorithm"
+          ],
+          "iri": "Entity-recursive_ascent_parser-Mention-1"
+        }
+      ],
+      "relevance": 0.69921875
+    },
+    "Entity-cubic": {
+      "node_id": "cubic",
+      "disambiguation_index": 0,
+      "label": "cubic",
+      "aliases": [
+        "cubic"
+      ],
+      "types": [
+        "complexity",
+        "complexity class"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of the paper, 'cubic' refers to the time-complexity of the parser for non-LR grammars when implemented using memo-functions, indicating that the computational resources required grow cubically with the size of the input.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "cubic",
+          "local_types": [
+            "complexity",
+            "complexity class"
+          ],
+          "iri": "Entity-cubic-Mention-1"
+        }
+      ],
+      "relevance": 0.6806640625
+    },
+    "Entity-lr-parser_for_normal_cf_grammar": {
+      "node_id": "lr-parser_for_normal_cf_grammar",
+      "disambiguation_index": 0,
+      "label": "LR-parser for normal CF grammars",
+      "aliases": [
+        "LR-parser for normal CF grammars"
+      ],
+      "types": [
+        "parser",
+        "grammar"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "An LR-parser for normal context-free grammars is a type of parser that utilizes the LR parsing technique to analyze and process strings generated by normal context-free grammars, which are defined by specific production rules without ambiguity.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "LR-parser for normal CF grammars",
+          "local_types": [
+            "parser",
+            "grammar"
+          ],
+          "iri": "Entity-lr-parser_for_normal_cf_grammar-Mention-1"
+        }
+      ],
+      "relevance": 0.6806640625
+    },
+    "Entity-lr-parser": {
+      "node_id": "lr-parser",
+      "disambiguation_index": 0,
+      "label": "LR-parser",
+      "aliases": [
+        "LR-parsers",
+        "LR-parser"
+      ],
+      "types": [
+        "algorithm",
+        "parser"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "An LR-parser is a type of algorithm used in computer science for parsing context-free grammars, particularly those that can be processed using a left-to-right scanning of the input and producing a rightmost derivation.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "LR-parser",
+          "local_types": [
+            "algorithm",
+            "parser"
+          ],
+          "iri": "Entity-lr-parser-Mention-1"
+        },
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "LR-parsers",
+          "local_types": [
+            "parser",
+            "algorithm"
+          ],
+          "iri": "Entity-lr-parser-Mention-2"
+        }
+      ],
+      "relevance": 0.6630859375
+    },
+    "Entity-kruse-man_aretz": {
+      "node_id": "kruse-man_aretz",
+      "disambiguation_index": 0,
+      "label": "Kruse-man Aretz",
+      "aliases": [
+        "Kruse-man Aretz"
+      ],
+      "types": [
+        "researcher",
+        "author",
+        "person"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Kruse-man Aretz is a researcher known for discovering recursive ascent parsers related to LR(0) grammars.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Kruse-man Aretz",
+          "local_types": [
+            "researcher",
+            "author",
+            "person"
+          ],
+          "iri": "Entity-kruse-man_aretz-Mention-1"
+        }
+      ],
+      "relevance": 0.64208984375
+    },
+    "Entity-recursive_descent_parser": {
+      "node_id": "recursive_descent_parser",
+      "disambiguation_index": 0,
+      "label": "recursive descent parser",
+      "aliases": [
+        "recursive descent parser"
+      ],
+      "types": [
+        "parser",
+        "computer science",
+        "concept",
+        "algorithm",
+        "parsing technique"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A recursive descent parser is a top-down parsing technique used in computer science that constructs a parse tree for a given input string by recursively breaking down the input according to the grammar rules of a formal language.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "recursive descent parser",
+          "local_types": [
+            "parser",
+            "computer science",
+            "concept",
+            "algorithm",
+            "parsing technique"
+          ],
+          "iri": "Entity-recursive_descent_parser-Mention-1"
+        }
+      ],
+      "relevance": 0.6357421875
+    },
+    "Entity-memo-functions": {
+      "node_id": "memo-functions",
+      "disambiguation_index": 0,
+      "label": "memo-functions",
+      "aliases": [
+        "memo-functions",
+        "Memo-functions"
+      ],
+      "types": [
+        "function type",
+        "programming concept",
+        "function",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Memo-functions are a type of function that store the results of previous invocations to optimize performance, particularly in the context of parsing algorithms for non-LR grammars.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "memo-functions",
+          "local_types": [
+            "function type",
+            "programming concept",
+            "function",
+            "concept"
+          ],
+          "iri": "Entity-memo-functions-Mention-1"
+        },
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Memo-functions",
+          "local_types": [
+            "programming concept",
+            "function"
+          ],
+          "iri": "Entity-memo-functions-Mention-2"
+        }
+      ],
+      "relevance": 0.6279296875
+    },
+    "Entity-lr_-lrb-_0_-rrb-_grammar": {
+      "node_id": "lr_-lrb-_0_-rrb-_grammar",
+      "disambiguation_index": 0,
+      "label": "LR -LRB- 0 -RRB- grammars",
+      "aliases": [
+        "LR -LRB- 0 -RRB- grammars"
+      ],
+      "types": [
+        "formal language",
+        "grammar"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "LR -LRB- 0 -RRB- grammars are a class of formal grammars used in computer science for parsing and defining the syntax of programming languages.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "LR -LRB- 0 -RRB- grammars",
+          "local_types": [
+            "formal language",
+            "grammar"
+          ],
+          "iri": "Entity-lr_-lrb-_0_-rrb-_grammar-Mention-1"
+        }
+      ],
+      "relevance": 0.6259765625
+    },
+    "Entity-a_very_compact_representation_of_the_parse_forest": {
+      "node_id": "a_very_compact_representation_of_the_parse_forest",
+      "disambiguation_index": 0,
+      "label": "a very compact representation of the parse forest",
+      "aliases": [
+        "a very compact representation of the parse forest"
+      ],
+      "types": [
+        "representation",
+        "parse forest"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A very compact representation of the parse forest refers to an efficient data structure or format generated by memo-functions that captures the possible parse trees of a given input string in a concise manner, thereby optimizing the storage and retrieval of parsing information.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "a very compact representation of the parse forest",
+          "local_types": [
+            "representation",
+            "parse forest"
+          ],
+          "iri": "Entity-a_very_compact_representation_of_the_parse_forest-Mention-1"
+        }
+      ],
+      "relevance": 0.62548828125
+    },
+    "Entity-function_that_constitute_the_parser": {
+      "node_id": "function_that_constitute_the_parser",
+      "disambiguation_index": 0,
+      "label": "functions that constitute the parser",
+      "aliases": [
+        "functions that constitute the parser"
+      ],
+      "types": [
+        "function",
+        "parser"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The term 'functions that constitute the parser' refers to the specific computational functions used in the implementation of a parser, particularly in the context of LR-parsers, which can be optimized through memoization to improve time complexity and facilitate the construction of a compact parse forest representation.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "functions that constitute the parser",
+          "local_types": [
+            "function",
+            "parser"
+          ],
+          "iri": "Entity-function_that_constitute_the_parser-Mention-1"
+        }
+      ],
+      "relevance": 0.6240234375
+    },
+    "Entity-functional_implementation": {
+      "node_id": "functional_implementation",
+      "disambiguation_index": 0,
+      "label": "functional implementation",
+      "aliases": [
+        "functional implementation"
+      ],
+      "types": [
+        "programming paradigm",
+        "software implementation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'functional implementation' refers to a programming approach used to create a purely functional version of LR-parsers, which includes a correctness proof and generalizes the recursive descent parser.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "functional implementation",
+          "local_types": [
+            "programming paradigm",
+            "software implementation"
+          ],
+          "iri": "Entity-functional_implementation-Mention-1"
+        }
+      ],
+      "relevance": 0.61865234375
+    },
+    "Entity-result_of_previous_invocation": {
+      "node_id": "result_of_previous_invocation",
+      "disambiguation_index": 0,
+      "label": "results of previous invocations",
+      "aliases": [
+        "results of previous invocations"
+      ],
+      "types": [
+        "results"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'results of previous invocations' refers to the outputs stored by memo-functions in a parser implementation, which allow for efficient reuse of previously computed results to optimize time complexity in parsing non-LR grammars.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "results of previous invocations",
+          "local_types": [
+            "results"
+          ],
+          "iri": "Entity-result_of_previous_invocation-Mention-1"
+        }
+      ],
+      "relevance": 0.6103515625
+    },
+    "Entity-normal_cf_grammar": {
+      "node_id": "normal_cf_grammar",
+      "disambiguation_index": 0,
+      "label": "normal CF grammars",
+      "aliases": [
+        "normal CF grammars"
+      ],
+      "types": [
+        "formal language",
+        "grammar"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Normal CF grammars refer to a class of context-free grammars that can be parsed using a standard LR-parser without the need for additional modifications, distinguishing them from extended CF grammars which incorporate regular expressions.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "normal CF grammars",
+          "local_types": [
+            "formal language",
+            "grammar"
+          ],
+          "iri": "Entity-normal_cf_grammar-Mention-1"
+        }
+      ],
+      "relevance": 0.609375
+    },
+    "Entity-result": {
+      "node_id": "result",
+      "disambiguation_index": 0,
+      "label": "results",
+      "aliases": [
+        "results"
+      ],
+      "types": [
+        "output",
+        "data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'results' refers to the outputs produced by the memo-functions that store the outcomes of previous invocations in the context of a parser's time-complexity analysis for non-LR grammars.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "results",
+          "local_types": [
+            "output",
+            "data"
+          ],
+          "iri": "Entity-result-Mention-1"
+        }
+      ],
+      "relevance": 0.6083984375
+    },
+    "Entity-robert": {
+      "node_id": "robert",
+      "disambiguation_index": 0,
+      "label": "Roberts",
+      "aliases": [
+        "Roberts"
+      ],
+      "types": [
+        "researcher",
+        "author",
+        "person"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Roberts refers to a researcher who has contributed to the field of parsing algorithms, specifically in relation to recursive ascent parsers.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Roberts",
+          "local_types": [
+            "researcher",
+            "author",
+            "person"
+          ],
+          "iri": "Entity-robert-Mention-1"
+        }
+      ],
+      "relevance": 0.5908203125
+    },
+    "Entity-non-lr_grammar": {
+      "node_id": "non-lr_grammar",
+      "disambiguation_index": 0,
+      "label": "non-LR grammars",
+      "aliases": [
+        "non-LR grammars"
+      ],
+      "types": [
+        "formal language",
+        "formal grammar",
+        "grammar type",
+        "grammar"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Non-LR grammars are types of formal grammars that cannot be parsed using LR parsing techniques, often requiring more complex parsing strategies due to their structural properties.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "non-LR grammars",
+          "local_types": [
+            "formal language",
+            "formal grammar",
+            "grammar type",
+            "grammar"
+          ],
+          "iri": "Entity-non-lr_grammar-Mention-1"
+        }
+      ],
+      "relevance": 0.5849609375
+    },
+    "Entity-parse_forest": {
+      "node_id": "parse_forest",
+      "disambiguation_index": 0,
+      "label": "parse forest",
+      "aliases": [
+        "parse forest"
+      ],
+      "types": [
+        "data structure",
+        "computational representation",
+        "representation",
+        "concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A parse forest is a data structure that represents all possible parse trees for a given input string in a formal grammar, allowing for efficient storage and retrieval of syntactic structures.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "parse forest",
+          "local_types": [
+            "data structure",
+            "computational representation",
+            "representation",
+            "concept"
+          ],
+          "iri": "Entity-parse_forest-Mention-1"
+        }
+      ],
+      "relevance": 0.5791015625
+    },
+    "Entity-grammar_with_regular_expression_at_the_right_hand_side": {
+      "node_id": "grammar_with_regular_expression_at_the_right_hand_side",
+      "disambiguation_index": 0,
+      "label": "grammars with regular expressions at the right hand side",
+      "aliases": [
+        "grammars with regular expressions at the right hand side"
+      ],
+      "types": [
+        "grammar",
+        "expression"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Grammars with regular expressions at the right hand side, also known as extended context-free grammars, are a type of formal grammar that allows the use of regular expressions in their production rules, enabling more expressive language definitions that can be parsed with modifications to traditional LR-parsers.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "grammars with regular expressions at the right hand side",
+          "local_types": [
+            "grammar",
+            "expression"
+          ],
+          "iri": "Entity-grammar_with_regular_expression_at_the_right_hand_side-Mention-1"
+        }
+      ],
+      "relevance": 0.5791015625
+    },
+    "Entity-a_simple_correctness_proof": {
+      "node_id": "a_simple_correctness_proof",
+      "disambiguation_index": 0,
+      "label": "a simple correctness proof",
+      "aliases": [
+        "a simple correctness proof"
+      ],
+      "types": [
+        "proof",
+        "correctness"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A simple correctness proof refers to a straightforward demonstration that verifies the accuracy and reliability of a purely functional implementation of LR-parsers, ensuring that the parser behaves as intended according to its specifications.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a simple correctness proof",
+          "local_types": [
+            "proof",
+            "correctness"
+          ],
+          "iri": "Entity-a_simple_correctness_proof-Mention-1"
+        }
+      ],
+      "relevance": 0.5751953125
+    },
+    "Entity-extended_cf_grammar": {
+      "node_id": "extended_cf_grammar",
+      "disambiguation_index": 0,
+      "label": "Extended CF grammars",
+      "aliases": [
+        "Extended CF grammars"
+      ],
+      "types": [
+        "formal language",
+        "grammar",
+        "concept"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Extended CF grammars are a type of formal grammar that extend context-free grammars by allowing regular expressions on the right-hand side of production rules.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "Extended CF grammars",
+          "local_types": [
+            "formal language",
+            "grammar",
+            "concept"
+          ],
+          "iri": "Entity-extended_cf_grammar-Mention-1"
+        }
+      ],
+      "relevance": 0.564453125
+    },
+    "Entity-previous_invocation": {
+      "node_id": "previous_invocation",
+      "disambiguation_index": 0,
+      "label": "previous invocations",
+      "aliases": [
+        "previous invocations"
+      ],
+      "types": [
+        "function call",
+        "execution context"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'previous invocations' refers to the earlier calls made to functions within the context of memo-functions, which store the results of these calls to optimize the time complexity of parsing non-LR grammars.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "previous invocations",
+          "local_types": [
+            "function call",
+            "execution context"
+          ],
+          "iri": "Entity-previous_invocation-Mention-1"
+        }
+      ],
+      "relevance": 0.55615234375
+    },
+    "Entity-regular_expression": {
+      "node_id": "regular_expression",
+      "disambiguation_index": 0,
+      "label": "regular expressions",
+      "aliases": [
+        "regular expressions"
+      ],
+      "types": [
+        "formal language",
+        "expression",
+        "pattern matching",
+        "syntax"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Regular expressions are sequences of characters that define search patterns, primarily used for string matching and manipulation in various programming and markup languages.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "regular expressions",
+          "local_types": [
+            "formal language",
+            "expression",
+            "pattern matching",
+            "syntax"
+          ],
+          "iri": "Entity-regular_expression-Mention-1"
+        }
+      ],
+      "relevance": 0.54443359375
+    },
+    "Entity-cf_grammar": {
+      "node_id": "cf_grammar",
+      "disambiguation_index": 0,
+      "label": "CF grammars",
+      "aliases": [
+        "CF grammars"
+      ],
+      "types": [
+        "grammar",
+        "formal language"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "CF grammars are a class of formal grammars used to define context-free languages, characterized by production rules where the left-hand side consists of a single non-terminal symbol.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "CF grammars",
+          "local_types": [
+            "grammar",
+            "formal language"
+          ],
+          "iri": "Entity-cf_grammar-Mention-1"
+        }
+      ],
+      "relevance": 0.5205078125
+    },
+    "Entity-parser": {
+      "node_id": "parser",
+      "disambiguation_index": 0,
+      "label": "parser",
+      "aliases": [
+        "parser"
+      ],
+      "types": [
+        "software component",
+        "programming tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A parser is a software component or programming tool that analyzes and interprets the structure of input data, typically in the form of text or code, to facilitate further processing or understanding.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "parser",
+          "local_types": [
+            "software component",
+            "programming tool"
+          ],
+          "iri": "Entity-parser-Mention-1"
+        }
+      ],
+      "relevance": 0.51220703125
+    },
+    "Entity-time-complexity": {
+      "node_id": "time-complexity",
+      "disambiguation_index": 0,
+      "label": "time-complexity",
+      "aliases": [
+        "time-complexity"
+      ],
+      "types": [
+        "performance metric",
+        "complexity",
+        "computational complexity"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Time-complexity is a performance metric that quantifies the amount of time an algorithm takes to complete as a function of the length of the input.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "time-complexity",
+          "local_types": [
+            "performance metric",
+            "complexity",
+            "computational complexity"
+          ],
+          "iri": "Entity-time-complexity-Mention-1"
+        }
+      ],
+      "relevance": 0.492431640625
+    },
+    "Entity-correctness_proof": {
+      "node_id": "correctness_proof",
+      "disambiguation_index": 0,
+      "label": "correctness proof",
+      "aliases": [
+        "correctness proof"
+      ],
+      "types": [
+        "proof",
+        "theoretical concept",
+        "verification",
+        "mathematical proof"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A correctness proof is a formal demonstration that a given algorithm or implementation adheres to its specified properties and behaves as intended under all defined conditions.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "correctness proof",
+          "local_types": [
+            "proof",
+            "theoretical concept",
+            "verification",
+            "mathematical proof"
+          ],
+          "iri": "Entity-correctness_proof-Mention-1"
+        }
+      ],
+      "relevance": 0.47021484375
+    },
+    "Entity-algorithm": {
+      "node_id": "algorithm",
+      "disambiguation_index": 0,
+      "label": "algorithm",
+      "aliases": [
+        "algorithm"
+      ],
+      "types": [
+        "computational method",
+        "procedure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "An algorithm is a systematic procedure or computational method used to solve a problem or perform a task, often involving a sequence of steps or rules.",
+      "mentions": [
+        {
+          "reference": "Paper-69-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "algorithm",
+          "local_types": [
+            "computational method",
+            "procedure"
+          ],
+          "iri": "Entity-algorithm-Mention-1"
+        }
+      ],
+      "relevance": 0.46923828125
+    }
+  },
+  "summary": "A purely functional implementation of LR-parsers is given , together with a simple correctness proof . It is presented as a generalization of the recursive descent parser . For non-LR grammars the time-complexity of our parser is cubic if the functions that constitute the parser are implemented as memo-functions , i.e. functions that memorize the results of previous invocations . Memo-functions also facilitate a simple way to construct a very compact representation of the parse forest . For LR -LRB- 0 -RRB- grammars , our algorithm is closely related to the recursive ascent parsers recently discovered by Kruse-man Aretz -LSB- 1 -RSB- and Roberts -LSB- 2 -RSB- . Extended CF grammars -LRB- grammars with regular expressions at the right hand side -RRB- can be parsed with a simple modification of the LR-parser for normal CF grammars .",
+  "triples": [
+    [
+      "Entity-a_purely_functional_implementation_of_lr-parsers",
+      "Predicate-is_given",
+      "Entity-lr-parser"
+    ],
+    [
+      "Entity-a_purely_functional_implementation_of_lr-parsers",
+      "Predicate-is_given",
+      "Entity-a_simple_correctness_proof"
+    ],
+    [
+      "Entity-a_generalization_of_the_recursive_descent_parser",
+      "Predicate-is_presented_as",
+      "Entity-recursive_descent_parser"
+    ],
+    [
+      "Entity-non-lr_grammar",
+      "Predicate-have",
+      "Entity-the_time-complexity_of_our_parser"
+    ],
+    [
+      "Entity-the_time-complexity_of_our_parser",
+      "Predicate-is",
+      "Entity-cubic"
+    ],
+    [
+      "Entity-function_that_constitute_the_parser",
+      "Predicate-are_implemented_as",
+      "Entity-memo-functions"
+    ],
+    [
+      "Entity-memo-functions",
+      "Predicate-memorize",
+      "Entity-result_of_previous_invocation"
+    ],
+    [
+      "Entity-memo-functions",
+      "Predicate-facilitate",
+      "Entity-a_very_compact_representation_of_the_parse_forest"
+    ],
+    [
+      "Entity-memo-functions",
+      "Predicate-facilitate",
+      "Entity-parse_forest"
+    ],
+    [
+      "Entity-our_algorithm",
+      "Predicate-is_closely_related_to",
+      "Entity-recursive_ascent_parser"
+    ],
+    [
+      "Entity-recursive_ascent_parser",
+      "Predicate-discovered_by",
+      "Entity-kruse-man_aretz"
+    ],
+    [
+      "Entity-recursive_ascent_parser",
+      "Predicate-discovered_by",
+      "Entity-robert"
+    ],
+    [
+      "Entity-extended_cf_grammar",
+      "Predicate-can_be_parsed_with",
+      "Entity-lr-parser_for_normal_cf_grammar"
+    ],
+    [
+      "Entity-lr-parser_for_normal_cf_grammar",
+      "Predicate-is_a_modification_of",
+      "Entity-lr-parser"
+    ],
+    [
+      "Entity-lr-parser_for_normal_cf_grammar",
+      "Predicate-is_a_modification_of",
+      "Entity-normal_cf_grammar"
+    ],
+    [
+      "Entity-cf_grammar",
+      "Predicate-is_modified_by",
+      "Entity-regular_expression"
+    ],
+    [
+      "Entity-a_purely_functional_implementation_of_lr-parsers",
+      "Predicate-is_presented_as",
+      "Entity-a_generalization_of_the_recursive_descent_parser"
+    ],
+    [
+      "Entity-our_algorithm",
+      "Predicate-achieves",
+      "Entity-the_time-complexity_of_our_parser"
+    ],
+    [
+      "Entity-our_algorithm",
+      "Predicate-is_a",
+      "Entity-a_purely_functional_implementation_of_lr-parsers"
+    ],
+    [
+      "Entity-a_purely_functional_implementation_of_lr-parsers",
+      "Predicate-exhibits",
+      "Entity-the_time-complexity_of_our_parser"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-lr-parser",
+      "skos:broader",
+      "Entity-algorithm"
+    ],
+    [
+      "Entity-the_time-complexity_of_our_parser",
+      "skos:broader",
+      "Entity-parser"
+    ],
+    [
+      "Entity-a_purely_functional_implementation_of_lr-parsers",
+      "skos:broader",
+      "Entity-parser"
+    ],
+    [
+      "Entity-a_generalization_of_the_recursive_descent_parser",
+      "skos:broader",
+      "Entity-parser"
+    ],
+    [
+      "Entity-recursive_descent_parser",
+      "skos:broader",
+      "Entity-parser"
+    ],
+    [
+      "Entity-function_that_constitute_the_parser",
+      "skos:broader",
+      "Entity-parser"
+    ],
+    [
+      "Entity-the_time-complexity_of_our_parser",
+      "skos:broader",
+      "Entity-time-complexity"
+    ],
+    [
+      "Entity-recursive_ascent_parser",
+      "skos:broader",
+      "Entity-algorithm"
+    ],
+    [
+      "Entity-lr-parser_for_normal_cf_grammar",
+      "skos:broader",
+      "Entity-parser"
+    ],
+    [
+      "Entity-recursive_descent_parser",
+      "skos:broader",
+      "Entity-algorithm"
+    ],
+    [
+      "Entity-a_very_compact_representation_of_the_parse_forest",
+      "skos:broader",
+      "Entity-parse_forest"
+    ],
+    [
+      "Entity-result_of_previous_invocation",
+      "skos:broader",
+      "Entity-result"
+    ],
+    [
+      "Entity-recursive_ascent_parser",
+      "skos:broader",
+      "Entity-parser"
+    ],
+    [
+      "Entity-lr-parser",
+      "skos:broader",
+      "Entity-parser"
+    ],
+    [
+      "Entity-our_algorithm",
+      "skos:broader",
+      "Entity-algorithm"
+    ],
+    [
+      "Entity-a_purely_functional_implementation_of_lr-parsers",
+      "skos:broader",
+      "Entity-lr-parser"
+    ]
+  ],
+  "predicates": {
+    "Predicate-is_given": {
+      "label": "is given",
+      "description": "The predicate 'is given' establishes a relationship where the subject is presented or provided as an instance or example of the object. It indicates that the subject serves to illustrate, define, or exemplify the object, suggesting a transfer of information or a demonstration of a concept.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_presented_as": {
+      "label": "is presented as",
+      "description": "The predicate 'is presented as' indicates a relationship where the subject is characterized or defined in terms of the object, suggesting that the subject can be understood or interpreted through the lens of the object. This often implies that the object serves as a reference point, model, or example that helps to clarify the nature or function of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-have": {
+      "label": "have",
+      "description": "The predicate 'have' indicates a relationship of possession or association between the subject and the object. It signifies that the subject possesses, contains, or is characterized by the object, which can represent a quality, attribute, or specific entity. In this context, it connects the subject to the object by asserting that the subject holds or exhibits the properties or characteristics described by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is": {
+      "label": "is",
+      "description": "The predicate 'is' serves as a linking verb that establishes an identity or equivalence between the subject and the object. It indicates that the subject possesses the characteristics or qualities described by the object, effectively defining or categorizing the subject within a specific context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_implemented_as": {
+      "label": "are implemented as",
+      "description": "The predicate 'are implemented as' indicates a relationship where the subject is realized or executed in the form of the object. It suggests that the subject's functionality or behavior is achieved through the specific methods, techniques, or structures represented by the object. This implies a transformation or adaptation of the subject into the object, highlighting how the subject operates or is constructed in practical terms.",
+      "disambiguation_index": 0
+    },
+    "Predicate-memorize": {
+      "label": "memorize",
+      "description": "The predicate 'memorize' indicates an action where the subject retains or stores information, knowledge, or data, allowing it to be recalled or utilized later. In the context of the provided triple, it signifies that the subject is actively capturing and preserving the object for future reference or use.",
+      "disambiguation_index": 0
+    },
+    "Predicate-facilitate": {
+      "label": "facilitate",
+      "description": "The predicate 'facilitate' indicates that the subject plays a role in making the object easier to achieve, implement, or understand. It suggests a supportive or enabling action that enhances the effectiveness or efficiency of the object in question.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_closely_related_to": {
+      "label": "is closely related to",
+      "description": "The predicate 'is closely related to' indicates a strong connection or association between the subject and the object, suggesting that they share significant similarities, characteristics, or functionalities. This relationship implies that understanding one may provide insights into the other, and they may influence or complement each other in relevant contexts.",
+      "disambiguation_index": 0
+    },
+    "Predicate-discovered_by": {
+      "label": "discovered by",
+      "description": "The predicate 'discovered by' indicates a relationship in which the subject represents a concept, object, or phenomenon that has been identified or brought to attention, while the object denotes the individual or group responsible for this identification or revelation. This predicate highlights the act of discovery, attributing the recognition or finding of the subject to the efforts or contributions of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-can_be_parsed_with": {
+      "label": "can be parsed with",
+      "description": "The predicate 'can be parsed with' establishes a relationship between a subject, which typically represents a type of formal grammar or language, and an object, which denotes a specific parsing technique or tool. This indicates that the parsing method described by the object is capable of analyzing and interpreting the structure of the language defined by the subject, thereby facilitating the understanding or processing of that language.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_modification_of": {
+      "label": "is a modification of",
+      "description": "The predicate 'is a modification of' indicates that the subject represents a variant or adaptation of the object, suggesting that the subject retains some foundational characteristics of the object while incorporating changes or enhancements that differentiate it from the original.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_modified_by": {
+      "label": "is modified by",
+      "description": "The predicate 'is modified by' indicates a relationship where the subject is subject to change or enhancement due to the influence or addition of the object. This suggests that the object serves to alter, refine, or expand the characteristics or functionalities of the subject, leading to a modified or improved state.",
+      "disambiguation_index": 0
+    },
+    "Predicate-achieves": {
+      "label": "achieves",
+      "description": "The predicate 'achieves' indicates a successful attainment or realization of a specific goal, outcome, or state as represented by the object. It connects the subject, which is typically an agent or entity capable of action, with the object, which is the result or target that is being reached or accomplished. In this context, 'achieves' conveys that the subject has effectively met or fulfilled the criteria or expectations associated with the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a": {
+      "label": "is a",
+      "description": "The predicate 'is a' serves to establish a classification or identity relationship between the subject and the object. It indicates that the subject belongs to a specific category or type represented by the object, thereby providing a way to define or describe the subject in terms of its essential characteristics or role within a broader context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-exhibits": {
+      "label": "exhibits",
+      "description": "The predicate 'exhibits' serves to establish a relationship in which the subject demonstrates, displays, or reveals a particular characteristic, quality, or property represented by the object. It indicates that the subject possesses or showcases the object in a way that allows for observation or understanding of that object.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or type that falls under the more general category represented by the object. This relationship implies that the object encompasses a wider range of concepts or entities than the subject, thereby situating the subject within a broader context of classification or categorization.",
+      "disambiguation_index": 0
+    }
+  }
+}

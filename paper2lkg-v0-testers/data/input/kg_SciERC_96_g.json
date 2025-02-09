@@ -1,0 +1,943 @@
+{
+  "iri": "Paper-96",
+  "title": "CVPR_2010_30_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-96-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-96-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-96-Section-1-Paragraph-1-Sentence-1",
+              "text": "We introduce a method to accelerate the evaluation of object detection cascades with the help of a divide-and-conquer procedure in the space of candidate regions ."
+            },
+            {
+              "iri": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+              "text": "Compared to the exhaustive procedure that thus far is the state-of-the-art for cascade evaluation , the proposed method requires fewer evaluations of the classifier functions , thereby speeding up the search ."
+            },
+            {
+              "iri": "Paper-96-Section-1-Paragraph-1-Sentence-3",
+              "text": "Furthermore , we show how the recently developed efficient subwindow search -LRB- ESS -RRB- procedure -LSB- 11 -RSB- can be integrated into the last stage of our method ."
+            },
+            {
+              "iri": "Paper-96-Section-1-Paragraph-1-Sentence-4",
+              "text": "This allows us to use our method to act not only as a faster procedure for cascade evaluation , but also as a tool to perform efficient branch-and-bound object detection with nonlinear quality functions , in particular kernel-ized support vector machines ."
+            },
+            {
+              "iri": "Paper-96-Section-1-Paragraph-1-Sentence-5",
+              "text": "Experiments on the PASCAL VOC 2006 dataset show an acceleration of more than 50 % by our method compared to standard cascade evaluation ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00017714500427246094,
+    55.069663763046265,
+    66.90906310081482,
+    65.22521638870239,
+    0.02954721450805664,
+    9.369850158691406e-05,
+    0.00011587142944335938,
+    245.5804238319397,
+    247.0488085746765,
+    1.5588133335113525,
+    0.06515622138977051,
+    0.008484840393066406,
+    0.00017189979553222656,
+    65.68825435638428,
+    0.0002624988555908203,
+    0.025272369384765625,
+    0.0008854866027832031,
+    2.195061683654785,
+    0.7753293514251709,
+    9.924419403076172,
+    329.4731900691986,
+    2.445737361907959,
+    135.4846727848053,
+    1.1075565814971924,
+    0.0006086826324462891,
+    0.009894371032714844
+  ],
+  "nodes": {
+    "Entity-method": {
+      "node_id": "method",
+      "disambiguation_index": 0,
+      "label": "method",
+      "aliases": [
+        "the proposed method",
+        "method"
+      ],
+      "types": [
+        "technique",
+        "method",
+        "procedure",
+        "approach",
+        "algorithm",
+        "proposed method",
+        "evaluation technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The method refers to a technique for accelerating the evaluation of object detection cascades using a divide-and-conquer approach in the candidate regions space, which reduces the number of classifier function evaluations and integrates efficient subwindow search for improved performance.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "method",
+          "local_types": [
+            "technique",
+            "method",
+            "approach",
+            "algorithm",
+            "evaluation technique"
+          ],
+          "iri": "Entity-method-Mention-1"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "method",
+          "local_types": [
+            "proposed method",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-2"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "method",
+          "local_types": [
+            "technique",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-3"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "method",
+          "local_types": [
+            "technique",
+            "procedure"
+          ],
+          "iri": "Entity-method-Mention-4"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "method",
+          "local_types": [
+            "technique",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-5"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the proposed method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-method-Mention-6"
+        }
+      ],
+      "relevance": 0.798828125
+    },
+    "Entity-our_method": {
+      "node_id": "our_method",
+      "disambiguation_index": 0,
+      "label": "our method",
+      "aliases": [
+        "our method"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Our method refers to a novel approach for accelerating the evaluation of object detection cascades using a divide-and-conquer strategy, which integrates efficient subwindow search to enhance performance in branch-and-bound object detection with nonlinear quality functions.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "our method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-our_method-Mention-1"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "our method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-our_method-Mention-2"
+        }
+      ],
+      "relevance": 0.76318359375
+    },
+    "Entity-branch-and-bound_object_detection": {
+      "node_id": "branch-and-bound_object_detection",
+      "disambiguation_index": 0,
+      "label": "branch-and-bound object detection",
+      "aliases": [
+        "branch-and-bound object detection"
+      ],
+      "types": [
+        "object detection method",
+        "object detection",
+        "optimization technique",
+        "algorithm"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Branch-and-bound object detection is an efficient algorithmic approach for object detection that utilizes a divide-and-conquer strategy to optimize the evaluation of candidate regions, particularly integrating nonlinear quality functions such as kernelized support vector machines.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "branch-and-bound object detection",
+          "local_types": [
+            "object detection method",
+            "object detection",
+            "optimization technique",
+            "algorithm"
+          ],
+          "iri": "Entity-branch-and-bound_object_detection-Mention-1"
+        }
+      ],
+      "relevance": 0.734375
+    },
+    "Entity-acceleration_of_more_than_50_": {
+      "node_id": "acceleration_of_more_than_50_",
+      "disambiguation_index": 0,
+      "label": "acceleration of more than 50 %",
+      "aliases": [
+        "acceleration of more than 50 %"
+      ],
+      "types": [
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The phrase 'acceleration of more than 50%' refers to the improvement in the speed of object detection cascade evaluation achieved by the proposed method in the experiments conducted on the PASCAL VOC 2006 dataset, indicating that the new method significantly reduces the time required compared to the standard evaluation approach.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "acceleration of more than 50 %",
+          "local_types": [
+            "performance metric"
+          ],
+          "iri": "Entity-acceleration_of_more_than_50_-Mention-1"
+        }
+      ],
+      "relevance": 0.71875
+    },
+    "Entity-a_method": {
+      "node_id": "a_method",
+      "disambiguation_index": 0,
+      "label": "a method",
+      "aliases": [
+        "a method"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The method refers to a novel approach designed to enhance the efficiency of object detection cascade evaluations by utilizing a divide-and-conquer strategy to reduce the number of classifier function evaluations required.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-a_method-Mention-1"
+        }
+      ],
+      "relevance": 0.71875
+    },
+    "Entity-efficient_subwindow_search": {
+      "node_id": "efficient_subwindow_search",
+      "disambiguation_index": 0,
+      "label": "efficient subwindow search",
+      "aliases": [
+        "recently developed efficient subwindow search",
+        "efficient subwindow search"
+      ],
+      "types": [
+        "search technique",
+        "procedure",
+        "method",
+        "algorithm"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Efficient subwindow search (ESS) is a recently developed search technique that optimizes the process of locating candidate regions in object detection by integrating with cascade evaluation methods to enhance speed and efficiency.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "efficient subwindow search",
+          "local_types": [
+            "search technique",
+            "procedure",
+            "method",
+            "algorithm"
+          ],
+          "iri": "Entity-efficient_subwindow_search-Mention-1"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "recently developed efficient subwindow search",
+          "local_types": [
+            "procedure"
+          ],
+          "iri": "Entity-efficient_subwindow_search-Mention-2"
+        }
+      ],
+      "relevance": 0.71337890625
+    },
+    "Entity-last_stage": {
+      "node_id": "last_stage",
+      "disambiguation_index": 0,
+      "label": "last stage",
+      "aliases": [
+        "last stage"
+      ],
+      "types": [
+        "stage"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'last stage' refers to the final phase of the proposed method for accelerating object detection cascade evaluation, where the efficient subwindow search (ESS) procedure is integrated to enhance performance.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "last stage",
+          "local_types": [
+            "stage"
+          ],
+          "iri": "Entity-last_stage-Mention-1"
+        }
+      ],
+      "relevance": 0.7099609375
+    },
+    "Entity-the_last_stage_of_our_method": {
+      "node_id": "the_last_stage_of_our_method",
+      "disambiguation_index": 0,
+      "label": "the last stage of our method",
+      "aliases": [
+        "the last stage of our method"
+      ],
+      "types": [
+        "method",
+        "stage"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The last stage of our method refers to the integration of the efficient subwindow search (ESS) procedure into the final phase of the proposed object detection cascade evaluation method, enhancing its performance and efficiency.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the last stage of our method",
+          "local_types": [
+            "method",
+            "stage"
+          ],
+          "iri": "Entity-the_last_stage_of_our_method-Mention-1"
+        }
+      ],
+      "relevance": 0.7080078125
+    },
+    "Entity-tool": {
+      "node_id": "tool",
+      "disambiguation_index": 0,
+      "label": "tool",
+      "aliases": [
+        "tool"
+      ],
+      "types": [
+        "software",
+        "utility"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'tool' refers to a method developed for accelerating the evaluation of object detection cascades, specifically designed to perform efficient branch-and-bound object detection using nonlinear quality functions, such as kernelized support vector machines.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "tool",
+          "local_types": [
+            "software",
+            "utility"
+          ],
+          "iri": "Entity-tool-Mention-1"
+        }
+      ],
+      "relevance": 0.69775390625
+    },
+    "Entity-cascade_evaluation": {
+      "node_id": "cascade_evaluation",
+      "disambiguation_index": 0,
+      "label": "cascade evaluation",
+      "aliases": [
+        "cascade evaluation",
+        "standard cascade evaluation"
+      ],
+      "types": [
+        "process",
+        "evaluation",
+        "algorithm",
+        "evaluation method",
+        "benchmarking technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Cascade evaluation refers to a method used in object detection that involves a series of classifiers arranged in a cascade structure, where each classifier is responsible for filtering out negative samples, thereby improving the efficiency of the evaluation process by reducing the number of evaluations needed.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "cascade evaluation",
+          "local_types": [
+            "evaluation method",
+            "algorithm"
+          ],
+          "iri": "Entity-cascade_evaluation-Mention-1"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "cascade evaluation",
+          "local_types": [
+            "evaluation method",
+            "process",
+            "evaluation"
+          ],
+          "iri": "Entity-cascade_evaluation-Mention-2"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "standard cascade evaluation",
+          "local_types": [
+            "evaluation method",
+            "evaluation",
+            "benchmarking technique"
+          ],
+          "iri": "Entity-cascade_evaluation-Mention-3"
+        }
+      ],
+      "relevance": 0.697265625
+    },
+    "Entity-search": {
+      "node_id": "search",
+      "disambiguation_index": 0,
+      "label": "search",
+      "aliases": [
+        "search",
+        "the search"
+      ],
+      "types": [
+        "process",
+        "algorithm"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'search' refers to the process of evaluating candidate regions in object detection cascades, which is accelerated by a proposed method that reduces the number of classifier function evaluations compared to traditional exhaustive procedures.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "search",
+          "local_types": [
+            "process",
+            "algorithm"
+          ],
+          "iri": "Entity-search-Mention-1"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the search",
+          "local_types": [
+            "process"
+          ],
+          "iri": "Entity-search-Mention-2"
+        }
+      ],
+      "relevance": 0.6943359375
+    },
+    "Entity-object_detection_cascade": {
+      "node_id": "object_detection_cascade",
+      "disambiguation_index": 0,
+      "label": "object detection cascades",
+      "aliases": [
+        "object detection cascades"
+      ],
+      "types": [
+        "object detection",
+        "detection framework",
+        "computer vision",
+        "algorithm",
+        "cascade"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Object detection cascades are a series of sequential classifiers used in computer vision to progressively refine the detection of objects in images, improving accuracy and efficiency.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "object detection cascades",
+          "local_types": [
+            "object detection",
+            "detection framework",
+            "computer vision",
+            "algorithm",
+            "cascade"
+          ],
+          "iri": "Entity-object_detection_cascade-Mention-1"
+        }
+      ],
+      "relevance": 0.6923828125
+    },
+    "Entity-exhaustive_procedure": {
+      "node_id": "exhaustive_procedure",
+      "disambiguation_index": 0,
+      "label": "exhaustive procedure",
+      "aliases": [
+        "the exhaustive procedure",
+        "exhaustive procedure"
+      ],
+      "types": [
+        "procedure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'exhaustive procedure' refers to the current state-of-the-art method for evaluating object detection cascades, which involves a comprehensive search through candidate regions to assess classifier functions.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "exhaustive procedure",
+          "local_types": [
+            "procedure"
+          ],
+          "iri": "Entity-exhaustive_procedure-Mention-1"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the exhaustive procedure",
+          "local_types": [
+            "procedure"
+          ],
+          "iri": "Entity-exhaustive_procedure-Mention-2"
+        }
+      ],
+      "relevance": 0.66357421875
+    },
+    "Entity-the_state-of-the-art_for_cascade_evaluation": {
+      "node_id": "the_state-of-the-art_for_cascade_evaluation",
+      "disambiguation_index": 0,
+      "label": "the state-of-the-art for cascade evaluation",
+      "aliases": [
+        "the state-of-the-art for cascade evaluation"
+      ],
+      "types": [
+        "method",
+        "evaluation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The state-of-the-art for cascade evaluation refers to the exhaustive procedure previously used for evaluating object detection cascades, which serves as a benchmark for comparing the efficiency of new methods in this domain.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the state-of-the-art for cascade evaluation",
+          "local_types": [
+            "method",
+            "evaluation"
+          ],
+          "iri": "Entity-the_state-of-the-art_for_cascade_evaluation-Mention-1"
+        }
+      ],
+      "relevance": 0.65283203125
+    },
+    "Entity-candidate_region": {
+      "node_id": "candidate_region",
+      "disambiguation_index": 0,
+      "label": "candidate regions",
+      "aliases": [
+        "candidate regions"
+      ],
+      "types": [
+        "region of interest",
+        "data subset",
+        "region"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Candidate regions refer to specific areas in an image that are selected for potential object detection, which are evaluated using a divide-and-conquer method to improve the efficiency of object detection cascades.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "candidate regions",
+          "local_types": [
+            "region of interest",
+            "data subset",
+            "region"
+          ],
+          "iri": "Entity-candidate_region-Mention-1"
+        }
+      ],
+      "relevance": 0.6494140625
+    },
+    "Entity-pascal_voc_2006": {
+      "node_id": "pascal_voc_2006",
+      "disambiguation_index": 0,
+      "label": "PASCAL VOC 2006",
+      "aliases": [
+        "PASCAL VOC 2006 dataset",
+        "PASCAL VOC 2006"
+      ],
+      "types": [
+        "dataset",
+        "benchmark"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "PASCAL VOC 2006 is a benchmark dataset used for evaluating object detection and segmentation algorithms in computer vision.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "PASCAL VOC 2006",
+          "local_types": [
+            "dataset",
+            "benchmark"
+          ],
+          "iri": "Entity-pascal_voc_2006-Mention-1"
+        },
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "PASCAL VOC 2006 dataset",
+          "local_types": [
+            "dataset",
+            "benchmark"
+          ],
+          "iri": "Entity-pascal_voc_2006-Mention-2"
+        }
+      ],
+      "relevance": 0.6328125
+    },
+    "Entity-divide-and-conquer_procedure": {
+      "node_id": "divide-and-conquer_procedure",
+      "disambiguation_index": 0,
+      "label": "divide-and-conquer procedure",
+      "aliases": [
+        "divide-and-conquer procedure"
+      ],
+      "types": [
+        "procedure",
+        "algorithmic strategy",
+        "computational method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A divide-and-conquer procedure is an algorithmic strategy that solves a problem by recursively breaking it down into smaller subproblems, solving each subproblem independently, and then combining their solutions to form a solution to the original problem.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "divide-and-conquer procedure",
+          "local_types": [
+            "procedure",
+            "algorithmic strategy",
+            "computational method"
+          ],
+          "iri": "Entity-divide-and-conquer_procedure-Mention-1"
+        }
+      ],
+      "relevance": 0.6181640625
+    },
+    "Entity-the_classifier_function": {
+      "node_id": "the_classifier_function",
+      "disambiguation_index": 0,
+      "label": "the classifier functions",
+      "aliases": [
+        "the classifier functions"
+      ],
+      "types": [
+        "function",
+        "classifier"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The classifier functions refer to the mathematical models or algorithms used in object detection cascades that classify candidate regions based on their likelihood of containing objects, which are evaluated to improve the efficiency of the detection process.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "the classifier functions",
+          "local_types": [
+            "function",
+            "classifier"
+          ],
+          "iri": "Entity-the_classifier_function-Mention-1"
+        }
+      ],
+      "relevance": 0.58740234375
+    },
+    "Entity-kernel-ized_support_vector_machine": {
+      "node_id": "kernel-ized_support_vector_machine",
+      "disambiguation_index": 0,
+      "label": "kernel-ized support vector machines",
+      "aliases": [
+        "kernel-ized support vector machines"
+      ],
+      "types": [
+        "machine learning model",
+        "support vector machine",
+        "machine learning",
+        "algorithm"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Kernel-ized support vector machines are a type of machine learning algorithm that utilize kernel functions to enable the classification of data in a high-dimensional space, allowing for the effective separation of non-linearly separable data.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "kernel-ized support vector machines",
+          "local_types": [
+            "machine learning model",
+            "support vector machine",
+            "machine learning",
+            "algorithm"
+          ],
+          "iri": "Entity-kernel-ized_support_vector_machine-Mention-1"
+        }
+      ],
+      "relevance": 0.58642578125
+    },
+    "Entity-nonlinear_quality_function": {
+      "node_id": "nonlinear_quality_function",
+      "disambiguation_index": 0,
+      "label": "nonlinear quality functions",
+      "aliases": [
+        "nonlinear quality functions"
+      ],
+      "types": [
+        "mathematical function",
+        "quality metric",
+        "quality function"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Nonlinear quality functions refer to mathematical functions used as quality metrics in the context of object detection, particularly in evaluating the performance of kernelized support vector machines within a branch-and-bound framework.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "nonlinear quality functions",
+          "local_types": [
+            "mathematical function",
+            "quality metric",
+            "quality function"
+          ],
+          "iri": "Entity-nonlinear_quality_function-Mention-1"
+        }
+      ],
+      "relevance": 0.477294921875
+    },
+    "Entity-state-of-the-art": {
+      "node_id": "state-of-the-art",
+      "disambiguation_index": 0,
+      "label": "state-of-the-art",
+      "aliases": [
+        "state-of-the-art"
+      ],
+      "types": [
+        "evaluation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "state-of-the-art refers to the highest level of development or achievement in a particular field, often representing the most advanced techniques or methods currently available.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "state-of-the-art",
+          "local_types": [
+            "evaluation"
+          ],
+          "iri": "Entity-state-of-the-art-Mention-1"
+        }
+      ],
+      "relevance": 0.439697265625
+    },
+    "Entity-classifier_function": {
+      "node_id": "classifier_function",
+      "disambiguation_index": 0,
+      "label": "classifier functions",
+      "aliases": [
+        "classifier functions"
+      ],
+      "types": [
+        "machine learning model",
+        "classification model",
+        "function",
+        "machine learning"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Classifier functions are mathematical functions used in machine learning models to assign labels to input data based on learned patterns from training data.",
+      "mentions": [
+        {
+          "reference": "Paper-96-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "classifier functions",
+          "local_types": [
+            "machine learning model",
+            "classification model",
+            "function",
+            "machine learning"
+          ],
+          "iri": "Entity-classifier_function-Mention-1"
+        }
+      ],
+      "relevance": 0.42626953125
+    }
+  },
+  "summary": "We introduce a method to accelerate the evaluation of object detection cascades with the help of a divide-and-conquer procedure in the space of candidate regions . Compared to the exhaustive procedure that thus far is the state-of-the-art for cascade evaluation , the proposed method requires fewer evaluations of the classifier functions , thereby speeding up the search . Furthermore , we show how the recently developed efficient subwindow search -LRB- ESS -RRB- procedure -LSB- 11 -RSB- can be integrated into the last stage of our method . This allows us to use our method to act not only as a faster procedure for cascade evaluation , but also as a tool to perform efficient branch-and-bound object detection with nonlinear quality functions , in particular kernel-ized support vector machines . Experiments on the PASCAL VOC 2006 dataset show an acceleration of more than 50 % by our method compared to standard cascade evaluation .",
+  "triples": [
+    [
+      "Entity-method",
+      "Predicate-accelerate_the_evaluation_of",
+      "Entity-object_detection_cascade"
+    ],
+    [
+      "Entity-method",
+      "Predicate-uses",
+      "Entity-divide-and-conquer_procedure"
+    ],
+    [
+      "Entity-divide-and-conquer_procedure",
+      "Predicate-operates_in_the_space_of",
+      "Entity-candidate_region"
+    ],
+    [
+      "Entity-method",
+      "Predicate-speeds_up",
+      "Entity-search"
+    ],
+    [
+      "Entity-exhaustive_procedure",
+      "Predicate-is",
+      "Entity-the_state-of-the-art_for_cascade_evaluation"
+    ],
+    [
+      "Entity-efficient_subwindow_search",
+      "Predicate-can_be_integrated_into",
+      "Entity-the_last_stage_of_our_method"
+    ],
+    [
+      "Entity-tool",
+      "Predicate-uses",
+      "Entity-nonlinear_quality_function"
+    ],
+    [
+      "Entity-kernel-ized_support_vector_machine",
+      "Predicate-are_used_in",
+      "Entity-branch-and-bound_object_detection"
+    ],
+    [
+      "Entity-pascal_voc_2006",
+      "Predicate-shows",
+      "Entity-acceleration_of_more_than_50_"
+    ],
+    [
+      "Entity-our_method",
+      "Predicate-compared_to",
+      "Entity-cascade_evaluation"
+    ],
+    [
+      "Entity-our_method",
+      "Predicate-is_an_enhancement_of",
+      "Entity-method"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-a_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-efficient_subwindow_search",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-the_last_stage_of_our_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-the_state-of-the-art_for_cascade_evaluation",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-our_method",
+      "skos:broader",
+      "Entity-method"
+    ]
+  ],
+  "predicates": {
+    "Predicate-accelerate_the_evaluation_of": {
+      "label": "accelerate the evaluation of",
+      "description": "The predicate 'accelerate the evaluation of' indicates that the subject is implementing strategies, techniques, or processes that enhance the speed or efficiency of assessing the performance, effectiveness, or quality of the object. This connection implies a proactive approach to improving the assessment timeline or outcomes related to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-uses": {
+      "label": "uses",
+      "description": "The predicate 'uses' indicates that the subject employs or utilizes the object as a means to achieve a specific purpose or outcome. It establishes a functional relationship where the subject actively engages with the object to perform a task, implement a strategy, or apply a technique.",
+      "disambiguation_index": 0
+    },
+    "Predicate-operates_in_the_space_of": {
+      "label": "operates in the space of",
+      "description": "The predicate 'operates in the space of' indicates that the subject functions or is relevant within a specific domain, context, or set of entities represented by the object. It suggests that the subject engages with, utilizes, or interacts with the characteristics, elements, or parameters defined by the object, thereby establishing a relationship where the subject's actions or processes are situated within the framework provided by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-speeds_up": {
+      "label": "speeds up",
+      "description": "The predicate 'speeds up' indicates an action or process by which the subject enhances the efficiency or quickness of the object. It implies that the subject contributes to a reduction in the time required for the object to be completed or achieved, thereby facilitating a faster outcome.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is": {
+      "label": "is",
+      "description": "The predicate 'is' serves as a linking verb that establishes an identity or equivalence between the subject and the object. It indicates that the subject can be defined or characterized by the object, suggesting that the object represents a defining quality, state, or classification of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-can_be_integrated_into": {
+      "label": "can be integrated into",
+      "description": "The predicate 'can be integrated into' indicates a potential relationship where the subject has the capability or suitability to be combined or incorporated within the framework, structure, or process represented by the object. This suggests that the subject can enhance, contribute to, or function effectively as part of the object, thereby creating a cohesive system or methodology.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_used_in": {
+      "label": "are used in",
+      "description": "The predicate 'are used in' indicates a functional relationship where the subject is applied or utilized within the context of the object. It suggests that the subject serves a purpose or plays a role in the processes, methodologies, or applications represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-shows": {
+      "label": "shows",
+      "description": "The predicate 'shows' indicates a relationship where the subject presents, demonstrates, or reveals information, characteristics, or results related to the object. It implies that the subject provides evidence or an illustration of the object, allowing for an understanding or observation of the object's properties or outcomes.",
+      "disambiguation_index": 0
+    },
+    "Predicate-compared_to": {
+      "label": "compared to",
+      "description": "The predicate 'compared to' establishes a relationship of evaluation or contrast between the subject and the object, indicating that the subject is being assessed in relation to the object. This comparison often highlights similarities, differences, or relative performance, allowing for a clearer understanding of the subject's characteristics or effectiveness in the context of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_an_enhancement_of": {
+      "label": "is an enhancement of",
+      "description": "The predicate 'is an enhancement of' establishes a relationship where the subject represents a modified or improved version of the object. It indicates that the subject offers additional benefits, features, or improvements compared to the object, suggesting a progression or advancement in quality, effectiveness, or functionality.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or type that falls under a more general category represented by the object. This relationship implies that the object encompasses a wider scope or range of concepts than the subject, thereby situating the subject within a broader context.",
+      "disambiguation_index": 0
+    }
+  }
+}

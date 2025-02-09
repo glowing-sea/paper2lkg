@@ -1,0 +1,68 @@
+{
+  "iri": "Paper-88",
+  "title": "ECCV_2016_212_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-88-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-88-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-1",
+              "text": "Person re-identification is challenging due to the large variations of pose , illumination , occlusion and camera view ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-2",
+              "text": "Owing to these variations , the pedestrian data is distributed as highly-curved manifolds in the feature space , despite the current convolutional neural networks -LRB- CNN -RRB- 's capability of feature extraction ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-3",
+              "text": "However , the distribution is unknown , so it is difficult to use the geodesic distance when comparing two samples ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-4",
+              "text": "In practice , the current deep embedding methods use the Euclidean distance for the training and test ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-5",
+              "text": "On the other hand , the manifold learning methods suggest to use the Euclidean distance in the local range , combining with the graphical relationship between samples , for approximating the geodesic distance ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-6",
+              "text": "From this point of view , selecting suitable positive -LRB- i.e. intra-class -RRB- training samples within a local range is critical for training the CNN embedding , especially when the data has large intra-class variations ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-7",
+              "text": "In this paper , we propose a novel moderate positive sample mining method to train robust CNN for person re-identification , dealing with the problem of large variation ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-8",
+              "text": "In addition , we improve the learning by a metric weight constraint , so that the learned metric has a better generalization ability ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-9",
+              "text": "Experiments show that these two strategies are effective in learning robust deep metrics for person re-identification , and accordingly our deep model significantly outperforms the state-of-the-art methods on several benchmarks of person re-identification ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-10",
+              "text": "Therefore , the study presented in this paper may be useful in inspiring new designs of deep models for person re-identification ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Person re-identification is challenging due to the large variations of pose , illumination , occlusion and camera view . Owing to these variations , the pedestrian data is distributed as highly-curved manifolds in the feature space , despite the current convolutional neural networks -LRB- CNN -RRB- 's capability of feature extraction . However , the distribution is unknown , so it is difficult to use the geodesic distance when comparing two samples . In practice , the current deep embedding methods use the Euclidean distance for the training and test . On the other hand , the manifold learning methods suggest to use the Euclidean distance in the local range , combining with the graphical relationship between samples , for approximating the geodesic distance . From this point of view , selecting suitable positive -LRB- i.e. intra-class -RRB- training samples within a local range is critical for training the CNN embedding , especially when the data has large intra-class variations . In this paper , we propose a novel moderate positive sample mining method to train robust CNN for person re-identification , dealing with the problem of large variation . In addition , we improve the learning by a metric weight constraint , so that the learned metric has a better generalization ability . Experiments show that these two strategies are effective in learning robust deep metrics for person re-identification , and accordingly our deep model significantly outperforms the state-of-the-art methods on several benchmarks of person re-identification . Therefore , the study presented in this paper may be useful in inspiring new designs of deep models for person re-identification .",
+  "kg2text": [
+    "This paper proposes a novel moderate positive sample mining method, which enhances the training of deep embedding methods and is specifically designed to train robust convolutional networks (CNNs). By presenting a method for learning robust deep metrics, this paper highlights how the moderate positive sample mining method improves the training process for robust CNNs. Additionally, the paper discusses how deep embedding methods improve learning robust deep metrics, which in turn enhances the performance of robust CNNs. The proposed strategies, including the moderate positive sample mining method and a metric weight constraint, are effective in learning robust deep metrics and may inspire new designs of deep models aimed at addressing challenges in person re-identification. Furthermore, deep embedding methods utilize the training and test phases to evaluate their performance, demonstrating their utility in the context of person re-identification.",
+    "The moderate positive sample mining method effectively deals with the challenges posed by large variation in pedestrian data, which includes significant differences in pose, illumination, occlusion, and camera view. This paper may be useful in inspiring the development of deep models, particularly robust CNNs, which are broader terms encompassing CNN and convolutional neural networks. Our deep model has demonstrated superior performance, outperforming several benchmarks of person re-identification. The learning process within this model improves through the application of a metric weight constraint, which enhances the learned metric's generalization ability. The data used in this context exhibits large intra-class variations, complicating the training of deep embedding methods that utilize Euclidean distance. Additionally, the graphical relationship between samples is crucial for understanding the connections in the data, particularly when manifold learning methods combine with the graphical relationship between samples. Suitable positive (intra-class) training samples are selected within a local range, contributing to the effectiveness of training samples, which are a broader category of data.",
+    "Training samples are a specific subset of samples used in machine learning, particularly in the context of person re-identification, which is a challenging task due to factors such as occlusion, illumination, and variations in camera view. To address these challenges, manifold learning methods suggest using Euclidean distance, which is often employed to approximate geodesic distance, although the true distribution of pedestrian data remains unknown. Convolutional neural networks possess a strong capability for feature extraction, which is crucial for effective person re-identification. Our deep model has been shown to significantly outperform state-of-the-art methods, demonstrating its effectiveness in navigating the complexities of highly-curved manifolds present in the feature space. Additionally, benchmarks of person re-identification serve as a broader term encompassing various benchmarks used to evaluate the performance of these methods."
+  ],
+  "times": [
+    11.505223512649536
+  ]
+}

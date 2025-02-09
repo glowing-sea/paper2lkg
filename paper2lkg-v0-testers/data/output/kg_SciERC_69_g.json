@@ -1,0 +1,51 @@
+{
+  "iri": "Paper-69",
+  "title": "E91-1012",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-69-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-69-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-1",
+              "text": "A purely functional implementation of LR-parsers is given , together with a simple correctness proof ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-2",
+              "text": "It is presented as a generalization of the recursive descent parser ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-3",
+              "text": "For non-LR grammars the time-complexity of our parser is cubic if the functions that constitute the parser are implemented as memo-functions , i.e. functions that memorize the results of previous invocations ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-4",
+              "text": "Memo-functions also facilitate a simple way to construct a very compact representation of the parse forest ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-5",
+              "text": "For LR -LRB- 0 -RRB- grammars , our algorithm is closely related to the recursive ascent parsers recently discovered by Kruse-man Aretz -LSB- 1 -RSB- and Roberts -LSB- 2 -RSB- ."
+            },
+            {
+              "iri": "Paper-69-Section-1-Paragraph-1-Sentence-6",
+              "text": "Extended CF grammars -LRB- grammars with regular expressions at the right hand side -RRB- can be parsed with a simple modification of the LR-parser for normal CF grammars ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "A purely functional implementation of LR-parsers is given , together with a simple correctness proof . It is presented as a generalization of the recursive descent parser . For non-LR grammars the time-complexity of our parser is cubic if the functions that constitute the parser are implemented as memo-functions , i.e. functions that memorize the results of previous invocations . Memo-functions also facilitate a simple way to construct a very compact representation of the parse forest . For LR -LRB- 0 -RRB- grammars , our algorithm is closely related to the recursive ascent parsers recently discovered by Kruse-man Aretz -LSB- 1 -RSB- and Roberts -LSB- 2 -RSB- . Extended CF grammars -LRB- grammars with regular expressions at the right hand side -RRB- can be parsed with a simple modification of the LR-parser for normal CF grammars .",
+  "kg2text": [
+    "Our algorithm is a purely functional implementation of LR-parsers that achieves the time-complexity of our parser, which is cubic. This algorithm is closely related to recursive ascent parsers, which were discovered by Kruse-man Aretz. The implementation exhibits the time-complexity of our parser and is presented as a generalization of the recursive descent parser, which itself is a modification of the traditional recursive descent parser. Additionally, this implementation is given a simple correctness proof and has a broader term, LR-parser. The LR-parser for normal CF grammars is a modification of the LR-parser and can parse extended CF grammars. Non-LR grammars also have the time-complexity of our parser. Memo-functions play a crucial role in facilitating a very compact representation of the parse forest, and the functions that constitute the parser are implemented as memo-functions.",
+    "Memo-functions play a crucial role in optimizing the performance of parsers by memorizing the results of previous invocations. This optimization is particularly significant in the context of the time-complexity of our parser, which is a broader term encompassing various types of parsers. The results of previous invocations, which are outputs stored by memo-functions, also fall under the broader category of results. Additionally, a generalization of the recursive descent parser and recursive ascent parsers are both types of parsers that extend traditional parsing techniques. Memo-functions facilitate the creation of a parse forest, which is a data structure representing all possible parse trees for a given input. This leads to a very compact representation of the parse forest, enhancing the efficiency of parsing. The time-complexity of our parser is a broader term that relates to the overall time-complexity associated with parsing algorithms. Various types of LR-parsers, including those for normal context-free grammars, are also categorized under the broader term of parser. Furthermore, recursive ascent parsers and recursive descent parsers are algorithms that generalize parsing techniques, while functions that constitute the parser are essential components of these parsing algorithms. Lastly, CF grammars are modified by regular expressions, illustrating the interplay between different formal grammar representations."
+  ],
+  "times": [
+    12.109356880187988
+  ]
+}

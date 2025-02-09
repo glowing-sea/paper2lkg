@@ -1,0 +1,42 @@
+{
+    "format_examples": [
+        {
+            "entity": "...",
+            "types": ["..."]
+        },
+        {
+            "entity": "...",
+            "types": ["..."]
+        }
+    ],
+    "input_output_pairs": [
+        {
+            "input": "ChatGPT is a popular chatbot around the world.",
+            "output": [
+                {
+                    "entity": "ChatGPT",
+                    "types": ["chatbot", "tool", "artificial intelligence"]
+                }
+            ]
+        },
+        {
+            "input": "Apple recently released its new MacBook Pro.",
+            "output": [
+                {
+                    "entity": "Apple",
+                    "types": ["company", "brand"]
+                },
+                {
+                    "entity": "MacBook Pro",
+                    "types": ["product", "laptop"]
+                }
+            ]
+        },
+        {
+            "input": "Large language models are revolutionising the field of AI.",
+            "output": []
+        }
+    ],
+    "trivial_sentence": " The sentence is written by Esmerelda Fotheringay .",
+    "trivial_responses": ["Esmerelda Fotheringay"]
+}

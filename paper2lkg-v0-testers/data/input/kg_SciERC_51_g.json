@@ -1,0 +1,990 @@
+{
+  "iri": "Paper-51",
+  "title": "P06-1053",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-51-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-51-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-51-Section-1-Paragraph-1-Sentence-1",
+              "text": "The psycholinguistic literature provides evidence for syntactic priming , i.e. , the tendency to repeat structures ."
+            },
+            {
+              "iri": "Paper-51-Section-1-Paragraph-1-Sentence-2",
+              "text": "This paper describes a method for incorporating priming into an incremental probabilistic parser ."
+            },
+            {
+              "iri": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+              "text": "Three models are compared , which involve priming of rules between sentences , within sentences , and within coordinate structures ."
+            },
+            {
+              "iri": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+              "text": "These models simulate the reading time advantage for parallel structures found in human data , and also yield a small increase in overall parsing accuracy ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.0002758502960205078,
+    8.409488916397095,
+    20.676843881607056,
+    23.44607710838318,
+    0.028045177459716797,
+    0.0001289844512939453,
+    0.0001468658447265625,
+    26.698365926742554,
+    45.465872287750244,
+    2.797121047973633,
+    0.055094003677368164,
+    0.0109100341796875,
+    0.000186920166015625,
+    19.56836986541748,
+    0.001277923583984375,
+    0.026243925094604492,
+    0.0014040470123291016,
+    3.5120859146118164,
+    0.6584169864654541,
+    1.1198961734771729,
+    66.24439311027527,
+    6.560378789901733,
+    40.62842917442322,
+    2.520739793777466,
+    0.0018889904022216797,
+    0.008319854736328125
+  ],
+  "nodes": {
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "This paper",
+      "aliases": [
+        "This paper"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "This paper presents a method for integrating syntactic priming into an incremental probabilistic parser, comparing three models that account for priming across different structural contexts.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "This paper",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.83984375
+    },
+    "Entity-these_model": {
+      "node_id": "these_model",
+      "disambiguation_index": 0,
+      "label": "These models",
+      "aliases": [
+        "These models"
+      ],
+      "types": [
+        "model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "These models refer to three comparative models of an incremental probabilistic parser that incorporate syntactic priming by simulating the reading time advantage for parallel structures and improving parsing accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "These models",
+          "local_types": [
+            "model"
+          ],
+          "iri": "Entity-these_model-Mention-1"
+        }
+      ],
+      "relevance": 0.83154296875
+    },
+    "Entity-three_model": {
+      "node_id": "three_model",
+      "disambiguation_index": 0,
+      "label": "Three models",
+      "aliases": [
+        "Three models"
+      ],
+      "types": [
+        "model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The 'Three models' refer to distinct approaches in a study that compare the effects of syntactic priming on rule application in an incremental probabilistic parser, specifically focusing on priming between sentences, within sentences, and within coordinate structures.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Three models",
+          "local_types": [
+            "model"
+          ],
+          "iri": "Entity-three_model-Mention-1"
+        }
+      ],
+      "relevance": 0.81591796875
+    },
+    "Entity-syntactic_priming": {
+      "node_id": "syntactic_priming",
+      "disambiguation_index": 0,
+      "label": "syntactic priming",
+      "aliases": [
+        "syntactic priming"
+      ],
+      "types": [
+        "psycholinguistic concept",
+        "linguistic phenomenon",
+        "priming",
+        "phenomenon",
+        "psycholinguistics"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Syntactic priming is a psycholinguistic phenomenon where the use of a particular syntactic structure increases the likelihood of using the same structure in subsequent sentences.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "syntactic priming",
+          "local_types": [
+            "psycholinguistic concept",
+            "linguistic phenomenon",
+            "priming",
+            "phenomenon",
+            "psycholinguistics"
+          ],
+          "iri": "Entity-syntactic_priming-Mention-1"
+        }
+      ],
+      "relevance": 0.814453125
+    },
+    "Entity-the_tendency_to_repeat_structure": {
+      "node_id": "the_tendency_to_repeat_structure",
+      "disambiguation_index": 0,
+      "label": "the tendency to repeat structures",
+      "aliases": [
+        "the tendency to repeat structures"
+      ],
+      "types": [
+        "tendency",
+        "structure"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The tendency to repeat structures refers to syntactic priming, a phenomenon in psycholinguistics where previously encountered syntactic structures influence the processing and production of subsequent sentences.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "the tendency to repeat structures",
+          "local_types": [
+            "tendency",
+            "structure"
+          ],
+          "iri": "Entity-the_tendency_to_repeat_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.8017578125
+    },
+    "Entity-a_method_for_incorporating_priming_into_an_incremental_probabilistic_parser": {
+      "node_id": "a_method_for_incorporating_priming_into_an_incremental_probabilistic_parser",
+      "disambiguation_index": 0,
+      "label": "a method for incorporating priming into an incremental probabilistic parser",
+      "aliases": [
+        "a method for incorporating priming into an incremental probabilistic parser"
+      ],
+      "types": [
+        "parser",
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A method for incorporating priming into an incremental probabilistic parser refers to a technique that enhances the parsing process by integrating syntactic priming effects, allowing the parser to utilize previously encountered structures to improve parsing efficiency and accuracy.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "a method for incorporating priming into an incremental probabilistic parser",
+          "local_types": [
+            "parser",
+            "method"
+          ],
+          "iri": "Entity-a_method_for_incorporating_priming_into_an_incremental_probabilistic_parser-Mention-1"
+        }
+      ],
+      "relevance": 0.80126953125
+    },
+    "Entity-priming_of_rule_between_sentence": {
+      "node_id": "priming_of_rule_between_sentence",
+      "disambiguation_index": 0,
+      "label": "priming of rules between sentences",
+      "aliases": [
+        "priming of rules between sentences"
+      ],
+      "types": [
+        "priming",
+        "rules"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'priming of rules between sentences' refers to the phenomenon in psycholinguistics where the syntactic structures used in one sentence influence the choice of syntactic structures in subsequent sentences, thereby facilitating the processing and understanding of language.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "priming of rules between sentences",
+          "local_types": [
+            "priming",
+            "rules"
+          ],
+          "iri": "Entity-priming_of_rule_between_sentence-Mention-1"
+        }
+      ],
+      "relevance": 0.7998046875
+    },
+    "Entity-priming_of_rule": {
+      "node_id": "priming_of_rule",
+      "disambiguation_index": 0,
+      "label": "priming of rules",
+      "aliases": [
+        "priming of rules"
+      ],
+      "types": [
+        "linguistic phenomenon",
+        "rules",
+        "process",
+        "cognitive process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'priming of rules' refers to the cognitive process in psycholinguistics where certain syntactic structures are more likely to be reused in subsequent sentences, influencing parsing and comprehension in language processing.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "priming of rules",
+          "local_types": [
+            "linguistic phenomenon",
+            "rules",
+            "process",
+            "cognitive process"
+          ],
+          "iri": "Entity-priming_of_rule-Mention-1"
+        }
+      ],
+      "relevance": 0.7861328125
+    },
+    "Entity-within_sentence": {
+      "node_id": "within_sentence",
+      "disambiguation_index": 0,
+      "label": "within sentences",
+      "aliases": [
+        "within sentences"
+      ],
+      "types": [
+        "context"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'within sentences' refers to the syntactic priming that occurs when structural patterns are repeated or influenced by previous structures within the same sentence, as part of a comparison of models in psycholinguistic research.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "within sentences",
+          "local_types": [
+            "context"
+          ],
+          "iri": "Entity-within_sentence-Mention-1"
+        }
+      ],
+      "relevance": 0.77880859375
+    },
+    "Entity-priming": {
+      "node_id": "priming",
+      "disambiguation_index": 0,
+      "label": "priming",
+      "aliases": [
+        "priming"
+      ],
+      "types": [
+        "cognitive process",
+        "psychological concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Priming refers to the cognitive process in psycholinguistics where the repetition of syntactic structures influences language processing, particularly in the context of parsing and sentence construction.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "priming",
+          "local_types": [
+            "cognitive process",
+            "psychological concept"
+          ],
+          "iri": "Entity-priming-Mention-1"
+        }
+      ],
+      "relevance": 0.77734375
+    },
+    "Entity-method": {
+      "node_id": "method",
+      "disambiguation_index": 0,
+      "label": "method",
+      "aliases": [
+        "method"
+      ],
+      "types": [
+        "research method",
+        "technique",
+        "approach"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The method refers to a technique for integrating syntactic priming into an incremental probabilistic parser to enhance parsing accuracy and simulate reading time advantages.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "method",
+          "local_types": [
+            "research method",
+            "technique",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-1"
+        }
+      ],
+      "relevance": 0.77587890625
+    },
+    "Entity-parallel_structure": {
+      "node_id": "parallel_structure",
+      "disambiguation_index": 0,
+      "label": "parallel structures",
+      "aliases": [
+        "parallel structures"
+      ],
+      "types": [
+        "syntax",
+        "linguistic structure",
+        "grammatical construct"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Parallel structures refer to syntactic constructions in which similar grammatical forms are used in a coordinated manner, enhancing readability and comprehension, particularly in the context of syntactic priming in psycholinguistics.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "parallel structures",
+          "local_types": [
+            "syntax",
+            "linguistic structure",
+            "grammatical construct"
+          ],
+          "iri": "Entity-parallel_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.76123046875
+    },
+    "Entity-model": {
+      "node_id": "model",
+      "disambiguation_index": 0,
+      "label": "models",
+      "aliases": [
+        "models"
+      ],
+      "types": [
+        "comparison group",
+        "computational model",
+        "theoretical construct",
+        "simulation",
+        "theoretical model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'models' refers to three distinct computational models that simulate syntactic priming effects in an incremental probabilistic parser, specifically focusing on the priming of rules across different sentence structures.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "models",
+          "local_types": [
+            "simulation",
+            "theoretical construct",
+            "comparison group",
+            "theoretical model"
+          ],
+          "iri": "Entity-model-Mention-1"
+        },
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "models",
+          "local_types": [
+            "computational model",
+            "theoretical construct"
+          ],
+          "iri": "Entity-model-Mention-2"
+        }
+      ],
+      "relevance": 0.751953125
+    },
+    "Entity-structure": {
+      "node_id": "structure",
+      "disambiguation_index": 0,
+      "label": "structures",
+      "aliases": [
+        "structures"
+      ],
+      "types": [
+        "linguistic structure",
+        "grammatical structure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of psycholinguistics, 'structures' refers to the syntactic configurations or patterns that are repeated during language processing, particularly in relation to syntactic priming.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "structures",
+          "local_types": [
+            "linguistic structure",
+            "grammatical structure"
+          ],
+          "iri": "Entity-structure-Mention-1"
+        }
+      ],
+      "relevance": 0.748046875
+    },
+    "Entity-reading_time_advantage_for_parallel_structure": {
+      "node_id": "reading_time_advantage_for_parallel_structure",
+      "disambiguation_index": 0,
+      "label": "reading time advantage for parallel structures",
+      "aliases": [
+        "the reading time advantage for parallel structures",
+        "reading time advantage for parallel structures"
+      ],
+      "types": [
+        "structure",
+        "advantage",
+        "reading time",
+        "parallel structures"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The reading time advantage for parallel structures refers to the observed phenomenon where sentences with parallel syntactic structures are processed more quickly by readers, as evidenced by reduced reading times in psycholinguistic studies.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "reading time advantage for parallel structures",
+          "local_types": [
+            "parallel structures",
+            "structure",
+            "reading time",
+            "advantage"
+          ],
+          "iri": "Entity-reading_time_advantage_for_parallel_structure-Mention-1"
+        },
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the reading time advantage for parallel structures",
+          "local_types": [
+            "advantage",
+            "reading time",
+            "structure"
+          ],
+          "iri": "Entity-reading_time_advantage_for_parallel_structure-Mention-2"
+        }
+      ],
+      "relevance": 0.740234375
+    },
+    "Entity-incremental_probabilistic_parser": {
+      "node_id": "incremental_probabilistic_parser",
+      "disambiguation_index": 0,
+      "label": "incremental probabilistic parser",
+      "aliases": [
+        "incremental probabilistic parser"
+      ],
+      "types": [
+        "parser",
+        "natural language processing",
+        "computational model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "An incremental probabilistic parser is a computational model used in natural language processing that builds a parse tree for a sentence in a step-by-step manner while assigning probabilities to different interpretations based on the input received so far.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "incremental probabilistic parser",
+          "local_types": [
+            "parser",
+            "natural language processing",
+            "computational model"
+          ],
+          "iri": "Entity-incremental_probabilistic_parser-Mention-1"
+        }
+      ],
+      "relevance": 0.73193359375
+    },
+    "Entity-between_sentence": {
+      "node_id": "between_sentence",
+      "disambiguation_index": 0,
+      "label": "between sentences",
+      "aliases": [
+        "between sentences"
+      ],
+      "types": [
+        "context"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'between sentences' refers to the context in which syntactic priming occurs across different sentences, influencing the repetition of structural patterns in language processing.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "between sentences",
+          "local_types": [
+            "context"
+          ],
+          "iri": "Entity-between_sentence-Mention-1"
+        }
+      ],
+      "relevance": 0.70263671875
+    },
+    "Entity-reading_time_advantage": {
+      "node_id": "reading_time_advantage",
+      "disambiguation_index": 0,
+      "label": "reading time advantage",
+      "aliases": [
+        "reading time advantage"
+      ],
+      "types": [
+        "cognitive phenomenon",
+        "performance metric",
+        "psycholinguistics"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The reading time advantage refers to the observed phenomenon where readers experience reduced reading times for parallel syntactic structures compared to non-parallel structures, as evidenced in psycholinguistic studies.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "reading time advantage",
+          "local_types": [
+            "cognitive phenomenon",
+            "performance metric",
+            "psycholinguistics"
+          ],
+          "iri": "Entity-reading_time_advantage-Mention-1"
+        }
+      ],
+      "relevance": 0.693359375
+    },
+    "Entity-within_coordinate_structure": {
+      "node_id": "within_coordinate_structure",
+      "disambiguation_index": 0,
+      "label": "within coordinate structures",
+      "aliases": [
+        "within coordinate structures"
+      ],
+      "types": [
+        "context"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'within coordinate structures' refers to a specific context in syntactic priming where the repetition of syntactic rules occurs among elements that are part of a coordinate structure, such as phrases or clauses that are linked by conjunctions.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "within coordinate structures",
+          "local_types": [
+            "context"
+          ],
+          "iri": "Entity-within_coordinate_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.6904296875
+    },
+    "Entity-overall_parsing_accuracy": {
+      "node_id": "overall_parsing_accuracy",
+      "disambiguation_index": 0,
+      "label": "overall parsing accuracy",
+      "aliases": [
+        "overall parsing accuracy"
+      ],
+      "types": [
+        "parsing",
+        "accuracy"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Overall parsing accuracy refers to the effectiveness of a probabilistic parser in correctly interpreting and analyzing syntactic structures in sentences, as influenced by the incorporation of syntactic priming.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "overall parsing accuracy",
+          "local_types": [
+            "parsing",
+            "accuracy"
+          ],
+          "iri": "Entity-overall_parsing_accuracy-Mention-1"
+        }
+      ],
+      "relevance": 0.68603515625
+    },
+    "Entity-human_data": {
+      "node_id": "human_data",
+      "disambiguation_index": 0,
+      "label": "human data",
+      "aliases": [
+        "human data"
+      ],
+      "types": [
+        "human",
+        "data source",
+        "empirical evidence",
+        "empirical data",
+        "data"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Human data refers to empirical evidence derived from human participants that demonstrates the reading time advantage for parallel structures in syntactic priming.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "human data",
+          "local_types": [
+            "human",
+            "data source",
+            "empirical evidence",
+            "empirical data",
+            "data"
+          ],
+          "iri": "Entity-human_data-Mention-1"
+        }
+      ],
+      "relevance": 0.65380859375
+    },
+    "Entity-parsing_accuracy": {
+      "node_id": "parsing_accuracy",
+      "disambiguation_index": 0,
+      "label": "parsing accuracy",
+      "aliases": [
+        "parsing accuracy"
+      ],
+      "types": [
+        "evaluation criterion",
+        "linguistic analysis",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Parsing accuracy is a performance metric used to evaluate the effectiveness of parsing algorithms in correctly analyzing and interpreting the structure of sentences in linguistic analysis.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "parsing accuracy",
+          "local_types": [
+            "evaluation criterion",
+            "linguistic analysis",
+            "performance metric"
+          ],
+          "iri": "Entity-parsing_accuracy-Mention-1"
+        }
+      ],
+      "relevance": 0.64306640625
+    },
+    "Entity-psycholinguistic_literature": {
+      "node_id": "psycholinguistic_literature",
+      "disambiguation_index": 0,
+      "label": "psycholinguistic literature",
+      "aliases": [
+        "psycholinguistic literature",
+        "The psycholinguistic literature"
+      ],
+      "types": [
+        "research area",
+        "literature",
+        "academic field",
+        "psycholinguistics"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Psycholinguistic literature refers to the body of academic writings and research studies that explore the relationship between language and psychological processes, including how language is acquired, understood, and produced.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "psycholinguistic literature",
+          "local_types": [
+            "academic field",
+            "literature",
+            "research area"
+          ],
+          "iri": "Entity-psycholinguistic_literature-Mention-1"
+        },
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "The psycholinguistic literature",
+          "local_types": [
+            "literature",
+            "psycholinguistics"
+          ],
+          "iri": "Entity-psycholinguistic_literature-Mention-2"
+        }
+      ],
+      "relevance": 0.56494140625
+    },
+    "Entity-coordinate_structure": {
+      "node_id": "coordinate_structure",
+      "disambiguation_index": 0,
+      "label": "coordinate structures",
+      "aliases": [
+        "coordinate structures"
+      ],
+      "types": [
+        "grammatical structure",
+        "linguistic construct"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Coordinate structures are grammatical constructions that consist of two or more elements of equal syntactic importance, typically joined by coordinating conjunctions such as 'and' or 'or'.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "coordinate structures",
+          "local_types": [
+            "grammatical structure",
+            "linguistic construct"
+          ],
+          "iri": "Entity-coordinate_structure-Mention-1"
+        }
+      ],
+      "relevance": 0.5634765625
+    },
+    "Entity-sentence": {
+      "node_id": "sentence",
+      "disambiguation_index": 0,
+      "label": "sentences",
+      "aliases": [
+        "sentences"
+      ],
+      "types": [
+        "linguistic unit",
+        "text structure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Sentences are linguistic units that express a complete thought and typically consist of a subject and a predicate, forming a fundamental component of written and spoken language.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "sentences",
+          "local_types": [
+            "linguistic unit",
+            "text structure"
+          ],
+          "iri": "Entity-sentence-Mention-1"
+        }
+      ],
+      "relevance": 0.5595703125
+    },
+    "Entity-paper": {
+      "node_id": "paper",
+      "disambiguation_index": 0,
+      "label": "paper",
+      "aliases": [
+        "paper"
+      ],
+      "types": [
+        "academic document",
+        "research publication"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A paper is a written work that presents research findings, theories, or analyses, typically published in an academic or professional context.",
+      "mentions": [
+        {
+          "reference": "Paper-51-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "paper",
+          "local_types": [
+            "academic document",
+            "research publication"
+          ],
+          "iri": "Entity-paper-Mention-1"
+        }
+      ],
+      "relevance": 0.462890625
+    }
+  },
+  "summary": "The psycholinguistic literature provides evidence for syntactic priming , i.e. , the tendency to repeat structures . This paper describes a method for incorporating priming into an incremental probabilistic parser . Three models are compared , which involve priming of rules between sentences , within sentences , and within coordinate structures . These models simulate the reading time advantage for parallel structures found in human data , and also yield a small increase in overall parsing accuracy .",
+  "triples": [
+    [
+      "Entity-psycholinguistic_literature",
+      "Predicate-provides_evidence_for",
+      "Entity-syntactic_priming"
+    ],
+    [
+      "Entity-syntactic_priming",
+      "Predicate-is",
+      "Entity-the_tendency_to_repeat_structure"
+    ],
+    [
+      "Entity-syntactic_priming",
+      "Predicate-is_associated_with",
+      "Entity-structure"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-describes",
+      "Entity-a_method_for_incorporating_priming_into_an_incremental_probabilistic_parser"
+    ],
+    [
+      "Entity-three_model",
+      "Predicate-are_compared",
+      "Entity-model"
+    ],
+    [
+      "Entity-priming_of_rule",
+      "Predicate-involves",
+      "Entity-sentence"
+    ],
+    [
+      "Entity-priming_of_rule",
+      "Predicate-involves",
+      "Entity-coordinate_structure"
+    ],
+    [
+      "Entity-priming_of_rule_between_sentence",
+      "Predicate-involves",
+      "Entity-between_sentence"
+    ],
+    [
+      "Entity-priming_of_rule_between_sentence",
+      "Predicate-involves",
+      "Entity-within_sentence"
+    ],
+    [
+      "Entity-priming_of_rule_between_sentence",
+      "Predicate-involves",
+      "Entity-within_coordinate_structure"
+    ],
+    [
+      "Entity-three_model",
+      "Predicate-are_compared",
+      "Entity-priming_of_rule_between_sentence"
+    ],
+    [
+      "Entity-these_model",
+      "Predicate-simulate",
+      "Entity-reading_time_advantage_for_parallel_structure"
+    ],
+    [
+      "Entity-these_model",
+      "Predicate-yield",
+      "Entity-overall_parsing_accuracy"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-compares",
+      "Entity-these_model"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-these_model",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-the_tendency_to_repeat_structure",
+      "skos:broader",
+      "Entity-structure"
+    ],
+    [
+      "Entity-a_method_for_incorporating_priming_into_an_incremental_probabilistic_parser",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-syntactic_priming",
+      "skos:broader",
+      "Entity-priming"
+    ],
+    [
+      "Entity-reading_time_advantage_for_parallel_structure",
+      "skos:broader",
+      "Entity-parallel_structure"
+    ],
+    [
+      "Entity-reading_time_advantage_for_parallel_structure",
+      "skos:broader",
+      "Entity-structure"
+    ],
+    [
+      "Entity-three_model",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-priming_of_rule_between_sentence",
+      "skos:broader",
+      "Entity-priming"
+    ]
+  ],
+  "predicates": {
+    "Predicate-provides_evidence_for": {
+      "label": "provides evidence for",
+      "description": "The predicate 'provides evidence for' indicates a supportive relationship where the subject offers data, findings, or arguments that substantiate or reinforce the validity of the object. This connection implies that the subject contributes to the understanding or acceptance of the object within a particular field or context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is": {
+      "label": "is",
+      "description": "The predicate 'is' serves as a linking verb that establishes an identity or equivalence between the subject and the object. It indicates that the subject can be defined or characterized by the object, suggesting that they are fundamentally the same or that the object provides a description or classification of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_associated_with": {
+      "label": "is associated with",
+      "description": "The predicate 'is associated with' indicates a relationship between the subject and the object, suggesting that there is a connection, correlation, or relevance between them. This connection may imply that the subject influences, relates to, or coexists with the object in some meaningful way, often within a specific context or framework.",
+      "disambiguation_index": 0
+    },
+    "Predicate-describes": {
+      "label": "describes",
+      "description": "The predicate 'describes' indicates that the subject provides an explanation, account, or representation of the object, which can be a concept, method, phenomenon, or any other entity. It establishes a relationship where the subject conveys information about the characteristics, functions, or details of the object, thereby enhancing the understanding of the object through the subject's perspective.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_compared": {
+      "label": "are compared",
+      "description": "The predicate 'are compared' indicates a relationship in which the subject is evaluated or analyzed in relation to the object, highlighting similarities, differences, or other relevant characteristics between them. This comparison often involves assessing attributes, performance, or qualities to draw conclusions or insights.",
+      "disambiguation_index": 0
+    },
+    "Predicate-involves": {
+      "label": "involves",
+      "description": "The predicate 'involves' indicates a relationship where the subject is engaged in or requires the object as a necessary component or aspect of its function or process. It suggests that the subject cannot be fully understood or realized without considering the object, highlighting a connection where the object plays a crucial role in the context of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-simulate": {
+      "label": "simulate",
+      "description": "The predicate 'simulate' indicates that the subject is performing an action or process that mimics or replicates the characteristics, behaviors, or outcomes of the object. In this context, it suggests that the subject is creating a representation or model that allows for the exploration or demonstration of the effects or advantages associated with the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-yield": {
+      "label": "yield",
+      "description": "The predicate 'yield' indicates a relationship where the subject produces, generates, or results in the object. It conveys the idea that the subject's actions or characteristics lead to the emergence or attainment of the object, often implying a measurable or observable outcome.",
+      "disambiguation_index": 0
+    },
+    "Predicate-compares": {
+      "label": "compares",
+      "description": "The predicate 'compares' indicates a relationship in which the subject evaluates, analyzes, or contrasts the characteristics, qualities, or performance of the object against another entity or standard. It suggests a process of examination where similarities and differences are identified to draw conclusions or insights.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or subset that falls under the more general category represented by the object. This relationship suggests that the object encompasses a wider range of entities or concepts than the subject, thereby providing a context in which the subject can be understood as part of a larger classification.",
+      "disambiguation_index": 0
+    }
+  }
+}

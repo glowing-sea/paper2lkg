@@ -1,0 +1,1390 @@
+{
+  "iri": "Paper-33",
+  "title": "P05-1056",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-33-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-33-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+              "text": "Sentence boundary detection in speech is important for enriching speech recognition output , making it easier for humans to read and downstream modules to process ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+              "text": "In previous work , we have developed hidden Markov model -LRB- HMM -RRB- and maximum entropy -LRB- Maxent -RRB- classifiers that integrate textual and prosodic knowledge sources for detecting sentence boundaries ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-3",
+              "text": "In this paper , we evaluate the use of a conditional random field -LRB- CRF -RRB- for this task and relate results with this model to our prior work ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+              "text": "We evaluate across two corpora -LRB- conversational telephone speech and broadcast news speech -RRB- on both human transcriptions and speech recognition output ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-5",
+              "text": "In general , our CRF model yields a lower error rate than the HMM and Max-ent models on the NIST sentence boundary detection task in speech , although it is interesting to note that the best results are achieved by three-way voting among the classifiers ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-6",
+              "text": "This probably occurs because each model has different strengths and weaknesses for modeling the knowledge sources ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.00027632713317871094,
+    16.714873552322388,
+    27.45288348197937,
+    23.521315813064575,
+    0.024814367294311523,
+    9.703636169433594e-05,
+    0.00012540817260742188,
+    45.719767332077026,
+    55.386327266693115,
+    1.8499526977539062,
+    1.2515532970428467,
+    0.012177705764770508,
+    0.00022077560424804688,
+    29.628880977630615,
+    9.25880765914917,
+    0.016704797744750977,
+    1.1189074516296387,
+    3.6391661167144775,
+    15.122878789901733,
+    18.24071979522705,
+    44.276907444000244,
+    3.6676552295684814,
+    27.11004090309143,
+    1.36798095703125,
+    0.0007719993591308594,
+    0.01403951644897461
+  ],
+  "nodes": {
+    "Entity-conditional_random_field_-lrb-_crf_-rrb-_for_this_task": {
+      "node_id": "conditional_random_field_-lrb-_crf_-rrb-_for_this_task",
+      "disambiguation_index": 0,
+      "label": "conditional random field -LRB- CRF -RRB- for this task",
+      "aliases": [
+        "conditional random field -LRB- CRF -RRB- for this task"
+      ],
+      "types": [
+        "approach",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "A machine learning approach or model used for sentence boundary detection in speech recognition.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "conditional random field -LRB- CRF -RRB- for this task",
+          "local_types": [
+            "approach",
+            "model"
+          ],
+          "iri": "Entity-conditional_random_field_-lrb-_crf_-rrb-_for_this_task-Mention-1"
+        }
+      ],
+      "relevance": 0.7958984375
+    },
+    "Entity-hidden_markov_model_-lrb-_hmm_-rrb-": {
+      "node_id": "hidden_markov_model_-lrb-_hmm_-rrb-",
+      "disambiguation_index": 0,
+      "label": "hidden Markov model -LRB- HMM -RRB-",
+      "aliases": [
+        "hidden Markov model -LRB- HMM -RRB-"
+      ],
+      "types": [
+        "algorithm",
+        "model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A statistical model used to detect sentence boundaries in speech by integrating textual and prosodic knowledge sources.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "hidden Markov model -LRB- HMM -RRB-",
+          "local_types": [
+            "algorithm",
+            "model"
+          ],
+          "iri": "Entity-hidden_markov_model_-lrb-_hmm_-rrb--Mention-1"
+        }
+      ],
+      "relevance": 0.79541015625
+    },
+    "Entity-our_crf_model": {
+      "node_id": "our_crf_model",
+      "disambiguation_index": 0,
+      "label": "our CRF model",
+      "aliases": [
+        "our CRF model"
+      ],
+      "types": [
+        "model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A conditional random field-based classifier used for detecting sentence boundaries in speech recognition output, which yields a lower error rate than HMM and Max-ent models on the NIST task.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "our CRF model",
+          "local_types": [
+            "model"
+          ],
+          "iri": "Entity-our_crf_model-Mention-1"
+        }
+      ],
+      "relevance": 0.79345703125
+    },
+    "Entity-we_evaluate": {
+      "node_id": "we_evaluate",
+      "disambiguation_index": 0,
+      "label": "We evaluate",
+      "aliases": [
+        "We evaluate"
+      ],
+      "types": [
+        "evaluation"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The evaluation of a conditional random field (CRF) model for sentence boundary detection in speech, across two corpora: conversational telephone speech and broadcast news speech.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "We evaluate",
+          "local_types": [
+            "evaluation"
+          ],
+          "iri": "Entity-we_evaluate-Mention-1"
+        }
+      ],
+      "relevance": 0.75634765625
+    },
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "this paper",
+      "aliases": [
+        "this paper"
+      ],
+      "types": [
+        "paper"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The current paper, which evaluates the use of a conditional random field (CRF) for sentence boundary detection in speech.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "this paper",
+          "local_types": [
+            "paper"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.73486328125
+    },
+    "Entity-maximum_entropy_-lrb-_maxent_-rrb-": {
+      "node_id": "maximum_entropy_-lrb-_maxent_-rrb-",
+      "disambiguation_index": 0,
+      "label": "maximum entropy -LRB- Maxent -RRB-",
+      "aliases": [
+        "maximum entropy -LRB- Maxent -RRB-"
+      ],
+      "types": [
+        "algorithm",
+        "model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A type of classifier that integrates textual and prosodic knowledge sources to detect sentence boundaries.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "maximum entropy -LRB- Maxent -RRB-",
+          "local_types": [
+            "algorithm",
+            "model"
+          ],
+          "iri": "Entity-maximum_entropy_-lrb-_maxent_-rrb--Mention-1"
+        }
+      ],
+      "relevance": 0.72265625
+    },
+    "Entity-maximum_entropy_-lrb-_maxent_-rrb-_classifier": {
+      "node_id": "maximum_entropy_-lrb-_maxent_-rrb-_classifier",
+      "disambiguation_index": 0,
+      "label": "maximum entropy -LRB- Maxent -RRB- classifiers",
+      "aliases": [
+        "maximum entropy -LRB- Maxent -RRB- classifiers"
+      ],
+      "types": [
+        "classifier",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Maximum Entropy (Maxent) classifiers, a type of machine learning model used for detecting sentence boundaries in speech.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "maximum entropy -LRB- Maxent -RRB- classifiers",
+          "local_types": [
+            "classifier",
+            "model"
+          ],
+          "iri": "Entity-maximum_entropy_-lrb-_maxent_-rrb-_classifier-Mention-1"
+        }
+      ],
+      "relevance": 0.7177734375
+    },
+    "Entity-nist_sentence_boundary_detection_task_in_speech": {
+      "node_id": "nist_sentence_boundary_detection_task_in_speech",
+      "disambiguation_index": 0,
+      "label": "NIST sentence boundary detection task in speech",
+      "aliases": [
+        "NIST sentence boundary detection task in speech"
+      ],
+      "types": [
+        "evaluation metric",
+        "natural language processing"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A standardized evaluation metric and benchmarking challenge for identifying sentence boundaries within spoken language.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "NIST sentence boundary detection task in speech",
+          "local_types": [
+            "evaluation metric",
+            "natural language processing"
+          ],
+          "iri": "Entity-nist_sentence_boundary_detection_task_in_speech-Mention-1"
+        }
+      ],
+      "relevance": 0.66064453125
+    },
+    "Entity-corpus_-lrb-_conversational_telephone_speech_and_broadcast_news_speech_-rrb-_on_both_human_transcription_and_speech_recognition_output": {
+      "node_id": "corpus_-lrb-_conversational_telephone_speech_and_broadcast_news_speech_-rrb-_on_both_human_transcription_and_speech_recognition_output",
+      "disambiguation_index": 0,
+      "label": "corpora -LRB- conversational telephone speech and broadcast news speech -RRB- on both human transcriptions and speech recognition output",
+      "aliases": [
+        "corpora -LRB- conversational telephone speech and broadcast news speech -RRB- on both human transcriptions and speech recognition output"
+      ],
+      "types": [
+        "dataset",
+        "data source"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A dataset of spoken language recordings, including conversations from phone calls and broadcasts, with accompanying transcripts from humans and automated speech recognition systems.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "corpora -LRB- conversational telephone speech and broadcast news speech -RRB- on both human transcriptions and speech recognition output",
+          "local_types": [
+            "dataset",
+            "data source"
+          ],
+          "iri": "Entity-corpus_-lrb-_conversational_telephone_speech_and_broadcast_news_speech_-rrb-_on_both_human_transcription_and_speech_recognition_output-Mention-1"
+        }
+      ],
+      "relevance": 0.65625
+    },
+    "Entity-the_nist_sentence_boundary_detection_task_in_speech": {
+      "node_id": "the_nist_sentence_boundary_detection_task_in_speech",
+      "disambiguation_index": 0,
+      "label": "the NIST sentence boundary detection task in speech",
+      "aliases": [
+        "the NIST sentence boundary detection task in speech"
+      ],
+      "types": [
+        "task",
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A standardized evaluation task for detecting sentence boundaries in spoken language, as defined by the National Institute of Standards and Technology (NIST).",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "the NIST sentence boundary detection task in speech",
+          "local_types": [
+            "task",
+            "research"
+          ],
+          "iri": "Entity-the_nist_sentence_boundary_detection_task_in_speech-Mention-1"
+        }
+      ],
+      "relevance": 0.6552734375
+    },
+    "Entity-crf_model": {
+      "node_id": "crf_model",
+      "disambiguation_index": 0,
+      "label": "CRF model",
+      "aliases": [
+        "CRF model"
+      ],
+      "types": [
+        "algorithm",
+        "machine learning"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of machine learning algorithm, specifically a Conditional Random Field (CRF) model that is used to classify or segment sequential data.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "CRF model",
+          "local_types": [
+            "algorithm",
+            "machine learning"
+          ],
+          "iri": "Entity-crf_model-Mention-1"
+        }
+      ],
+      "relevance": 0.64013671875
+    },
+    "Entity-the_knowledge_source": {
+      "node_id": "the_knowledge_source",
+      "disambiguation_index": 0,
+      "label": "the knowledge sources",
+      "aliases": [
+        "the knowledge sources"
+      ],
+      "types": [
+        "knowledge source",
+        "source"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The types of textual and prosodic information used to train machine learning models for detecting sentence boundaries in speech.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "the knowledge sources",
+          "local_types": [
+            "knowledge source",
+            "source"
+          ],
+          "iri": "Entity-the_knowledge_source-Mention-1"
+        }
+      ],
+      "relevance": 0.63037109375
+    },
+    "Entity-sentence_boundary_detection": {
+      "node_id": "sentence_boundary_detection",
+      "disambiguation_index": 0,
+      "label": "sentence boundary detection",
+      "aliases": [
+        "sentence boundary detection",
+        "sentence boundary detection in speech",
+        "Sentence boundary detection"
+      ],
+      "types": [
+        "method",
+        "technique",
+        "task",
+        "problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The identification of the boundaries between individual sentences in written or spoken language.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "sentence boundary detection",
+          "local_types": [
+            "method",
+            "technique",
+            "task",
+            "problem"
+          ],
+          "iri": "Entity-sentence_boundary_detection-Mention-1"
+        },
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "sentence boundary detection in speech",
+          "local_types": [
+            "task"
+          ],
+          "iri": "Entity-sentence_boundary_detection-Mention-2"
+        }
+      ],
+      "relevance": 0.62744140625
+    },
+    "Entity-detecting_sentence_boundary": {
+      "node_id": "detecting_sentence_boundary",
+      "disambiguation_index": 0,
+      "label": "detecting sentence boundaries",
+      "aliases": [
+        "detecting sentence boundaries"
+      ],
+      "types": [
+        "task",
+        "goal"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The process of identifying the start and end points of sentences within spoken language, typically using machine learning models or statistical techniques.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "detecting sentence boundaries",
+          "local_types": [
+            "task",
+            "goal"
+          ],
+          "iri": "Entity-detecting_sentence_boundary-Mention-1"
+        }
+      ],
+      "relevance": 0.62353515625
+    },
+    "Entity-two_corpus_-lrb-_conversational_telephone_speech_and_broadcast_news_speech_-rrb-": {
+      "node_id": "two_corpus_-lrb-_conversational_telephone_speech_and_broadcast_news_speech_-rrb-",
+      "disambiguation_index": 0,
+      "label": "two corpora -LRB- conversational telephone speech and broadcast news speech -RRB-",
+      "aliases": [
+        "two corpora -LRB- conversational telephone speech and broadcast news speech -RRB-"
+      ],
+      "types": [
+        "corpora"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Two datasets of spoken language, consisting of conversational telephone speech and broadcast news speech.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "two corpora -LRB- conversational telephone speech and broadcast news speech -RRB-",
+          "local_types": [
+            "corpora"
+          ],
+          "iri": "Entity-two_corpus_-lrb-_conversational_telephone_speech_and_broadcast_news_speech_-rrb--Mention-1"
+        }
+      ],
+      "relevance": 0.59814453125
+    },
+    "Entity-this_task": {
+      "node_id": "this_task",
+      "disambiguation_index": 0,
+      "label": "this task",
+      "aliases": [
+        "this task"
+      ],
+      "types": [
+        "research topic",
+        "problem statement"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A research topic or problem statement that requires the application of a conditional random field (CRF) model.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "this task",
+          "local_types": [
+            "research topic",
+            "problem statement"
+          ],
+          "iri": "Entity-this_task-Mention-1"
+        }
+      ],
+      "relevance": 0.58837890625
+    },
+    "Entity-crf": {
+      "node_id": "crf",
+      "disambiguation_index": 0,
+      "label": "CRF",
+      "aliases": [
+        "CRF"
+      ],
+      "types": [
+        "notation",
+        "abbreviation",
+        "algorithm",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A machine learning algorithm used for modeling probabilistic relationships between variables.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "CRF",
+          "local_types": [
+            "notation",
+            "abbreviation",
+            "algorithm",
+            "model"
+          ],
+          "iri": "Entity-crf-Mention-1"
+        }
+      ],
+      "relevance": 0.58740234375
+    },
+    "Entity-hmm": {
+      "node_id": "hmm",
+      "disambiguation_index": 0,
+      "label": "HMM",
+      "aliases": [
+        "HMM"
+      ],
+      "types": [
+        "algorithm",
+        "abbreviation",
+        "model",
+        "notation"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A statistical model used to analyze sequential data, such as speech or text.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "HMM",
+          "local_types": [
+            "algorithm",
+            "abbreviation",
+            "model",
+            "notation"
+          ],
+          "iri": "Entity-hmm-Mention-1"
+        }
+      ],
+      "relevance": 0.5693359375
+    },
+    "Entity-speech_recognition_output": {
+      "node_id": "speech_recognition_output",
+      "disambiguation_index": 0,
+      "label": "speech recognition output",
+      "aliases": [
+        "speech recognition output"
+      ],
+      "types": [
+        "output data",
+        "processed information",
+        "output type",
+        "output",
+        "automatic speech recognition result",
+        "result"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The result of an automatic speech recognition system, typically in the form of transcribed text or phonetic representation.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "speech recognition output",
+          "local_types": [
+            "output data",
+            "output",
+            "result",
+            "processed information"
+          ],
+          "iri": "Entity-speech_recognition_output-Mention-1"
+        },
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "speech recognition output",
+          "local_types": [
+            "automatic speech recognition result",
+            "output",
+            "output type"
+          ],
+          "iri": "Entity-speech_recognition_output-Mention-2"
+        }
+      ],
+      "relevance": 0.56884765625
+    },
+    "Entity-conditional_random_field": {
+      "node_id": "conditional_random_field",
+      "disambiguation_index": 0,
+      "label": "conditional random field",
+      "aliases": [
+        "conditional random field"
+      ],
+      "types": [
+        "algorithm",
+        "model",
+        "machine learning algorithm"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A statistical machine learning algorithm used for structured prediction tasks, such as labeling sequential data.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "conditional random field",
+          "local_types": [
+            "algorithm",
+            "model",
+            "machine learning algorithm"
+          ],
+          "iri": "Entity-conditional_random_field-Mention-1"
+        }
+      ],
+      "relevance": 0.5625
+    },
+    "Entity-downstream_module_to_process": {
+      "node_id": "downstream_module_to_process",
+      "disambiguation_index": 0,
+      "label": "downstream modules to process",
+      "aliases": [
+        "downstream modules to process"
+      ],
+      "types": [
+        "module"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Modules responsible for processing speech recognition output, making it easier for humans to read and utilize.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "downstream modules to process",
+          "local_types": [
+            "module"
+          ],
+          "iri": "Entity-downstream_module_to_process-Mention-1"
+        }
+      ],
+      "relevance": 0.53466796875
+    },
+    "Entity-maxent": {
+      "node_id": "maxent",
+      "disambiguation_index": 0,
+      "label": "Maxent",
+      "aliases": [
+        "Maxent"
+      ],
+      "types": [
+        "algorithm",
+        "abbreviation",
+        "model",
+        "notation"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A statistical model or algorithm used to classify text based on maximum entropy principles.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "Maxent",
+          "local_types": [
+            "algorithm",
+            "abbreviation",
+            "model",
+            "notation"
+          ],
+          "iri": "Entity-maxent-Mention-1"
+        }
+      ],
+      "relevance": 0.52734375
+    },
+    "Entity-hidden_markov_model": {
+      "node_id": "hidden_markov_model",
+      "disambiguation_index": 0,
+      "label": "hidden Markov model",
+      "aliases": [
+        "hidden Markov model"
+      ],
+      "types": [
+        "algorithm",
+        "statistical model",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A statistical model that uses probability distributions to represent hidden states and transitions between them, often used for modeling sequential data.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "hidden Markov model",
+          "local_types": [
+            "algorithm",
+            "statistical model",
+            "model"
+          ],
+          "iri": "Entity-hidden_markov_model-Mention-1"
+        }
+      ],
+      "relevance": 0.51611328125
+    },
+    "Entity-broadcast_news_speech": {
+      "node_id": "broadcast_news_speech",
+      "disambiguation_index": 0,
+      "label": "broadcast news speech",
+      "aliases": [
+        "broadcast news speech"
+      ],
+      "types": [
+        "type of data",
+        "audio data",
+        "field",
+        "domain",
+        "data source"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A type of spoken language used in television or radio broadcasts, typically featuring a presenter delivering news, information, or commentary.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "broadcast news speech",
+          "local_types": [
+            "type of data",
+            "audio data",
+            "field",
+            "domain",
+            "data source"
+          ],
+          "iri": "Entity-broadcast_news_speech-Mention-1"
+        }
+      ],
+      "relevance": 0.51123046875
+    },
+    "Entity-maximum_entropy": {
+      "node_id": "maximum_entropy",
+      "disambiguation_index": 0,
+      "label": "maximum entropy",
+      "aliases": [
+        "maximum entropy"
+      ],
+      "types": [
+        "algorithm",
+        "principle",
+        "concept",
+        "model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A statistical principle or model used to make predictions or classify data based on probability distributions.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "maximum entropy",
+          "local_types": [
+            "algorithm",
+            "principle",
+            "concept",
+            "model"
+          ],
+          "iri": "Entity-maximum_entropy-Mention-1"
+        }
+      ],
+      "relevance": 0.50244140625
+    },
+    "Entity-classifier": {
+      "node_id": "classifier",
+      "disambiguation_index": 0,
+      "label": "classifiers",
+      "aliases": [
+        "classifiers"
+      ],
+      "types": [
+        "machine learning models",
+        "algorithms"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Machine learning models or algorithms used to classify data into categories",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "classifiers",
+          "local_types": [
+            "machine learning models",
+            "algorithms"
+          ],
+          "iri": "Entity-classifier-Mention-1"
+        }
+      ],
+      "relevance": 0.50146484375
+    },
+    "Entity-max-ent_model": {
+      "node_id": "max-ent_model",
+      "disambiguation_index": 0,
+      "label": "Max-ent models",
+      "aliases": [
+        "Max-ent models"
+      ],
+      "types": [
+        "algorithm",
+        "statistical modeling"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A type of statistical modeling algorithm",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "Max-ent models",
+          "local_types": [
+            "algorithm",
+            "statistical modeling"
+          ],
+          "iri": "Entity-max-ent_model-Mention-1"
+        }
+      ],
+      "relevance": 0.498046875
+    },
+    "Entity-speech": {
+      "node_id": "speech",
+      "disambiguation_index": 0,
+      "label": "speech",
+      "aliases": [
+        "speech"
+      ],
+      "types": [
+        "communication medium",
+        "audio signal"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A form of human communication characterized by vocalizations, typically involving spoken language.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "speech",
+          "local_types": [
+            "communication medium",
+            "audio signal"
+          ],
+          "iri": "Entity-speech-Mention-1"
+        }
+      ],
+      "relevance": 0.486083984375
+    },
+    "Entity--lrb-": {
+      "node_id": "-lrb-",
+      "disambiguation_index": 0,
+      "label": "-LRB-",
+      "aliases": [
+        "-LRB-"
+      ],
+      "types": [
+        "punctuation",
+        "bracket"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A type of bracket used to enclose or group text in writing.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "-LRB-",
+          "local_types": [
+            "punctuation",
+            "bracket"
+          ],
+          "iri": "Entity--lrb--Mention-1"
+        }
+      ],
+      "relevance": 0.48193359375
+    },
+    "Entity-conversational_telephone_speech": {
+      "node_id": "conversational_telephone_speech",
+      "disambiguation_index": 0,
+      "label": "conversational telephone speech",
+      "aliases": [
+        "conversational telephone speech"
+      ],
+      "types": [
+        "type of data",
+        "audio data",
+        "field",
+        "domain",
+        "data source"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Spontaneous spoken language recorded over phone lines, characterized by informal conversations between individuals.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "conversational telephone speech",
+          "local_types": [
+            "type of data",
+            "audio data",
+            "field",
+            "domain",
+            "data source"
+          ],
+          "iri": "Entity-conversational_telephone_speech-Mention-1"
+        }
+      ],
+      "relevance": 0.481201171875
+    },
+    "Entity-each_model": {
+      "node_id": "each_model",
+      "disambiguation_index": 0,
+      "label": "each model",
+      "aliases": [
+        "each model"
+      ],
+      "types": [
+        "model"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The three models being referred to, which have different strengths and weaknesses for modeling textual and prosodic knowledge sources.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "each model",
+          "local_types": [
+            "model"
+          ],
+          "iri": "Entity-each_model-Mention-1"
+        }
+      ],
+      "relevance": 0.47802734375
+    },
+    "Entity-corpus": {
+      "node_id": "corpus",
+      "disambiguation_index": 0,
+      "label": "corpora",
+      "aliases": [
+        "corpora"
+      ],
+      "types": [
+        "dataset",
+        "collection"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of texts or spoken language data",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "corpora",
+          "local_types": [
+            "dataset",
+            "collection"
+          ],
+          "iri": "Entity-corpus-Mention-1"
+        }
+      ],
+      "relevance": 0.474609375
+    },
+    "Entity-human_transcription": {
+      "node_id": "human_transcription",
+      "disambiguation_index": 0,
+      "label": "human transcriptions",
+      "aliases": [
+        "human transcriptions"
+      ],
+      "types": [
+        "annotation process",
+        "transcription method",
+        "transcription"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A method of converting spoken language into written text, typically performed by humans.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "human transcriptions",
+          "local_types": [
+            "annotation process",
+            "transcription method",
+            "transcription"
+          ],
+          "iri": "Entity-human_transcription-Mention-1"
+        }
+      ],
+      "relevance": 0.4599609375
+    },
+    "Entity-model": {
+      "node_id": "model",
+      "disambiguation_index": 0,
+      "label": "model",
+      "aliases": [
+        "model"
+      ],
+      "types": [
+        "knowledge representation"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A conceptual framework or structure used to represent, organize, and communicate knowledge.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "model",
+          "local_types": [
+            "knowledge representation"
+          ],
+          "iri": "Entity-model-Mention-1"
+        }
+      ],
+      "relevance": 0.445556640625
+    },
+    "Entity-knowledge_source": {
+      "node_id": "knowledge_source",
+      "disambiguation_index": 0,
+      "label": "knowledge sources",
+      "aliases": [
+        "knowledge sources"
+      ],
+      "types": [
+        "data source",
+        "information repository"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A collection of data, information, or intelligence that serves as a basis for learning, decision-making, or problem-solving.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "knowledge sources",
+          "local_types": [
+            "data source",
+            "information repository"
+          ],
+          "iri": "Entity-knowledge_source-Mention-1"
+        }
+      ],
+      "relevance": 0.430419921875
+    },
+    "Entity-downstream_module": {
+      "node_id": "downstream_module",
+      "disambiguation_index": 0,
+      "label": "downstream modules",
+      "aliases": [
+        "downstream modules"
+      ],
+      "types": [
+        "software component",
+        "processing module"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Software components responsible for processing or analyzing data after initial detection or recognition.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "downstream modules",
+          "local_types": [
+            "software component",
+            "processing module"
+          ],
+          "iri": "Entity-downstream_module-Mention-1"
+        }
+      ],
+      "relevance": 0.42919921875
+    },
+    "Entity-human": {
+      "node_id": "human",
+      "disambiguation_index": 0,
+      "label": "humans",
+      "aliases": [
+        "humans"
+      ],
+      "types": [
+        "end-user",
+        "human being"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Members of the species Homo sapiens, characterized by their ability to think, communicate, and interact with each other.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "humans",
+          "local_types": [
+            "end-user",
+            "human being"
+          ],
+          "iri": "Entity-human-Mention-1"
+        }
+      ],
+      "relevance": 0.425537109375
+    },
+    "Entity-prior_work": {
+      "node_id": "prior_work",
+      "disambiguation_index": 0,
+      "label": "prior work",
+      "aliases": [
+        "prior work"
+      ],
+      "types": [
+        "academic research",
+        "research"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Previous research or studies in the same academic discipline",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "prior work",
+          "local_types": [
+            "academic research",
+            "research"
+          ],
+          "iri": "Entity-prior_work-Mention-1"
+        }
+      ],
+      "relevance": 0.40380859375
+    },
+    "Entity-previous_work": {
+      "node_id": "previous_work",
+      "disambiguation_index": 0,
+      "label": "previous work",
+      "aliases": [
+        "previous work"
+      ],
+      "types": [
+        "study",
+        "research"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Research studies or investigations conducted prior to a current project, study, or investigation.",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "previous work",
+          "local_types": [
+            "study",
+            "research"
+          ],
+          "iri": "Entity-previous_work-Mention-1"
+        }
+      ],
+      "relevance": 0.39794921875
+    },
+    "Entity-nist": {
+      "node_id": "nist",
+      "disambiguation_index": 0,
+      "label": "NIST",
+      "aliases": [
+        "NIST"
+      ],
+      "types": [
+        "acronym",
+        "organization"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "The National Institute of Standards and Technology",
+      "mentions": [
+        {
+          "reference": "Paper-33-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "NIST",
+          "local_types": [
+            "acronym",
+            "organization"
+          ],
+          "iri": "Entity-nist-Mention-1"
+        }
+      ],
+      "relevance": 0.37841796875
+    }
+  },
+  "summary": "Sentence boundary detection in speech is important for enriching speech recognition output , making it easier for humans to read and downstream modules to process . In previous work , we have developed hidden Markov model -LRB- HMM -RRB- and maximum entropy -LRB- Maxent -RRB- classifiers that integrate textual and prosodic knowledge sources for detecting sentence boundaries . In this paper , we evaluate the use of a conditional random field -LRB- CRF -RRB- for this task and relate results with this model to our prior work . We evaluate across two corpora -LRB- conversational telephone speech and broadcast news speech -RRB- on both human transcriptions and speech recognition output . In general , our CRF model yields a lower error rate than the HMM and Max-ent models on the NIST sentence boundary detection task in speech , although it is interesting to note that the best results are achieved by three-way voting among the classifiers . This probably occurs because each model has different strengths and weaknesses for modeling the knowledge sources .",
+  "triples": [
+    [
+      "Entity-sentence_boundary_detection",
+      "Predicate-is_important_for_enriching",
+      "Entity-speech_recognition_output"
+    ],
+    [
+      "Entity-previous_work",
+      "Predicate-developed",
+      "Entity-hidden_markov_model"
+    ],
+    [
+      "Entity-previous_work",
+      "Predicate-developed",
+      "Entity-maximum_entropy"
+    ],
+    [
+      "Entity-previous_work",
+      "Predicate-developed",
+      "Entity-classifier"
+    ],
+    [
+      "Entity-we_evaluate",
+      "Predicate-evaluate",
+      "Entity-two_corpus_-lrb-_conversational_telephone_speech_and_broadcast_news_speech_-rrb-"
+    ],
+    [
+      "Entity-human_transcription",
+      "Predicate-transcribe",
+      "Entity-speech_recognition_output"
+    ],
+    [
+      "Entity-each_model",
+      "Predicate-models",
+      "Entity-the_knowledge_source"
+    ],
+    [
+      "Entity-conditional_random_field_-lrb-_crf_-rrb-_for_this_task",
+      "Predicate-evaluate",
+      "Entity-hidden_markov_model_-lrb-_hmm_-rrb-"
+    ],
+    [
+      "Entity-our_crf_model",
+      "Predicate-evaluate",
+      "Entity-conditional_random_field_-lrb-_crf_-rrb-_for_this_task"
+    ],
+    [
+      "Entity-conditional_random_field_-lrb-_crf_-rrb-_for_this_task",
+      "Predicate-evaluate",
+      "Entity-we_evaluate"
+    ],
+    [
+      "Entity-our_crf_model",
+      "Predicate-yields",
+      "Entity-hidden_markov_model_-lrb-_hmm_-rrb-"
+    ],
+    [
+      "Entity-hidden_markov_model_-lrb-_hmm_-rrb-",
+      "Predicate-evaluate",
+      "Entity-we_evaluate"
+    ],
+    [
+      "Entity-we_evaluate",
+      "Predicate-relate_results_with",
+      "Entity-our_crf_model"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-conditional_random_field",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-crf",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-each_model",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-maxent",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-maximum_entropy",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-maximum_entropy_-lrb-_maxent_-rrb-_classifier",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-the_knowledge_source",
+      "skos:broader",
+      "Entity-knowledge_source"
+    ],
+    [
+      "Entity-hidden_markov_model",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-hidden_markov_model_-lrb-_hmm_-rrb-",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-maximum_entropy_-lrb-_maxent_-rrb-",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-two_corpus_-lrb-_conversational_telephone_speech_and_broadcast_news_speech_-rrb-",
+      "skos:broader",
+      "Entity-corpus"
+    ],
+    [
+      "Entity-maximum_entropy_-lrb-_maxent_-rrb-_classifier",
+      "skos:broader",
+      "Entity-classifier"
+    ],
+    [
+      "Entity-hmm",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-our_crf_model",
+      "skos:broader",
+      "Entity-model"
+    ],
+    [
+      "Entity-conditional_random_field_-lrb-_crf_-rrb-_for_this_task",
+      "skos:broader",
+      "Entity-model"
+    ]
+  ],
+  "predicates": {
+    "Predicate-is_important_for_enriching": {
+      "label": "is important for enriching",
+      "description": "This predicate indicates that the subject has a crucial role in enhancing or improving the object. It suggests that the subject plays a vital part in refining, augmenting, or adding value to the object, making it more comprehensive, accurate, or meaningful.",
+      "disambiguation_index": 0
+    },
+    "Predicate-developed": {
+      "label": "developed",
+      "description": "Indicates that a concept or idea was brought to a more advanced or mature state through research, experimentation, or other means. The subject refers to the foundation or starting point from which development occurred, and the object represents the resulting outcome or product of this process.",
+      "disambiguation_index": 0
+    },
+    "Predicate-evaluate": {
+      "label": "evaluate",
+      "description": "To evaluate means to assess or judge the quality, value, or significance of something based on certain criteria or standards. The subject performs this assessment by examining and analyzing the object, which can be a person, thing, idea, or concept.",
+      "disambiguation_index": 0
+    },
+    "Predicate-transcribe": {
+      "label": "transcribe",
+      "description": "To transcribe means to convert or represent written or spoken information into a standardized format, often from one medium to another. This process involves capturing and interpreting the original content's structure, syntax, and semantics, then rendering it in a new form that can be easily read, understood, or processed by humans or machines.",
+      "disambiguation_index": 0
+    },
+    "Predicate-models": {
+      "label": "models",
+      "description": "The predicate 'models' represents a relationship where the subject (in this case, each model) is an instance or representation of the object (the knowledge sources). This connection suggests that the models are based on, derived from, or informed by the knowledge sources. In general, it implies a mapping or correspondence between the two entities.",
+      "disambiguation_index": 0
+    },
+    "Predicate-yields": {
+      "label": "yields",
+      "description": "The predicate 'yields' indicates a relationship where the subject produces or generates an object, often implying that the subject's internal workings or processes result in the creation of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-relate_results_with": {
+      "label": "relate results with",
+      "description": "To connect or associate a set of outcomes or findings with an entity, concept, or method. This predicate indicates that the subject has generated or obtained results and is linking them to the object for further analysis, interpretation, or comparison.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' indicates that the subject is a specific instance or example of a more general concept or category represented by the object. The relationship between the subject and object is one of instantiation, where the subject is a concrete realization of the abstract idea or class denoted by the object.",
+      "disambiguation_index": 0
+    }
+  }
+}

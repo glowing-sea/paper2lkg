@@ -1,0 +1,1 @@
+Files output from the pipeline are stored here.

@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What is the main objective of the paper?",
+    "answer": "The main objective of the paper is to apply a data mining model to analyze the 2019 grant applications submitted to an Australian Government research funding agency to investigate whether grant schemes successfully identify innovative project proposals.",
+    "LLM_answer": "The main objective of the paper is to develop a predictive vocabulary for contemporary research proposals and to understand the model's inference of high innovation and creativity score proposals based on data features.",
+    "similarity_score": 0.73828125
+  },
+  {
+    "question": "Which data mining model did the authors propose as having the best performance?",
+    "answer": "The authors proposed a Random Forest classifier over documents encoded with features denoting the presence or absence of unigrams, using a modified TF-IDF algorithm that only implements the IDF part.",
+    "LLM_answer": "The authors proposed the Random Forest (RF) classifier as having the best performance, achieving an accuracy of 84.17% in predicting innovation and creativity scores for grant applications.",
+    "similarity_score": 0.72802734375
+  },
+  {
+    "question": "How did the authors modify the traditional TF-IDF algorithm in their feature extraction technique?",
+    "answer": "They modified the TF-IDF algorithm by only implementing the IDF part. Specifically, if a term exists at least once in the documents, they assign the IDF value to it; otherwise, they assign a value of zero. They do not consider term frequency in their encoding.",
+    "LLM_answer": "The authors modified the traditional TF-IDF algorithm by introducing the intra-class dispersion algorithm, which enhances the weighting of terms based on their class discrimination strength in text classification tasks. This adaptation focuses on improving the inverse document frequency (IDF) component of the TF-IDF method, thereby enhancing feature extraction and text representation.",
+    "similarity_score": 0.779296875
+  },
+  {
+    "question": "What accuracy did the proposed model achieve across all types of grant applications?",
+    "answer": "The proposed model achieved an accuracy of 84.17% across all types of grant applications.",
+    "LLM_answer": "The proposed model achieved an accuracy of 84.17% across all types of grant applications.",
+    "similarity_score": 1.0
+  },
+  {
+    "question": "Why did the authors focus on the presence or absence of unigrams in their feature encoding?",
+    "answer": "They focused on unigrams because unigrams are the most common choice for text classification tasks, and they wanted an efficient feature extraction technique that highlights the vocabulary of innovative proposals.",
+    "LLM_answer": "The authors focused on the presence or absence of unigrams in their feature encoding because unigrams are the most common choice for text classification tasks. By using features that denote the presence or absence of unigrams, they can effectively analyze the vocabulary related to innovative proposals in grant applications.",
+    "similarity_score": 0.85107421875
+  },
+  {
+    "question": "What were the main contributions of the paper?",
+    "answer": "The main contributions include: providing a rigorous experimental pipeline for analyzing grant applications; proposing a Random Forest classifier over documents encoded with presence or absence of unigram terms using a modified TF-IDF algorithm; and demonstrating that the proposed model achieved an accuracy of 84.17% across all types of grant applications.",
+    "LLM_answer": "The main contributions of the paper include the presentation of a rigorous experimental pipeline for analyzing grant applications, the proposal of a Random Forest classifier model for predicting high IC-score research proposals, and the implementation of a modified TF-IDF algorithm for feature encoding, achieving an accuracy of 84.17% across various grant applications.",
+    "similarity_score": 0.91650390625
+  },
+  {
+    "question": "What is the significance of using only the IDF part in their modified TF-IDF algorithm?",
+    "answer": "By using only the IDF part, the authors aimed to focus on rare terms that can define innovativeness, under the idea that rare but important words are more indicative of innovative proposals.",
+    "LLM_answer": "The significance of using only the IDF part in their modified TF-IDF algorithm lies in its ability to adjust term weights effectively. IDF, or inverse document frequency, evaluates the importance of a term within a document relative to a collection of documents, which helps in emphasizing terms that are more unique to specific documents. By focusing solely on IDF, the algorithm can enhance the weighting of terms based on their class discrimination strength, thereby improving the performance of the research paper classification system.",
+    "similarity_score": 0.63623046875
+  },
+  {
+    "question": "What data set did the authors use for their analysis?",
+    "answer": "They used the 2019 grant applications submitted to an Australian Government research funding agency, consisting of 3,805 research proposals with peer-reviewed 'innovation and creativity' (IC) scores.",
+    "LLM_answer": "The authors used data sets for their analysis, specifically in the context of building and comparing five data mining classifiers.",
+    "similarity_score": 0.4697265625
+  },
+  {
+    "question": "What text pre-processing techniques were applied in the study?",
+    "answer": "The text pre-processing techniques included converting all text to lowercase, removing numbers and punctuation, tokenizing by whitespace, deleting stop words based on IDF values, and applying text stemming using the Porter Stemming algorithm.",
+    "LLM_answer": "The text pre-processing techniques applied in the study include the deletion of stop words, converting text to lowercase, removing numbers and punctuation, tokenizing, and stemming. These techniques are part of the text pre-processing step aimed at enhancing the performance of data mining models.",
+    "similarity_score": 0.89306640625
+  },
+  {
+    "question": "What future work did the authors suggest?",
+    "answer": "The authors suggested considering other evaluation scores to build a more comprehensive system, applying other effective data mining models like SVM, AdaBoost, and XGBoost, and exploring pre-trained language models in NLP to better understand text semantics. They also mentioned building a long-term model to predict future grant applications.",
+    "LLM_answer": "The resources provided do not specify any particular future work suggested by the authors. They focus on the concepts of people paying attention to certain words and the treatment of infrequent words in proposals, but do not outline specific future research directions.",
+    "similarity_score": 0.62255859375
+  }
+]

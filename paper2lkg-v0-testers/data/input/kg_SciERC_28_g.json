@@ -1,0 +1,1380 @@
+{
+  "iri": "Paper-28",
+  "title": "P05-1076",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-28-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-28-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+              "text": "This paper describes a novel system for acquiring adjectival subcategorization frames -LRB- scfs -RRB- and associated frequency information from English corpus data ."
+            },
+            {
+              "iri": "Paper-28-Section-1-Paragraph-1-Sentence-2",
+              "text": "The system incorporates a decision-tree classifier for 30 scf types which tests for the presence of grammatical relations -LRB- grs -RRB- in the output of a robust statistical parser ."
+            },
+            {
+              "iri": "Paper-28-Section-1-Paragraph-1-Sentence-3",
+              "text": "It uses a powerful pattern-matching language to classify grs into frames hierarchically in a way that mirrors inheritance-based lexica ."
+            },
+            {
+              "iri": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+              "text": "The experiments show that the system is able to detect scf types with 70 % precision and 66 % recall rate ."
+            },
+            {
+              "iri": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+              "text": "A new tool for linguistic annotation of scfs in corpus data is also introduced which can considerably alleviate the process of obtaining training and test data for subcategorization acquisition ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    6.008148193359375e-05,
+    8.117306232452393,
+    31.232837915420532,
+    38.81187987327576,
+    0.03050971031188965,
+    0.00010514259338378906,
+    0.0001499652862548828,
+    33.44439506530762,
+    63.69473314285278,
+    3.6573917865753174,
+    0.09458208084106445,
+    0.012513160705566406,
+    0.0002281665802001953,
+    22.41821002960205,
+    0.0012679100036621094,
+    0.03657197952270508,
+    0.0009739398956298828,
+    4.162108898162842,
+    2.162008047103882,
+    2.963850975036621,
+    103.72588801383972,
+    7.897646903991699,
+    56.49514698982239,
+    3.2875418663024902,
+    0.0011477470397949219,
+    0.012531757354736328
+  ],
+  "nodes": {
+    "Entity-this_paper": {
+      "node_id": "this_paper",
+      "disambiguation_index": 0,
+      "label": "This paper",
+      "aliases": [
+        "This paper"
+      ],
+      "types": [
+        "research"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "This paper presents a novel system designed to acquire adjectival subcategorization frames and their frequency information from English corpus data, utilizing a decision-tree classifier and a pattern-matching language for linguistic annotation.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "This paper",
+          "local_types": [
+            "research"
+          ],
+          "iri": "Entity-this_paper-Mention-1"
+        }
+      ],
+      "relevance": 0.794921875
+    },
+    "Entity-a_novel_system": {
+      "node_id": "a_novel_system",
+      "disambiguation_index": 0,
+      "label": "a novel system",
+      "aliases": [
+        "the system",
+        "a novel system",
+        "The system"
+      ],
+      "types": [
+        "system"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A novel system for acquiring adjectival subcategorization frames (scfs) and associated frequency information from English corpus data, utilizing a decision-tree classifier and a pattern-matching language to analyze grammatical relations.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a novel system",
+          "local_types": [
+            "system"
+          ],
+          "iri": "Entity-a_novel_system-Mention-1"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "The system",
+          "local_types": [
+            "system"
+          ],
+          "iri": "Entity-a_novel_system-Mention-2"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the system",
+          "local_types": [
+            "system"
+          ],
+          "iri": "Entity-a_novel_system-Mention-3"
+        }
+      ],
+      "relevance": 0.791015625
+    },
+    "Entity-system": {
+      "node_id": "system",
+      "disambiguation_index": 0,
+      "label": "system",
+      "aliases": [
+        "system"
+      ],
+      "types": [
+        "technology",
+        "tool",
+        "methodology",
+        "software",
+        "framework",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The system is a novel software tool designed for acquiring adjectival subcategorization frames from English corpus data, utilizing a decision-tree classifier and a pattern-matching language to analyze grammatical relations.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "system",
+          "local_types": [
+            "framework",
+            "methodology",
+            "method",
+            "tool"
+          ],
+          "iri": "Entity-system-Mention-1"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "system",
+          "local_types": [
+            "software",
+            "technology"
+          ],
+          "iri": "Entity-system-Mention-2"
+        }
+      ],
+      "relevance": 0.75390625
+    },
+    "Entity-66__recall_rate": {
+      "node_id": "66__recall_rate",
+      "disambiguation_index": 0,
+      "label": "66 % recall rate",
+      "aliases": [
+        "66 % recall rate"
+      ],
+      "types": [
+        "metric",
+        "recall"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The '66 % recall rate' refers to the effectiveness of the novel system in correctly identifying adjectival subcategorization frames (scfs) from English corpus data, indicating that 66% of the actual scf types were successfully detected by the system.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "66 % recall rate",
+          "local_types": [
+            "metric",
+            "recall"
+          ],
+          "iri": "Entity-66__recall_rate-Mention-1"
+        }
+      ],
+      "relevance": 0.74853515625
+    },
+    "Entity-30_scf_type": {
+      "node_id": "30_scf_type",
+      "disambiguation_index": 0,
+      "label": "30 scf types",
+      "aliases": [
+        "30 scf types"
+      ],
+      "types": [
+        "subcategorization frame",
+        "type"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term '30 scf types' refers to a classification of adjectival subcategorization frames used in a system that employs a decision-tree classifier to identify grammatical relations in linguistic data.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "30 scf types",
+          "local_types": [
+            "subcategorization frame",
+            "type"
+          ],
+          "iri": "Entity-30_scf_type-Mention-1"
+        }
+      ],
+      "relevance": 0.7392578125
+    },
+    "Entity-scfs": {
+      "node_id": "scfs",
+      "disambiguation_index": 0,
+      "label": "scfs",
+      "aliases": [
+        "scfs",
+        "scf types"
+      ],
+      "types": [
+        "linguistic feature",
+        "linguistic category",
+        "grammatical structure",
+        "data type",
+        "type",
+        "classification type",
+        "subcategorization frame",
+        "annotation type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "scfs refers to adjectival subcategorization frames, which are linguistic features used to classify the grammatical relations of adjectives in English corpus data.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "scfs",
+          "local_types": [
+            "subcategorization frame"
+          ],
+          "iri": "Entity-scfs-Mention-1"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "scfs",
+          "local_types": [
+            "linguistic feature",
+            "annotation type"
+          ],
+          "iri": "Entity-scfs-Mention-2"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "scf types",
+          "local_types": [
+            "linguistic category",
+            "subcategorization frame",
+            "grammatical structure"
+          ],
+          "iri": "Entity-scfs-Mention-3"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "scf types",
+          "local_types": [
+            "classification type",
+            "data type",
+            "type"
+          ],
+          "iri": "Entity-scfs-Mention-4"
+        }
+      ],
+      "relevance": 0.73681640625
+    },
+    "Entity-grs": {
+      "node_id": "grs",
+      "disambiguation_index": 0,
+      "label": "grs",
+      "aliases": [
+        "grs"
+      ],
+      "types": [
+        "data structure",
+        "entity",
+        "computational model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this paper, 'grs' refers to grammatical relations that are classified into hierarchical frames using a pattern-matching language within a system designed for acquiring adjectival subcategorization frames from English corpus data.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "grs",
+          "local_types": [
+            "data structure",
+            "entity",
+            "computational model"
+          ],
+          "iri": "Entity-grs-Mention-1"
+        }
+      ],
+      "relevance": 0.71728515625
+    },
+    "Entity-new_tool_for_linguistic_annotation_of_scfs": {
+      "node_id": "new_tool_for_linguistic_annotation_of_scfs",
+      "disambiguation_index": 0,
+      "label": "new tool for linguistic annotation of scfs",
+      "aliases": [
+        "A new tool for linguistic annotation of scfs in corpus data",
+        "new tool for linguistic annotation of scfs"
+      ],
+      "types": [
+        "linguistic annotation",
+        "annotation",
+        "tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The new tool for linguistic annotation of scfs is a software system designed to facilitate the annotation of subcategorization frames in corpus data, thereby streamlining the process of gathering training and test data for subcategorization acquisition.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "new tool for linguistic annotation of scfs",
+          "local_types": [
+            "annotation",
+            "tool"
+          ],
+          "iri": "Entity-new_tool_for_linguistic_annotation_of_scfs-Mention-1"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "A new tool for linguistic annotation of scfs in corpus data",
+          "local_types": [
+            "tool",
+            "linguistic annotation"
+          ],
+          "iri": "Entity-new_tool_for_linguistic_annotation_of_scfs-Mention-2"
+        }
+      ],
+      "relevance": 0.71044921875
+    },
+    "Entity-a_novel_system_for_acquiring_adjectival_subcategorization_frame": {
+      "node_id": "a_novel_system_for_acquiring_adjectival_subcategorization_frame",
+      "disambiguation_index": 0,
+      "label": "a novel system for acquiring adjectival subcategorization frames",
+      "aliases": [
+        "a novel system for acquiring adjectival subcategorization frames"
+      ],
+      "types": [
+        "method",
+        "system"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The entity refers to an innovative computational system designed to extract adjectival subcategorization frames and their frequency data from English language corpora, utilizing a decision-tree classifier and a pattern-matching language for hierarchical classification of grammatical relations.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a novel system for acquiring adjectival subcategorization frames",
+          "local_types": [
+            "method",
+            "system"
+          ],
+          "iri": "Entity-a_novel_system_for_acquiring_adjectival_subcategorization_frame-Mention-1"
+        }
+      ],
+      "relevance": 0.70654296875
+    },
+    "Entity-training_and_test_data_for_subcategorization_acquisition": {
+      "node_id": "training_and_test_data_for_subcategorization_acquisition",
+      "disambiguation_index": 0,
+      "label": "training and test data for subcategorization acquisition",
+      "aliases": [
+        "training and test data for subcategorization acquisition"
+      ],
+      "types": [
+        "test data",
+        "data",
+        "subcategorization acquisition",
+        "training data"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Training and test data for subcategorization acquisition refers to the datasets used to train and evaluate a system designed to identify and classify adjectival subcategorization frames from English corpus data, facilitating the learning of grammatical relations and their hierarchical organization.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "training and test data for subcategorization acquisition",
+          "local_types": [
+            "test data",
+            "data",
+            "subcategorization acquisition",
+            "training data"
+          ],
+          "iri": "Entity-training_and_test_data_for_subcategorization_acquisition-Mention-1"
+        }
+      ],
+      "relevance": 0.69140625
+    },
+    "Entity-adjectival_subcategorization_frame": {
+      "node_id": "adjectival_subcategorization_frame",
+      "disambiguation_index": 0,
+      "label": "adjectival subcategorization frames",
+      "aliases": [
+        "adjectival subcategorization frames",
+        "frames"
+      ],
+      "types": [
+        "grammatical category",
+        "linguistic structure",
+        "concept",
+        "conceptual framework",
+        "frame",
+        "linguistic frame",
+        "data structure",
+        "linguistic concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Adjectival subcategorization frames (scfs) are linguistic structures that categorize the grammatical relations associated with adjectives in a language, specifically focusing on how adjectives can be combined with other elements in sentences.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "adjectival subcategorization frames",
+          "local_types": [
+            "grammatical category",
+            "linguistic structure",
+            "concept",
+            "frame",
+            "linguistic frame",
+            "linguistic concept"
+          ],
+          "iri": "Entity-adjectival_subcategorization_frame-Mention-1"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "frames",
+          "local_types": [
+            "linguistic structure",
+            "concept"
+          ],
+          "iri": "Entity-adjectival_subcategorization_frame-Mention-2"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "frames",
+          "local_types": [
+            "data structure",
+            "conceptual framework",
+            "frame"
+          ],
+          "iri": "Entity-adjectival_subcategorization_frame-Mention-3"
+        }
+      ],
+      "relevance": 0.6796875
+    },
+    "Entity-powerful_pattern-matching_language": {
+      "node_id": "powerful_pattern-matching_language",
+      "disambiguation_index": 0,
+      "label": "powerful pattern-matching language",
+      "aliases": [
+        "powerful pattern-matching language",
+        "a powerful pattern-matching language"
+      ],
+      "types": [
+        "pattern-matching",
+        "tool",
+        "language"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The powerful pattern-matching language refers to a specialized linguistic tool used in the system described in the paper for classifying grammatical relations into hierarchical frames, facilitating the acquisition of adjectival subcategorization frames from English corpus data.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "powerful pattern-matching language",
+          "local_types": [
+            "tool",
+            "language"
+          ],
+          "iri": "Entity-powerful_pattern-matching_language-Mention-1"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "a powerful pattern-matching language",
+          "local_types": [
+            "language",
+            "pattern-matching"
+          ],
+          "iri": "Entity-powerful_pattern-matching_language-Mention-2"
+        }
+      ],
+      "relevance": 0.66552734375
+    },
+    "Entity-subcategorization_acquisition": {
+      "node_id": "subcategorization_acquisition",
+      "disambiguation_index": 0,
+      "label": "subcategorization acquisition",
+      "aliases": [
+        "subcategorization acquisition"
+      ],
+      "types": [
+        "acquisition process",
+        "research area",
+        "linguistic task",
+        "linguistic process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Subcategorization acquisition is the process by which language learners or computational models acquire knowledge about the syntactic subcategorization frames of verbs, including the types and structures of arguments they can take.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "subcategorization acquisition",
+          "local_types": [
+            "acquisition process",
+            "research area",
+            "linguistic task",
+            "linguistic process"
+          ],
+          "iri": "Entity-subcategorization_acquisition-Mention-1"
+        }
+      ],
+      "relevance": 0.6650390625
+    },
+    "Entity-the_experiment": {
+      "node_id": "the_experiment",
+      "disambiguation_index": 0,
+      "label": "the experiments",
+      "aliases": [
+        "the experiments"
+      ],
+      "types": [
+        "experiment"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The experiments refer to the evaluations conducted to assess the performance of the novel system in detecting adjectival subcategorization frame types, demonstrating a precision of 70% and a recall rate of 66%.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the experiments",
+          "local_types": [
+            "experiment"
+          ],
+          "iri": "Entity-the_experiment-Mention-1"
+        }
+      ],
+      "relevance": 0.640625
+    },
+    "Entity-frame_hierarchically": {
+      "node_id": "frame_hierarchically",
+      "disambiguation_index": 0,
+      "label": "frames hierarchically",
+      "aliases": [
+        "frames hierarchically"
+      ],
+      "types": [
+        "frame"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The mention 'frames hierarchically' refers to the method by which grammatical relations are organized into a structured hierarchy of adjectival subcategorization frames, reflecting an inheritance-based approach in linguistic classification.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "frames hierarchically",
+          "local_types": [
+            "frame"
+          ],
+          "iri": "Entity-frame_hierarchically-Mention-1"
+        }
+      ],
+      "relevance": 0.6259765625
+    },
+    "Entity-frequency_information": {
+      "node_id": "frequency_information",
+      "disambiguation_index": 0,
+      "label": "frequency information",
+      "aliases": [
+        "frequency information"
+      ],
+      "types": [
+        "data",
+        "statistical measure",
+        "information"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Frequency information refers to the statistical data regarding the occurrence rates of adjectival subcategorization frames extracted from English corpus data.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "frequency information",
+          "local_types": [
+            "data",
+            "statistical measure",
+            "information"
+          ],
+          "iri": "Entity-frequency_information-Mention-1"
+        }
+      ],
+      "relevance": 0.6201171875
+    },
+    "Entity-tool": {
+      "node_id": "tool",
+      "disambiguation_index": 0,
+      "label": "tool",
+      "aliases": [
+        "tool"
+      ],
+      "types": [
+        "software",
+        "linguistic tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'tool' refers to a new software designed for linguistic annotation of adjectival subcategorization frames in corpus data, aimed at facilitating the acquisition of training and test data for subcategorization tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "tool",
+          "local_types": [
+            "software",
+            "linguistic tool"
+          ],
+          "iri": "Entity-tool-Mention-1"
+        }
+      ],
+      "relevance": 0.61669921875
+    },
+    "Entity-70__precision": {
+      "node_id": "70__precision",
+      "disambiguation_index": 0,
+      "label": "70 % precision",
+      "aliases": [
+        "70 % precision"
+      ],
+      "types": [
+        "precision",
+        "metric"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "70 % precision refers to the accuracy of the system in correctly identifying adjectival subcategorization frame types in the experiments conducted, indicating that 70 out of every 100 detected instances were correct.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "70 % precision",
+          "local_types": [
+            "precision",
+            "metric"
+          ],
+          "iri": "Entity-70__precision-Mention-1"
+        }
+      ],
+      "relevance": 0.60791015625
+    },
+    "Entity-robust_statistical_parser": {
+      "node_id": "robust_statistical_parser",
+      "disambiguation_index": 0,
+      "label": "robust statistical parser",
+      "aliases": [
+        "robust statistical parser"
+      ],
+      "types": [
+        "parser",
+        "tool"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A robust statistical parser is a computational tool designed to analyze and interpret the grammatical structure of sentences using statistical methods, providing output that can be utilized for further linguistic processing, such as identifying grammatical relations in the context of subcategorization frame acquisition.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "robust statistical parser",
+          "local_types": [
+            "parser",
+            "tool"
+          ],
+          "iri": "Entity-robust_statistical_parser-Mention-1"
+        }
+      ],
+      "relevance": 0.59912109375
+    },
+    "Entity-decision-tree_classifier": {
+      "node_id": "decision-tree_classifier",
+      "disambiguation_index": 0,
+      "label": "decision-tree classifier",
+      "aliases": [
+        "decision-tree classifier"
+      ],
+      "types": [
+        "algorithm",
+        "classifier",
+        "machine learning model"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A decision-tree classifier is a type of machine learning algorithm that uses a tree-like model of decisions and their possible consequences to classify data into distinct categories.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "decision-tree classifier",
+          "local_types": [
+            "algorithm",
+            "classifier",
+            "machine learning model"
+          ],
+          "iri": "Entity-decision-tree_classifier-Mention-1"
+        }
+      ],
+      "relevance": 0.59130859375
+    },
+    "Entity-inheritance-based_lexica": {
+      "node_id": "inheritance-based_lexica",
+      "disambiguation_index": 0,
+      "label": "inheritance-based lexica",
+      "aliases": [
+        "inheritance-based lexica"
+      ],
+      "types": [
+        "inheritance-based",
+        "linguistic resource",
+        "lexical resource",
+        "linguistic model",
+        "lexicon"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Inheritance-based lexica refer to linguistic resources that organize lexical entries hierarchically, allowing for the inheritance of properties and relations among different lexical items, which is utilized in the classification of grammatical relations in the context of subcategorization frames.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "inheritance-based lexica",
+          "local_types": [
+            "inheritance-based",
+            "linguistic resource",
+            "lexical resource",
+            "linguistic model",
+            "lexicon"
+          ],
+          "iri": "Entity-inheritance-based_lexica-Mention-1"
+        }
+      ],
+      "relevance": 0.58203125
+    },
+    "Entity-precision": {
+      "node_id": "precision",
+      "disambiguation_index": 0,
+      "label": "precision",
+      "aliases": [
+        "precision"
+      ],
+      "types": [
+        "evaluation metric",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'precision' refers to the evaluation metric that quantifies the accuracy of the system in correctly identifying adjectival subcategorization frame types, specifically indicating that 70% of the detected instances were true positives.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "precision",
+          "local_types": [
+            "evaluation metric",
+            "performance metric"
+          ],
+          "iri": "Entity-precision-Mention-1"
+        }
+      ],
+      "relevance": 0.568359375
+    },
+    "Entity-english_corpus_data": {
+      "node_id": "english_corpus_data",
+      "disambiguation_index": 0,
+      "label": "English corpus data",
+      "aliases": [
+        "English corpus data",
+        "corpus data"
+      ],
+      "types": [
+        "data set",
+        "linguistic resource",
+        "data",
+        "language data",
+        "corpus"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "English corpus data refers to a collection of written or spoken texts in the English language that is used for linguistic analysis and research.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "English corpus data",
+          "local_types": [
+            "data",
+            "language data",
+            "linguistic resource",
+            "corpus"
+          ],
+          "iri": "Entity-english_corpus_data-Mention-1"
+        },
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "corpus data",
+          "local_types": [
+            "data set",
+            "linguistic resource"
+          ],
+          "iri": "Entity-english_corpus_data-Mention-2"
+        }
+      ],
+      "relevance": 0.56787109375
+    },
+    "Entity-statistical_parser": {
+      "node_id": "statistical_parser",
+      "disambiguation_index": 0,
+      "label": "statistical parser",
+      "aliases": [
+        "statistical parser"
+      ],
+      "types": [
+        "parser",
+        "natural language processing tool",
+        "tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A statistical parser is a computational tool used in natural language processing that analyzes the grammatical structure of sentences based on statistical models derived from linguistic data.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "statistical parser",
+          "local_types": [
+            "parser",
+            "natural language processing tool",
+            "tool"
+          ],
+          "iri": "Entity-statistical_parser-Mention-1"
+        }
+      ],
+      "relevance": 0.5234375
+    },
+    "Entity-pattern-matching_language": {
+      "node_id": "pattern-matching_language",
+      "disambiguation_index": 0,
+      "label": "pattern-matching language",
+      "aliases": [
+        "pattern-matching language"
+      ],
+      "types": [
+        "programming language",
+        "tool",
+        "computational tool"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A pattern-matching language is a type of programming language or computational tool designed to identify and manipulate patterns within data or structures, often used for tasks such as classification and data transformation.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "pattern-matching language",
+          "local_types": [
+            "programming language",
+            "tool",
+            "computational tool"
+          ],
+          "iri": "Entity-pattern-matching_language-Mention-1"
+        }
+      ],
+      "relevance": 0.5234375
+    },
+    "Entity-recall_rate": {
+      "node_id": "recall_rate",
+      "disambiguation_index": 0,
+      "label": "recall rate",
+      "aliases": [
+        "recall rate"
+      ],
+      "types": [
+        "evaluation metric",
+        "performance metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Recall rate is an evaluation metric that measures the proportion of true positive results in relation to the total number of actual positive cases, indicating the effectiveness of a system in identifying relevant instances.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "recall rate",
+          "local_types": [
+            "evaluation metric",
+            "performance metric"
+          ],
+          "iri": "Entity-recall_rate-Mention-1"
+        }
+      ],
+      "relevance": 0.51220703125
+    },
+    "Entity-linguistic_annotation": {
+      "node_id": "linguistic_annotation",
+      "disambiguation_index": 0,
+      "label": "linguistic annotation",
+      "aliases": [
+        "linguistic annotation"
+      ],
+      "types": [
+        "process",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Linguistic annotation is a process or methodology used to add interpretative information to linguistic data, often involving the labeling of text or speech to facilitate analysis and understanding.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "linguistic annotation",
+          "local_types": [
+            "process",
+            "methodology"
+          ],
+          "iri": "Entity-linguistic_annotation-Mention-1"
+        }
+      ],
+      "relevance": 0.494873046875
+    },
+    "Entity-training_and_test_data": {
+      "node_id": "training_and_test_data",
+      "disambiguation_index": 0,
+      "label": "training and test data",
+      "aliases": [
+        "training and test data"
+      ],
+      "types": [
+        "data",
+        "dataset",
+        "linguistic resource"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Training and test data refers to the datasets used in machine learning and statistical modeling, where training data is utilized to train models and test data is used to evaluate their performance.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "training and test data",
+          "local_types": [
+            "data",
+            "dataset",
+            "linguistic resource"
+          ],
+          "iri": "Entity-training_and_test_data-Mention-1"
+        }
+      ],
+      "relevance": 0.48876953125
+    },
+    "Entity-tool_for_linguistic_annotation": {
+      "node_id": "tool_for_linguistic_annotation",
+      "disambiguation_index": 0,
+      "label": "tool for linguistic annotation",
+      "aliases": [
+        "tool for linguistic annotation"
+      ],
+      "types": [
+        "tool",
+        "software"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A tool for linguistic annotation is a software application designed to assist researchers and linguists in labeling and analyzing linguistic data, facilitating the organization and interpretation of language-related information.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "tool for linguistic annotation",
+          "local_types": [
+            "tool",
+            "software"
+          ],
+          "iri": "Entity-tool_for_linguistic_annotation-Mention-1"
+        }
+      ],
+      "relevance": 0.486083984375
+    },
+    "Entity-test_data": {
+      "node_id": "test_data",
+      "disambiguation_index": 0,
+      "label": "test data",
+      "aliases": [
+        "test data"
+      ],
+      "types": [
+        "data set",
+        "machine learning resource"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Test data refers to a subset of data used to evaluate the performance of a machine learning model after it has been trained.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "test data",
+          "local_types": [
+            "data set",
+            "machine learning resource"
+          ],
+          "iri": "Entity-test_data-Mention-1"
+        }
+      ],
+      "relevance": 0.482666015625
+    },
+    "Entity-grammatical_relation": {
+      "node_id": "grammatical_relation",
+      "disambiguation_index": 0,
+      "label": "grammatical relations",
+      "aliases": [
+        "grammatical relations"
+      ],
+      "types": [
+        "relation",
+        "linguistic concept",
+        "grammar"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Grammatical relations are the syntactic and semantic connections between words in a sentence that define their roles and functions, such as subject, object, and predicate.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "grammatical relations",
+          "local_types": [
+            "relation",
+            "linguistic concept",
+            "grammar"
+          ],
+          "iri": "Entity-grammatical_relation-Mention-1"
+        }
+      ],
+      "relevance": 0.4521484375
+    },
+    "Entity-experiment": {
+      "node_id": "experiment",
+      "disambiguation_index": 0,
+      "label": "experiments",
+      "aliases": [
+        "experiments"
+      ],
+      "types": [
+        "research method",
+        "study"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Experiments are systematic investigations conducted to test hypotheses, gather data, and analyze the effects of variables in a controlled environment.",
+      "mentions": [
+        {
+          "reference": "Paper-28-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "experiments",
+          "local_types": [
+            "research method",
+            "study"
+          ],
+          "iri": "Entity-experiment-Mention-1"
+        }
+      ],
+      "relevance": 0.39306640625
+    }
+  },
+  "summary": "This paper describes a novel system for acquiring adjectival subcategorization frames -LRB- scfs -RRB- and associated frequency information from English corpus data . The system incorporates a decision-tree classifier for 30 scf types which tests for the presence of grammatical relations -LRB- grs -RRB- in the output of a robust statistical parser . It uses a powerful pattern-matching language to classify grs into frames hierarchically in a way that mirrors inheritance-based lexica . The experiments show that the system is able to detect scf types with 70 % precision and 66 % recall rate . A new tool for linguistic annotation of scfs in corpus data is also introduced which can considerably alleviate the process of obtaining training and test data for subcategorization acquisition .",
+  "triples": [
+    [
+      "Entity-this_paper",
+      "Predicate-describes",
+      "Entity-a_novel_system_for_acquiring_adjectival_subcategorization_frame"
+    ],
+    [
+      "Entity-a_novel_system_for_acquiring_adjectival_subcategorization_frame",
+      "Predicate-acquires",
+      "Entity-adjectival_subcategorization_frame"
+    ],
+    [
+      "Entity-a_novel_system_for_acquiring_adjectival_subcategorization_frame",
+      "Predicate-acquires",
+      "Entity-frequency_information"
+    ],
+    [
+      "Entity-a_novel_system_for_acquiring_adjectival_subcategorization_frame",
+      "Predicate-acquires",
+      "Entity-english_corpus_data"
+    ],
+    [
+      "Entity-a_novel_system",
+      "Predicate-incorporates",
+      "Entity-decision-tree_classifier"
+    ],
+    [
+      "Entity-decision-tree_classifier",
+      "Predicate-tests_for_the_presence_of",
+      "Entity-grammatical_relation"
+    ],
+    [
+      "Entity-decision-tree_classifier",
+      "Predicate-tests_in_the_output_of",
+      "Entity-statistical_parser"
+    ],
+    [
+      "Entity-statistical_parser",
+      "Predicate-is_robust",
+      "Entity-robust_statistical_parser"
+    ],
+    [
+      "Entity-a_novel_system",
+      "Predicate-detects",
+      "Entity-scfs"
+    ],
+    [
+      "Entity-powerful_pattern-matching_language",
+      "Predicate-uses",
+      "Entity-grs"
+    ],
+    [
+      "Entity-grs",
+      "Predicate-classify_into",
+      "Entity-frame_hierarchically"
+    ],
+    [
+      "Entity-frame_hierarchically",
+      "Predicate-mirrors",
+      "Entity-inheritance-based_lexica"
+    ],
+    [
+      "Entity-the_experiment",
+      "Predicate-show_that",
+      "Entity-a_novel_system"
+    ],
+    [
+      "Entity-a_novel_system",
+      "Predicate-is_able_to_detect",
+      "Entity-scfs"
+    ],
+    [
+      "Entity-a_novel_system",
+      "Predicate-achieves",
+      "Entity-70__precision"
+    ],
+    [
+      "Entity-a_novel_system",
+      "Predicate-achieves",
+      "Entity-66__recall_rate"
+    ],
+    [
+      "Entity-new_tool_for_linguistic_annotation_of_scfs",
+      "Predicate-is_introduced",
+      "Entity-tool_for_linguistic_annotation"
+    ],
+    [
+      "Entity-training_and_test_data",
+      "Predicate-is_for",
+      "Entity-subcategorization_acquisition"
+    ],
+    [
+      "Entity-a_novel_system",
+      "Predicate-uses",
+      "Entity-powerful_pattern-matching_language"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents",
+      "Entity-a_novel_system"
+    ],
+    [
+      "Entity-a_novel_system",
+      "Predicate-describes",
+      "Entity-system"
+    ],
+    [
+      "Entity-this_paper",
+      "Predicate-presents",
+      "Entity-system"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-a_novel_system",
+      "skos:broader",
+      "Entity-system"
+    ],
+    [
+      "Entity-system",
+      "skos:broader",
+      "Entity-tool"
+    ],
+    [
+      "Entity-powerful_pattern-matching_language",
+      "skos:broader",
+      "Entity-tool"
+    ],
+    [
+      "Entity-frame_hierarchically",
+      "skos:broader",
+      "Entity-adjectival_subcategorization_frame"
+    ],
+    [
+      "Entity-pattern-matching_language",
+      "skos:broader",
+      "Entity-tool"
+    ],
+    [
+      "Entity-the_experiment",
+      "skos:broader",
+      "Entity-experiment"
+    ],
+    [
+      "Entity-training_and_test_data_for_subcategorization_acquisition",
+      "skos:broader",
+      "Entity-training_and_test_data"
+    ],
+    [
+      "Entity-tool_for_linguistic_annotation",
+      "skos:broader",
+      "Entity-tool"
+    ],
+    [
+      "Entity-new_tool_for_linguistic_annotation_of_scfs",
+      "skos:broader",
+      "Entity-linguistic_annotation"
+    ],
+    [
+      "Entity-new_tool_for_linguistic_annotation_of_scfs",
+      "skos:broader",
+      "Entity-tool"
+    ],
+    [
+      "Entity-robust_statistical_parser",
+      "skos:broader",
+      "Entity-tool"
+    ],
+    [
+      "Entity-70__precision",
+      "skos:broader",
+      "Entity-precision"
+    ],
+    [
+      "Entity-new_tool_for_linguistic_annotation_of_scfs",
+      "skos:broader",
+      "Entity-tool_for_linguistic_annotation"
+    ],
+    [
+      "Entity-training_and_test_data_for_subcategorization_acquisition",
+      "skos:broader",
+      "Entity-test_data"
+    ],
+    [
+      "Entity-statistical_parser",
+      "skos:broader",
+      "Entity-tool"
+    ],
+    [
+      "Entity-training_and_test_data_for_subcategorization_acquisition",
+      "skos:broader",
+      "Entity-subcategorization_acquisition"
+    ],
+    [
+      "Entity-powerful_pattern-matching_language",
+      "skos:broader",
+      "Entity-pattern-matching_language"
+    ],
+    [
+      "Entity-a_novel_system_for_acquiring_adjectival_subcategorization_frame",
+      "skos:broader",
+      "Entity-system"
+    ]
+  ],
+  "predicates": {
+    "Predicate-describes": {
+      "label": "describes",
+      "description": "The predicate 'describes' serves to establish a relationship where the subject provides an explanation, account, or representation of the object. It indicates that the subject conveys information about the characteristics, features, or functions of the object, thereby enhancing the understanding of the object through the perspective of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-acquires": {
+      "label": "acquires",
+      "description": "The predicate 'acquires' indicates a relationship in which the subject obtains, gains, or comes into possession of the object. It implies a process of receiving or achieving something that was previously not held by the subject, often involving the integration or assimilation of new information, skills, or resources.",
+      "disambiguation_index": 0
+    },
+    "Predicate-incorporates": {
+      "label": "incorporates",
+      "description": "The predicate 'incorporates' indicates that the subject includes or integrates the object as a component or part of its structure or functionality. It suggests a relationship where the subject adopts or utilizes the object to enhance its capabilities or to fulfill a specific purpose.",
+      "disambiguation_index": 0
+    },
+    "Predicate-tests_for_the_presence_of": {
+      "label": "tests for the presence of",
+      "description": "The predicate 'tests for the presence of' indicates an evaluative action performed by the subject, which involves examining or analyzing the object to determine whether it exists or is detectable within a given context or dataset. This relationship implies that the subject is equipped to identify or measure the characteristics or features represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-tests_in_the_output_of": {
+      "label": "tests in the output of",
+      "description": "The predicate 'tests in the output of' indicates a relationship where the subject is evaluating or analyzing the results produced by the object. This implies that the subject is assessing the effectiveness, accuracy, or performance of the object based on its output, which can be data, predictions, or any other form of results generated by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_robust": {
+      "label": "is robust",
+      "description": "The predicate 'is robust' establishes a relationship between the subject and the object by indicating that the subject possesses qualities of strength, reliability, and resilience. In this context, the subject is characterized as having the attributes that define the object, which is a more specific or enhanced version of the subject. This implies that the subject not only meets certain standards but also excels in performance or durability, as represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-detects": {
+      "label": "detects",
+      "description": "The predicate 'detects' indicates an action or capability of the subject to identify, recognize, or discover the presence of the object. It implies a process of observation or measurement where the subject actively engages with its environment or data to ascertain the existence or characteristics of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-uses": {
+      "label": "uses",
+      "description": "The predicate 'uses' indicates a functional relationship where the subject employs or utilizes the object as a means to achieve a specific purpose or outcome. It suggests that the subject actively engages with the object in a practical or operational context, highlighting the object's role as a tool, resource, or method that facilitates the subject's activities or objectives.",
+      "disambiguation_index": 0
+    },
+    "Predicate-classify_into": {
+      "label": "classify into",
+      "description": "The predicate 'classify into' denotes the action of categorizing or organizing a subject into a specific group or classification represented by the object. It implies a systematic arrangement where the subject is sorted based on shared characteristics or criteria that align with the nature of the object, thereby establishing a relationship of belonging or association.",
+      "disambiguation_index": 0
+    },
+    "Predicate-mirrors": {
+      "label": "mirrors",
+      "description": "The predicate 'mirrors' indicates a relationship where the subject reflects or represents the characteristics, structure, or properties of the object. In this context, it suggests that the subject serves as a representation or analogy for the object, highlighting similarities or parallels between the two.",
+      "disambiguation_index": 0
+    },
+    "Predicate-show_that": {
+      "label": "show that",
+      "description": "The predicate 'show that' indicates a relationship where the subject provides evidence, results, or findings that support or demonstrate the validity of the object. It implies a process of revealing or illustrating a conclusion or fact based on the subject's data or observations.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_able_to_detect": {
+      "label": "is able to detect",
+      "description": "The predicate 'is able to detect' indicates the capability or functionality of the subject to identify, recognize, or sense the presence of the object. It implies that the subject possesses the necessary attributes, mechanisms, or processes to perceive or discern the object in question, which can be a phenomenon, entity, or condition.",
+      "disambiguation_index": 0
+    },
+    "Predicate-achieves": {
+      "label": "achieves",
+      "description": "The predicate 'achieves' indicates that the subject successfully reaches or attains a specific level, goal, or outcome represented by the object. It implies a positive result of effort or development, often in the context of performance metrics, objectives, or standards.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_introduced": {
+      "label": "is introduced",
+      "description": "The predicate 'is introduced' signifies the action of presenting or making known a subject to an audience or context, typically involving the subject being a new or previously unrecognized entity and the object representing the category or function that the subject fulfills. This connection implies that the subject is being brought into awareness or use, often highlighting its relevance or utility within the specified domain.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_for": {
+      "label": "is for",
+      "description": "The predicate 'is for' indicates a purpose or intended use of the subject in relation to the object. It establishes a connection where the subject serves as a means, resource, or context that facilitates or supports the achievement of the object. This relationship highlights the functional aspect of the subject in contributing to or enabling the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-presents": {
+      "label": "presents",
+      "description": "The predicate 'presents' indicates an action where the subject introduces, showcases, or offers information about the object. It implies that the subject is providing a formal or structured display of the object, which can be an idea, concept, system, or any other entity, often with the intention of informing or educating an audience.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or example that falls under the more general category represented by the object. This relationship implies that the object encompasses a wider scope or definition that includes the subject as one of its particular manifestations.",
+      "disambiguation_index": 0
+    }
+  }
+}

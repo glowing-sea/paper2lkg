@@ -1,0 +1,2396 @@
+{
+  "iri": "Paper-Active_knowledge_graph_completion",
+  "title": "Active knowledge graph completion",
+  "authors": [
+    "Pouya Ghiasnezhad Omran",
+    "Kerry Taylor",
+    "Sergio Rodriguez Mendez",
+    "Armin Haller"
+  ],
+  "keywords": [
+    "Existential rule learning",
+    "Knowledge graph completion",
+    "Rule learning",
+    "Knowledge graph"
+  ],
+  "sections": [
+    {
+      "iri": "Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-1",
+              "text": "Enterprise and public Knowledge Graphs (KGs) are known to be incomplete."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-2",
+              "text": "Methods for automatic completion, sometimes by rule learning, scale well."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-3",
+              "text": "While previous rule-based methods learn closed (non-existential) rules, we introduce Open Path (OP) rules that are constrained existential rules."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-4",
+              "text": "We present a novel algorithm, OPRL, for learning OP rules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-1",
+              "text": "Closed rules complete a KG by answering queries of unclear origin, usually derived from a holdback test set in experimental settings."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-2",
+              "text": "However, OP rules can generate relevant queries for KG completion."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-3",
+              "text": "OPRL generates queries even when there is no closed rule to answer the query, or when the correct answer is a missing entity that is not present in the KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-3-Sentence-1",
+              "text": "For OPRL to scale well, we propose a novel embedding-based fitness function to efficiently estimate rule quality."
+            },
+            {
+              "iri": "Section-1-Paragraph-3-Sentence-2",
+              "text": "Additionally, we introduce a novel, efficient vector computation to formally assess rule quality."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-4-Sentence-1",
+              "text": "We evaluate OPRL using adaptations of Freebase, YAGO2, Wikidata, and a synthetic Poker KG."
+            },
+            {
+              "iri": "Section-1-Paragraph-4-Sentence-2",
+              "text": "We find that OPRL mines hundreds of accurate rules from massive KGs with up to 8 M facts."
+            },
+            {
+              "iri": "Section-1-Paragraph-4-Sentence-3",
+              "text": "The OP rules generate queries with precision as high as 98% and recall of 62% on a complete KG, demonstrating the first solution for active knowledge graph completion."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-5-Sentence-1",
+              "text": "Crown Copyright 2022 Published by Elsevier Inc."
+            },
+            {
+              "iri": "Section-1-Paragraph-5-Sentence-2",
+              "text": "This is an open access article under the"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-2",
+      "subtitle": "Introduction",
+      "paragraphs": [
+        {
+          "iri": "Section-2-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-1",
+              "text": "Knowledge Graphs (KGs) are a convenient technology to model and store massive quantities of weakly-structured data."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-2",
+              "text": "The power of KGs arises from a data-first approach."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-3",
+              "text": "They allow information to be added in a relatively arbitrary manner as structural constraints are few; unlike, for example, relational databases where type, not-null, and key constraints abound to enforce a kind of completeness."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-4",
+              "text": "However, the intended scope of KGs is usually poorly defined and they fail to record relevant entities, as well as relevant relationships for the entities they do record."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-5",
+              "text": "This is just like in Wikipedia, where some topics are more richly covered than others."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-6",
+              "text": "Even for the same topic area, say movie actors for instance, we have much better coverage for the movies produced in some countries than we do for others."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-7",
+              "text": "KGs are often (semi-) automatically built from unstructured sources such as Wikipedia articles."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-8",
+              "text": "The building methods are prone to asserting some erroneous facts, while missing some others."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-1",
+              "text": "Techniques have been developed for knowledge graph completion and rule learning to curate KGs automatically."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-2",
+              "text": "In these approaches, models, often expressed as logical rules or vector embeddings, are learnt from a given KG."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-3",
+              "text": "The models are then used for curating tasks including link prediction that predict missing facts about extant entities."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-1",
+              "text": "Rule learning methods for KGs consider Closed (non-existential) rules which are used to predict a fact that instantiates the triple at the head of the rule."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-2",
+              "text": "For example, consider a rule defining a relationship between citizenship and the residence of a person, citizenOf(x, y) livesIn(x, z) ^ locatedIn(z, y)."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-3",
+              "text": "Using this rule, someone's citizenship can be inferred from facts about a person's city of residence and the nation in which that city is located."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-4",
+              "text": "In Closed rules all head variables occur in the body of the rule and all variables appear at least twice."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-5",
+              "text": "Thus, there can be no variable quantified existentially in the head of the rule."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-1",
+              "text": "Closed rules enable inference of specific facts that, if true, are missing from the KG."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-2",
+              "text": "They draw attention to a potential missing fact only if the fact is able to be inferred by the learnt rule."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-3",
+              "text": "KG completion in this way predicts answers for known unknowns."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-4",
+              "text": "In this paper we consider, for the first time, the problem of rule-based knowledge graph completion that guides the discovery of unknown unknowns."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-5",
+              "text": "Generally, in knowledge graph completion, a specific missing fact is predicted."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-6",
+              "text": "In contrast, we predict the existence of missing facts even when an entity involved in the missing fact may be absent from the KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-1",
+              "text": "We propose learning open path rules (OP) from which we infer open-ended questions (e.g. citizenOf(Ann, ?)) instead of facts (e.g. citizenOf(Ann, Australia))."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-2",
+              "text": "Traditional knowledge graph completion is then done by answering the actively generated questions."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-3",
+              "text": "The proposed OP rule formalism is a fragment of the language of existential rules which is expressive enough to adduce queries yet suitable for our scalable embedding-based rule mining system."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-4",
+              "text": "OP rules provide evidence that a fact is missing even when there is evidence for only one entity of the pair, and a question is generated accordingly."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-5",
+              "text": "The queries adduced from OP rules identify that a new fact is needed when the answer is not known."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-6",
+              "text": "The answer might be an entity already present in the KG, or absent from it."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-7",
+              "text": "In the latter case, a query could be posed to a user engaged in a curating task or to a Web question-answering engine."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-8",
+              "text": "In particular, an answer to the question could introduce new entities to the KG, and by this the approach addresses a previously unstudied direction in knowledge graph completion, that is missing entities."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-9",
+              "text": "The process of OP rule learning and adducing queries from OP rules is not an alternative to link prediction; it complements traditional link prediction by providing relevant queries to link predictors and can, for the first time, make knowledge graph completion fully automatic."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-1",
+              "text": "For example, consider the OP rule, citizenOf(x, y) studiesIn(x, z)."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-2",
+              "text": "This rule implies that if we know an entity x studies in an institute z, then x is a citizen of somewhere (y)."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-3",
+              "text": "If the body of this rule is instantiated like studiesIn(Sam, ANU) we can infer the query citizenOf(Sam, ?)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-1",
+              "text": "Our work addresses a long-standing gap in traditional link prediction systems that use the KG to propose missing facts, but need to be seeded with queries about potential missing facts."
+            },
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-2",
+              "text": "Conventionally, for evaluating link predictors, these queries are trivially generated from test facts that are held out from the KG in the hope that a high-performing predictor will rediscover the held-out (and thereby missing) facts."
+            },
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-3",
+              "text": "However, once a link predictor is deployed over a working KG, test facts cannot be held out, and re-discovery of held-out facts is unproductive, so whence does a query arise to drive the link predictor?"
+            },
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-4",
+              "text": "We propose that the queries we derive from our OP rules can be used to generate the queries that link predictors need to repair working KGs."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-1",
+              "text": "Arbitrary queries are of little use; queries need to be relevant in order to be useful."
+            },
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-2",
+              "text": "For example, consider the fact presidentOf(Obama, USA), held back from training data for a link predictor."
+            },
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-3",
+              "text": "Conventionally, this known-missing fact is used to generate the following two relevant queries presidentOf(?, USA) and presidentOf(Obama, ?)."
+            },
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-4",
+              "text": "Instead when a link predictor is asked an irrelevant query like presidentOf(Celine Dion, ?), it will try to rank a set of entities (countries) to answer this query even though no correct answer exists either inside or outside the KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-1",
+              "text": "In summary, by learning OP rules to derive queries we address the following problems in traditional knowledge graph completion:"
+            },
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-2",
+              "text": "Identifying a missing fact even when there is no pattern (such as a closed rule) that fully instantiates the fact in the KG;"
+            },
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-3",
+              "text": "Generating relevant queries that can serve as input to link predictors to complete the KG (which is feasible when the correct answer is an entity extant in the KG); and"
+            },
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-4",
+              "text": "Generating queries that can introduce missing entities into the KG (although this requires answer sources beyond current link predictors)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-1",
+              "text": "The contributions of this paper are as follows, greatly extending early explorations published in."
+            },
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-2",
+              "text": "We present a novel method for learning open path rules from a KG."
+            },
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-3",
+              "text": "These are existential rules with a different form to the usual closed path rules that are conventionally used for knowledge graph completion tasks."
+            },
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-4",
+              "text": "We propose an algorithm, OPRL, for learning these rules, including novel fitness criteria for discarding poor rules early, and efficient vector computation of formal quality criteria."
+            },
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-5",
+              "text": "We show that, together with KG sampling, our algorithm is effective over very large KGs."
+            },
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-6",
+              "text": "As such, we introduce a first solution to the problem of active knowledge graph completion (AKGC), where we aim, instead of suggesting missing facts, to ask the best questions to complete a KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-1",
+              "text": "The rest of the paper is structured as follows."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-2",
+              "text": "After presenting some foundations in Section 2, we describe our target language for learning in Section 3, including the formalism of OP rules."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-3",
+              "text": "Section 4 proposes the OP rule learning method OPRL that includes a novel embedding-based heuristic function and evaluation method."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-4",
+              "text": "Section 5 presents the process for generating relevant queries derived from the learnt OP rules."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-5",
+              "text": "In Section 6 we formalise the new quality notion of query relevance and discuss the results of a range of experiments with our novel OPRL."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-6",
+              "text": "In Section 7, we present the work in the literature related to link prediction and active knowledge graph completion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-3",
+      "subtitle": "Background",
+      "paragraphs": [
+        {
+          "iri": "Section-3-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-1",
+              "text": "2.1 Rule-Based KG Completion"
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-2",
+              "text": "An entity e is an identifier for an object such as a place or a person, and a fact (also known as a link) is an RDF triple (e, P, e'), whereby the subject entity e is related to an object entity e' via the binary predicate (also known as a property), P."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-3",
+              "text": "Here we write facts in the form P(e, e')."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-4",
+              "text": "A knowledge graph (KG) is a pair K = (E, F) where F is a set of facts and E is the set of entities that exist in the facts F."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-1",
+              "text": "Rule learning systems employ a rule language to express rules."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-2",
+              "text": "RLVLR and ScaleKB use so-called closed path (CP) rules that are a kind of closed rule with no free variables."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-3",
+              "text": "Each consists of two parts, a head at the front of the implication arrow and a body at the tail."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-4",
+              "text": "The rule forms a closed path, or single unbroken loop of links between the variables."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-5",
+              "text": "It has the following general form, where P_h is the single predicate of the head, and P_1, ..., P_n (for n >= 1) are predicates of the body and x, y, z_1, ..., z_{n-1} are variables in the rule."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-1",
+              "text": "We interpret this kind of rule with universal quantification of all variables at the outside, and so we can infer a fact that instantiates the head of the rule by finding an instantiation of the body of the rule in the KG."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-2",
+              "text": "For example, from the rule citizenOf(x, y) \u2190 livesIn(x, z) \u2227 locatedIn(z, y), if we have the facts in the KG, livesIn(Bronte, Canberra) and locatedIn(Canberra, Australia), then we can infer and assert the following new fact in the KG, citizenOf(Bronte, Australia)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-1",
+              "text": "Rules are considered more useful if they generalise well, that is, they explain many facts."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-2",
+              "text": "To quantify this idea, we recall measures support, head coverage, and standard confidence that are used in some major approaches to rule learning."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-1",
+              "text": "Definition 1 (satisfies, support)."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-2",
+              "text": "Let r be a CP rule of the form given earlier."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-3",
+              "text": "A pair of entities (e, e') satisfies the body of r, denoted body_r(e, e'), if there exist entities e_1, ..., e_{n-1} in the KG such that all of {P_1(e, e_1), P_2(e_1, e_2), ..., P_n(e_{n-1}, e')} are facts in the KG."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-4",
+              "text": "Further, (e, e') satisfies the head of r, denoted P_h(e, e'), if P_h(e, e') is a fact in the KG."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-5",
+              "text": "In other words, a pair of entities satisfies both the body and the head of a CP rule if the rule, instantiated by those entities, holds true in the KG."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-6",
+              "text": "Then the support of r counts the head (target) instances for which the rule body and head are both satisfied in the KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-6-Sentence-1",
+              "text": "Definition 2 (Standard confidence (SC), head coverage (HC))."
+            },
+            {
+              "iri": "Section-3-Paragraph-6-Sentence-2",
+              "text": "SC describes how frequently the rule is true, i.e., of the ways that the body is satisfied in the KG, the proportion of the inferred head instances that are also satisfied."
+            },
+            {
+              "iri": "Section-3-Paragraph-6-Sentence-3",
+              "text": "It is closely related to confidence widely used in association rule mining."
+            },
+            {
+              "iri": "Section-3-Paragraph-6-Sentence-4",
+              "text": "On the other hand, HC measures the explanatory power of the rule, i.e., the proportion of the facts satisfying the head of the rule that can be inferred by satisfying the rule body."
+            },
+            {
+              "iri": "Section-3-Paragraph-6-Sentence-5",
+              "text": "It is closely related to coverage widely used for rule learning in inductive logic programming."
+            },
+            {
+              "iri": "Section-3-Paragraph-6-Sentence-6",
+              "text": "A rule that has both 100% HC and SC explains every fact in the KG that is an instance of its head and is redundant with respect to the KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-1",
+              "text": "Representation Learning for KG Completion"
+            },
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-2",
+              "text": "Representation learning methods have been developed to model KGs for tasks such as link prediction, entity resolution, and link-based clustering."
+            },
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-3",
+              "text": "The two key phases in representation learning are (1) embedding the entities and predicates of a given KG into a latent space, and (2) reconstructing the KG based on the learned embeddings to predict new facts."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-8-Sentence-1",
+              "text": "The KG is embedded into a low-dimensional vector space of latent, unnamed features not present in the KG vocabulary."
+            },
+            {
+              "iri": "Section-3-Paragraph-8-Sentence-2",
+              "text": "The plausibility of a fact is defined by a scoring function over the embedded representations of its predicate and entities."
+            },
+            {
+              "iri": "Section-3-Paragraph-8-Sentence-3",
+              "text": "Learning and operating on latent representations benefits from the use of unobserved but intrinsic properties of entities and their relations."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-9-Sentence-1",
+              "text": "Various methods have been proposed to construct embeddings."
+            },
+            {
+              "iri": "Section-3-Paragraph-9-Sentence-2",
+              "text": "Two main categories are translation-based embeddings and compositional embeddings."
+            },
+            {
+              "iri": "Section-3-Paragraph-9-Sentence-3",
+              "text": "The translation-based embeddings represent predicates as vectors and use an additive calculus for scoring."
+            },
+            {
+              "iri": "Section-3-Paragraph-9-Sentence-4",
+              "text": "The compositional embeddings represent predicates as weight matrices and use a product calculus for scoring."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-10-Sentence-1",
+              "text": "We use embeddings learned by RESCAL for our novel heuristic function for mining OP rules."
+            },
+            {
+              "iri": "Section-3-Paragraph-10-Sentence-2",
+              "text": "RESCAL is a compositional-based embedding learner."
+            },
+            {
+              "iri": "Section-3-Paragraph-10-Sentence-3",
+              "text": "It embeds each entity e_i by a vector e_i \u2208 \u211d^d and each predicate P_k by a matrix P_k \u2208 \u211d^{d\u00d7d}, where \u211d is the set of real numbers and d is an integer."
+            },
+            {
+              "iri": "Section-3-Paragraph-10-Sentence-4",
+              "text": "d is a parameter to the learner specifying the dimensionality of the latent feature space."
+            },
+            {
+              "iri": "Section-3-Paragraph-10-Sentence-5",
+              "text": "RESCAL learns the two sets of embeddings, vectors {e_i} and matrices {P_k}, by minimizing a loss function defined over the product of the entity and predicate embeddings."
+            },
+            {
+              "iri": "Section-3-Paragraph-10-Sentence-6",
+              "text": "RESCAL captures rich interactions amongst entities and predicates because it learns a larger number of more finely-targeted weight parameters than methods which embed the predicates into vectors."
+            },
+            {
+              "iri": "Section-3-Paragraph-10-Sentence-7",
+              "text": "RESCAL embeddings are also larger and simpler than those in more recent embedding-based link predictors such as HOLE and TuckER."
+            },
+            {
+              "iri": "Section-3-Paragraph-10-Sentence-8",
+              "text": "The compactness of the latter embeddings is useful for link prediction but counter-productive for our purposes where we use embeddings in a heuristic function."
+            },
+            {
+              "iri": "Section-3-Paragraph-10-Sentence-9",
+              "text": "Furthermore, RESCAL has empirically demonstrated strength when used in a heuristic for mining logical axioms as we need here."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-4",
+      "subtitle": "Rules with Free Variables for Active Knowledge Graph Completion",
+      "paragraphs": [
+        {
+          "iri": "Section-4-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-1",
+              "text": "Unlike earlier work in rule mining for KG completion, for our active knowledge graph completion task we mine open path (OP) rules of the following form:"
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-2",
+              "text": "P_t(x, z_0) \u2190 P_1(z_0, z_1) \u2227 P_2(z_1, z_2) \u2227 ... \u2227 P_n(z_{n-1}, y)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-1",
+              "text": "Each P_i and P_t are predicates in the KG and each of {x, z_i, y} are variables; x and y are free while the z_i are bound."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-1",
+              "text": "Unlike CP rules, OP rules do not necessarily form a looping path over variables, but can have a more linear shape."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-2",
+              "text": "From an OP rule, two CP rules are logical consequences: one for each unification of free variable y with a variable of the head P_t."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-3",
+              "text": "However, the OP rule is not a consequence of any CP rule; OP rules are strictly more expressive than CP rules."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-4",
+              "text": "While every instantiation of a CP rule is also an instantiation of a corresponding OP rule, OP rules admit instantiations that cannot be instantiations of any CP rule."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-1",
+              "text": "From an instantiation of the body of an OP rule, we cannot infer a fact, but only a question."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-2",
+              "text": "For example, the following OP rule, citizenOf(x, t) \u2190 livesIn(x, z), states that if an entity, x, lives in z, then that entity is a citizen of somewhere (t)."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-3",
+              "text": "By instantiating the body of this rule as follows, livesIn(Bronte, Canberra), we could infer the query, citizenOf(Bronte, ?)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-1",
+              "text": "To assess the quality of our mined open path rules, we introduce open path standard confidence (OPSC) and open path head coverage (OPHC) derived from the closed path forms (Definition 2)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-1",
+              "text": "Definition 3 (open path: OPsupp, OPSC, OPHC)."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-2",
+              "text": "Let r be an OP rule of the form given earlier."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-3",
+              "text": "Let r, e, e', e_i, body_r, P_t be as given in Definition 1 but adapted straightforwardly to the open path rule case."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-4",
+              "text": "Then a pair of entities (e, e') satisfies the body of r, denoted body_r(e, e'), if there exist entities e_1, ..., e_{n-1} in the KG such that P_1(e, e_1), P_2(e_1, e_2), ..., P_n(e_{n-1}, e') are facts in the KG."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-5",
+              "text": "A pair (e', e) satisfies the head of r, denoted P_t(e', e), if P_t(e', e) is a fact in the KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-7-Sentence-1",
+              "text": "The open path support, open path standard confidence, and open path head coverage of r are given respectively by the KG."
+            },
+            {
+              "iri": "Section-4-Paragraph-7-Sentence-2",
+              "text": "Then the support degree of r is defined as:"
+            },
+            {
+              "iri": "Section-4-Paragraph-7-Sentence-3",
+              "text": "OPsupp(r) = |{e : \u2203e', e' s.t. body_r(e, e') and P_t(e', e)}|."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-1",
+              "text": "OPSC(r) = OPsupp(r) / |{e: \u2203e' s.t. body_r(e, e')}|."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-1",
+              "text": "OPHC(r) = OPsupp(r) / |{e: \u2203e' s.t. P_t(e', e)}|."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-10-Sentence-1",
+              "text": "For example, consider the OP rule, P_1(x, z_0) \u2190 P_2(z_0, z_1) \u2227 P_3(z_1, y)."
+            },
+            {
+              "iri": "Section-4-Paragraph-10-Sentence-2",
+              "text": "Assume we have 3 entities ({e_3, e_4, e_5}) which can instantiate z_0 to satisfy both P_1(x, z_0) and P_2(z_0, z_1) \u2227 P_3(z_1, y)."
+            },
+            {
+              "iri": "Section-4-Paragraph-10-Sentence-3",
+              "text": "Assume the number of entities that can instantiate z_0 to satisfy the head part is 5 ({e_1, e_2, e_3, e_4, e_5}) and the number of entities that can instantiate z_0 to satisfy the body part is 7 ({e_3, e_4, e_5, e_6, e_7, e_8, e_9})."
+            },
+            {
+              "iri": "Section-4-Paragraph-10-Sentence-4",
+              "text": "Hence, we have for this rule, OPsupp = 3, OPSC = 3/7 and OPHC = 3/5."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-5",
+      "subtitle": "OP Rule Learning",
+      "paragraphs": [
+        {
+          "iri": "Section-5-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-1",
+              "text": "Our objective is to mine a KG for high-quality OP rules about a specific target predicate in the head, P."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-2",
+              "text": "While we adhere to the architecture of RLVLR that learns CP rules, we propose the following novelties for mining OP rules: (i) a novel fitness function which can estimate the quality of an OP rule based on the embedding representations of its predicates; and (ii) a novel vector computation which allows the system to evaluate the OP rules against a massive KG to compute quality measures, OPSC and OPHC."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-3",
+              "text": "Our OP rule miner, OPRL, is summarised in Algorithm 1."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-4",
+              "text": "It takes user parameters for the maximum length of rules and the least acceptable OPSC and OPHC scores."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-1",
+              "text": "Algorithm 1: OPRL"
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-2",
+              "text": "Input: a KG K, a target predicate P."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-3",
+              "text": "Parameter: a max rule length l, MinOPSC and MinOPHC."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-4",
+              "text": "Output: a set of OP rules R."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-5",
+              "text": "K' := Sampling(K, P)."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-6",
+              "text": "(P, A) := Embeddings(K')."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-7",
+              "text": "R' := \u2205."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-8",
+              "text": "For 2 \u2264 k \u2264 l do."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-9",
+              "text": "Add PathFinding(K', P_t, P, A, k) to R'."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-10",
+              "text": "End for."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-11",
+              "text": "Add IncPathFinding(K', P_t, P, A, k, R') to R'."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-12",
+              "text": "R := Evaluation(R', K)."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-13",
+              "text": "Return R."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-1",
+              "text": "First, we reduce the KG size because existing embedding-based methods cannot handle vast KGs."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-2",
+              "text": "For instance, RESCAL is unable to handle YAGO2."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-3",
+              "text": "We use the sampling algorithm, Sampling(), proposed in RLVLR to build a reduced KG."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-4",
+              "text": "This means that embeddings are computed only for entities that are relevant to a target predicate."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-5",
+              "text": "In more detail, Sampling() computes a fragment of the KG (K') consisting of a bounded number of entities that are related to the target predicate (i.e., P_t)."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-6",
+              "text": "The method initializes a set of entities by considering a number of entities which are involved in the target predicate."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-7",
+              "text": "For example, if we have P_t(e1, e2) as a fact, then our set of entities includes e1 and e2."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-8",
+              "text": "Then, the method extends the set of entities by adding entities that are related to the existing entities in the set via any predicates, like adding e3 if we have some P_i(e3, e1) as a fact."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-9",
+              "text": "This last step iterates a number of times based on the maximum length of target rules."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-10",
+              "text": "After the set of entities is obtained, all facts (i.e., links) between these entities form the reduced KG, K'."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-1",
+              "text": "We then compute embedding models to construct a fitness function to rapidly estimate a rule's quality, and so significantly improve scalability."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-2",
+              "text": "Embeddings() obtains the embeddings for predicates and arguments in the sample KG."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-3",
+              "text": "Existing representation learners such as RESCAL usually compute embeddings for entities and predicates."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-4",
+              "text": "Instead, we use the method proposed in RLVLR, extending RESCAL, to additionally compute argument embeddings that are derived from entity embeddings."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-5",
+              "text": "RESCAL embeds each entity e_j to a vector E_j \u2208 R^d and each predicate P_i to a 2D array P_i \u2208 R^(d\u00d7d) where d is an integer parameter of RESCAL and R is the set of real numbers."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-6",
+              "text": "For each given fact P_1(e0, e1), the following scoring function is defined: f(e0, P1, e1) = E_0^T \u00b7 P1 \u00b7 E1."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-7",
+              "text": "The scoring function specifies the plausibility of the fact that e0 is connected to e1 via predicate P1."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-8",
+              "text": "After computing embeddings, in shortest-first order, we exhaustively generate OP rules for a target predicate P_i and its inverse P_i^-1 in PathFinding()."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-9",
+              "text": "The inverse is defined as \u2200e, e' P_i^-1(e', e) = P_i(e, e')."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-10",
+              "text": "Since the target predicate is fixed, generating an OP rule is reduced to generating a path to comprise the body, i.e., a sequence of predicates P1', P2', ..., Pn' with required OP rule variable patterns."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-11",
+              "text": "We apply the proposed fitness function to each rule on generation to rapidly discard poor performers."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-12",
+              "text": "In IncPathFinding(), we create additional candidate rules by extending some top-ranked candidates."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-13",
+              "text": "We learn new short OP rules for the rightmost predicate using PathFinding()."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-14",
+              "text": "If we find a good rule about that predicate, then we extend the original rule by appending the new body to the original tail, and we keep both the original and extended rules."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-15",
+              "text": "For example, consider that PathFinding() generated the rule: P1(x, z0) \u2190 P2(z0, z1) \u2227 P3(z1, z2) \u2227 P4(z2, y)."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-16",
+              "text": "In IncPathFinding(), the rule is extended to: P1(x, z0) \u2190 P2(z0, z1) \u2227 P3(z1, z2) \u2227 P4(z2, z3) \u2227 P5(z3, y) if PathFinding() also generates P4(x, z0) \u2190 P5(z0, y)."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-17",
+              "text": "We then use a redundancy elimination method to make sure there is no repetition in all the mined rules and then evaluate candidate rules by OPSC and OPHC in Evaluate()."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-18",
+              "text": "We use efficient matrix and vector multiplication for evaluation, which is crucial for scalability."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-6",
+      "subtitle": "OP Rule Learning: Rule Quality Estimation using Embeddings",
+      "paragraphs": [
+        {
+          "iri": "Section-6-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-1",
+              "text": "Since the number of potential rules generated in PathFinding() is enormous, we rapidly filter out candidates of low quality."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-2",
+              "text": "For this purpose, the quality is estimated by either of two fitness functions: co-occurrence or open path, both of which are derived from embedding representations."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-3",
+              "text": "The former uses entity embeddings alone, while the latter incorporates predicate embeddings as well."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-4",
+              "text": "We use RESCAL to compute both."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-1",
+              "text": "Co-occurrence Fitness Function."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-2",
+              "text": "Each instance of an OP rule connects its head and body via a shared entity in place of z0, so an OP rule tends to have high OPsupp (and so high OPSC and OPHC) if the entities which satisfy the second argument of P_t have a large intersection with the entities that satisfy the first argument of P_t."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-3",
+              "text": "When predicate pairs associate similar entities this way, this induces a latent-feature relationship between the predicates that we call co-occurrence."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-4",
+              "text": "For instance, the two predicates liveIn(e'', e) and locatedIn(e', e') may co-occur because in both cases e is often a city."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-1",
+              "text": "Based on this observation, a co-occurrence fitness function for mining CP rules is defined using argument embeddings in RLVLR, and we adapt it here."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-2",
+              "text": "RLVLR also defines a similarity fitness function that is not applicable here because it relies on the head predicate to share a large number of entities with the body in both argument positions (i.e., one with the first argument of the first body predicate and the other with the last argument of the last body predicate)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-1",
+              "text": "Since CP rules have no free variables, searching for good CP rules is computationally easier than for OP rules where there are many more satisfying facts."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-2",
+              "text": "In CP rules, the head and body present similar concepts so the RLVLR algorithm can use a similarity scoring function."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-3",
+              "text": "For OP rules, there is no holistic similarity between the head and body."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-1",
+              "text": "For example, consider the following CP rule: isCitizenOf(x,y) \u2190 isBornIn(x,z) \u2227 locatedIn(z,y), where the head and body present similar relations between the pair of entities (x,y)."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-2",
+              "text": "On the other hand, in an OP rule like citizenOf(x,t) \u2190 marriedTo(x,z) \u2227 parentOf(z,y), there is no holistic similarity, and the head relates different pairs of entities (x,t) to the pairs connected via the body of the same rule (x,y), so we cannot expect the pairs to be similar."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-1",
+              "text": "For argument embeddings, each predicate has a subject argument in the first position and an object argument in the second position."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-2",
+              "text": "Each argument's embedding is a vector obtained by averaging the embeddings of all the entities in the argument position."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-3",
+              "text": "For entity e, we write its embedding vector as e."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-4",
+              "text": "For predicate P, we write its embedding matrix as P, also called a weight matrix."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-1",
+              "text": "Definition 4 (argument embedding). Let K = (E, F) be a KG."
+            },
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-2",
+              "text": "The argument embeddings of the subject and object arguments of a predicate P are vectors defined respectively as:"
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-1",
+              "text": "P(1) = (1/n) \u2211 s_e * e for e in S_p, and P(2) = (1/n) \u2211 o_e * e for e in O_p."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-1",
+              "text": "Here, n is the number of facts in the KG."
+            },
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-2",
+              "text": "S_p and O_p are the sets of entities occurring as subjects and objects of P, respectively."
+            },
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-3",
+              "text": "More precisely, S_p = {e | \u2203e' such that P(e, e') \u2208 F} and O_p = {e' | \u2203e such that P(e, e') \u2208 F}."
+            },
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-4",
+              "text": "The terms s_e and o_e represent the number of times an entity e occurs as a subject and an object of P in K respectively."
+            },
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-5",
+              "text": "More precisely, s_e = |{e' such that P(e, e') \u2208 F}| and o_e = |{e' such that P(e', e) \u2208 F}|."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-1",
+              "text": "Now the co-occurrence fitness function for CP rules used in RLVLR is modified for the OP case."
+            },
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-2",
+              "text": "In an OP rule of the form (2), the co-occurrences of z_0 as the object argument of P_t and subject argument of P_1, and z_i (1 \u2264 i \u2264 n - 1) as the object argument of P_i and subject argument of P_{i+1}, motivates us to highly value rules with the properties:"
+            },
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-3",
+              "text": "P(2)_t \u2248 P(1)_1, and P(2)_i \u2248 P(1)_{i+1} (1 \u2264 i \u2264 n - 1)."
+            },
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-4",
+              "text": "Pairwise local fitness functions are defined accordingly."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-11-Sentence-1",
+              "text": "Definition 5 (local co-occurrence fitness). Let r be an OP rule of the form (2)."
+            },
+            {
+              "iri": "Section-6-Paragraph-11-Sentence-2",
+              "text": "Then:"
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-12",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-1",
+              "text": "f^0_loc (P_t, P_1) = sim(P(2)_t , P(1)_1)"
+            },
+            {
+              "iri": "Section-6-Paragraph-12-Sentence-2",
+              "text": "f^i_loc (P_i, P_{i+1}) = sim(P(2)_i , P(1)_{i+1}) for 1 \u2264 i \u2264 n - 1."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-13",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-13-Sentence-1",
+              "text": "The similarity function sim is defined by the Frobenius norm, i.e., for two matrices M_1 and M_2:"
+            },
+            {
+              "iri": "Section-6-Paragraph-13-Sentence-2",
+              "text": "sim(M_1, M_2) = exp(-||M_1 - M_2||_F)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-14",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-14-Sentence-1",
+              "text": "Co-occurrence for the whole rule can then be obtained by aggregating the pairwise local occurrences as follows."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-15",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-15-Sentence-1",
+              "text": "Definition 6 (co-occurrence fitness). Let r be an open path rule of the form (2)."
+            },
+            {
+              "iri": "Section-6-Paragraph-15-Sentence-2",
+              "text": "Then:"
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-16",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-16-Sentence-1",
+              "text": "f_coo (r) = f^0_loc (P_t, P_1) + \u2211_{i=1}^{n-1} f^i_loc (P_i, P_{i+1})."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-17",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-17-Sentence-1",
+              "text": "By using argument embeddings built from entity embeddings, the co-occurrence captures the weight of connections of sequential entities along the path."
+            },
+            {
+              "iri": "Section-6-Paragraph-17-Sentence-2",
+              "text": "Next, we introduce an alternative quality estimation function that uses both entity and predicate embeddings, called open path fitness, f_op (.)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-18",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-18-Sentence-1",
+              "text": "4.1.2. Open Path Fitness Function"
+            },
+            {
+              "iri": "Section-6-Paragraph-18-Sentence-2",
+              "text": "An OP rule acts to connect entities satisfying the subject argument of the head predicate, P_t, to entities forming the object argument of the tail predicate, P_n, along a path of entities that satisfy a chain of predicates in the rule."
+            },
+            {
+              "iri": "Section-6-Paragraph-18-Sentence-3",
+              "text": "The product of the predicate embeddings along the path acts as a low-dimensional representation of the latent features of a path that connects its endpoints, and therefore represents the overall rule from the perspective of the predicates."
+            },
+            {
+              "iri": "Section-6-Paragraph-18-Sentence-4",
+              "text": "However, to anchor the rule, we also need to account for the entities that satisfy the free variables at the endpoints, as does the RESCAL evaluation function for a single predicate."
+            },
+            {
+              "iri": "Section-6-Paragraph-18-Sentence-5",
+              "text": "Conveniently, our argument embeddings for the subject argument of P_t and the object argument of P_n give us what we need by averaging the embeddings of all the entities at the endpoints."
+            },
+            {
+              "iri": "Section-6-Paragraph-18-Sentence-6",
+              "text": "Based on this observation, we propose the open path fitness function to estimate the rule quality."
+            },
+            {
+              "iri": "Section-6-Paragraph-18-Sentence-7",
+              "text": "Definition 7 (open path fitness)."
+            },
+            {
+              "iri": "Section-6-Paragraph-18-Sentence-8",
+              "text": "Let r be an OP rule of the form (2)."
+            },
+            {
+              "iri": "Section-6-Paragraph-18-Sentence-9",
+              "text": "Then the open path fitness for r is defined by the product:"
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-19",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-19-Sentence-1",
+              "text": "f_op (r) = P(1)^T P_t P_1 P_2 ... P_n P(2)_n."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-20",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-20-Sentence-1",
+              "text": "There is no clear reason to prefer either of the fitness functions, f_op(.) or f_coo(.), over the other, although the first focuses on entities and the second on predicates."
+            },
+            {
+              "iri": "Section-6-Paragraph-20-Sentence-2",
+              "text": "Experimentally, we find that they complement each other, and that a hybrid approach is preferable (see Table 3)."
+            },
+            {
+              "iri": "Section-6-Paragraph-20-Sentence-3",
+              "text": "In the hybrid setting, we use both fitness functions to pick the top candidate rules."
+            },
+            {
+              "iri": "Section-6-Paragraph-20-Sentence-4",
+              "text": "Hence, for each fitness function, based on fitness values of rules, we pick up only the top t% of rules, where t% is a learning system parameter that is going to be tuned."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-7",
+      "subtitle": "OP Rule Learning: Evaluating Potential Rules through Matrices and Vectors",
+      "paragraphs": [
+        {
+          "iri": "Section-7-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-1",
+              "text": "Now we are ready to explain the evaluation method, Evaluation() in Algorithm 1."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-2",
+              "text": "We assess the candidate rules based on the sampled KG first for efficiency, then pick the rules with OPsupp(r) \u2265 1."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-3",
+              "text": "These rules also may include a significant number of obsolete and low-quality rules, so we perform a second collection based on the two metrics, OPSC and OPHC, assessed over the whole KG."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-4",
+              "text": "We show in the following how to efficiently compute the measures using an adjacency matrix representation of the KG."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-1",
+              "text": "To compute OPSC and OPHC, a method is required to check the satisfiability of body atoms of all candidate rules."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-2",
+              "text": "In other words, we need to find all KG facts that can trigger a candidate rule."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-3",
+              "text": "Let KG, K = (E,F) with E= {e1,...,en} be the set of all entities and P = {P1,...,Pm} be the set of all predicates in F."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-4",
+              "text": "Like RESCAL, we represent K as a set of square n \u00d7 n adjacency matrices by defining the function A."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-5",
+              "text": "Specifically, the (i, j)th element A(Pk)[i,j] = 1 if the fact Pk(ei, ej) is in F; and 0 otherwise."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-6",
+              "text": "Thus, A(Pk) is a matrix of binary values and the set {A(Pk) : k \u2208 {1,...,m}} represents K."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-1",
+              "text": "We illustrate the method for computing OPSC and OPHC through an example."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-2",
+              "text": "Consider the OP rule: r: P1(x,z0) \u2190 P2(z0,z1) \u2227 P3(z1,y) and KG."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-3",
+              "text": "E = {e1,e2,e3} and F = {P1(e1,e2), P1(e2,e1), P1(e2,e3), P1(e3,e1), P2(e1, e2), P2(e3, e2), P2(e3, e3), P1(e1, e3)}."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-1",
+              "text": "For OPSC and OPHC, we need to calculate:"
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-2",
+              "text": "(1) The number of entities that satisfy the head of the rule in the second argument position."
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-3",
+              "text": "(2) The number of entities that satisfy the body of a rule in the first argument position."
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-4",
+              "text": "(3) The number of entities that join the head of a rule to its body."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-5-Sentence-1",
+              "text": "For (1), to find distinct entities, we sum each column of the adjacency matrix and transpose to obtain the vector v(2)(P1)."
+            },
+            {
+              "iri": "Section-7-Paragraph-5-Sentence-2",
+              "text": "Each non-zero element of this vector indicates a satisfying entity, and the number of distinct entities is given by counting the number of non-zero elements in it."
+            },
+            {
+              "iri": "Section-7-Paragraph-5-Sentence-3",
+              "text": "Formally, the satisfying entities are {ei : \u2211j A(P1)[i,j] > 0 and 1 \u2264 j \u2264 n}, and the cardinality is the number we need."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-6-Sentence-1",
+              "text": "For (2), the pairs (e, e') satisfying the body are connected by the path P1, P2, ..., Pm."
+            },
+            {
+              "iri": "Section-7-Paragraph-6-Sentence-2",
+              "text": "This can be obtained directly from the matrix product B = A(P1) A(P2) ... A(Pm), with elements having a non-zero value."
+            },
+            {
+              "iri": "Section-7-Paragraph-6-Sentence-3",
+              "text": "To find distinct entities, we sum each row corresponding to each value for the first argument to obtain the vector v(1)(B)."
+            },
+            {
+              "iri": "Section-7-Paragraph-6-Sentence-4",
+              "text": "Each non-zero element of this vector indicates a satisfying entity, and the number of distinct entities is given by counting the number of non-zero elements in v(1)(B)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-1",
+              "text": "For the example, we have:"
+            },
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-2",
+              "text": "B = A(P1) A(P2) = | 0 0 2 | | 0 2 1 | | 1 0 0 |."
+            },
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-3",
+              "text": "v(1)(B) = | 0 | | 3 | | 1 |."
+            },
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-4",
+              "text": "With satisfying entities e2 and e3 and a count of 2."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-8-Sentence-1",
+              "text": "Computing (3) is now straightforward."
+            },
+            {
+              "iri": "Section-7-Paragraph-8-Sentence-2",
+              "text": "We have that the row index of non-zero elements of v(2)(P1) indicate entities that satisfy the second argument of the head."
+            },
+            {
+              "iri": "Section-7-Paragraph-8-Sentence-3",
+              "text": "Similarly, the row index of non-zero elements of v(1)(B) indicate entities that satisfy the first argument of the body."
+            },
+            {
+              "iri": "Section-7-Paragraph-8-Sentence-4",
+              "text": "Therefore, we can find the entities that satisfy both of these conditions by pairwise multiplication."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-9-Sentence-1",
+              "text": "The entities we need are {ei : (v(2)(P1)[i] \u00d7 v(1)(A(P1) A(P2) ... A(Pm))[i]) > 0 and 1 \u2264 i \u2264 n}."
+            },
+            {
+              "iri": "Section-7-Paragraph-9-Sentence-2",
+              "text": "The count is the cardinality of this set."
+            },
+            {
+              "iri": "Section-7-Paragraph-9-Sentence-3",
+              "text": "For the example, we have only e3 in the set with a count of 1."
+            },
+            {
+              "iri": "Section-7-Paragraph-9-Sentence-4",
+              "text": "Hence, OPsupp(r) = 1."
+            },
+            {
+              "iri": "Section-7-Paragraph-9-Sentence-5",
+              "text": "From (1) and (2), we can easily obtain OPHC(r) = 1/1 and OPSC(r) = 1/2."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-10-Sentence-1",
+              "text": "Minimum thresholds for OPSC and OPHC are supplied to Algorithm 1 at runtime, and Evaluation() discards failing rules."
+            },
+            {
+              "iri": "Section-7-Paragraph-10-Sentence-2",
+              "text": "The remaining rules are the final result of the algorithm."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-11-Sentence-1",
+              "text": "In summary, we introduce the following novel components to mine OP rules from KGs:"
+            },
+            {
+              "iri": "Section-7-Paragraph-11-Sentence-2",
+              "text": "1. Proposing OP rules: We propose a fragment of function-free Horn rules that allows us to mine rules with free variables while keeping the complexity of the learning phase manageable."
+            },
+            {
+              "iri": "Section-7-Paragraph-11-Sentence-3",
+              "text": "2. Learning OP rules based on an embedding representation: We introduce a novel method to rapidly estimate the quality of each candidate rule for early pruning, based on its embedding representation."
+            },
+            {
+              "iri": "Section-7-Paragraph-11-Sentence-4",
+              "text": "3. Evaluating OP rules: We propose an efficient method to exactly compute the quality of each rule by matrix and vector operations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-8",
+      "subtitle": "Generating relevant queries for Active Knowledge Graph Completion",
+      "paragraphs": [
+        {
+          "iri": "Section-8-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-1",
+              "text": "As discussed, we can now mine OP rules with measurable qualities from KGs."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-2",
+              "text": "In this section, we show how the mined rules can be used for AKGC."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-3",
+              "text": "We use OP rules to generate relevant questions which can be posed to an oracle or a human expert, just as for other active learning settings."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-4",
+              "text": "In our case, an automated link predictor makes a convenient oracle."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-1",
+              "text": "Given predicate P, the AKGC task is to generate queries of the form P(?, e') and P(e, ?) for entities e and e' occurring in the KG."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-2",
+              "text": "To find relevant queries, we implement an inference module that derives queries from KG facts together with OP rules found by Algorithm 1."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-3",
+              "text": "We first use OPRL to learn OP rules about P in the head and then use the rules to induce queries of the form P(?, e') and P(e, ?)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-3-Sentence-1",
+              "text": "For an OP rule of the form (2), if an instance of the rule body such as P_1(e, e_1), P_2(e_1, e_2), ..., P_n(e_{n-1}, e') exists in the KG, then the existence of an instance of the head with one free variable, viz the query P_t(?, e), can be induced with a quantifiable confidence."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-4-Sentence-1",
+              "text": "We define the confidence degree (CD) of such a query to be the maximum OPSC of all the rules inducing the query, thereby giving no weight to redundant rules that induce the same query."
+            },
+            {
+              "iri": "Section-8-Paragraph-4-Sentence-2",
+              "text": "Formally, the CD of q is defined as follows for a query q = P(?, e') or q = P(e, ?) and the collection of rules R that can induce q from the given KG:"
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-5-Sentence-1",
+              "text": "CD(q) = max(OPSC(r))"
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-6-Sentence-1",
+              "text": "In this way, we go beyond link prediction to infer relevant queries for missing links, that is, Active KGC."
+            },
+            {
+              "iri": "Section-8-Paragraph-6-Sentence-2",
+              "text": "Conventionally, a link predictor is given a query derived from the hold-out test data to predict facts, and then uses the test data to evaluate its prediction performance."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-7-Sentence-1",
+              "text": "This begs the question, whence does the query arise in an industrial application of a link prediction model?"
+            },
+            {
+              "iri": "Section-8-Paragraph-7-Sentence-2",
+              "text": "You have a KG and a high-performing link-predicting model built for the KG, but do you continue to hold out facts from your KG in order to generate queries that predict those same facts: facts that are missing only because you need them to generate queries?"
+            },
+            {
+              "iri": "Section-8-Paragraph-7-Sentence-3",
+              "text": "Or do you instead generate every possible query with no indication of comparative value to the KG?"
+            },
+            {
+              "iri": "Section-8-Paragraph-7-Sentence-4",
+              "text": "Or do you generate queries with a preference given to those with a higher probability in the KG?"
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-8-Sentence-1",
+              "text": "For AKGC, we need only a named predicate (or all predicates) and use OP rules mined over training data to induce the most relevant queries over the full KB."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-9-Sentence-1",
+              "text": "For example, assume we have the following facts about the target predicate, P_1 in the test data:"
+            },
+            {
+              "iri": "Section-8-Paragraph-9-Sentence-2",
+              "text": "{P_1(e_1, e_2), P_1(e_1, e_3), P_1(e_4, e_5), P_1(e_8, e_7), P_1(e_9, e_7)}."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-10-Sentence-1",
+              "text": "Possible queries about this set of facts are: {P_1(e_1, ?), P_1(?, e_2), P_1(?, e_3), P_1(e_4, ?), P_1(?, e_5), P_1(e_8, ?), P_1(e_9, ?), P_1(?, e_7)}."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-11-Sentence-1",
+              "text": "While link predictors try to answer this set of queries, in our AGKGC we mine OP rules to predict the queries themselves."
+            },
+            {
+              "iri": "Section-8-Paragraph-11-Sentence-2",
+              "text": "The number of induced queries is upper-bounded by twice the number of facts since different facts (P_1(e_8, e_7) and P_1(e_9, e_7)) can derive the same query (P_1(?, e_7))."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-9",
+      "subtitle": "Experiments",
+      "paragraphs": [
+        {
+          "iri": "Section-9-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-1",
+              "text": "We conducted two sets of experiments to evaluate OPRL."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-1",
+              "text": "Knowledge graph completion approaches are usually evaluated by link prediction, for which relevant questions are provided by human experimenters."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-2",
+              "text": "The link predictors answer each query with a sequence of ranked entities."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-3",
+              "text": "In this paper, we are concerned with asking relevant questions rather than answering such questions."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-4",
+              "text": "Our generated queries can be used in combination with a link predictor to infer new facts, but we do not use any specific link predictor to answer our questions in this paper."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-3-Sentence-1",
+              "text": "This is because link predictors vary in performance and are not designed to answer a query with one correct answer, but instead a ranked sequence of answers where the top-ranked alone is not considered significant."
+            },
+            {
+              "iri": "Section-9-Paragraph-3-Sentence-2",
+              "text": "To evaluate our system, we assume a perfect link predictor that can answer any question with a correct answer when such an answer exists."
+            },
+            {
+              "iri": "Section-9-Paragraph-3-Sentence-3",
+              "text": "By this, the problem of knowledge graph completion is reduced to the problem of finding relevant questions."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-4-Sentence-1",
+              "text": "We can evaluate the relevancy of a question based on the test facts."
+            },
+            {
+              "iri": "Section-9-Paragraph-4-Sentence-2",
+              "text": "If we have the answer to a question in the test set, it means the question is relevant because it uncovers some missing fact, and if we have a perfect link predictor, the question can be fed to it, and the missing fact can be retrieved."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-5-Sentence-1",
+              "text": "Since our proposed system is the first method to learn rules to generate relevant questions automatically, we have no benchmark solution with which to compare."
+            },
+            {
+              "iri": "Section-9-Paragraph-5-Sentence-2",
+              "text": "We construct two baselines with which to compare: a probabilistic-based query generator and a rule-based link predictor whose output is modified to produce questions."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-6-Sentence-1",
+              "text": "In our experiments, we demonstrate:"
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-7-Sentence-1",
+              "text": "1. OPRL can mine quality OP rules from a range of KGs."
+            },
+            {
+              "iri": "Section-9-Paragraph-7-Sentence-2",
+              "text": "OPRL can mine massive KGs in a reasonable time."
+            },
+            {
+              "iri": "Section-9-Paragraph-7-Sentence-3",
+              "text": "Our novel hybrid fitness function outperforms the fitness function adapted from RLVLR."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-8-Sentence-1",
+              "text": "2. Queries generated from OPRL's rules are relevant with good recall and precision in multiple KGs."
+            },
+            {
+              "iri": "Section-9-Paragraph-8-Sentence-2",
+              "text": "They far outperform a probabilistic baseline."
+            },
+            {
+              "iri": "Section-9-Paragraph-8-Sentence-3",
+              "text": "They also outperform queries generated by a modified leading-edge link predictor."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-9-Sentence-1",
+              "text": "We conducted experiments over the four benchmark datasets given in Table 1."
+            },
+            {
+              "iri": "Section-9-Paragraph-9-Sentence-2",
+              "text": "FB15K SELECTED (which we call FB15KSE) is derived from Freebase and is widely adopted for link prediction."
+            },
+            {
+              "iri": "Section-9-Paragraph-9-Sentence-3",
+              "text": "YAGO2 core is often used for rule mining."
+            },
+            {
+              "iri": "Section-9-Paragraph-9-Sentence-4",
+              "text": "Wikidata is a multilingual, collaboratively-created KG to manage the factual information of a popular online encyclopedia."
+            },
+            {
+              "iri": "Section-9-Paragraph-9-Sentence-5",
+              "text": "We use a copy dated December 2014 provided in AMIE+."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-10-Sentence-1",
+              "text": "Poker is a synthetic dataset adapted by the authors from the classic version to be a correct and complete KG for experiments."
+            },
+            {
+              "iri": "Section-9-Paragraph-10-Sentence-2",
+              "text": "Each poker hand consists of 5 playing cards drawn from a reduced deck with 6 ranks and 2 suits."
+            },
+            {
+              "iri": "Section-9-Paragraph-10-Sentence-3",
+              "text": "Each card is described using two attributes (suit and rank), for a total of 10 predictive attributes."
+            },
+            {
+              "iri": "Section-9-Paragraph-10-Sentence-4",
+              "text": "There is one Class attribute that describes the 'Poker Hand'."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-11-Sentence-1",
+              "text": "All experiments were conducted on an Intel Xeon CPU E5-4620v2 @ 2.60 GHz, 66 GB RAM, and running CentOS 7."
+            },
+            {
+              "iri": "Section-9-Paragraph-11-Sentence-2",
+              "text": "For sampling, we use similar parameters to those proposed in RLVLR."
+            },
+            {
+              "iri": "Section-9-Paragraph-11-Sentence-3",
+              "text": "We set the maximum size of each sample to 800 entities."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-12",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-12-Sentence-1",
+              "text": "We use RESCAL to generate embeddings with the vector size set to 100."
+            },
+            {
+              "iri": "Section-9-Paragraph-12-Sentence-2",
+              "text": "We retain the top 10% of the OP rules according to the fitness function."
+            },
+            {
+              "iri": "Section-9-Paragraph-12-Sentence-3",
+              "text": "The number of possible rules grows significantly with increasing length, as does the runtime for mining."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-13",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-13-Sentence-1",
+              "text": "We use a maximum rule length of 4 for PathFinding() and we allow the extension to 6 by IncPathFinding()."
+            },
+            {
+              "iri": "Section-9-Paragraph-13-Sentence-2",
+              "text": "These parameters are the optimum obtained by tuning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-10",
+      "subtitle": "Experiments: OP Rule Learning",
+      "paragraphs": [
+        {
+          "iri": "Section-10-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-1",
+              "text": "First, we assess how well OPRL finds high quality rules."
+            },
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-2",
+              "text": "We are not aware of other OP rule learners with which to compare, but we do compare the performance of fitness functions proposed for OPRL."
+            },
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-3",
+              "text": "The quality of rules is reported based on their OPSC/OPHC scores calculated against the full benchmark KGs, not only the samples."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-1",
+              "text": "Later, we will use the mined rules for generating queries, so we need some hold-out facts for query evaluation."
+            },
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-2",
+              "text": "For FB15KSE, test and training sets are available."
+            },
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-3",
+              "text": "For Poker and YAGO2 core, we can find no previously prepared data, so we randomly partition 90% for training and 10% for testing."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-1",
+              "text": "Table 2 shows the average numbers of quality rules mined for all predicates in the respective KGs."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-2",
+              "text": "Wikidata is an exception: only 50 randomly selected predicates are targeted."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-3",
+              "text": "Table 2 shows run times in hours, averaged over the targets."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-4",
+              "text": "Similarly, only rules with quality OPSC > 0.1 and OPHC > 0.01 are included."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-5",
+              "text": "The average number of accurate rules, i.e., the rules with OPSC > 0.8, are given as #Arules."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-1",
+              "text": "Figure 1 shows the distribution of mined rules by OPSC and length."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-2",
+              "text": "We can see that OPRL can learn plausible rules over popular benchmark KGs of over eight million facts and four million entities in less than two hours."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-1",
+              "text": "For illustration, we present the following two OP rules which are mined from Wikidata, with their OPSC and OPHC values respectively."
+            },
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-2",
+              "text": "The first rule states that if the spouse of a person (z) is known, it is likely that the place of birth of that person is also known."
+            },
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-3",
+              "text": "Thus, if the body of each rule is instantiated but there is no fact to fully instantiate the head of the rule, a relevant query is induced."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-6-Sentence-1",
+              "text": "The second rule states that if there is a region (z) in a country (w) that is known to the KG and the continent of that country (y) is also known, it is likely that the region\u2019s highest point (x) is known."
+            },
+            {
+              "iri": "Section-10-Paragraph-6-Sentence-2",
+              "text": "The third rule states that if there is a TV program (z) that has a participant (w) that has an occupation (y), then it is likely that the presenter of the program (x) is known."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-7-Sentence-1",
+              "text": "0.50, 0.02 placeOfBirth(z, x) \u2190 spouse(z, y)."
+            },
+            {
+              "iri": "Section-10-Paragraph-7-Sentence-2",
+              "text": "0.19, 0.45 highestPoint(z, x) \u2190 country\u207b\u00b9(z, w) \u2227 continent(w, y)."
+            },
+            {
+              "iri": "Section-10-Paragraph-7-Sentence-3",
+              "text": "0.59, 0.15 presenter(z, x) \u2190 participant(z, w) \u2227 occupation(w, y)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-8-Sentence-1",
+              "text": "We conducted an experiment to assess the utility of our fitness functions, using random.org to select 20 random predicates from FB15KSE."
+            },
+            {
+              "iri": "Section-10-Paragraph-8-Sentence-2",
+              "text": "The results summarized in Table 3 show that a hybrid fitness function that combines both f_co(.) and f_op(.) is capable of mining more quality rules than either of these functions individually."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-11",
+      "subtitle": "Experiments: Query Generation for Active Knowledge Graph Completion",
+      "paragraphs": [
+        {
+          "iri": "Section-11-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-1-Sentence-1",
+              "text": "Our second set of experiments assesses the relevance of queries induced from OPRL-mined rules."
+            },
+            {
+              "iri": "Section-11-Paragraph-1-Sentence-2",
+              "text": "For this purpose, we consider that a query with an answer present in the test set is a relevant query, having previously filtered out queries that can be answered from the training set."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-1",
+              "text": "In the absence of any comparative system for query generation, we developed three baseline query sets of the same cardinality as those generated from OPRL, called Prand."
+            },
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-2",
+              "text": "Prand queries are generated by first selecting a bag of predicates, with each selected randomly with probability of its proportion in the test set."
+            },
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-3",
+              "text": "Then, for half of the instances of each predicate, a subject (respectively object) entity is assigned by random selection of an entity with probability of its proportion as a subject (respectively object) of any predicate in the test set."
+            },
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-4",
+              "text": "The object (respectively subject) position is free (denoted '?')."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-3-Sentence-1",
+              "text": "We assess relevance over three KGs but not Wikidata because there are no public test and train sets, and the baseline query generator Prand cannot handle the massive size."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-1",
+              "text": "Table 4 shows average precision, recall, and F1, where a query is counted as true if it has an instance fact in the test data and false otherwise."
+            },
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-2",
+              "text": "The queries were induced by OPRL rules learned over the training data with quality thresholds OPSC > 0.8 and OPHC > 0.01."
+            },
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-3",
+              "text": "We see that OPRL's performance exceeds Prand on FB15KSE, YAGO2 core, and Poker by factors of approximately 6, 2, and 9, respectively."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-5-Sentence-1",
+              "text": "We suspect that YAGO2 induces fewer rules and has much weaker performance because it has significantly fewer repeatable patterns."
+            },
+            {
+              "iri": "Section-11-Paragraph-5-Sentence-2",
+              "text": "This could be because it is quite correctly weakly structured or because it has significantly more missing facts."
+            },
+            {
+              "iri": "Section-11-Paragraph-5-Sentence-3",
+              "text": "If the latter, then the validity of our test set is questionable because genuinely missing facts will be treated as false instead of true, thereby incorrectly punishing precision and recall."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-6-Sentence-1",
+              "text": "Supporting this explanation, we see that for synthetic Poker, which is naturally highly structured, and where all the missing facts are present in the test set, we have very close to 100% precision and excellent recall."
+            },
+            {
+              "iri": "Section-11-Paragraph-6-Sentence-2",
+              "text": "Very high precision means our queries are highly relevant as they ask questions for which the answer facts are missing from the training set."
+            },
+            {
+              "iri": "Section-11-Paragraph-6-Sentence-3",
+              "text": "Still, even for Poker, recall shows that there are relevant queries that were not generated, possibly due to the limitations of our OP language or to useful rules being discarded by the fitting function or the OPSC/OPHC thresholds."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-1",
+              "text": "Next, we consider the sensitivity of the performance of OPRL queries to the OPSC threshold by varying it from 0.1 to 1, learning the previously selected predicates for FB15KSE (Table 3)."
+            },
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-2",
+              "text": "In Figure 2, we see that increasing OPSC has the expected behavior of decreasing recall as poorer rules get through, and increasing precision as more missing facts are found."
+            },
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-3",
+              "text": "Observing a sharp anomaly where the OPSC threshold is 0.9, we suspect it might be caused by the incompleteness of FB15KSE (i.e., the generated queries may be valid but there is no answer in the test set)."
+            },
+            {
+              "iri": "Section-11-Paragraph-7-Sentence-4",
+              "text": "We repeated the experiment on the complete Poker KG and the anomaly is indeed absent as expected."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-1",
+              "text": "Finally, we compare OPRL queries with the state-of-the-art rule-based link predictor, RLvLR."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-2",
+              "text": "Rule learners predict facts, not queries, so we cannot compare them directly."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-3",
+              "text": "Instead, we translate each fact generated by RLvLR to two queries, by freeing the subject and object entities respectively."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-4",
+              "text": "However, while generating facts, RLvLR uses a Noisy-OR operator to aggregate high-performing rules about a target predicate."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-5",
+              "text": "This aggregation is not compatible with the query generation task where only the top prediction matters."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-6",
+              "text": "Consequently, experiments show that RLvLR with Noisy-OR performs very poorly for query generation."
+            },
+            {
+              "iri": "Section-11-Paragraph-8-Sentence-7",
+              "text": "To more fairly compare, we changed the aggregation in RLvLR to use a Max operator instead of Noisy-OR and call this RLvLR*."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-9-Sentence-1",
+              "text": "We used 20 randomly selected predicates from FB15KSE in the query generation task."
+            },
+            {
+              "iri": "Section-11-Paragraph-9-Sentence-2",
+              "text": "Since RLvLR* and OPRL use the very similar minimum SC and minimum OPSC respectively, we use a ROC (Receiver Operating Characteristic) curve to compare the outputs of the two systems."
+            },
+            {
+              "iri": "Section-11-Paragraph-9-Sentence-3",
+              "text": "We plot the query performance of OPRL and RLvLR* as ROC curves in Figure 3 using minimum OPSC and minimum SC parameters as the ordering criteria."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-10-Sentence-1",
+              "text": "For OPRL, we vary the minimum OPSC from 1 to 0.5 in 4 decrements and get a False Positive Rate of almost 50%."
+            },
+            {
+              "iri": "Section-11-Paragraph-10-Sentence-2",
+              "text": "For RLvLR*, we vary SC from 1 to 0.1 (the minimum and default) in 4 decrements to achieve the same False Positive Rate."
+            },
+            {
+              "iri": "Section-11-Paragraph-10-Sentence-3",
+              "text": "Since SC and OPSC are similar measures, we say OPRL finds higher-confidence queries than RLvLR* does."
+            },
+            {
+              "iri": "Section-11-Paragraph-10-Sentence-4",
+              "text": "In Figure 3, the partial area under the curve (AUC) of RLvLR* is 0.23 while the partial AUC of OPRL is 0.30, showing OPRL outperforms RLvLR* on query generation by 30%."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-12",
+      "subtitle": "Related Work and Discussion",
+      "paragraphs": [
+        {
+          "iri": "Section-12-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-1-Sentence-1",
+              "text": "Previous work in rule learning from a KG is closely related to ours, but it is generally focused on Closed rules."
+            },
+            {
+              "iri": "Section-12-Paragraph-1-Sentence-2",
+              "text": "As discussed, Closed rules are less expressive than our OP rules and have a different application."
+            },
+            {
+              "iri": "Section-12-Paragraph-1-Sentence-3",
+              "text": "While OP rule learners aim to generate new facts, we aim to generate relevant queries for new facts."
+            },
+            {
+              "iri": "Section-12-Paragraph-1-Sentence-4",
+              "text": "There are some preliminary attempts towards learning existential rules from knowledge graphs."
+            },
+            {
+              "iri": "Section-12-Paragraph-1-Sentence-5",
+              "text": "In this short paper, the authors outline several directions for future research to handle existential rule learning, although they do not propose a learning system."
+            }
+          ]
+        },
+        {
+          "iri": "Section-12-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-1",
+              "text": "We are unaware of any previous approach which produces relevant queries for link predictors in the knowledge graph completion process."
+            },
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-2",
+              "text": "However, CHAI filters facts before supplying them to a link predictor, aiming to improve the prediction by focusing its attention on the more probable facts and discarding irrelevant ones."
+            },
+            {
+              "iri": "Section-12-Paragraph-2-Sentence-3",
+              "text": "It does not generate queries as OPRL does, and is highly dependent on the initial set of facts which it aims to filter."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-13",
+      "subtitle": "Conclusion",
+      "paragraphs": [
+        {
+          "iri": "Section-13-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-1-Sentence-1",
+              "text": "In this paper, we proposed a method for learning rules with free variables from Knowledge Graphs (KGs)."
+            },
+            {
+              "iri": "Section-13-Paragraph-1-Sentence-2",
+              "text": "Such rules can be used to generate queries soliciting missing facts."
+            },
+            {
+              "iri": "Section-13-Paragraph-1-Sentence-3",
+              "text": "Notably, the queries could be fed to link predictors, enabling a fully automated framework for KG completion."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-2-Sentence-1",
+              "text": "We introduced the following novel components:"
+            },
+            {
+              "iri": "Section-13-Paragraph-2-Sentence-2",
+              "text": "(1) We propose OP rules, a fragment of function-free Horn rules, which allows us to mine rules with free variables while keeping the complexity of the learning phase manageable."
+            },
+            {
+              "iri": "Section-13-Paragraph-2-Sentence-3",
+              "text": "(2) We introduced a novel method to estimate the quality of each candidate rule based on its embedding representation."
+            },
+            {
+              "iri": "Section-13-Paragraph-2-Sentence-4",
+              "text": "(3) We proposed an efficient method to evaluate OP rules by exactly computing the quality of each rule using matrix and vector operations."
+            },
+            {
+              "iri": "Section-13-Paragraph-2-Sentence-5",
+              "text": "(4) We showed how OP rules can be used to generate highly relevant queries for missing links, introducing the first work on active knowledge graph completion."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-3-Sentence-1",
+              "text": "Our experiments show that OPRL can learn rules for KGs with varying sizes and degrees of incompleteness."
+            },
+            {
+              "iri": "Section-13-Paragraph-3-Sentence-2",
+              "text": "We demonstrate the usefulness of the mined rules by applying them to three different KGs to infer relevant queries."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-4-Sentence-1",
+              "text": "Our proposed method outperforms the baselines and shows its strength, especially in the complete KG, Poker, with 0.98 precision."
+            }
+          ]
+        },
+        {
+          "iri": "Section-13-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-13-Paragraph-5-Sentence-1",
+              "text": "There remain some intriguing challenges for future work."
+            },
+            {
+              "iri": "Section-13-Paragraph-5-Sentence-2",
+              "text": "We plan to extend OPRL to learn rules with more complex shapes, such as stars, and with numerical attributes."
+            },
+            {
+              "iri": "Section-13-Paragraph-5-Sentence-3",
+              "text": "We plan to pair OPRL with a link predictor to form a unified framework for fully automated KG completion."
+            },
+            {
+              "iri": "Section-13-Paragraph-5-Sentence-4",
+              "text": "We will also trial OPRL in a setting for human-curated maintenance on an enterprise KG."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

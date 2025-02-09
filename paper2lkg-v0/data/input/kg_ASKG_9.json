@@ -1,0 +1,1155 @@
+{
+  "iri": "Paper-HDGI_A_Human_Device_Gesture_Interaction_Ontology_for_the_Internet_of_Things",
+  "title": "HDGI: A Human Device Gesture Interaction Ontology for the Internet of Things",
+  "authors": [
+    "Madhawa Perera",
+    "Armin Haller",
+    "Sergio J. Rodr\u0131\u0301guez M\u00e9ndez",
+    "and Matt Adcock"
+  ],
+  "keywords": [
+    "ontology",
+    "gesture",
+    "semantic web",
+    "Internet of Things",
+    "gesture interfaces"
+  ],
+  "sections": [
+    {
+      "iri": "Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-1",
+              "text": "Gesture-controlled interfaces are becoming increasingly popular with the growing use of Internet of Things (IoT) systems."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-2",
+              "text": "In particular, in automobiles, smart homes, computer games, and Augmented Reality (AR) / Virtual Reality (VR) applications, gestures have become prevalent due to their accessibility to everyone."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-3",
+              "text": "Designers, producers, and vendors integrating gesture interfaces into their products have also increased in numbers, giving rise to a greater variation of standards in utilizing them."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-4",
+              "text": "This variety can confuse a user who is accustomed to a set of conventional controls and has their own preferences."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-5",
+              "text": "The only option for a user is to adjust to the system even when the provided gestures are not intuitive and contrary to a user\u2019s expectations."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-1",
+              "text": "This paper addresses the problem of the absence of a systematic analysis and description of gestures and develops an ontology which formally describes gestures used in Human Device Interactions (HDI)."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-2",
+              "text": "The presented ontology is based on Semantic Web standards (RDF, RDFS, and OWL2)."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-3",
+              "text": "It is capable of describing a human gesture semantically, along with relevant mappings to affordances and user/device contexts, in an extensible way."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-2",
+      "subtitle": "Introduction",
+      "paragraphs": [
+        {
+          "iri": "Section-2-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-1",
+              "text": "Gesture-based systems are becoming widely available and explored as methods for controlling interactive systems."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-2",
+              "text": "Especially in modern automobiles, smart homes, computer games, and Augmented Reality (AR) and Virtual Reality (VR) applications, gestures have become prevalent due to their accessibility to everyone."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-3",
+              "text": "Most of these gesture interactions consist of physical movements of the face, limbs, or body and allow users to express their interaction intentions and send out corresponding interactive information to a device or a system."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-4",
+              "text": "However, most of the gestural interfaces are built based on a manufacturer\u2019s design decision."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-1",
+              "text": "Introducing the concept of 'guessability of a system' in 2005, Wobbrock et al. emphasize that a user\u2019s initial attempts at performing gestures, typing commands, or using buttons or menu items must be met with success despite the user\u2019s lack of knowledge of the relevant symbols."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-2",
+              "text": "Their study enables the collection of end users\u2019 preferences for symbolic input and is considered the introduction of Gesture Elicitation Studies (GES)."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-3",
+              "text": "Since then, many researchers have attempted to define multiple gesture vocabularies."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-4",
+              "text": "However, a majority of them are limited in their scope and specific uses."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-5",
+              "text": "As a result, an impressive amount of knowledge has resulted from these GES, but it is currently cluttered."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-1",
+              "text": "There are multiple studies that show 'best gestures' for the same referent, where the referent is the effect of a gesture or the desired effect of an action which the gestural sign refers to."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-2",
+              "text": "Hence, there are redundant gesture vocabularies."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-3",
+              "text": "If all the knowledge of GES is properly linked, researchers could find gesture vocabularies that are defined for similar referents."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-4",
+              "text": "However, a lack of linked data in this area has resulted in researchers conducting new GES whenever they need a particular gesture-referent mapping instead of using existing knowledge."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-5",
+              "text": "Hence, we see the necessity of a gesture ontology that can describe gestures with their related referents and facilitate automated reasoning."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-1",
+              "text": "Further, there currently exist several sensors, such as Microsoft Kinect, allowing out-of-the-box posture or movement recognition, which allows developers to define and capture mid-air gestures and use them in various applications."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-2",
+              "text": "With the advancements in AR and VR, the use of gestural interfaces has increased as these immersive technologies tend to use more intuitive Human-Computer Interaction (HCI) techniques."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-3",
+              "text": "All these systems have the capability to detect rich gestural inputs."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-4",
+              "text": "This has resulted in designers, developers, producers, and vendors integrating gesture interfaces into their products, contributing to a surge in their numbers and causing greater variation in ways of utilizing them."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-1",
+              "text": "Riener et al. also show that, most of the time, system designers define gestures based on their own preferences, evaluate them in small-scale user studies, apply modifications, and teach end users how to employ certain gestures."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-2",
+              "text": "Further, they state that this is problematic because people have different expectations of how to interact with an interface to perform a certain task."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-3",
+              "text": "This could confuse users who are accustomed to a set of conventional controls."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-4",
+              "text": "Most of the time, these systems have either binary or a few choices when it comes to gesture selection."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-5",
+              "text": "Therefore, users do not have much of a choice even though the manufacturer-defined gestures are undesirable or counter-intuitive."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-1",
+              "text": "For example, if we take Microsoft HoloLens, its first version has a 'bloom' gesture to open its 'start' menu."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-2",
+              "text": "In contrast, in HoloLens 2, a user has to pinch their thumb and index finger together while looking at the start icon that appears near a user\u2019s wrist when they hold out their hand with their palm facing up, to open the start menu."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-3",
+              "text": "Optionally, they can also tap the icon that appears near the wrist using their other hand."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-1",
+              "text": "BMW\u2019s iDrive infotainment system expects users to point a finger to the BMW iDrive touchscreen to accept a call, whereas Mercedes-Benz\u2019 User Experience (MBUX) multimedia infotainment system uses the same gesture to select an icon on their touchscreen."
+            },
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-2",
+              "text": "Further, online search engines currently do not provide sufficient information for gesture-related semantics."
+            },
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-3",
+              "text": "For example, a search query to retrieve gestures to answer a call in a car would not provide relevant gesture vocabularies supported by different vendors."
+            },
+            {
+              "iri": "Section-2-Paragraph-7-Sentence-4",
+              "text": "Designers and developers have to find individual studies separately and read or learn necessary data manually."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-1",
+              "text": "Being able to retrieve semantics and refer to a central location that maps all the available gestures to the affordance of answering a call in a car would be convenient for designers and developers in such situations."
+            },
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-2",
+              "text": "Additionally, understanding the semantics of these gestures and inter-mapping them will help to bring interoperability among interfaces, increasing User Experience (UX)."
+            },
+            {
+              "iri": "Section-2-Paragraph-8-Sentence-3",
+              "text": "The problem is how to do this mapping."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-1",
+              "text": "Our approach is to design an ontology to map existing and increasingly prolific gesture vocabularies and their relationships to systems with the intention of providing the ability to understand and interpret user gestures."
+            },
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-2",
+              "text": "Henceforth, users are individually shown the desired effect of an action, called a referent, to their preferred gestures."
+            },
+            {
+              "iri": "Section-2-Paragraph-9-Sentence-3",
+              "text": "Villarreal-Narvaez et al.'s most recent survey paper shows that a majority of gestures are performed using the upper limbs of the human body, i.e., hands."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-1",
+              "text": "Thereby keeping extensibility in mind, we designed a Human Device Gesture Interaction (HDGI) ontology to describe and map existing and upcoming upper limb related gestures along with relevant device affordances."
+            },
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-2",
+              "text": "This allows systems to query the ontology after recognizing the gesture to understand its referents without having to be pre-programmed."
+            },
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-3",
+              "text": "This further helps the personalization of gestures for particular sets of users."
+            },
+            {
+              "iri": "Section-2-Paragraph-10-Sentence-4",
+              "text": "As such, a user does not have to memorize a particular gesture for each different system, which improves system reliability."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-1",
+              "text": "This paper describes the HDGI ontology and its sample usage and state of the art in this area."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-2",
+              "text": "First, in Section 2, we discuss existing approaches to address the problem of ubiquitousness in human-device gesture interactions."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-3",
+              "text": "In Section 3, we describe the syntax, semantics, design, and formalization of HDGI v0.1, and the rationale behind such a design."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-4",
+              "text": "In Section 4, we illustrate tools for mapping HDGI v0.1 to Leap Motion and the Oculus Quest devices."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-5",
+              "text": "This serves as an evaluation of the expressive power of our ontology and provides developers and designers with a tool on how to integrate the HDGI ontology in their development."
+            },
+            {
+              "iri": "Section-2-Paragraph-11-Sentence-6",
+              "text": "We conclude and discuss future work in Section 5."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-3",
+      "subtitle": "Related Work",
+      "paragraphs": [
+        {
+          "iri": "Section-3-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-1",
+              "text": "A large number of studies can be found dealing with the problem of hand gesture recognition and its incorporation into the design and development of gestural interfaces."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-2",
+              "text": "In most of these cases, gestures are predefined with their meaning and actions."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-3",
+              "text": "Yet, the studies do seem to explore the capability of identifying the relationship beyond predefined mappings of a gesture."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-4",
+              "text": "Thus, we see very few studies that have attempted to define and formalise the relationship between each gesture."
+            },
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-5",
+              "text": "A review conducted by Villarreal Narvaez et al. in 2020 shows that gesture recognition has not yet reached its peak, which indicates that there will be many more gesture-related vocabularies in the future, consequently increasing the need to have interoperability between them."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-1",
+              "text": "One approach that has been adopted by researchers is to define taxonomies, enabling designers and manufacturers to use standard definitions when defining gesture vocabularies."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-2",
+              "text": "Following this path, Scoditti et al. proposed a gestural interaction taxonomy in order to guide designers and researchers, who need an overall systematic structure that helps them to reason, compare, elicit, and create the appropriate techniques for the problem at hand."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-3",
+              "text": "Their intention is to introduce system-wide consistent languages with specific attention for gestures."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-4",
+              "text": "However, those authors do not map existing gesture vocabularies with semantical relationships."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-5",
+              "text": "Following this, Choi et al. developed a 3D hand gesture taxonomy and notation method."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-6",
+              "text": "The results of this study can be used as a guideline to organize hand gestures for enhancing the usability of gesture-based interfaces."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-7",
+              "text": "This again follows a similar approach to Scoditti et al."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-8",
+              "text": "However, this research is restricted to 6 commands (43 gestures) of a TV and blinds that were used in the experiment."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-9",
+              "text": "Therefore, further experiments with an increased number of commands are necessary to see the capability and adaptability of the proposed taxonomy and notation method."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-10",
+              "text": "Also, this notation uses numeric terminology which is not easily readable unless designers strictly follow a reference guide that is provided."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-11",
+              "text": "In addition, they mention that the size or speed of hand gestures have not been considered in their approach."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-1",
+              "text": "Moving beyond taxonomies, there is also existing research using ontologies."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-2",
+              "text": "Osumar et al. have modelled a gesture ontology based on a Microsoft Kinect-based skeleton which aims to describe mid-air gestures of the human body."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-3",
+              "text": "Their ontology mainly focuses on capturing the holistic posture of the human body, hence misses details like the finger pose or movements and a detailed representation of the hand."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-4",
+              "text": "In addition, the ontology is not openly shared, hence it prevents use and extensibility."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-5",
+              "text": "Their main contribution is to have a sensor-independent ontology of body-based contextual gestures, with intrinsic and extrinsic properties, where mapping different gestures with their semantic relationships to affordances is not considered."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-1",
+              "text": "Khairunizam et al. have conducted a similar study with the intention of addressing the challenge of how to increase the knowledge level of computational systems to recognize gestural information with regard to arm movements."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-2",
+              "text": "In their research, they have tried to describe knowledge of the arm gestures and attempted to recognize it with a higher accuracy."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-3",
+              "text": "This can be identified as an interesting study where the authors have used Qualisys motion capture to capture the movement of the user\u2019s right arm when they perform an arm gesture."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-4",
+              "text": "However, their focus was mainly on recognizing geometrical gestures and the gesture set was limited to 5 geometrical shapes."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-5",
+              "text": "Again, their ontological framework does not consider the mapping of other gestures that carry similar referents."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-1",
+              "text": "Overall, the attempts above have a different scope compared to our ontology."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-2",
+              "text": "Our focus is not on modelling the infinite set of concepts, features, attributes, and relationships attached to arm-based gestures."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-3",
+              "text": "We do not consider gestures that do not carry a referent to a particular affordance of a device."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-4",
+              "text": "Nonetheless, our ontology is extensible to allow the addition of emerging gestures with a referent to an affordance or to be extended to other body parts, i.e., extending the gestures beyond the upper limbs of the human body."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-5",
+              "text": "As a best practice, we have used existing ontologies whenever they fit and provided mappings to concepts and properties in these ontologies."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-4",
+      "subtitle": "Human Device Gesture Interaction (HDGI) Ontology",
+      "paragraphs": [
+        {
+          "iri": "Section-4-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-1",
+              "text": "The HDGI ontology models the pose and movement of human upper limbs that are used to interact with devices."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-2",
+              "text": "This ontology describes gestures related to device interactions and which are performed using a human's upper limb region."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-3",
+              "text": "It maps affordances and human gestures to facilitate devices and automated systems to understand different gestures that humans perform to interact with the same affordances."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-4",
+              "text": "Additionally, it acts as a dictionary for manufacturers, designers, and developers to search and identify the commonly used gestures for certain affordances, and to understand the shape and dynamics of a certain gesture."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-5",
+              "text": "The ontology is developed with a strong focus on flexibility and extensibility, allowing device manufacturers, designers, and users to introduce new gestures and map their relations to necessary affordances."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-6",
+              "text": "Most importantly, this does not enforce designers and manufacturers to follow a standard but maps the ubiquitousness in gesture vocabularies by linking them appropriately."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-7",
+              "text": "The aim of this study is to define a semantic model of gestures combined with its associated knowledge."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-8",
+              "text": "As such, GES becomes more permissive, which opens up the opportunity to introduce a shareable and reusable gesture representation that can be mapped according to the relationships introduced in HDGI."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-1",
+              "text": "We defined a new namespace https://w3id.org/hdgi with the prefix hdgi for all the classes used in the ontology to be independent of external ontologies."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-2",
+              "text": "However, we have provided relevant mappings to external ontologies where appropriate."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-3",
+              "text": "We are using w3id.org as the permanent URL service."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-4",
+              "text": "Furthermore, the relevant code, data, and ontology are made available for the community via GitHub, allowing anyone interested to join as a contributor."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-1",
+              "text": "Design Rationale"
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-2",
+              "text": "We have arranged the classes and properties of the HDGI ontology to represent human upper limb region gestures with their associated affordances and context."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-3",
+              "text": "The ontology is designed around a core that consists of seven main classes: hdgi:Gesture, hdgi:BodyPart, hdgi:Pose, hdgi:Movement, hdgi:Affordance, hdgi:Device, and hdgi:Human, establishing the basic relationships between those along with hdgi:Observer and hdgi:Context classes."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-4",
+              "text": "This core ontology design pattern will be registered in the ontology design pattern initiative."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-5",
+              "text": "Please note that the ontology introduces all classes and relationships in its own namespace, but for illustration purposes, we use their equivalent classes and properties from external ontologies when appropriate."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-6",
+              "text": "All the classes and properties are expressed in OWL2 and we use Turtle syntax throughout our modelling."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-7",
+              "text": "We use global domain and range restrictions on properties sparingly, but as much as possible, we use guarded local restrictions instead, i.e., universal and existential class restrictions for a specific property such that only for instances of that property with that class as the subject, the range of the property is asserted."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-8",
+              "text": "This helps in the alignment of the ontology with other external ontologies, particularly if they also use guarded local restrictions."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-9",
+              "text": "We provide alignments to these ontologies as separate ontology files in GitHub."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-5",
+      "subtitle": "Human Device Gesture Interaction (HDGI) Ontolog: Gesture",
+      "paragraphs": [
+        {
+          "iri": "Section-5-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-1",
+              "text": "Gesture A hdgi:Gesture is defined in such a way that it distinguishes two atomic types of gestures, namely static and dynamic gestures."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-2",
+              "text": "A dynamic gesture consists of exactly one start hdgi:Pose at a given time, exactly one end hdgi:Pose at a given time, an atomic hdgi:Movement, and involves a single hdgi:BodyPart at a time."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-3",
+              "text": "However, since a gesture can have multiple poses and movements of multiple body parts, we provide a means to define a sequence of gestures."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-4",
+              "text": "Since the ontology is designed in a way that it can capture and describe individual body parts separately, a gesture that involves multiple movements and poses of body parts can be described using the object property hdgi:includesGesture that aggregates hdgi:Gesture and through their mapping to Allen time puts them in sequence or concurrent."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-5",
+              "text": "That is, a gesture can contain one or more gestures."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-1",
+              "text": "To give a concrete example of the modeling of a dynamic gesture, we use a 'swipe gesture' performed with the right hand (named 'right hand swipe left') illustrated below in Listing 1.1 and Figure 2."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-2",
+              "text": "As per the description above, 'right hand swipe left' consists of eight atomic gestures."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-3",
+              "text": "Only some of these atomic gestures are shown in Figure 2 and listed in Listing 1.1 and each of those include a single body part, a start pose and an end pose, with a movement."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-1",
+              "text": "For extensibility, we added several possible gesture subclasses such as hdgi:HandGesture, hdgi:ForearmGesture, hdgi:FacialGesture, hdgi:LegGesture, hdgi:UpperArmGesture etc."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-2",
+              "text": "However, at this moment only hand, forearm, and upper arm gestures are modeled in detail in HDGI."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-6",
+      "subtitle": "Human Device Gesture Interaction (HDGI) Ontolog: BodyPart",
+      "paragraphs": [
+        {
+          "iri": "Section-6-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-1",
+              "text": "For modeling body parts, we reuse and extend concepts and classes in the Foundational Model of Anatomy (FMA) ontology."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-2",
+              "text": "Again, though we focus only on a human's upper limb region, the hdgi:BodyPart class is defined in an extensible way with the motive of allowing representation of further body parts to describe new poses in the future."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-3",
+              "text": "We are not modeling all the biological concepts that are described in FMA, but only the relevant classes for HDI."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-4",
+              "text": "While preserving FMA class definitions and structures, we define hdgi:UpperArm, hdgi:Forearm, hdgi:Palm, and hdgi:Finger as the basic building blocks of the 'upper limb region'."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-5",
+              "text": "The hdgi:UpperArm class is an equivalent class to the Arm class in FMA."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-6",
+              "text": "The hdgi:Finger class is further divided to represent each individual finger as hdgi:Thumb, hdgi:IndexFinger, hdgi:MiddleFinger, hdgi:RingFinger, and hdgi:LittleFinger and are mapped to the respective subclasses of a 'Region of hand' in FMA."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-7",
+              "text": "These fingers are further divided into left and right entities."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-8",
+              "text": "Figure 3 depicts each of these sections of the 'upper limb region'."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-9",
+              "text": "Thus, we define a gesture as a combination of one or more poses and-or movements involved by one or more of these eight sections of upper limb region."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-7",
+      "subtitle": "Human Device Gesture Interaction (HDGI) Ontolog: Post",
+      "paragraphs": [
+        {
+          "iri": "Section-7-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-1",
+              "text": "Each body part can be involved in a pose."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-2",
+              "text": "In other words, a Pose must hdgi:involves one hdgi:BodyPart at a point in time."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-3",
+              "text": "For each body part there is a corresponding, potential pose."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-4",
+              "text": "Stepping down a layer of abstraction, the hdgi:Pose class describes the exact placement of a pose in a 3D space, by modeling the 'position' and 'rotation' of a pose."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-5",
+              "text": "The hdgi:hasPosition and hdgi:hasRotation relationships are used for this mapping; e.g. hdgi:ThumbCurled -> hdgi:hasPosition -> xPosition."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-6",
+              "text": "In order to avoid the problem of having different origin points based on the gesture recognition device configurations, the HDGI ontology always considers relative positions."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-7",
+              "text": "That is, upper arm positions are always relative to the shoulder joint (Refer to Figure 3 - point A)."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-8",
+              "text": "The position of a hdgi:ForearmPose is always relative to the elbow joint (cf. Figure 3 - point B)."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-9",
+              "text": "Palm and finger positions are always relative to the wrist (cf. Figure 3 - point C)."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-10",
+              "text": "Further, the hdgi:Position class must describe the local coordinate system that its hdgi:xPosition, hdgi:yPosition, and zPosition values are based on."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-11",
+              "text": "Thus, every hdgi:Position must have a hdgi:hasLocalCoordinateSystem object property with a hdgi:LocalCoordinateSystem as its range."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-12",
+              "text": "This is to avoid problems, such as different SDKs-systems using slightly different coordinate systems."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-13",
+              "text": "For example, Unity3D11 is using a left-hand rule coordinate system where the Z-axis always points outwards from the users."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-14",
+              "text": "In contrast, the leap-motion SDK uses a right-hand rule where the Z-axis is pointed inwards."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-15",
+              "text": "In order to allow either type of modeling and to avoid unnecessary conversions steps, we separately model the hdgi:LocalCoordinateSystem class and hdgi:Position class relationship."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-16",
+              "text": "The rotation of a pose can be represented in two different ways."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-17",
+              "text": "Some systems use yaw (angle with y-axis), pitch (angle with x-axis), and roll (angle with z-axis) angles to describe the rotation of a 3D rigid body, whereas some systems use quaternions."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-18",
+              "text": "By allowing support for both of these representations (yet one at a time), we keep our model flexible and able to model data received from different manufacturers-devices."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-1",
+              "text": "Further, a hdgi:Pose represents a static gesture."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-2",
+              "text": "Thus, similar to the hdgi:Gesture class, a hdgi:Pose can contain one or more poses within itself."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-3",
+              "text": "A hdgi:Pose always has a time stamp and involves a single body part at a time (thus, individual body parts can be modeled separately)."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-4",
+              "text": "Again, for extensibility, we added several possible poses as subclasses such as hdgi:LegPose, hdgi:FootPose, etc."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-5",
+              "text": "However, at the moment we only model hdgi:UpperArm, hdgi:Forearm, hdgi:Palm, and each individual hdgi:Finger poses."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-1",
+              "text": "Listing 1.2 provides an example of a pose modeling related to the gesture 'Right Hand Swipe Left'."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-2",
+              "text": "The example models the start pose and the end pose of the right forearm and the right palm."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-3",
+              "text": "As per the description above, each hdgi:Pose hdgi:used only hdgi:BodyPart and has exactly one hdgi:timestamp with a maximum of one hdgi:Position and a hdgi:Rotation (hdgi:Rotation could be modeled either using Euler angles (hdgi:xRotation (roll), hdgi:yRotation (pitch), hdgi:zRotation (yaw)) or hdgi:Quaternion based on received data)."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-4",
+              "text": "Listing 1.3 further explains the hdgi:Position and hasLocalCoordinateSystem mappings."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-5",
+              "text": "Each hdgi:Position has a maximum of one hdgi:xPosition, hdgi:yPosition, and hdgi:zPosition and exactly one hdgi:LocalCoordinateSystem."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-6",
+              "text": "Notice in hdgi:LocalCoordinateSystem, each axis direction is pre-known (enum), hence for hdgi:xAxisDirection it is either 'leftward' or 'rightward', for hdgi:yAxisDirection it is either 'upward' or 'downward', and for hdgi:zAxisDirection it is either 'outward' or 'inward'."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-8",
+      "subtitle": "Human Device Gesture Interaction (HDGI) Ontolog: Movement",
+      "paragraphs": [
+        {
+          "iri": "Section-8-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-1",
+              "text": "The hdgi:Movement class only relates to dynamic gestures and has no relationship to a hdgi:Pose."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-2",
+              "text": "A hdgi:Movement consists of a predefined set of movements that we identified as sufficient to describe the movements of hdgi:UpperArm, hdgi:Forearm, hdgi:Palm, and hdgi:Finger."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-3",
+              "text": "This is extensible for designers and developers to include their own new movements."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-4",
+              "text": "As this is not tightly-coupled with other classes such as hdgi:Gesture, hdgi:Pose, and hdgi:BodyPart, the flexibility is there for customizations."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-5",
+              "text": "Each hdgi:Movement is atomic (that is related to only one position change or one rotation change) and must have exactly a single hdgi:Duration."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-6",
+              "text": "This can be derived from hdgi:timestamp difference between start hdgi:Pose and end hdgi:Pose."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-9",
+      "subtitle": "Human Device Gesture Interaction (HDGI) Ontolog: Affordances",
+      "paragraphs": [
+        {
+          "iri": "Section-9-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-1",
+              "text": "According to Norman the term affordance refers to the perceived and actual properties of the thing that determines just how the thing could possibly be used."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-2",
+              "text": "Later on, this view has become standard in Human Computer Interaction and Design."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-3",
+              "text": "Further, Maier et al. define affordances to be potential uses of a device."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-4",
+              "text": "This implies that the human is able to do something using the device."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-5",
+              "text": "Hence affordances of a device can be stated as the set of all potential human behaviors that the device might allow."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-6",
+              "text": "Therefore, Brown et al. conclude that affordances are context dependent action or manipulation possibilities from the point of view of a particular actor."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-7",
+              "text": "This highlighted the necessity for us to model both an hdgi:Affordance and a hdgi:Context (both hdgi:UserContext and hdgi:DeviceContext) class when modeling Human Device Gesture Interactions."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-8",
+              "text": "As a user's choice of gestures is heavily based on their context, to understand the correct intent it is important that HDGI can map both the context and affordance."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-9",
+              "text": "This helps systems to understand user specific gesture semantics and behave accordingly."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-1",
+              "text": "In gesture interactions, necessary affordances are communicated by the user to a device via a gesture that is supported by the device."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-2",
+              "text": "If there is an openly accessible gesture affordance mapping with automated reasoning, we could integrate multiple gesture recognition systems to cater for user needs, and thereby increase user experience (UX)."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-3",
+              "text": "For example, assume that Device A has an affordance X and Device B has affordance Y."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-4",
+              "text": "If a user performs a gesture which can only be detected by Device B but the user's intent is to interact with affordance X, by using the mappings in hdgi-ontology and the use of automated reasoning, Device B would be able to understand the user intent and communicate that to Device A accordingly."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-5",
+              "text": "This further implies that it is the affordance that should be mapped to a gesture rather than the device."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-6",
+              "text": "This is modeled as hdgi:Affordance -> hdgi:supportsGesture -> hdgi:Gesture, where an affordance can have none to many supported gestures."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-7",
+              "text": "A hdgi:Device can be a host to multiple affordances and the same affordance can be hosted by multiple devices."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-8",
+              "text": "Hence, hdgi:Affordance -> hdgi:affordedBy -> hdgi:Device has cardinality of many to many."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-9",
+              "text": "Here, hdgi:Device is a sub class of sosa:Platform."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-10",
+              "text": "SOSA (Sensor, Observation, Sample, and Actuator) is a lightweight but self-contained core ontology which itself is the core of the new Semantic Sensor Network (SSN) ontology."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-11",
+              "text": "The SSN ontology describes sensors and their observations, involved procedures, studied features of interest, samples, and observed properties, as well as actuators."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-12",
+              "text": "We further reuse sosa:Sensor and sosa:Actuator and hdgi:ActuatableAffordance and hdgi:ObservableAffordance are subclasses of sosa:ActuatableProperty and sosa:ObservableProperty."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-3-Sentence-1",
+              "text": "In addition, the HDGI ontology models the relationship between hdgi:Device and a hdgi:DeviceManufacturer as there can be the same gesture mapped to different affordances by different vendors or the same affordance can be mapped to different gestures (refer to the BMW and Mercedes-Benz example in Section 1)."
+            },
+            {
+              "iri": "Section-9-Paragraph-3-Sentence-2",
+              "text": "We model this in HDGI through the hdgi:Device hdgi:manufacturedBy a hdgi:DeviceManufacturer relationship where a device must have just one manufacturer."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-4-Sentence-1",
+              "text": "Listing 1.4 provides an example modeling of hdgi:Affordance, hdgi:Device and hdgi:Context relationships corresponding to the description above."
+            },
+            {
+              "iri": "Section-9-Paragraph-4-Sentence-2",
+              "text": "Most importantly, this is one of the major contributions in this ontology and when correctly modeled, this will help systems to automatically identify the semantics of a user's gesture and perform the necessary affordance mapping through an interconnected knowledge base instead of predefined one to one mappings."
+            },
+            {
+              "iri": "Section-9-Paragraph-4-Sentence-3",
+              "text": "This allows gesture recognition systems to run gesture recognition, detection, mappings, and communication separately in independent layers."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-10",
+      "subtitle": "Device Mappings to HDGI",
+      "paragraphs": [
+        {
+          "iri": "Section-10-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-1",
+              "text": "In addition to ontology building and annotating, it is equally important to consider its integration and documentation as a part of ontology engineering."
+            },
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-2",
+              "text": "Figure 4 illustrates a proof-of-concept implementation of the HDGI ontology."
+            },
+            {
+              "iri": "Section-10-Paragraph-1-Sentence-3",
+              "text": "Here we wrapped a set of predefined SPARQL endpoints with RESTful APIs, in order to make the integration with third party Software Development Kits and Services easier and faster."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-1",
+              "text": "The HDGI-Mapping Service is a fully API-driven RESTful web service, where designers, device manufacturers, and developers can refer to one place - the HDGI-gesture repository - to find currently available and contemporary gestures and their relevant mappings to device affordances."
+            },
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-2",
+              "text": "In addition, APIs further allow them to define their own gesture vocabularies and map them and upload them to the gesture repository."
+            },
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-3",
+              "text": "This means that their gesture vocabularies will be easily accessible to the research community."
+            },
+            {
+              "iri": "Section-10-Paragraph-2-Sentence-4",
+              "text": "We anticipate that this will help to reduce the redundant gesture vocabularies and increase the reuse of existing ones, eventually helping to reduce the ubiquitousness currently prominent in gestural interfaces."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-1",
+              "text": "In our study, we looked at the gesture vocabularies in the current literature and tried to map them into the ontology as a starting point."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-2",
+              "text": "This allows using the HDGI-service endpoints to query about available gesture vocabularies."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-3",
+              "text": "As we have made this an OpenSource project under Apache 2.0 license, anyone can contribute to the open GitHub code repository for further improvements."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-4",
+              "text": "In addition, they can deploy this service in their own private cloud, if necessary."
+            },
+            {
+              "iri": "Section-10-Paragraph-3-Sentence-5",
+              "text": "Either way, adhering to the HDGI ontology mappings will allow universal integration of gesture data instead of having a universal gesture standard that is not yet available and may never emerge."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-1",
+              "text": "Further information on HDGI mappings can be explored."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-2",
+              "text": "Sample mapping service (the web application) code is available to anyone to download locally, and continue the integration with their gesture recognition software tools."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-3",
+              "text": "The prerequisites to run the web application are Java version 1.9 or higher and an Apache Tomcat server."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-4",
+              "text": "A 'how-to' documentation is provided."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-5",
+              "text": "We have further added an API and architecture documentation which helps if someone needs to customize the web application itself, if they want to make customized SPARQL endpoints and to define new RESTful endpoints to suit any customizable needs, and to run as a private service."
+            },
+            {
+              "iri": "Section-10-Paragraph-4-Sentence-6",
+              "text": "A complete API documentation can also be found, and we are currently working on integrating the Swagger UI and Swagger codegen capabilities to the HDGI web app."
+            }
+          ]
+        },
+        {
+          "iri": "Section-10-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-1",
+              "text": "Thus, users can get a comprehensive view of the API, understand endpoint structures and try it online in real-time."
+            },
+            {
+              "iri": "Section-10-Paragraph-5-Sentence-2",
+              "text": "Further, with the integration of Swagger codegen, we will allow instant generation of API client stubs (client SDKs for APIs) from different languages including JavaScript, Java, Python, Swift, Android, etc., which will make the integration of the APIs into different gesture recognition software/services even faster and easier."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-11",
+      "subtitle": "Conclusion",
+      "paragraphs": [
+        {
+          "iri": "Section-11-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-1-Sentence-1",
+              "text": "This work presents the Human Device Gesture Interaction (HDGI) ontology, a model of human device gesture interactions that describes gestures related to human device interactions and maps them with corresponding affordances."
+            },
+            {
+              "iri": "Section-11-Paragraph-1-Sentence-2",
+              "text": "This is an initial step towards building a comprehensive human device gesture interaction knowledge base with the ultimate purpose of bringing better user experience."
+            },
+            {
+              "iri": "Section-11-Paragraph-1-Sentence-3",
+              "text": "The HDGI ontology can assist gesture recognition systems, designers, manufacturers, and developers to formally express gestures and to carry automated reasoning tasks based on relationships between gestures and device affordances."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-1",
+              "text": "While developing the ontology, we extracted elements observed from existing gesture vocabularies defined in previous studies."
+            },
+            {
+              "iri": "Section-11-Paragraph-2-Sentence-2",
+              "text": "We also present a Web service interface, the HDGI Mapping service, that can be integrated with existing gesture recognition systems."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-3-Sentence-1",
+              "text": "The intention and scope of the HDGI ontology can be summarized as follows: first, to describe gestures related to human device interaction performed using the human upper-limb region; second, to map the relationship between affordances and a particular gesture based on the user context, allowing devices to understand different gestures that humans perform to interact with the same affordances; and third, to act as a dictionary and a repository for manufacturers, developers, and designers to identify commonly used gestures for certain affordances, specify formally what a certain gesture means, and introduce new gestures if necessary."
+            }
+          ]
+        },
+        {
+          "iri": "Section-11-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-1",
+              "text": "As future work, there are several possible extensions that can be made to the ontology by incorporating more gesture types such as facial gestures and head gestures."
+            },
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-2",
+              "text": "Furthermore, we are planning to release and deploy the HDGI RESTful service in the Cloud and release API clients to leading hand-gesture supported systems such as Microsoft HoloLens 2, Microsoft Kinect, and Soli."
+            },
+            {
+              "iri": "Section-11-Paragraph-4-Sentence-3",
+              "text": "Since gesture interactions in Mixed Reality are becoming increasingly popular, we plan to conduct several gesture elicitation studies using Microsoft HoloLens 2, especially to map gesture interactions in Mixed Reality to the HDGI ontology."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

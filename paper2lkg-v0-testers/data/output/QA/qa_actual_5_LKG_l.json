@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What is the main objective of the paper?",
+    "answer": "The main objective of the paper is to apply a data mining model to analyze the 2019 grant applications submitted to an Australian Government research funding agency to investigate whether grant schemes successfully identify innovative project proposals.",
+    "LLM_answer": "The main objective of the paper is to present a pipeline for analysing grant applications.",
+    "similarity_score": 0.74755859375
+  },
+  {
+    "question": "Which data mining model did the authors propose as having the best performance?",
+    "answer": "The authors proposed a Random Forest classifier over documents encoded with features denoting the presence or absence of unigrams, using a modified TF-IDF algorithm that only implements the IDF part.",
+    "LLM_answer": "The authors proposed a data mining model that uses a Random Forest (RF) classifier, which achieved the best performance with an accuracy of 84.17% across all types of grant applications.",
+    "similarity_score": 0.73193359375
+  },
+  {
+    "question": "How did the authors modify the traditional TF-IDF algorithm in their feature extraction technique?",
+    "answer": "They modified the TF-IDF algorithm by only implementing the IDF part. Specifically, if a term exists at least once in the documents, they assign the IDF value to it; otherwise, they assign a value of zero. They do not consider term frequency in their encoding.",
+    "LLM_answer": "The authors modified the traditional TF-IDF algorithm by proposing an intra-class dispersion algorithm, which adjusts term weights in documents to increase the importance of rare but significant words while decreasing the weightage of frequent but less important words.",
+    "similarity_score": 0.7724609375
+  },
+  {
+    "question": "What accuracy did the proposed model achieve across all types of grant applications?",
+    "answer": "The proposed model achieved an accuracy of 84.17% across all types of grant applications.",
+    "LLM_answer": "The accuracy achieved by the proposed model across all types of grant applications is not explicitly stated in the provided resources.",
+    "similarity_score": 0.671875
+  },
+  {
+    "question": "Why did the authors focus on the presence or absence of unigrams in their feature encoding?",
+    "answer": "They focused on unigrams because unigrams are the most common choice for text classification tasks, and they wanted an efficient feature extraction technique that highlights the vocabulary of innovative proposals.",
+    "LLM_answer": "The authors focused on the presence or absence of unigrams in their feature encoding because unigrams are the most common choice for text classification. They utilized a Random Forest classifier that classifies documents based on features denoting the presence or absence of unigrams, which are encoded using a modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm.",
+    "similarity_score": 0.779296875
+  },
+  {
+    "question": "What were the main contributions of the paper?",
+    "answer": "The main contributions include: providing a rigorous experimental pipeline for analyzing grant applications; proposing a Random Forest classifier over documents encoded with presence or absence of unigram terms using a modified TF-IDF algorithm; and demonstrating that the proposed model achieved an accuracy of 84.17% across all types of grant applications.",
+    "LLM_answer": "The main contributions of the paper include the presentation of a rigorous experimental pipeline for analysing grant applications and the proposal of a data mining model using a Random Forest classifier over documents encoded with features denoting the presence or absence of unigram terms.",
+    "similarity_score": 0.90625
+  },
+  {
+    "question": "What is the significance of using only the IDF part in their modified TF-IDF algorithm?",
+    "answer": "By using only the IDF part, the authors aimed to focus on rare terms that can define innovativeness, under the idea that rare but important words are more indicative of innovative proposals.",
+    "LLM_answer": "The significance of using only the IDF part in their modified TF-IDF algorithm lies in its ability to adjust term weights in documents, prioritizing rare yet informative terms over common ones. This approach helps to enhance the relevance of the extracted features, particularly in contexts like data mining and information retrieval, where distinguishing important terms from less significant ones is crucial.",
+    "similarity_score": 0.71435546875
+  },
+  {
+    "question": "What data set did the authors use for their analysis?",
+    "answer": "They used the 2019 grant applications submitted to an Australian Government research funding agency, consisting of 3,805 research proposals with peer-reviewed 'innovation and creativity' (IC) scores.",
+    "LLM_answer": "The authors used the 2019 grant applications submitted to an Australian Government research funding agency for their analysis.",
+    "similarity_score": 0.841796875
+  },
+  {
+    "question": "What text pre-processing techniques were applied in the study?",
+    "answer": "The text pre-processing techniques included converting all text to lowercase, removing numbers and punctuation, tokenizing by whitespace, deleting stop words based on IDF values, and applying text stemming using the Porter Stemming algorithm.",
+    "LLM_answer": "The provided resources do not contain specific information about the text pre-processing techniques applied in the study.",
+    "similarity_score": 0.5888671875
+  },
+  {
+    "question": "What future work did the authors suggest?",
+    "answer": "The authors suggested considering other evaluation scores to build a more comprehensive system, applying other effective data mining models like SVM, AdaBoost, and XGBoost, and exploring pre-trained language models in NLP to better understand text semantics. They also mentioned building a long-term model to predict future grant applications.",
+    "LLM_answer": "The provided resources do not contain specific information about the future work suggested by the authors.",
+    "similarity_score": 0.59814453125
+  }
+]

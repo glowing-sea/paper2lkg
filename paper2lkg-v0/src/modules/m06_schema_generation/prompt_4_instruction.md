@@ -1,0 +1,1 @@
+Given a predicate and its description, represent the predicate for searching purposes:

@@ -1,0 +1,68 @@
+{
+  "iri": "Paper-88",
+  "title": "ECCV_2016_212_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-88-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-88-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-1",
+              "text": "Person re-identification is challenging due to the large variations of pose , illumination , occlusion and camera view ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-2",
+              "text": "Owing to these variations , the pedestrian data is distributed as highly-curved manifolds in the feature space , despite the current convolutional neural networks -LRB- CNN -RRB- 's capability of feature extraction ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-3",
+              "text": "However , the distribution is unknown , so it is difficult to use the geodesic distance when comparing two samples ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-4",
+              "text": "In practice , the current deep embedding methods use the Euclidean distance for the training and test ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-5",
+              "text": "On the other hand , the manifold learning methods suggest to use the Euclidean distance in the local range , combining with the graphical relationship between samples , for approximating the geodesic distance ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-6",
+              "text": "From this point of view , selecting suitable positive -LRB- i.e. intra-class -RRB- training samples within a local range is critical for training the CNN embedding , especially when the data has large intra-class variations ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-7",
+              "text": "In this paper , we propose a novel moderate positive sample mining method to train robust CNN for person re-identification , dealing with the problem of large variation ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-8",
+              "text": "In addition , we improve the learning by a metric weight constraint , so that the learned metric has a better generalization ability ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-9",
+              "text": "Experiments show that these two strategies are effective in learning robust deep metrics for person re-identification , and accordingly our deep model significantly outperforms the state-of-the-art methods on several benchmarks of person re-identification ."
+            },
+            {
+              "iri": "Paper-88-Section-1-Paragraph-1-Sentence-10",
+              "text": "Therefore , the study presented in this paper may be useful in inspiring new designs of deep models for person re-identification ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Person re-identification is challenging due to the large variations of pose , illumination , occlusion and camera view . Owing to these variations , the pedestrian data is distributed as highly-curved manifolds in the feature space , despite the current convolutional neural networks -LRB- CNN -RRB- 's capability of feature extraction . However , the distribution is unknown , so it is difficult to use the geodesic distance when comparing two samples . In practice , the current deep embedding methods use the Euclidean distance for the training and test . On the other hand , the manifold learning methods suggest to use the Euclidean distance in the local range , combining with the graphical relationship between samples , for approximating the geodesic distance . From this point of view , selecting suitable positive -LRB- i.e. intra-class -RRB- training samples within a local range is critical for training the CNN embedding , especially when the data has large intra-class variations . In this paper , we propose a novel moderate positive sample mining method to train robust CNN for person re-identification , dealing with the problem of large variation . In addition , we improve the learning by a metric weight constraint , so that the learned metric has a better generalization ability . Experiments show that these two strategies are effective in learning robust deep metrics for person re-identification , and accordingly our deep model significantly outperforms the state-of-the-art methods on several benchmarks of person re-identification . Therefore , the study presented in this paper may be useful in inspiring new designs of deep models for person re-identification .",
+  "kg2text": [
+    "This paper proposes a novel moderate positive sample mining method to train robust Convolutional Neural Networks (CNNs) for person re-identification, addressing the problem of large variation. The proposed algorithm or technique used to select suitable intra-class training samples within a local range to train robust CNN models for person re-identification is critical for training the CNN embedding. Moreover, this paper proposes deep metrics learned through a novel moderate positive sample mining method and metric weight constraint for use in deep models for person re-identification. The proposed approach significantly outperforms state-of-the-art methods on multiple benchmarks.",
+    "This paper presents a novel moderate positive sample mining method for training robust Convolutional Neural Networks (CNNs) to address the problem of large variation. The proposed approach, which uses deep metrics learned through a metric weight constraint, significantly outperforms state-of-the-art methods on multiple benchmarks. In person re-identification, identifying individuals in images or videos despite variations in pose, lighting, occlusion, and camera view is challenging due to these factors. To improve the learning process, we propose using manifold learning methods for approximating geodesic distance. Our experiments show that this approach can be effective when used with a metric weight constraint.",
+    "Pedestrian data, which can be considered as a type of data, has been distributed across manifolds. The concept of geodesic distance, being a broader term for metric, plays an important role in understanding this distribution. State-of-the-art methods have been employed to analyze the pose variations under different illumination conditions. In addition, experiments conducted to study pedestrian behavior can be seen as a variation of studying human movement patterns. Furthermore, occlusion scenarios are similar to camera views that capture specific angles or perspectives. Finally, these findings provide insights into our understanding of point of view and how it relates to various aspects of pedestrian data."
+  ],
+  "times": [
+    19.97750735282898
+  ]
+}

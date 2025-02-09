@@ -1,0 +1,51 @@
+{
+  "iri": "Paper-33",
+  "title": "P05-1056",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-33-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-33-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-1",
+              "text": "Sentence boundary detection in speech is important for enriching speech recognition output , making it easier for humans to read and downstream modules to process ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-2",
+              "text": "In previous work , we have developed hidden Markov model -LRB- HMM -RRB- and maximum entropy -LRB- Maxent -RRB- classifiers that integrate textual and prosodic knowledge sources for detecting sentence boundaries ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-3",
+              "text": "In this paper , we evaluate the use of a conditional random field -LRB- CRF -RRB- for this task and relate results with this model to our prior work ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-4",
+              "text": "We evaluate across two corpora -LRB- conversational telephone speech and broadcast news speech -RRB- on both human transcriptions and speech recognition output ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-5",
+              "text": "In general , our CRF model yields a lower error rate than the HMM and Max-ent models on the NIST sentence boundary detection task in speech , although it is interesting to note that the best results are achieved by three-way voting among the classifiers ."
+            },
+            {
+              "iri": "Paper-33-Section-1-Paragraph-1-Sentence-6",
+              "text": "This probably occurs because each model has different strengths and weaknesses for modeling the knowledge sources ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Sentence boundary detection in speech is important for enriching speech recognition output , making it easier for humans to read and downstream modules to process . In previous work , we have developed hidden Markov model -LRB- HMM -RRB- and maximum entropy -LRB- Maxent -RRB- classifiers that integrate textual and prosodic knowledge sources for detecting sentence boundaries . In this paper , we evaluate the use of a conditional random field -LRB- CRF -RRB- for this task and relate results with this model to our prior work . We evaluate across two corpora -LRB- conversational telephone speech and broadcast news speech -RRB- on both human transcriptions and speech recognition output . In general , our CRF model yields a lower error rate than the HMM and Max-ent models on the NIST sentence boundary detection task in speech , although it is interesting to note that the best results are achieved by three-way voting among the classifiers . This probably occurs because each model has different strengths and weaknesses for modeling the knowledge sources .",
+  "kg2text": [
+    "Our CRF model evaluates well against hidden Markov models (HMMs) and maximum entropy classifiers, outperforming them on the NIST task. We evaluate our CRF model across two corpora: conversational telephone speech and broadcast news speech. Each model has its strengths and weaknesses in modeling textual and prosodic knowledge sources. Sentence boundary detection is important for enriching speech recognition output. Our CRF model yields a lower error rate than HMMs and maximum entropy classifiers on the NIST task, demonstrating its effectiveness.",
+    "The conditional random field and Maxent are both models that have a broader term of 'model'. Similarly, hidden Markov model and maximum entropy also fall under this category. Each model has its own strengths and weaknesses for modeling textual and prosodic knowledge sources. Previous work developed the hidden Markov model, maximum entropy, and classifiers."
+  ],
+  "times": [
+    10.417952299118042
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "iri": "Paper-63",
+  "title": "CVPR_2008_256_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-63-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-63-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-1",
+              "text": "Given an object model and a black-box measure of similarity between the model and candidate targets , we consider visual object tracking as a numerical optimization problem ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-2",
+              "text": "During normal tracking conditions when the object is visible from frame to frame , local optimization is used to track the local mode of the similarity measure in a parameter space of translation , rotation and scale ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-3",
+              "text": "However , when the object becomes partially or totally occluded , such local tracking is prone to failure , especially when common prediction techniques like the Kalman filter do not provide a good estimate of object parameters in future frames ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-4",
+              "text": "To recover from these inevitable tracking failures , we consider object detection as a global optimization problem and solve it via Adaptive Simulated Annealing -LRB- ASA -RRB- , a method that avoids becoming trapped at local modes and is much faster than exhaustive search ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-5",
+              "text": "As a Monte Carlo approach , ASA stochastically samples the parameter space , in contrast to local deterministic search ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-6",
+              "text": "We apply cluster analysis on the sampled parameter space to redetect the object and renew the local tracker ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-7",
+              "text": "Our numerical hybrid local and global mode-seeking tracker is validated on challenging airborne videos with heavy occlusion and large camera motions ."
+            },
+            {
+              "iri": "Paper-63-Section-1-Paragraph-1-Sentence-8",
+              "text": "Our approach outperforms state-of-the-art trackers on the VIVID benchmark datasets ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Given an object model and a black-box measure of similarity between the model and candidate targets , we consider visual object tracking as a numerical optimization problem . During normal tracking conditions when the object is visible from frame to frame , local optimization is used to track the local mode of the similarity measure in a parameter space of translation , rotation and scale . However , when the object becomes partially or totally occluded , such local tracking is prone to failure , especially when common prediction techniques like the Kalman filter do not provide a good estimate of object parameters in future frames . To recover from these inevitable tracking failures , we consider object detection as a global optimization problem and solve it via Adaptive Simulated Annealing -LRB- ASA -RRB- , a method that avoids becoming trapped at local modes and is much faster than exhaustive search . As a Monte Carlo approach , ASA stochastically samples the parameter space , in contrast to local deterministic search . We apply cluster analysis on the sampled parameter space to redetect the object and renew the local tracker . Our numerical hybrid local and global mode-seeking tracker is validated on challenging airborne videos with heavy occlusion and large camera motions . Our approach outperforms state-of-the-art trackers on the VIVID benchmark datasets .",
+  "kg2text": [
+    "Adaptive Simulated Annealing (ASA) improves local tracking by utilizing a numerical hybrid local and global mode-seeking tracker, which is an advanced tracking algorithm that combines local tracking with global optimization techniques. This approach effectively tracks the local mode of the similarity measure, which is crucial for maintaining accurate tracking of the object. ASA avoids becoming trapped at local modes, thereby enhancing the performance of local tracking, especially under normal tracking conditions. The local tracker is employed to redetect the object, which is a broader term encompassing various physical entities being tracked. Furthermore, the approach has been validated on challenging airborne videos and has been shown to outperform state-of-the-art trackers, demonstrating its effectiveness in complex scenarios. Additionally, local optimization techniques are used to track the local mode of the similarity measure, which is essential for visual object tracking, a task that is fundamentally a numerical optimization problem.",
+    "Adaptive Simulated Annealing (ASA) is an optimization algorithm that samples the parameter space, which encompasses various parameters such as scale, rotation, and translation. Within this context, a similarity measure is defined in relation to these parameters, indicating that it exists in the parameter space of scale, rotation, and translation. The object model incorporates a black-box measure of similarity, which quantifies the similarity between the model and candidate targets. Object detection is framed as a global optimization problem, highlighting the complexity of identifying and locating objects. Furthermore, cluster analysis is applied to the sampled parameter space, which is a subset of the broader parameter space, to identify patterns. Notably, Adaptive Simulated Annealing is much faster than exhaustive search methods, making it a preferred choice in optimization tasks. Additionally, the Monte Carlo approach contrasts with local deterministic search, showcasing different strategies in exploring solution spaces."
+  ],
+  "times": [
+    9.767216682434082
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "iri": "Paper-24",
+  "title": "CVPR_2006_10_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-24-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-24-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-24-Section-1-Paragraph-1-Sentence-1",
+              "text": "In this paper we discuss object detection when only a small number of training examples are given ."
+            },
+            {
+              "iri": "Paper-24-Section-1-Paragraph-1-Sentence-2",
+              "text": "Specifically , we show how to incorporate a simple prior on the distribution of natural images into support vector machines ."
+            },
+            {
+              "iri": "Paper-24-Section-1-Paragraph-1-Sentence-3",
+              "text": "SVMs are known to be robust to overfitting ; however , a few training examples usually do not represent well the structure of the class ."
+            },
+            {
+              "iri": "Paper-24-Section-1-Paragraph-1-Sentence-4",
+              "text": "Thus the resulting detectors are not robust and highly depend on the choice of the training examples ."
+            },
+            {
+              "iri": "Paper-24-Section-1-Paragraph-1-Sentence-5",
+              "text": "We incorporate the prior on natural images by requiring that the separating hyperplane will not only yield a wide margin , but also that the corresponding positive half space will have a low probability to contain natural images -LRB- the background -RRB- ."
+            },
+            {
+              "iri": "Paper-24-Section-1-Paragraph-1-Sentence-6",
+              "text": "Our experiments on real data sets show that the resulting detector is more robust to the choice of training examples , and substantially improves both linear and kernel SVM when trained on 10 positive and 10 negative examples ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "In this paper we discuss object detection when only a small number of training examples are given . Specifically , we show how to incorporate a simple prior on the distribution of natural images into support vector machines . SVMs are known to be robust to overfitting ; however , a few training examples usually do not represent well the structure of the class . Thus the resulting detectors are not robust and highly depend on the choice of the training examples . We incorporate the prior on natural images by requiring that the separating hyperplane will not only yield a wide margin , but also that the corresponding positive half space will have a low probability to contain natural images -LRB- the background -RRB- . Our experiments on real data sets show that the resulting detector is more robust to the choice of training examples , and substantially improves both linear and kernel SVM when trained on 10 positive and 10 negative examples .",
+  "kg2text": [
+    "This paper presents a method for incorporating a simple prior on the distribution of natural images into support vector machines (SVMs) to enhance object detection. The prior on natural images requires the separating hyperplane, which is crucial for ensuring that the positive half space avoids including instances of the background. Our experiments show that the resulting detectors, which are influenced by the choice of the training examples, improve the performance of linear and kernel SVMs when trained on 10 positive and 10 negative examples. However, the resulting detectors are not robust detectors, indicating a need for further refinement. Additionally, support vector machines are known to be robust to overfitting, and the separating hyperplane yields a wide margin, which is essential for effective classification. The background has a broader term, encompassing natural images, which further emphasizes the importance of the prior in this context.",
+    "The distribution of natural images refers to the statistical characteristics of natural images, which are visual representations of scenes or objects in the natural world. This distribution is crucial as it is contained in the background, which the separating hyperplane in support vector machines aims to avoid. A wide margin, which is a requirement in support vector machines, has a broader term known as margin, emphasizing the importance of maximizing the distance from the nearest training examples. Detectors, which are models for object detection, rely on the choice of training examples, a broader term for training examples that significantly influences the model's performance, especially when these examples do not adequately represent the structure of the class. Our experiments, which evaluate the robustness of object detection methods, are part of a broader category of experiments that assess various hypotheses and outcomes."
+  ],
+  "times": [
+    6.209056615829468
+  ]
+}

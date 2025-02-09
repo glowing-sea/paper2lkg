@@ -1,0 +1,1526 @@
+{
+  "iri": "Paper-75",
+  "title": "ECCV_2016_204_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-75-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-75-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-1",
+              "text": "Our goal is to learn a Mahalanobis distance by minimizing a loss defined on the weighted sum of the precision at different ranks ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-2",
+              "text": "Our core motivation is that minimizing a weighted rank loss is a natural criterion for many problems in computer vision such as person re-identification ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-3",
+              "text": "We propose a novel metric learning formulation called Weighted Approximate Rank Component Analysis -LRB- WARCA -RRB- ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-4",
+              "text": "We then derive a scalable stochastic gradient descent algorithm for the resulting learning problem ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-5",
+              "text": "We also derive an efficient non-linear extension of WARCA by using the kernel trick ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-6",
+              "text": "Kernel space embedding decouples the training and prediction costs from the data dimension and enables us to plug inarbitrary distance measures which are more natural for the features ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-7",
+              "text": "We also address a more general problem of matrix rank degeneration & non-isolated minima in the low-rank matrix optimization by using new type of regularizer which approximately enforces the or-thonormality of the learned matrix very efficiently ."
+            },
+            {
+              "iri": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+              "text": "We validate this new method on nine standard person re-identification datasets including two large scale Market-1501 and CUHK03 datasets and show that we improve upon the current state-of-the-art methods on all of them ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    0.000308990478515625,
+    26.63957405090332,
+    41.752068758010864,
+    30.102501153945923,
+    0.06972432136535645,
+    0.0004649162292480469,
+    0.00017309188842773438,
+    43.00638389587402,
+    268.6948301792145,
+    3.7845451831817627,
+    0.09783291816711426,
+    0.013957023620605469,
+    0.0012748241424560547,
+    37.494170904159546,
+    0.0018439292907714844,
+    0.04598402976989746,
+    0.0020437240600585938,
+    5.809753894805908,
+    2.4479119777679443,
+    3.295297145843506,
+    615.6142952442169,
+    8.722455978393555,
+    300.08344984054565,
+    3.509140968322754,
+    0.0007531642913818359,
+    0.015360832214355469
+  ],
+  "nodes": {
+    "Entity-weighted_approximate_rank_component_analysis": {
+      "node_id": "weighted_approximate_rank_component_analysis",
+      "disambiguation_index": 0,
+      "label": "Weighted Approximate Rank Component Analysis",
+      "aliases": [
+        "Weighted Approximate Rank Component Analysis",
+        "WARCA"
+      ],
+      "types": [
+        "algorithm",
+        "metric learning formulation",
+        "abbreviation",
+        "metric",
+        "method",
+        "metric learning"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": false,
+      "description": "Weighted Approximate Rank Component Analysis (WARCA) is a novel metric learning formulation designed to learn a Mahalanobis distance by minimizing a weighted rank loss, particularly effective for applications in computer vision such as person re-identification.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "Weighted Approximate Rank Component Analysis",
+          "local_types": [
+            "algorithm",
+            "metric learning formulation",
+            "metric",
+            "method",
+            "metric learning"
+          ],
+          "iri": "Entity-weighted_approximate_rank_component_analysis-Mention-1"
+        },
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "WARCA",
+          "local_types": [
+            "method",
+            "algorithm"
+          ],
+          "iri": "Entity-weighted_approximate_rank_component_analysis-Mention-2"
+        },
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "WARCA",
+          "local_types": [
+            "method",
+            "abbreviation",
+            "metric learning formulation"
+          ],
+          "iri": "Entity-weighted_approximate_rank_component_analysis-Mention-3"
+        }
+      ],
+      "relevance": 0.82666015625
+    },
+    "Entity-novel_metric_learning_formulation": {
+      "node_id": "novel_metric_learning_formulation",
+      "disambiguation_index": 0,
+      "label": "novel metric learning formulation",
+      "aliases": [
+        "novel metric learning formulation"
+      ],
+      "types": [
+        "methodology",
+        "metric learning"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The term 'novel metric learning formulation' refers to the proposed methodology called Weighted Approximate Rank Component Analysis (WARCA), which aims to learn a Mahalanobis distance by minimizing a weighted rank loss, particularly for applications in computer vision such as person re-identification.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "novel metric learning formulation",
+          "local_types": [
+            "methodology",
+            "metric learning"
+          ],
+          "iri": "Entity-novel_metric_learning_formulation-Mention-1"
+        }
+      ],
+      "relevance": 0.80810546875
+    },
+    "Entity-this_new_method": {
+      "node_id": "this_new_method",
+      "disambiguation_index": 0,
+      "label": "this new method",
+      "aliases": [
+        "this new method"
+      ],
+      "types": [
+        "method"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "This new method refers to the Weighted Approximate Rank Component Analysis (WARCA), a novel metric learning formulation designed to improve person re-identification by minimizing a weighted rank loss and utilizing a scalable stochastic gradient descent algorithm.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "this new method",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-this_new_method-Mention-1"
+        }
+      ],
+      "relevance": 0.7607421875
+    },
+    "Entity-the_resulting_learning_problem": {
+      "node_id": "the_resulting_learning_problem",
+      "disambiguation_index": 0,
+      "label": "the resulting learning problem",
+      "aliases": [
+        "the resulting learning problem"
+      ],
+      "types": [
+        "learning problem"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The resulting learning problem refers to the optimization task of learning a Mahalanobis distance through a scalable stochastic gradient descent algorithm, specifically in the context of minimizing a weighted rank loss for applications in computer vision, such as person re-identification.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "the resulting learning problem",
+          "local_types": [
+            "learning problem"
+          ],
+          "iri": "Entity-the_resulting_learning_problem-Mention-1"
+        }
+      ],
+      "relevance": 0.7548828125
+    },
+    "Entity-method": {
+      "node_id": "method",
+      "disambiguation_index": 0,
+      "label": "method",
+      "aliases": [
+        "method"
+      ],
+      "types": [
+        "research method",
+        "approach"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'method' refers to the novel metric learning formulation called Weighted Approximate Rank Component Analysis (WARCA), which is validated on person re-identification datasets to improve state-of-the-art performance.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "method",
+          "local_types": [
+            "research method",
+            "approach"
+          ],
+          "iri": "Entity-method-Mention-1"
+        }
+      ],
+      "relevance": 0.7216796875
+    },
+    "Entity-a_scalable_stochastic_gradient_descent_algorithm": {
+      "node_id": "a_scalable_stochastic_gradient_descent_algorithm",
+      "disambiguation_index": 0,
+      "label": "a scalable stochastic gradient descent algorithm",
+      "aliases": [
+        "a scalable stochastic gradient descent algorithm"
+      ],
+      "types": [
+        "algorithm",
+        "stochastic gradient descent"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "A scalable stochastic gradient descent algorithm is a computational method designed to efficiently optimize the learning problem associated with the Weighted Approximate Rank Component Analysis (WARCA) formulation, particularly in the context of metric learning for computer vision tasks such as person re-identification.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "a scalable stochastic gradient descent algorithm",
+          "local_types": [
+            "algorithm",
+            "stochastic gradient descent"
+          ],
+          "iri": "Entity-a_scalable_stochastic_gradient_descent_algorithm-Mention-1"
+        }
+      ],
+      "relevance": 0.71826171875
+    },
+    "Entity-an_efficient_non-linear_extension_of_warca": {
+      "node_id": "an_efficient_non-linear_extension_of_warca",
+      "disambiguation_index": 0,
+      "label": "an efficient non-linear extension of WARCA",
+      "aliases": [
+        "an efficient non-linear extension of WARCA"
+      ],
+      "types": [
+        "method",
+        "extension"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "An efficient non-linear extension of WARCA refers to a modified version of the Weighted Approximate Rank Component Analysis method that utilizes the kernel trick to enhance its performance in metric learning, particularly for applications in computer vision such as person re-identification.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "an efficient non-linear extension of WARCA",
+          "local_types": [
+            "method",
+            "extension"
+          ],
+          "iri": "Entity-an_efficient_non-linear_extension_of_warca-Mention-1"
+        }
+      ],
+      "relevance": 0.70654296875
+    },
+    "Entity-weighted_rank_loss": {
+      "node_id": "weighted_rank_loss",
+      "disambiguation_index": 0,
+      "label": "weighted rank loss",
+      "aliases": [
+        "weighted rank loss"
+      ],
+      "types": [
+        "loss function",
+        "optimization criterion"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Weighted rank loss is a loss function used in metric learning that focuses on optimizing the precision at various ranks, particularly applicable in computer vision tasks like person re-identification.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "weighted rank loss",
+          "local_types": [
+            "loss function",
+            "optimization criterion"
+          ],
+          "iri": "Entity-weighted_rank_loss-Mention-1"
+        }
+      ],
+      "relevance": 0.69384765625
+    },
+    "Entity-minimizing_a_weighted_rank_loss": {
+      "node_id": "minimizing_a_weighted_rank_loss",
+      "disambiguation_index": 0,
+      "label": "minimizing a weighted rank loss",
+      "aliases": [
+        "minimizing a weighted rank loss"
+      ],
+      "types": [
+        "criterion",
+        "loss function"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Minimizing a weighted rank loss refers to the process of optimizing a loss function that emphasizes the importance of precision at various ranks, particularly in applications like person re-identification in computer vision.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "minimizing a weighted rank loss",
+          "local_types": [
+            "criterion",
+            "loss function"
+          ],
+          "iri": "Entity-minimizing_a_weighted_rank_loss-Mention-1"
+        }
+      ],
+      "relevance": 0.67333984375
+    },
+    "Entity-loss": {
+      "node_id": "loss",
+      "disambiguation_index": 0,
+      "label": "loss",
+      "aliases": [
+        "loss"
+      ],
+      "types": [
+        "optimization criterion",
+        "mathematical concept",
+        "loss function",
+        "mathematical function"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'loss' refers to a mathematical function used as an optimization criterion that quantifies the error in the weighted sum of precision at different ranks, specifically in the framework of learning a Mahalanobis distance for applications in computer vision.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "loss",
+          "local_types": [
+            "optimization criterion",
+            "mathematical concept",
+            "loss function",
+            "mathematical function"
+          ],
+          "iri": "Entity-loss-Mention-1"
+        }
+      ],
+      "relevance": 0.66552734375
+    },
+    "Entity-the_current_state-of-the-art_method": {
+      "node_id": "the_current_state-of-the-art_method",
+      "disambiguation_index": 0,
+      "label": "the current state-of-the-art methods",
+      "aliases": [
+        "the current state-of-the-art methods"
+      ],
+      "types": [
+        "method",
+        "state-of-the-art"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "The current state-of-the-art methods refer to the most advanced and effective techniques in person re-identification that the proposed Weighted Approximate Rank Component Analysis (WARCA) method aims to surpass in performance.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "the current state-of-the-art methods",
+          "local_types": [
+            "method",
+            "state-of-the-art"
+          ],
+          "iri": "Entity-the_current_state-of-the-art_method-Mention-1"
+        }
+      ],
+      "relevance": 0.6279296875
+    },
+    "Entity-precision_at_different_rank": {
+      "node_id": "precision_at_different_rank",
+      "disambiguation_index": 0,
+      "label": "precision at different ranks",
+      "aliases": [
+        "precision at different ranks"
+      ],
+      "types": [
+        "metric",
+        "precision"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Precision at different ranks refers to a metric used to evaluate the effectiveness of a ranking system by measuring the precision of retrieved items at various positions in the ranked list, particularly in the context of tasks such as person re-identification in computer vision.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "precision at different ranks",
+          "local_types": [
+            "metric",
+            "precision"
+          ],
+          "iri": "Entity-precision_at_different_rank-Mention-1"
+        }
+      ],
+      "relevance": 0.60595703125
+    },
+    "Entity-mahalanobis_distance": {
+      "node_id": "mahalanobis_distance",
+      "disambiguation_index": 0,
+      "label": "Mahalanobis distance",
+      "aliases": [
+        "Mahalanobis distance"
+      ],
+      "types": [
+        "statistical measure",
+        "mathematical concept",
+        "metric",
+        "distance metric"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Mahalanobis distance is a statistical measure that quantifies the distance between a point and a distribution, taking into account the correlations of the data set and scaling the distances based on the covariance matrix.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "Mahalanobis distance",
+          "local_types": [
+            "statistical measure",
+            "mathematical concept",
+            "metric",
+            "distance metric"
+          ],
+          "iri": "Entity-mahalanobis_distance-Mention-1"
+        }
+      ],
+      "relevance": 0.59423828125
+    },
+    "Entity-low-rank_matrix_optimization": {
+      "node_id": "low-rank_matrix_optimization",
+      "disambiguation_index": 0,
+      "label": "low-rank matrix optimization",
+      "aliases": [
+        "low-rank matrix optimization"
+      ],
+      "types": [
+        "optimization",
+        "mathematical optimization",
+        "optimization problem",
+        "matrix"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Low-rank matrix optimization is a mathematical optimization problem that focuses on finding a matrix of low rank that best approximates a given matrix, often used in various applications such as data compression, machine learning, and signal processing.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "low-rank matrix optimization",
+          "local_types": [
+            "optimization",
+            "mathematical optimization",
+            "optimization problem",
+            "matrix"
+          ],
+          "iri": "Entity-low-rank_matrix_optimization-Mention-1"
+        }
+      ],
+      "relevance": 0.59228515625
+    },
+    "Entity-matrix_rank_degeneration": {
+      "node_id": "matrix_rank_degeneration",
+      "disambiguation_index": 0,
+      "label": "matrix rank degeneration",
+      "aliases": [
+        "matrix rank degeneration"
+      ],
+      "types": [
+        "problem",
+        "mathematical problem",
+        "matrix rank",
+        "optimization issue"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Matrix rank degeneration refers to the issue in low-rank matrix optimization where the rank of a matrix does not behave as expected, leading to non-isolated minima, which can complicate the learning process and affect the performance of algorithms designed to minimize rank-related loss functions.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "matrix rank degeneration",
+          "local_types": [
+            "problem",
+            "mathematical problem",
+            "matrix rank",
+            "optimization issue"
+          ],
+          "iri": "Entity-matrix_rank_degeneration-Mention-1"
+        }
+      ],
+      "relevance": 0.591796875
+    },
+    "Entity-kernel_space_embedding": {
+      "node_id": "kernel_space_embedding",
+      "disambiguation_index": 0,
+      "label": "Kernel space embedding",
+      "aliases": [
+        "kernel space embedding",
+        "Kernel space embedding"
+      ],
+      "types": [
+        "method",
+        "embedding",
+        "technique",
+        "data transformation technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Kernel space embedding is a data transformation technique that maps input data into a higher-dimensional feature space using kernel functions, allowing for the application of various distance measures and improving the performance of machine learning algorithms.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "Kernel space embedding",
+          "local_types": [
+            "method",
+            "embedding",
+            "technique",
+            "data transformation technique"
+          ],
+          "iri": "Entity-kernel_space_embedding-Mention-1"
+        }
+      ],
+      "relevance": 0.587890625
+    },
+    "Entity-nine_standard_person_re-identification_datasets": {
+      "node_id": "nine_standard_person_re-identification_datasets",
+      "disambiguation_index": 0,
+      "label": "nine standard person re-identification datasets",
+      "aliases": [
+        "nine standard person re-identification datasets"
+      ],
+      "types": [
+        "person re-identification",
+        "dataset"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The 'nine standard person re-identification datasets' refers to a collection of benchmark datasets used in the field of computer vision for evaluating algorithms that identify and match individuals across different images and camera views, including notable datasets such as Market-1501 and CUHK03.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "nine standard person re-identification datasets",
+          "local_types": [
+            "person re-identification",
+            "dataset"
+          ],
+          "iri": "Entity-nine_standard_person_re-identification_datasets-Mention-1"
+        }
+      ],
+      "relevance": 0.5859375
+    },
+    "Entity-person_re-identification": {
+      "node_id": "person_re-identification",
+      "disambiguation_index": 0,
+      "label": "person re-identification",
+      "aliases": [
+        "person re-identification"
+      ],
+      "types": [
+        "application in computer vision",
+        "recognition problem",
+        "problem",
+        "application",
+        "computer vision task"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Person re-identification is a computer vision task that involves recognizing and matching individuals across different images or video frames, often taken from various viewpoints and at different times.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "person re-identification",
+          "local_types": [
+            "application in computer vision",
+            "recognition problem",
+            "problem",
+            "application",
+            "computer vision task"
+          ],
+          "iri": "Entity-person_re-identification-Mention-1"
+        }
+      ],
+      "relevance": 0.576171875
+    },
+    "Entity-rank": {
+      "node_id": "rank",
+      "disambiguation_index": 0,
+      "label": "ranks",
+      "aliases": [
+        "ranks"
+      ],
+      "types": [
+        "ranking system",
+        "order"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'ranks' refers to the various positions or levels of precision achieved in a ranking system used to evaluate the performance of a model in tasks such as person re-identification.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "ranks",
+          "local_types": [
+            "ranking system",
+            "order"
+          ],
+          "iri": "Entity-rank-Mention-1"
+        }
+      ],
+      "relevance": 0.5732421875
+    },
+    "Entity-feature": {
+      "node_id": "feature",
+      "disambiguation_index": 0,
+      "label": "features",
+      "aliases": [
+        "features"
+      ],
+      "types": [
+        "data attribute",
+        "characteristic",
+        "feature"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of the paper, 'features' refers to the data attributes or characteristics used in the metric learning formulation that are compatible with arbitrary distance measures in the kernel space embedding approach.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "features",
+          "local_types": [
+            "data attribute",
+            "characteristic",
+            "feature"
+          ],
+          "iri": "Entity-feature-Mention-1"
+        }
+      ],
+      "relevance": 0.5732421875
+    },
+    "Entity-kernel_trick": {
+      "node_id": "kernel_trick",
+      "disambiguation_index": 0,
+      "label": "kernel trick",
+      "aliases": [
+        "the kernel trick",
+        "kernel trick"
+      ],
+      "types": [
+        "mathematical concept",
+        "computational method",
+        "mathematical technique",
+        "technique",
+        "machine learning method",
+        "mathematical method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The kernel trick is a mathematical technique used in machine learning and statistics that allows algorithms to operate in a high-dimensional feature space without explicitly computing the coordinates of the data in that space.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "kernel trick",
+          "local_types": [
+            "mathematical concept",
+            "computational method",
+            "mathematical technique",
+            "technique",
+            "machine learning method",
+            "mathematical method"
+          ],
+          "iri": "Entity-kernel_trick-Mention-1"
+        },
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "the kernel trick",
+          "local_types": [
+            "technique"
+          ],
+          "iri": "Entity-kernel_trick-Mention-2"
+        }
+      ],
+      "relevance": 0.57080078125
+    },
+    "Entity-new_type_of_regularizer": {
+      "node_id": "new_type_of_regularizer",
+      "disambiguation_index": 0,
+      "label": "new type of regularizer",
+      "aliases": [
+        "new type of regularizer"
+      ],
+      "types": [
+        "regularizer"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The 'new type of regularizer' refers to a regularization technique designed to approximately enforce the orthonormality of a learned matrix, addressing issues of matrix rank degeneration and non-isolated minima in low-rank matrix optimization.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "new type of regularizer",
+          "local_types": [
+            "regularizer"
+          ],
+          "iri": "Entity-new_type_of_regularizer-Mention-1"
+        }
+      ],
+      "relevance": 0.57080078125
+    },
+    "Entity-learning_problem": {
+      "node_id": "learning_problem",
+      "disambiguation_index": 0,
+      "label": "learning problem",
+      "aliases": [
+        "learning problem"
+      ],
+      "types": [
+        "problem",
+        "machine learning"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A learning problem refers to a specific challenge or task in the field of machine learning that requires the development of algorithms or models to analyze data and make predictions or decisions based on that data.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "learning problem",
+          "local_types": [
+            "problem",
+            "machine learning"
+          ],
+          "iri": "Entity-learning_problem-Mention-1"
+        }
+      ],
+      "relevance": 0.5615234375
+    },
+    "Entity-stochastic_gradient_descent_algorithm": {
+      "node_id": "stochastic_gradient_descent_algorithm",
+      "disambiguation_index": 0,
+      "label": "stochastic gradient descent algorithm",
+      "aliases": [
+        "stochastic gradient descent",
+        "stochastic gradient descent algorithm"
+      ],
+      "types": [
+        "algorithm",
+        "optimization method",
+        "optimization algorithm",
+        "optimization technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "The stochastic gradient descent algorithm is an iterative optimization method used to minimize a function by updating parameters in the direction of the negative gradient of the function, using a randomly selected subset of data at each iteration.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "stochastic gradient descent algorithm",
+          "local_types": [
+            "algorithm",
+            "optimization method"
+          ],
+          "iri": "Entity-stochastic_gradient_descent_algorithm-Mention-1"
+        },
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "stochastic gradient descent",
+          "local_types": [
+            "algorithm",
+            "optimization method",
+            "optimization algorithm",
+            "optimization technique"
+          ],
+          "iri": "Entity-stochastic_gradient_descent_algorithm-Mention-2"
+        }
+      ],
+      "relevance": 0.5556640625
+    },
+    "Entity-weighted_sum_of_the_precision_at_different_rank": {
+      "node_id": "weighted_sum_of_the_precision_at_different_rank",
+      "disambiguation_index": 0,
+      "label": "weighted sum of the precision at different ranks",
+      "aliases": [
+        "weighted sum of the precision at different ranks"
+      ],
+      "types": [
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A metric that aggregates the precision of a model's predictions across various ranks, assigning different weights to each rank to reflect their importance.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "weighted sum of the precision at different ranks",
+          "local_types": [
+            "metric"
+          ],
+          "iri": "Entity-weighted_sum_of_the_precision_at_different_rank-Mention-1"
+        }
+      ],
+      "relevance": 0.546875
+    },
+    "Entity-market-1501": {
+      "node_id": "market-1501",
+      "disambiguation_index": 0,
+      "label": "Market-1501",
+      "aliases": [
+        "Market-1501"
+      ],
+      "types": [
+        "person re-identification",
+        "person re-identification dataset",
+        "dataset"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Market-1501 is a large-scale dataset specifically designed for person re-identification research, containing images of individuals captured from multiple camera views.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "Market-1501",
+          "local_types": [
+            "person re-identification",
+            "person re-identification dataset",
+            "dataset"
+          ],
+          "iri": "Entity-market-1501-Mention-1"
+        }
+      ],
+      "relevance": 0.541015625
+    },
+    "Entity-person_re-identification_datasets": {
+      "node_id": "person_re-identification_datasets",
+      "disambiguation_index": 0,
+      "label": "person re-identification datasets",
+      "aliases": [
+        "person re-identification datasets"
+      ],
+      "types": [
+        "dataset",
+        "data collection"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Person re-identification datasets are collections of images or video frames that contain multiple instances of individuals captured from different cameras or viewpoints, used for training and evaluating algorithms that aim to recognize and match the same person across different scenes.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "person re-identification datasets",
+          "local_types": [
+            "dataset",
+            "data collection"
+          ],
+          "iri": "Entity-person_re-identification_datasets-Mention-1"
+        }
+      ],
+      "relevance": 0.53564453125
+    },
+    "Entity-precision": {
+      "node_id": "precision",
+      "disambiguation_index": 0,
+      "label": "precision",
+      "aliases": [
+        "precision"
+      ],
+      "types": [
+        "evaluation metric",
+        "performance measure"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'precision' refers to an evaluation metric that quantifies the accuracy of the model's predictions at various ranks, specifically in the domain of person re-identification tasks.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "precision",
+          "local_types": [
+            "evaluation metric",
+            "performance measure"
+          ],
+          "iri": "Entity-precision-Mention-1"
+        }
+      ],
+      "relevance": 0.5341796875
+    },
+    "Entity-cuhk03": {
+      "node_id": "cuhk03",
+      "disambiguation_index": 0,
+      "label": "CUHK03",
+      "aliases": [
+        "CUHK03"
+      ],
+      "types": [
+        "person re-identification",
+        "person re-identification dataset",
+        "dataset"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "CUHK03 is a large-scale dataset used for person re-identification research, containing images of individuals captured from multiple cameras.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "CUHK03",
+          "local_types": [
+            "person re-identification",
+            "person re-identification dataset",
+            "dataset"
+          ],
+          "iri": "Entity-cuhk03-Mention-1"
+        }
+      ],
+      "relevance": 0.51025390625
+    },
+    "Entity-non-isolated_minimum": {
+      "node_id": "non-isolated_minimum",
+      "disambiguation_index": 0,
+      "label": "non-isolated minima",
+      "aliases": [
+        "non-isolated minima"
+      ],
+      "types": [
+        "mathematical concept",
+        "optimization issue",
+        "minima",
+        "problem",
+        "optimization problem"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Non-isolated minima refer to points in an optimization landscape where multiple local minima exist in close proximity, making it challenging for optimization algorithms to converge to a single solution.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "non-isolated minima",
+          "local_types": [
+            "mathematical concept",
+            "optimization issue",
+            "minima",
+            "problem",
+            "optimization problem"
+          ],
+          "iri": "Entity-non-isolated_minimum-Mention-1"
+        }
+      ],
+      "relevance": 0.50244140625
+    },
+    "Entity-data_dimension": {
+      "node_id": "data_dimension",
+      "disambiguation_index": 0,
+      "label": "data dimension",
+      "aliases": [
+        "data dimension"
+      ],
+      "types": [
+        "data",
+        "data property",
+        "dimension",
+        "feature"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'data dimension' refers to the number of features or attributes in a dataset that can influence the training and prediction processes in machine learning, particularly in the context of metric learning and computer vision.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "data dimension",
+          "local_types": [
+            "data",
+            "data property",
+            "dimension",
+            "feature"
+          ],
+          "iri": "Entity-data_dimension-Mention-1"
+        }
+      ],
+      "relevance": 0.497314453125
+    },
+    "Entity-training_and_prediction_cost": {
+      "node_id": "training_and_prediction_cost",
+      "disambiguation_index": 0,
+      "label": "training and prediction costs",
+      "aliases": [
+        "training and prediction costs"
+      ],
+      "types": [
+        "prediction",
+        "resource allocation",
+        "training",
+        "cost"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Training and prediction costs refer to the expenses associated with the processes of training a model and making predictions using that model, typically encompassing computational resources, time, and energy required for both activities.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "training and prediction costs",
+          "local_types": [
+            "prediction",
+            "resource allocation",
+            "training",
+            "cost"
+          ],
+          "iri": "Entity-training_and_prediction_cost-Mention-1"
+        }
+      ],
+      "relevance": 0.474365234375
+    },
+    "Entity-regularizer": {
+      "node_id": "regularizer",
+      "disambiguation_index": 0,
+      "label": "regularizer",
+      "aliases": [
+        "regularizer"
+      ],
+      "types": [
+        "method",
+        "mathematical tool",
+        "mathematical function",
+        "optimization technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A regularizer is a mathematical tool or function used in optimization techniques to impose additional constraints or penalties on a model to prevent overfitting and improve generalization.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-7",
+          "local_name": "regularizer",
+          "local_types": [
+            "method",
+            "mathematical tool",
+            "mathematical function",
+            "optimization technique"
+          ],
+          "iri": "Entity-regularizer-Mention-1"
+        }
+      ],
+      "relevance": 0.472412109375
+    },
+    "Entity-distance_measure": {
+      "node_id": "distance_measure",
+      "disambiguation_index": 0,
+      "label": "distance measures",
+      "aliases": [
+        "distance measures"
+      ],
+      "types": [
+        "mathematical concept",
+        "metric"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Distance measures are mathematical concepts used to quantify the similarity or dissimilarity between two points in a given space, often represented as metrics that define how distance is calculated.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-6",
+          "local_name": "distance measures",
+          "local_types": [
+            "mathematical concept",
+            "metric"
+          ],
+          "iri": "Entity-distance_measure-Mention-1"
+        }
+      ],
+      "relevance": 0.46826171875
+    },
+    "Entity-computer_vision": {
+      "node_id": "computer_vision",
+      "disambiguation_index": 0,
+      "label": "computer vision",
+      "aliases": [
+        "computer vision"
+      ],
+      "types": [
+        "computer science",
+        "field",
+        "field of study",
+        "subfield of artificial intelligence",
+        "discipline"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Computer vision is a subfield of artificial intelligence and computer science that focuses on enabling machines to interpret and understand visual information from the world.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "computer vision",
+          "local_types": [
+            "computer science",
+            "field",
+            "field of study",
+            "subfield of artificial intelligence",
+            "discipline"
+          ],
+          "iri": "Entity-computer_vision-Mention-1"
+        }
+      ],
+      "relevance": 0.466796875
+    },
+    "Entity-state-of-the-art_method": {
+      "node_id": "state-of-the-art_method",
+      "disambiguation_index": 0,
+      "label": "state-of-the-art methods",
+      "aliases": [
+        "state-of-the-art methods"
+      ],
+      "types": [
+        "methods",
+        "method",
+        "research technique",
+        "performance benchmark"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "state-of-the-art methods refer to the most advanced and effective techniques or approaches currently available in a particular field of research or application.",
+      "mentions": [
+        {
+          "reference": "Paper-75-Section-1-Paragraph-1-Sentence-8",
+          "local_name": "state-of-the-art methods",
+          "local_types": [
+            "methods",
+            "method",
+            "research technique",
+            "performance benchmark"
+          ],
+          "iri": "Entity-state-of-the-art_method-Mention-1"
+        }
+      ],
+      "relevance": 0.427001953125
+    }
+  },
+  "summary": "Our goal is to learn a Mahalanobis distance by minimizing a loss defined on the weighted sum of the precision at different ranks . Our core motivation is that minimizing a weighted rank loss is a natural criterion for many problems in computer vision such as person re-identification . We propose a novel metric learning formulation called Weighted Approximate Rank Component Analysis -LRB- WARCA -RRB- . We then derive a scalable stochastic gradient descent algorithm for the resulting learning problem . We also derive an efficient non-linear extension of WARCA by using the kernel trick . Kernel space embedding decouples the training and prediction costs from the data dimension and enables us to plug inarbitrary distance measures which are more natural for the features . We also address a more general problem of matrix rank degeneration & non-isolated minima in the low-rank matrix optimization by using new type of regularizer which approximately enforces the or-thonormality of the learned matrix very efficiently . We validate this new method on nine standard person re-identification datasets including two large scale Market-1501 and CUHK03 datasets and show that we improve upon the current state-of-the-art methods on all of them .",
+  "triples": [
+    [
+      "Entity-mahalanobis_distance",
+      "Predicate-learned_by_minimizing",
+      "Entity-loss"
+    ],
+    [
+      "Entity-loss",
+      "Predicate-defined_on",
+      "Entity-weighted_sum_of_the_precision_at_different_rank"
+    ],
+    [
+      "Entity-weighted_sum_of_the_precision_at_different_rank",
+      "Predicate-related_to",
+      "Entity-precision_at_different_rank"
+    ],
+    [
+      "Entity-minimizing_a_weighted_rank_loss",
+      "Predicate-is_a_criterion_for",
+      "Entity-computer_vision"
+    ],
+    [
+      "Entity-minimizing_a_weighted_rank_loss",
+      "Predicate-is_a_criterion_for",
+      "Entity-person_re-identification"
+    ],
+    [
+      "Entity-person_re-identification",
+      "Predicate-is_a_problem_in",
+      "Entity-computer_vision"
+    ],
+    [
+      "Entity-novel_metric_learning_formulation",
+      "Predicate-called",
+      "Entity-weighted_approximate_rank_component_analysis"
+    ],
+    [
+      "Entity-weighted_approximate_rank_component_analysis",
+      "Predicate-is_called",
+      "Entity-weighted_approximate_rank_component_analysis"
+    ],
+    [
+      "Entity-a_scalable_stochastic_gradient_descent_algorithm",
+      "Predicate-derives_for",
+      "Entity-the_resulting_learning_problem"
+    ],
+    [
+      "Entity-weighted_approximate_rank_component_analysis",
+      "Predicate-has_an_extension",
+      "Entity-an_efficient_non-linear_extension_of_warca"
+    ],
+    [
+      "Entity-an_efficient_non-linear_extension_of_warca",
+      "Predicate-is_derived_by_using",
+      "Entity-kernel_trick"
+    ],
+    [
+      "Entity-kernel_space_embedding",
+      "Predicate-decouples",
+      "Entity-training_and_prediction_cost"
+    ],
+    [
+      "Entity-kernel_space_embedding",
+      "Predicate-decouples",
+      "Entity-data_dimension"
+    ],
+    [
+      "Entity-kernel_space_embedding",
+      "Predicate-enables",
+      "Entity-distance_measure"
+    ],
+    [
+      "Entity-distance_measure",
+      "Predicate-are_more_natural_for",
+      "Entity-feature"
+    ],
+    [
+      "Entity-matrix_rank_degeneration",
+      "Predicate-addresses",
+      "Entity-non-isolated_minimum"
+    ],
+    [
+      "Entity-low-rank_matrix_optimization",
+      "Predicate-uses",
+      "Entity-new_type_of_regularizer"
+    ],
+    [
+      "Entity-this_new_method",
+      "Predicate-validates_on",
+      "Entity-nine_standard_person_re-identification_datasets"
+    ],
+    [
+      "Entity-this_new_method",
+      "Predicate-improves_upon",
+      "Entity-the_current_state-of-the-art_method"
+    ],
+    [
+      "Entity-this_new_method",
+      "Predicate-validates_on",
+      "Entity-market-1501"
+    ],
+    [
+      "Entity-this_new_method",
+      "Predicate-validates_on",
+      "Entity-cuhk03"
+    ],
+    [
+      "Entity-this_new_method",
+      "Predicate-is_validated_on",
+      "Entity-nine_standard_person_re-identification_datasets"
+    ],
+    [
+      "Entity-the_current_state-of-the-art_method",
+      "Predicate-are_improved_upon_by",
+      "Entity-this_new_method"
+    ],
+    [
+      "Entity-weighted_approximate_rank_component_analysis",
+      "Predicate-is_a",
+      "Entity-novel_metric_learning_formulation"
+    ],
+    [
+      "Entity-this_new_method",
+      "Predicate-is",
+      "Entity-novel_metric_learning_formulation"
+    ],
+    [
+      "Entity-weighted_approximate_rank_component_analysis",
+      "Predicate-refers_to",
+      "Entity-this_new_method"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-weighted_approximate_rank_component_analysis",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-new_type_of_regularizer",
+      "skos:broader",
+      "Entity-regularizer"
+    ],
+    [
+      "Entity-a_scalable_stochastic_gradient_descent_algorithm",
+      "skos:broader",
+      "Entity-stochastic_gradient_descent_algorithm"
+    ],
+    [
+      "Entity-person_re-identification",
+      "skos:broader",
+      "Entity-computer_vision"
+    ],
+    [
+      "Entity-data_dimension",
+      "skos:broader",
+      "Entity-feature"
+    ],
+    [
+      "Entity-nine_standard_person_re-identification_datasets",
+      "skos:broader",
+      "Entity-person_re-identification"
+    ],
+    [
+      "Entity-this_new_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-an_efficient_non-linear_extension_of_warca",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-nine_standard_person_re-identification_datasets",
+      "skos:broader",
+      "Entity-person_re-identification_datasets"
+    ],
+    [
+      "Entity-state-of-the-art_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-precision_at_different_rank",
+      "skos:broader",
+      "Entity-precision"
+    ],
+    [
+      "Entity-regularizer",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-cuhk03",
+      "skos:broader",
+      "Entity-person_re-identification"
+    ],
+    [
+      "Entity-the_current_state-of-the-art_method",
+      "skos:broader",
+      "Entity-state-of-the-art_method"
+    ],
+    [
+      "Entity-market-1501",
+      "skos:broader",
+      "Entity-person_re-identification"
+    ],
+    [
+      "Entity-cuhk03",
+      "skos:broader",
+      "Entity-person_re-identification_datasets"
+    ],
+    [
+      "Entity-the_current_state-of-the-art_method",
+      "skos:broader",
+      "Entity-method"
+    ],
+    [
+      "Entity-market-1501",
+      "skos:broader",
+      "Entity-person_re-identification_datasets"
+    ],
+    [
+      "Entity-cuhk03",
+      "skos:broader",
+      "Entity-nine_standard_person_re-identification_datasets"
+    ],
+    [
+      "Entity-the_resulting_learning_problem",
+      "skos:broader",
+      "Entity-learning_problem"
+    ],
+    [
+      "Entity-market-1501",
+      "skos:broader",
+      "Entity-nine_standard_person_re-identification_datasets"
+    ],
+    [
+      "Entity-kernel_space_embedding",
+      "skos:broader",
+      "Entity-method"
+    ]
+  ],
+  "predicates": {
+    "Predicate-learned_by_minimizing": {
+      "label": "learned by minimizing",
+      "description": "The predicate 'learned by minimizing' indicates a process in which a subject is derived or optimized through the reduction of a specific measure, typically referred to as 'loss'. This process involves adjusting parameters or features of the subject in order to achieve the lowest possible value of the loss, thereby enhancing the subject's performance or accuracy in a given context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-defined_on": {
+      "label": "defined on",
+      "description": "The predicate 'defined on' establishes a relationship where the subject is characterized or determined by the object, indicating that the subject's properties, behavior, or value are based upon or derived from the object. This connection implies that the subject relies on the object for its definition or formulation, suggesting a foundational or contextual link between the two.",
+      "disambiguation_index": 0
+    },
+    "Predicate-related_to": {
+      "label": "related to",
+      "description": "The predicate 'related to' establishes a connection or association between the subject and the object, indicating that they share a relevant relationship or are linked in some meaningful way. This relationship can encompass various forms of correlation, dependency, or relevance, suggesting that understanding one may provide insights into the other.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_criterion_for": {
+      "label": "is a criterion for",
+      "description": "The predicate 'is a criterion for' establishes a relationship where the subject represents a standard, principle, or measure that is used to evaluate or determine the suitability, effectiveness, or relevance of the object within a specific context or field. It implies that the object is assessed or judged based on the criteria set forth by the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_problem_in": {
+      "label": "is a problem in",
+      "description": "The predicate 'is a problem in' establishes a relationship where the subject is identified as a challenge or issue that exists within the domain or field represented by the object. It indicates that the subject presents difficulties or obstacles that need to be addressed or solved within the context of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-called": {
+      "label": "called",
+      "description": "The predicate 'called' serves to establish a naming relationship between the subject and the object, indicating that the subject is referred to or identified by the name or term represented by the object. It implies that the object is an alternative designation or label for the subject, often used in contexts where the subject is being introduced, defined, or categorized.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_called": {
+      "label": "is called",
+      "description": "The predicate 'is called' serves to establish a naming relationship between the subject and the object, indicating that the subject is referred to by the name or term represented by the object. This predicate connects the two elements by asserting that they are synonymous in the context of nomenclature, where the subject is identified or recognized by the label provided in the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-derives_for": {
+      "label": "derives for",
+      "description": "The predicate 'derives for' indicates a relationship where the subject is a source or basis that leads to the formation or specification of the object. It suggests that the object is a consequence or outcome that is informed or shaped by the characteristics, principles, or processes represented by the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-has_an_extension": {
+      "label": "has an extension",
+      "description": "The predicate 'has an extension' indicates that the subject possesses a derived or enhanced version that builds upon its original framework or functionality. This extension may introduce new features, improve efficiency, or adapt the subject to different contexts or applications, thereby expanding its capabilities beyond the initial scope.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_derived_by_using": {
+      "label": "is derived by using",
+      "description": "The predicate 'is derived by using' indicates a relationship where the subject is the result or outcome of a process or method represented by the object. It implies that the subject has been created, developed, or formulated through the application of the techniques, tools, or concepts denoted by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-decouples": {
+      "label": "decouples",
+      "description": "The predicate 'decouples' indicates a relationship where the subject separates or distinguishes itself from the object, allowing them to function independently or be considered separately. This implies that the subject has the ability to isolate certain aspects or components, thereby reducing the interdependence or interaction between them and the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-enables": {
+      "label": "enables",
+      "description": "The predicate 'enables' indicates that the subject provides the means, capability, or opportunity for the object to occur or be utilized. It suggests a facilitative relationship where the subject contributes to the functionality or implementation of the object, allowing it to be effectively applied or realized.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_more_natural_for": {
+      "label": "are more natural for",
+      "description": "The predicate 'are more natural for' indicates a preference or suitability of the subject in relation to the object, suggesting that the subject aligns better with or is more intuitively applicable to the object compared to other alternatives. It implies a degree of compatibility or inherent appropriateness, highlighting that the relationship between the two is characterized by a natural fit or ease of understanding.",
+      "disambiguation_index": 0
+    },
+    "Predicate-addresses": {
+      "label": "addresses",
+      "description": "The predicate 'addresses' indicates a relationship where the subject provides information, solutions, or considerations regarding the object. It implies that the subject is relevant to understanding, analyzing, or resolving issues related to the object, thereby establishing a connection between the two entities.",
+      "disambiguation_index": 0
+    },
+    "Predicate-uses": {
+      "label": "uses",
+      "description": "The predicate 'uses' indicates that the subject employs or utilizes the object as a means to achieve a specific purpose or function. It establishes a relationship where the subject actively incorporates the object into its processes or methodologies, suggesting that the object serves as a tool, resource, or technique that enhances or facilitates the subject's objectives.",
+      "disambiguation_index": 0
+    },
+    "Predicate-validates_on": {
+      "label": "validates on",
+      "description": "The predicate 'validates on' establishes a relationship where the subject is assessed or confirmed in its effectiveness, accuracy, or reliability using the criteria or benchmarks represented by the object. It indicates that the subject has undergone a process of evaluation against the specified standards or datasets, thereby demonstrating its performance or suitability in a particular context.",
+      "disambiguation_index": 0
+    },
+    "Predicate-improves_upon": {
+      "label": "improves upon",
+      "description": "The predicate 'improves upon' indicates a relationship where the subject offers enhancements, advancements, or superior qualities compared to the object. It suggests that the subject builds on the existing features or performance of the object, leading to a more effective or efficient outcome.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_validated_on": {
+      "label": "is validated on",
+      "description": "The predicate 'is validated on' establishes a relationship where the subject is confirmed or supported by evidence derived from the object. It indicates that the subject has undergone a process of testing or evaluation using the object, which typically consists of a set of criteria, benchmarks, or datasets. This relationship implies that the subject's effectiveness, reliability, or performance is assessed in the context of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_improved_upon_by": {
+      "label": "are improved upon by",
+      "description": "The predicate 'are improved upon by' indicates a relationship where the subject is enhanced or made better through the influence or application of the object. It suggests that the object introduces advancements, refinements, or innovations that positively affect the quality, performance, or effectiveness of the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a": {
+      "label": "is a",
+      "description": "The predicate 'is a' establishes a classification or categorization relationship between the subject and the object, indicating that the subject belongs to or is an instance of the category defined by the object. It serves to define the nature or type of the subject by linking it to a broader concept or class, thereby providing context and understanding of the subject's role or function within a specific domain.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is": {
+      "label": "is",
+      "description": "The predicate 'is' serves as a linking verb that establishes an identity or equivalence between the subject and the object. It indicates that the subject possesses the characteristics or qualities defined by the object, effectively asserting that the subject can be classified or understood in terms of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-refers_to": {
+      "label": "refers to",
+      "description": "The predicate 'refers to' establishes a relationship where the subject identifies, denotes, or indicates the object, providing a means of understanding or categorizing the object in relation to the subject. It implies that the subject is a term, concept, or entity that is associated with or points to the object, which can be another term, concept, or entity that elaborates on or exemplifies the subject.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the subject is a specific instance or concept that falls under the wider category or classification represented by the object. This relationship suggests that the object encompasses a broader scope or generalization that includes the subject as one of its more specific examples.",
+      "disambiguation_index": 0
+    }
+  }
+}

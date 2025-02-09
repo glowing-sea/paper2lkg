@@ -1,0 +1,1311 @@
+{
+  "iri": "Paper-34",
+  "title": "CVPR_2011_11_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-34-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-34-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-34-Section-1-Paragraph-1-Sentence-1",
+              "text": "We propose a novel approach to associate objects across multiple PTZ cameras that can be used to perform camera handoff in wide-area surveillance scenarios ."
+            },
+            {
+              "iri": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+              "text": "While previous approaches relied on geometric , appearance , or correlation-based information for establishing correspondences between static cameras , they each have well-known limitations and are not extendable to wide-area settings with PTZ cameras ."
+            },
+            {
+              "iri": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+              "text": "In our approach , the slave camera only passively follows the target -LRB- by loose registration with the master -RRB- and bootstraps itself from its own incoming imagery , thus effectively circumventing the problems faced by previous approaches and avoiding the need to perform any model transfer ."
+            },
+            {
+              "iri": "Paper-34-Section-1-Paragraph-1-Sentence-4",
+              "text": "Towards this goal , we also propose a novel Multiple Instance Learning -LRB- MIL -RRB- formulation for the problem based on the logistic softmax function of covariance-based region features within a MAP estimation framework ."
+            },
+            {
+              "iri": "Paper-34-Section-1-Paragraph-1-Sentence-5",
+              "text": "We demonstrate our approach with multiple PTZ camera sequences in typical outdoor surveillance settings and show a comparison with state-of-the-art approaches ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "times": [
+    7.510185241699219e-05,
+    14.760318040847778,
+    32.05042791366577,
+    37.67837882041931,
+    0.06147909164428711,
+    0.0005292892456054688,
+    0.00015425682067871094,
+    29.423180103302002,
+    55.66511607170105,
+    3.3653159141540527,
+    0.07737612724304199,
+    0.011130809783935547,
+    0.0001957416534423828,
+    77.65746688842773,
+    0.001188039779663086,
+    0.051116943359375,
+    0.0026962757110595703,
+    3.969099760055542,
+    4.186960220336914,
+    4.297176122665405,
+    93.79015231132507,
+    7.333021879196167,
+    61.862058877944946,
+    3.2501540184020996,
+    0.0021300315856933594,
+    0.010905742645263672
+  ],
+  "nodes": {
+    "Entity-approach": {
+      "node_id": "approach",
+      "disambiguation_index": 0,
+      "label": "approach",
+      "aliases": [
+        "approach"
+      ],
+      "types": [
+        "method",
+        "technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'approach' refers to a novel method for associating objects across multiple PTZ cameras to facilitate camera handoff in wide-area surveillance scenarios, which overcomes limitations of previous methods by allowing the slave camera to passively follow the target and utilize its own imagery.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "approach",
+          "local_types": [
+            "method",
+            "technique"
+          ],
+          "iri": "Entity-approach-Mention-1"
+        }
+      ],
+      "relevance": 0.7724609375
+    },
+    "Entity-a_novel_approach": {
+      "node_id": "a_novel_approach",
+      "disambiguation_index": 0,
+      "label": "a novel approach",
+      "aliases": [
+        "a novel approach"
+      ],
+      "types": [
+        "methodology"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "A novel approach refers to a new methodology for associating objects across multiple PTZ cameras to facilitate camera handoff in wide-area surveillance, which overcomes limitations of previous methods by allowing the slave camera to passively follow the target and bootstrap from its own imagery.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "a novel approach",
+          "local_types": [
+            "methodology"
+          ],
+          "iri": "Entity-a_novel_approach-Mention-1"
+        }
+      ],
+      "relevance": 0.76025390625
+    },
+    "Entity-camera_handoff": {
+      "node_id": "camera_handoff",
+      "disambiguation_index": 0,
+      "label": "camera handoff",
+      "aliases": [
+        "camera handoff"
+      ],
+      "types": [
+        "technique",
+        "surveillance technique",
+        "surveillance",
+        "method",
+        "process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Camera handoff refers to a technique used in wide-area surveillance that enables the seamless transfer of tracking an object from one PTZ (pan-tilt-zoom) camera to another, allowing for continuous monitoring without interruption.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "camera handoff",
+          "local_types": [
+            "technique",
+            "surveillance technique",
+            "surveillance",
+            "method",
+            "process"
+          ],
+          "iri": "Entity-camera_handoff-Mention-1"
+        }
+      ],
+      "relevance": 0.68017578125
+    },
+    "Entity-the_slave_camera": {
+      "node_id": "the_slave_camera",
+      "disambiguation_index": 0,
+      "label": "the slave camera",
+      "aliases": [
+        "the slave camera"
+      ],
+      "types": [
+        "device",
+        "camera"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The slave camera is a type of surveillance camera that passively follows a target by loosely registering with a master camera and utilizing its own incoming imagery for tracking, thereby addressing limitations of previous methods in wide-area surveillance scenarios.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the slave camera",
+          "local_types": [
+            "device",
+            "camera"
+          ],
+          "iri": "Entity-the_slave_camera-Mention-1"
+        }
+      ],
+      "relevance": 0.67236328125
+    },
+    "Entity-multiple_ptz_camera": {
+      "node_id": "multiple_ptz_camera",
+      "disambiguation_index": 0,
+      "label": "multiple PTZ cameras",
+      "aliases": [
+        "multiple PTZ cameras"
+      ],
+      "types": [
+        "camera",
+        "PTZ camera"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": true,
+      "description": "Multiple PTZ cameras refer to a system of several pan-tilt-zoom cameras used in surveillance that can dynamically track and associate objects across different camera views to facilitate effective monitoring and camera handoff in wide-area scenarios.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "multiple PTZ cameras",
+          "local_types": [
+            "camera",
+            "PTZ camera"
+          ],
+          "iri": "Entity-multiple_ptz_camera-Mention-1"
+        }
+      ],
+      "relevance": 0.666015625
+    },
+    "Entity-wide-area_surveillance_scenario": {
+      "node_id": "wide-area_surveillance_scenario",
+      "disambiguation_index": 0,
+      "label": "wide-area surveillance scenarios",
+      "aliases": [
+        "wide-area surveillance scenarios"
+      ],
+      "types": [
+        "scenario",
+        "surveillance"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Wide-area surveillance scenarios refer to environments where multiple pan-tilt-zoom (PTZ) cameras are utilized to monitor and track objects over large areas, enabling effective camera handoff and object association despite the challenges posed by the dynamic nature of such settings.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "wide-area surveillance scenarios",
+          "local_types": [
+            "scenario",
+            "surveillance"
+          ],
+          "iri": "Entity-wide-area_surveillance_scenario-Mention-1"
+        }
+      ],
+      "relevance": 0.65673828125
+    },
+    "Entity-previous_approach": {
+      "node_id": "previous_approach",
+      "disambiguation_index": 0,
+      "label": "previous approaches",
+      "aliases": [
+        "previous approaches"
+      ],
+      "types": [
+        "technique",
+        "approach",
+        "method",
+        "methodology"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'previous approaches' refers to earlier methods for establishing correspondences between static cameras that utilized geometric, appearance, or correlation-based information, which are limited in their applicability to wide-area surveillance scenarios involving PTZ cameras.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "previous approaches",
+          "local_types": [
+            "technique",
+            "approach",
+            "method",
+            "methodology"
+          ],
+          "iri": "Entity-previous_approach-Mention-1"
+        },
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "previous approaches",
+          "local_types": [
+            "method"
+          ],
+          "iri": "Entity-previous_approach-Mention-2"
+        }
+      ],
+      "relevance": 0.64599609375
+    },
+    "Entity-master": {
+      "node_id": "master",
+      "disambiguation_index": 0,
+      "label": "master",
+      "aliases": [
+        "master",
+        "the master"
+      ],
+      "types": [
+        "camera",
+        "device",
+        "object"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of the paper, 'master' refers to the primary PTZ camera that the slave camera loosely registers with to follow a target in a surveillance scenario.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "master",
+          "local_types": [
+            "camera",
+            "device"
+          ],
+          "iri": "Entity-master-Mention-1"
+        },
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the master",
+          "local_types": [
+            "object"
+          ],
+          "iri": "Entity-master-Mention-2"
+        }
+      ],
+      "relevance": 0.64013671875
+    },
+    "Entity-slave_camera": {
+      "node_id": "slave_camera",
+      "disambiguation_index": 0,
+      "label": "slave camera",
+      "aliases": [
+        "slave camera"
+      ],
+      "types": [
+        "camera technology",
+        "camera",
+        "device",
+        "surveillance equipment"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "A slave camera is a type of camera technology that operates in conjunction with a master camera, typically used in surveillance or imaging systems to follow a target passively without direct control.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "slave camera",
+          "local_types": [
+            "camera technology",
+            "camera",
+            "device",
+            "surveillance equipment"
+          ],
+          "iri": "Entity-slave_camera-Mention-1"
+        }
+      ],
+      "relevance": 0.63916015625
+    },
+    "Entity-appearance": {
+      "node_id": "appearance",
+      "disambiguation_index": 0,
+      "label": "appearance",
+      "aliases": [
+        "appearance"
+      ],
+      "types": [
+        "visual feature",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In the context of the paper, 'appearance' refers to a type of visual feature used in previous methods for establishing correspondences between static cameras, which has limitations in wide-area surveillance scenarios with PTZ cameras.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "appearance",
+          "local_types": [
+            "visual feature",
+            "method"
+          ],
+          "iri": "Entity-appearance-Mention-1"
+        }
+      ],
+      "relevance": 0.6376953125
+    },
+    "Entity-multiple_ptz_camera_sequence": {
+      "node_id": "multiple_ptz_camera_sequence",
+      "disambiguation_index": 0,
+      "label": "multiple PTZ camera sequences",
+      "aliases": [
+        "multiple PTZ camera sequences"
+      ],
+      "types": [
+        "camera",
+        "data",
+        "equipment"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Multiple PTZ camera sequences refer to a series of video recordings captured by multiple pan-tilt-zoom (PTZ) cameras, which are used in outdoor surveillance scenarios to track and associate objects across different camera views.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "multiple PTZ camera sequences",
+          "local_types": [
+            "camera",
+            "data",
+            "equipment"
+          ],
+          "iri": "Entity-multiple_ptz_camera_sequence-Mention-1"
+        }
+      ],
+      "relevance": 0.6328125
+    },
+    "Entity-object": {
+      "node_id": "object",
+      "disambiguation_index": 0,
+      "label": "objects",
+      "aliases": [
+        "objects"
+      ],
+      "types": [
+        "object"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "In the context of this paper, 'objects' refers to entities or subjects being tracked and associated across multiple pan-tilt-zoom (PTZ) cameras in wide-area surveillance scenarios.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "objects",
+          "local_types": [
+            "object"
+          ],
+          "iri": "Entity-object-Mention-1"
+        }
+      ],
+      "relevance": 0.63232421875
+    },
+    "Entity-covariance-based_region_feature": {
+      "node_id": "covariance-based_region_feature",
+      "disambiguation_index": 0,
+      "label": "covariance-based region features",
+      "aliases": [
+        "covariance-based region features"
+      ],
+      "types": [
+        "image processing",
+        "feature extraction",
+        "data representation",
+        "data",
+        "feature type",
+        "feature",
+        "statistical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Covariance-based region features refer to a statistical representation of image regions that captures the covariance of pixel values, utilized in a Multiple Instance Learning framework to enhance object association across multiple PTZ cameras in surveillance scenarios.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "covariance-based region features",
+          "local_types": [
+            "image processing",
+            "feature extraction",
+            "data representation",
+            "data",
+            "feature type",
+            "feature",
+            "statistical concept"
+          ],
+          "iri": "Entity-covariance-based_region_feature-Mention-1"
+        }
+      ],
+      "relevance": 0.6298828125
+    },
+    "Entity-typical_outdoor_surveillance_setting": {
+      "node_id": "typical_outdoor_surveillance_setting",
+      "disambiguation_index": 0,
+      "label": "typical outdoor surveillance settings",
+      "aliases": [
+        "typical outdoor surveillance settings"
+      ],
+      "types": [
+        "setting",
+        "surveillance"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Typical outdoor surveillance settings refer to environments where surveillance is conducted using multiple pan-tilt-zoom (PTZ) cameras to monitor and track objects across wide areas, often characterized by dynamic conditions and the need for effective camera handoff.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "typical outdoor surveillance settings",
+          "local_types": [
+            "setting",
+            "surveillance"
+          ],
+          "iri": "Entity-typical_outdoor_surveillance_setting-Mention-1"
+        }
+      ],
+      "relevance": 0.62744140625
+    },
+    "Entity-the_target": {
+      "node_id": "the_target",
+      "disambiguation_index": 0,
+      "label": "the target",
+      "aliases": [
+        "the target"
+      ],
+      "types": [
+        "object"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "The target refers to the object being monitored and followed by the slave camera in a surveillance system utilizing multiple PTZ cameras.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "the target",
+          "local_types": [
+            "object"
+          ],
+          "iri": "Entity-the_target-Mention-1"
+        }
+      ],
+      "relevance": 0.6259765625
+    },
+    "Entity-wide-area_setting": {
+      "node_id": "wide-area_setting",
+      "disambiguation_index": 0,
+      "label": "wide-area settings",
+      "aliases": [
+        "wide-area settings"
+      ],
+      "types": [
+        "setting",
+        "environment",
+        "context"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Wide-area settings refer to expansive surveillance environments where multiple pan-tilt-zoom (PTZ) cameras are utilized to monitor and track objects across a large area, overcoming the limitations of traditional static camera systems.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "wide-area settings",
+          "local_types": [
+            "setting",
+            "environment",
+            "context"
+          ],
+          "iri": "Entity-wide-area_setting-Mention-1"
+        }
+      ],
+      "relevance": 0.619140625
+    },
+    "Entity-correlation-based_information": {
+      "node_id": "correlation-based_information",
+      "disambiguation_index": 0,
+      "label": "correlation-based information",
+      "aliases": [
+        "correlation-based information"
+      ],
+      "types": [
+        "data type",
+        "method",
+        "information",
+        "data analysis technique"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Correlation-based information refers to a type of data or method used to establish correspondences between objects in surveillance systems, particularly in the context of associating objects across multiple PTZ cameras, which has limitations compared to other approaches.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "correlation-based information",
+          "local_types": [
+            "data type",
+            "method",
+            "information",
+            "data analysis technique"
+          ],
+          "iri": "Entity-correlation-based_information-Mention-1"
+        }
+      ],
+      "relevance": 0.6181640625
+    },
+    "Entity-geometric__appearance__or_correlation-based_information": {
+      "node_id": "geometric__appearance__or_correlation-based_information",
+      "disambiguation_index": 0,
+      "label": "geometric, appearance, or correlation-based information",
+      "aliases": [
+        "geometric, appearance, or correlation-based information"
+      ],
+      "types": [
+        "method",
+        "information"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'geometric, appearance, or correlation-based information' refers to the various types of data used in previous methods to establish correspondences between static cameras in surveillance systems, which have limitations in adapting to wide-area scenarios involving PTZ cameras.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "geometric, appearance, or correlation-based information",
+          "local_types": [
+            "method",
+            "information"
+          ],
+          "iri": "Entity-geometric__appearance__or_correlation-based_information-Mention-1"
+        }
+      ],
+      "relevance": 0.61572265625
+    },
+    "Entity-target": {
+      "node_id": "target",
+      "disambiguation_index": 0,
+      "label": "target",
+      "aliases": [
+        "target"
+      ],
+      "types": [
+        "object",
+        "subject"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The 'target' refers to the object or subject that the slave camera passively follows in a surveillance system, utilizing loose registration with a master camera to enhance tracking capabilities.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "target",
+          "local_types": [
+            "object",
+            "subject"
+          ],
+          "iri": "Entity-target-Mention-1"
+        }
+      ],
+      "relevance": 0.61572265625
+    },
+    "Entity-geometric": {
+      "node_id": "geometric",
+      "disambiguation_index": 0,
+      "label": "geometric",
+      "aliases": [
+        "geometric"
+      ],
+      "types": [
+        "method",
+        "mathematical concept"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The term 'geometric' refers to a method of establishing correspondences between static cameras based on geometric information, which has limitations in wide-area surveillance scenarios with PTZ cameras.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "geometric",
+          "local_types": [
+            "method",
+            "mathematical concept"
+          ],
+          "iri": "Entity-geometric-Mention-1"
+        }
+      ],
+      "relevance": 0.61279296875
+    },
+    "Entity-imagery": {
+      "node_id": "imagery",
+      "disambiguation_index": 0,
+      "label": "imagery",
+      "aliases": [
+        "imagery"
+      ],
+      "types": [
+        "data",
+        "visual information"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "In this context, 'imagery' refers to the visual data captured by the slave camera, which is utilized to enable the camera to follow a target without the need for model transfer.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "imagery",
+          "local_types": [
+            "data",
+            "visual information"
+          ],
+          "iri": "Entity-imagery-Mention-1"
+        }
+      ],
+      "relevance": 0.6015625
+    },
+    "Entity-ptz_camera": {
+      "node_id": "ptz_camera",
+      "disambiguation_index": 0,
+      "label": "PTZ camera",
+      "aliases": [
+        "PTZ cameras",
+        "PTZ camera"
+      ],
+      "types": [
+        "technology",
+        "camera type",
+        "surveillance equipment",
+        "camera technology",
+        "camera",
+        "PTZ",
+        "surveillance",
+        "device"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "A PTZ camera is a type of surveillance camera that is capable of pan, tilt, and zoom functions, allowing for remote control of its movement and focus to monitor large areas.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "PTZ camera",
+          "local_types": [
+            "camera",
+            "device",
+            "surveillance equipment"
+          ],
+          "iri": "Entity-ptz_camera-Mention-1"
+        },
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "PTZ cameras",
+          "local_types": [
+            "technology",
+            "surveillance equipment",
+            "camera technology",
+            "camera",
+            "surveillance"
+          ],
+          "iri": "Entity-ptz_camera-Mention-2"
+        },
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "PTZ cameras",
+          "local_types": [
+            "camera",
+            "device",
+            "camera type",
+            "PTZ"
+          ],
+          "iri": "Entity-ptz_camera-Mention-3"
+        }
+      ],
+      "relevance": 0.59326171875
+    },
+    "Entity-incoming_imagery": {
+      "node_id": "incoming_imagery",
+      "disambiguation_index": 0,
+      "label": "incoming imagery",
+      "aliases": [
+        "incoming imagery"
+      ],
+      "types": [
+        "data",
+        "imagery"
+      ],
+      "node_type": "other",
+      "LLM_familiarity": false,
+      "description": "Incoming imagery refers to the visual data captured by a slave camera in a surveillance system, which is utilized to autonomously track a target by leveraging its own camera feed without requiring model transfer from a master camera.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "incoming imagery",
+          "local_types": [
+            "data",
+            "imagery"
+          ],
+          "iri": "Entity-incoming_imagery-Mention-1"
+        }
+      ],
+      "relevance": 0.5859375
+    },
+    "Entity-model_transfer": {
+      "node_id": "model_transfer",
+      "disambiguation_index": 0,
+      "label": "model transfer",
+      "aliases": [
+        "model transfer"
+      ],
+      "types": [
+        "transfer",
+        "method",
+        "process"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "Model transfer refers to the process of transferring learned models or knowledge from one context or system to another, which in this paper is avoided by the proposed approach that allows the slave camera to bootstrap itself from its own imagery without needing to transfer models from the master camera.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-3",
+          "local_name": "model transfer",
+          "local_types": [
+            "transfer",
+            "method",
+            "process"
+          ],
+          "iri": "Entity-model_transfer-Mention-1"
+        }
+      ],
+      "relevance": 0.5673828125
+    },
+    "Entity-wide-area_surveillance": {
+      "node_id": "wide-area_surveillance",
+      "disambiguation_index": 0,
+      "label": "wide-area surveillance",
+      "aliases": [
+        "wide-area surveillance"
+      ],
+      "types": [
+        "application",
+        "surveillance strategy",
+        "security"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Wide-area surveillance refers to a surveillance strategy that involves monitoring large geographic areas using various technologies and methods, often employing multiple cameras and sensors to ensure comprehensive coverage and security.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-1",
+          "local_name": "wide-area surveillance",
+          "local_types": [
+            "application",
+            "surveillance strategy",
+            "security"
+          ],
+          "iri": "Entity-wide-area_surveillance-Mention-1"
+        }
+      ],
+      "relevance": 0.5517578125
+    },
+    "Entity-logistic_softmax_function": {
+      "node_id": "logistic_softmax_function",
+      "disambiguation_index": 0,
+      "label": "logistic softmax function",
+      "aliases": [
+        "logistic softmax function"
+      ],
+      "types": [
+        "mathematics",
+        "statistical method",
+        "mathematical concept",
+        "function",
+        "mathematical function"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": false,
+      "description": "The logistic softmax function is a mathematical function used in statistical methods, particularly in the context of Multiple Instance Learning, to model the probabilities of different outcomes based on covariance-based region features within a Maximum A Posteriori estimation framework.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "logistic softmax function",
+          "local_types": [
+            "mathematics",
+            "statistical method",
+            "mathematical concept",
+            "function",
+            "mathematical function"
+          ],
+          "iri": "Entity-logistic_softmax_function-Mention-1"
+        }
+      ],
+      "relevance": 0.533203125
+    },
+    "Entity-multiple_instance_learning": {
+      "node_id": "multiple_instance_learning",
+      "disambiguation_index": 0,
+      "label": "Multiple Instance Learning",
+      "aliases": [
+        "Multiple Instance Learning"
+      ],
+      "types": [
+        "learning technique",
+        "machine learning",
+        "machine learning technique",
+        "algorithm",
+        "method"
+      ],
+      "node_type": "named entity",
+      "LLM_familiarity": true,
+      "description": "Multiple Instance Learning is a machine learning technique where the learning algorithm is trained on sets of instances, or bags, rather than individual labeled examples, allowing it to handle ambiguous or incomplete labels.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "Multiple Instance Learning",
+          "local_types": [
+            "learning technique",
+            "machine learning",
+            "machine learning technique",
+            "algorithm",
+            "method"
+          ],
+          "iri": "Entity-multiple_instance_learning-Mention-1"
+        }
+      ],
+      "relevance": 0.5224609375
+    },
+    "Entity-outdoor_surveillance_setting": {
+      "node_id": "outdoor_surveillance_setting",
+      "disambiguation_index": 0,
+      "label": "outdoor surveillance settings",
+      "aliases": [
+        "outdoor surveillance settings"
+      ],
+      "types": [
+        "application area",
+        "environment",
+        "application context"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Outdoor surveillance settings refer to environments or locations where monitoring and observation are conducted using surveillance technologies, typically involving cameras and other equipment to ensure security and safety in public or private outdoor areas.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "outdoor surveillance settings",
+          "local_types": [
+            "application area",
+            "environment",
+            "application context"
+          ],
+          "iri": "Entity-outdoor_surveillance_setting-Mention-1"
+        }
+      ],
+      "relevance": 0.5166015625
+    },
+    "Entity-map_estimation": {
+      "node_id": "map_estimation",
+      "disambiguation_index": 0,
+      "label": "MAP estimation",
+      "aliases": [
+        "MAP estimation",
+        "MAP estimation framework"
+      ],
+      "types": [
+        "estimation technique",
+        "estimation method",
+        "statistical method",
+        "statistical framework",
+        "framework",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "MAP estimation, or Maximum A Posteriori estimation, is a statistical method used to estimate the parameters of a probabilistic model by maximizing the posterior distribution, incorporating prior information and observed data.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "MAP estimation",
+          "local_types": [
+            "estimation technique",
+            "statistical method"
+          ],
+          "iri": "Entity-map_estimation-Mention-1"
+        },
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-4",
+          "local_name": "MAP estimation framework",
+          "local_types": [
+            "estimation method",
+            "statistical framework",
+            "framework",
+            "method"
+          ],
+          "iri": "Entity-map_estimation-Mention-2"
+        }
+      ],
+      "relevance": 0.51318359375
+    },
+    "Entity-static_camera": {
+      "node_id": "static_camera",
+      "disambiguation_index": 0,
+      "label": "static cameras",
+      "aliases": [
+        "static cameras"
+      ],
+      "types": [
+        "static",
+        "camera",
+        "device",
+        "camera type"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Static cameras are fixed-position imaging devices used to capture still images or video footage without the ability to pan, tilt, or zoom.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "static cameras",
+          "local_types": [
+            "static",
+            "camera",
+            "device",
+            "camera type"
+          ],
+          "iri": "Entity-static_camera-Mention-1"
+        }
+      ],
+      "relevance": 0.491943359375
+    },
+    "Entity-state-of-the-art_approach": {
+      "node_id": "state-of-the-art_approach",
+      "disambiguation_index": 0,
+      "label": "state-of-the-art approaches",
+      "aliases": [
+        "state-of-the-art approaches"
+      ],
+      "types": [
+        "technique",
+        "comparison standard",
+        "comparison",
+        "methodology",
+        "approach",
+        "method"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "state-of-the-art approaches refer to the most advanced and effective techniques or methodologies currently available in a particular field, often used as benchmarks for comparison.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-5",
+          "local_name": "state-of-the-art approaches",
+          "local_types": [
+            "technique",
+            "comparison standard",
+            "comparison",
+            "methodology",
+            "approach",
+            "method"
+          ],
+          "iri": "Entity-state-of-the-art_approach-Mention-1"
+        }
+      ],
+      "relevance": 0.435302734375
+    },
+    "Entity-limitation": {
+      "node_id": "limitation",
+      "disambiguation_index": 0,
+      "label": "limitations",
+      "aliases": [
+        "limitations"
+      ],
+      "types": [
+        "drawback",
+        "constraint"
+      ],
+      "node_type": "general term",
+      "LLM_familiarity": true,
+      "description": "Limitations refer to the inherent drawbacks or constraints that restrict the effectiveness or applicability of a method, approach, or system.",
+      "mentions": [
+        {
+          "reference": "Paper-34-Section-1-Paragraph-1-Sentence-2",
+          "local_name": "limitations",
+          "local_types": [
+            "drawback",
+            "constraint"
+          ],
+          "iri": "Entity-limitation-Mention-1"
+        }
+      ],
+      "relevance": 0.388671875
+    }
+  },
+  "summary": "We propose a novel approach to associate objects across multiple PTZ cameras that can be used to perform camera handoff in wide-area surveillance scenarios . While previous approaches relied on geometric , appearance , or correlation-based information for establishing correspondences between static cameras , they each have well-known limitations and are not extendable to wide-area settings with PTZ cameras . In our approach , the slave camera only passively follows the target -LRB- by loose registration with the master -RRB- and bootstraps itself from its own incoming imagery , thus effectively circumventing the problems faced by previous approaches and avoiding the need to perform any model transfer . Towards this goal , we also propose a novel Multiple Instance Learning -LRB- MIL -RRB- formulation for the problem based on the logistic softmax function of covariance-based region features within a MAP estimation framework . We demonstrate our approach with multiple PTZ camera sequences in typical outdoor surveillance settings and show a comparison with state-of-the-art approaches .",
+  "triples": [
+    [
+      "Entity-a_novel_approach",
+      "Predicate-associates",
+      "Entity-object"
+    ],
+    [
+      "Entity-a_novel_approach",
+      "Predicate-is_used_to_perform",
+      "Entity-camera_handoff"
+    ],
+    [
+      "Entity-camera_handoff",
+      "Predicate-is_used_in",
+      "Entity-wide-area_surveillance_scenario"
+    ],
+    [
+      "Entity-approach",
+      "Predicate-proposes",
+      "Entity-a_novel_approach"
+    ],
+    [
+      "Entity-approach",
+      "Predicate-is_used_to_perform",
+      "Entity-camera_handoff"
+    ],
+    [
+      "Entity-approach",
+      "Predicate-is_applicable_to",
+      "Entity-wide-area_surveillance_scenario"
+    ],
+    [
+      "Entity-wide-area_surveillance_scenario",
+      "Predicate-are_related_to",
+      "Entity-wide-area_surveillance"
+    ],
+    [
+      "Entity-previous_approach",
+      "Predicate-relied_on",
+      "Entity-geometric__appearance__or_correlation-based_information"
+    ],
+    [
+      "Entity-previous_approach",
+      "Predicate-have_limitations",
+      "Entity-limitation"
+    ],
+    [
+      "Entity-the_slave_camera",
+      "Predicate-follows",
+      "Entity-the_target"
+    ],
+    [
+      "Entity-the_slave_camera",
+      "Predicate-bootstraps_itself_from",
+      "Entity-incoming_imagery"
+    ],
+    [
+      "Entity-slave_camera",
+      "Predicate-follows",
+      "Entity-target"
+    ],
+    [
+      "Entity-multiple_instance_learning",
+      "Predicate-is_based_on",
+      "Entity-logistic_softmax_function"
+    ],
+    [
+      "Entity-multiple_instance_learning",
+      "Predicate-is_based_on",
+      "Entity-covariance-based_region_feature"
+    ],
+    [
+      "Entity-multiple_instance_learning",
+      "Predicate-is_formulated_within",
+      "Entity-map_estimation"
+    ],
+    [
+      "Entity-logistic_softmax_function",
+      "Predicate-is_applied_to",
+      "Entity-covariance-based_region_feature"
+    ],
+    [
+      "Entity-logistic_softmax_function",
+      "Predicate-of",
+      "Entity-covariance-based_region_feature"
+    ],
+    [
+      "Entity-multiple_ptz_camera_sequence",
+      "Predicate-demonstrate",
+      "Entity-outdoor_surveillance_setting"
+    ],
+    [
+      "Entity-multiple_ptz_camera_sequence",
+      "Predicate-show_a_comparison_with",
+      "Entity-state-of-the-art_approach"
+    ],
+    [
+      "Entity-approach",
+      "Predicate-demonstrate",
+      "Entity-multiple_ptz_camera_sequence"
+    ],
+    [
+      "Entity-approach",
+      "Predicate-show_a_comparison_with",
+      "Entity-state-of-the-art_approach"
+    ],
+    [
+      "Entity-approach",
+      "Predicate-facilitates",
+      "Entity-camera_handoff"
+    ],
+    [
+      "Entity-a_novel_approach",
+      "Predicate-is_a_specific_instance_of",
+      "Entity-approach"
+    ],
+    [
+      "Entity-a_novel_approach",
+      "Predicate-facilitates",
+      "Entity-camera_handoff"
+    ]
+  ],
+  "triples_typing": [
+    [
+      "Entity-master",
+      "skos:broader",
+      "Entity-object"
+    ],
+    [
+      "Entity-previous_approach",
+      "skos:broader",
+      "Entity-approach"
+    ],
+    [
+      "Entity-the_target",
+      "skos:broader",
+      "Entity-object"
+    ],
+    [
+      "Entity-multiple_ptz_camera",
+      "skos:broader",
+      "Entity-ptz_camera"
+    ],
+    [
+      "Entity-state-of-the-art_approach",
+      "skos:broader",
+      "Entity-approach"
+    ],
+    [
+      "Entity-target",
+      "skos:broader",
+      "Entity-object"
+    ],
+    [
+      "Entity-incoming_imagery",
+      "skos:broader",
+      "Entity-imagery"
+    ]
+  ],
+  "predicates": {
+    "Predicate-associates": {
+      "label": "associates",
+      "description": "The predicate 'associates' indicates a relationship in which the subject is linked or connected to the object, suggesting that they share a commonality, relevance, or interaction. This connection can imply that the subject has a role in forming a relationship with the object, whether through collaboration, categorization, or influence.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_used_to_perform": {
+      "label": "is used to perform",
+      "description": "The predicate 'is used to perform' indicates that the subject serves a functional role or purpose in executing or carrying out the action or task represented by the object. It establishes a relationship where the subject is a means or method that facilitates the achievement of the objective denoted by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_used_in": {
+      "label": "is used in",
+      "description": "The predicate 'is used in' establishes a relationship where the subject is associated with a specific context, application, or domain represented by the object. It indicates that the subject serves a functional role or purpose within the scenarios, activities, or fields denoted by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-proposes": {
+      "label": "proposes",
+      "description": "The predicate 'proposes' indicates that the subject is putting forward a suggestion, idea, or plan for consideration, which is represented by the object. It establishes a relationship where the subject actively advocates for the object as a potential course of action or solution.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_applicable_to": {
+      "label": "is applicable to",
+      "description": "The predicate 'is applicable to' establishes a relationship between a subject and an object, indicating that the subject can be effectively used, implemented, or relevant in the context of the object. It suggests that the subject possesses qualities, features, or methodologies that make it suitable for the scenarios, situations, or domains represented by the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-are_related_to": {
+      "label": "are related to",
+      "description": "The predicate 'are related to' establishes a connection or association between the subject and the object, indicating that they share a commonality, relevance, or interdependence in a particular context. This relationship can encompass various forms of linkage, such as thematic, functional, or conceptual ties, suggesting that understanding one may provide insights into the other.",
+      "disambiguation_index": 0
+    },
+    "Predicate-relied_on": {
+      "label": "relied on",
+      "description": "The predicate 'relied on' indicates a dependence or trust that the subject has in the object, suggesting that the subject utilizes the object as a source of support, guidance, or information in their processes or decisions.",
+      "disambiguation_index": 0
+    },
+    "Predicate-have_limitations": {
+      "label": "have limitations",
+      "description": "The predicate 'have limitations' indicates that the subject possesses certain constraints, restrictions, or shortcomings that affect its functionality, effectiveness, or applicability. It establishes a relationship where the subject is characterized by these limitations, which are represented by the object. This connection highlights the inherent boundaries or deficiencies associated with the subject.",
+      "disambiguation_index": 0
+    },
+    "Predicate-follows": {
+      "label": "follows",
+      "description": "The predicate 'follows' indicates a relationship where the subject actively tracks or moves in accordance with the object. This connection implies a directional or observational link, where the subject is oriented towards the object, often maintaining a consistent spatial or conceptual alignment with it. The action of following suggests a dynamic interaction, where the subject responds to the movements or changes of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-bootstraps_itself_from": {
+      "label": "bootstraps itself from",
+      "description": "The predicate 'bootstraps itself from' indicates a process in which the subject derives or develops its capabilities, functionality, or knowledge by utilizing or relying on the resources, data, or inputs represented by the object. This relationship suggests a foundational or self-sustaining mechanism where the subject enhances or establishes itself through the integration or processing of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_based_on": {
+      "label": "is based on",
+      "description": "The predicate 'is based on' establishes a foundational relationship between the subject and the object, indicating that the subject derives its principles, methods, or framework from the object. This implies that the subject relies on the object as a fundamental component or reference point for its structure, functionality, or theoretical underpinnings.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_formulated_within": {
+      "label": "is formulated within",
+      "description": "The predicate 'is formulated within' indicates that the subject represents a concept, theory, or framework that is developed or defined in the context of the object. It suggests that the subject is based on, or operates under the principles, methodologies, or assumptions associated with the object, thereby establishing a relationship where the subject is understood through the lens of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_applied_to": {
+      "label": "is applied to",
+      "description": "The predicate 'is applied to' indicates a relationship where the subject is utilized or implemented in relation to the object, suggesting that the subject serves a functional role or purpose in the context of the object. This connection often implies that the subject provides a method, technique, or process that is relevant to the characteristics or analysis of the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-of": {
+      "label": "of",
+      "description": "The predicate 'of' indicates a relationship of belonging or association between the subject and the object, suggesting that the subject is characterized by, derived from, or related to the object in some significant way.",
+      "disambiguation_index": 0
+    },
+    "Predicate-demonstrate": {
+      "label": "demonstrate",
+      "description": "The predicate 'demonstrate' serves to establish a relationship where the subject provides evidence, examples, or illustrations of the capabilities, features, or effectiveness of the object. In this context, the subject showcases or proves the relevance or functionality of the object in a specific scenario or application.",
+      "disambiguation_index": 0
+    },
+    "Predicate-show_a_comparison_with": {
+      "label": "show a comparison with",
+      "description": "The predicate 'show a comparison with' indicates a relationship where the subject is being evaluated or analyzed in relation to the object. It implies that the subject is being contrasted or assessed against the object to highlight similarities, differences, or performance metrics. This predicate is often used in contexts where the effectiveness, quality, or characteristics of the subject are being measured or illustrated in comparison to the object.",
+      "disambiguation_index": 0
+    },
+    "Predicate-facilitates": {
+      "label": "facilitates",
+      "description": "The predicate 'facilitates' indicates that the subject enables, assists, or makes easier the process or occurrence of the object. It implies a supportive role where the subject contributes to the smooth execution or implementation of the object, enhancing its effectiveness or efficiency.",
+      "disambiguation_index": 0
+    },
+    "Predicate-is_a_specific_instance_of": {
+      "label": "is a specific instance of",
+      "description": "The predicate 'is a specific instance of' establishes a relationship where the subject represents a particular example or case that falls under the broader category defined by the object. It indicates that the subject shares characteristics or properties with the object, thereby demonstrating that the subject is a concrete manifestation of the more general concept represented by the object.",
+      "disambiguation_index": 0
+    },
+    "skos:broader": {
+      "label": "has a broader term",
+      "description": "The predicate 'has a broader term' establishes a hierarchical relationship between the subject and the object, indicating that the object represents a more general category or concept that encompasses the subject. This relationship suggests that the subject is a specific instance or subset of the broader category defined by the object.",
+      "disambiguation_index": 0
+    }
+  }
+}

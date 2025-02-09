@@ -1,0 +1,60 @@
+{
+  "iri": "Paper-78",
+  "title": "CVPR_1994_10_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-78-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-78-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-1",
+              "text": "MINPRAN , a new robust operator , nds good ts in data sets where more than 50 % of the points are outliers ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-2",
+              "text": "Unlike other techniques that handle large outlier percentages , MINPRAN does not rely on a known error bound for the good data ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-3",
+              "text": "Instead it assumes that the bad data are randomly -LRB- uniformly -RRB- distributed within the dynamic range of the sensor ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-4",
+              "text": "Based on this , MINPRAN uses random sampling to search for the t and the number of inliers to the t that are least likely to have occurred randomly ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-5",
+              "text": "It runs in time O -LRB- N 2 + SN log N -RRB- , where S is the number of random samples and N is the number of data points ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-6",
+              "text": "We demonstrate analytically that MINPRAN distinguishes good ts from ts to random data , and that MINPRAN nds accurate ts and nearly the correct number of inliers , regardless of the percentage of true inliers ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-7",
+              "text": "MINPRAN 's properties are connrmed experimentally on synthetic data and compare favorably to least median of squares ."
+            },
+            {
+              "iri": "Paper-78-Section-1-Paragraph-1-Sentence-8",
+              "text": "Related work applies MINPRAN to complex range and intensity data 23 -RSB- ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "MINPRAN , a new robust operator , nds good ts in data sets where more than 50 % of the points are outliers . Unlike other techniques that handle large outlier percentages , MINPRAN does not rely on a known error bound for the good data . Instead it assumes that the bad data are randomly -LRB- uniformly -RRB- distributed within the dynamic range of the sensor . Based on this , MINPRAN uses random sampling to search for the t and the number of inliers to the t that are least likely to have occurred randomly . It runs in time O -LRB- N 2 + SN log N -RRB- , where S is the number of random samples and N is the number of data points . We demonstrate analytically that MINPRAN distinguishes good ts from ts to random data , and that MINPRAN nds accurate ts and nearly the correct number of inliers , regardless of the percentage of true inliers . MINPRAN 's properties are connrmed experimentally on synthetic data and compare favorably to least median of squares . Related work applies MINPRAN to complex range and intensity data 23 -RSB- .",
+  "kg2text": [
+    "A new robust operator known as MINPRAN effectively identifies good ts, distinguishing them from bad data in datasets with large outlier percentages. MINPRAN not only identifies good ts but also finds accurate ts and determines the correct number of inliers. Related work applies MINPRAN to analyze complex data, while the operator assumes the presence of bad data and does not rely on a known error bound for its operations. The number of random samples used in MINPRAN is represented by S, which plays a crucial role in estimating the number of inliers related to the statistical term t. Additionally, MINPRAN distinguishes ts to random data and utilizes random sampling to enhance its robustness. It has been shown to compare favorably to the least median of squares, further establishing its effectiveness in handling datasets with significant outlier challenges.",
+    "The MINPRAN technique is notable for its ability to identify good fits in datasets, particularly those containing more than 50% outliers, without relying on a known error bound. This robust data processing method has been confirmed through tests on synthetic data, demonstrating its effectiveness in handling complex data sets. Within the context of MINPRAN, the parameter 'the t' is associated with inliers, which are data points fitting well within the statistical model. The algorithm utilizes a number of random samples, which is a broader term encompassing random samples, to estimate the best fit. The total number of data points in a dataset is denoted as N, which is critical for understanding the computational complexity of the MINPRAN operator. Additionally, the number of random samples, represented by S, plays a significant role in the analysis. Related work has applied MINPRAN to complex range and intensity data, highlighting its versatility. Furthermore, the bad data, which are outliers, are assumed to be uniformly distributed within the dynamic range of the sensor, posing challenges for data fitting. Overall, the MINPRAN operator effectively navigates the complexities of datasets characterized by large outlier percentages, ensuring the identification of good data amidst the noise.",
+    "Bad data are distributed within the dynamic range, which itself has a broader term of sensor. Outliers, which are significant deviations from other data points, also fall under the broader category of data points. Similarly, complex range and intensity data is encompassed by the broader term data sets, just as synthetic data is categorized under data sets as well."
+  ],
+  "times": [
+    8.886045455932617
+  ]
+}

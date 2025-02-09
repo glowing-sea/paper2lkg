@@ -1,0 +1,59 @@
+{
+  "iri": "Paper-84",
+  "title": "ICCV_2013_47_abs",
+  "authors": [],
+  "keywords": [],
+  "sections": [
+    {
+      "iri": "Paper-84-Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Paper-84-Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Paper-84-Section-1-Paragraph-1-Sentence-1",
+              "text": "Light fields are image-based representations that use densely sampled rays as a scene description ."
+            },
+            {
+              "iri": "Paper-84-Section-1-Paragraph-1-Sentence-2",
+              "text": "In this paper , we explore geometric structures of 3D lines in ray space for improving light field triangulation and stereo matching ."
+            },
+            {
+              "iri": "Paper-84-Section-1-Paragraph-1-Sentence-3",
+              "text": "The triangulation problem aims to fill in the ray space with continuous and non-overlapping simplices anchored at sampled points -LRB- rays -RRB- ."
+            },
+            {
+              "iri": "Paper-84-Section-1-Paragraph-1-Sentence-4",
+              "text": "Such a triangulation provides a piecewise-linear interpolant useful for light field super-resolution ."
+            },
+            {
+              "iri": "Paper-84-Section-1-Paragraph-1-Sentence-5",
+              "text": "We show that the light field space is largely bi-linear due to 3D line segments in the scene , and direct tri-angulation of these bilinear subspaces leads to large errors ."
+            },
+            {
+              "iri": "Paper-84-Section-1-Paragraph-1-Sentence-6",
+              "text": "We instead present a simple but effective algorithm to first map bilinear subspaces to line constraints and then apply Constrained Delaunay Triangulation -LRB- CDT -RRB- ."
+            },
+            {
+              "iri": "Paper-84-Section-1-Paragraph-1-Sentence-7",
+              "text": "Based on our analysis , we further develop a novel line-assisted graph-cut -LRB- LAGC -RRB- algorithm that effectively encodes 3D line constraints into light field stereo matching ."
+            },
+            {
+              "iri": "Paper-84-Section-1-Paragraph-1-Sentence-8",
+              "text": "Experiments on synthetic and real data show that both our triangulation and LAGC algorithms outperform state-of-the-art solutions in accuracy and visual quality ."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Light fields are image-based representations that use densely sampled rays as a scene description . In this paper , we explore geometric structures of 3D lines in ray space for improving light field triangulation and stereo matching . The triangulation problem aims to fill in the ray space with continuous and non-overlapping simplices anchored at sampled points -LRB- rays -RRB- . Such a triangulation provides a piecewise-linear interpolant useful for light field super-resolution . We show that the light field space is largely bi-linear due to 3D line segments in the scene , and direct tri-angulation of these bilinear subspaces leads to large errors . We instead present a simple but effective algorithm to first map bilinear subspaces to line constraints and then apply Constrained Delaunay Triangulation -LRB- CDT -RRB- . Based on our analysis , we further develop a novel line-assisted graph-cut -LRB- LAGC -RRB- algorithm that effectively encodes 3D line constraints into light field stereo matching . Experiments on synthetic and real data show that both our triangulation and LAGC algorithms outperform state-of-the-art solutions in accuracy and visual quality .",
+  "kg2text": [
+    "The line-assisted graph-cut algorithm effectively encodes 3D line constraints into light field stereo matching, leading to large errors when directly triangulating bilinear subspaces. To address this issue, Constrained Delaunay Triangulation uses the LAGC algorithm and improves light field triangulation and stereo matching by incorporating geometric structures of 3D lines in ray space. This novel approach is useful for light field super-resolution, which relies on densely sampled rays as a scene description. Furthermore, line-assisted graph-cut algorithms use 3D line constraints to improve light field stereo matching.",
+    "This paper presents LAGC algorithms, a novel line-assisted graph-cut algorithm that effectively encodes 3D line constraints into light field stereo matching. The proposed method first maps bilinear subspaces to line constraints and then applies Constrained Delaunay Triangulation (CDT) for improving light field triangulation and stereo matching. In this paper, we show that both our LAGC algorithms and piecewise-linear interpolant useful for light field super-resolution can effectively improve the accuracy of depth estimation in 3D scenes."
+  ],
+  "times": [
+    15.020162105560303
+  ]
+}
