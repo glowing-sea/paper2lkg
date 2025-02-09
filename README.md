@@ -1,4 +1,25 @@
 # paper2lkg
-A Knowledge Graph Construction (KGC) pipeline that aims to convert any single academic paper into its local Knowledge Graph representation. The pipeline leverages Large Language Model (LLM), specifically generative LLMs, to perform the Natural Language Processing tasks required during KGC.
+A Local Knowledge Graph Construction (KGC) pipeline designed to transform individual academic papers into their structured local Knowledge Graph (KG) representations. The pipeline leverages Large Language Models (LLMs), particularly generative LLMs, to automate key Natural Language Processing (NLP) tasks in KGC.
 
-Edited on 5 Feb 2025
+This repository is related to the research "Open Local Knowledge Graph Construction from Academic Documents Using Generative Large Language Models". It contains the following components:
+- The research artifact, the paper2lkg pipeline
+- The research artifacts for evaluating paper2lkg
+- A comprehensive discussion about the pipeline
+- A comprehensive discussion about the evaluation approaches
+- Raw experiment results.
+- Visualised experiment results.
+
+Other materials:
+- ([link](./documentation/articles/(Paper)%20(ver.2025.2.7)%20Open%20Local%20Knowledge%20Graph%20Construction%20from%20Academic%20Documents%20Using%20Generative%20Large%20Language%20Models.pdf)) Paper submitted to 3rd NLP4KGC workshop (currently under review)
+  
+  *This paper aims to provide a quick overview to the research project and present the key ideas. It contains research motivation, background, literature review, an short overview of the pipeline artifact, an short overview of the research methodology, and the key findings of the research. (Last Update 7 Feb 2025)*
+
+- ([link](./documentation/articles/(Thesis)%20(ver.2024.11.18)%20Local%20Holistic%20Knowledge%20Graph%20Construction%20From%20Academic%20Papers%20Using%20Large%20Language%20Models%20Through%20In-Context%20Learning.pdf)) Honours thesis (unpublished)
+
+  *The original documentation of this research. It contains comprehensive background and literature review, detailed description of the pipeline artifact and research methods, almost all the experiment results, and detailed analysis on the experiment results. (Last Update 11 Nov 2024)*
+
+- ([link](./documentation/articles/(Poster)%20(ver.2024.11.18)%20Local%20Holistic%20Knowledge%20Graph%20Construction%20From%20Academic%20Papers%20Using%20Large%20Language%20Models%20Through%20In-Context%20Learning.pdf)) Poster for the honours thesis
+
+  *An intuitive poster for a quick overview of this research project. (Last Update 11 Nov 2024)*
+
+## Notes to the NLP4KGC Reviewers
