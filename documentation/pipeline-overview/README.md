@@ -1,46 +1,70 @@
-# The Pipeline Overview: Supplementary Resources
+# Pipeline Overview
 
-This page provides links to the full algorithm and prompt of each stage of the pipeline. The pipeline itself is at [here](../../LLM-KGC-v0/). Some prompt mentioned in the paper is further divided into several variations.
+This section aims to provide provide a comprehensive overview of the design and implementation of the pipeline. It include the following components:
 
-## Stage 1
+*Note: in this version of documentation, Stage 3: Entity Linking contains the mechanism of LLM double check before grouping Mentions into the same Entities. While it can increase the efficacy, it significantly reduce the efficiency of the pipeline as this step can lead to quadratic complexity. Therefore, this step is disable when the paper is submitted.*
 
-Algorithm: [See page 26 of the PDF](./Implementation%20Details.pdf#page=26)
+- [Design of the open local KGC approach](./pipeline-design/):
+  - Demo
+  - Comparison to Traditional KGC
+  - Comparison to Other KGC
+  - SWOT Analysis
 
-Prompt 1 ([Named Entity Extraction](../../LLM-KGC-v0/src/modules/m02_mention_extraction_typing/prompt_1_template.md), [Entity Extraction](../../LLM-KGC-v0/src/modules/m02_mention_extraction_typing/prompt_2_template.md), [Mention Extraction](../../LLM-KGC-v0/src/modules/m02_mention_extraction_typing/prompt_3_template.md))
+- [Overview of the Implementation and pipeline IO](./pipeline-implementation/):   
+  - Interface
+  - Pipeline Structure
+  - Execution Diagram
+  - Design Choice
 
-## Stage 2
+- [Stage 1: Mention Extraction](./stage-1/)
+  - Algorithm
+  - Prompts
+    - [Prompt 1: Named Entity Extraction](../../paper2lkg-v0/src/modules/m02_mention_extraction_typing/prompt_1_template.md)
+    - [Prompt 1: Named Entity + General Concept Extraction](../../paper2lkg-v0/src/modules/m02_mention_extraction_typing/prompt_2_template.md)
+    - [Prompt 1: Entity Extraction](../../paper2lkg-v0/src/modules/m02_mention_extraction_typing/prompt_3_template.md)
+  - Assumptions
+  - Limitations
+  - Complexity
+  - Design Choices
 
-Algorithm: [See page 42 of the PDF](./Implementation%20Details.pdf#page=42)
+- [Stage 2: Entity Linking](./stage-2/)
+  - Algorithm
+  - Prompts
+    - [Prompt 2.1: LLM Background Knowledge Check](../../paper2lkg-v0/src/modules/m03_entity_resolution_disambiguation/prompt_2.md)
+    - [Prompt 2.2.1: Description Generation with Full Context](../../paper2lkg-v0/src/modules/m03_entity_resolution_disambiguation/prompt_3_specific.md)
+    - [Prompt 2.2.2: Description Generation with Limited Context](../../paper2lkg-v0/src/modules/m03_entity_resolution_disambiguation/prompt_3_general.md)
+    - [Prompt 2.3: LLM Double Checking (Disabled)](../../paper2lkg-v0/src/modules/m03_entity_resolution_disambiguation/prompt_5_section.md)
+  - Assumptions
+  - Limitations
+  - Complexity
+  - Design Choices
 
-Prompt 2.1 ([LLM Background Knowledge Check](../../LLM-KGC-v0/src/modules/m03_entity_resolution_disambiguation/prompt_2.md))
+- [Stage 3: Local Relation Extraction](./stage-3/)
+  - Algorithm
+  - Prompts
+    - [Prompt 3: Local Relation Extraction](../../paper2lkg-v0/src/modules/m04_local_relation_extraction/prompt_1_template.md)
+  - Assumptions
+  - Limitations
+  - Complexity
+  - Design Choices
 
-Prompt 2.2.1 ([Description Generation with Full Context](../../LLM-KGC-v0/src/modules/m03_entity_resolution_disambiguation/prompt_3_specific.md))
+- [Stage 4: Global Relation Extraction](./stage-4/)
+  - Algorithm
+  - Prompts
+    - [Prompt 4.1: Paper Summarisation](../../paper2lkg-v0/src/modules/m05_global_relation_extraction/prompt_1_template.md)
+    - [Prompt 4.2: Extracting A Predicate between Two Entities](../../paper2lkg-v0/src/modules/m03_entity_resolution_disambiguation/prompt_3_specific.md)
+    - [Prompt 4.2+: Determining the Subject of the Relation](../../paper2lkg-v0/src/modules/m05_global_relation_extraction/prompt_4_template.md)
+  - Assumptions
+  - Limitations
+  - Complexity
+  - Design Choices
 
-Prompt 2.2.2 ([Description Generation with Limited Context](../../LLM-KGC-v0/src/modules/m03_entity_resolution_disambiguation/prompt_3_general.md))
-
-Prompt 2.3 ([LLM Double Checking (Disabled)](../../LLM-KGC-v0/src/modules/m03_entity_resolution_disambiguation/prompt_5_section.md))
-
-*Note that the full version of the pipeline prompt the generative LLM using Prompt 2.3 to double check if the two Mentions are the same when their embeddings are found highly similar. However, this functionality is disabled because it can lead to quadratic complexity.*
-
-## Stage 3
-
-Algorithm: [See page 53 of the PDF](./Implementation%20Details.pdf#page=53)
-
-Prompt 3 (([Local Relation Extraction](../../LLM-KGC-v0/src/modules/m04_local_relation_extraction/prompt_1_template.md)))
-
-## Stage 4
-
-Algorithm: [See page 61 of the PDF](./Implementation%20Details.pdf#page=61)
-
-Prompt 4.1 ([Paper Summarisation](../../LLM-KGC-v0/src/modules/m05_global_relation_extraction/prompt_1_template.md))
-
-Prompt 4.2 ([Extracting A Predicate between Two Entities](../../LLM-KGC-v0/src/modules/m05_global_relation_extraction/prompt_3_template.md), [Determining the Subject of the Relation](../../LLM-KGC-v0/src/modules/m05_global_relation_extraction/prompt_4_template.md))
-
-## Stage 5
-
-Algorithm: [See page 66 of the PDF](./Implementation%20Details.pdf#page=66)
-
-Prompt 5.1 ([Entity Type Description Generation](../../LLM-KGC-v0/src/modules/m06_schema_generation/prompt_1.md))
-
-Prompt 5.2 ([Predicate Description Generation](../../LLM-KGC-v0/src/modules/m06_schema_generation/prompt_3.md))
-
+- [Stage 5: Taxonomy Generation and Predication Resolution](./stage-5/)
+  - Algorithm
+  - Prompts
+    - [Prompt 5.1: Entity Type Description Generation](../../paper2lkg-v0/src/modules/m06_schema_generation/prompt_1.md)
+    - [Prompt 5.2: Predicate Description Generation](../../paper2lkg-v0/src/modules/m06_schema_generation/prompt_3.md)
+  - Assumptions
+  - Limitations
+  - Complexity
+  - Design Choices
