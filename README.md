@@ -22,7 +22,7 @@ Thank you for reviewing our research paper and providing valuable feedback. Plea
 
 ([link](./documentation/articles/(Thesis)%20(ver.2024.11.18)%20Local%20Holistic%20Knowledge%20Graph%20Construction%20From%20Academic%20Papers%20Using%20Large%20Language%20Models%20Through%20In-Context%20Learning.pdf)) Honours thesis (unpublished)
 
-  *The original documentation of this research. It contains comprehensive background and literature review, detailed description of the pipeline artifact and research methods, almost all the experiment results, and detailed analysis on the experiment results. (Last Update 11 Nov 2024)*
+  *The original documentation of this research. It contains a comprehensive background and literature review, detailed a description of the pipeline artifact and research methods, almost all the experiment results, and detailed analysis on the experiment results. (Last Update 11 Nov 2024)*
 
 ([link](./documentation/articles/(Poster)%20(ver.2024.11.18)%20Local%20Holistic%20Knowledge%20Graph%20Construction%20From%20Academic%20Papers%20Using%20Large%20Language%20Models%20Through%20In-Context%20Learning.pdf)) Poster for the honours thesis
 
