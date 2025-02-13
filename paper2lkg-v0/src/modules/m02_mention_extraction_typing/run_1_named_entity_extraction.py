@@ -97,6 +97,10 @@ def run():
 
         # Result Checking
         def result_checking(mention, label_fields, type_field):
+
+            # 0. Is a Dict
+            if not isinstance(mention, dict):
+                return False
             
             # 1. Has "entity" and "type" keys
             if not label_fields in mention or not type_field in mention:
@@ -116,6 +120,13 @@ def run():
                 "label": label,
                 "types": types
             }
+        
+
+        # Log
+        with open(LOG_PATH, "a") as file:
+            file.write(log)
+            file.write("\n\n\n\n")
+            file.flush()
 
 
         # Remove trivial responses
@@ -134,12 +145,6 @@ def run():
 
         chunk["named_entities"] = new_named_entities
 
-
-        # Log
-        with open(LOG_PATH, "a") as file:
-            file.write(log)
-            file.write("\n\n\n\n")
-            file.flush()
     
 
     # Extract sentence-level named entities

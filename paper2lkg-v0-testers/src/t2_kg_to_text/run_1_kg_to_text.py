@@ -149,9 +149,9 @@ def run(DATASET, INDEX, LLM_MODEL):
 
 
 if __name__ == "__main__":
-    DATASET = "SciERC"
-    INDICES = list(range(100, 101))
+    DATASET = "ASKG"
+    INDICES = list(range(7, 11))
+    LLM_MODEL = "l"
 
     for INDEX in INDICES:
-        LLM_MODEL = "g"
         run(DATASET, INDEX, LLM_MODEL)

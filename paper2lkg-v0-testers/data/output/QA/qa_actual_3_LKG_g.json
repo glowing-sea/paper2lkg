@@ -1,62 +1,62 @@
 [
   {
-    "question": "What are the main advantages of the RISC-V architecture compared to other processor architectures?",
-    "answer": "The main advantages of the RISC-V architecture include its open-source nature, BSD licensing, and design professionalism, which allow communities and organizations to produce their own processors without license restrictions. It focuses on defining the instruction set architecture (ISA) rather than specific implementations, making it suitable for applications that require special configuration. Additionally, RISC-V aims to provide a more secure architecture, lacking speculative memory access and thus being immune to vulnerabilities like Meltdown and Spectre.",
-    "LLM_answer": "The main advantages of the RISC-V architecture compared to other processor architectures include its open-source nature, which allows for license-free development and modification, enabling innovation and collaboration. RISC-V supports a wider range of applications and offers a more secure architecture by eliminating vulnerabilities such as speculative memory access. Additionally, it provides a general set of instructions that simplifies processor design, leading to better evaluations and more accurate comparisons with existing architectures. The architecture is also designed to be extensible, allowing for various configurations such as 32-bit and 128-bit ISA configurations.",
-    "similarity_score": 0.947265625
+    "question": "What are the two primary architectures that form the basis of most processors?",
+    "answer": "CISC and RISC",
+    "LLM_answer": "The two primary architectures that form the basis of most processors are Complex Instruction Set Computer (CISC) and Reduced Instruction Set Computer (RISC).",
+    "similarity_score": 0.76416015625
   },
   {
-    "question": "Why was MILIS Linux chosen as the operating system base for this project?",
-    "answer": "MILIS Linux was chosen because it is an open-source operating system development project with an independent user space and its own package manager. It differs from other GNU/Linux projects by not being based on any existing Linux distribution and provides a pure Linux usage and development experience. The project aims to work on open-source hardware and be one of the first among Linux distributions to support RISC-V, aligning with the goal of creating a completely independent open-source computing system.",
-    "LLM_answer": "MILIS Linux was chosen as the operating system base for this project because it is an open source operating system development project specifically designed to operate on the RISC-V architecture. It features an independent user space and its own package manager, which allows for greater flexibility and control compared to other GNU/Linux projects. Additionally, MILIS Linux aims to provide a free and easy-to-use operating system, making it suitable for both individual and organizational use.",
-    "similarity_score": 0.95703125
+    "question": "What does CISC stand for and what is one of its key features?",
+    "answer": "CISC stands for Complex Instruction Set Computer, and one of its key features is backward compatibility since the 1970s.",
+    "LLM_answer": "CISC stands for Complex Instruction Set Computer. One of its key features is the inclusion of long sub-level commands, which facilitate effective memory management and enable simpler compiler implementations.",
+    "similarity_score": 0.8173828125
   },
   {
-    "question": "What challenges are associated with booting the Linux kernel on RISC-V, and how does the Berkeley Bootloader (BBL) address them?",
-    "answer": "One challenge is that RISC-V lacks a traditional bootloader like GRUB or U-Boot that can chainload a Linux kernel. The Berkeley Bootloader (BBL) addresses this by linking the kernel binary directly into the BBL ELF file during the compile process. BBL supports starting and responding to timer interrupts, boot chain loading for Linux, and handles certain instructions that the RISC-V processor cannot execute directly in hardware.",
-    "LLM_answer": "Booting the Linux kernel on RISC-V presents several challenges, including the need for a specialized bootloader that can effectively initialize the hardware and load the kernel. The Berkeley Bootloader (BBL) addresses these challenges by directly linking the Linux kernel binary into its ELF file, which allows it to boot without the need for chainloading, a feature that other bootloaders like U-Boot require. Additionally, BBL supports starting and responding to timer interrupts, which is crucial for managing timing and scheduling in the operating system. This functionality ensures that the boot process is efficient and reliable, making BBL a suitable choice for RISC-V architecture.",
-    "similarity_score": 0.96240234375
-  },
-  {
-    "question": "What are the key components involved in porting MILIS Linux to the RISC-V architecture as described in the paper?",
-    "answer": "The key components involved in porting MILIS Linux to RISC-V include system emulation using QEMU, setting up the toolchain with a cross-compiler for GNU, compiling a compatible kernel, using the Berkeley Bootloader (BBL) as the bootloader, creating a pre-root filesystem and producing necessary packages, and finally building a bootable image using MILIS packages for kernel and user space software.",
-    "LLM_answer": "The key components involved in porting MILIS Linux to the RISC-V architecture include the various hardware and software elements of the RISC-V architecture that require optimization for improved performance. This process of porting involves adapting the operating system to work effectively with the RISC-V hardware and its command set architecture, ensuring compatibility and efficiency.",
-    "similarity_score": 0.8583984375
-  },
-  {
-    "question": "How does the open-source nature of RISC-V contribute to improved security, according to the paper?",
-    "answer": "The open-source nature of RISC-V allows for the ISA to be discovered and improved by industry experts, commercial innovators, and academics. This openness facilitates the application of qualified security ideas and enables the community to address vulnerabilities more effectively. Additionally, because RISC-V lacks speculative memory access, it is inherently immune to hardware weaknesses like the Meltdown and Spectre vulnerabilities, enhancing security.",
-    "LLM_answer": "The open-source nature of RISC-V contributes to improved security by allowing for the easy application of qualified security ideas, enabling the integration of enhanced security measures at both hardware and software levels. This openness facilitates the development of a more secure architecture by eliminating vulnerabilities, such as speculative memory access, and supports better evaluations and more accurate comparisons of security implementations.",
-    "similarity_score": 0.94091796875
-  },
-  {
-    "question": "What is the significance of RISC-V's lack of speculative memory access in the context of Meltdown and Spectre vulnerabilities?",
-    "answer": "The lack of speculative memory access in RISC-V means that it does not perform the speculative execution that led to the Meltdown and Spectre vulnerabilities in other processors. As a result, RISC-V processors are inherently immune to these specific hardware vulnerabilities, which enhances the security of systems based on RISC-V architecture.",
-    "LLM_answer": "The significance of RISC-V's lack of speculative memory access lies in its ability to enhance security against vulnerabilities like Meltdown and Spectre. Both Meltdown and Spectre exploit speculative execution features in modern processors to gain unauthorized access to sensitive data. By not implementing speculative memory access, RISC-V architecture inherently reduces the attack surface for these types of vulnerabilities, making it a more secure architecture for computing systems.",
+    "question": "What is the main advantage of RISC architecture over CISC?",
+    "answer": "The main advantage of RISC architecture over CISC is that it simplifies command sets and handles access to memory with load-store commands, which allows the hardware to run faster.",
+    "LLM_answer": "The main advantage of RISC architecture over CISC is that RISC simplifies command sets, which leads to more homogeneous instruction lengths and execution times. This simplification allows for more efficient execution and performance, as RISC architectures emphasize a small, highly optimized instruction set.",
     "similarity_score": 0.94189453125
   },
   {
-    "question": "According to the paper, why have previous open-source hardware projects like OpenRISC and OpenSPARC been insufficient in creating a large open-source ecosystem?",
-    "answer": "Previous open-source hardware projects like OpenRISC and OpenSPARC have been insufficient because they lacked the necessary support and failed to gain widespread adoption. OpenRISC's development slowed over time, and projects like Debian dropped support due to reasons such as copyright issues. These projects did not attract enough attention or contributions to create a significant open-source ecosystem.",
-    "LLM_answer": "Previous open-source hardware projects like OpenRISC and OpenSPARC have been insufficient in creating a large open-source ecosystem because they have not been able to make significant improvements in the processor market, and they are unlike RISC-V, which paves the way for a more collaborative and innovative open-source hardware environment.",
-    "similarity_score": 0.9013671875
+    "question": "What is the significance of the RISC-V architecture being developed as an open source instruction set?",
+    "answer": "The significance of the RISC-V architecture being developed as an open source instruction set is that it allows communities and organizations to produce their own processors without license restrictions, fostering innovation and collaboration.",
+    "LLM_answer": "The significance of the RISC-V architecture being developed as an open source instruction set lies in its ability to simplify processor design and enable the creation of custom processors without licensing restrictions. This open-source nature promotes innovation and collaboration in the field of computing by allowing anyone to freely access, modify, and distribute the instruction set. It supports various configurations, including 32-bit, 64-bit, and 128-bit systems, and provides a standardized framework for designing computer processors and hardware. This openness can lead to more rapid advancements in technology, as developers and companies can build upon the RISC-V architecture without the constraints of proprietary systems, potentially leading to more diverse and optimized computing solutions.",
+    "similarity_score": 0.89453125
   },
   {
-    "question": "What future work is proposed in the paper to advance the development of MILIS Linux on RISC-V?",
-    "answer": "The future work proposed includes applying the work performed on the QEMU virtual machine to real hardware based on RISC-V processors, which will provide more accurate results and help identify components that need optimization. There is also a plan to explore alternative C libraries to Glibc, evaluate RISC-V support in the LLVM Compiler Infrastructure, and further explore kernel-level difficulties. Additionally, efforts will be made to secure funding for R&D studies and obtain RISC-V processors with different features for testing.",
-    "LLM_answer": "The future work proposed in the paper to advance the development of MILIS Linux on RISC-V includes the development of other variants, specifically considering 32-bit and 128-bit ISA configurations beyond the currently implemented 64-bit system.",
-    "similarity_score": 0.77197265625
+    "question": "What is the name of the open source operating system development project implemented as a base in the paper?",
+    "answer": "MILIS Linux",
+    "LLM_answer": "The name of the open source operating system development project implemented as a base in the paper is MILIS Linux.",
+    "similarity_score": 0.78369140625
   },
   {
-    "question": "How does the paper envision the impact of RISC-V and open-source operating systems on industry and academia?",
-    "answer": "The paper envisions that RISC-V and open-source operating systems will foster an open computing proposal, enabling more organizations to produce their own processors without license restrictions. This will promote innovation and collaboration in both industry and academia. Open-source hardware and software will facilitate more accurate comparisons, rapid contributions, and a more active development community, ultimately leading to advancements in computing technology.",
-    "LLM_answer": "The paper envisions that RISC-V and open-source operating systems will significantly impact both industry and academia by promoting innovation and collaboration. RISC-V, being a free and open-source instruction set architecture, allows for the development of custom processors without licensing restrictions, which can lead to a wider range of applications and enhanced security features. In academia, the RISC-V command set architecture mobilizes research efforts, enabling better evaluations and comparisons of hardware implementations. In industry, many companies are expected to adopt RISC-V, facilitating the creation of high-quality, open-source RISC-V implementations and fostering a more secure computing environment. Overall, the integration of RISC-V with open-source operating systems like MILIS Linux is anticipated to drive advancements in processor capabilities and support a diverse ecosystem of applications.",
-    "similarity_score": 0.92041015625
+    "question": "What are the target users of MILIS Linux?",
+    "answer": "The target users of MILIS Linux are primarily government agencies, commercial organizations, and private users.",
+    "LLM_answer": "The target users of MILIS Linux are primarily government agencies, commercial organizations, and private users who seek a free and easy-to-use operating system.",
+    "similarity_score": 0.91796875
   },
   {
-    "question": "What role do companies and institutions like Western Digital, IIT Madras, and ASELSAN play in the RISC-V ecosystem, according to the paper?",
-    "answer": "Companies and institutions like Western Digital, IIT Madras, and ASELSAN contribute to the RISC-V ecosystem by developing and using RISC-V-based processors, participating in the RISC-V Foundation, and collaborating on R&D projects. Western Digital, for example, is developing RISC-V processors for storage devices. IIT Madras and ASELSAN are involved in producing chips using RISC-V architecture and supporting the foundation's goals, helping to drive the adoption and advancement of RISC-V technology.",
-    "LLM_answer": "According to the paper, companies and institutions like Western Digital, IIT Madras, and ASELSAN play significant roles in the RISC-V ecosystem. Western Digital is actively developing and using the RISC-V processor architecture. IIT Madras and ASELSAN are members of the RISC-V Foundation, which promotes the adoption and development of RISC-V. ASELSAN is specifically noted as a silver member of the RISC-V Foundation and collaborates with Bilkent University to produce chips utilizing the RISC-V architecture.",
-    "similarity_score": 0.9638671875
+    "question": "What is the purpose of using QEMU in the development and testing of the OS for RISC-V?",
+    "answer": "The purpose of using QEMU in the development and testing of the OS for RISC-V is to emulate the RISC-V system, allowing for development and testing without the need for real hardware.",
+    "LLM_answer": "The purpose of using QEMU in the development and testing of the OS for RISC-V is to provide an open-source emulator and virtualization tool that allows developers to run virtual machines and emulate the RISC-V hardware architecture. This enables the development and testing of the operating system without the need for physical RISC-V hardware, facilitating a more efficient and accessible development process.",
+    "similarity_score": 0.94384765625
+  },
+  {
+    "question": "What version of the Linux kernel first included support for RISC-V?",
+    "answer": "The Linux kernel first included support for RISC-V in version 4.15.",
+    "LLM_answer": "The Linux kernel first included support for RISC-V in version 4.15.",
+    "similarity_score": 1.0
+  },
+  {
+    "question": "What is the role of the Berkley Bootloader (BBL) in the RISC-V project?",
+    "answer": "The role of the Berkley Bootloader (BBL) in the RISC-V project is to handle tasks such as starting and responding to timer interrupts, boot chain loading for Linux, and managing instructions that the RISC-V processor cannot handle directly in hardware.",
+    "LLM_answer": "The Berkeley Bootloader (BBL) plays a crucial role in the RISC-V project as a specialized bootloader designed specifically for the RISC-V architecture. It executes before an operating system runs, providing essential boot options and handling certain instructions that the RISC-V processor cannot manage directly in hardware. BBL directly links the Linux kernel binary into its ELF file, which distinguishes it from other bootloaders like GRUB or U-Boot. It also supports starting and response tasks to timer interrupts, facilitating the booting process and managing tasks related to timer interrupts and boot chain loading for the RISC-V architecture.",
+    "similarity_score": 0.904296875
+  },
+  {
+    "question": "What are the future work plans mentioned for the MILIS Linux project on RISC-V?",
+    "answer": "The future work plans mentioned for the MILIS Linux project on RISC-V include physical implementation and optimizations on real RISC-V hardware, evaluation of alternative libraries to Glibc, and further exploration of RISC-V porting for kernel level difficulties.",
+    "LLM_answer": "The future work plans for the MILIS Linux project on RISC-V include the development of other variants, specifically the 32-bit and 128-bit ISA configurations beyond the currently implemented 64-bit system. Additionally, more work is required for porting U-boot to RISC-V, and the project aims to enable port migration to create an open source and reliable user ecosystem on the Linux kernel.",
+    "similarity_score": 0.84033203125
   }
 ]

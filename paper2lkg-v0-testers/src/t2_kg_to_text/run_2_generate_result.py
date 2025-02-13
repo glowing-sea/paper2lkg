@@ -8,8 +8,15 @@ import os
 import json
 import time
 from datetime import datetime
-from FlagEmbedding import FlagModel
 import numpy as np
+
+
+import voyageai
+CURRENT_DIR = Path(__file__).parent.resolve()
+API_KEY_PATH = CURRENT_DIR / "./api_key.json"
+with open(API_KEY_PATH, "r") as f:
+    my_api_key= json.load(f)["api_key"]
+
 
 # Add packages to sys.path
 UTILITIES_RELATIVE_PATH = '../'
@@ -22,12 +29,10 @@ from utilities.paper_access import get_text, get_sentence_from_iri, get_section_
 from utilities.content_processor import check_existence_in_sentence, tokenise_text, lemmatise_text
 
 
-MODULE ='m03'
-STAGE = 4
 
 CURRENT_DIR = Path(__file__).parent.resolve()
 
-TOKEN_LIMIT = 8000
+TOKEN_LIMIT = 32000
 
 def run(DATASET, INDEX, LLM_MODEL):
 
@@ -45,9 +50,8 @@ def run(DATASET, INDEX, LLM_MODEL):
     with open(OLD_KG_PATH, "r") as f:
         paper = json.load(f)
 
-    model = FlagModel('BAAI/bge-m3',
-            query_instruction_for_retrieval="Represent this sentence for searching relevant passages:",
-            use_fp16=True)
+    vo = voyageai.Client(api_key=my_api_key)
+
     
     paper_text = []
     for section in paper['sections']:
@@ -55,18 +59,33 @@ def run(DATASET, INDEX, LLM_MODEL):
     paper_text = '\n\n'.join(paper_text)
     paper_text_tokens_count = len(tokenise_text(paper_text))
 
+    print(f"Paper text tokens count: {paper_text_tokens_count}")
+    generated_text = '\n\n'.join(paper['kg2text'][:len(paper['kg2text'])])
+    generated_text_tokens_count = len(tokenise_text(generated_text))
+    print(f"Generated text tokens count: {generated_text_tokens_count}")
+
+
     for i in range(len(paper['kg2text'])):
         generated_text = '\n\n'.join(paper['kg2text'][:len(paper['kg2text'])-i])
         generated_text_tokens_count = len(tokenise_text(generated_text))
         if generated_text_tokens_count < TOKEN_LIMIT:
-            break
+            if i == 0:
+                print("No truncate occurs")
+                break
+            else:
+                print("The text is truncate!!")
+                break
 
-    paper_text_embedding = model.encode(paper_text)
-    generated_text_embedding = model.encode(generated_text)
+    print(f"(New) Generated text tokens count: {generated_text_tokens_count}")
+
+
+    paper_text_embedding = vo.embed(paper_text, model="voyage-3").embeddings[0]
+    print(len(paper_text_embedding))
+    generated_text_embedding = vo.embed(generated_text, model="voyage-3").embeddings[0]
+    print(len(generated_text_embedding))
 
     similarity = np.dot(paper_text_embedding, generated_text_embedding) / (np.linalg.norm(paper_text_embedding) * np.linalg.norm(generated_text_embedding))
-
-
+    # similarity = 1
 
     # =============================================================================
 
@@ -77,8 +96,6 @@ def run(DATASET, INDEX, LLM_MODEL):
     # print(generated_text)
 
 
-    print(f"Paper text tokens count: {paper_text_tokens_count}")
-    print(f"Generated text tokens count: {generated_text_tokens_count}")
     print(f"Similarity: {similarity}")
 
 
@@ -89,15 +106,15 @@ def run(DATASET, INDEX, LLM_MODEL):
     
 
 if __name__ == "__main__":
-    DATASET = "SciERC"
-    LLM_MODEL = "g"
-    PAPER_COUNTS = 100
+    DATASET = "ASKG"
+    LLM_MODEL = "l"
+    PAPER_INDICES = range(1,11)
 
 
     RESULT = CURRENT_DIR / f"../../data/raw_results/re_{DATASET}_{LLM_MODEL}.json"
     similarities = []
     result = {}
-    for INDEX in range(1, PAPER_COUNTS + 1):
+    for INDEX in PAPER_INDICES:
         similarities.append(run(DATASET, INDEX, LLM_MODEL))
 
     result["similarities"] = similarities

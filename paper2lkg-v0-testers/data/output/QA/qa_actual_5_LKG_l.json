@@ -1,62 +1,62 @@
 [
   {
-    "question": "What is the main objective of the paper?",
-    "answer": "The main objective of the paper is to apply a data mining model to analyze the 2019 grant applications submitted to an Australian Government research funding agency to investigate whether grant schemes successfully identify innovative project proposals.",
-    "LLM_answer": "The main objective of the paper is to present a pipeline for analysing grant applications.",
-    "similarity_score": 0.74755859375
+    "question": "What is the primary goal of applying a data mining model to the 2019 grant applications as described in the paper?",
+    "answer": "The primary goal is to predict high IC-score research proposals based on the IC scores assigned by expert reviewers and to develop a predictive vocabulary for contemporaneous proposals.",
+    "LLM_answer": "The primary goal of applying a data mining model to the 2019 grant applications, as described in the paper, is to predict high IC-score research proposals and understand the vocabulary of innovative grant applications. This involves using a Random Forest classifier with features denoting the presence or absence of unigrams, encoded with a modified Term Frequency-Inverse Document Frequency (TF-IDF) algorithm, to assist in the manual review of research proposals and help human evaluators better screen excellent research proposals.",
+    "similarity_score": 0.68115234375
   },
   {
-    "question": "Which data mining model did the authors propose as having the best performance?",
-    "answer": "The authors proposed a Random Forest classifier over documents encoded with features denoting the presence or absence of unigrams, using a modified TF-IDF algorithm that only implements the IDF part.",
-    "LLM_answer": "The authors proposed a data mining model that uses a Random Forest (RF) classifier, which achieved the best performance with an accuracy of 84.17% across all types of grant applications.",
-    "similarity_score": 0.73193359375
+    "question": "Which classifiers are used for experimental comparison in the study?",
+    "answer": "The Decision Tree (DT) and Random Forest (RF) classifiers are used for experimental comparison.",
+    "LLM_answer": "The study uses classifiers that are compared to those referenced in [2]. However, the specific classifiers used for experimental comparison are not explicitly listed in the provided resources.",
+    "similarity_score": 0.77978515625
   },
   {
-    "question": "How did the authors modify the traditional TF-IDF algorithm in their feature extraction technique?",
-    "answer": "They modified the TF-IDF algorithm by only implementing the IDF part. Specifically, if a term exists at least once in the documents, they assign the IDF value to it; otherwise, they assign a value of zero. They do not consider term frequency in their encoding.",
-    "LLM_answer": "The authors modified the traditional TF-IDF algorithm by proposing an intra-class dispersion algorithm, which adjusts term weights in documents to increase the importance of rare but significant words while decreasing the weightage of frequent but less important words.",
-    "similarity_score": 0.7724609375
+    "question": "What is the accuracy achieved by the proposed model for predicting high IC-score research proposals?",
+    "answer": "The proposed model achieves an accuracy of 84.17% across all types of grant applications.",
+    "LLM_answer": "The proposed model achieves an accuracy of 84.17% for predicting high IC-score research proposals.",
+    "similarity_score": 0.82470703125
   },
   {
-    "question": "What accuracy did the proposed model achieve across all types of grant applications?",
-    "answer": "The proposed model achieved an accuracy of 84.17% across all types of grant applications.",
-    "LLM_answer": "The accuracy achieved by the proposed model across all types of grant applications is not explicitly stated in the provided resources.",
-    "similarity_score": 0.671875
+    "question": "What is the modified TF-IDF algorithm proposed in the paper and how does it differ from the traditional TF-IDF?",
+    "answer": "The modified TF-IDF algorithm only implements the IDF part of TF-IDF, assigning the IDF value to a term if it exists in the documents and a value of 0 if it does not. This differs from the traditional TF-IDF, which uses both term frequency (TF) and inverse document frequency (IDF).",
+    "LLM_answer": "The paper proposes a modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm, which is a statistical method used to weight the importance of terms in a document or corpus based on their frequency and rarity across all documents. This modified TF-IDF algorithm differs from the traditional TF-IDF by incorporating an intra-class dispersion algorithm. The intra-class dispersion algorithm adjusts term weights in documents to increase the importance of rare but significant words and decrease the weightage of frequent but less important words. This modification aims to improve the effectiveness of the TF-IDF algorithm in information retrieval and data mining tasks.",
+    "similarity_score": 0.828125
   },
   {
-    "question": "Why did the authors focus on the presence or absence of unigrams in their feature encoding?",
-    "answer": "They focused on unigrams because unigrams are the most common choice for text classification tasks, and they wanted an efficient feature extraction technique that highlights the vocabulary of innovative proposals.",
-    "LLM_answer": "The authors focused on the presence or absence of unigrams in their feature encoding because unigrams are the most common choice for text classification. They utilized a Random Forest classifier that classifies documents based on features denoting the presence or absence of unigrams, which are encoded using a modified Term Frequency - Inverse Document Frequency (TF-IDF) algorithm.",
-    "similarity_score": 0.779296875
+    "question": "What is the median IC score of the research proposals in the dataset?",
+    "answer": "The median IC score of the research proposals is 5.0.",
+    "LLM_answer": "The median IC score of the research proposals in the dataset is not explicitly provided in the given resources. However, it is mentioned that the median IC score is based on 'the selection range,' which refers to the range of research proposals with moderate IC scores (15%~85%). To find the exact median IC score, one would need to refer to the specific data or tables in the academic paper, such as Table 1, which shows statistics of IC scores.",
+    "similarity_score": 0.732421875
   },
   {
-    "question": "What were the main contributions of the paper?",
-    "answer": "The main contributions include: providing a rigorous experimental pipeline for analyzing grant applications; proposing a Random Forest classifier over documents encoded with presence or absence of unigram terms using a modified TF-IDF algorithm; and demonstrating that the proposed model achieved an accuracy of 84.17% across all types of grant applications.",
-    "LLM_answer": "The main contributions of the paper include the presentation of a rigorous experimental pipeline for analysing grant applications and the proposal of a data mining model using a Random Forest classifier over documents encoded with features denoting the presence or absence of unigram terms.",
-    "similarity_score": 0.90625
+    "question": "What text pre-processing techniques are applied to the grant applications?",
+    "answer": "The text pre-processing techniques include converting all characters to lowercase, removing numbers, removing punctuations, tokenizing by whitespace, deleting stop words, and applying text stemming using the Porter Stemming algorithm.",
+    "LLM_answer": "The text pre-processing techniques applied to the grant applications include converting all characters into lowercase, removing numbers and punctuations, tokenizing by whitespace, deleting stop words with an IDF value less than 1.0, and applying the Porter Stemming algorithm.",
+    "similarity_score": 0.92236328125
   },
   {
-    "question": "What is the significance of using only the IDF part in their modified TF-IDF algorithm?",
-    "answer": "By using only the IDF part, the authors aimed to focus on rare terms that can define innovativeness, under the idea that rare but important words are more indicative of innovative proposals.",
-    "LLM_answer": "The significance of using only the IDF part in their modified TF-IDF algorithm lies in its ability to adjust term weights in documents, prioritizing rare yet informative terms over common ones. This approach helps to enhance the relevance of the extracted features, particularly in contexts like data mining and information retrieval, where distinguishing important terms from less significant ones is crucial.",
-    "similarity_score": 0.71435546875
+    "question": "What is the purpose of the Metadata Extractor & Loader (MEL) tool mentioned in the paper?",
+    "answer": "The MEL tool is used to extract text from PDF research proposals and save it in a JSON file with metadata sets and content.",
+    "LLM_answer": "The purpose of the Metadata Extractor & Loader (MEL) tool mentioned in the paper is to extract text from PDF files and save it in a JSON file with metadata sets and content.",
+    "similarity_score": 0.90869140625
   },
   {
-    "question": "What data set did the authors use for their analysis?",
-    "answer": "They used the 2019 grant applications submitted to an Australian Government research funding agency, consisting of 3,805 research proposals with peer-reviewed 'innovation and creativity' (IC) scores.",
-    "LLM_answer": "The authors used the 2019 grant applications submitted to an Australian Government research funding agency for their analysis.",
-    "similarity_score": 0.841796875
+    "question": "What are the evaluation metrics used to assess the performance of the data mining models?",
+    "answer": "The evaluation metrics used are classification accuracy (Acc) and F1 score.",
+    "LLM_answer": "The resources provided do not explicitly mention the specific evaluation metrics used to assess the performance of the data mining models. However, evaluation metrics generally refer to quantifiable standards used to assess and compare the quality or effectiveness of a system, process, or outcome. In the context of data mining models, common evaluation metrics might include accuracy, precision, recall, F1-score, and area under the ROC curve (AUC), among others. To determine the exact metrics used in the paper, one would need to refer to the specific sections of the paper that discuss model evaluation.",
+    "similarity_score": 0.7626953125
   },
   {
-    "question": "What text pre-processing techniques were applied in the study?",
-    "answer": "The text pre-processing techniques included converting all text to lowercase, removing numbers and punctuation, tokenizing by whitespace, deleting stop words based on IDF values, and applying text stemming using the Porter Stemming algorithm.",
-    "LLM_answer": "The provided resources do not contain specific information about the text pre-processing techniques applied in the study.",
-    "similarity_score": 0.5888671875
+    "question": "What is the range of IC scores considered for low IC-score research proposals in the experiments?",
+    "answer": "The range of IC scores considered for low IC-score research proposals is 0~15%.",
+    "LLM_answer": "The range of IC scores considered for low IC-score research proposals in the experiments is 0~15%.",
+    "similarity_score": 0.978515625
   },
   {
-    "question": "What future work did the authors suggest?",
-    "answer": "The authors suggested considering other evaluation scores to build a more comprehensive system, applying other effective data mining models like SVM, AdaBoost, and XGBoost, and exploring pre-trained language models in NLP to better understand text semantics. They also mentioned building a long-term model to predict future grant applications.",
-    "LLM_answer": "The provided resources do not contain specific information about the future work suggested by the authors.",
-    "similarity_score": 0.59814453125
+    "question": "What is the accuracy of the proposed model when applied to the 'Innovation and Creativity statement' sections of Ideas Grants?",
+    "answer": "The proposed model achieves an accuracy of 68.33% when applied to the 'Innovation and Creativity statement' sections of Ideas Grants.",
+    "LLM_answer": "The resources provided do not include specific information about the accuracy of the proposed model when applied to the 'Innovation and Creativity statement' sections of Ideas Grants. Additional details from the paper would be needed to determine the accuracy value.",
+    "similarity_score": 0.7001953125
   }
 ]

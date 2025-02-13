@@ -114,9 +114,9 @@ def m07(dataset, paper_index, model_name):
 
 if __name__ == '__main__':
 
-    DATASET = "test"
-    MODEL = "g"
-    PAPER_INDEX = 6
+    DATASET = "ASKG"
+    MODEL = "l"
+    PAPER_INDEX = 10
 
     m01(DATASET, PAPER_INDEX)
     m02()

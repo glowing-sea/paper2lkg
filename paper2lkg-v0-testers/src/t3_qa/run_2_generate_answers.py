@@ -281,8 +281,8 @@ if __name__ == "__main__":
     METHOD = "LKG"
     # METHOD = "DDM"
 
-    LLM_MODEL = "l"
-    # LLM_MODEL = "g"
+    # LLM_MODEL = "l"
+    LLM_MODEL = "g"
 
     for i in range(1,6):
         run(METHOD, i, LLM_MODEL)

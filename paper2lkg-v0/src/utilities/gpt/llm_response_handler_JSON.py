@@ -8,6 +8,17 @@ import json
 from datetime import datetime
 from nltk.tokenize import word_tokenize
 # nltk.download('punkt') # For sentence tokenizer
+from pathlib import Path
+
+
+import openai
+
+CURRENT_DIR = Path(__file__).parent.resolve()
+API_KEY_PATH = CURRENT_DIR / "./api_key.json"
+
+with open(API_KEY_PATH, "r") as f:
+    openai.api_key = json.load(f)["api_key"]
+
 
 CONTEXT_LIMIT = 8192
 PROMPT_LIMIT = CONTEXT_LIMIT // 2
@@ -21,10 +32,7 @@ def initialise_llm():
     """
     Initialise the LLM model.
     """
-    model = GPT4All(
-    model_name="Meta-Llama-3-8B-Instruct.Q4_0.gguf",
-    device="cuda",
-    n_ctx=CONTEXT_LIMIT) # downloads / loads a 4.66GB LLM
+    model = None
     return model
 
 
@@ -42,9 +50,7 @@ def call_llm_and_return_JSON(model, prompt, check_messages=[], initial_temp=0.2)
 
     # Check the token length of the prompt
     prompt_length = len(word_tokenize(prompt))
-    if prompt_length > CONTEXT_LIMIT / 2:
-        return None, f"Error: The token length of the prompt is too long (> {PROMPT_LIMIT}).", "No response"
-
+    
     log = ""
 
     # Try three times
@@ -55,12 +61,20 @@ def call_llm_and_return_JSON(model, prompt, check_messages=[], initial_temp=0.2)
 
         responses = []
 
-        # Call the LLM model
-        with model.chat_session():
-            responses.append(model.generate(prompt, max_tokens=RESPONSE_LIMIT, temp=temps[i], top_p=top_ps[i]))
-            for message in check_messages:
-                responses.append(model.generate(message, max_tokens=RESPONSE_LIMIT, temp=0.7, top_p=0.4))
-        
+        response = openai.chat.completions.create(
+            model="gpt-4o-mini",
+            temperature=temps[i],
+            top_p=top_ps[i],
+            max_completion_tokens=RESPONSE_LIMIT,
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
+        responses.append(response.choices[0].message.content)
 
         response_length = 0
         list_parsed = None
@@ -99,11 +113,11 @@ if __name__ == "__main__":
     model = initialise_llm()
 
     prompt = 'List some fruits in JSON format'
-    list_parsed, log = call_llm_and_return_JSON(model, prompt)
+    list_parsed, log, _ = call_llm_and_return_JSON(model, prompt)
     print(log)
     print("\n\n\n\n")
 
     prompt = "List some fruits in JSON format"
-    list_parsed, log = call_llm_and_return_JSON(model, prompt)
+    list_parsed, log, _ = call_llm_and_return_JSON(model, prompt)
     print(log)
     print("\n\n\n\n")

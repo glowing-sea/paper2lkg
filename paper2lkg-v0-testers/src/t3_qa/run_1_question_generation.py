@@ -57,7 +57,6 @@ def run(DATASET, INDEX, LLM_MODEL):
 if __name__ == "__main__":
     DATASET = "ASKG"
     LLM_MODEL = "l"
-    INDEX = 3
+    INDEX = 5
 
     run(DATASET, INDEX, LLM_MODEL)
-

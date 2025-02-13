@@ -1,0 +1,1274 @@
+{
+  "iri": "Paper-BCI_Ontology_A_Context-based_Sense_and_Actuation_Model_for_Brain-Computer_Interactions",
+  "title": "BCI Ontology: A Context-based Sense and Actuation Model for Brain-Computer Interactions",
+  "authors": [
+    "Sergio Jos\u00e9 Rodr\u00edguez M\u00e9ndez",
+    "John K. Zao"
+  ],
+  "keywords": [
+    "Brain-Computer Interaction",
+    "Ontology",
+    "Sense-Actuation Model",
+    "Context-based",
+    "Context-awareness",
+    "Internet of Things"
+  ],
+  "sections": [
+    {
+      "iri": "Section-1",
+      "subtitle": "Abstract",
+      "paragraphs": [
+        {
+          "iri": "Section-1-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-1",
+              "text": "Key developments in wearable sensors, wireless networks, and distributed computing will largely enable Brain-Computer Interaction (BCI) as a powerful, natural and intuitive mainstream human-computer interaction in real-world activities."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-2",
+              "text": "BCI systems annotate the sensed signals in order to classify the analysis of brain states and dynamics in diverse daily-life circumstances."
+            },
+            {
+              "iri": "Section-1-Paragraph-1-Sentence-3",
+              "text": "There is no complete and standardized formal semantic structure to model the BCI metadata annotations, which are essential to capture the descriptive and predictive features of the brain signals."
+            }
+          ]
+        },
+        {
+          "iri": "Section-1-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-1",
+              "text": "We present the BCI Ontology (BCI-O): the first OWL 2 ontology that formalizes relevant metadata for BCI data capture activities by integrating BCI-domain-specific Sense and Actuation Models along with a novel Context Model for describing any kind of real or virtual environments."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-2",
+              "text": "At its core, BCI-O defines a human-environment interaction model for any BCI, based on design patterns and primarily aligned to the SOSA/SSN, SAN-IoT-O, and DUL ontologies."
+            },
+            {
+              "iri": "Section-1-Paragraph-2-Sentence-3",
+              "text": "Its axiomatizations aid BCI systems to implement an ontological overlay upon vast data recording collections to support semantic query constructions to perform Adaptive BCI and reasoning for situation-specific data analytics to apply inference rules for Transfer Learning in multimodal classification."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-2",
+      "subtitle": "Introduction",
+      "paragraphs": [
+        {
+          "iri": "Section-2-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-1",
+              "text": "Brain-Computer Interfaces (BCI) are electronic systems that are used to determine a user\u2019s brain states by collecting and analyzing her neuro-physiological signals including electroencephalogram (EEG), electrocardiogram (ECG), electrooculogram (EOG) and then actuating specific responses, for example to drive her wheelchair or fight against her drowsiness."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-2",
+              "text": "Machine Learning (ML) and Deep Learning (DL) techniques are commonly used to analyze those biological signals, which are highly situation and individual dependent, and non-stationary in characteristics, in order to classify her brain states."
+            },
+            {
+              "iri": "Section-2-Paragraph-1-Sentence-3",
+              "text": "Lack of training data from individual users and comparable features among different users often hamper the accuracy and usefulness of BCI systems in real-world applications."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-1",
+              "text": "In a project in the research area of Advanced Computational Approaches under the Cognition and Neuroergonomics Collaborative Technology Alliance (CaN-CTA) program sponsored by the U.S. Army Research Laboratory (ARL), the Pervasive Embedding Technologies (PET) Lab in the National Chiao-Tung University (NCTU) in Taiwan has the chance to work with the Swartz Center for Computational Neuroscience (SCCN) in the University of California in San Diego (UCSD) to develop a semantic model that can aid the search for correlated neuro-physiological features for characterizing an individual\u2019s cognitive states including fatigue, vigilance and enlightenment and the gathering of useful data sets for conducting interpersonal Transfer Learning."
+            },
+            {
+              "iri": "Section-2-Paragraph-2-Sentence-2",
+              "text": "This BCI Ontology was a product of that research project."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-1",
+              "text": "The project took a bottom-up approach; the SCCN team developed two sets of metadata vocabulary: the EEG Study Schema (ESS) and the Hierarchical Event Descriptor (HED) to describe the settings of the neuro-physiological recording and the specification of the neuro-physiological events respectively."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-2",
+              "text": "Collectively, they were referred to as the BCI metadata."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-3",
+              "text": "As the teams began to expand these metadata to cover more BCI experiments, the need to develop an ontological structure became obvious not only to accommodate future expansion of the vocabulary but also to specify the semantic relations among these concepts."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-4",
+              "text": "Most notably, the syntax of HED 2 started to resemble the RDF format."
+            },
+            {
+              "iri": "Section-2-Paragraph-3-Sentence-5",
+              "text": "Subsequent development of the BCI Ontology (BCI-O), the semantic data repository and the federated SPARQL search all took place in NCTU with the results fed back to UCSD and ARL."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-1",
+              "text": "In order to employ BCI-O to accomplish the two goals mentioned above, the neuro-physiological signals/data sets collected from the experiments need to be processed for feature extraction and preliminary classification using existing ML algorithms."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-2",
+              "text": "In the task of gathering data sets for Transfer Learning, inference rules shall be in place to specify the criteria of selecting data sets classified by existing algorithms for the learning process."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-3",
+              "text": "In the task of deducing the correlated interpersonal features, the relations among the extracted features from different individuals shall be discovered through semantic search."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-4",
+              "text": "Since BCI is a type of sensor-actuator system, it is only proper to align BCI-O with the W3C Semantic Sensor Network (SSN) and Sensor, Observation, Sample, and Actuator (SOSA) frameworks."
+            },
+            {
+              "iri": "Section-2-Paragraph-4-Sentence-5",
+              "text": "Because many BCI devices are connected to the Internet, BCI-O should also be aligned with the ontology for the Internet-of-Things (IoT-O)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-1",
+              "text": "An important contribution we made was the introduction of the concepts of context and contextual relations into BCI-O."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-2",
+              "text": "The characteristics of biological and neurophysiological signals are known to be highly situation or context dependent."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-3",
+              "text": "User\u2019s physical conditions, time of day, environmental conditions can also affect the signals."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-4",
+              "text": "In order to include these factors in the search for the correlated interpersonal features and the relevant data sets for Transfer Learning, we incorporated the core concepts of the UNITY world model for game development into BCI-O."
+            },
+            {
+              "iri": "Section-2-Paragraph-5-Sentence-5",
+              "text": "We followed the human-environment interaction model in Human-Computer Interaction (HCI) to integrate the concepts of context with those of sense and actuation."
+            }
+          ]
+        },
+        {
+          "iri": "Section-2-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-1",
+              "text": "In the rest of this paper, the BCI metadata for context, multi-modal data, and event annotations were first depicted."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-2",
+              "text": "The structure, design principle, engineering and applications were then explained in subsequent sections."
+            },
+            {
+              "iri": "Section-2-Paragraph-6-Sentence-3",
+              "text": "Lastly, the main contribution and future work were summarized in the conclusion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-3",
+      "subtitle": "Overview",
+      "paragraphs": [
+        {
+          "iri": "Section-3-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-1-Sentence-1",
+              "text": "Real-world multimodal BCI may be decomposed into the following modeling artifacts: wearing a set of sensors and/or through actuators, human beings interact with an environment while performing real-world activities, where stimuli triggered by contextual events are observed, recorded, and marked in the sensed multimodal BCI data."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-1",
+              "text": "At its core, BCI-O defines the conceptual components in any BCI through a bidirectional subject-context interaction model: a Sense Model (context to subject) and an Actuation Model (subject to context), as depicted in the relevant figure."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-2",
+              "text": "The design principle underlying this interaction model is described in section 4."
+            },
+            {
+              "iri": "Section-3-Paragraph-2-Sentence-3",
+              "text": "However, its structure can be summarized in the following way: the Sense Model is based on the Stimulus-Sensor-Observation Ontology Design Pattern and aligned to the SOSA/SSN upper ontologies, whilst the Actuation Model is based on the Actuation-Actuator-Effect ODP and aligned to both SOSA and SAN upper ontologies."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-1",
+              "text": "Two distinct conceptual domains are found in this model: the BCI domain (observations, actuation, and interactions) and the context domain (surroundings)."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-2",
+              "text": "The context domain concepts are based on the gaming architectural modeling of the Unity framework."
+            },
+            {
+              "iri": "Section-3-Paragraph-3-Sentence-3",
+              "text": "The BCI domain concepts were taken from the following semi-structured standard vocabularies and formats."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-1",
+              "text": "Extensible Data Format (XDF) is a general-purpose container format for multi-channel time series data with extensive associated meta-information stored as XML, called 'XDF Metadata Schemes'."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-2",
+              "text": "XDF is tailored towards bio-signal data but can easily hold data with high sampling rates or high numbers of channels."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-3",
+              "text": "EEG Study Schema (ESS) is an XML-based specification that holds a metadata hierarchy for describing and documenting electrophysiological studies and their raw recorded data."
+            },
+            {
+              "iri": "Section-3-Paragraph-4-Sentence-4",
+              "text": "Hierarchical Event Descriptor Tags for Analysis of Event-Related EEG Studies defines a hierarchy of standard and extended descriptors for EEG experimental events that provides a uniform human- and machine-readable interface."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-1",
+              "text": "In the BCI domain, after collecting multimodal data from a subject, systems proceed to annotate the data with descriptive and predictive parameters."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-2",
+              "text": "The descriptive features explain the interaction model settings of the data, whereas the predictive features provide important input to classification models for adaptive BCI."
+            },
+            {
+              "iri": "Section-3-Paragraph-5-Sentence-3",
+              "text": "In the BCI domain, context corresponds to the same concept as in HCI literature."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-6-Sentence-1",
+              "text": "Due to its orientation on real-world BCI, the ontology's main design objectives are: defining core, generic, and relevant consensual concepts about BCI data capture activities, developing a machine-readable BCI semantic model for software agents' interoperability, and ensuring simplicity, extensibility, and reusability."
+            }
+          ]
+        },
+        {
+          "iri": "Section-3-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-1",
+              "text": "BCI-O structure depicts a conceptual framework that BCI systems can extend and use in their implementations."
+            },
+            {
+              "iri": "Section-3-Paragraph-7-Sentence-2",
+              "text": "The BCI-O namespace is https://w3id.org/BCI-ontology#."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-4",
+      "subtitle": "Ontology Structure",
+      "paragraphs": [
+        {
+          "iri": "Section-4-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-1",
+              "text": "BCI-O concepts are grouped into several modules."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-2",
+              "text": "Each module represents a key topic that gives a consistent explanation of its correspondent functional aspect in the mentioned BCI interaction model."
+            },
+            {
+              "iri": "Section-4-Paragraph-1-Sentence-3",
+              "text": "Following are presented a brief description of the modules and their core concepts."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-1",
+              "text": "Subject defines a human being engaging in an activity and its associated state."
+            },
+            {
+              "iri": "Section-4-Paragraph-2-Sentence-2",
+              "text": "The subject defines a person with certain attributes, equivalent to Patient in the HL7 standard."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-1",
+              "text": "Context captures the architectural description of a physical or virtual environment."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-2",
+              "text": "Its modeling is based on a sequence of scenes, each one depicting a collection of spatially located entities interacting with one another in a specific way."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-3",
+              "text": "These conceptual components enable the structural, functional, and temporal complexity definitions of any environment."
+            },
+            {
+              "iri": "Section-4-Paragraph-3-Sentence-4",
+              "text": "Under the event classification, BCI-O defines three key concepts that bind the contextual integration with its Sense and Actuation Models: a stimulus to the subject, an action issued by a subject while performing an activity, and an effect in the context as the result of an actuation."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-1",
+              "text": "Session represents the interaction between a subject and a context while performing a single activity under specific settings and conditions."
+            },
+            {
+              "iri": "Section-4-Paragraph-4-Sentence-2",
+              "text": "A session groups both observations and actuations."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-1",
+              "text": "Sense Model describes the contextual input data and events to the subject."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-2",
+              "text": "Observations are specific concepts aligned to the axioms for modeling observations."
+            },
+            {
+              "iri": "Section-4-Paragraph-5-Sentence-3",
+              "text": "These are related to a single observation, modality types, interpretation aspects, channeling schema information, recorded data as sensor output streams, and stimulus events."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-1",
+              "text": "Sensors are specific concepts aligned to the axioms for modeling sensors under observations."
+            },
+            {
+              "iri": "Section-4-Paragraph-6-Sentence-2",
+              "text": "These are related to devices, their channeling schema, and their specifications."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-7-Sentence-1",
+              "text": "System Capabilities are specific concepts aligned to the horizontal segmentation module for system capabilities."
+            },
+            {
+              "iri": "Section-4-Paragraph-7-Sentence-2",
+              "text": "They are about logical components of a channeling schema's data structure model and other measurement properties."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-1",
+              "text": "Results are specific concepts aligned to the axioms for modeling results."
+            },
+            {
+              "iri": "Section-4-Paragraph-8-Sentence-2",
+              "text": "They include data blocks and recorded data, with actuation results also included in this module."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-1",
+              "text": "Actuation Model depicts how the subject can interact with the context."
+            },
+            {
+              "iri": "Section-4-Paragraph-9-Sentence-2",
+              "text": "Its main concepts are actuation and actuator."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-10-Sentence-1",
+              "text": "Annotation Tag includes event markers based on context stimuli and response markers based on machine learning models for annotations on specific data segments."
+            },
+            {
+              "iri": "Section-4-Paragraph-10-Sentence-2",
+              "text": "These define the predictive data features, while the previously mentioned modules explain the descriptive data features."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-11-Sentence-1",
+              "text": "Descriptor defines an external resource set that extends and/or complements the description associated with relevant entities defined in BCI-O."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-12",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-12-Sentence-1",
+              "text": "EEG concepts for EEG applications represent EEG subtypes for channel, device, modality, and record."
+            },
+            {
+              "iri": "Section-4-Paragraph-12-Sentence-2",
+              "text": "The instant and interval concepts were borrowed from the W3C OWL-Time ontology."
+            },
+            {
+              "iri": "Section-4-Paragraph-12-Sentence-3",
+              "text": "URI locators to external resources and raw data can be used for accessing and indexing purposes."
+            },
+            {
+              "iri": "Section-4-Paragraph-12-Sentence-4",
+              "text": "BCI systems can express interoperable models extending BCI-O, which is useful in machine-to-machine environments."
+            }
+          ]
+        },
+        {
+          "iri": "Section-4-Paragraph-13",
+          "sentences": [
+            {
+              "iri": "Section-4-Paragraph-13-Sentence-1",
+              "text": "The specification leaves open the way in which applications handle the semantic expressiveness level for measurement units and the procedure concept extension."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-5",
+      "subtitle": "Design Principle",
+      "paragraphs": [
+        {
+          "iri": "Section-5-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-1",
+              "text": "The Semantic Sensor Network (SSN), along with its self-contained core ontology SOSA (Sensor, Observation, Sample, and Actuator), is a standard framework ontology that BCI-O further extends for the BCI domain."
+            },
+            {
+              "iri": "Section-5-Paragraph-1-Sentence-2",
+              "text": "SOSA/SSN gives BCI-O the conceptual template and structure for both its Sense and Actuation Models, describing functional aspects of any BCI data capture activity."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-1",
+              "text": "4.1 Sense Model: SOSA/SSN Ontologies & SSO Design Pattern"
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-2",
+              "text": "Besides the general benefits of SSN, BCI-O's Sense Model leverages it in the following ways:"
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-3",
+              "text": "BCI systems can be considered as specialized sensor networks; SOSA/SSN helps to improve their semantic interoperability and integration."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-4",
+              "text": "As a Linked Sensor Data standard, SSN helps to connect the IoT and the Internet of Services layers, which is of special interest to BCI in M2M environments."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-5",
+              "text": "SOSA/SSN supports different views related to BCI systems architecture, which can be centered around sensors (capabilities), observations (what was observed and how), and features and properties (how to observe them)."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-6",
+              "text": "SSN provides a foundation for describing sensor networks as Web applications: real-time data processing from Web-of-Things sensors, which is a characteristic of BCI systems."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-7",
+              "text": "The SSN Skeleton module describes the Stimulus-Sensor-Observation (SSO) ontology design pattern, which forms the top-level of SSN."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-8",
+              "text": "BCI-O's Sense Model key concepts were first built aligned to SSO and later remapped to other frameworks."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-9",
+              "text": "Not only is SSO suitable for event/situation based data logging, but due to its generic and reusable structure, this pattern is intended for observation-related ontologies and for observation-based data on the Semantic Web."
+            },
+            {
+              "iri": "Section-5-Paragraph-2-Sentence-10",
+              "text": "Thus, it conforms a natural design structure for the BCI-O's Sense Model."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-1",
+              "text": "4.2 Actuation Model: SOSA + SAN Ontologies & AAE Design Pattern (IoT-O)"
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-2",
+              "text": "BCI-O's Actuation Model is based on the bci:Actuation and bci:Actuator abstractions."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-3",
+              "text": "In the IoT community, the Semantic Actuator Network (SAN) has been proposed as an upper ontology for IoT-O."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-4",
+              "text": "SAN is built around the Actuation-Actuator-Effect (AAE) ontology design pattern."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-5",
+              "text": "BCI-O's Actuation Model integrates carefully both standard axiomatization models for actuations, developed by W3C/OGC and IoT communities."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-6",
+              "text": "Thus, its structure follows closely the AAE ODP while aligning to SOSA/SSN and SAN."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-7",
+              "text": "As part of the BCI-O's Actuation Model development, we raised the issue to the W3C Spatial Data on the Web Working Group regarding the mapping of SOSA/SSN to AAE ODP, due to their structural resemblance."
+            },
+            {
+              "iri": "Section-5-Paragraph-3-Sentence-8",
+              "text": "Figures show BCI-O's Actuation Model alignment perspective to SOSA/SSN and its alignment perspective to SAN (IoT-O) following the AAE ODP."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-1",
+              "text": "4.3 Design Approach: Ontology Alignments"
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-2",
+              "text": "BCI-O's basic design principle can be depicted as a three-layered architecture of an ontology library, with the following structure: the foundational layer (DUL), the core layer (SOSA/SSN + SAN), and the domain layer (BCI-O)."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-3",
+              "text": "Thus, as an example, the participation foundational design pattern fits in the following way: objects dul:Object leads to sosa:Sensor leads to bci:Device."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-4",
+              "text": "For objects, dbp:Person or dul:NaturalPerson leads to bci:Subject."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-5",
+              "text": "For events, dul:Event leads to ssn:Stimulus leads to bci:StimulusEvent."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-6",
+              "text": "For events, dul:Event leads to sosa:Observation leads to bci:Record."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-7",
+              "text": "For spatial-temporal location, dul:Situation leads to either bci:Session, bci:Context, or bci:Context.Scene."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-8",
+              "text": "Based on the SSO ODP, the domain level concepts of the Sense Model were specialized initially from the SSN Skeleton module, following a similar alignment scheme that this one had with DUL."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-9",
+              "text": "Due to its alignment with the initial SSN version, BCI-O was documented as part of the analysis on the usage of SSN, as one of the ontologies that reuse SSN."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-10",
+              "text": "Subsequently, BCI-O's Sense Model was re-aligned to the Dolce-Ultralite (DUL) Alignment Module of the SOSA/SSN Vertical Segmentation."
+            },
+            {
+              "iri": "Section-5-Paragraph-4-Sentence-11",
+              "text": "SSO-based core alignments include: Stimulus, which is a detectable change in the environment that triggers the sensors to perform observations; Sensor, which is an object that performs observations to measure certain observable properties; and Observation, which is a multi-dimensional event that captures information about the stimulus, sensor, its output, and the spatial-temporal specification of the sensing activity."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-1",
+              "text": "Based on the AAE ODP, the domain level concepts of the Actuation Model were aligned initially to SOSA/SSN."
+            },
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-2",
+              "text": "Afterwards, they were integrated with proper alignments to SAN (IoT-O), following closely their axiomatization satisfiability."
+            },
+            {
+              "iri": "Section-5-Paragraph-5-Sentence-3",
+              "text": "BCI-O's AAE-based core alignments include: Actuation, which carries out a procedure to change the state of the context using an actuator; Actuator, which is a device that is used by, or implements, an actuation that changes the state of the context; and Effect, which is any kind of physical modification induced by an actuator."
+            }
+          ]
+        },
+        {
+          "iri": "Section-5-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-1",
+              "text": "4.4 Context Model: Unity's Gaming High-Level Modeling Architecture"
+            },
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-2",
+              "text": "BCI-O's Context Model was built based on relevant abstractions curated from the gaming architectural modeling of the Unity framework."
+            },
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-3",
+              "text": "Unity models the architectural description of any kind of environment based on the organization of its entities and their relationships from three complementary perspectives: structural, behavioral, and temporal."
+            },
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-4",
+              "text": "These conceptual components enable the structural, functional, and temporal complexity definitions of any environment with a certain level of abstraction relevant to its purpose."
+            },
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-5",
+              "text": "This is the main reason why Unity's core concepts were chosen as the basis for the Context Model."
+            },
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-6",
+              "text": "Besides being one of the most popular game engines worldwide, its modeling artifacts are easy to understand and use."
+            },
+            {
+              "iri": "Section-5-Paragraph-6-Sentence-7",
+              "text": "In order to be consistent in the BCI-O's overall structure and intention, the Context Model core concepts were properly aligned to DUL."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-6",
+      "subtitle": "Ontology Engineering",
+      "paragraphs": [
+        {
+          "iri": "Section-6-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-1",
+              "text": "As part of a pervasive online BCI system developed under the CaN-CTA Program of the U.S. ARL, a proto-ontology was initially designed based on the project specifications and incremental software engineering tasks."
+            },
+            {
+              "iri": "Section-6-Paragraph-1-Sentence-2",
+              "text": "Later, it was generalized and expanded through a modeling process described below."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-1",
+              "text": "Two fundamental and general representational aspects were considered for the domain modeling: BCI and physical/virtual environments (contexts)."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-2",
+              "text": "The contextual aspect was focused on explaining the relevant component architecture of any environment for BCI, by abstracting the high-level concepts and relations found in the literature."
+            },
+            {
+              "iri": "Section-6-Paragraph-2-Sentence-3",
+              "text": "The BCI aspect focused on categorizing the entities in any interaction through structured metadata."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-1",
+              "text": "BCI interaction model complexity was addressed as follows: major players and flows were clearly identified based on HCI notions; their characterizations were formalized following open BCI vocabularies; and additional complementary design considerations were incorporated in a top-down approach to model the Annotation Tag module and related concepts."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-2",
+              "text": "Common concepts, such as time intervals, were defined as datatype properties to ease the modeling to BCI systems."
+            },
+            {
+              "iri": "Section-6-Paragraph-3-Sentence-3",
+              "text": "However, if required, BCI-O applications could add more semantic expressiveness for the representation of timestamps and intervals, using directly W3C OWL-Time ontology."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-1",
+              "text": "The modeling and its specifications were assessed several times until they reached a stable status."
+            },
+            {
+              "iri": "Section-6-Paragraph-4-Sentence-2",
+              "text": "Below are presented important aspects of the followed construction process: proto-ontology's project specification (requirements), conceptualization and formalization (analysis and design), and implementation (development and deployment)."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-1",
+              "text": "A hybrid modeling style was used: verbal/semi-structured (BCI vocabularies), logic-based (upper ontologies), and structural-object (Unity framework)."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-2",
+              "text": "The level of detail for BCI-O included conceptual and logical models."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-3",
+              "text": "A pattern-based architecture was used for the Sense and Actuation Models: SSO and AAE."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-4",
+              "text": "Non-ontological resource applications included context domain (Unity dictionary), video coding domain (MPEG-7 MDS glossary), and time domain (OWL-Time glossary)."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-5",
+              "text": "Ontology design pattern reuse and alignment were applied to the Sense and Actuation Models."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-6",
+              "text": "Ontological resource reuse included SOSA/SSN, SAN (IoT-O), DUL, and dbpedia."
+            },
+            {
+              "iri": "Section-6-Paragraph-5-Sentence-7",
+              "text": "Ontology restructuring had a special focus on pruning and modularization."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-1",
+              "text": "Ontology authoring and quality were carefully considered during the overall process of building the BCI-O specifications."
+            },
+            {
+              "iri": "Section-6-Paragraph-6-Sentence-2",
+              "text": "Many best practices found in the SSN and IoT-O specifications were taken as proper guidelines for its structure and documentation."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-7-Sentence-1",
+              "text": "The construction rules applied in the BCI-O development were: identify relevant BCI metadata terms to be included, which should have major impact on BCI activity/data annotation and machine-launched semantic search; determine the domain and scope of concepts, keeping the model simple and stable; define class hierarchies and design rules, following closely BCI vocabularies; find prominent ontologies from which we could apply ontology design patterns to directly align the term definitions: SOSA/SSN and SAN (IoT-O); and if necessary, establish equivalence relations with other related terms of interest."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-1",
+              "text": "During the ontology development, some terms from popular vocabularies were included to enrich the BCI-O concepts metadata as annotation properties, such as Dublin Core Metadata Terms (DC and DCMIType), SKOS (Simple Knowledge Organization System), VANN (a vocabulary for annotating vocabulary descriptions), and Open.vocab.org."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-2",
+              "text": "Besides their minimal semantic commitment, these annotations are well-known web-oriented representations that aim to reuse and share ontological concepts and their descriptions."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-3",
+              "text": "Guidelines were carefully followed while incorporating the annotations into the BCI-O specifications."
+            },
+            {
+              "iri": "Section-6-Paragraph-8-Sentence-4",
+              "text": "SKOS lexical labels (prefLabel) and notes documentation properties (such as definition, scope note, editorial note, and change note) were included into the specifications to distinguish and structure properly the different content nature for each BCI-O concept."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-9",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-1",
+              "text": "BCI-O's satisfiability was checked at different validation points immediately after including and modifying various axioms, such as disjoint concepts and DUL/SAN alignments."
+            },
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-2",
+              "text": "The reasoner HermiT v1.3.8 was used."
+            },
+            {
+              "iri": "Section-6-Paragraph-9-Sentence-3",
+              "text": "As part of the ontology engineering process, a detailed log was kept with all the results and durations of each satisfiability checkpoint."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-10",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-1",
+              "text": "The specifications were developed in three versions, each with related XML documents."
+            },
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-2",
+              "text": "First, the Base Version, an OWL 2 RDF/XML document with the complete modeling structure and content, plus embedded HTML formatting and text-handling rules."
+            },
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-3",
+              "text": "Second, the HTML Version, a set of XSL 3 documents with XPath 3 functions and a companion XML configuration document to handle the base-to-HTML transformation."
+            },
+            {
+              "iri": "Section-6-Paragraph-10-Sentence-4",
+              "text": "And third, the OWL 2 RDF/XML Version, an XSL 3 document that strips off from the base version the HTML formatting to generate a clean and proper machine-readable document."
+            }
+          ]
+        },
+        {
+          "iri": "Section-6-Paragraph-11",
+          "sentences": [
+            {
+              "iri": "Section-6-Paragraph-11-Sentence-1",
+              "text": "A simple linked data engine was developed to handle some specialized linked data services for the specifications, including serving the proper HTML and RDF/XML versions and URI entry points to different user agents."
+            },
+            {
+              "iri": "Section-6-Paragraph-11-Sentence-2",
+              "text": "A w3id.org identifier was registered as its namespace URI definition."
+            },
+            {
+              "iri": "Section-6-Paragraph-11-Sentence-3",
+              "text": "A basic content negotiation server-side script was developed to serve properly the different versions of the specifications."
+            },
+            {
+              "iri": "Section-6-Paragraph-11-Sentence-4",
+              "text": "The BCI-O specifications were published in the LOV registry on November 8, 2016."
+            },
+            {
+              "iri": "Section-6-Paragraph-11-Sentence-5",
+              "text": "The modeling and ontology tools used were: Astah Community Modeling Tool, IHMC CmapTools, and Prot\u00e9g\u00e9 v5.2.0."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-7",
+      "subtitle": "Applications",
+      "paragraphs": [
+        {
+          "iri": "Section-7-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-1",
+              "text": "The BCI-O proto-ontology was developed in a joint project between NCTU (PET Lab) and UCSD (SCCN), with the U.S. ARL Translational Neuroscience Branch (CaN-CTA Program)."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-2",
+              "text": "As an application for a proof of concept system, the proto-ontology was used to ensure that big data sets were semantically searchable for high-level processing via BCI metadata definitions."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-3",
+              "text": "The proto-ontology was successfully used further in heterogeneous BCI datasets coming from different applications, such as stress and fatigue neuroimaging, car driving tests, and multi-modal mobile brain imaging."
+            },
+            {
+              "iri": "Section-7-Paragraph-1-Sentence-4",
+              "text": "Another application is described in the paper on the Neuromonitoring VR/AR Goggle."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-1",
+              "text": "The BCI-O spec's HTML version presents two early applications, including their correspondent RDF graph model: the CerebraTek vPod Ontology, applied to glaucoma diagnostics using mfSSVEP, and the ESS+HED Standards Ontology for BCI-O, as an ontological overlay for the ESS v2.0 and HED v2.0 EEG data sharing tools."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-2",
+              "text": "These tools have been built as a multi-iterative process infrastructure with many layers to train and personalize machine learning models using semi-structured and non-interoperable metadata formats."
+            },
+            {
+              "iri": "Section-7-Paragraph-2-Sentence-3",
+              "text": "BCI-O's axiomatizations of relevant BCI metadata can greatly enhance these software pipelines."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-3",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-1",
+              "text": "Following, we describe a use case where BCI-O aids applications in transfer learning operations."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-2",
+              "text": "A semantic query is used for a transfer learning operation of data sets and segments between two machine learning models, based on categorized observations."
+            },
+            {
+              "iri": "Section-7-Paragraph-3-Sentence-3",
+              "text": "An application for Early Glaucoma Detection that uses the vPod Ontology aims to select data sets and segments that have been previously classified via a simple Convolutional Neural Network (CNN) as the input to a more sophisticated CNN model."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-4",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-1",
+              "text": "The glaucoma patients' datasets consist of EEG recordings collected from 100 subjects as part of an experiment performed by a UCSD research team."
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-2",
+              "text": "Each subject has one session with two EEG records, one for each eye."
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-3",
+              "text": "An EEG recording is classified as either Normal, G. Early, or G. Late, which are categories of glaucoma detection stages."
+            },
+            {
+              "iri": "Section-7-Paragraph-4-Sentence-4",
+              "text": "These annotations define the categorization of the observations."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-5",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-5-Sentence-1",
+              "text": "Each recorded data that has been analyzed has a sequence of data segments with related attributes that define a probability and a correlation."
+            },
+            {
+              "iri": "Section-7-Paragraph-5-Sentence-2",
+              "text": "High-correlated segments signify relevant epochs to the source model that classify the eye's vision."
+            },
+            {
+              "iri": "Section-7-Paragraph-5-Sentence-3",
+              "text": "Only high-correlated segments are relevant to the target model."
+            },
+            {
+              "iri": "Section-7-Paragraph-5-Sentence-4",
+              "text": "The application only annotates both the probability and correlation for high-correlated segments of the source model."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-6",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-6-Sentence-1",
+              "text": "The analyzed EEG recordings have a related EEGNet model, which is used as a high-level selector and as the transfer learning source model."
+            },
+            {
+              "iri": "Section-7-Paragraph-6-Sentence-2",
+              "text": "EEGNet is a simple 4-layer CNN model for glaucoma classification."
+            },
+            {
+              "iri": "Section-7-Paragraph-6-Sentence-3",
+              "text": "RevNet+I is a complex 24-layer CNN model, used as a more sophisticated tool to analyze features of the collected EEG signals, serving as the transfer learning target model."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-7",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-1",
+              "text": "The purpose of the semantic query is to select the analyzed raw data and data segments that have been annotated with high-correlation of their segments' probabilities as the input to RevNet+I."
+            },
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-2",
+              "text": "For this use case, the semantic query has four important sections."
+            },
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-3",
+              "text": "First, the Semantic Matching defines the relationship between the relevant metadata concepts for the BCI application based on the vPod Ontology and its alignment to BCI-O."
+            },
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-4",
+              "text": "Second, the Query Restriction involves attribute-based restrictions of the categories on sessions, subjects, and records, which categorize the observations."
+            },
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-5",
+              "text": "Third, the Model Selector for the Data is comprised of the annotated data segments with probabilities and correlations and classified recordings with the transfer learning source model."
+            },
+            {
+              "iri": "Section-7-Paragraph-7-Sentence-6",
+              "text": "Fourth, the Query Projection includes the raw data sets and their data segments for the transfer learning target model."
+            }
+          ]
+        },
+        {
+          "iri": "Section-7-Paragraph-8",
+          "sentences": [
+            {
+              "iri": "Section-7-Paragraph-8-Sentence-1",
+              "text": "In general, BCI-O offers two main applications to BCI systems: the modeling of subject-independent features, which provides orthogonal conceptual dimensionality for subjects, and relevant data sets for personalized calibration of models with some level of confidence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-8",
+      "subtitle": "Future Work",
+      "paragraphs": [
+        {
+          "iri": "Section-8-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-1",
+              "text": "BCI-O models subject-context interactions while focusing on monitoring the brain dynamics."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-2",
+              "text": "In the long term, we would like to take BCI-O as the basis towards generalizing a semantic model to describe how any human body bio-signal, not only from the brain, can be monitored and made to interact with computing interfaces."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-3",
+              "text": "Initially, this work would lead to BCI-O's generalization towards a Bio-signal Computer-Interaction Ontology."
+            },
+            {
+              "iri": "Section-8-Paragraph-1-Sentence-4",
+              "text": "This modeling task is planned to be one of the main development drivers in the future for a set of ontological frameworks to capture the different bio-signal markers and technological interfaces for the entire human body: organs such as the brain, heart, liver, and systems including nervous, integumentary, and endocrine."
+            }
+          ]
+        },
+        {
+          "iri": "Section-8-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-1",
+              "text": "Additionally, there is an ongoing effort on proposing some extensions to the SOSA/SSN W3C Recommendation."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-2",
+              "text": "We are following closely the new proposed concepts and relationships and providing our feedback from the BCI-O perspective in their ongoing discussions, with special interest for issue #1028 regarding the Homogeneity of an Observation Collection."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-3",
+              "text": "BCI-O will be updated accordingly following the structure and alignments of these extensions after the proposal becomes stable."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-4",
+              "text": "Lastly, some BCI applications keep part of their metadata stored in standard relational database systems."
+            },
+            {
+              "iri": "Section-8-Paragraph-2-Sentence-5",
+              "text": "As an aside project, we are planning to work on an OWL 2 QL profile version of BCI-O, so that those relevant metadata sets can be queried through a restrictive version of BCI-O."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "Section-9",
+      "subtitle": "Conclusions",
+      "paragraphs": [
+        {
+          "iri": "Section-9-Paragraph-1",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-1",
+              "text": "As a foundational model for real-world BCI, BCI-O will become an important tool to aid large-scale BCI data analytics models and processes, due primarily to its OWL 2 formal structure."
+            },
+            {
+              "iri": "Section-9-Paragraph-1-Sentence-2",
+              "text": "Semantic reasoning based tasks of BCI-O's axiomatizations enable BCI systems to carry out two major jobs: first, to apply inference rules to aid machine learning techniques, such as feature-based transfer learning in online multimodal EEG classification, and second, to perform Adaptive BCI, which involves training and refining brain state prediction and classification models based on relevant data sets constructed through semantic data queries."
+            }
+          ]
+        },
+        {
+          "iri": "Section-9-Paragraph-2",
+          "sentences": [
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-1",
+              "text": "Another key contribution of BCI-O is its novel Context Model."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-2",
+              "text": "This model associates the context architectonic definition with the data recordings, making BCI systems semantically context-aware for real and virtual-world situations."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-3",
+              "text": "Thus, it provides a semantic foundation for augmented BCI, assisting ambient intelligence settings in sensor systems for any kind of BCI."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-4",
+              "text": "As a domain ontology for BCI sensors and actuators, BCI-O allows for semantically informed BCI analytics of sensor and actuator data patterns, including unambiguous searchability, similarities, simulations, and predictions, as well as semantic interoperability based on its alignments."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-5",
+              "text": "This enables easy integration, reusability, and extensibility into the Linked Data world for all kinds of BCI."
+            },
+            {
+              "iri": "Section-9-Paragraph-2-Sentence-6",
+              "text": "In general, its axiomatizations enable BCI systems to apply Semantic Web technologies for data analysis, serving as a form of semantic middleware for BCI sensor and actuator networks."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": "Key developments in wearable sensors, wireless networks, and distributed computing will largely enable Brain-Computer Interaction (BCI) as a powerful, natural and intuitive mainstream human-computer interaction in real-world activities. BCI systems annotate the sensed signals in order to classify the analysis of brain states and dynamics in diverse daily-life circumstances. There is no complete and standardized formal semantic structure to model the BCI metadata annotations, which are essential to capture the descriptive and predictive features of the brain signals.\n\nWe present the BCI Ontology (BCI-O): the first OWL 2 ontology that formalizes relevant metadata for BCI data capture activities by integrating BCI-domain-specific Sense and Actuation Models along with a novel Context Model for describing any kind of real or virtual environments. At its core, BCI-O defines a human-environment interaction model for any BCI, based on design patterns and primarily aligned to the SOSA/SSN, SAN-IoT-O, and DUL ontologies. Its axiomatizations aid BCI systems to implement an ontological overlay upon vast data recording collections to support semantic query constructions to perform Adaptive BCI and reasoning for situation-specific data analytics to apply inference rules for Transfer Learning in multimodal classification.\n\nBrain-Computer Interfaces (BCI) are electronic systems that are used to determine a user\u2019s brain states by collecting and analyzing her neuro-physiological signals including electroencephalogram (EEG), electrocardiogram (ECG), electrooculogram (EOG) and then actuating specific responses, for example to drive her wheelchair or fight against her drowsiness. Machine Learning (ML) and Deep Learning (DL) techniques are commonly used to analyze those biological signals, which are highly situation and individual dependent, and non-stationary in characteristics, in order to classify her brain states. Lack of training data from individual users and comparable features among different users often hamper the accuracy and usefulness of BCI systems in real-world applications.\n\nIn a project in the research area of Advanced Computational Approaches under the Cognition and Neuroergonomics Collaborative Technology Alliance (CaN-CTA) program sponsored by the U.S. Army Research Laboratory (ARL), the Pervasive Embedding Technologies (PET) Lab in the National Chiao-Tung University (NCTU) in Taiwan has the chance to work with the Swartz Center for Computational Neuroscience (SCCN) in the University of California in San Diego (UCSD) to develop a semantic model that can aid the search for correlated neuro-physiological features for characterizing an individual\u2019s cognitive states including fatigue, vigilance and enlightenment and the gathering of useful data sets for conducting interpersonal Transfer Learning. This BCI Ontology was a product of that research project.\n\nThe project took a bottom-up approach; the SCCN team developed two sets of metadata vocabulary: the EEG Study Schema (ESS) and the Hierarchical Event Descriptor (HED) to describe the settings of the neuro-physiological recording and the specification of the neuro-physiological events respectively. Collectively, they were referred to as the BCI metadata. As the teams began to expand these metadata to cover more BCI experiments, the need to develop an ontological structure became obvious not only to accommodate future expansion of the vocabulary but also to specify the semantic relations among these concepts. Most notably, the syntax of HED 2 started to resemble the RDF format. Subsequent development of the BCI Ontology (BCI-O), the semantic data repository and the federated SPARQL search all took place in NCTU with the results fed back to UCSD and ARL.\n\nIn order to employ BCI-O to accomplish the two goals mentioned above, the neuro-physiological signals/data sets collected from the experiments need to be processed for feature extraction and preliminary classification using existing ML algorithms. In the task of gathering data sets for Transfer Learning, inference rules shall be in place to specify the criteria of selecting data sets classified by existing algorithms for the learning process. In the task of deducing the correlated interpersonal features, the relations among the extracted features from different individuals shall be discovered through semantic search. Since BCI is a type of sensor-actuator system, it is only proper to align BCI-O with the W3C Semantic Sensor Network (SSN) and Sensor, Observation, Sample, and Actuator (SOSA) frameworks. Because many BCI devices are connected to the Internet, BCI-O should also be aligned with the ontology for the Internet-of-Things (IoT-O).\n\nAn important contribution we made was the introduction of the concepts of context and contextual relations into BCI-O. The characteristics of biological and neurophysiological signals are known to be highly situation or context dependent. User\u2019s physical conditions, time of day, environmental conditions can also affect the signals. In order to include these factors in the search for the correlated interpersonal features and the relevant data sets for Transfer Learning, we incorporated the core concepts of the UNITY world model for game development into BCI-O. We followed the human-environment interaction model in Human-Computer Interaction (HCI) to integrate the concepts of context with those of sense and actuation.\n\nIn the rest of this paper, the BCI metadata for context, multi-modal data, and event annotations were first depicted. The structure, design principle, engineering and applications were then explained in subsequent sections. Lastly, the main contribution and future work were summarized in the conclusion.\n\nThe Brain-Computer Interface (BCI) Ontology (BCI-O) defines a conceptual framework for real-world BCI systems. It consists of two domains: the BCI domain, which includes observations, actuation, and interactions; and the context domain, based on gaming architectural modeling from Unity. The ontology is designed to capture multimodal data, annotate it with descriptive and predictive parameters, and provide machine-readable semantic models for software agents' interoperability.\n\nBCI-O concepts are grouped into modules representing functional aspects of brain-computer interaction. Key topics include Subject (human engaging in activity), Context (environmental description with scenes and entities), Session (interaction between subject and context), Sense Model (contextual input data and events to the subject), Actuation Model (subject interacting with context), Annotation Tag (event markers based on context stimuli), Descriptor (external resource set extending entity descriptions). EEG concepts include subtypes for channel, device, modality, and record. The specification leaves open handling semantic expressiveness level.\n\nThe Semantic Sensor Network (SSN) ontology framework was extended for Brain-Computer Interface (BCI) domain, with SOSA/SSN providing conceptual templates and structures. The BCI-O's Sense Model leverages SSN to improve semantic interoperability and integration of BCI systems. The Actuation Model is based on the AAE ODP, integrating axiomatization models from W3C/OGC and IoT communities. The Context Model was built using Unity's gaming high-level modeling architecture, with core concepts aligned to DUL.\n\nThe BCI-ontology (BCI-O) was developed as part of a pervasive online brain-computer interface system. It's a proto-ontology that generalizes and expands on project specifications through modeling processes. The ontology considers two fundamental aspects: BCI interaction model complexity, which is addressed by identifying major players and flows based on HCI notions; and physical/virtual environments (contexts), which are abstracted from high-level concepts in the literature. The BCI-O was developed using a hybrid modeling style, including verbal/semi-structured vocabularies, logic-based upper ontologies, and structural-object frameworks.\n\nThe BCI-O proto-ontology was developed to enable semantic searching of big data sets for high-level processing via BCI metadata definitions. It has been successfully applied to heterogeneous BCI datasets from various applications, including stress neuroimaging and car driving tests. The ontology also aids in transfer learning operations by allowing the selection of relevant data segments based on categorized observations.\n\nBCI-O models subject-context interactions while focusing on monitoring the brain dynamics. In the long term, we would like to take BCI-O as the basis towards generalizing a semantic model to describe how any human body bio-signal, not only from the brain, can be monitored and made to interact with computing interfaces. Initially, this work would lead to BCI-O's generalization towards a Bio-signal Computer-Interaction Ontology. This modeling task is planned to be one of the main development drivers in the future for a set of ontological frameworks to capture the different bio-signal markers and technological interfaces for the entire human body: organs such as the brain, heart, liver, and systems including nervous, integumentary, and endocrine.\n\nAdditionally, there is an ongoing effort on proposing some extensions to the SOSA/SSN W3C Recommendation. We are following closely the new proposed concepts and relationships and providing our feedback from the BCI-O perspective in their ongoing discussions, with special interest for issue #1028 regarding the Homogeneity of an Observation Collection. BCI-O will be updated accordingly following the structure and alignments of these extensions after the proposal becomes stable. Lastly, some BCI applications keep part of their metadata stored in standard relational database systems. As an aside project, we are planning to work on an OWL 2 QL profile version of BCI-O, so that those relevant metadata sets can be queried through a restrictive version of BCI-O.\n\nAs a foundational model for real-world BCI, BCI-O will become an important tool to aid large-scale BCI data analytics models and processes, due primarily to its OWL 2 formal structure. Semantic reasoning based tasks of BCI-O's axiomatizations enable BCI systems to carry out two major jobs: first, to apply inference rules to aid machine learning techniques, such as feature-based transfer learning in online multimodal EEG classification, and second, to perform Adaptive BCI, which involves training and refining brain state prediction and classification models based on relevant data sets constructed through semantic data queries.\n\nAnother key contribution of BCI-O is its novel Context Model. This model associates the context architectonic definition with the data recordings, making BCI systems semantically context-aware for real and virtual-world situations. Thus, it provides a semantic foundation for augmented BCI, assisting ambient intelligence settings in sensor systems for any kind of BCI. As a domain ontology for BCI sensors and actuators, BCI-O allows for semantically informed BCI analytics of sensor and actuator data patterns, including unambiguous searchability, similarities, simulations, and predictions, as well as semantic interoperability based on its alignments. This enables easy integration, reusability, and extensibility into the Linked Data world for all kinds of BCI. In general, its axiomatizations enable BCI systems to apply Semantic Web technologies for data analysis, serving as a form of semantic middleware for BCI sensor and actuator networks.",
+  "kg2text": [
+    "The Brain-Computer Interaction Ontology (BCI-O) formalizes relevant metadata for brain-computer interaction data capture activities by integrating Sense and Actuation Models along with a novel Context Model. It defines a human-environment interaction model that can be applied to any brain-computer interface, allowing semantically informed analytics of sensor and actuator data patterns. The ontology's structure enables unambiguous searchability, similarities, simulations, and predictions, as well as semantic interoperability based on its alignments. Furthermore, BCI-O generalizes towards a Bio-signal Computer-Interaction Ontology, enabling computer interaction with various bio-signals from different parts of the human body.",
+    "The Brain-Computer Interaction Ontology (BCI-O) formalizes relevant metadata for BCI data capture activities, integrating Sense and Actuation Models along with a novel Context Model. Its axiomatizations can greatly enhance software pipelines into BCI-O. The ontology defines a human-environment interaction model that can be applied to any brain-computer interface. It also allows for semantically informed analytics of sensor and actuator data patterns, including unambiguous searchability, similarities, simulations, and predictions, as well as semantic interoperability based on its alignments.",
+    "The Brain-Computer Interaction Ontology (BCI-O) formalizes metadata for BCI data capture activities by integrating Sense and Actuation Models along with a novel Context Model. This ontology, based on design patterns and primarily aligned to the SOSA/SSN, SAN-IoT-O, and DUL ontologies, defines a human-environment interaction model that can be applied to any brain-computer interface. The BCI-O's Sense Model generalizes towards a Bio-signal Computer-Interaction Ontology, enabling semantically informed analytics of sensor and actuator data patterns, including unambiguous searchability, similarities, simulations, and predictions, as well as semantic interoperability based on its alignments.",
+    "The Brain-Computer Interaction (BCI) ontology, BCI-O, generalizes towards a bio-signal computer-interaction ontology. It defines a human-environment interaction model for any brain-computer interface and integrates Sense and Actuation Models along with a novel Context Model. The BCI Ontology formalizes relevant metadata for BCI data capture activities by primarily aligning to the SOSA/SSN, SAN-IoT-O, and DUL ontologies. This work was developed as part of the BCI-O's generalization towards a bio-signal computer-interaction ontology. It allows for semantically informed BCI analytics of sensor and actuator data patterns, including unambiguous searchability, similarities, simulations, and predictions, as well as semantic interoperability based on its alignments.",
+    "The Brain-Computer Interaction Ontology (BCI-O) formalizes relevant metadata for BCI data capture activities by integrating Sense and Actuation Models along with a novel Context Model. This ontology can greatly enhance software pipelines, generalizing towards a Bio-signal Computer-Interaction Ontology. The human-environment interaction model in Human-Computer Interaction (HCI) is formalized to support semantic query constructions to perform Adaptive BCI and reasoning for situation-specific data analytics. Furthermore, the BCI-O allows for semantically informed BCI analytics of sensor and actuator data patterns, including unambiguous searchability, similarities, simulations, and predictions, as well as semantic interoperability based on its alignments.",
+    "The Brain-Computer Interaction Ontology (BCI-O) formalizes relevant metadata for BCI data capture activities by integrating Sense and Actuation Models along with a novel Context Model. This work was developed as part of the BCI-O structure, which defines a human-environment interaction model that can be applied to any brain-computer interface. The ontology allows for semantically informed analytics of sensor and actuator data patterns, including unambiguous searchability, similarities, simulations, and predictions, as well as semantic interoperability based on its alignments. Furthermore, the BCI-O' axiomatizations of relevant metadata can greatly enhance these software pipelines.",
+    "The development of BCI-O, an ontology that formalizes relevant metadata for Brain-Computer Interaction data capture activities by integrating Sense and Actuation Models along with a novel Context Model. This allows for semantically informed analytics of sensor and actuator data patterns, including unambiguous searchability, similarities, simulations, and predictions, as well as semantic interoperability based on its alignments. The ontology enables the development of software applications that utilize Brain-Computer Interface technology to support adaptive BCI and reasoning for situation-specific data analytics. Furthermore, it defines a human-environment interaction model for any brain-computer interface, which can be applied to various bio-signals from different parts of the human body.",
+    "The Brain-Computer Interaction Ontology (BCI-O) supports semantic query constructions to perform Adaptive BCI and reasoning for situation-specific data analytics. It formalizes relevant metadata for Brain-Computer Interface data capture activities, integrating Sense and Actuation Models along with a novel Context Model. The ontology models BC-I metadata annotations, enabling semantically informed BCI analytics of sensor and actuator data patterns. Furthermore, it generalizes towards a Bio-signal Computer-Interaction Ontology, formalizing relevant metadata for various bio-signals from different parts of the human body. This work presents the first OWL 2 ontology that formalizes metadata for BCI data capture activities.",
+    "This work presents a semantic model that generalizes Brain-Computer Interaction (BCI) ontology to describe how any human body bio-signal can be monitored and interacted with computing interfaces. The BCI Ontology (BCI-O), which formalizes relevant metadata for BCI data capture activities, supports the development of software pipelines that perform Adaptive BCI and reasoning for situation-specific data analytics. By generalizing the human-environment interaction model in Human-Computer Interaction (HCI) to encompass computer interaction with various bio-signals from different parts of the human body, this work enhances the axiomatizations of relevant BCI metadata, which can greatly support semantic query constructions.",
+    "The Brain-Computer Interaction Ontology (BCI-O) formalizes relevant metadata for BCI data capture activities. Its axiomatizations can greatly enhance software pipelines, and its generalization towards a Bio-signal Computer-Interaction Ontology extends this concept to encompass computer interaction with various bio-signals from different parts of the human body. The ontology supports semantic query constructions to perform Adaptive BCI and reasoning for situation-specific data analytics, defining relevant metadata annotations used in Brain-Computer Interaction systems. This work generalizes BCI-O's Actuation Model by integrating Sense and Actuation Models along with a novel Context Model.",
+    "The Brain-Computer Interaction Ontology (BCI-O) formalizes metadata for BCI data capture activities, integrating Sense and Actuation Models with a novel Context Model. It defines a human-environment interaction model that can be applied to any brain-computer interface. The ontology also supports semantic query constructions to perform Adaptive BCI and reasoning for situation-specific data analytics. Furthermore, it provides a standardized framework for representing and organizing concepts related to brain-computer interfaces, including sensors and actuators.",
+    "The Brain-Computer Interaction Ontology (BCI-O) formalizes relevant metadata for BCI data capture activities by integrating Sense and Actuation Models along with a novel Context Model. This ontology, based on design patterns and primarily aligned to SOSA/SSN, SAN-IoT-O, and DUL ontologies, assists ambient intelligence settings in sensor systems for any kind of BCI. The construction rules applied in the BCI-O development were: identify relevant BCI metadata terms to be included, which should have major impact on BCI activity/data annotation and machine-launched semantic search; This ontology defines a human-environment interaction model for any BCI, including real or virtual environments.",
+    "The integration of core concepts from the UNITY world model for game development into BCI-O enables the capture of situation-dependent characteristics of biological signals. Key developments will largely enable Brain-Computer Interaction, which utilizes electroencephalography or other neural signals to monitor and interpret human brain activity. The axiomatizations of BCI-O perform Adaptive BCI, supporting semantic query constructions. A pervasive online BCI system allows for continuous interaction between humans and computers. The BCI Ontology (BCI-O) formalizes relevant metadata for Brain-Computer Interface data capture activities by integrating Sense and Actuation Models along with a novel Context Model. This conceptual framework enables software agents to interoperate, providing a machine-readable semantic model for any kind of real or virtual environments.",
+    "The Brain-Computer Interaction Ontology (BCI-O) formalizes relevant metadata for BCI data capture activities, integrating domain-specific sense and actuation models along with a novel Context Model. The ontology's Actuation Model simulates or controls interactions between brain signals and external devices in the context of BCIs. A machine-readable semantic model enables software agents to interoperate by providing a framework that captures context-dependent biological and neurophysiological signals. Real-world multimodal BCI systems can be described using this ontology, which also provides semantic interoperability based on its alignments.",
+    "Brain-Computer Interaction (BCI) systems enable communication between humans and computers using brain signals. The ontology formalizes relevant metadata for BCI data capture activities, integrating Sense and Actuation Models along with a novel Context Model. Pervasive online BCI systems allow continuous interaction between users and devices. Adaptive BCIs use machine learning algorithms to adaptively interact with users. In the BCI domain, semantic middleware enables interoperability between sensors and actuators. The concepts of context and contextual relations are integrated into BCI-O, providing a foundation for describing augmented BCIs. Real-world multimodal BCIs enable humans to interact with environments using brain signals from multiple sensory modalities.",
+    "The pervasive online brain-computer interface system enables continuous interaction between humans and computers. This technology, which falls under the broader term of BCI systems, has a significant impact on data annotation and machine-launched semantic search. The construction rules applied in developing this ontology include identifying relevant metadata terms that have major implications for activity/data annotation and machine-semantic search. A proto-ontology was initially designed based on project specifications and incremental software engineering tasks. This design pattern is part of the broader field of brain-computer interfaces, which includes real-world multimodal BCIs. The UNITY world model for game development has been integrated into this ontology to capture context-dependent biological and neurophysiological signals. Furthermore, ambient intelligence settings in sensor systems have been enabled through the integration of domain-specific sense and actuation models.",
+    "The SOSA/SSN, SAN-IoT-O, and DUL ontologies provide a framework for modeling brain-computer interactions. Core concepts define fundamental ideas about BCI data capture activities. Ambient intelligence settings enable context-aware BCIs to be integrated with sensor systems. The ESS+HED Standards Ontology for BCI-O extends the BCI-ontology by providing metadata definitions and best practices found in SSN and IoT-O specifications. The two goals of processing neurophysiological signals and preliminary classification are achieved through structured metadata categorization. The novel Context Model enables brain-computer interfaces to be semantically context-aware, while Adaptive BCIs use machine learning algorithms for adaptive interaction.",
+    "The BCI-O's Sense Model, as described in Section 4.1 of this paper, is an ontology-based framework for modeling brain-computer interactions (BCIs) and capturing metadata annotations essential for classifying brain states and dynamics. This enables easy integration, reusability, and extensibility into the Linked Data world for all kinds of BCI systems. The pervasive online BCI system has a broader term as bci:Device, which interacts with a user's brain activity. In the BCI domain, context refers to real-world surroundings and environments where human beings interact with sensors and actuators while performing activities. Any BCI device or technology enables communication between a human's brain and an external system. The SOSA/SSN upper ontologies provide the conceptual template for both Sense and Actuation Models in the BCI domain, describing functional aspects of any Brain-Computer Interaction data capture activity.",
+    "The human-environment interaction model in Human-Computer Interaction (HCI) formalizes relevant metadata for Brain-Computer Interface (BCI) data capture activities. The BCI-O, based on the bci:Actuation and bci:Actuator abstractions, defines a framework for describing actuations that carry out procedures to change the state of a context using an actuator. A pervasive online BCI system enables continuous interaction between humans and computers. In the BCI domain, quality were carefully considered during the overall process of building the BCI-O specifications. The ontology authoring and quality control process ensured satisfiability and consistency through various axioms. Furthermore, categorizing entities in any interaction through structured metadata is a methodology for structuring and organizing metadata to classify and categorize entities involved in brain-computer interactions.",
+    "In the BCI domain, a conceptual framework or ontology that represents and structures knowledge about bio-signals and their interaction with computers has been developed. This Bio-signal Computer-Interaction Ontology (BCI-O) defines a human-environment interaction model for any brain-computer interface. The subsequent development of this ontology refined its structure to include models such as BCI-O models, which focus on monitoring the brain dynamics. Additionally, verbal/semi-structured BCIs vocabularies were integrated into the framework. Furthermore, the Sense and Actuation Models (SSO and AAE) formalized relevant metadata for Brain-Computer Interaction data capture activities. The ontology design patterns used in this process include the Stimulus-Sensor-Observation Ontology Design Pattern. This comprehensive approach enables a pervasive online BCI system that can be applied to various contexts, including physical/virtual environments.",
+    "The BCI-O ontology, built upon the Context Model, formalizes metadata for Brain-Computer Interaction data capture activities. It integrates domain-specific sense and actuation models along with a novel Context Model to describe any kind of real or virtual environments. The SOSA/SSN and SAN (IoT-O) ontologies provide broader terms for understanding brain signals in augmented BCI systems, which are used to determine users' brain states by collecting and analyzing neuro-physiological signals. Semantic Matching defines relationships between relevant metadata concepts based on the vPod Ontology's alignment with BCI-O. The ontology design patterns, including AAE Design Pattern, provide a framework for modeling complex interactions between brain-computer interfaces and physical/virtual environments.",
+    "In the realm of Brain-Computer Interfaces (BCI), a conceptual framework or system for human-environment interaction modeling, known as BCI-O, has been developed. This ontology re-aligns with the Dolce-Ultralite Alignment Module to integrate Sense and Actuation Models along with a novel Context Model. The collective metadata vocabulary referred to as BCI metadata is used to describe neuro-physiological recording settings and events respectively. Any brain-computer interface device or technology, such as mfSSVEP, enables communication between the human brain and an external system. Furthermore, this interaction model consists of Sense and Actuation Models that formalize relevant metadata for BCI data capture activities.",
+    "The Brain-Computer Interaction Ontology (BCI-O) defines a human-environment interaction model for any BCI, integrating Sense and Actuation Models along with a novel Context Model. The ontology formalizes relevant metadata for brain-computer interface data capture activities, enabling semantic query constructions to perform Adaptive BCI and reasoning for situation-specific data analytics. It also supports the development of vPod Ontology-based applications, such as Early Glaucoma Detection by selecting data sets and segments previously classified via a simple Convolutional Neural Network (CNN) as input to a more sophisticated CNN model. Furthermore, it provides a framework for integrating BCI systems with Machine-to-Machine environments, enabling seamless communication and data exchange between BCI devices and other IoT-enabled sensors and actuators.",
+    "The Brain-Computer Interaction Ontology (BCI-O) provides a conceptual framework for modeling metadata related to brain-computer interfaces. It integrates Sense and Actuation Models with a novel Context Model, formalizing relevant data capture activities in various environments. The BCI-O specifications come in three versions: Base Version, HTML Version, and OWL 2 RDF/XML Version. This ontology design pattern is based on the SOSA/SSN, SAN-IoT-O, and DUL ontologies. It has been used to develop a use case where BCI-O aids applications in transfer learning operations by selecting relevant data sets for training machine learning models.",
+    "The Brain-Computer Interface (BCI) Ontology (BCI-O) has been developed to formalize relevant metadata for BCI data capture activities. It integrates Sense and Actuation Models with a novel Context Model, primarily aligned to SOSA/SSN upper ontologies. The ontology development process involved conceptual frameworks that define relationships between entities, concepts, and terms. Existing ML algorithms are employed by BCI-O, which aids applications in transfer learning operations. Furthermore, the axiomatizations of BCI-O enable machine learning techniques for Adaptive BCI and support semantic query constructions.",
+    "The wearable sensors will enable Brain-Computer Interaction (BCI), which relies on the BCI-O's Sense Model and Actuation Model to capture brain signals. The human-environment interaction model, a semantic model, formalizes relevant metadata for BCIs. SOSA/SSN provides a standardized framework for describing sensor networks, while BCI-O extends this framework with its own alignment perspective. The Hierarchical Event Descriptor (HED) is a metadata vocabulary that specifies the settings of neuro-physiological recordings and characteristics of neuro-physiological events. Distributed computing will enable BCIs to process brain signals more efficiently. BCI-O models utilize electroencephalography or other neural signals to monitor human brain activity, aligning with W3C's Semantic Sensor Network (SSN) and Sensor, Observation, Sample, and Actuator (SOSA) frameworks.",
+    "The Brain-Computer Interaction (BCI) technology enables communication between humans and computers using brain signals. The BCI-O namespace formalizes metadata for BCI data capture activities by integrating Sense and Actuation Models along with a novel Context Model, describing any kind of real or virtual environments. Some BCI applications store part of their metadata in standard relational database systems. The level of detail for BCI-O included conceptual and logical models. The vPod Ontology is an application of the BCI-ontology framework used for Early Glaucoma Detection by selecting data sets and segments previously classified via a simple Convolutional Neural Network (CNN) as input to a more sophisticated CNN model.",
+    "BCI-OS Sense Model formalizes relevant metadata for Brain-Computer Interaction data capture activities by integrating domain-specific Sense and Actuation Models along with a novel Context Model. The BCI-O models utilize electroencephalography or other neural signals to monitor and interpret human brain activity, enabling communication between humans and computers using brain signals. This ontology development defines the conceptual components in any Brain-Computer Interaction through bidirectional subject-context interaction model: Sense Model (context to subject) and Actuation Model (subject to context). The BCI-O's axiomatizations enable inference rules for machine learning and support semantic query constructions, facilitating transfer learning operations.",
+    "The ontology for the Internet-of-Things (IoT-O) formalizes relevant metadata for Brain-Computer Interaction data capture activities, integrating Sense and Actuation Models along with a novel Context Model. The IoT enables communication between humans and computers using brain signals through BCI systems that can express interoperable models. We present the first OWL 2 ontology, BCIO, which defines Subject and provides orthogonal conceptual dimensionality for subjects. This BCI Ontology deduces correlated interpersonal features from multiple individuals to identify relationships among extracted neurophysiological signal features. The task of discovering these relationships is facilitated by semantic middleware that enables machines to understand and interpret meaning from web- based data using semantics.",
+    "The Brain-Computer Interface Ontology (BCI-O) provides a semantic foundation for augmented BCI, assisting ambient intelligence settings in sensor systems. It formalizes relevant metadata by integrating Sense and Actuation Models along with a novel Context Model. The ontology has broader terms such as models, multimodal data, and context. In the BCI domain, context corresponds to the same concept as in HCI literature. The BCI-O's Actuation Model simulates or controls interactions between brain signals and external devices. We describe a use case where BCI-O aids applications in transfer learning operations by selecting relevant data sets and segments for training machine learning models.",
+    "The semantic interoperability between BCI systems, enabled by aligning their metadata annotations using the BCI Ontology's axiomatizations, facilitates seamless communication and integration. This process relies on ontological concepts such as SOSA/SSN + SAN, which formalizes relevant metadata for Brain-Computer Interaction data capture activities. The BCI interaction model is a conceptual framework that represents relationships between brain signals and external devices. By leveraging the SKOS (Simple Knowledge Organization System), vast data recording collections can be organized in an ontological overlay, allowing for efficient querying and reasoning. Furthermore, adaptive BCIs utilize machine learning algorithms to adaptively interact with users, while wireless networks enable communication without cables or wires.",
+    "The Brain-Computer Interaction Ontology (BCI-O) is an ontological structure that formalizes metadata for BCI data capture activities. It integrates Sense and Actuation Models along with a Context Model, enabling semantic query constructions to perform Adaptive BCI and reasoning. The ontology has been developed by the teams involved in the project, including PET Lab at NCTU and SCCN at UCSD. The annotations into the BCI-O specifications provide a machine-readable framework for understanding brain-computer interface data. Additionally, the SOSA/SSN + SAN ontology represents a standard framework for modeling BCI data capture activities.",
+    "The Brain-Computer Interaction (BCI) Ontology (BCI-O), an OWL 2 ontology, formalizes relevant metadata for BCI data capture activities by integrating domain-specific Sense and Actuation Models along with a novel Context Model. The process of adding detailed descriptions and predictions to brain-computer interaction (BCI) data after it has been collected from a subject is crucial in this context. This ontological structure provides the conceptual template and framework for both Sense and Actuation Models, describing functional aspects of any BCI data capture activity. Furthermore, Machine Learning (ML) and Deep Learning (DL) techniques are used to analyze biological signals for classifying brain states.",
+    "In this context, a hybrid modeling style was used to combine verbal/semi-structured BCI vocabularies with logic-based upper ontologies and structural-object Unity frameworks. This interaction model has a broader term of semantic models that represent relationships between concepts, entities or ideas in a systematic way. The novel Context Model for describing any kind of real or virtual environments is also aligned with the Sense Model (context to subject) and Actuation Model (subject to context). Furthermore, BCI-O applications can add more semantic expressiveness using directly W3C OWL-Time ontology if required. Additionally, SOSA/SSN can be centered around features and properties that describe how to observe brain signals.",
+    "In the realm of Brain-Computer Interaction (BCI), various entities and relationships come into play. The interaction between a subject and context while performing a single activity under specific settings and conditions is crucial for understanding BCI applications, which are part of broader systems. Ontological frameworks like Stimulus-Sensor-Observation (SSO) ontology design patterns formalize relevant metadata for data capture activities. BCIs rely on machine-readable semantic models to facilitate software agents' interoperability. Biological signals from individuals can be analyzed using Machine Learning and Deep Learning techniques to classify brain states. The axioms for modeling observations guide the representation of observational data in BCI systems, while ontology authoring is a crucial step in building specifications like Brain-Computer Interaction Ontology (BCI-O). Devices such as sensors and actuators enable human-computer interaction through pervasive online BCIs that rely on semantic reasoning to draw logical conclusions. The organization of entities and their relationships is critical for understanding the contextual input data and events affecting subjects' states or activities.",
+    "The domain ontology for BCI sensors and actuators provides a standardized framework for representing concepts related to brain-computer interfaces. This ontology has its roots in Ontological principles, which formalize relevant metadata for Brain-Computer Interaction data capture activities. The Stimulus-Sensor-Observation Ontology Design Pattern is an example of such an ontology design pattern, used in the Sense Model of BCI-ontology. BCIs enable users to interact with digital devices using their brain signals, and EEG concepts represent different types of electroencephalography signals or recordings. The Semantic Sensor Network (SSN) provides a conceptual template for both Sense and Actuation Models in the BCI domain. Ontology design patterns like SSO-based core alignments formalize relevant metadata for Brain-Computer Interaction data capture activities. In addition, Dublin Core Metadata Terms provide standardized terminology used to describe digital resources.",
+    "The Brain-Computer Interaction (BCI) Ontology provides a semantic foundation for seamless integration, reusability, and extensibility into the Linked Data world. It encompasses various concepts such as sensors, actuators, devices, applications, models, and metadata terms. The ontology's core concepts include domain modeling, which formalizes relevant metadata for BCI data capture activities. The Actuation Model represents the interaction between brain signals and environmental stimuli, enabling systems to actuate responses based on observed context. Additionally, the Sense and Actuation Models integrate sensory perception and motor control mechanisms. Furthermore, machine learning and deep learning techniques are used to analyze biological signals for classifying brain states. Overall, the BCI Ontology offers a standardized framework for representing metadata and integrating domain-specific models.",
+    "The Brain-Computer Interaction Ontology (BCI-O) presents a formalized framework for metadata capture activities, integrating domain-specific sense and actuation models. The ontology defines relationships between entities such as BCI applications, channeling schema, semantic data repository, and recorded data. It also incorporates the Actuation Model, aligned with SOSA/SSN upper ontologies, to enable control or manipulation of a system from within based on internal states or conditions. Furthermore, it includes axioms for modeling results, which formalize relevant metadata for Brain-Computer Interaction data capture activities.",
+    "The Brain-Computer Interface Ontology (BCI-O) concept defines a specific meaning, notion, or entity. It has broader terms such as 'concepts' and is part of an ontological structure that represents knowledge about bio-signals and their interaction with computers. The ontology itself has broader terms like 'upper ontologies', which serve as a foundation for organizing data related to Brain-Computer Interfaces (BCIs). BCI systems support semantic query constructions, while sensors are specific concepts aligned to the axioms for modeling observations. Semantic reasoning tasks based on axiomatizations of BCI-O enable machine learning and adaptive BCIs. The domain level concepts formalize relevant metadata for BCI data capture activities, integrating Sense and Actuation Models with a novel Context Model.",
+    "In the context of Brain-Computer Interaction (BCI), The application annotates correlation, leveraging metadata sets that can be queried through a restrictive version of BCI-O. This process relies on descriptive features and axioms for modeling results, which are organized within an ontological structure. Furthermore, interoperable models extending BCI-O provide semantic expressiveness in machine-to-machine environments. Additionally, the CaN-CTA Program has developed a pervasive online Brain-Computer Interaction system that integrates sensors, observations, and actuators using the SOSA/SSN framework.",
+    "The overall process of building BCI-O specifications involves conceptualization, logical modeling, pattern-based architecture, ontology authoring, quality control, and validation. This comprehensive development process yields a set of detailed characteristics or requirements that define device properties or performance. The channeling schema is a data structure model describing contextual input data and events to subjects in Brain-Computer Interaction systems. BCI interaction model complexity measures the intricacy involved in interactions between brain-computer interfaces and their underlying models. A semantic model represents relationships between concepts, entities, or ideas systematically. Domain-specific Sense and Actuation Models integrate sensory perception and motor control mechanisms. The CerebraTek vPod Ontology is a knowledge representation model applied to glaucoma diagnostics using mfSSVEP. Its main concepts capture primary notions that define how subjects interact with contexts in the Brain-Computer Interaction model, focusing on actuation and actuators. Axioms for modeling results formalize relevant metadata for BCI data capture activities, enabling semantic query constructions and adaptive systems.",
+    "The Brain-Computer Interface Ontology (BCI-O) defines relevant metadata for data capture activities, integrating Sense and Actuation Models with a novel Context Model. The SOSA/SSN + SAN ontology represents a standard framework for modeling BCI data capture activities. The project refers to the research initiative that developed the BCI Ontology, which formalizes metadata for Brain-Computer Interaction data capture activities. The specifications describe relevant metadata for Brain-Computer Interaction data capture activities by integrating BCI-domain-specific Sense and Actuation Models along with a novel Context Model.",
+    "In Brain-Computer Interaction (BCI) systems, modeling observations requires axioms that guide data representation and analysis. The Acronym for AAE formalizes relevant metadata integrating BCI-domain-specific Sense and Actuation Models with a novel Context Model. Multimodal data from subjects is collected through various sensors to classify brain states and dynamics. BCIs rely on ontological structures like SOSA/SSN upper ontologies, which define fundamental concepts and relationships. The Semantic Sensor Network (SSN) provides the conceptual template for Sense and Actuation Models in BCI systems. A session groups both observations and actuations under specific settings and conditions. Predictive features provide important input to classification models for adaptive BCIs. Descriptive features characterize brain states, while physical/virtual environments contextualize interactions. The BCI- O proto-ontology serves as a starting point for developing comprehensive knowledge representation frameworks.",
+    "In the realm of Brain-Computer Interaction (BCI), semantic data repositories play a crucial role in capturing descriptive and predictive features of brain signals. The proto-ontology, for instance, enables semantically searching big data sets by formalizing metadata annotations essential to BCI systems. Moreover, machine learning models train and personalize using semi-structured and non-interoperable metadata formats. Furthermore, the Sense and Actuation Models (SSO and AAE) provide a pattern-based architecture for modeling the BCI Ontology, which formalizes relevant metadata for Brain-Computer Interaction data capture activities. The specification defines how BCI systems can capture, process, and analyze brain signals, leaving open the way in which applications handle semantic expressiveness levels for measurement units and procedure concept extension.",
+    "The BCI systems architecture provides a conceptual framework for understanding brain-computer interfaces. This framework outlines the structure, organization, and relationships of BCI systems. The machine-readable BCI semantic model enables software agents to interoperate by providing a formal representation of BCI data capture activities. In the BCI domain, context refers to real-world surroundings and environments where human beings interact with sensors and actuators while performing activities. A novel Context Model for describing any kind of real or virtual environments has been developed. The Unity World Model for game development into BCI-O integrates Sense and Actuation Models along with a novel Context Model. Each module represents a key topic that gives a consistent explanation of its correspondent functional aspect in the mentioned BCI interaction model. Augmented BCIs enhance or modify brain-computer interfaces to improve their functionality.",
+    "The Brain-Computer Interaction Ontology (BCI-O) proto-ontology was initially designed based on project specifications and incremental software engineering tasks. It formalizes relevant metadata for BCI data capture activities by integrating Sense and Actuation Models along with a novel Context Model. The ontology represents a standard framework for modeling brain signals, enabling the analysis of brain states and dynamics. In addition to its application in mainstream human-computer interaction, it also has implications for real-world activities involving Brain-Computer Interfaces (BCIs).",
+    "In Brain-Computer Interaction (BCI) systems, understanding features and properties of brain signals is crucial. The Sense Model represents sensory information, while the Actuation Model enables BCI systems to actuate responses based on observed context. However, there is no complete standardized formal semantic structure for organizing metadata annotations in BCIs. To address this challenge, researchers have proposed various ontological structures, such as the ESS+HED Standards Ontology for BCI-O and the Semantic Actuator Network. These frameworks aim to capture descriptive features of brain signals and provide important input to classification models for adaptive BCIs. Furthermore, real-world applications of BCIs require a deep understanding of human body bio-signals and their channeling schema.",
+    "The Bio-signal Computer-Interaction Ontology (BCI-O) provides a comprehensive framework for understanding and organizing data related to Brain-Computer Interfaces. It includes conceptual models that describe key topics, such as each module representing a consistent explanation of its functional aspect in the BCI interaction model. The ontology also encompasses logical components of channeling schema's data structure model, which refer to specific concepts within BCI-O that describe sensor output streams and recorded data. Furthermore, it features descriptive features that explain the interaction model settings of the data, as well as a novel Context Model for describing real or virtual environments. Additionally, the ontology includes axioms for modeling observations, which guide the representation and analysis of observational data in a Brain-Computer Interaction system.",
+    "The BCI Ontology (BCI-O) defines a comprehensive framework for modeling brain-computer interactions. It encompasses various modules, each representing a key topic that provides a consistent explanation of its corresponding functional aspect. The ontology includes concepts such as definitions, relevant metadata, and semantic models. Additionally, it features actuation-related abstractions, observation- related ontologies, and axioms for modeling results. Furthermore, the BCI-O is aligned with other frameworks like SOSA/SSN, SAN-IoT-O, and IoT-O, enabling seamless integration of brain-computer interfaces with various systems.",
+    "The BCI datasets, which are collections of data records gathered through Brain-Computer Interface technology, contain descriptive features that explain the interaction model settings. These models can be used to analyze biological signals generated by human body bio-signals using Machine Learning and Deep Learning techniques. The proto-ontology's project specification defines class hierarchies and design rules for BCI metadata annotations, which are based on SOSA/SSN Vertical Segmentation ontology. This framework provides a conceptual template for both Sense and Actuation Models describing functional aspects of any Brain-Computer Interaction data capture activity.",
+    "The BCI metadata provides a collection of data records or information about brain-computer interface experiments and systems. A hybrid modeling style was used, combining verbal/semi-structured vocabularies with logic-based upper ontologies and structural-object approaches. The ESS+HED Standards Ontology for BCI-O is an ontology overlay that integrates Sense and Actuation Models along with a novel Context Model. Predictive features are essential inputs to classification models for adaptive Brain-Computer Interaction systems, enabling the analysis of brain states and dynamics. The predictive features can be categorized as subject-independent features. Descriptor defines external resource sets that extend or complement descriptions associated with relevant entities in BCI-O. Logical components of channeling schema data structure models refer to specific concepts within BCI-O describing structural and functional aspects of sensor output streams. The W3C OWL-Time ontology formalizes metadata for Brain-Computer Interaction data capture activities by integrating domain-specific sense and actuation models. Ontology design pattern reuse applies established patterns from other ontologies, such as SOSA/SSN or SAN (IoT-O), to the Sense and Actuation Models in BCI-O. Biological and neurophysiological signals are measurements of physiological activity recorded from the nervous system. The interaction between a subject and context while performing a single activity under specific settings and conditions is an example of Brain-Computer Interaction systems. Channeling schema data structure models describe contextual input data and events to subjects in Brain-Computer Interaction systems.",
+    "In Brain-Computer Interaction (BCI), the interaction between a subject and context while performing a single activity under specific settings and conditions involves architectural descriptions. This process relies on ontology design patterns, such as Stimulus-Sensor-Observation Ontology Design Pattern, which structures relationships between stimuli, sensors, and observations to facilitate knowledge representation and integration. Human body bio-signals can be monitored and made to interact with computing interfaces, while the Model Selector for Data selects annotated data segments with probabilities and correlations as input to transfer learning source models. The procedure concept extension extends BCI Ontology (BCI-O) specifications by describing procedures that model complex brain-computer interactions. In this context, SAN-IoT-O formalizes relevant metadata for Internet of Things (IoT) data capture activities.",
+    "The Sensor, Observation, Sample, and Actuator (SOSA) frameworks provide an ontological structure for sensors and actuators used in Brain-Computer Interaction systems. The Sense Model uses SOSA/SSN Ontologies to represent sensory information. During ontology development, popular vocabularies were included to enrich BCI-O concepts metadata as annotation properties. Predictive features are subject-independent characteristics that explain the interaction model settings of brain-computer interface data. Ambient intelligence settings enable context-aware and semantically integrated Brain-Computer Interfaces into smart environments. The Pervasive Embedding Technologies (PET) Lab in National Chiao-Tung University works with Swartz Center for Computational Neuroscience to develop BCI Ontology design patterns, such as SOSA + SAN Ontologies & AAE Design Pattern (IoT-O). An OWL 2 RDF/XML document formalizes metadata annotations for Brain-Computer Interaction data capture activities. Heterogeneous BCI datasets are collections of diverse data sets related to Brain-Computer Interfaces from various applications.",
+    "The Brain-Computer Interaction Ontology (BCI-O) provides a formal semantic structure for modeling relevant metadata, integrating Sense and Actuation Models along with a novel Context Model. This framework enables seamless data exchange and processing between different systems. The BCI interaction model complexity is modeled using concepts aligned to the axioms for modeling results. Ambient intelligence settings are described as environments that can be physical or virtual. Ontological resource reuse includes SOSA/SSN, SAN (IoT-O), DUL, and dbpedia. Logical components of a channeling schema's data structure model refer to specific concepts within BCI-O that describe the structural and functional aspects of sensor output streams.",
+    "The Sensor, Observation, Sample, and Actuator (SOSA) framework provides a standardized ontology for sensors and actuators used in Brain-Computer Interaction systems. The organization of its entities and their relationships enables the description of environments or contexts in terms of their organizational structure and the relationships between entities. The Actuation Model represents the relationship between actuators, their effects on systems or processes, and the context in which they operate. A session groups both observations (contextual input data) and actuations, capturing the dynamic exchange of stimuli, actions, and effects. Ambient intelligence settings enable brain-computer interfaces to be context-aware and semantically integrated into smart environments.",
+    "The BCI metadata, which describes neurophysiological recording settings and events in brain-computer interface experiments, has a broader term of 'metadata'. The Sensor, Observation, Sample, and Actuator (SOSA) frameworks have a broader term of 'models', while IoT-O has a broader term of 'the Internet of Things' (IoT). Quality was carefully considered during the overall process of building BCI-O specifications. Two fundamental representational aspects were considered for domain modeling: Brain-Computer Interface (BCI) and physical/virtual environments (contexts), which have a broader term of 'concepts'. The SSN Skeleton module has a broader term of 'modules', while Semantic Matching defines relationships between metadata concepts based on vPod Ontology alignment to BCI-O, having a broader term of 'alignment'. AAE Design Pattern is an ontology design pattern that integrates axiomatization models for actuations developed by W3C/OGC and IoT communities. The descriptive features have a broader term of 'attributes', while SOSA/SSN mapped to AAE ODP.",
+    "The descriptive features, which explain the interaction model settings of brain-computer interface (BCI) data, are a crucial aspect of online multimodal EEG classification. These features can be categorized as comparable features among different users, and they play a vital role in developing machine learning models that accurately classify brain activity using electroencephalography (EEG) signals from multiple modalities. The Sense Model, which is an artificial intelligence framework or data model that represents sensory information, concepts, or events, provides the context for understanding these features. Furthermore, the ontological structure of BCI-ontology, including entities such as modality types and semantic sensor networks, enables the organization and analysis of observational data in a Brain-Computer Interaction system.",
+    "The W3C Semantic Sensor Network (SSN) provides a standardized framework for describing sensor networks, enabling semantic interoperability among devices and systems. This ontology development process involves creating or modifying conceptual frameworks that define relationships between entities, concepts, and terms. The BCI Ontology (BCI-O) specifications in their Base Version contain the complete modeling structure and content of the ontology. A session groups both observations and actuations, which are used to select analyzed raw data and annotated data segments as input for a transfer learning operation between two machine learning models. These models can be applied to various domains, including bio-signal markers and technological interfaces for the entire human body: organs such as the brain, heart, liver, and systems including nervous, integumentary, and endocrine.",
+    "The BCI Ontology (BCI-O) was developed to enrich the metadata of Brain-Computer Interaction concepts. During its development, terms from popular vocabularies were included as annotation properties. The Sense Model represents sensory information and events, while the novel Context Model describes real or virtual environments. The vPod Ontology is an application of BCI-O's Actuation Model, which integrates axiomatization models for actuations developed by W3C/OGC and IoT communities. AAE ODP forms the basis of BCI-ontology framework used in Early Glaucoma Detection. The 4.4 Context Model describes any kind of environment from three complementary perspectives: structural, behavioral, and temporal.",
+    "The Brain-Computer Interaction (BCI) Ontology leverages semantic interoperability and integration to facilitate knowledge representation. It combines verbal/semi-structured vocabularies, logic-based upper ontologies, and structural-object frameworks. The Sense Model describes contextual input data and events for subjects, while the W3C Semantic Sensor Network provides a standardized framework for sensor networks. Machine learning models, including Convolutional Neural Networks (CNNs), are used to analyze and make predictions from data. Annotation tags include event markers that enable semantic interoperability among devices and systems.",
+    "The development of a set of ontological frameworks to capture bio-signal markers and technological interfaces for the entire human body, including organs such as brain, heart, liver, and systems like nervous, integumentary, and endocrine. This task involves aligning prominent ontologies from SOSA/SSN and SAN (IoT-O) to directly apply ontology design patterns to term definitions. The vPod Ontology is an application of the BCI-ontology framework used for Early Glaucoma Detection by selecting data sets and segments previously classified via a simple Convolutional Neural Network (CNN) as input to a more sophisticated CNN model. Actuation Model, which uses specific design pattern and ontological frameworks to describe IoT-related data, enables control or manipulation of systems from within based on internal states or conditions. The bidirectional subject-context interaction model defines the relationship between subjects and their surrounding environments.",
+    "The novel Context Model has a broader term, 'modeling', which enables the creation or development of abstract representations. The issue #1028 regarding Homogeneity of an Observation Collection highlights the importance of ensuring uniformity among observations in Brain-Computer Interaction systems. The Context Model is part of the ontological structure that formalizes metadata for capturing data in various contexts. Comparable features among different users are subject-independent, and comparable to brain states and dynamics, which can be represented as concepts. The vPod Ontology is a model used for Early Glaucoma Detection by selecting data sets previously classified via simple Convolutional Neural Networks (CNN) as input to more sophisticated CNN models. Different validation points were checked to ensure the consistency of BCI-ontology after including or modifying axioms, such as disjoint concepts and DUL/ SAN alignments. The Actuation Model represents the relationship between actuators, their effects on systems or processes, and the context in which they operate. Existing algorithms classify data sets for Transfer Learning, enabling adaptation and improvement of Brain-Computer Interface (BCI) systems.",
+    "The BCI Ontology (BCI-O) proto-ontology, developed through a joint project between NCTU and UCSD, serves the proper HTML and RDF/XML versions. The ontology's Annotation Tag is based on context stimuli, which are used to elicit responses in experimental contexts. Some BCI applications have broader terms that align with the concept of applications. The results refer to the outcome or outputs of the BCI-O development process. A brief description of the modules explains each module in the BCI Ontology, including Subject, Context, Session, Sense Model, Sensors, System Capabilities, Results, Actuation Model, Annotation Tag, Descriptor, and EEG concepts. The horizontal segmentation module for system capabilities is aligned with System Capologies. The Sensor, Observation, Sample, and Actuator (SOSA) frameworks have broader terms that align with Ontological concepts. Modeling involves the process of creating or developing an abstract representation. Event markers are based on context stimuli and response markers. EEGNet is a convolutional neural network designed specifically for electroencephalography signal processing.",
+    "In the context of brain-computer interfaces, an application uses the vPod Ontology to formalize metadata for capturing data sets and segments. The Context Model has a broader term that describes the organization of its entities and their relationships. BCI metadata refers to the collective vocabulary developed by the SCCN team, which includes EEG Study Schema (ESS) and Hierarchical Event Descriptor (HED). IoT communities have proposed Semantic Actuator Network (SAN), an upper ontology for formalizing actuation-related metadata. The Sense and Actuation Models integrate sensory perception and motor control mechanisms, while the SSN Skeleton module describes the Stimulus-Sensor-Observation (SSO) design pattern used in BCI- O's Actuation Model. These annotations are part of a broader framework that includes ontological structures, modeling approaches, and data capture activities.",
+    "In Brain-Computer Interaction Ontology (BCI-O), sessions group both observations and actuations, with definitions providing clarifications on concepts. Comparable features among different users are attributes that can be used for training machine learning models. The Context Model formalizes metadata for capturing data in various contexts. Annotated EEG recordings and data segments have been classified with high- correlation probabilities, enabling transfer learning operations between two machine learning models. These predictive patterns enable predictions about brain states and dynamics.",
+    "The BCI-O defines three key concepts that bind contextual integration with Sense and Actuation Models: a stimulus to the subject, an action issued by a subject while performing an activity, and an effect in the context as the result of actuation. The Sense Model employs the SSO Design Pattern, which enables users to access multiple applications or systems with a single set of login credentials. Furthermore, observation-related ontologies have a broader term that is Ontological, emphasizing the study of existence, being, and reality. Unambiguous searchability, similarities, simulations, and predictions are subject-independent features that enable semantically informed BCI analytics for sensor and actuator data patterns. The SSN Skeleton module describes the Stimulus-Sensor-Observation (SSO) ontology design pattern, which forms the top-level of the Semantic Sensor Network (SSN). Additionally, online multimodal EEG classification is an application that classifies brain activity using electroencephalography signals from multiple modalities in real-time. The horizontal segmentation module and modules are self-contained units of software or functionality that group related components together.",
+    "The SOSA/SSN W3C Recommendation defines a framework for describing semantic relationships between entities. This recommendation has broader implications, as it relates to Semantic Web technologies that enable machines to understand and interpret meaning from web-based data using semantics. The Actuation Model depicts how the subject can interact with the context, which is also described by a semantic model. Transfer Learning operations involve transferring knowledge or features from one machine learning model to another, leveraging pre-trained models for improved performance. Predictive data features are used in this process, and descriptive features provide additional insights. Definitions clarify the meaning of terms, while ontological structures formalize relationships between entities. The SAN-IO-T-O ontology provides metadata for IoT data capture activities. Inference rules apply Transfer Learning to multimodal classification, using pre-trained models as a starting point. Each subject participates in brain-computer interaction experiments, with their unique EEG recordings and annotations. Models are used to structure and organize data, processes, or systems. A hybrid modeling style combines verbal/semi-structured BCI vocabularies, logic-based upper ontologies, and structural-object Unity framework approaches.",
+    "The development of a set of ontological frameworks, such as Sense Model and Semantic Actuator Network (SAN), enables semantic interoperability among devices and systems. The W3C Semantic Sensor Network (SSN) provides a standardized way of describing sensor networks, while Transfer Learning leverages pre-trained models to adapt them to new tasks or datasets. In the context of brain-computer interactions, bio-signal markers and technological interfaces for the entire human body interact with organs such as the brain, heart, liver, and systems including nervous, integumentary, and endocrine. The results refer to the outcome or outputs of these interactions, which can be influenced by factors like many layers to train and personalize machine learning models. Furthermore, EEGNet is a convolutional neural network algorithm designed specifically for electroencephalography (EEG) signal processing and analysis.",
+    "The SOSA/SSN ontology design pattern, combined with the SAN and AAE design patterns, specifically tailored for IoT-based Brain-Computer Interaction applications. This framework enables unambiguous searchability, similarities, simulations, and predictions through machine learning models that leverage wearable sensors and semantic matching between metadata concepts. The correlated interpersonal features and relevant data sets support Transfer Learning in multimodal classification. Furthermore, the Context Model formalizes metadata for capturing data in various contexts, including physical and virtual environments. Additionally, EEGNet is a convolutional neural network designed specifically for electroencephalography signal processing and analysis.",
+    "In the realm of Brain-Computer Interfaces (BCI-O), external resources provide an extension of descriptions for entities. Response markers based on machine learning models annotate specific data segments, which are organized into data sets. The SSN upper ontology defines a standardized notation system to identify and connect devices or systems. Actuation results from sensor systems enable interaction with the context domain, where concepts are based on gaming architectural modeling using Unity's framework. Interoperable models facilitate seamless communication between different systems, while semantic models represent relationships between entities. Transfer learning techniques leverage pre-trained machine learning models for improved performance. The Context Model organizes entities and their relationships into structural, behavioral, and temporal perspectives.",
+    "The W3C OWL-Time ontology provides a formal semantics-based representation of time-related concepts for use on the semantic web. The human-environment interaction model, which depicts how humans interact with their environment, has been broadened to include various models such as Actuation Model and SOSA/SSN frameworks that help improve Semantic Interoperability and Integration. Relevant data sets have been collected using event/situation based data logging techniques, while Internet-of-Things concepts are being explored through logic-based upper ontologies. The interaction model has been refined to incorporate semantic models, and machine learning models such as RevNet+I have been trained on transfer learning source models. Furthermore, the BCI Ontology's satisfiability was checked immediately after including and modifying various axioms, demonstrating its alignment with existing frameworks.",
+    "The relationships between entities in this graph reveal insights into machine learning techniques, actuation models, and semantic frameworks. The concepts of context and contextual relations are central to understanding how brain signals can be sensed from a subject's environment or conversely, how an actuator affects the subject based on contextual events. Ontological structures such as OWL 2 formal structure and ontological concepts provide a framework for modeling these interactions. Furthermore, the use case of online multimodal EEG classification highlights the importance of categorizing brain activity using electroencephalography signals from multiple modalities.",
+    "The EEG concepts represent different types of electroencephalography signals or recordings, which are used to analyze brain activity. These concepts can be categorized under EEG applications. The Sense and Actuation Models integrate models of sensory perception and motor control to describe the interaction between an organism's senses and its actions. SSN provides a foundation for describing sensor networks as Web applications: real-time data processing from Web-Of-Things sensors, which is related to IoT-O specifications. The predictive data features are subject-independent features that enable machine learning models to make predictions about brain states and dynamics. Sosa:Observation has a broader term of Observation, which captures information about a stimulus, sensor, its output, and the spatial-temporal specification of the sensing activity. SOSA and SAN upper ontologies provide an Ontological framework for organizing knowledge. The foundational layer (DUL) contains dul:Object, representing physical or virtual objects. Sense Model has a broader term of modeling, which is used to create abstract representations. SAN Ontologies also have a broader term of Ontological. BCI-O's basic design principle follows the three-layered architecture comprising DUL at its core, SOSA/SSN + SAN in the middle, and BCI-ontology itself. The correlated interpersonal features and relevant data sets for Transfer Learning are subject-independent features that support personalized calibration of models with some level of confidence. Its modeling is used to describe physical or virtual environments, comprising a sequence of scenes with spatially located entities interacting in specific ways.",
+    "The Sense and Actuation Models: SSO and AAE combine sense and actuation capabilities, possibly as part of a pattern-based architecture. The models have a broader term that outlines how to structure and organize data, processes, or systems. The descriptive features explain the interaction model settings of the data, which has a broader term describing characteristic properties. The Sense Model represents sensory information, concepts, or events, while its structure is organized into conceptual components. SSN provides standardized notation for identifying devices or systems. Context Model formalizes metadata for capturing data in various contexts. Ontology restructuring had a special focus on pruning and modularization to improve the BCI Ontology's structure, scalability, and maintainability. These tools have been built as a multi-iterative process infrastructure with many layers to train and personalize machine learning models using semi-structured and non-interoperable metadata formats.",
+    "The BCI Ontology (BCI-O) project specification, developed by proto-ontology's team, aims to create a comprehensive framework for modeling sensor-actuation systems. The Context Model organizes entities and their relationships into structural, behavioral, and temporal perspectives. EEGNet is a convolutional neural network designed specifically for electroencephalography signal processing and analysis. Transfer Learning operations involve selecting relevant data sets and segments between two machine learning models to fine-tune or adapt to new tasks. Online multimodal EEG classification categorizes brain activity using multiple modalities in real-time, potentially involving machine learning techniques.",
+    "The human-environment interaction model provides a framework for understanding how humans interact with their environment. This concept has broader implications, encompassing concepts such as structure and design principles that guide engineering applications. The semantic model of sensors plays a crucial role in this process, allowing us to understand the relationships between devices and their outputs. In machine-to-machine environments, models like RevNet+I can be used to analyze features extracted from brain signals. Actuation models enable us to control systems based on these predictions. Metadata concepts provide additional context for understanding these interactions. The Swartz Center for Computational Neuroscience (SCCN) has the chance to work with Pervasive Embedding Technologies (PET) Lab, which is centered around observations of what was observed and how. EEG concepts represent different types of electroencephalography signals or recordings that can be used in various applications.",
+    "The relevant epochs to the source model that classify the eye's vision are closely tied to the development of a simple Convolutional Neural Network (CNN) for glaucoma classification. The high-correlation data segments from EEG recordings, which serve as input to this RevNet+I model, have been previously classified via this CNN. Furthermore, the correlated interpersonal features and relevant data sets used in Transfer Learning are based on attributes that describe distinct entities with ontological structures. In machine-to-machine environments, these concepts of context and contextual relations play a crucial role in understanding brain-computer interactions. The subsequent development of the BCI Ontology (BCI-O) at NCTU has led to the reuse and alignment of ontology design patterns for efficient development of ontologies.",
+    "The relevant data sets provide a collection of datasets that support adaptive brain-computer interactions, transfer learning, and situation-specific data analytics. The Sense Model describes the contextual input data and events to each subject, which are then used for modeling sensors under observations. Hierarchical Event Descriptor Tags define a hierarchy of standard and extended descriptors for EEG experimental events, providing a uniform human- and machine-readable interface. Inference rules aid in applying transfer learning techniques in multimodal classification, leveraging knowledge gained from previous training data. The correlated interpersonal features refer to the neurophysiological signals or characteristics that are shared among individuals and can be used to classify their brain states.",
+    "The context, encompassing both physical and virtual aspects, plays a crucial role in understanding subject-context interactions. These interactions are governed by logical models that describe relationships between entities, concepts, and semantics. The annotations used to classify EEG recordings into categories such as Normal, G. Early, or G. Late for glaucoma detection provide valuable insights into the organization of these contexts. Furthermore, the interaction model facilitates communication and exchange between devices, agents, or systems through actuators that change the state of their context. In addition, transfer learning target models are developed to analyze data sets and segments, which are used in machine learning applications. The development of ontologies, such as SSN and SAN, formalizes metadata for capturing data in various contexts.",
+    "The Semantic Matching method, which matches semantic meanings, often used in conceptual frameworks such as ontologies. This process can be applied to various domains like IoT communities and their interactions with sensors. The DCMIType ontology provides a standardized term or concept for categorizing metadata. In the context of real-world activities, concepts are abstract representations that capture particular notions. A Sense Model maps contextual information to corresponding subjects or entities. The 4.4 Context Model describes any environment from three complementary perspectives: structural, behavioral, and temporal. Query Restriction involves attribute-based restrictions on sessions, subjects, and records, which categorize observations. The BCI- Ontology specification presents two early applications: the CerebraTek vPod Ontology for glaucoma diagnostics using mfSSVEP and the ESS+HED Standards Ontology as an ontological overlay for EEG data sharing tools.",
+    "The development of BCI Ontology (BCI-O) involved various axioms that ensured its satisfiability and consistency. A pattern-based architecture was used for Sense and Actuation Models: SSO and AAE, which combined sense and actuation capabilities. Upper ontologies have a broader term in semantic models, while SAN has a broader term in upper ontologies. Individual users provided training data to train simple Convolutional Neural Network (CNN) models. The Dolce-Ultralite (DUL) Alignment Module is an ontology design pattern that aligns concepts from different frameworks. SKOS lexical labels and notes documentation properties were included into the specifications for metadata purposes. Proto-ontology has a broader term in semantic model, while Context represents the organization of its entities and their relationships. BCI Ontology development involves axioms for modeling sensors under observations. Data segments with high-correlation probabilities have been annotated as part of data collection.",
+    "The relevant epochs to the source model classify the eye's vision, which refers to brain signal classification related to glaucoma detection stages. The semantic model provides a conceptual framework for understanding these relationships. After including and modifying various axioms, such as disjoint concepts and DUL/SAN alignments, we can check BCI-ontology's satisfiability at different validation points. The namespace URI definition clarifies the meaning of 'definition'. EEG applications involve analyzing brain activity using electroencephalography technology. Context refers to a combination of physical and virtual environments where machines or devices communicate with each other directly. Actuation and actuator control systems interact through actuators, influencing their surroundings. Ontological concepts represent fundamental truths about existence, being, and reality. Modeling processes create conceptual frameworks for describing and structuring these interactions.",
+    "The Sensor Observation Service Architecture (SOSA) Standard for Sensors aligns with the SAN framework. Transfer Learning has a broader term of concepts, which are abstract representations or mental constructs that capture a particular notion, idea, or theory. Logical models have a broader term of models, and axioms for modeling sensors under observations also fall within this category. Event markers define predictive data features, while SOSA/SSN has a broader term of ontological structure. The probability and correlation for high-correlated segments of the source model is another type of model. Results are specific concepts aligned to the axioms for modeling results, which is part of semantic models. sosa:Sensor has a broader term of ontological concepts, while dul:Object leads to sosa:Sensor and also falls within the category of ontological structure. The multi-iterative process infrastructure is a type of system that enables training and personalization of machine learning models through a multi-layered infrastructure for processing semi-structured and non-interoperable metadata. RevNet+I, on the other hand, has a broader term of semantic model. Definition provides clarity to concepts or ideas, while M2M environments are a type of environment where machines communicate with each other directly without human intervention. Query Restriction involves attribute-based restrictions of categories on sessions, subjects, and records that categorize observations, which is part of the concept of categories. Logic- based upper ontologies have a broader term of Ontological, while System Capabilities fall within the category of systems. Finally, Stimulus has a broader term of concepts.",
+    "The CerebraTek vPod Ontology, a knowledge representation model applied to glaucoma diagnostics using mfSSVEP, has its roots in proto-ontology. This conceptual framework outlines how to structure and organize data, processes, or systems. The organization of its entities and their relationships is crucial for understanding the semantic model that underlies this ontology. In real-world applications, such as brain-computer interfaces (BCIs), machine learning models like RevNet+I are used to analyze features of collected EEG signals. These conceptual components form the foundation of a physical or virtual environment in terms of its spatially located entities interacting with each other. The teams behind BCI Ontology projects, such as SCCN at UCSD and PET Lab at NCTU, have developed two sets of metadata vocabulary to describe settings of neuro-physiological recordings (EEG Study Schema) and specify neuro-physical events (Hierarchical Event Descriptor). Furthermore, the horizontal segmentation module for system capabilities categorizes logical components of a channeling schema's data structure model. The Unity framework's high-level modeling architecture provides relevant abstractions curated from gaming architectural modeling to describe any kind of environment or context.",
+    "The concept of subject defines a human being engaging in an activity and its associated state, which can be related to ontological structures. The W3C OWL-Time ontology provides a formal semantics-based representation of time-related concepts for use on the semantic web. SAN represents a standard or framework that organizes knowledge in a specific domain. Axiomatizations serve as a foundation for deriving conclusions and making decisions, while actuation models enable control or manipulation of systems from within. Contextual input data and events to subjects can be categorized under data. Personalized calibration of models with some level of confidence is used to adjust machine learning models to fit individual users' characteristics. Dul:Events represent occurrences that can be perceived as actions, processes, or situations. Upper ontologies provide a set of fundamental concepts for organizing knowledge. A session represents an instance of human-environment interaction where subjects perform activities under specific settings and conditions. System capabilities define a system's functional and operational abilities. Simple Convolutional Neural Networks (CNNs) are used for image classification, object detection, and feature extraction in M2M environments with contextual input data. Metadata provides details about itself, while metadata annotations provide context and meaning to information.",
+    "The Sensor Observation Service Architecture (SOSA) Standard for Sensors defines a framework for describing environments or contexts. The Model Selector for the Data, which selects models based on data characteristics, probabilities, and correlations, can interact with these contexts through actuation models that depict how subjects can influence their environment. Relevant epochs to the source model are identified as high-correlated segments, signifying important periods in EEG signal processing. Three versions of the BCI Ontology (BCI-O) specification exist: Base Version, HTML Version, and OWL 2 RDF/XML Version. The SSN standard provides a standardized notation system for identifying devices or systems. In electroencephalography (EEG), concepts such as EEG subtypes can be used to analyze signals. A sequence of data segments with related attributes that define probabilities and correlations is crucial in glaucoma detection applications, where the transfer learning source model, EEGNet, plays a key role.",
+    "A simple linked data engine was developed to handle specialized linked data services, including serving HTML and RDF/XML versions. The Model Selector for the Data uses annotated data segments with probabilities and correlations, as well as classified recordings from a transfer learning source model. This process involves categorization of observations based on descriptive features. Relevant abstractions were curated from Unity's gaming architectural modeling to describe environments or contexts in terms of their organizational structure and relationships between entities. The 4.4 Context Model was built upon these abstractions, providing a framework for describing any kind of environment. EEG recordings are used as data input, which is then analyzed using Hierarchical Event Descriptor Tags. This process relies on concepts such as measurement units, devices, and datasets.",
+    "The transfer learning target model, which is based on the semantic model, has been used to analyze features of collected EEG signals. The Model Selector tool was employed to select or classify models based on specific criteria such as probabilities and correlations. A simple Convolutional Neural Network (CNN) served as a broader term for RevNet+I, another complex 24-layer CNN model designed specifically for electroencephalography (EEG) signal processing and analysis. The context stimuli were categorized under stimulus events, while the target model was seen as part of systems. Physical/virtual environments (contexts) encompassed any kind of environment. EEG data sharing tools facilitated the sharing of recorded data as sensor output streams, which led to results. A session was organized around its entities and relationships, with Context representing a conceptual framework for describing environmental setups. The CerebraTek vPod Ontology served as another model applied to glaucoma diagnostics using mfSSVEP. Inference rules were used to transfer knowledge between different domains or modalities, categorizing data into categories. Metadata provided details about itself and its concepts.",
+    "The physical/virtual environments (contexts) encompass various settings, including environmental surroundings and virtual spaces that can be experienced or interacted with. These contexts are characterized by their own unique characteristics, such as spatially located entities interacting in specific ways. The Sense and Actuation Models: SSO and AAE provide a framework for understanding these interactions, while the axiomatizations enable semantic reasoning to draw logical conclusions from this information. Furthermore, the interoperable models facilitate seamless communication between different systems, allowing for effective integration of data sets and segments. In addition, the participation foundational design pattern provides a reusable structure for describing observation-related ontologies and data on the Semantic Web.",
+    "The concept of dul:Event represents an occurrence or happening that can be perceived as an action, process, or situation. This event has a broader term 'concepts', which are abstract representations or mental constructs capturing particular notions, ideas, or theories. The AAE ODP for Actuation is another example of this concept, carrying out procedures to change the state of context using actuators and inducing effects. Similarly, ontological frameworks represent knowledge about existence, being, and reality, with semantic models providing a conceptual framework for representing relationships between concepts, entities, or ideas. In addition, correlation represents statistical relationships between two variables, often measured by coefficients indicating strength and direction of association. The task involves discovering relationships among extracted neurophysiological signal features from multiple individuals to identify correlated interpersonal characteristics. Annotations are labels added to data, used to categorize or describe its content. Datasets are collections of data for research purposes. Physical/virtual environments combine tangible settings with digital spaces. Stimulus events trigger responses or reactions, and interaction models govern communication between entities. Proto-ontology is a foundational ontology serving as a starting point for knowledge representation frameworks.",
+    "In various physical and virtual environments, settings play a crucial role. The way applications handle semantic expressiveness levels for measurement units can significantly impact our understanding of these contexts. Ontology design pattern reuse and alignment were applied to Sense and Actuation Models, allowing us to better comprehend EEG concepts, which represent different subtypes of electroencephalography signals. RevNet+I is a complex 24-layer CNN model used as a transfer learning target for analyzing features in glaucoma detection applications. The analyzed EEG recordings have been classified using EEGNet, and the Model Selector for Data has selected relevant segments based on probabilities, correlations, and classifications from the transfer learning source model. Dublin Core Metadata Terms provide standardized metadata terms to describe digital resources, while Ontology restructuring focused on pruning unnecessary concepts and modularizing complex relationships.",
+    "The high-correlated segments are relevant to the target model, which uses RevNet+I transfer learning. The Model Selector for the Data categorizes classified recordings based on data characteristics and correlations. Systems annotate EEG recording data with descriptive parameters, while dbp:Person leads to bci:Subject in a research study context. The transfer learning target model is an algorithmic system that analyzes features of collected EEG signals. Annotated data segments are categorized as high-correlated or low-correlated based on their characteristics and situation-dependent properties. Actuators interact with the physical environment through recorded data, which includes sequences of annotated data segments. Query Projection selects raw data sets for transfer learning operations using semi-structured metadata formats.",
+    "The organization of its entities and their relationships provides a framework for describing environments or contexts. Ontological frameworks, such as BCI-O, conceptualize and formalize abstract representations like concepts, which are aligned to axioms for modeling results. In this context, use cases demonstrate how applications can be used in real-world scenarios. The transfer learning source model is based on high-correlated segments of EEG data, with machine-semantic search retrieving relevant information. Personalized calibration of models ensures a certain level of confidence.",
+    "The categorized observations are a collection of recorded or documented facts, which can be further classified as Observations. A Session represents an interaction between two parties, while modules explain descriptive data features and contextual input data forms part of larger datasets. Annotations define categorization processes, and EEG recordings provide insights into brain activity patterns. The RevNet+I model serves as a transfer learning target for analyzing EEG signals in glaucoma detection applications. Hierarchical Event Descriptor Tags specify event-related electroencephalography studies, while the subject can interact with the context through sensor and actuator data patterns. Model Selector for the Data selects models based on data characteristics, probabilities, and correlations. Ontological frameworks represent knowledge about existence, being, and reality, which is organized into concepts that define structural, behavioral, and temporal perspectives.",
+    "The BCI Ontology (BCI-O) provides a framework for describing environments or contexts, including sensors that detect and measure physical parameters. The ontology also defines relationships between entities such as devices, events, and natural persons. It includes concepts like class hierarchies, design rules, and predictive features used in EEG recordings. Furthermore, the BCI-O has axioms checked for satisfiability through validation points, which ensures its consistency and accuracy.",
+    "The Hierarchical Event Descriptor (HED) provides a standardized vocabulary for describing hierarchical event structures. Metadata concepts serve as a broader term, encompassing abstract ideas or representations that describe data or information. Interaction model settings are categorized under settings, which influence events and situations. The sosa:Observation concept is related to Ontological, representing recorded measurements or data points. DUL's resource reuse framework has its roots in the proto-ontology, a foundational ontology for knowledge representation. IHMC CmapTools tools facilitate conceptual modeling, while structural-object (Unity framework) represents an organization of entities and relationships. Sensors are used for modeling observations, which involve instant and interval concepts that capture time-related notions. Each satisfiability checkpoint is validated using reasoner HermiT v1.3.8 to ensure the ontology's consistency. A pattern-based architecture was employed in developing Sense and Actuation Models (SSO and AAE). The organization of entities and relationships has its own scope note, which clarifies the meaning of SKOS lexical labels. Dublin Core Metadata Terms provide a standardized framework for metadata exchange, while axioms for modeling observations outline principles governing observational data interpretation. Multimodal data is represented as datasets, with machine- launched semantic search retrieving relevant information using semantic queries. The time domain (OWL-Time glossary) is included in Non-ontological resource applications.",
+    "In a specific spatial-temporal location or context, concepts such as resource reuse and actuation and actuator are applied to develop applications like Prot\u00e9g\u00e9 v5.2.0 and Unity framework. These tools utilize ontological structures like SOSA/SSN and OWL 2 to represent data sets with annotations. The use case scenario involves real-world activities that rely on situation or context-dependent properties, such as spatially located entities interacting with one another in a specific way within physical or virtual environments.",
+    "These conceptual components enable the structural, functional, and temporal complexity definitions of any environment. High-level concepts and relations found in literature have a broader term as 'concepts'. Context has a broader term as 'situation or context dependent', which relies on specific circumstances for its definition. Only high-correlated segments have a broader term as 'data segments' that exhibit strong relationships with other parts. The transfer learning source model, being a simple 4-layer CNN used for glaucoma classification and serving as the high-level selector and transfer learning source model, has a broader term as 'models'. Context also has a broader term as 'modeling', which is the process of creating or developing an abstract representation. UNITY world model for game development has a broader term as 'semantic model' that represents relationships between concepts, entities, or ideas in a systematic way. The analyzed raw data have been annotated with high-correlation of their segments' probabilities as input to RevNet+I, which is a complex 24-layer Convolutional Neural Network (CNN) used for analyzing features of collected EEG signals in glaucoma detection applications. dbp:Person or dul:NaturalPerson leads to bci:Subject, who participates in research studies. Domain concepts have a broader term as 'concepts'. Data recordings have a broader term as 'recorded data' that captures observed values. Logical models have a broader term as 'modeling', which is the process of creating abstract representations. DUL ontology has a broader term as 'Ontological', an ontology or branch of study dealing with existence, being, and reality. Actuation carries out procedures to change states using actuators, while Sense and Actuation Models: SSO and AAE have a broader term as 'research project'. The probability and correlation for high-correlated segments of the source model has a broader term as 'modeling', which is used in glaucoma detection applications. CerebraTek vPod Ontology also has a broader term as 'Ontological' that represents relationships between concepts, entities, or ideas.",
+    "The criteria for selecting data sets classified by existing algorithms involves evaluating each recorded data, which has a sequence of data segments with related attributes that define a probability and correlation. This process can be triggered by a detectable change in the environment that triggers sensors to perform observations. The SAN framework represents modules that group logical components together, while ontology restructuring is an ontological concept that deals with the nature of existence. Metadata annotations provide context for multi-channel time series data, which are collections of sequential measurements or observations from multiple sources over time. In Unity's gaming high-level modeling architecture, the organization of its entities and their relationships defines a system's functional and operational abilities. The target model is based on semantic models that represent relationships between concepts, while System Capabilities define logical components. Ontology authoring involves creating formal representations of concepts and relationships. Raw recorded data can be classified into event categories using concepts from ontological domains. In the context domain, modeling frameworks like 4.4 Context Model describe environments in terms of their structural, behavioral, and temporal aspects.",
+    "The relationships between distinct individual- specific features that have been extracted and analyzed shall be discovered through semantic search. The architectural description of a physical or virtual environment has a broader term, any kind of environment. A detectable change in the environment that triggers sensors to perform observations also has a broader term, architectural description. Software tools such as Astah Community Modeling Tool, IHMC CmapTools, and Prot\u00e9g\u00e9 v5.2.0 have a broader term, tools. The process or mechanism of controlling or manipulating a system from within is subject to context and has a broader term, modeling. Upper ontologies serve as a foundation for organizing knowledge and understanding and also have a broader term, modeling. Personalized calibration of models with some level of confidence ensures accuracy and reliability in machine learning model training. Specifications define the properties or performance of devices, while parameters are measurable characteristics used for description or prediction. Spatially located entities interact with each other according to specific rules, depicted by scenes that represent physical or virtual environments. EEG recordings are a type of data set, classified as such based on their content and context. The Annotation Tag module is part of the Unity framework, which provides tools for developing games and simulations. Measurement units provide standardized quantification of physical quantities. Concepts capture abstract representations or mental constructs that organize knowledge and understanding. Actuation models enable control or manipulation of systems from within, subject to context.",
+    "The proto-ontology serves as a foundation for modeling, which involves creating abstract representations. Sensor and actuator data patterns are part of broader datasets that can be used to develop applications like Early Glaucoma Detection. The UNITY world model provides an organizational structure for entities and their relationships, while HermiT v1.3.8 is a tool used in machine learning. Data recordings are collections of information that can be analyzed using predictive features or subject-independent features. Relevant epochs from the source model are selected based on modeling principles. Query Restriction mechanisms filter data based on specific criteria. The OWL 2 RDF/XML Version generates a clean and proper machine-readable document, while actuation is implemented by devices like actuators. MPEG-7 MDS glossary provides standardized terminology for describing multimedia content.",
+    "The SOSA/SSN standard for sensors provides structure to raw recorded data, which can be categorized as Normal, G. Early, or G. Late with related attributes defining probabilities and correlations. This dataset segment annotation is used in glaucoma detection applications, where RevNet+I, a complex 24-layer Convolutional Neural Network model, analyzes features of collected EEG signals. The Results are specific concepts aligned to the axioms for modeling results, which can be modeled using ontology design pattern reuse and alignment. In game development, gaming architectural modeling is used as a framework for creating games with Unity world models. Brain states define an individual's psychological state, while any kind of environment provides settings that influence events or processes.",
+    "The target model, which serves as a transfer learning source and input for RevNet+, has been used to calibrate models with some level of confidence. This process involves constructing relevant data sets through semantic queries on vast recording collections. The resulting datasets are then used to personalize calibration, ensuring homogeneity across observation collections. Meanwhile, the organization's entities and relationships have been structured using Unity, a software framework that specializes in game engine technologies. Additionally, metadata has been extracted from raw recorded data, providing insights into environmental settings and results. Furthermore, architectural descriptions of semantic models have been developed, outlining the design and structure of systems and processes.",
+    "The domain and scope of concepts define the boundaries within which predictive features are used to analyze raw data. A semantic query selects relevant recorded data, while context domains provide a framework for understanding related concepts. The CaN-CTA Program aims to develop a pervasive online Brain-Computer Interaction system through gaming architectural modeling. Query Projection includes raw data sets and their segments for transfer learning target models, which involve attribute-based restrictions of categories on sessions, subjects, and records. Measurement units are used to quantify physical quantities, while the initial SSN version is one iteration in the development process.",
+    "The editorial note provides context for annotations, which are used to categorize data. The Context Model core concepts rely on disjoint concepts that form part of an ontological structure. Each recorded data point has been analyzed and categorized into different stages based on event classification. Training data sets were created from raw recorded data using measurement units. Sensors detected entities in a situation or context dependent manner, while the purpose of the semantic query was to retrieve specific information. The capabilities of actuators depend on descriptive features such as settings and conditions. Common concepts are used throughout the process, including section 4 which outlines important parameters. Other measurement properties were also considered, leading to results that provide valuable insights.",
+    "The three complementary perspectives of structural, behavioral, and temporal aspects describe an entity's structure, behavior, and time-related features. Class hierarchies and design rules define categories for sessions, subjects, and records. Conceptual components are abstract building blocks that make up a concept or idea. The transfer learning target model is used to analyze features of collected EEG signals. Recorded data consists of measurement units with standardized values. LOV registry stores semantic data repository information about entities. Objects dul:Object represent physical or abstract entities. Subject-independent features describe characteristics not specific to an individual subject. Data segments have probabilities and correlations, while each recorded data has annotations defining categorization stages.",
+    "The metadata provides context for understanding concepts, which are categorized into features and properties. Architectural descriptions outline models that define modality types within categories. A subject defines a human being with certain attributes, situated in an environment dependent on specific circumstances. Actuation results rely on actuation and actuators to achieve desired outcomes. The domain of ontological frameworks encompasses the organization of entities and their relationships, which are categorized through event classification. Logical components comprise concepts that adhere to design principles.",
+    "The environment, comprising conceptual components, plays a crucial role in shaping relations among extracted features from different individuals. These actions issued by subjects while performing activities yield results that can be modeled using standard axiomatization models for actuations. Modules include recorded data, which are categorized based on observations and segmented into datasets. The categorization process is governed by class hierarchies and design rules, following pattern-based architecture principles. Environmental conditions, including any kind of environment, influence the performance of human beings in real-world activities. Game engines serve as modeling artifacts for architectural descriptions of physical or virtual environments. Definitions clarify the meaning of terms like actuation, which carries out procedures to change context states using actuators.",
+    "The spatially located entities interacting with one another in a specific way are related to various design patterns, including Single Sign-On (SSO) Design Pattern. The structural, functional, and temporal complexity definitions of any environment can be categorized into different types, such as environmental conditions or interpersonal features. Analyzed raw data is often used for modeling purposes, while EEG subtypes provide insights into categorization processes. Ontology authoring involves creating abstract representations of concepts, which are then applied to various domains like gaming architectural modeling. Sessions and activities are essential components in these environments, where metadata provides valuable information about the data sets involved.",
+    "The analyzed EEG recordings, classified as Normal, G. Early, or G. Late stages of glaucoma detection, were used to develop a predictive model that leverages transfer learning from the EEGNet source model. The main contribution was in categorizing these data features into descriptive and subject-independent categories, with class hierarchies and design rules guiding this process. This project aimed at modeling actuation results based on predictive data features extracted from the analyzed raw data sets. By applying design principles to create a proto-ontology for glaucoma detection, we were able to develop an architectural description that captures key concepts in this field.",
+    "The Results module has a broader term of modules, which are self-contained units of software or functionality. Actuators, devices that convert energy into motion, force, or movement to control systems, have an effect on their context domain through physical modifications induced by actuation results. The Query Restriction mechanism limits data based on specific criteria and attributes. Neuromonitoring VR/AR Goggles are a type of wearable technology that combines virtual and augmented reality capabilities with neuromonitoring features. Architectural descriptions outline the design and structure of physical or virtual environments, while context domains encompass specific sets of surroundings or environments. A person's attributes can be categorized through structured metadata as part of an interaction.",
+    "The CerebraTek vPod Ontology, a knowledge representation model applied to glaucoma diagnostics using multifractal Steady-State Visually Evoked Potential (mfSSVEP), has been used to categorize data sets into Normal, G. Early, or G. Late stages. This ontology is part of an architectural description of a physical or virtual environment that carries out procedures to change the state of context using actuators. The subject, engaging in activities and their associated states, can be classified as patients receiving healthcare services or treatment. Predictive data features are used to make forecasts based on descriptive features such as attributes and capabilities. Furthermore, specifications like OWL 2 RDF/XML Version define concepts like effects that result from physical modifications induced by actuators.",
+    "The ontology restructuring project has a broader scope, encompassing various datasets including EEG recordings collected from 100 subjects. The predictive data features used for this research are based on common concepts defined by datatype properties. The specifications of glaucoma diagnostics using multifractal Steady-State Visually Evoked Potential (mfSSVEP) require the application of modeling techniques to categorize and analyze the actuation results. The SCCN team's work is an example of such applications, which involve modules that can be categorized based on their structure. In this context, what was observed and how it was done provides a description of the process.",
+    "The specifications describe how to transform BCI metadata into HTML, using XSL 3 documents with XPath 3 functions and an XML configuration document. This process involves analyzing raw data sets, which are collections of unprocessed or minimally processed information. The Unity framework provides a software environment for developing games and simulations that can be used as part of this transformation process. Additionally, the specifications include modules that define actuation results, which represent the outcome of an action or process. Furthermore, there is also a sequence of data segments with related attributes that define probabilities and correlations, which are analyzed to generate conclusions about what was observed and how it was done.",
+    "The 'modeling task' falls under the umbrella of a larger research project. The concept of channels can be further divided into segments, which are portions or parts of something. Definitions that describe structural, functional, and temporal complexities in various environments provide context for understanding datatype properties and subject-independent features. Glaucoma patients consist of datasets used to develop models. Spatially located entities occupy a particular space or location, while its entities and their relationships form the foundation of our knowledge graph. The 'Subject' is an individual involved in a situation or condition, which can be represented as EEG records. An architectural description outlines the design and structure of something, such as a system or building. Axioms for modeling observations serve as guidelines for interpreting data. Sessions, subjects, and records are categorized into datasets used to train models. Applications explained in subsequent sections provide practical implementations of concepts. The 'NCTU (PET Lab)' and 'UCSD (SCCN)' teams collaborated on an experiment that collected EEG recordings from 100 glaucoma patients. An effect in the context as a result of actuation is represented by results, which can be further divided into high-correlated segments.",
+    "The specifications of requirements define the properties and performance of devices. Engaging in an activity with its associated state involves a person or entity performing an action, accompanied by their corresponding mental or physical state. The game engines developed by UNITY provide software frameworks for developing video games. Activities are things done to achieve purposes, while tasks involve organized efforts to reach specific goals. Standard axiomatization models for actuations model the process of creating abstract representations. An experiment performed by a UCSD research team is an investigation designed to develop or test hypotheses. Data segments divide datasets into portions used to organize information. We follow closely the new proposed concepts and relationships, which are being discussed as extensions to SOSA/SSN W3C Recommendation. Definitions clarify the meaning of terms, while descriptions provide concise written overviews summarizing key points. Papers present research, information, or ideas in a written format. Guidelines serve as standards for guidance and direction. Human beings are members of the species Homo sapiens, with features and properties that define their behavior, function, or purpose. Its entities and relationships involve distinct objects connected by defined connections. Functional aspects describe inherent qualities defining an entity's behavior, while architectural descriptions outline the design and structure of a building or system. Research projects involve planned investigations designed to develop or test hypotheses.",
+    "The Extensible Data Format (XDF) has a broader term, 'data', which refers to a collection of facts or observations. Axioms have a broader term, 'design principle', which serves as a fundamental idea for decision-making. The Unity game engine models architectural descriptions, while one of the most popular game engines worldwide is categorized under 'game engines'. Time intervals were defined in terms of datatype properties, and actuation results are classified under 'Effect'. HermiT v1.3.8 has a broader term, 'versions', which refers to distinct iterations or releases of software. EEG records have a broader term, 'data sets', while individuals are categorized as human beings. Architectural descriptions have a broader term, 'description', and tasks are summarized in projects. The conclusion summarizes the main contributions and potential directions for further research. Satisfiability is classified under features and properties, and engineering explained subsequent sections.",
+    "The HTML Version, a set of XSL 3 documents with XPath 3 functions and a companion XML configuration document to handle base-to-HTML transformation, provides guidelines for transforming BCI metadata into HTML. This process involves using structure explained in subsequent sections. New proposed concepts and relationships are built upon proposal principles. The Extensible Data Format (XDF) stores 'XDF Metadata Schemes' that describe multi-channel time series data with extensive associated meta-information. Modules have segments, which can be categorized by durations or intervals. Architectural descriptions of research projects, such as the one on glaucoma patients, are presented in papers. Design principles guide the development of new concepts and relationships. The conclusion summarizes key findings and potential directions for further research. Dbpedia aggregates information from Wikipedia to create a vast repository of structured data. Effects result from actuations, which can be measured by quality metrics that describe features and properties. Human beings are entities with distinct qualities, while major players have significant roles in the context. Time intervals can be categorized as durations or intervals. Project specifications outline requirements for achieving specific goals.",
+    "The project specifications outline the objectives and scope of a paper, which can be further divided into subsequent sections. The HTML Version represents one instance of versions, with XSL 3 documents serving as style sheets that utilize XPath 3 functions to transform XML documents. A proposal is also considered a type of paper, and resource reuse enables the act of using existing resources again for similar or different purposes. Furthermore, an XSL 3 document can strip off HTML formatting from the Base Version to generate a clean machine-readable OWL 2 RDF/XML document."
+  ],
+  "times": [
+    1269.6011781692505
+  ]
+}
