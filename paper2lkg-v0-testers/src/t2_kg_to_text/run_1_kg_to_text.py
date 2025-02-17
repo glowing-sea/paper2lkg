@@ -150,8 +150,8 @@ def run(DATASET, INDEX, LLM_MODEL):
 
 if __name__ == "__main__":
     DATASET = "ASKG"
-    INDICES = list(range(7, 11))
-    LLM_MODEL = "l"
+    INDICES = list(range(6, 11))
+    LLM_MODEL = "g"
 
     for INDEX in INDICES:
         run(DATASET, INDEX, LLM_MODEL)
