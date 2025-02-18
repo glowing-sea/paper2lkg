@@ -1,0 +1,42 @@
+[
+    {
+    "question": "What is the main contribution of the OPRL algorithm introduced in the paper?",
+    "answer": "The main contribution of the OPRL algorithm is the introduction of Open Path (OP) rules, which are constrained existential rules that can generate relevant queries for knowledge graph completion, even when the correct answer is a missing entity not present in the knowledge graph."
+    },
+    {
+    "question": "What are the two novel components proposed in the OPRL algorithm for estimating rule quality?",
+    "answer": "The two novel components proposed in the OPRL algorithm for estimating rule quality are: (1) a novel embedding-based fitness function, and (2) a novel, efficient vector computation to formally assess rule quality."
+    },
+    {
+    "question": "What is the difference between Closed rules and Open Path (OP) rules as described in the paper?",
+    "answer": "Closed rules are non-existential rules that predict specific facts and require all variables in the head to appear in the body. In contrast, Open Path (OP) rules are existential rules that can generate open-ended queries and do not require all variables in the head to appear in the body, allowing them to infer missing facts even when an entity involved is absent from the knowledge graph."
+    },
+    {
+    "question": "What is the purpose of the Sampling() function in the OPRL algorithm?",
+    "answer": "The purpose of the Sampling() function in the OPRL algorithm is to reduce the size of the knowledge graph by creating a smaller, more manageable subset of entities and facts that are relevant to the target predicate, which allows for more efficient computation of embeddings and rule mining."
+    },
+    {
+    "question": "What are the two fitness functions used in OPRL to estimate the quality of candidate rules?",
+    "answer": "The two fitness functions used in OPRL to estimate the quality of candidate rules are: (1) the co-occurrence fitness function, which uses entity embeddings, and (2) the open path fitness function, which uses both entity and predicate embeddings."
+    },
+    {
+    "question": "What is the definition of Open Path Standard Confidence (OPSC) as given in the paper?",
+    "answer": "Open Path Standard Confidence (OPSC) is defined as the ratio of the number of entities that satisfy both the body and the head of an OP rule to the number of entities that satisfy the body of the rule. It measures how frequently the rule is true when the body is satisfied."
+    },
+    {
+    "question": "What is the significance of the hybrid fitness function in OPRL?",
+    "answer": "The hybrid fitness function in OPRL combines both the co-occurrence fitness function and the open path fitness function. It is significant because it outperforms either function individually, allowing for the mining of higher-quality rules by leveraging both entity and predicate embeddings."
+    },
+    {
+    "question": "What is the role of the Evaluation() function in the OPRL algorithm?",
+    "answer": "The role of the Evaluation() function in the OPRL algorithm is to assess the quality of candidate rules by computing their Open Path Standard Confidence (OPSC) and Open Path Head Coverage (OPHC) using efficient matrix and vector operations, and then discard rules that do not meet the minimum quality thresholds."
+    },
+    {
+    "question": "What is the primary goal of Active Knowledge Graph Completion (AKGC) as described in the paper?",
+    "answer": "The primary goal of Active Knowledge Graph Completion (AKGC) is to generate relevant queries that can be used to identify missing facts in a knowledge graph, even when the entities involved in those facts are not yet present in the graph. This is achieved by using Open Path (OP) rules to infer queries that can be posed to a link predictor or a human expert."
+    },
+    {
+    "question": "What are the key datasets used to evaluate the OPRL algorithm in the experiments?",
+    "answer": "The key datasets used to evaluate the OPRL algorithm in the experiments are: FB15K SELECTED (FB15KSE) derived from Freebase, YAGO2 core, Wikidata, and a synthetic Poker knowledge graph."
+    }
+   ]

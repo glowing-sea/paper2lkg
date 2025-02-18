@@ -2,14 +2,14 @@
   {
     "question": "What is the primary purpose of the MEL tool as described in the abstract?",
     "answer": "The primary purpose of the MEL tool is to extract metadata and content-based information from unstructured information encoded in different source document formats, aiding pre-processing tasks as part of a Knowledge Graph Construction Pipeline (KGCP).",
-    "LLM_answer": "The primary purpose of the MEL tool, as described in the abstract, is to extract metadata and content-based information from unstructured data in various document formats. It is designed to facilitate pre-processing tasks in Knowledge Graph Construction Pipelines by implementing a set of methods that generate structured JSON outputs for further analysis.",
-    "similarity_score": 0.9267578125
+    "LLM_answer": "The primary purpose of the MEL tool, as described in the abstract, is to extract metadata and content-based information from unstructured data in various document formats. It is designed to facilitate pre-processing tasks in Knowledge Graph Construction Pipelines by generating structured JSON outputs from diverse file types.",
+    "similarity_score": 0.92822265625
   },
   {
     "question": "What file format does MEL generate as output?",
     "answer": "MEL generates JSON files as output.",
     "LLM_answer": "MEL generates output in the JSON file format.",
-    "similarity_score": 0.966796875
+    "similarity_score": 0.96728515625
   },
   {
     "question": "Which toolkit is MEL integrated with for the extraction of categorised named entities?",
@@ -20,14 +20,14 @@
   {
     "question": "What are the three main steps in MEL's metadata and content extraction process?",
     "answer": "The three main steps are: (1) taking as input a document set, (2) extracting metadata and content-based information for each document while performing basic text analysis, and (3) generating a JSON file with the extracted metadata and text content.",
-    "LLM_answer": "The three main steps in MEL's metadata and content extraction process are: 1) Extracting metadata and content-based information from various file formats, 2) Performing specific pre-processing and data cleaning tasks, and 3) Generating structured JSON outputs for further analysis.",
-    "similarity_score": 0.84619140625
+    "LLM_answer": "The three main steps in MEL's metadata and content extraction process are: 1) Extracting metadata and content-based information from various file formats, 2) Performing specific pre-processing and data cleaning tasks, and 3) Conducting basic text analysis tasks to further analyze the extracted content.",
+    "similarity_score": 0.84130859375
   },
   {
     "question": "On which operating systems can OLE 2 file types and .docm files be processed by MEL?",
     "answer": "OLE 2 file types and .docm files can only be processed on Windows operating systems.",
     "LLM_answer": "OLE 2 file types and .docm files can be processed by MEL on Windows operating systems.",
-    "similarity_score": 0.8095703125
+    "similarity_score": 0.81005859375
   },
   {
     "question": "What does MEL use for the 'General-Metadata' extraction task?",
@@ -39,13 +39,13 @@
     "question": "What is the main difference between MEL and Apache Tika?",
     "answer": "The main difference is that MEL is a lightweight Python-based package aimed at metadata extraction for common file formats in a KGCP, whereas Apache Tika is a complex Java-based general-purpose system.",
     "LLM_answer": "The main difference between MEL and Apache Tika is that MEL is a Python-based tool designed specifically for extracting metadata and content-based information from unstructured data in various document formats, facilitating pre-processing tasks in Knowledge Graph Construction Pipelines. In contrast, Apache Tika is a Java-based general-purpose system that is considered the most comprehensive and current state-of-the-art tool for content extraction and analysis from various file formats. While both tools aim to extract metadata and content, MEL is tailored for integration into knowledge graph construction workflows, whereas Apache Tika is a more general tool for content extraction and analysis.",
-    "similarity_score": 0.9296875
+    "similarity_score": 0.93017578125
   },
   {
     "question": "What future work is planned for MEL regarding its integration with ontologies?",
     "answer": "Future work includes exploring the addition of a vocabulary or light-weight ontology using JSON-LD annotations to make the extracted metadata 'RDF ready'.",
     "LLM_answer": "The future work planned for MEL regarding its integration with ontologies involves using JSON-LD annotations to incorporate vocabulary or light-weight ontologies into the JSON results. This enhancement aims to improve the metadata's compatibility with RDF standards, facilitating better integration with ontologies.",
-    "similarity_score": 0.83984375
+    "similarity_score": 0.84033203125
   },
   {
     "question": "How many different file types does MEL support?",
@@ -56,7 +56,7 @@
   {
     "question": "What is the significance of the JSON result files generated by MEL?",
     "answer": "The JSON result files generated by MEL can easily be mapped to RDF using tools such as J2RM, facilitating their use in automated KGCPs.",
-    "LLM_answer": "The JSON result files generated by MEL are significant because they encapsulate the extracted metadata and content-based information from various file formats in a structured, machine-readable format. This facilitates further processing and integration into Knowledge Graph Construction Pipelines (KGCP). The use of JSON as a data interchange format makes it easy for both humans and machines to read and write, enabling efficient data management and analysis. These JSON results serve as a crucial output of the MEL tool, providing a standardized way to represent the extracted information for subsequent use in data processing workflows.",
-    "similarity_score": 0.83154296875
+    "LLM_answer": "The JSON result files generated by MEL are significant because they encapsulate the extracted metadata and content-based information from various file formats in a structured, machine-readable format. This facilitates further processing and integration into Knowledge Graph Construction Pipelines (KGCP). The use of JSON as a data interchange format makes it easy for both humans and machines to read and write, enabling efficient data management and analysis. These JSON results serve as a crucial output of the MEL tool, providing a standardized way to represent the extracted information for subsequent use in building knowledge graphs.",
+    "similarity_score": 0.83251953125
   }
 ]

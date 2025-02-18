@@ -2,32 +2,32 @@
   {
     "question": "What is the primary purpose of the BCI Ontology (BCI-O) as described in the paper?",
     "answer": "The primary purpose of the BCI Ontology (BCI-O) is to formalize relevant metadata for BCI data capture activities by integrating BCI-domain-specific Sense and Actuation Models along with a novel Context Model for describing any kind of real/virtual environments.",
-    "LLM_answer": "The primary purpose of the BCI Ontology (BCI-O) is to serve as an ontological metadata overlay that formalizes and integrates domain-specific models of brain-computer interfaces. It aims to describe and integrate BCI systems in real-world applications by providing a standardized framework that includes Sense and Actuation Models along with a Context Model. This enables BCI applications to be context-aware, facilitating meaningful interactions with IoT-based systems and achieving context-based semantic interoperability.",
-    "similarity_score": 0.962890625
+    "LLM_answer": "The primary purpose of the BCI Ontology (BCI-O) is to serve as an ontological metadata overlay that formalizes and integrates domain-specific models of brain-computer interfaces. It aims to define BCI systems in real-world applications by providing a standardized framework for describing and integrating BCI systems, their applications, and related environments. This includes enabling context-aware interactions with IoT-based systems through the introduction of concepts of context and contextual relations, and achieving context-based semantic interoperability.",
+    "similarity_score": 0.95263671875
   },
   {
     "question": "Which upper ontologies is BCI-O aligned with according to the paper?",
     "answer": "BCI-O is aligned with the W3C Semantic Sensor Network (SSN) and Sensor, Observation, Sample, and Actuator (SOSA) upper ontologies.",
     "LLM_answer": "BCI-O is aligned with the SAN (Standard Ontology for Actuation and Sensing) upper ontology according to the paper.",
-    "similarity_score": 0.8525390625
+    "similarity_score": 0.85302734375
   },
   {
     "question": "What are the two distinct conceptual domains found in the BCI-O interaction model?",
     "answer": "The two distinct conceptual domains are the BCI domain (observations, actuations, and interactions) and the context domain (surroundings).",
-    "LLM_answer": "The resources provided do not explicitly mention the two distinct conceptual domains found in the BCI-O interaction model. Additional information from the paper would be needed to accurately identify these domains.",
-    "similarity_score": 0.71826171875
+    "LLM_answer": "The resources provided do not explicitly mention the two distinct conceptual domains found in the BCI-O interaction model. Additional information from the paper would be needed to accurately answer this question.",
+    "similarity_score": 0.7333984375
   },
   {
     "question": "What does the bci:Session concept represent in the BCI-O?",
     "answer": "The bci:Session concept represents the interaction between a bci:Subject and a bci:Context while performing a single bci:Activity, grouping both observations (multimodal records: bci:Record) and actuations (bci:Actuation).",
-    "LLM_answer": "The bci:Session concept in the BCI-O represents a unit of time or activity that contains a collection of related observations, actions, or interactions. It is a way to organize and structure the data and activities within a brain-computer interface system.",
-    "similarity_score": 0.85205078125
+    "LLM_answer": "The bci:Session concept in the BCI-O represents a unit of time or activity that contains a collection of related observations, actions, or interactions. It is a structured period during which BCI actuation applications are executed, allowing for the organization and analysis of data and interactions within a specific context.",
+    "similarity_score": 0.8671875
   },
   {
     "question": "What are the three key concepts defined under the bci:Context.Event classification in BCI-O?",
     "answer": "The three key concepts are bci:StimulusEvent (a stimulus to the bci:Subject), bci:Action (issued by a bci:Subject while performing a bci:Activity), and bci:ActuationEvent (an effect -change of state- in bci:Context as the result of bci:Actuation).",
-    "LLM_answer": "The three key concepts defined under the bci:Context.Event classification in BCI-O are not explicitly listed in the provided resources. However, based on the available information, bci:Context.Event is related to actuations, as indicated by the triple 'actuator to perform an actuation (triggers) bci:Context.Event'. This suggests that the concepts related to bci:Context.Event may involve aspects of actuation and interaction within a specific context. For a precise answer, further details from the BCI-O documentation would be needed.",
-    "similarity_score": 0.8583984375
+    "LLM_answer": "The three key concepts defined under the bci:Context.Event classification in BCI-O are not explicitly listed in the provided resources. However, it is mentioned that an 'actuator to perform an actuation' triggers a 'bci:Context.Event'. This implies that the concepts related to actuations and their triggering events are part of the bci:Context.Event classification. To identify the specific key concepts, further details from the BCI-O documentation or paper would be needed.",
+    "similarity_score": 0.8505859375
   },
   {
     "question": "What is the role of the bci:ActuationEvent in the BCI-O?",
@@ -38,25 +38,25 @@
   {
     "question": "What is the relationship between bci:Actuation and sosa:Actuation according to the paper?",
     "answer": "The bci:Actuation is aligned to both sosa:Actuation and san:Actuation, meaning it integrates and reconciles SOSA and SAN axioms for modeling actuations and actuators.",
-    "LLM_answer": "The relationship between bci:Actuation and sosa:Actuation according to the paper is that bci:Actuation is aligned to sosa:Actuation. This suggests that the BCI-Ontology's concept of actuation is designed to be compatible with or based on the standardized concept of actuation as defined by SOSA.",
-    "similarity_score": 0.87109375
+    "LLM_answer": "The relationship between bci:Actuation and sosa:Actuation according to the paper is that bci:Actuation is aligned to sosa:Actuation. This suggests that the concept of actuation in the BCI-Ontology (bci:Actuation) is designed to be compatible or consistent with the standardized concept of actuation represented by sosa:Actuation.",
+    "similarity_score": 0.8740234375
   },
   {
     "question": "What does the bci:ActuationTarget concept capture in the BCI-O?",
     "answer": "The bci:ActuationTarget concept captures the definition of sosa:FeatureOfInterest, representing the thing (actuation target) whose property (impacted property) is being manipulated by an actuator.",
-    "LLM_answer": "The bci:ActuationTarget concept in the BCI-O captures a conceptual representation of an actuator's intended or desired state, serving as a target for control and manipulation. It involves modification and has an impacted property, which is represented by the ImpactedProperty entity. Additionally, it is modified by the property sosa:hasFeatureOfInterest and is aligned to sosa:FeatureOfInterest.",
-    "similarity_score": 0.91650390625
+    "LLM_answer": "The bci:ActuationTarget concept in the BCI-O captures a conceptual representation of an actuator's intended or desired state, serving as a target for control and manipulation. It involves modification and has an impacted property, which is represented by the ImpactedProperty entity. Additionally, it is aligned to sosa:FeatureOfInterest and is modified by the property sosa:hasFeatureOfInterest.",
+    "similarity_score": 0.919921875
   },
   {
     "question": "What is the function of an actuator as described in the BCI-O?",
     "answer": "An actuator is a device that is used by, or implements, an actuation that changes the state of the context, transforming an input signal into a physical output.",
-    "LLM_answer": "In the BCI-O, an actuator functions as a device that executes commands by transforming input signals into physical outputs to change or control the state of its environment.",
-    "similarity_score": 0.8447265625
+    "LLM_answer": "In the BCI-O, an actuator is described as a device that transforms input signals into physical outputs to change or control the state of its environment. It executes commands and performs basic functions, such as carrying out procedures to change the state of the context. Actuators are integral to the actuation process, which involves triggering actuation events that bring about changes in the state of an actuated object.",
+    "similarity_score": 0.87939453125
   },
   {
     "question": "What is the main contribution of the BCI-O's Actuation Model to the IoT and BCI communities?",
     "answer": "The main contribution of the BCI-O's Actuation Model is its structure, which includes contextual notions that enable its usage in context-aware BCI-IoT integrated applications, representing a major contribution to the IoT and BCI communities.",
-    "LLM_answer": "The main contribution of the BCI-O's Actuation Model to the IoT and BCI communities is the integration and reconciliation of SOSA and SAN axioms for modeling actuations and actuators, along with the BCI-O's Context Model. This integration enables context-aware interactions with IoT-based systems, laying the foundations for meaningful interactions and context-based semantic interoperability, which is a core prerequisite for any context-aware BCI actuation application with real-time collaboration in IoT environments.",
-    "similarity_score": 0.82666015625
+    "LLM_answer": "The main contribution of the BCI-O's Actuation Model to the IoT and BCI communities is its design principle, which represents a major contribution by integrating SOSA and SAN axioms for modeling actuations and actuators. This integration enables context-based semantic interoperability, allowing BCI applications to be context-aware and facilitating meaningful interactions with IoT-based systems. This contribution lays the foundation for real-time collaboration in IoT environments and enhances the development of novel interfaces for human-computer interaction.",
+    "similarity_score": 0.82421875
   }
 ]

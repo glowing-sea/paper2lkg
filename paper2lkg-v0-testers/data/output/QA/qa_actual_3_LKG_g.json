@@ -3,31 +3,31 @@
     "question": "What are the two primary architectures that form the basis of most processors?",
     "answer": "CISC and RISC",
     "LLM_answer": "The two primary architectures that form the basis of most processors are Complex Instruction Set Computer (CISC) and Reduced Instruction Set Computer (RISC).",
-    "similarity_score": 0.76416015625
+    "similarity_score": 0.7646484375
   },
   {
     "question": "What does CISC stand for and what is one of its key features?",
     "answer": "CISC stands for Complex Instruction Set Computer, and one of its key features is backward compatibility since the 1970s.",
     "LLM_answer": "CISC stands for Complex Instruction Set Computer. One of its key features is the inclusion of long sub-level commands, which facilitate effective memory management and enable simpler compiler implementations.",
-    "similarity_score": 0.8173828125
+    "similarity_score": 0.81787109375
   },
   {
     "question": "What is the main advantage of RISC architecture over CISC?",
     "answer": "The main advantage of RISC architecture over CISC is that it simplifies command sets and handles access to memory with load-store commands, which allows the hardware to run faster.",
-    "LLM_answer": "The main advantage of RISC architecture over CISC is that RISC simplifies command sets, which leads to more homogeneous instruction lengths and execution times. This simplification allows for more efficient execution and performance, as RISC architectures emphasize a small, highly optimized instruction set.",
-    "similarity_score": 0.94189453125
+    "LLM_answer": "The main advantage of RISC architecture over CISC is that RISC simplifies command sets, which allows for more efficient execution and performance. RISC architectures emphasize a small, highly optimized instruction set, leading to more homogeneous instruction lengths and execution times compared to the complex instruction sets of CISC. This simplification can result in faster hardware performance and more efficient memory access.",
+    "similarity_score": 0.94140625
   },
   {
     "question": "What is the significance of the RISC-V architecture being developed as an open source instruction set?",
     "answer": "The significance of the RISC-V architecture being developed as an open source instruction set is that it allows communities and organizations to produce their own processors without license restrictions, fostering innovation and collaboration.",
-    "LLM_answer": "The significance of the RISC-V architecture being developed as an open source instruction set lies in its ability to simplify processor design and enable the creation of custom processors without licensing restrictions. This open-source nature promotes innovation and collaboration in the field of computing by allowing anyone to freely access, modify, and distribute the instruction set. It supports various configurations, including 32-bit, 64-bit, and 128-bit systems, and provides a standardized framework for designing computer processors and hardware. This openness can lead to more rapid advancements in technology, as developers and companies can build upon the RISC-V architecture without the constraints of proprietary systems, potentially leading to more diverse and optimized computing solutions.",
-    "similarity_score": 0.89453125
+    "LLM_answer": "The significance of the RISC-V architecture being developed as an open source instruction set lies in its ability to simplify processor design and enable the creation of custom processors without licensing restrictions. This open-source nature promotes innovation and collaboration in the field of computing by allowing anyone to freely access, modify, and distribute the instruction set. It supports various configurations, including 32-bit, 64-bit, and 128-bit systems, and provides a standardized framework for designing computer processors and hardware. This openness encourages the development of a wide range of applications and hardware solutions, fostering a more diverse and competitive ecosystem in the technology industry.",
+    "similarity_score": 0.89306640625
   },
   {
     "question": "What is the name of the open source operating system development project implemented as a base in the paper?",
     "answer": "MILIS Linux",
     "LLM_answer": "The name of the open source operating system development project implemented as a base in the paper is MILIS Linux.",
-    "similarity_score": 0.78369140625
+    "similarity_score": 0.783203125
   },
   {
     "question": "What are the target users of MILIS Linux?",
@@ -45,18 +45,18 @@
     "question": "What version of the Linux kernel first included support for RISC-V?",
     "answer": "The Linux kernel first included support for RISC-V in version 4.15.",
     "LLM_answer": "The Linux kernel first included support for RISC-V in version 4.15.",
-    "similarity_score": 1.0
+    "similarity_score": 1.0009765625
   },
   {
     "question": "What is the role of the Berkley Bootloader (BBL) in the RISC-V project?",
     "answer": "The role of the Berkley Bootloader (BBL) in the RISC-V project is to handle tasks such as starting and responding to timer interrupts, boot chain loading for Linux, and managing instructions that the RISC-V processor cannot handle directly in hardware.",
-    "LLM_answer": "The Berkeley Bootloader (BBL) plays a crucial role in the RISC-V project as a specialized bootloader designed specifically for the RISC-V architecture. It executes before an operating system runs, providing essential boot options and handling certain instructions that the RISC-V processor cannot manage directly in hardware. BBL directly links the Linux kernel binary into its ELF file, which distinguishes it from other bootloaders like GRUB or U-Boot. It also supports starting and response tasks to timer interrupts, facilitating the booting process and managing tasks related to timer interrupts and boot chain loading for the RISC-V architecture.",
-    "similarity_score": 0.904296875
+    "LLM_answer": "The Berkeley Bootloader (BBL) plays a crucial role in the RISC-V project as a specialized bootloader designed specifically for the RISC-V architecture. It executes before an operating system runs, providing essential boot options and handling certain instructions that the RISC-V processor cannot manage directly in hardware. BBL directly links the Linux kernel binary into its ELF file, distinguishing it from other bootloaders like GRUB or U-Boot. It supports starting and response tasks to timer interrupts and must be rebuilt within the kernel to create a proper separation. BBL cannot chainload the Linux kernel, which means it directly integrates the kernel into its boot process using the '-withpayload config parameter'.",
+    "similarity_score": 0.89501953125
   },
   {
     "question": "What are the future work plans mentioned for the MILIS Linux project on RISC-V?",
     "answer": "The future work plans mentioned for the MILIS Linux project on RISC-V include physical implementation and optimizations on real RISC-V hardware, evaluation of alternative libraries to Glibc, and further exploration of RISC-V porting for kernel level difficulties.",
-    "LLM_answer": "The future work plans for the MILIS Linux project on RISC-V include the development of other variants, specifically the 32-bit and 128-bit ISA configurations beyond the currently implemented 64-bit system. Additionally, more work is required for porting U-boot to RISC-V, and the project aims to enable port migration to create an open source and reliable user ecosystem on the Linux kernel.",
-    "similarity_score": 0.84033203125
+    "LLM_answer": "The future work plans for the MILIS Linux project on RISC-V include the development of other variants, specifically creating additional instruction set architecture (ISA) configurations for RISC-V, such as the 32-bit and 128-bit variants beyond the currently implemented 64-bit system.",
+    "similarity_score": 0.8271484375
   }
 ]

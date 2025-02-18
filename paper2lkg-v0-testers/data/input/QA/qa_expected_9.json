@@ -1,0 +1,42 @@
+[
+    {
+    "question": "What is the primary purpose of the HDGI ontology developed in the paper?",
+    "answer": "The primary purpose of the HDGI ontology is to formally describe gestures used in Human Device Interactions (HDI) and to map these gestures to relevant affordances and user/device contexts in an extensible way."
+    },
+    {
+    "question": "Which Semantic Web standards is the HDGI ontology based on?",
+    "answer": "The HDGI ontology is based on Semantic Web standards RDF, RDFS, and OWL2."
+    },
+    {
+    "question": "What are the two atomic types of gestures defined in the HDGI ontology?",
+    "answer": "The two atomic types of gestures defined in the HDGI ontology are static gestures and dynamic gestures."
+    },
+    {
+    "question": "What is the significance of the 'guessability of a system' concept introduced by Wobbrock et al.?",
+    "answer": "The 'guessability of a system' concept emphasizes that a user’s initial attempts at performing gestures, typing commands, or using buttons or menu items must be met with success despite the user’s lack of knowledge of the relevant symbols."
+    },
+    {
+    "question": "What are the seven main classes in the core of the HDGI ontology?",
+    "answer": "The seven main classes in the core of the HDGI ontology are hdgi:Gesture, hdgi:BodyPart, hdgi:Pose, hdgi:Movement, hdgi:Affordance, hdgi:Device, and hdgi:Human."
+    },
+    {
+    "question": "What does the hdgi:Movement class in the HDGI ontology relate to?",
+    "answer": "The hdgi:Movement class relates to dynamic gestures and consists of a predefined set of movements sufficient to describe the movements of hdgi:UpperArm, hdgi:Forearm, hdgi:Palm, and hdgi:Finger."
+    },
+    {
+    "question": "How does the HDGI ontology handle the mapping of gestures to affordances?",
+    "answer": "The HDGI ontology maps gestures to affordances through the relationship hdgi:Affordance -> hdgi:supportsGesture -> hdgi:Gesture, where an affordance can have none to many supported gestures."
+    },
+    {
+    "question": "What is the role of the hdgi:Context class in the HDGI ontology?",
+    "answer": "The hdgi:Context class, which includes hdgi:UserContext and hdgi:DeviceContext, is used to map the context of a user’s gesture to understand the correct intent and improve system behavior accordingly."
+    },
+    {
+    "question": "What is the HDGI-Mapping Service and what is its purpose?",
+    "answer": "The HDGI-Mapping Service is a fully API-driven RESTful web service that allows designers, device manufacturers, and developers to refer to the HDGI-gesture repository to find available gestures and their mappings to device affordances, and to define and upload new gesture vocabularies."
+    },
+    {
+    "question": "What future work is planned for the HDGI ontology?",
+    "answer": "Future work for the HDGI ontology includes incorporating more gesture types such as facial gestures and head gestures, releasing and deploying the HDGI RESTful service in the Cloud, and conducting gesture elicitation studies using Microsoft HoloLens 2 to map gesture interactions in Mixed Reality."
+    }
+   ]

@@ -3,25 +3,25 @@
     "question": "What is the main goal of TNNT as introduced in the paper?",
     "answer": "The main goal of TNNT is to automate the extraction of categorised named entities from unstructured information encoded in source documents using a wide range of recent state-of-the-art (SOTA) NLP-NER tools and models.",
     "LLM_answer": "The main goal of TNNT, as introduced in the paper, is to automate the extraction of categorized named entities from unstructured information in source documents. This is achieved by utilizing a variety of state-of-the-art Natural Language Processing and Named Entity Recognition tools and models.",
-    "similarity_score": 0.9521484375
+    "similarity_score": 0.95166015625
   },
   {
     "question": "How many different NER models does TNNT integrate?",
     "answer": "TNNT integrates 21 different NER models.",
     "LLM_answer": "TNNT integrates 21 different NER models.",
-    "similarity_score": 1.0
+    "similarity_score": 1.0009765625
   },
   {
     "question": "What is the role of the 'Metadata Extractor & Loader' (MEL) in TNNT?",
     "answer": "MEL enables the extraction of metadata and content-based information from various file formats such as .pdf, .docx, .xlsx, .msg, .csv, .txt, and .zip.",
-    "LLM_answer": "The role of the 'Metadata Extractor & Loader' (MEL) in TNNT is to facilitate the extraction of metadata and content-based information from a variety of file formats, such as .pdf, .docx, .xlsx, .msg, .csv, .txt, and .zip. MEL is responsible for extracting textual content from these sources, enabling it to be processed for named entity recognition tasks within the TNNT toolkit. It implements data extraction operations and provides the extracted text data that TNNT processes to automate the extraction of categorized named entities.",
-    "similarity_score": 0.83251953125
+    "LLM_answer": "The role of the 'Metadata Extractor & Loader' (MEL) in TNNT is to facilitate the extraction of metadata and content-based information from a variety of file formats, such as .pdf, .docx, .xlsx, .msg, .csv, .txt, and .zip. MEL is responsible for extracting textual content from these sources, enabling it to be processed for named entity recognition tasks within the TNNT toolkit. It implements data extraction operations and provides the extracted text data that is processable for TNNT, thus playing a crucial role in preparing the data for further analysis and integration with Named Entity Recognition models.",
+    "similarity_score": 0.830078125
   },
   {
     "question": "What types of file formats can TNNT process through MEL?",
     "answer": "TNNT can process file formats including .pdf, .docx, .xlsx, .msg, .csv, .txt, and .zip.",
-    "LLM_answer": "TNNT, through MEL, can process file formats including .pdf, .docx, .xlsx, .msg, .csv, .txt, and .zip.",
-    "similarity_score": 0.9462890625
+    "LLM_answer": "TNNT can process file formats such as .pdf, .docx, .xlsx, .msg, .csv, .txt, and .zip through MEL.",
+    "similarity_score": 0.97607421875
   },
   {
     "question": "What are the four motivations behind the development of TNNT?",
@@ -32,20 +32,20 @@
   {
     "question": "What kind of information does TNNT retrieve for each recognised entity?",
     "answer": "For each recognised entity, TNNT retrieves context information, start/end indices in the document text, and statistics of the entities identified by each model for respective categories along with start/end timestamps and the duration taken by the models to run the NER task.",
-    "LLM_answer": "For each recognised entity, TNNT retrieves context information, start/end indices, and document text. This allows TNNT to provide detailed insights into the location and context of each entity within the text.",
-    "similarity_score": 0.8984375
+    "LLM_answer": "For each recognised entity, TNNT retrieves context information, start/end indices, and document text. This means that TNNT not only identifies the entities but also provides details about their surrounding context within the text, their exact positions, and the text from which they were extracted.",
+    "similarity_score": 0.89208984375
   },
   {
     "question": "What additional processing layers does TNNT's RESTful API provide?",
     "answer": "TNNT's RESTful API provides additional processing layers such as POS tagging, dependency parsing, coreference resolution, aggregations, descriptive stats, and browsing capabilities.",
-    "LLM_answer": "TNNT's RESTful API provides additional processing layers of abstraction, which include tasks such as part-of-speech tagging, dependency parsing, and coreference resolution. These layers enhance the named entity recognition results by incorporating complementary NLP tasks.",
-    "similarity_score": 0.89208984375
+    "LLM_answer": "TNNT's RESTful API provides additional processing layers of abstraction that enhance Named Entity Recognition results through tasks such as part-of-speech tagging, dependency parsing, and coreference resolution.",
+    "similarity_score": 0.9384765625
   },
   {
     "question": "What are the major contributions of TNNT as stated in the conclusion?",
     "answer": "The major contributions are: (1) the ability to process different source document formats for NER; (2) the availability of 21 different SOTA NER models integrated into one system, enabling easy selection of models for NER; (3) the provision of an integrated summary of the results from different models; and (4) a RESTful API that enables easy access to NLP tasks that enrich the NER results from the models.",
-    "LLM_answer": "The major contributions of TNNT as stated in the conclusion include automating the extraction of categorized named entities from unstructured text, integrating 21 different NER models and 9 state-of-the-art NLP tools, providing a modular and extensible framework, and generating an integrated summary of the extracted entities. TNNT also fills the void of a unified toolkit for NER tasks, refines and improves NER results, and facilitates informed decision-making through enhanced data analysis.",
-    "similarity_score": 0.79345703125
+    "LLM_answer": "The major contributions of TNNT as stated in the conclusion include automating the extraction of categorized named entities from unstructured text, integrating 21 different NER models and 9 state-of-the-art NLP tools, providing a modular and extensible framework, and generating an integrated summary of the extracted entities. TNNT also fills the void of a unified toolkit by offering a simple mechanism and uniform pipeline for processing textual content, thereby refining and improving NER results and facilitating informed decisions.",
+    "similarity_score": 0.7978515625
   },
   {
     "question": "What project was TNNT tested under as part of its development?",

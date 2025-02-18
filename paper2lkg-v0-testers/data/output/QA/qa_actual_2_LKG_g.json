@@ -8,8 +8,8 @@
   {
     "question": "Which upper ontologies is BCI-O aligned with according to the paper?",
     "answer": "BCI-O is aligned with the W3C Semantic Sensor Network (SSN) and Sensor, Observation, Sample, and Actuator (SOSA) upper ontologies.",
-    "LLM_answer": "BCI-O is aligned with the W3C Semantic Sensor Network (SSN), Sensor, Observation, Sample, and Actuator (SOSA), and the core actuation semantic model.",
-    "similarity_score": 0.9677734375
+    "LLM_answer": "According to the paper, BCI-O is aligned with the following upper ontologies: W3C Semantic Sensor Network (SSN), Sensor, Observation, Sample, and Actuator (SOSA), and the core actuation semantic model.",
+    "similarity_score": 0.96044921875
   },
   {
     "question": "What are the two distinct conceptual domains found in the BCI-O interaction model?",
@@ -20,43 +20,43 @@
   {
     "question": "What does the bci:Session concept represent in the BCI-O?",
     "answer": "The bci:Session concept represents the interaction between a bci:Subject and a bci:Context while performing a single bci:Activity, grouping both observations (multimodal records: bci:Record) and actuations (bci:Actuation).",
-    "LLM_answer": "The bci:Session concept in the BCI-O represents a data structure that encapsulates the interaction between a bci:Subject and a bci:Context while executing a single bci:Activity. It organizes both observations and actuations within the BCI-O framework, describing a situation where EEG recording and actuation happen, and involves entities like Alice in the session.",
-    "similarity_score": 0.89697265625
+    "LLM_answer": "The bci:Session concept in the BCI-O represents a data structure that encapsulates the interaction between a bci:Subject and a bci:Context while executing a single bci:Activity. It organizes both observations and actuations within the BCI-O framework, effectively describing a situation where EEG recording and actuation happen. This concept is crucial for modeling the interactions and data flow in Brain-Computer Interface systems.",
+    "similarity_score": 0.89306640625
   },
   {
     "question": "What are the three key concepts defined under the bci:Context.Event classification in BCI-O?",
     "answer": "The three key concepts are bci:StimulusEvent (a stimulus to the bci:Subject), bci:Action (issued by a bci:Subject while performing a bci:Activity), and bci:ActuationEvent (an effect -change of state- in bci:Context as the result of bci:Actuation).",
     "LLM_answer": "The three key concepts defined under the bci:Context.Event classification in BCI-O are bci:StimulusEvent, bci:Action, and bci:ActuationEvent.",
-    "similarity_score": 0.9130859375
+    "similarity_score": 0.91357421875
   },
   {
     "question": "What is the role of the bci:ActuationEvent in the BCI-O?",
     "answer": "The bci:ActuationEvent represents a transition (something that has changed from a state to a different one: actuation target) \u2500 a modification (impacted property, as a consequence of an actuation effect) \u2500 in the context as the result of an actuation (actuation result involves actuation event).",
-    "LLM_answer": "In the BCI-O framework, the role of the bci:ActuationEvent is to represent an effect or change of state in the bci:Context that results from a bci:Actuation. It is aligned with the concept of bci:Context.Event and san:Effect, indicating its role in impacting the bci:ImpactedProperty. Additionally, it involves actions such as reducing the speed of wheels, demonstrating its practical application in context-aware Brain-Computer Interface systems.",
-    "similarity_score": 0.857421875
+    "LLM_answer": "The role of the bci:ActuationEvent in the BCI-O is to represent an effect or change of state in the bci:Context that results from a bci:Actuation. It is defined within the BCI-O framework for modeling interactions in Brain-Computer Interfaces. The bci:ActuationEvent is aligned with bci:Context.Event and san:Effect, and it impacts bci:ImpactedProperty. It involves actions such as reducing the speed of wheels, which is an example of an actuation event in a BCI system.",
+    "similarity_score": 0.86962890625
   },
   {
     "question": "What is the relationship between bci:Actuation and sosa:Actuation according to the paper?",
     "answer": "The bci:Actuation is aligned to both sosa:Actuation and san:Actuation, meaning it integrates and reconciles SOSA and SAN axioms for modeling actuations and actuators.",
-    "LLM_answer": "According to the paper, bci:Actuation is aligned to sosa:Actuation. This suggests that the concept of actuation within the Brain-Computer Interface (BCI) framework is designed to be compatible or consistent with the actuation model defined in the SOSA ontology.",
-    "similarity_score": 0.8798828125
+    "LLM_answer": "According to the paper, bci:Actuation is aligned to sosa:Actuation. This indicates that the concept of actuation within the Brain-Computer Interface (BCI) framework is designed to be compatible or consistent with the actuation model defined in the SOSA ontology.",
+    "similarity_score": 0.88525390625
   },
   {
     "question": "What does the bci:ActuationTarget concept capture in the BCI-O?",
     "answer": "The bci:ActuationTarget concept captures the definition of sosa:FeatureOfInterest, representing the thing (actuation target) whose property (impacted property) is being manipulated by an actuator.",
     "LLM_answer": "The bci:ActuationTarget concept in the BCI-O captures the specific components of a wheelchair, namely the two rear wheels, that are controlled by actuators based on commands derived from brain signals in a Brain-Computer Interface (BCI) system. It is aligned with bci:Context.Object and sosa:FeatureOfInterest, indicating its role as a target for actuation within the context of BCI applications.",
-    "similarity_score": 0.8544921875
+    "similarity_score": 0.85498046875
   },
   {
     "question": "What is the function of an actuator as described in the BCI-O?",
     "answer": "An actuator is a device that is used by, or implements, an actuation that changes the state of the context, transforming an input signal into a physical output.",
-    "LLM_answer": "In the BCI-O, an actuator is described as a device that implements an actuation to change the state of a context. It transforms an input signal into a physical output, thereby executing commands from a control system. Actuators are integral to the operation of sensor-actuator systems in Brain-Computer Interfaces (BCI) and Internet of Things (IoT) environments. They are capable of controlling devices such as wheelchairs and are used by subjects to perform actuations, which involve changing the state of an actuation target and triggering actuation events.",
-    "similarity_score": 0.857421875
+    "LLM_answer": "In the BCI-O, an actuator is described as a device that implements an actuation to change the state of a context. It transforms an input signal into a physical output, thereby executing commands from a control system. Actuators are integral to the operation of sensor-actuator systems in Brain-Computer Interfaces (BCI) and Internet of Things (IoT) environments. They are capable of controlling devices such as wheelchairs and are used by subjects to perform actuations, which involve changing the state of an actuation target.",
+    "similarity_score": 0.86083984375
   },
   {
     "question": "What is the main contribution of the BCI-O's Actuation Model to the IoT and BCI communities?",
     "answer": "The main contribution of the BCI-O's Actuation Model is its structure, which includes contextual notions that enable its usage in context-aware BCI-IoT integrated applications, representing a major contribution to the IoT and BCI communities.",
-    "LLM_answer": "The main contribution of the BCI-O's Actuation Model to the IoT and BCI communities is the introduction of a first-class semantic model that integrates Brain-Computer Interface (BCI) concepts with Internet of Things (IoT) principles and contextual elements. This model facilitates context-based semantic interoperability, enabling context-aware BCI applications to interact meaningfully with IoT-based systems. By aligning with standards such as the W3C Semantic Sensor Network (SSN) and integrating concepts from the Sensor, Observation, Sample, and Actuator (SOSA) and Semantic Actuator Network (SAN) frameworks, the BCI-O's Actuation Model enhances the understanding and implementation of sensor-actuator systems in real-time collaborative environments, thereby advancing the development of semantically-enabled BCIs and context-aware BCI-IoT integrated applications.",
-    "similarity_score": 0.81005859375
+    "LLM_answer": "The main contribution of the BCI-O's Actuation Model to the IoT and BCI communities is the introduction of a first-class semantic model that integrates Brain-Computer Interface (BCI) concepts with Internet of Things (IoT) principles and contextual elements. This model facilitates context-based semantic interoperability, enabling context-aware BCI applications to interact meaningfully with IoT-based systems. By aligning with frameworks like SOSA and SAN, the Actuation Model provides a structured approach to modeling actuations and actuators, enhancing real-time collaboration and interaction in IoT environments.",
+    "similarity_score": 0.830078125
   }
 ]

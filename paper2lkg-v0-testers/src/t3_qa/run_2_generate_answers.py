@@ -284,6 +284,5 @@ if __name__ == "__main__":
     # LLM_MODEL = "l"
     LLM_MODEL = "g"
 
-    for i in range(1,6):
+    for i in range(1,11):
         run(METHOD, i, LLM_MODEL)
-

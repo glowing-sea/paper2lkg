@@ -58,7 +58,7 @@ def call_llm_and_return_a_list(model, prompt,check_messages=[], initial_temp=0.2
         responses = []
 
         response = openai.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             temperature=temps[i],
             top_p=top_ps[i],
             max_completion_tokens=RESPONSE_LIMIT,

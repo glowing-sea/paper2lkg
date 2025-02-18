@@ -26,6 +26,8 @@ Install the following packages:
 - pip install openai
 - pip install rdflib
 
+- pip install voyageai (to run the `t2_kg_to_text` part of `paper2lkg-v0-testers`)
+
 ### Step 3: Running paper2lkg
 
 If you want to run paper2lkg using GPT, create a JSON file call `api_key.json` under `./src/utilities`. Then, move the two files `llm_response_handler_JSON_list.py` and `llm_response_handler_JSON.py` from `./src/utilities/gpt` to `./src/utilities`.

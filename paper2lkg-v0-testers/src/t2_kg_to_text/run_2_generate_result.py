@@ -106,9 +106,9 @@ def run(DATASET, INDEX, LLM_MODEL):
     
 
 if __name__ == "__main__":
-    DATASET = "ASKG"
+    DATASET = "SciERC"
     LLM_MODEL = "l"
-    PAPER_INDICES = range(1,11)
+    PAPER_INDICES = range(1,101)
 
 
     RESULT = CURRENT_DIR / f"../../data/raw_results/re_{DATASET}_{LLM_MODEL}.json"

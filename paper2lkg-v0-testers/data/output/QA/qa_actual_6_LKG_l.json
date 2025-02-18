@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What is the main contribution of the OPRL algorithm introduced in the paper?",
+    "answer": "The main contribution of the OPRL algorithm is the introduction of Open Path (OP) rules, which are constrained existential rules that can generate relevant queries for knowledge graph completion, even when the correct answer is a missing entity not present in the knowledge graph.",
+    "LLM_answer": "The main contribution of the OPRL algorithm introduced in the paper is the development of a novel method for learning Open Path (OP) rules from Knowledge Graphs (KGs). This algorithm enables the generation of relevant queries for missing links in incomplete KGs, providing a solution for active knowledge graph completion. OPRL includes a novel embedding-based heuristic function and evaluation method, allowing it to learn rules for KGs with varying sizes and degrees of incompleteness. It can generate queries with high precision and recall, demonstrating its effectiveness in completing KGs.",
+    "similarity_score": 0.88037109375
+  },
+  {
+    "question": "What are the two novel components proposed in the OPRL algorithm for estimating rule quality?",
+    "answer": "The two novel components proposed in the OPRL algorithm for estimating rule quality are: (1) a novel embedding-based fitness function, and (2) a novel, efficient vector computation to formally assess rule quality.",
+    "LLM_answer": "The two novel components proposed in the OPRL algorithm for estimating rule quality are: proposing Open Path (OP) rules and learning OP rules based on an embedding representation. These components are part of the novel algorithmic approach for mining OP rules from Knowledge Graphs (KGs).",
+    "similarity_score": 0.8720703125
+  },
+  {
+    "question": "What is the difference between Closed rules and Open Path (OP) rules as described in the paper?",
+    "answer": "Closed rules are non-existential rules that predict specific facts and require all variables in the head to appear in the body. In contrast, Open Path (OP) rules are existential rules that can generate open-ended queries and do not require all variables in the head to appear in the body, allowing them to infer missing facts even when an entity involved is absent from the knowledge graph.",
+    "LLM_answer": "The difference between Closed rules and Open Path (OP) rules as described in the paper is that Closed rules are predefined and fixed guidelines that enable inference and are typically used in previous work for completing a Knowledge Graph (KG). They are less expressive and can only answer queries of unclear origin based on existing knowledge. In contrast, Open Path (OP) rules are constrained existential rules that are more expressive and can generate relevant queries for knowledge graph completion. OP rules can produce instantiations that cannot be inferred by closed path rules, allowing for the generation of queries even when there is no closed rule or the correct answer is not present in the KG. This makes OP rules suitable for active knowledge graph completion, as they can handle varying sizes and degrees of incompleteness in KGs.",
+    "similarity_score": 0.8955078125
+  },
+  {
+    "question": "What is the purpose of the Sampling() function in the OPRL algorithm?",
+    "answer": "The purpose of the Sampling() function in the OPRL algorithm is to reduce the size of the knowledge graph by creating a smaller, more manageable subset of entities and facts that are relevant to the target predicate, which allows for more efficient computation of embeddings and rule mining.",
+    "LLM_answer": "The purpose of the Sampling() function in the OPRL algorithm is to serve as a methodology or algorithm for selecting and reducing data. It is likely used to efficiently handle and process the data involved in learning Open Path (OP) rules within the OPRL algorithm, which is designed for knowledge graph completion.",
+    "similarity_score": 0.890625
+  },
+  {
+    "question": "What are the two fitness functions used in OPRL to estimate the quality of candidate rules?",
+    "answer": "The two fitness functions used in OPRL to estimate the quality of candidate rules are: (1) the co-occurrence fitness function, which uses entity embeddings, and (2) the open path fitness function, which uses both entity and predicate embeddings.",
+    "LLM_answer": "The two fitness functions used in OPRL to estimate the quality of candidate rules are OPSC (Open Path Score) and OPHC (Open Path Head Coverage).",
+    "similarity_score": 0.83349609375
+  },
+  {
+    "question": "What is the definition of Open Path Standard Confidence (OPSC) as given in the paper?",
+    "answer": "Open Path Standard Confidence (OPSC) is defined as the ratio of the number of entities that satisfy both the body and the head of an OP rule to the number of entities that satisfy the body of the rule. It measures how frequently the rule is true when the body is satisfied.",
+    "LLM_answer": "Open Path Standard Confidence (OPSC) is defined in the paper as a metric used to evaluate the quality of mined open path rules. It is calculated as the ratio of successful instantiations for both the body and head parts of the rules.",
+    "similarity_score": 0.9423828125
+  },
+  {
+    "question": "What is the significance of the hybrid fitness function in OPRL?",
+    "answer": "The hybrid fitness function in OPRL combines both the co-occurrence fitness function and the open path fitness function. It is significant because it outperforms either function individually, allowing for the mining of higher-quality rules by leveraging both entity and predicate embeddings.",
+    "LLM_answer": "The significance of the hybrid fitness function in OPRL lies in its ability to outperform the fitness function adapted from RLVLR. This hybrid fitness function combines multiple evaluation metrics or optimization techniques to determine the suitability of candidate solutions in the evolutionary algorithm used by OPRL. It plays a crucial role in mining quality Open Path (OP) rules from a range of knowledge graphs, ensuring that the rules generated are relevant and have good recall and precision. This contributes to OPRL's effectiveness in active knowledge graph completion.",
+    "similarity_score": 0.92041015625
+  },
+  {
+    "question": "What is the role of the Evaluation() function in the OPRL algorithm?",
+    "answer": "The role of the Evaluation() function in the OPRL algorithm is to assess the quality of candidate rules by computing their Open Path Standard Confidence (OPSC) and Open Path Head Coverage (OPHC) using efficient matrix and vector operations, and then discard rules that do not meet the minimum quality thresholds.",
+    "LLM_answer": "The Evaluation() function in the OPRL algorithm is likely used to assess or judge the quality, performance, or outcome of the rules or predictions generated by the algorithm. It plays a role in determining how well the algorithm is performing in learning Open Path (OP) rules for knowledge graph completion.",
+    "similarity_score": 0.875
+  },
+  {
+    "question": "What is the primary goal of Active Knowledge Graph Completion (AKGC) as described in the paper?",
+    "answer": "The primary goal of Active Knowledge Graph Completion (AKGC) is to generate relevant queries that can be used to identify missing facts in a knowledge graph, even when the entities involved in those facts are not yet present in the graph. This is achieved by using Open Path (OP) rules to infer queries that can be posed to a link predictor or a human expert.",
+    "LLM_answer": "The primary goal of Active Knowledge Graph Completion (AKGC) as described in the paper is to introduce a method for dynamically updating a knowledge graph by actively inferring missing relationships between entities. This is achieved by generating highly relevant queries for missing links using Open Path (OP) rules, which are learned from the knowledge graph. The paper presents the first work on active knowledge graph completion by proposing the OPRL algorithm, which learns these OP rules to complete knowledge graphs.",
+    "similarity_score": 0.90478515625
+  },
+  {
+    "question": "What are the key datasets used to evaluate the OPRL algorithm in the experiments?",
+    "answer": "The key datasets used to evaluate the OPRL algorithm in the experiments are: FB15K SELECTED (FB15KSE) derived from Freebase, YAGO2 core, Wikidata, and a synthetic Poker knowledge graph.",
+    "LLM_answer": "The key datasets used to evaluate the OPRL algorithm in the experiments are not explicitly mentioned in the provided resources. The resources mention 'benchmark datasets' as a general concept, but specific datasets are not listed.",
+    "similarity_score": 0.76171875
+  }
+]
