@@ -2,32 +2,32 @@
   {
     "question": "What is the primary goal of applying a data mining model to the 2019 grant applications as described in the paper?",
     "answer": "The primary goal is to predict high IC-score research proposals based on the IC scores assigned by expert reviewers and to develop a predictive vocabulary for contemporaneous proposals.",
-    "LLM_answer": "The primary goal of applying a data mining model to the 2019 grant applications, as described in the paper, is to predict high IC-score research proposals and understand the vocabulary of innovative grant applications. This involves using a Random Forest classifier with features denoting the presence or absence of unigrams, encoded with a modified Term Frequency-Inverse Document Frequency (TF-IDF) algorithm, to assist in the manual review of research proposals and help human evaluators better screen excellent research proposals.",
-    "similarity_score": 0.68115234375
+    "LLM_answer": "The primary goal of applying a data mining model to the 2019 grant applications, as described in the paper, is to predict high IC-score research proposals and understand the innovative proposal vocabulary. This is part of the project's motivation to develop a data mining model for these purposes.",
+    "similarity_score": 0.7529296875
   },
   {
     "question": "Which classifiers are used for experimental comparison in the study?",
     "answer": "The Decision Tree (DT) and Random Forest (RF) classifiers are used for experimental comparison.",
-    "LLM_answer": "The study uses classifiers that are compared with those referenced in [2]. However, the specific classifiers used for experimental comparison are not explicitly listed in the provided resources.",
-    "similarity_score": 0.7783203125
+    "LLM_answer": "The provided resources do not specify which classifiers are used for experimental comparison in the study. Additional information from the paper would be needed to answer this question.",
+    "similarity_score": 0.7373046875
   },
   {
     "question": "What is the accuracy achieved by the proposed model for predicting high IC-score research proposals?",
     "answer": "The proposed model achieves an accuracy of 84.17% across all types of grant applications.",
-    "LLM_answer": "The proposed model achieves an accuracy of 84.17% for predicting high IC-score research proposals.",
-    "similarity_score": 0.82421875
+    "LLM_answer": "The resources provided do not specify the exact accuracy achieved by the proposed model for predicting high IC-score research proposals. Additional information from the academic paper would be needed to determine the accuracy.",
+    "similarity_score": 0.58203125
   },
   {
     "question": "What is the modified TF-IDF algorithm proposed in the paper and how does it differ from the traditional TF-IDF?",
     "answer": "The modified TF-IDF algorithm only implements the IDF part of TF-IDF, assigning the IDF value to a term if it exists in the documents and a value of 0 if it does not. This differs from the traditional TF-IDF, which uses both term frequency (TF) and inverse document frequency (IDF).",
-    "LLM_answer": "The modified TF-IDF algorithm proposed in the paper is a statistical method used to weight the importance of terms in a document or corpus based on their frequency and rarity across all documents. This modified version differs from the traditional TF-IDF by incorporating an intra-class dispersion algorithm, which adjusts term weights to increase the importance of rare but significant words and decrease the weightage of frequent but less important words. This modification aims to improve the effectiveness of the term weighting in information retrieval tasks.",
-    "similarity_score": 0.81494140625
+    "LLM_answer": "The modified TF-IDF algorithm proposed in the paper is a variation of the traditional TF-IDF algorithm, which is used for natural language processing and information retrieval tasks such as text analysis and feature extraction. The modified version still uses TF-IDF as the feature extraction technique, but it is implemented using the gensim library, which is a popular open-source Python library for natural language processing. The paper does not provide specific details on how the modified TF-IDF algorithm differs from the traditional TF-IDF in terms of its mathematical formulation or implementation, but it suggests that the modification is aimed at improving the identification of the most influential terms for text classification tasks, possibly in conjunction with DT (Decision Tree) and RF (Random Forest) classifiers.",
+    "similarity_score": 0.8095703125
   },
   {
     "question": "What is the median IC score of the research proposals in the dataset?",
     "answer": "The median IC score of the research proposals is 5.0.",
-    "LLM_answer": "The median IC score of the research proposals in the dataset is not explicitly provided in the given resources. However, it is mentioned that the median IC score is based on the selection range, which includes research proposals with moderate IC scores (15%~85%). To find the exact median IC score, one would need to refer to the specific data or tables in the academic paper, such as Table 1, which shows statistics of IC scores.",
-    "similarity_score": 0.73974609375
+    "LLM_answer": "The median IC score of the research proposals in the dataset is not explicitly provided in the given resources. The resources mention that the dataset includes 3,805 research proposals with peer-reviewed IC scores ranging from 1 to 7, but the specific median value is not stated.",
+    "similarity_score": 0.73193359375
   },
   {
     "question": "What text pre-processing techniques are applied to the grant applications?",
@@ -38,25 +38,25 @@
   {
     "question": "What is the purpose of the Metadata Extractor & Loader (MEL) tool mentioned in the paper?",
     "answer": "The MEL tool is used to extract text from PDF research proposals and save it in a JSON file with metadata sets and content.",
-    "LLM_answer": "The purpose of the Metadata Extractor & Loader (MEL) tool mentioned in the paper is to extract text from PDF files and save it in a JSON file with metadata sets and content.",
-    "similarity_score": 0.9091796875
+    "LLM_answer": "The purpose of the Metadata Extractor & Loader (MEL) tool mentioned in the paper is to extract metadata and load data into various formats. It is a software application designed for this specific task.",
+    "similarity_score": 0.77734375
   },
   {
     "question": "What are the evaluation metrics used to assess the performance of the data mining models?",
     "answer": "The evaluation metrics used are classification accuracy (Acc) and F1 score.",
-    "LLM_answer": "The resources provided do not explicitly mention the specific evaluation metrics used to assess the performance of the data mining models. However, it is common in data mining to use metrics such as accuracy, precision, recall, F1-score, and AUC-ROC for evaluating model performance. If the paper follows standard practices, these or similar metrics might be used.",
-    "similarity_score": 0.775390625
+    "LLM_answer": "The resources provided do not explicitly mention the specific evaluation metrics used to assess the performance of the data mining models. However, it is likely that the evaluation metrics are related to the 'performance' mentioned in the context of 'Table 5' and 'the DT classifier'. Common evaluation metrics for data mining models, especially in classification tasks, include accuracy, precision, recall, F1-score, and AUC-ROC, but these are not explicitly listed in the provided resources.",
+    "similarity_score": 0.74658203125
   },
   {
     "question": "What is the range of IC scores considered for low IC-score research proposals in the experiments?",
     "answer": "The range of IC scores considered for low IC-score research proposals is 0~15%.",
-    "LLM_answer": "The range of IC scores considered for low IC-score research proposals in the experiments is 0~15%.",
-    "similarity_score": 0.978515625
+    "LLM_answer": "The range of IC scores considered for low IC-score research proposals in the experiments is below 1.0, as indicated by the entity '13 of which have an IC score below 1.0'.",
+    "similarity_score": 0.8291015625
   },
   {
     "question": "What is the accuracy of the proposed model when applied to the 'Innovation and Creativity statement' sections of Ideas Grants?",
     "answer": "The proposed model achieves an accuracy of 68.33% when applied to the 'Innovation and Creativity statement' sections of Ideas Grants.",
-    "LLM_answer": "The resources provided do not include specific numerical data regarding the accuracy of the proposed model when applied to the 'Innovation and Creativity statement' sections of Ideas Grants. Additional information from the paper would be needed to determine the exact accuracy value.",
-    "similarity_score": 0.68603515625
+    "LLM_answer": "The resources provided do not include specific information about the accuracy of the proposed model when applied to the 'Innovation and Creativity statement' sections of Ideas Grants. Additional information from the paper would be needed to determine the accuracy.",
+    "similarity_score": 0.6982421875
   }
 ]

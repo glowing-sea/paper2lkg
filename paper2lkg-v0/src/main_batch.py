@@ -116,7 +116,7 @@ if __name__ == '__main__':
 
     DATASET = "ASKG"
     MODEL = "l"
-    PAPER_INDICES = range(6,11)
+    PAPER_INDICES = range(5,6)
 
 
     for paper_index in PAPER_INDICES:

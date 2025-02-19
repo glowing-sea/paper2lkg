@@ -8,26 +8,26 @@
   {
     "question": "What does CISC stand for and what is one of its key features?",
     "answer": "CISC stands for Complex Instruction Set Computer, and one of its key features is backward compatibility since the 1970s.",
-    "LLM_answer": "CISC stands for Complex Instruction Set Computer. One of its key features is the use of 'long sub-level commands' for efficient memory management and straightforward compiler development.",
-    "similarity_score": 0.818359375
+    "LLM_answer": "CISC stands for Complex Instruction Set Computer. One of its key features is the inclusion of 'long sub-level commands' which enable effective memory management.",
+    "similarity_score": 0.81982421875
   },
   {
     "question": "What is the main advantage of RISC architecture over CISC?",
     "answer": "The main advantage of RISC architecture over CISC is that it simplifies command sets and handles access to memory with load-store commands, which allows the hardware to run faster.",
-    "LLM_answer": "The main advantage of RISC (Reduced Instruction Set Computer) architecture over CISC (Complex Instruction Set Computer) is its simplified set of instructions, which is designed to improve processing efficiency. RISC architectures focus on executing more basic computational operations with a reduced instruction set, leading to faster processing speeds and more efficient use of hardware resources. This contrasts with CISC architectures, which include complex instructions and long sub-level commands for effective memory management.",
-    "similarity_score": 0.9169921875
+    "LLM_answer": "The main advantage of RISC (Reduced Instruction Set Computer) architecture over CISC (Complex Instruction Set Computer) is its simplified instruction set, which is optimized for performance. This simplification allows for faster execution of instructions, as the processor can handle more basic computational operations efficiently. In contrast, CISC architectures are characterized by complex instruction sets that can be less efficient in terms of processing speed.",
+    "similarity_score": 0.9140625
   },
   {
     "question": "What is the significance of the RISC-V architecture being developed as an open source instruction set?",
     "answer": "The significance of the RISC-V architecture being developed as an open source instruction set is that it allows communities and organizations to produce their own processors without license restrictions, fostering innovation and collaboration.",
-    "LLM_answer": "The significance of the RISC-V architecture being developed as an open source instruction set lies in its ability to provide freedom and flexibility to communities and organizations. As an open-source hardware architecture, RISC-V allows for the production of custom processors without licensing restrictions, promoting innovation and collaboration. This open-source nature also enables a more secure architecture and processor capabilities, as it encourages transparency and peer review. Additionally, being open source, RISC-V can be adapted and extended for a wide range of applications, making it a versatile and cost-effective alternative to proprietary architectures.",
-    "similarity_score": 0.9130859375
+    "LLM_answer": "The significance of the RISC-V architecture being developed as an open source instruction set lies in its ability to provide freedom from license restrictions, allowing for customization of hardware designs. This open-source nature promotes innovation and collaboration, as developers and companies can modify and distribute the architecture without the constraints typically associated with proprietary instruction sets. Additionally, the RISC-V architecture supports open source operating systems, which further enhances its flexibility and adaptability in various applications. By being open source, RISC-V encourages a broader community involvement, potentially leading to more secure and efficient processor designs.",
+    "similarity_score": 0.9169921875
   },
   {
     "question": "What is the name of the open source operating system development project implemented as a base in the paper?",
     "answer": "MILIS Linux",
-    "LLM_answer": "The open source operating system development project implemented as a base in the paper is based on MILIS.",
-    "similarity_score": 0.7705078125
+    "LLM_answer": "The resources provided do not explicitly mention the name of the open source operating system development project implemented as a base in the paper. Additional information from the paper would be needed to determine the specific project name.",
+    "similarity_score": 0.55322265625
   },
   {
     "question": "What are the target users of MILIS Linux?",
@@ -38,25 +38,25 @@
   {
     "question": "What is the purpose of using QEMU in the development and testing of the OS for RISC-V?",
     "answer": "The purpose of using QEMU in the development and testing of the OS for RISC-V is to emulate the RISC-V system, allowing for development and testing without the need for real hardware.",
-    "LLM_answer": "The purpose of using QEMU in the development and testing of the OS for RISC-V is to create a virtual machine environment that supports the RISC-V architecture. This allows developers to perform system emulation and testing without the need for physical hardware, facilitating the development process. QEMU supports RISC-V since version 2.12, making it a suitable tool for emulating RISC-V systems and testing the operating system's functionality in a controlled environment.",
-    "similarity_score": 0.9228515625
+    "LLM_answer": "The purpose of using QEMU in the development and testing of the OS for RISC-V is to simulate a virtual machine, allowing for low-cost and easy setup of various architectures. This enables developers to emulate the RISC-V architecture without needing physical hardware, facilitating the development and testing processes.",
+    "similarity_score": 0.95068359375
   },
   {
     "question": "What version of the Linux kernel first included support for RISC-V?",
     "answer": "The Linux kernel first included support for RISC-V in version 4.15.",
     "LLM_answer": "The Linux kernel first included support for RISC-V in version 4.15.",
-    "similarity_score": 1.0009765625
+    "similarity_score": 1.0
   },
   {
     "question": "What is the role of the Berkley Bootloader (BBL) in the RISC-V project?",
     "answer": "The role of the Berkley Bootloader (BBL) in the RISC-V project is to handle tasks such as starting and responding to timer interrupts, boot chain loading for Linux, and managing instructions that the RISC-V processor cannot handle directly in hardware.",
-    "LLM_answer": "The Berkeley Bootloader (BBL) in the RISC-V project serves as a RISC-V-specific software tool that acts as a bootloader implementation. It is responsible for handling specific instructions or operations not natively supported by the processor. BBL links the kernel binary and must always be rebuilt within the kernel or Linux kernel. It cannot chainload a Linux kernel, and it is planned to be separated from the kernel in the future. Additionally, BBL compiles with the -withpayload config parameter to reference the compiled kernel during the building process of the RISC-V computing environment.",
-    "similarity_score": 0.8837890625
+    "LLM_answer": "The Berkeley Bootloader (BBL) in the RISC-V project serves as a bootloader specifically designed for the RISC-V architecture. It handles certain instructions that the RISC-V architecture is not equipped to handle directly in hardware. BBL is responsible for compiling and linking Linux kernels, allowing direct integration of kernel binaries. However, it cannot chainload a Linux kernel and must always be rebuilt within the kernel. BBL is planned to be separated from the kernel in the future, and it uses the '-withpayload' config parameter to reference the compiled kernel during compilation.",
+    "similarity_score": 0.89013671875
   },
   {
     "question": "What are the future work plans mentioned for the MILIS Linux project on RISC-V?",
     "answer": "The future work plans mentioned for the MILIS Linux project on RISC-V include physical implementation and optimizations on real RISC-V hardware, evaluation of alternative libraries to Glibc, and further exploration of RISC-V porting for kernel level difficulties.",
-    "LLM_answer": "The future work plans for the MILIS Linux project on RISC-V include the development of RISC-V architecture's 32-bit and 128-bit ISA configurations, as well as the consideration of developing other variants.",
-    "similarity_score": 0.88330078125
+    "LLM_answer": "The future work plans for the MILIS Linux project on RISC-V include the development of other variants, such as 32-bit and 128-bit ISA configurations, and RISC-V architecture-oriented work. These efforts aim to further explore the RISC-V architecture, particularly addressing kernel level difficulties and enhancing support for the Linux kernel and userspace.",
+    "similarity_score": 0.88720703125
   }
 ]

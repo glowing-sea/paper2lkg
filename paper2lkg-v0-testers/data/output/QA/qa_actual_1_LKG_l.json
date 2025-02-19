@@ -2,50 +2,50 @@
   {
     "question": "What is the primary purpose of the MEL tool as described in the abstract?",
     "answer": "The primary purpose of the MEL tool is to extract metadata and content-based information from unstructured information encoded in different source document formats, aiding pre-processing tasks as part of a Knowledge Graph Construction Pipeline (KGCP).",
-    "LLM_answer": "The primary purpose of the MEL tool, as described in the abstract, is to extract metadata and content-based information from unstructured data sets of heterogeneous file formats. It is a general-purpose mechanism that supports more than 20 different file types and performs pre-processing, data cleaning, and basic text analysis tasks. MEL generates the results in a machine-readable format (JSON), making it useful for various applications.",
-    "similarity_score": 0.8740234375
+    "LLM_answer": "The primary purpose of the MEL tool, as described in the abstract, is to extract metadata and content-based information from unstructured data sources. It is a Python-based tool that supports more than 20 different file types and formats, performing basic text analysis tasks and generating results in a machine-readable format (JSON).",
+    "similarity_score": 0.86962890625
   },
   {
     "question": "What file format does MEL generate as output?",
     "answer": "MEL generates JSON files as output.",
-    "LLM_answer": "MEL generates output in a machine-readable format (JSON).",
-    "similarity_score": 0.9130859375
+    "LLM_answer": "MEL generates the results in a machine-readable format (JSON).",
+    "similarity_score": 0.8876953125
   },
   {
     "question": "Which toolkit is MEL integrated with for the extraction of categorised named entities?",
     "answer": "MEL is integrated with 'The NLP -NER Toolkit' (TNNT) for the extraction of categorised named entities.",
     "LLM_answer": "MEL is fully integrated with TNNT for the extraction of categorised named entities.",
-    "similarity_score": 0.93115234375
+    "similarity_score": 0.9306640625
   },
   {
     "question": "What are the three main steps in MEL's metadata and content extraction process?",
     "answer": "The three main steps are: (1) taking as input a document set, (2) extracting metadata and content-based information for each document while performing basic text analysis, and (3) generating a JSON file with the extracted metadata and text content.",
-    "LLM_answer": "The three main steps in MEL's metadata and content extraction process are: 1) performing pre-processing tasks, 2) implementing primitives for metadata and content extraction from unstructured data sets, and 3) performing basic text analysis tasks such as pattern matching and keyword extraction.",
-    "similarity_score": 0.8427734375
+    "LLM_answer": "The three main steps in MEL's metadata and content extraction process are: 1) Implementing primitives for metadata and content extraction from unstructured data sets of heterogeneous formats, 2) Performing basic text analysis tasks such as pattern matching and keyword extraction, and 3) Generating the results in a machine-readable format (JSON).",
+    "similarity_score": 0.85693359375
   },
   {
     "question": "On which operating systems can OLE 2 file types and .docm files be processed by MEL?",
     "answer": "OLE 2 file types and .docm files can only be processed on Windows operating systems.",
-    "LLM_answer": "OLE 2 file types and .docm files can be processed by MEL only on Windows operating systems.",
-    "similarity_score": 0.91259765625
+    "LLM_answer": "OLE 2 file types and .docm files can only be processed by MEL on Windows operating systems.",
+    "similarity_score": 0.935546875
   },
   {
     "question": "What does MEL use for the 'General-Metadata' extraction task?",
     "answer": "MEL optionally uses the XML output from the NLNZ Metadata Extractor tool for the 'General-Metadata' extraction task.",
-    "LLM_answer": "MEL uses a comprehensive set of Python-based methods for metadata and content extraction from unstructured data sets for the 'General-Metadata' extraction task. It optionally uses the NLNZ Metadata Extractor tool and performs pre-processing tasks and basic text analysis tasks such as pattern matching and keyword extraction.",
-    "similarity_score": 0.8447265625
+    "LLM_answer": "For the 'General-Metadata' extraction task, MEL uses the NLNZ Metadata Extractor tool, which is a Java-based standalone tool that extracts a comprehensive attribute and property list from dozens of file formats. MEL optionally uses the XML output from this tool.",
+    "similarity_score": 0.87939453125
   },
   {
     "question": "What is the main difference between MEL and Apache Tika?",
     "answer": "The main difference is that MEL is a lightweight Python-based package aimed at metadata extraction for common file formats in a KGCP, whereas Apache Tika is a complex Java-based general-purpose system.",
-    "LLM_answer": "The main difference between MEL and Apache Tika is that MEL is a lightweight Python-based package specifically designed for metadata extraction from common file formats, whereas Apache Tika is a comprehensive and complex Java-based general-purpose system for content extraction and analysis. MEL focuses on supporting more than 20 different file types and performing specific pre-processing and text analysis tasks, while Apache Tika is considered the most comprehensive and current state-of-the-art tool for content extraction and analysis.",
-    "similarity_score": 0.95556640625
+    "LLM_answer": "The main difference between MEL and Apache Tika is that MEL is a Python-based tool specifically designed for extracting metadata and content-based information from unstructured data sources, supporting more than 20 different file types and generating results in a machine-readable format (JSON). It implements primitives for metadata and content extraction and performs basic text analysis tasks. In contrast, Apache Tika is a comprehensive and complex Java-based general-purpose system that is considered the most comprehensive and current state-of-the-art tool for content extraction and analysis. While both tools are used for content extraction, Apache Tika is a more general-purpose and widely recognized tool, whereas MEL is a more specialized tool with a focus on Python-based methods and integration with other tools like J2RM and TNNT.",
+    "similarity_score": 0.93603515625
   },
   {
     "question": "What future work is planned for MEL regarding its integration with ontologies?",
     "answer": "Future work includes exploring the addition of a vocabulary or light-weight ontology using JSON-LD annotations to make the extracted metadata 'RDF ready'.",
-    "LLM_answer": "In the near future, the integration of MEL's results with JSON-LD ontologies will be explored to make the extracted metadata 'RDF ready'.",
-    "similarity_score": 0.888671875
+    "LLM_answer": "In the near future, plans are made to integrate MEL with ontologies by using JSON-LD ontologies and containerising the MEL+TNNT tools. This integration aims to enhance the interoperability and semantic capabilities of MEL by aligning it with formal knowledge representation systems.",
+    "similarity_score": 0.7333984375
   },
   {
     "question": "How many different file types does MEL support?",
@@ -56,7 +56,7 @@
   {
     "question": "What is the significance of the JSON result files generated by MEL?",
     "answer": "The JSON result files generated by MEL can easily be mapped to RDF using tools such as J2RM, facilitating their use in automated KGCPs.",
-    "LLM_answer": "The JSON result files generated by MEL are significant because they provide a machine-readable format for the extracted metadata and text content from various file types. This allows for easy exchange and integration of structured data between different systems and applications. By using JSON, MEL ensures that the results are standardized and can be readily used for further processing, analysis, or storage in other systems.",
-    "similarity_score": 0.72900390625
+    "LLM_answer": "The JSON result files generated by MEL are significant because they provide the output of MEL's metadata and content extraction processes in a machine-readable format. This allows for easy storage, exchange, and further processing of the extracted data. By using a standardized format like JSON, the results can be readily integrated with other systems and tools, facilitating interoperability and automation in data processing workflows.",
+    "similarity_score": 0.74072265625
   }
 ]

@@ -116,7 +116,7 @@ if __name__ == '__main__':
 
     DATASET = "ASKG"
     MODEL = "l"
-    PAPER_INDEX = 10
+    PAPER_INDEX = 5
 
     m01(DATASET, PAPER_INDEX)
     m02()
