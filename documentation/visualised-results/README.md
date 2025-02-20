@@ -1,5 +1,13 @@
 # Visualised Results
 
+### General Metrics (LLaMA)
+
+![General Metrics (LLaMA)](./figures/statistics-llama.png)
+
+### General Metrics (GPT)
+
+![General Metrics (GPT)](./figures/statistics-gpt.png)
+
 ### Runtime and Expense vs. Paper Length
 
 ![Runtime and Expense vs. Paper Length](./figures/runtime-expense.png)
