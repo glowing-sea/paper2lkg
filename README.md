@@ -10,15 +10,14 @@ This repository is related to the research "Open Local Knowledge Graph Construct
 - ([link](./paper2lkg-v0-testers/data/raw_results/)) Raw experiment results.
 - ([link](./documentation/visualised-results/)) Visualised experiment results.
 
-## Notes to the NLP4KGC Reviewers
-
-Thank you for reviewing our research paper and providing valuable feedback. Please refer to [this page](./documentation/paper-update-notes/) for the changes between the first submission (on 1 Jan) and the second submission (on 7 Feb) based on the feedback.
-
 ## Other Materials
 
-([link](./documentation/articles/(Paper)%20(ver.2025.2.7)%20Open%20Local%20Knowledge%20Graph%20Construction%20from%20Academic%20Documents%20Using%20Generative%20Large%20Language%20Models.pdf)) Paper submitted to 3rd NLP4KGC workshop (currently under review)
+([link](./documentation/articles/(Paper)%20(ver.2025.2.7)%20Open%20Local%20Knowledge%20Graph%20Construction%20from%20Academic%20Documents%20Using%20Generative%20Large%20Language%20Models.pdf)) Paper submitted to [4th NLP4KGC workshop](https://sites.google.com/view/4rthnlp4kgc/home) (accepted; to be published)
   
   *This paper aims to provide a quick overview to the research project and present the key ideas. It contains research motivation, background, literature review, an short overview of the pipeline artifact, an short overview of the research methodology, and the key findings of the research. (Last Update 7 Feb 2025)*
+  
+  **Notes to the NLP4KGC Reviewers**
+    Thank you for reviewing our research paper and providing valuable feedback. Please refer to [this page](./documentation/paper-update-notes/) for the changes between the first submission (on 1 Jan) and the second submission (on 7 Feb) based on the feedback.  
 
 ([link](./documentation/articles/(Thesis)%20(ver.2024.11.18)%20Local%20Holistic%20Knowledge%20Graph%20Construction%20From%20Academic%20Papers%20Using%20Large%20Language%20Models%20Through%20In-Context%20Learning.pdf)) Honours thesis (unpublished)
 
