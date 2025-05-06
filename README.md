@@ -12,7 +12,7 @@ This repository is related to the research "Open Local Knowledge Graph Construct
 
 ## Other Materials
 
-([link](./documentation/articles/(Paper)%20(ver.2025.2.7)%20Open%20Local%20Knowledge%20Graph%20Construction%20from%20Academic%20Documents%20Using%20Generative%20Large%20Language%20Models.pdf)) Paper submitted to [4th NLP4KGC workshop](https://sites.google.com/view/4rthnlp4kgc/home) (accepted; to be published)
+([link](./documentation/articles/(Paper)%20(ver.2025.2.25)%20Open%20Local%20Knowledge%20Graph%20Construction%20from%20Academic%20Documents%20Using%20Generative%20Large%20Language%20Models.pdf) (accepted; to be published)
   
   *This paper aims to provide a quick overview to the research project and present the key ideas. It contains research motivation, background, literature review, an short overview of the pipeline artifact, an short overview of the research methodology, and the key findings of the research. (Last Update 7 Feb 2025)*
   
